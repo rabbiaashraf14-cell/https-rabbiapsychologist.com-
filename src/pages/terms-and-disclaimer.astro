@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Terms & Disclaimer', href: '/terms-and-disclaimer' }
+];
+---
+
+<Layout title="Terms & Medical Disclaimer">
+  <SEO
+    title="Terms of Service & Medical Disclaimer"
+    description="Important legal, ethical, and clinical service disclaimers regarding international online consultations."
+  />
+  <DisclaimerBanner />
+  <Header />
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+    <div class="max-w-4xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Terms & Disclaimer</h1>
+      <div class="prose prose-lg text-gray-700 max-w-none">
+        <div class="bg-gray-100 p-6 rounded-lg mb-8 border border-gray-300">
+          <h2 class="text-xl font-bold text-brand-navy mt-0">Important Clinical Services Notice</h2>
+          <p class="font-medium text-brand-navy">
+            Clinical therapy, diagnosis, and regulated psychological services are provided only where legally and ethically permitted. International consultations are educational, parent-guidance, and support-planning services unless otherwise allowed by local regulations.
+          </p>
+        </div>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8">1. Nature of International Services</h2>
+        <p>For clients residing outside of jurisdictions where the provider is licensed, services are strictly psychoeducational in nature. They do not constitute formal medical or psychological diagnosis, treatment, or therapy.</p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8">2. Emergency Situations</h2>
+        <p>Online parent consultation is not appropriate for emergency situations or acute crises. In the event of a medical or psychological emergency, please contact your local emergency services or proceed to the nearest hospital.</p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8">3. Guarantees</h2>
+        <p>While we use evidence-based strategies, behavioral outcomes depend on numerous factors. We cannot guarantee specific results.</p>
+      </div>
+    </div>
+  </div>
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

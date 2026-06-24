@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Schema from '../components/Schema.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rabbia Ashraf",
+  "jobTitle": "Clinical Child Psychologist",
+  "url": "https://rabbiapsychologist.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/rabbiapsychologist"
+  ]
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Rabbia Ashraf Child Psychology",
+  "url": "https://rabbiapsychologist.com",
+  "description": "Global child psychology consultation and parent education platform."
+};
+---
+
+<Layout title="Home">
+  <SEO
+    title="Clinical Child Psychologist | Autism & ADHD Support"
+    description="Rabbia Ashraf offers online parent consultation, autism support, ADHD guidance, and developmental behavior planning for international families."
+  />
+  <Schema schema={personSchema} />
+  <Schema schema={organizationSchema} />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <Hero
+    title="From confusion to a clear support plan"
+    subtitle="Global child psychology consultation and parent education. Instead of asking, 'How do we stop this behavior?' we ask, 'What is this behavior communicating?'"
+  />
+
+  <TrustStrip />
+
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Before you book, learn what may be happening beneath the behavior</h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+        When a child is not listening, the issue may not be unwillingness. It may be difficulty with attention, working memory, task initiation, emotional regulation, or processing.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div class="text-left">
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Online Parent Consultation</h3>
+          <p class="text-gray-600">Guidance for developmental concerns, behavior challenges, and parenting strategies from anywhere in the world.</p>
+        </div>
+        <div class="text-left">
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Autism & ADHD Support</h3>
+          <p class="text-gray-600">Evidence-based parent training, executive function coaching, and tailored behavioral support plans.</p>
+        </div>
+        <div class="text-left">
+          <h3 class="text-xl font-bold text-brand-navy mb-3">School & IEP Consultation</h3>
+          <p class="text-gray-600">Collaborating with educators to create effective support systems for your child in the classroom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-sky py-16 md:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Core Services</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Comprehensive support for your child's unique developmental journey.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ServiceCard
+          title="Global Consultation"
+          description="Online sessions for parents seeking expert guidance on child behavior and development."
+          href="/global-consultation"
+        />
+        <ServiceCard
+          title="Autism Support"
+          description="Parent training and behavioral support planning for families navigating ASD."
+          href="/autism-support"
+        />
+        <ServiceCard
+          title="ADHD Support"
+          description="Executive function coaching and strategies for managing ADHD at home and school."
+          href="/adhd-support"
+        />
+        <ServiceCard
+          title="Parent Training"
+          description="Structured programs to equip parents with evidence-based behavioral strategies."
+          href="/parent-training"
+        />
+      </div>
+      <div class="text-center mt-12">
+        <a href="/services" class="text-brand-navy font-bold hover:text-blue-700 inline-flex items-center">
+          View all services
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <BookingCTA />
+  </div>
+
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

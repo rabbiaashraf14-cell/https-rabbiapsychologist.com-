@@ -1,0 +1,9 @@
+/* TEAM */
+  Name: Rabbia Ashraf
+  Role: Clinical Child Psychologist, Researcher, Behavior Therapist
+  Site: https://rabbiapsychologist.com
+
+/* SITE */
+  Framework: Astro
+  Styling: Tailwind CSS
+  Hosting: Firebase

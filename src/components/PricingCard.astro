@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  priceUSD?: string;
+  priceAUD?: string;
+  pricePKR?: string;
+  description: string;
+  features: string[];
+  isPopular?: boolean;
+}
+
+const { title, priceUSD, priceAUD, pricePKR, description, features, isPopular = false } = Astro.props;
+---
+
+<div class={`bg-white rounded-2xl p-8 shadow-sm border ${isPopular ? 'border-brand-navy shadow-md relative' : 'border-gray-100'} flex flex-col h-full`}>
+  {isPopular && (
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-navy text-white px-4 py-1 rounded-full text-sm font-bold tracking-wider">
+      MOST POPULAR
+    </div>
+  )}
+
+  <h3 class="text-2xl font-bold text-brand-navy mb-2">{title}</h3>
+  <p class="text-gray-600 mb-6">{description}</p>
+
+  <div class="mb-6 space-y-1">
+    {priceUSD && <div class="text-3xl font-bold text-brand-navy">{priceUSD} <span class="text-sm font-normal text-gray-500">USD</span></div>}
+    {priceAUD && <div class="text-lg text-gray-700">{priceAUD} <span class="text-sm text-gray-500">AUD</span></div>}
+    {pricePKR && <div class="text-lg text-gray-700">{pricePKR} <span class="text-sm text-gray-500">PKR</span></div>}
+  </div>
+
+  <ul class="space-y-3 mb-8 flex-grow">
+    {features.map(feature => (
+      <li class="flex items-start">
+        <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span class="text-gray-700">{feature}</span>
+      </li>
+    ))}
+  </ul>
+
+  <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" target="_blank" rel="noopener noreferrer" class={`w-full text-center py-3 rounded-xl font-bold transition-colors ${isPopular ? 'bg-brand-navy text-white hover:bg-blue-900' : 'bg-brand-sky text-brand-navy hover:bg-blue-100'}`}>
+    Book Now
+  </a>
+</div>

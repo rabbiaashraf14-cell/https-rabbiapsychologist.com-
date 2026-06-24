@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ProgramCard from '../components/ProgramCard.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Programs', href: '/programs' }
+];
+---
+
+<Layout title="Programs & Packages">
+  <SEO
+    title="Parent Training Programs & Workshops"
+    description="Structured parent guidance programs for ASD, ADHD executive function, and comprehensive behavioral training packages."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Programs</h1>
+      <p class="text-xl text-gray-700">
+        Structured, comprehensive packages designed to equip you with the knowledge and tools needed for lasting positive change.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <ProgramCard
+        title="ASD Parent Guidance Program"
+        description="A specialized program focused on understanding autism, developing communication strategies, and creating supportive home environments."
+        duration="6 Sessions"
+        format="Online / 1-on-1"
+        href="https://calendar.app.google/zMKejpnpCjh91WRG7"
+      />
+      <ProgramCard
+        title="ADHD Executive Function Program"
+        description="Practical strategies to support working memory, task initiation, organization, and emotional regulation for children with ADHD."
+        duration="4 Sessions"
+        format="Online / 1-on-1"
+        href="https://calendar.app.google/zMKejpnpCjh91WRG7"
+      />
+      <ProgramCard
+        title="Parent Training Package"
+        description="Our core behavioral support package providing foundational strategies for managing challenging behaviors and improving connection."
+        duration="4 Sessions"
+        format="Online / 1-on-1"
+        href="https://calendar.app.google/zMKejpnpCjh91WRG7"
+      />
+      <ProgramCard
+        title="Workshops & Webinars"
+        description="Interactive group sessions covering specific topics in child development, neurodiversity, and parenting strategies."
+        duration="Varies"
+        format="Online / Group"
+        href="/webinars"
+      />
+      <ProgramCard
+        title="School/Clinic Training"
+        description="Professional development sessions for educators and clinical staff on inclusive practices and behavioral support."
+        duration="Custom"
+        format="On-site / Online"
+        href="/contact"
+      />
+    </div>
+
+    <BookingCTA
+      title="Unsure which program is right for you?"
+      description="Book an initial consultation to discuss your needs and we'll recommend the best path forward."
+    />
+  </div>
+
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Resources', href: '/resources' }
+];
+---
+
+<Layout title="Parent Resources">
+  <SEO
+    title="Parent Resources & Tools | Autism & ADHD Guidance"
+    description="Access our vault of free downloads, parent guides, worksheets, and articles to support your child's development."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Resources</h1>
+      <p class="text-xl text-gray-700">
+        Practical tools, insightful articles, and comprehensive guides designed to empower parents on their journey.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <ResourceCard
+        title="Resource Vault"
+        type="Collection"
+        description="Access premium digital products including workbooks, planners, and behavior logs for comprehensive support."
+        href="/resource-vault"
+      />
+      <ResourceCard
+        title="Free Downloads"
+        type="Free Tools"
+        description="Download free checklists, templates, and starter packs to begin implementing strategies today."
+        href="/free-downloads"
+      />
+      <ResourceCard
+        title="Parent Blog"
+        type="Articles"
+        description="Read the latest insights on child development, neurodiversity, and practical parenting strategies."
+        href="/blog"
+      />
+      <ResourceCard
+        title="Frequently Asked Questions"
+        type="Information"
+        description="Find answers to common questions about our services, approach, and how we can support your family."
+        href="/faqs"
+      />
+    </div>
+  </div>
+
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>
