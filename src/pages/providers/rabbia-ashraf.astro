@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/SEO.astro';
+import Schema from '../../components/Schema.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
+import ProviderProfileHero from '../../components/ProviderProfileHero.astro';
+import ProviderCredentialBadges from '../../components/ProviderCredentialBadges.astro';
+import ProviderScopeNotice from '../../components/ProviderScopeNotice.astro';
+import ProviderPricingCard from '../../components/ProviderPricingCard.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rabbia Ashraf",
+  "jobTitle": "Clinical Child Psychologist",
+  "url": "https://rabbiapsychologist.com/providers/rabbia-ashraf",
+  "sameAs": [
+    "https://www.linkedin.com/in/rabbiapsychologist"
+  ]
+};
+
+const providerData = {
+  name: "Rabbia Ashraf",
+  photoUrl: "/brand/logo-primary.svg", // Using logo as placeholder
+  title: "Clinical Child Psychologist",
+  country: "Pakistan",
+  timezone: "PKT (GMT+5)",
+  languages: ["English", "Urdu"],
+  education: "M.Phil Clinical Psychology (UCP), MS Clinical Psychology (UMT)",
+  verifiedCredentials: ["M.Phil Clinical Psychology", "MS Clinical Psychology", "PMDC Registered"],
+  bookingLink: "https://calendar.app.google/zMKejpnpCjh91WRG7"
+};
+
+const pricing = [
+  { serviceName: "Parent Consultation (International)", price: "USD 35 / AUD 55" },
+  { serviceName: "Local Consultation (Pakistan)", price: "PKR 7,000" },
+  { serviceName: "School Consultation", price: "From USD 75" },
+  { serviceName: "4-Session Parent Package", price: "From USD 160" }
+];
+---
+
+<Layout title="Rabbia Ashraf - Provider Profile | Rabbia Ashraf & Associates">
+  <SEO
+    title="Rabbia Ashraf | Clinical Child Psychologist & Parent Consultant"
+    description="Rabbia Ashraf offers online parent consultation, autism support, ADHD guidance, and developmental behavior planning for international families."
+  />
+  <Schema schema={personSchema} />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <main class="py-8 md:py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <div class="mb-6">
+        <a href="/providers" class="text-brand-trust hover:underline flex items-center text-sm font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Directory
+        </a>
+      </div>
+
+      <ProviderProfileHero provider={providerData} />
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-8">
+
+          <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-8">
+            <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">About Rabbia</h2>
+            <div class="prose max-w-none text-gray-700">
+              <p>
+                I am a Clinical Child Psychologist specializing in neurodevelopmental differences, including Autism Spectrum Disorder (ASD) and Attention-Deficit/Hyperactivity Disorder (ADHD). My approach focuses on helping parents understand the "why" behind their child's behavior, moving away from simple compliance toward genuine connection and skill-building.
+              </p>
+              <p>
+                With international families, I provide parent guidance and consultation—equipping you with evidence-based strategies to support your child's emotional regulation, executive functioning, and daily routines.
+              </p>
+            </div>
+          </div>
+
+          <ProviderScopeNotice
+            canHelpWith={[
+              "Understanding ASD and ADHD presentations",
+              "Executive function coaching and routines",
+              "Behavioral support planning",
+              "Emotional regulation strategies",
+              "School IEP/support collaboration"
+            ]}
+            cannotProvide={[
+              "Medical advice or prescriptions",
+              "Emergency crisis intervention",
+              "Formal diagnosis outside of Pakistan",
+              "Regulated therapy outside of Pakistan"
+            ]}
+            notes="Ideal for parents seeking proactive strategies rather than immediate crisis support."
+            isInternational={true}
+          />
+
+          <ProviderCredentialBadges
+            credentials={providerData.verifiedCredentials}
+            licenseStatus="Verified: Pakistan Only"
+            verificationStatus="Verified Profile"
+          />
+
+        </div>
+
+        <div class="space-y-8" id="services">
+          <ProviderPricingCard pricing={pricing} />
+
+          <div class="bg-brand-navy rounded-lg p-6 text-white text-center">
+            <h3 class="font-bold text-xl mb-4">Ready to get started?</h3>
+            <p class="text-brand-sky text-sm mb-6">Book a session to discuss your child's needs and develop a tailored support plan.</p>
+            <a href={providerData.bookingLink} target="_blank" rel="noopener noreferrer" class="block bg-white text-brand-navy font-bold py-3 px-4 rounded-full hover:bg-gray-100 transition-colors">
+              Book Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

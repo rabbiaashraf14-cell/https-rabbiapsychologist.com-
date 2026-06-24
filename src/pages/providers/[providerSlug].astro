@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/SEO.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
+import ProviderProfileHero from '../../components/ProviderProfileHero.astro';
+import ProviderCredentialBadges from '../../components/ProviderCredentialBadges.astro';
+import ProviderScopeNotice from '../../components/ProviderScopeNotice.astro';
+import ProviderPricingCard from '../../components/ProviderPricingCard.astro';
+
+export function getStaticPaths() {
+  // This is a dynamic route for generic providers.
+  // In a real app, this would fetch all active providers from a database.
+  // We're stubbing one example path to satisfy static build requirements.
+  return [
+    { params: { providerSlug: 'example-provider' } }
+  ];
+}
+
+const { providerSlug } = Astro.params;
+
+// Mock data based on providerSlug. In production, fetch provider by slug.
+const providerData = {
+  name: "Example Provider",
+  title: "Parent Consultant",
+  country: "United States",
+  timezone: "EST",
+  languages: ["English"],
+  education: "M.Ed Special Education",
+  verifiedCredentials: ["M.Ed", "Certified Autism Specialist"],
+  bookingLink: "#"
+};
+---
+
+<Layout title={`${providerData.name} - Provider Profile | Rabbia Ashraf & Associates`}>
+  <SEO
+    title={`${providerData.name} | Child Development Professional`}
+    description={`View the provider profile for ${providerData.name}. Find their service scope, pricing, and booking information.`}
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <main class="py-8 md:py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <div class="mb-6">
+        <a href="/providers" class="text-brand-trust hover:underline flex items-center text-sm font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Directory
+        </a>
+      </div>
+
+      <ProviderProfileHero provider={providerData} />
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-8">
+
+          <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-8">
+            <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">About {providerData.name}</h2>
+            <div class="prose max-w-none text-gray-700">
+              <p>
+                This is a sample provider profile page. When fully implemented, this page will dynamically display the unique background, approach, and professional biography of the selected provider.
+              </p>
+            </div>
+          </div>
+
+          <ProviderScopeNotice
+            canHelpWith={[
+              "Parent education",
+              "Behavior support planning",
+              "School consultation"
+            ]}
+            cannotProvide={[
+              "Medical advice",
+              "Diagnosis",
+              "Therapy"
+            ]}
+            isInternational={false}
+          />
+
+          <ProviderCredentialBadges
+            credentials={providerData.verifiedCredentials}
+            licenseStatus="Educational Guidance Only"
+            verificationStatus="Credentials Provided"
+          />
+
+        </div>
+
+        <div class="space-y-8" id="services">
+          <ProviderPricingCard pricing={[{ serviceName: "Parent Consultation", price: "Provider-specific" }]} />
+
+          <div class="bg-brand-navy rounded-lg p-6 text-white text-center">
+            <h3 class="font-bold text-xl mb-4">Ready to get started?</h3>
+            <a href={providerData.bookingLink} class="block bg-white text-brand-navy font-bold py-3 px-4 rounded-full hover:bg-gray-100 transition-colors">
+              Book Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

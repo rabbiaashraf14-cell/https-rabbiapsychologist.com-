@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+---
+
+<Layout title="Provider Verification | Rabbia Ashraf & Associates">
+  <SEO
+    title="Provider Verification | Rabbia Ashraf & Associates"
+    description="Learn how we verify the credentials, licensing, and professional scope of providers listed on our platform."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <main class="py-12 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Provider Verification</h1>
+      <p class="text-xl text-gray-700 mb-12 text-center">
+        Transparency is a core value of our platform. Here is how we review and display provider credentials.
+      </p>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">How provider profiles are reviewed</h2>
+        <p class="text-gray-700 mb-4">
+          Before a provider is listed in our directory, they must submit proof of their identity, highest degree earned, and any active professional licenses or registrations they hold. We review these documents to ensure they match the information presented on their profile.
+        </p>
+        <p class="text-sm text-gray-500 bg-gray-50 p-4 rounded-md border border-gray-200">
+          <strong>Important Note:</strong> Provider information is displayed for parent convenience. Parents should review each provider's profile, scope, credentials, region, and service limitations before booking.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">What "Verified Profile" means</h2>
+          <p class="text-gray-700 text-sm">
+            This badge indicates that the provider has submitted documentation verifying their identity and their primary educational degree or professional certification.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">What "License Verified" means</h2>
+          <p class="text-gray-700 text-sm">
+            This badge means we have reviewed proof of the provider's active license or registration with their regional governing body. The specific region of licensure will be noted on their profile.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">What "Educational Guidance Only" means</h2>
+          <p class="text-gray-700 text-sm">
+            This label indicates that the provider is offering coaching, parent education, or consultation services rather than clinical therapy or diagnosis. These services are typically available across borders.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">Self-Reported Credentials</h2>
+          <p class="text-gray-700 text-sm">
+            Some supplementary trainings, short courses, or specialized certificates may be self-reported by the provider without formal document verification by the platform. These will not have a "verified" tag next to them.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-brand-sky rounded-xl p-8 mb-8 border border-blue-100">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">What parents should check before booking</h2>
+        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+          <li>Check if the provider is licensed to offer the specific service you need in your location (especially for therapy or diagnosis).</li>
+          <li>Review the provider's stated service boundaries.</li>
+          <li>Confirm the pricing and whether it fits your budget.</li>
+          <li>Check the language and time zone availability.</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
+        <h2 class="text-xl font-bold text-brand-navy mb-4">Reporting Inaccurate Information</h2>
+        <p class="text-gray-700 mb-6">
+          If you believe a provider's profile contains inaccurate information regarding their credentials or scope of practice, please let us know.
+        </p>
+        <a href="/contact" class="inline-block bg-brand-navy text-white font-bold py-2 px-6 rounded-full hover:bg-blue-900 transition-colors">Contact Support</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/SEO.astro';
+import Schema from '../../components/Schema.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
+import ProviderDirectory from '../../components/ProviderDirectory.astro';
+import RegionFilterTabs from '../../components/RegionFilterTabs.astro';
+import ServiceBoundaryBanner from '../../components/ServiceBoundaryBanner.astro';
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Child Psychology Provider Directory",
+  "description": "Directory of child development professionals offering parent consultation and support.",
+  "url": "https://rabbiapsychologist.com/providers"
+};
+
+// Mock data - in a real app this would come from a CMS or database
+const providers = [
+  {
+    name: "Rabbia Ashraf",
+    title: "Clinical Child Psychologist",
+    country: "Pakistan",
+    timezone: "PKT (GMT+5)",
+    languages: ["English", "Urdu"],
+    areasOfSupport: ["ASD Support", "ADHD Support", "Behavior Support", "Parent Training"],
+    serviceType: "Consultation & Assessment",
+    verifiedCredentials: ["M.Phil Clinical Psychology", "MS Clinical Psychology", "PMDC Registered"],
+    licenseNote: "Licensed in Pakistan. International services are consultation only.",
+    serviceBoundaryNote: "Regulated therapy provided only in Pakistan.",
+    price: "From PKR 7,000 / USD 35",
+    bookingLink: "https://calendar.app.google/zMKejpnpCjh91WRG7",
+    profileSlug: "rabbia-ashraf"
+  }
+];
+---
+
+<Layout title="Provider Directory | Rabbia Ashraf & Associates">
+  <SEO
+    title="Provider Directory | Compare Child Development Specialists"
+    description="Browse our directory of verified child psychologists, autism consultants, and ADHD parent coaches. Choose the provider that fits your family's needs."
+  />
+  <Schema schema={collectionSchema} />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <main class="py-8 md:py-12 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Provider Directory</h1>
+        <p class="text-gray-700 max-w-3xl">
+          Browse verified professionals offering parent guidance, autism and ADHD support, and child development consultation.
+          Use the filters to find a provider that matches your region, language, and family's needs.
+        </p>
+      </div>
+
+      <RegionFilterTabs activeRegion="all" />
+      <ServiceBoundaryBanner region="All Regions" isInternational={true} />
+
+      <ProviderDirectory providers={providers} />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

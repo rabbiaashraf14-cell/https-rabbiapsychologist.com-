@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/SEO.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import DisclaimerBanner from '../../components/DisclaimerBanner.astro';
+import ProviderDirectory from '../../components/ProviderDirectory.astro';
+import RegionFilterTabs from '../../components/RegionFilterTabs.astro';
+import ServiceBoundaryBanner from '../../components/ServiceBoundaryBanner.astro';
+
+const providers = [
+  {
+    name: "Rabbia Ashraf",
+    title: "Clinical Child Psychologist",
+    country: "Pakistan",
+    timezone: "PKT (GMT+5)",
+    languages: ["English", "Urdu"],
+    areasOfSupport: ["ASD Support", "ADHD Support", "Behavior Support", "Parent Training"],
+    serviceType: "Consultation & Assessment",
+    verifiedCredentials: ["M.Phil Clinical Psychology", "MS Clinical Psychology", "PMDC Registered"],
+    licenseNote: "Licensed in Pakistan.",
+    serviceBoundaryNote: "In-person and online regulated therapy provided in Pakistan.",
+    price: "From PKR 7,000",
+    bookingLink: "https://calendar.app.google/zMKejpnpCjh91WRG7",
+    profileSlug: "rabbia-ashraf"
+  }
+];
+---
+
+<Layout title="Pakistan Providers | Rabbia Ashraf & Associates">
+  <SEO
+    title="Child Psychology Providers for Pakistan Families"
+    description="Find child development specialists, parent consultants, and behavioral support professionals serving families in Pakistan."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <main class="py-8 md:py-12 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Providers for Pakistan Families</h1>
+        <p class="text-gray-700 max-w-3xl">
+          Browse professionals offering clinical psychology, parent guidance, and child development services for families located in Pakistan.
+        </p>
+      </div>
+
+      <RegionFilterTabs activeRegion="pakistan" />
+      <ServiceBoundaryBanner region="Pakistan" isInternational={false} />
+
+      <ProviderDirectory providers={providers} />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
