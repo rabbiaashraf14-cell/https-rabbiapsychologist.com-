@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BlogCard from '../components/BlogCard.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Resources', href: '/resources' },
+  { name: 'Blog', href: '/blog' }
+];
+---
+
+<Layout title="Parenting Blog">
+  <SEO
+    title="Child Psychology & Parenting Blog"
+    description="Insights, articles, and practical advice on child development, managing ADHD/ASD, and behavior support."
+  />
+  <DisclaimerBanner />
+  <Header />
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+    <div class="max-w-4xl mx-auto mt-8 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Insights & Articles</h1>
+      <p class="text-xl text-gray-700">
+        Expert perspectives on development, neurodiversity, and navigating the parenting journey.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Placeholder Blog Posts -->
+      <BlogCard
+        title="Understanding the Difference Between a Tantrum and a Meltdown"
+        excerpt="Why the traditional advice to 'ignore it' doesn't work for sensory meltdowns and what to do instead."
+        date="October 15, 2023"
+        href="#"
+      />
+      <BlogCard
+        title="Creating a Morning Routine that Actually Works for ADHD"
+        excerpt="Stop the morning battles by externalizing executive function demands with these simple strategies."
+        date="September 28, 2023"
+        href="#"
+      />
+      <BlogCard
+        title="Why 'Look at me when I'm talking to you' Might Be Counterproductive"
+        excerpt="Exploring eye contact expectations and neurodiversity-affirming communication approaches."
+        date="September 10, 2023"
+        href="#"
+      />
+    </div>
+  </div>
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

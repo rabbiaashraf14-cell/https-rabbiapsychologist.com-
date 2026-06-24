@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'About', href: '/about' },
+  { name: 'Webinars & Symposiums', href: '/webinars' }
+];
+---
+
+<Layout title="Webinars & Symposiums">
+  <SEO
+    title="Parenting Webinars & Workshops"
+    description="Register for upcoming webinars and workshops on child development, neurodiversity, and parenting strategies."
+  />
+  <DisclaimerBanner />
+  <Header />
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+    <div class="max-w-4xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Webinars & Symposiums</h1>
+      <p class="text-xl text-gray-700 mb-12">
+        Join our live online events designed to provide accessible, expert education for parents and professionals globally.
+      </p>
+
+      <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">No upcoming events currently scheduled</h2>
+        <p class="text-gray-600 mb-6">Check back soon for our schedule of upcoming webinars and workshops on topics including executive function, emotional regulation, and behavior support.</p>
+        <a href="/contact" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-full font-bold hover:bg-blue-900 transition-colors">
+          Join Mailing List to be Notified
+        </a>
+      </div>
+    </div>
+  </div>
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

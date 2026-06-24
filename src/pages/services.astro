@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' }
+];
+---
+
+<Layout title="Services">
+  <SEO
+    title="Child Psychology Services | Autism, ADHD & Behavior Support"
+    description="Comprehensive child psychology services including global parent consultation, autism support, ADHD coaching, and behavior support planning."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Services</h1>
+      <p class="text-xl text-gray-700">
+        Evidence-based support for parents, tailored to your child's unique needs. From global consultations to specific interventions for Autism and ADHD.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <ServiceCard
+        title="Global Consultation"
+        description="Online parent consultation, developmental guidance, and psychoeducation for families worldwide."
+        href="/global-consultation"
+      />
+      <ServiceCard
+        title="Autism Support"
+        description="ASD parent training, developmental guidance, and tailored strategies for supporting neurodivergent children."
+        href="/autism-support"
+      />
+      <ServiceCard
+        title="ADHD Support"
+        description="ADHD executive function coaching, routine planning, and emotional regulation support."
+        href="/adhd-support"
+      />
+      <ServiceCard
+        title="Parent Training"
+        description="Structured parent strategy sessions and training packages to equip you with effective behavioral tools."
+        href="/parent-training"
+      />
+      <ServiceCard
+        title="Psychological Assessment"
+        description="Comprehensive psychological and developmental assessments (available locally in Lahore)."
+        href="/psychological-assessment"
+      />
+      <ServiceCard
+        title="School & IEP Consultation"
+        description="Collaborative school consultation and guidance for developing effective Individualized Education Programs."
+        href="/school-iep-consultation"
+      />
+      <ServiceCard
+        title="Behavior Support Planning"
+        description="Creating practical, effective plans to address challenging behaviors by understanding their root cause."
+        href="/behavior-support-planning"
+      />
+    </div>
+
+    <BookingCTA
+      title="Ready to get started?"
+      description="Book a consultation today to discuss your child's needs and develop a tailored support plan."
+    />
+  </div>
+
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

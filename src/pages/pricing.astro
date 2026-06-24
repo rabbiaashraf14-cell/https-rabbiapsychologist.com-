@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PricingCard from '../components/PricingCard.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Pricing', href: '/pricing' }
+];
+---
+
+<Layout title="Pricing & Packages">
+  <SEO
+    title="Consultation Fees & Program Pricing"
+    description="Transparent pricing for global parent consultation, ADHD/ASD support programs, and local psychological assessments."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Pricing</h1>
+      <p class="text-xl text-gray-700">
+        Transparent, accessible pricing for global consultations and comprehensive support packages.
+      </p>
+    </div>
+
+    <h2 id="sessions" class="text-2xl font-bold text-brand-navy mb-8 text-center">Individual Sessions</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <PricingCard
+        title="Initial Parent Consultation"
+        priceUSD="$35"
+        priceAUD="$55"
+        pricePKR="Rs. 7,000"
+        description="A comprehensive 45–60 minute initial assessment of your concerns and goal setting."
+        features={[
+          "Detailed intake review",
+          "Initial behavioral formulation",
+          "Actionable immediate strategies",
+          "Collaborative goal setting"
+        ]}
+      />
+      <PricingCard
+        title="Follow-up Session"
+        priceUSD="$35"
+        priceAUD="$55"
+        pricePKR="Rs. 7,000"
+        description="Ongoing support and adjustment of strategies based on progress."
+        features={[
+          "Progress review",
+          "Strategy troubleshooting",
+          "New tool introduction",
+          "Ongoing email support"
+        ]}
+      />
+      <PricingCard
+        title="School/IEP Consultation"
+        priceUSD="$75"
+        priceAUD="$115"
+        description="Collaborative session with educators to align home and school strategies."
+        features={[
+          "Review of current accommodations",
+          "Teacher collaboration",
+          "IEP goal recommendations",
+          "Behavior support plan alignment"
+        ]}
+      />
+    </div>
+
+    <h2 id="packages" class="text-2xl font-bold text-brand-navy mb-8 text-center mt-20">Specialized Programs</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <PricingCard
+        title="4-Session Training Package"
+        priceUSD="$160"
+        priceAUD="$245"
+        description="A structured foundation in behavior management and connection strategies."
+        features={[
+          "4 specialized consultation sessions",
+          "Customized behavior plan",
+          "Included worksheets and logs",
+          "Priority scheduling"
+        ]}
+        isPopular={true}
+      />
+      <PricingCard
+        title="ADHD Exec. Function Coaching"
+        priceUSD="$45/session"
+        priceAUD="$70/session"
+        description="Targeted support for attention, organization, and emotional regulation."
+        features={[
+          "Working memory strategies",
+          "Task initiation planning",
+          "Routine development",
+          "Emotional regulation tools"
+        ]}
+      />
+      <PricingCard
+        title="ASD Parent Guidance"
+        priceUSD="$45/session"
+        priceAUD="$70/session"
+        description="Tailored approaches for supporting your neurodivergent child."
+        features={[
+          "Neurodiversity-affirming strategies",
+          "Communication support",
+          "Sensory profile understanding",
+          "Meltdown management"
+        ]}
+      />
+    </div>
+
+    <h2 id="assessments" class="text-2xl font-bold text-brand-navy mb-8 text-center mt-20">Local Services (Lahore)</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+      <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-2">Psychological Assessment</h3>
+        <p class="text-gray-600 mb-4">Comprehensive in-person evaluation.</p>
+        <div class="text-2xl font-bold text-brand-navy mb-4">PKR 25,000+</div>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Full cognitive and developmental profile</li>
+          <li>• Detailed clinical report</li>
+          <li>• Feedback session</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-2">ADHD Screening</h3>
+        <p class="text-gray-600 mb-4">Structured assessment for ADHD diagnosis.</p>
+        <div class="text-2xl font-bold text-brand-navy mb-4">PKR 15,000+</div>
+        <ul class="space-y-2 text-gray-700">
+          <li>• Structured clinical interview</li>
+          <li>• Standardized rating scales</li>
+          <li>• Diagnostic report</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

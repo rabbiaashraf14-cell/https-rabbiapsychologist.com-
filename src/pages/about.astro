@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Schema from '../components/Schema.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'About', href: '/about' }
+];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rabbia Ashraf",
+  "jobTitle": "Clinical Child Psychologist",
+  "description": "Clinical Child Psychologist, Researcher, Behavior Therapist, ASD & ADHD Intervention Specialist based in Lahore, Pakistan."
+};
+---
+
+<Layout title="About Rabbia Ashraf">
+  <SEO
+    title="About Rabbia Ashraf | Clinical Child Psychologist"
+    description="Learn about Rabbia Ashraf's background as a Clinical Child Psychologist, Researcher, Behavior Therapist, and Neurodiversity specialist."
+  />
+  <Schema schema={personSchema} />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-8">About Rabbia Ashraf</h1>
+
+      <div class="prose prose-lg text-gray-700 max-w-none">
+        <p class="lead text-xl text-brand-navy font-medium mb-6">
+          I am a Clinical Child Psychologist, Researcher, Behavior Therapist, ASD & ADHD Intervention Specialist, and Child & Adolescent Mental Health professional based in Lahore, Pakistan.
+        </p>
+
+        <p>
+          My work is dedicated to helping parents understand their children better and providing evidence-based strategies to support their development. I believe in a compassionate, neurodiversity-affirming approach that looks beyond the surface behavior to understand what the child is communicating.
+        </p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">Professional Background</h2>
+        <ul class="space-y-2 list-disc pl-6 mb-8">
+          <li>Pediatric hospital experience</li>
+          <li>Parent training experience</li>
+          <li>ABA-informed intervention knowledge</li>
+          <li>Psychological assessment background</li>
+          <li>Play therapy exposure</li>
+          <li>Research/publication experience</li>
+          <li>Involvement in ECD and Neurodiversity professional work</li>
+        </ul>
+
+        <h2 id="approach" class="text-2xl font-bold text-brand-navy mt-10 mb-4">My Approach</h2>
+        <p>
+          Instead of simply asking "How do we stop this behavior?", my approach focuses on asking "What is this behavior communicating?" I work collaboratively with parents to create tailored support plans that address the root causes of behavioral and developmental challenges, empowering families with practical strategies they can implement in their daily lives.
+        </p>
+
+        <div class="mt-12 bg-brand-sky p-8 rounded-xl">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Connect on LinkedIn</h3>
+          <p class="mb-4">View my full professional profile, credentials, and latest updates on LinkedIn.</p>
+          <a href="https://www.linkedin.com/in/rabbiapsychologist" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-navy font-bold hover:text-blue-700">
+            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+            </svg>
+            linkedin.com/in/rabbiapsychologist
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

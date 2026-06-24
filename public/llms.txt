@@ -1,0 +1,20 @@
+# Rabbia Ashraf - Clinical Child Psychologist
+Global child psychology consultation and parent education platform.
+
+## About
+Rabbia Ashraf is a Clinical Child Psychologist, Researcher, Behavior Therapist, ASD & ADHD Intervention Specialist, and Child & Adolescent Mental Health professional based in Lahore, Pakistan.
+
+## Core Philosophy
+Instead of asking, "How do we stop this behavior?" we ask, "What is this behavior communicating?"
+
+## Services
+- Global Consultation: Online parent consultation and guidance.
+- Autism Support: Parent training and support planning.
+- ADHD Support: Executive function coaching.
+- Parent Training: Structured behavioral strategies.
+- Psychological Assessment: Available locally in Lahore.
+
+## Disclaimer
+Clinical therapy, diagnosis, and regulated psychological services are provided only where legally and ethically permitted. International consultations are educational, parent-guidance, and support-planning services.
+
+[Full details at /llms-full.txt]

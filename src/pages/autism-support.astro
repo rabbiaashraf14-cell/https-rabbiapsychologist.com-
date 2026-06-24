@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BookingCTA from '../components/BookingCTA.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' },
+  { name: 'Autism Support', href: '/autism-support' }
+];
+---
+
+<Layout title="Autism Support">
+  <SEO
+    title="Autism Parent Training & ASD Support Strategies"
+    description="Neurodiversity-affirming parent guidance, behavior support, and communication strategies for families with autistic children."
+  />
+  <DisclaimerBanner />
+  <Header />
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+    <div class="max-w-4xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Autism Support & Parent Guidance</h1>
+      <p class="text-xl text-gray-700 mb-12 border-l-4 border-brand-sky pl-4">
+        Empowering parents with neurodiversity-affirming strategies to support their autistic child's communication, sensory needs, and emotional regulation.
+      </p>
+      <div class="prose prose-lg text-gray-700 max-w-none">
+        <h2 class="text-2xl font-bold text-brand-navy">Understanding Over Changing</h2>
+        <p>Our approach to autism support is rooted in understanding and accommodating, rather than simply trying to extinguish behaviors. We focus on identifying what your child is communicating through their actions and how we can support their unique neurological profile.</p>
+        <div class="bg-gray-50 p-6 rounded-xl my-8 border border-gray-200">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Core Areas of Focus:</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Sensory Processing:</strong> Identifying sensory seeking/avoiding behaviors and creating a supportive environment.</li>
+            <li><strong>Communication:</strong> Supporting both verbal and non-verbal communication development.</li>
+            <li><strong>Meltdown Management:</strong> Differentiating between tantrums and meltdowns, and developing proactive de-escalation strategies.</li>
+            <li><strong>Daily Routines:</strong> Creating visual schedules and predictable transitions to reduce anxiety.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <BookingCTA />
+  </div>
+  <Footer />
+  <StickyMobileBookingCTA />
+</Layout>

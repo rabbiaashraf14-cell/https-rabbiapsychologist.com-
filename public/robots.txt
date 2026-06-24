@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rabbiapsychologist.com/sitemap-index.xml

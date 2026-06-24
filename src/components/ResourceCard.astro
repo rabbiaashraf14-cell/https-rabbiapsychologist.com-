@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  type: string;
+  description: string;
+  href: string;
+}
+
+const { title, type, description, href } = Astro.props;
+---
+
+<div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+  <div class="p-6 flex-grow flex flex-col">
+    <div class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">{type}</div>
+    <h3 class="text-xl font-bold text-brand-navy mb-3"><a href={href} class="hover:text-blue-700">{title}</a></h3>
+    <p class="text-gray-600 mb-4 flex-grow text-sm">{description}</p>
+    <a href={href} class="inline-flex items-center text-brand-navy font-medium hover:text-blue-700 text-sm">
+      Access Resource
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+  </div>
+</div>
