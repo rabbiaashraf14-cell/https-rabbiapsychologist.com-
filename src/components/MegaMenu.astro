@@ -21,12 +21,22 @@ const menuItems = [
     submenu: [
       { name: 'Choose a Provider', href: '/choose-a-provider' },
       { name: 'Not Sure Where to Start?', href: '/not-sure-where-to-start' },
-      { name: 'USA Families', href: '/providers/usa' },
-      { name: 'Australia Families', href: '/providers/australia' },
-      { name: 'UK & Europe Families', href: '/providers/uk-europe' },
-      { name: 'MENA & Gulf Families', href: '/providers/mena-gulf' },
-      { name: 'Pakistan Families', href: '/providers/pakistan' },
-      { name: 'International Schools', href: '/find-support#international-schools' }
+      {
+        name: 'International Families',
+        href: '/international-families',
+        nested: [
+          { name: 'Global Parent Consultation', href: '/global-consultation' },
+          { name: 'USA Families', href: '/online-parent-consultation-usa' },
+          { name: 'Australia Families', href: '/online-parent-consultation-australia' },
+          { name: 'UK & Europe Families', href: '/online-parent-consultation-uk-europe' },
+          { name: 'MENA & Gulf Families', href: '/online-parent-consultation-mena-gulf' },
+          { name: 'Pakistan Families', href: '/online-parent-consultation-pakistan' },
+          { name: 'International Schools', href: '/international-schools' },
+          { name: 'Before You Book', href: '/before-you-book-international' },
+          { name: 'Service Boundaries', href: '/service-boundaries' },
+          { name: 'Privacy for International Families', href: '/privacy-for-international-families' },
+        ]
+      },
     ]
   },
   {
@@ -114,10 +124,28 @@ const menuItems = [
         <div class="absolute top-full left-0 mt-0 w-64 bg-white shadow-lg rounded-b-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border-t border-brand-sky">
           <ul class="flex flex-col">
             {item.submenu.map(subitem => (
-              <li>
-                <a href={subitem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-sky hover:text-brand-navy">
+              <li class="relative group/nested">
+                <a href={subitem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-sky hover:text-brand-navy flex justify-between items-center">
                   {subitem.name}
+                  {subitem.nested && (
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  )}
                 </a>
+                {subitem.nested && (
+                  <div class="absolute top-0 left-full mt-0 w-64 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 z-50 py-2 border-l border-brand-sky -ml-1">
+                    <ul class="flex flex-col">
+                      {subitem.nested.map(nestedItem => (
+                        <li>
+                          <a href={nestedItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-sky hover:text-brand-navy">
+                            {nestedItem.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

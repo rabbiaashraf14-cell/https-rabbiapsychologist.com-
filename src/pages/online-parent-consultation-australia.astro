@@ -3,27 +3,105 @@ import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import BookingCTA from '../components/BookingCTA.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
----
+import RegionHero from '../components/RegionHero.astro';
+import RegionProviderList from '../components/RegionProviderList.astro';
+import InternationalDisclaimerBanner from '../components/InternationalDisclaimerBanner.astro';
+import RegionFAQAccordion from '../components/RegionFAQAccordion.astro';
+import RegionPricingCards from '../components/RegionPricingCards.astro';
+import Schema from '../components/Schema.astro';
 
-<Layout title="Online Parent Consultation Australia">
+const faqs = [
+  { question: "Can Australian families book?", answer: "Yes, parents in Australia can access our online parent education and developmental guidance." },
+  { question: "Is this therapy or parent guidance?", answer: "Our international services are strictly parent guidance and education. We do not provide regulated psychological therapy for clients in Australia." },
+  { question: "Can I choose an Australian provider if one is available?", answer: "Yes, you can check our provider directory for professionals who may hold specific Australian registrations or experience." },
+  { question: "Can this replace a local psychologist?", answer: "No. If your child requires clinical treatment, formal assessment, or crisis support, you should consult a local registered psychologist." },
+  { question: "Can this help with school communication?", answer: "Yes, we can help you prepare to discuss your child's needs with their teachers or school support team." },
+  { question: "Can you support ASD/ADHD home routines?", answer: "Absolutely. We specialize in providing practical, actionable strategies for building routines at home." },
+  { question: "What if my child needs formal assessment?", answer: "You will need to see a pediatrician or registered psychologist in Australia for formal diagnostic assessments." },
+  { question: "What should I prepare?", answer: "Identify the main behaviors or routines you want to improve, and gather any existing reports for context." }
+];
+---
+<Layout title="Online Parent Consultation Australia | Rabbia Ashraf">
   <SEO
-    title="Online Parent Consultation & Guidance for Australian Families"
-    description="Expert educational parent consultation, behavior support planning, and developmental guidance for families across Australia."
+    title="Online Parent Consultation for Australian Families"
+    description="Parent education, ASD/ADHD routines, school communication preparation, behavior support planning, and developmental guidance for families in Australia."
+    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-australia"
+    ogTitle="Online Parent Consultation for Australian Families"
   />
-  <DisclaimerBanner />
+
+  <Schema
+    type="FAQPage"
+    data={{
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }}
+  />
+
   <Header />
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="max-w-4xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Online Parent Consultation for Australian Families</h1>
-      <p class="text-xl text-gray-700 mb-8 border-l-4 border-brand-sky pl-4">
-        Providing specialized educational guidance and behavioral strategy sessions for parents in Australia navigating ADHD, ASD, and behavioral challenges.
-      </p>
-      <BookingCTA />
+
+  <RegionHero
+    regionName="Australia Families"
+    heroTitle="Online Parent Consultation for Australian Families"
+    heroSubtitle="For parents in Australia seeking parent education, ASD/ADHD routines, school communication preparation, behavior support planning, and developmental guidance."
+  />
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+      <InternationalDisclaimerBanner text="International support for Australian families may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider's credentials and the client's location." />
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">Common concerns Australian parents bring</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Looking for interim support while on waitlists for pediatricians or allied health.</li>
+          <li>Needing practical strategies for neurodivergent children (ASD/ADHD) at home.</li>
+          <li>Seeking guidance on how to communicate effectively with schools.</li>
+          <li>Wanting to understand behavior triggers and build better family routines.</li>
+        </ul>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-8 my-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">What consultation may include</h2>
+          <ul class="space-y-2 text-gray-700">
+            <li>✔ Parent coaching on behavioral strategies.</li>
+            <li>✔ Developing visual supports and home routines.</li>
+            <li>✔ Psychoeducation regarding developmental profiles.</li>
+            <li>✔ School collaboration support and preparation.</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100">
+           <h2 class="text-xl font-bold text-red-800 mb-4">What regulated services require</h2>
+           <ul class="space-y-2 text-gray-800">
+            <li>✘ We do not provide NDIS-funded therapies.</li>
+            <li>✘ We do not offer registered psychological services in Australia unless explicitly stated by a specific provider.</li>
+            <li>✘ We cannot formally diagnose conditions or complete Medicare-rebated plans.</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">When to seek a locally registered professional</h2>
+        <p class="text-gray-700">If you are seeking to access NDIS funding, require a formal diagnosis, or need Medicare-subsidized mental health care plans, you must engage with an Australian registered psychologist, pediatrician, or appropriate allied health professional.</p>
+      </section>
+
+      <RegionProviderList region="Australia Families" providers={[]} />
+
+      <RegionPricingCards />
+
+      <section class="my-16">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Australia FAQs</h2>
+        <RegionFAQAccordion faqs={faqs} />
+      </section>
+
     </div>
-  </div>
+  </main>
+
   <Footer />
-  <StickyMobileBookingCTA />
 </Layout>

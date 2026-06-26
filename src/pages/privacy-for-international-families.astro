@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PrivacyNoticeBlock from '../components/PrivacyNoticeBlock.astro';
+---
+<Layout title="Privacy for International Families | Rabbia Ashraf">
+  <SEO
+    title="Privacy for International Families"
+    description="Understanding how your family's data is handled during international online parent consultations."
+    canonicalUrl="https://rabbiaashraf.com/privacy-for-international-families"
+    ogTitle="Privacy for International Families"
+  />
+
+  <Header />
+
+  <div class="bg-brand-navy py-16 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">Privacy & Data Handling</h1>
+      <p class="text-xl text-gray-300">
+        Committed to the secure and ethical handling of your family's information.
+      </p>
+    </div>
+  </div>
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 my-8">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">Data Collection & Use</h2>
+
+        <section class="space-y-6 text-gray-700">
+          <div>
+            <h3 class="font-bold text-lg mb-2">What information may be collected</h3>
+            <p>We collect basic contact details, consent forms, and contextual information about your child's developmental history necessary to provide effective educational guidance.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Why information is collected</h3>
+            <p>Information is used solely to prepare for your consultation, understand your family's needs, and provide relevant strategies. We do not sell your data.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Email/Form Limitations and Sensitive Information Caution</h3>
+            <p>Standard email and contact forms are not inherently secure. We strongly advise against sending highly sensitive medical records or identifying child information through unsecured channels. Use the secure portals provided by your practitioner after booking.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Provider Sharing Consent</h3>
+            <p>Your information is only shared with the specific provider you book with. It is not shared across all providers on the platform without your explicit consent.</p>
+          </div>
+        </section>
+      </div>
+
+      <PrivacyNoticeBlock />
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
