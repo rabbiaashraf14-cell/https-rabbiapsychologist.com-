@@ -3,30 +3,110 @@ import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import BookingCTA from '../components/BookingCTA.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
----
+import RegionHero from '../components/RegionHero.astro';
+import RegionProviderList from '../components/RegionProviderList.astro';
+import InternationalDisclaimerBanner from '../components/InternationalDisclaimerBanner.astro';
+import RegionFAQAccordion from '../components/RegionFAQAccordion.astro';
+import RegionPricingCards from '../components/RegionPricingCards.astro';
+import ChooseProviderCTA from '../components/ChooseProviderCTA.astro';
+import Schema from '../components/Schema.astro';
 
-<Layout title="Online Parent Consultation USA">
+const faqs = [
+  { question: "Can USA families book a consultation?", answer: "Yes, USA families can book educational consultations and parent guidance sessions." },
+  { question: "Is this therapy?", answer: "No. For USA families, these services are strictly parent education and consultation, not psychological therapy." },
+  { question: "Can my child be diagnosed online?", answer: "No. We cannot provide medical or psychological diagnoses for clients in the USA." },
+  { question: "Can this help while we wait for local assessment?", answer: "Yes, we provide strategies you can use at home while you wait for a formal evaluation by a USA-licensed professional." },
+  { question: "Can you help me prepare for school/IEP meetings?", answer: "We can help you understand reports, organize your thoughts, and suggest accommodations to discuss with your school team." },
+  { question: "Can I choose a USA-based provider if available?", answer: "Yes, if a USA-based provider is listed in our directory, you may select them based on their specific credentials and service scope." },
+  { question: "What if my child needs urgent care?", answer: "Please contact 911 or go to your nearest emergency room. This platform does not provide crisis intervention." },
+  { question: "What should I prepare before booking?", answer: "Have your primary concerns outlined and any previous reports ready for review, understanding they will be used for educational context only." }
+];
+---
+<Layout title="Online Parent Consultation USA | Rabbia Ashraf & Associates">
   <SEO
-    title="Online Parent Consultation & Guidance for USA Families"
-    description="Expert educational parent consultation, behavior support planning, and developmental guidance for families across the United States."
+    title="Online Parent Consultation for USA Families"
+    description="Educational guidance, ASD/ADHD parent strategies, behavior support planning, and IEP preparation for parents in the USA."
+    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-usa"
+    ogTitle="Online Parent Consultation for USA Families"
   />
-  <DisclaimerBanner />
+  <Schema
+    type="FAQPage"
+    data={{
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }}
+  />
+
   <Header />
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="max-w-4xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Online Parent Consultation for USA Families</h1>
-      <p class="text-xl text-gray-700 mb-8 border-l-4 border-brand-sky pl-4">
-        Providing specialized educational guidance and behavioral strategy sessions for parents in the United States navigating ADHD, ASD, and behavioral challenges.
-      </p>
-      <div class="bg-brand-lavender p-4 rounded-lg mb-8 text-sm">
-        <strong>Important Note for US Residents:</strong> Services provided internationally to the USA are strictly educational parent-coaching and strategy-planning. They do not constitute licensed medical or psychological treatment, diagnosis, or therapy under state licensing board regulations.
+
+  <RegionHero
+    regionName="USA Families"
+    heroTitle="Online Parent Consultation for USA Families"
+    heroSubtitle="For parents in the USA seeking educational guidance, ASD/ADHD parent strategies, behavior support planning, executive-function routines, resource guidance, and school communication preparation."
+  />
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+      <InternationalDisclaimerBanner text="International support for USA families may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider's credentials and the client's location." />
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">Common concerns USA parents bring</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Navigating long waitlists for developmental pediatricians.</li>
+          <li>Seeking practical strategies for ADHD and executive function challenges at home.</li>
+          <li>Needing guidance on how to advocate during IEP (Individualized Education Program) meetings.</li>
+          <li>Managing intense meltdowns or behavioral challenges.</li>
+        </ul>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-8 my-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">What parent consultation may include</h2>
+          <ul class="space-y-2 text-gray-700">
+            <li>✔ Brainstorming behavior support plans.</li>
+            <li>✔ Creating visual schedules and routines.</li>
+            <li>✔ Reviewing past evaluations to explain terminology.</li>
+            <li>✔ Preparing questions for your local medical team.</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-6 rounded-lg border border-red-100">
+           <h2 class="text-xl font-bold text-red-800 mb-4">What this service does NOT replace</h2>
+           <ul class="space-y-2 text-gray-800">
+            <li>✘ USA licensed psychological therapy.</li>
+            <li>✘ Medical diagnosis or psychiatric care.</li>
+            <li>✘ Insurance-covered treatment (we do not accept US health insurance).</li>
+          </ul>
+        </div>
       </div>
-      <BookingCTA />
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">School/IEP Preparation Support</h2>
+        <p class="text-gray-700">We assist parents in understanding their child's learning profile to better collaborate with US public and private schools. We do not provide legal advocacy, but we empower you with the knowledge to request appropriate accommodations.</p>
+      </section>
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">When to Seek Local Licensed Care</h2>
+        <p class="text-gray-700">If your child requires an official diagnosis to access school services or insurance-funded therapies (like ABA, Speech, or OT), you must seek an evaluation from a provider licensed in your specific state.</p>
+      </section>
+
+      <RegionProviderList region="USA Families" providers={[]} />
+
+      <RegionPricingCards />
+
+      <section class="my-16">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">USA FAQs</h2>
+        <RegionFAQAccordion faqs={faqs} />
+      </section>
+
     </div>
-  </div>
+  </main>
+
   <Footer />
-  <StickyMobileBookingCTA />
 </Layout>

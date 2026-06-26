@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RegionHero from '../components/RegionHero.astro';
+import RegionProviderList from '../components/RegionProviderList.astro';
+import RegionFAQAccordion from '../components/RegionFAQAccordion.astro';
+import RegionPricingCards from '../components/RegionPricingCards.astro';
+import Schema from '../components/Schema.astro';
+
+const faqs = [
+  { question: "Can I book with Rabbia directly?", answer: "Yes, you can book a consultation directly with Clinical Director Rabbia Ashraf using the booking links provided." },
+  { question: "Is in-person assessment available?", answer: "Yes, in-person psychological assessments (such as for Autism or ADHD) may be available locally in Lahore, Pakistan. Please inquire during your initial consultation." },
+  { question: "What is the price?", answer: "Consultations with Rabbia are PKR 7,000. Prices for other services or assessments vary based on scope." },
+  { question: "Can you guide parents for ASD/ADHD?", answer: "Yes, we specialize in parent training and guidance for supporting children with Autism and ADHD." },
+  { question: "Can you help with school complaints?", answer: "We can provide school consultation to help teachers and parents align on behavior support and accommodations." },
+  { question: "What should I bring for assessment?", answer: "Any previous medical records, school reports, or notes on your child's developmental history." },
+  { question: "Is this emergency care?", answer: "No. If your child is in immediate danger, please go to the nearest hospital." }
+];
+---
+<Layout title="Child Psychology Support Pakistan | Rabbia Ashraf">
+  <SEO
+    title="Parent Consultation and Child Psychology Support in Pakistan"
+    description="Child psychology consultation, parent guidance, ASD/ADHD support, and local assessment pathways for families in Pakistan."
+    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-pakistan"
+    ogTitle="Parent Consultation and Child Psychology Support in Pakistan"
+  />
+
+  <Schema
+    type="FAQPage"
+    data={{
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }}
+  />
+
+  <Header />
+
+  <RegionHero
+    regionName="Pakistan Families"
+    heroTitle="Parent Consultation and Child Psychology Support in Pakistan"
+    heroSubtitle="For families in Pakistan seeking child psychology consultation, parent guidance, ASD/ADHD support, behavior support, school consultation, and local assessment pathways where available."
+  />
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+      <!-- No strict international disclaimer needed here as the provider is locally registered -->
+      <div class="bg-blue-50 text-brand-navy p-4 sm:p-6 rounded-lg text-sm md:text-base leading-relaxed border-l-4 border-brand-trust my-8">
+        <p>
+          <strong>Note for families in Pakistan:</strong> As our Clinical Director is locally registered, families in Pakistan may have access to a broader scope of services, including formal psychological assessments and diagnostic pathways, either online or via local clinic partnerships.
+        </p>
+      </div>
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">Common concerns parents bring</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Concerns about delayed speech or developmental milestones.</li>
+          <li>Behavioral challenges, defiance, or frequent meltdowns at home.</li>
+          <li>Questions about whether a child may have Autism (ASD) or ADHD.</li>
+          <li>Difficulties managing the child's behavior within the school environment.</li>
+        </ul>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-8 my-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">Parent Consultation</h2>
+          <p class="text-gray-700">Expert guidance on how to manage your child's behavior, establish effective routines, and foster emotional regulation. We equip you with the skills to be your child's best advocate.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">Local Psychological Assessment</h2>
+          <p class="text-gray-700">We offer pathways for comprehensive psychological and developmental assessments (e.g., ADOS-2, cognitive testing) through local clinical facilities in Lahore.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">ASD & ADHD Support</h2>
+          <p class="text-gray-700">Specialized intervention planning and parent coaching for neurodivergent children, focusing on executive functioning and daily life skills.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">School Support</h2>
+          <p class="text-gray-700">Collaboration with local schools to develop behavior support plans and ensure your child's learning environment is accommodating their needs.</p>
+        </div>
+      </div>
+
+      <!-- Book with Rabbia Section specific to Pakistan -->
+      <section class="my-16 bg-brand-navy text-white rounded-xl p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Consultation with Rabbia Ashraf</h2>
+        <p class="text-xl mb-2">Clinical Psychologist & Founder</p>
+        <p class="text-brand-sky font-medium text-lg mb-8">Fee: PKR 7,000</p>
+        <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-brand-navy font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors">
+          Book Appointment
+        </a>
+      </section>
+
+      <RegionProviderList region="Pakistan" providers={[]} />
+
+      <section class="my-16">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Pakistan FAQs</h2>
+        <RegionFAQAccordion faqs={faqs} />
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

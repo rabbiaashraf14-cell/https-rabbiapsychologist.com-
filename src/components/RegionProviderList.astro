@@ -1,0 +1,44 @@
+---
+import ProviderCard from './ProviderCard.astro';
+import ChooseProviderCTA from './ChooseProviderCTA.astro';
+
+interface Provider {
+  name: string;
+  role: string;
+  image: string;
+  credentials: string[];
+  bio: string;
+  href: string;
+}
+
+interface Props {
+  region: string;
+  providers?: Provider[];
+}
+
+const { region, providers = [] } = Astro.props;
+---
+<div class="my-12">
+  <h3 class="text-2xl font-bold text-brand-navy mb-6 text-center">Providers for {region}</h3>
+
+  {providers.length > 0 ? (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {providers.map((provider) => (
+        <ProviderCard provider={provider} />
+      ))}
+    </div>
+  ) : (
+    <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 text-center max-w-3xl mx-auto">
+      <svg class="h-12 w-12 text-brand-trust mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+      </svg>
+      <p class="text-gray-700 leading-relaxed">
+        No region-specific provider is currently listed here. Families may still access parent education, resources, and general guidance where appropriate. For regulated therapy, diagnosis, or assessment, please consult a locally licensed professional.
+      </p>
+    </div>
+  )}
+
+  <div class="mt-12">
+    <ChooseProviderCTA />
+  </div>
+</div>

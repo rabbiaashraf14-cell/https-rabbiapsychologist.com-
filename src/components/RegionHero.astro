@@ -1,0 +1,20 @@
+---
+interface Props {
+  regionName: string;
+  heroTitle: string;
+  heroSubtitle: string;
+}
+
+const { regionName, heroTitle, heroSubtitle } = Astro.props;
+---
+<div class="bg-brand-navy py-16 md:py-24 text-center">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <p class="text-brand-sky font-medium tracking-wide uppercase mb-4">{regionName}</p>
+    <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+      {heroTitle}
+    </h1>
+    <p class="text-xl text-gray-300">
+      {heroSubtitle}
+    </p>
+  </div>
+</div>

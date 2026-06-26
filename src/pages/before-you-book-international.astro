@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BeforeYouBookChecklist from '../components/BeforeYouBookChecklist.astro';
+import ChooseProviderCTA from '../components/ChooseProviderCTA.astro';
+
+---
+<Layout title="Before You Book | International Consultation">
+  <SEO
+    title="Before You Book an International Consultation"
+    description="Checklist and guidelines to ensure you select the right support type, understand service boundaries, and prepare for your online consultation."
+    canonicalUrl="https://rabbiaashraf.com/before-you-book-international"
+    ogTitle="Before You Book an International Consultation"
+  />
+
+  <Header />
+
+  <div class="bg-brand-navy py-16 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">Before You Book</h1>
+      <p class="text-xl text-gray-300">
+        Review this checklist to ensure you understand our service boundaries and how to prepare for a successful consultation.
+      </p>
+    </div>
+  </div>
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+      <BeforeYouBookChecklist />
+
+      <div class="my-12 space-y-8">
+        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">1. Understand Privacy and Consent</h2>
+          <p class="text-gray-700">We require explicit parental consent for consultations discussing minors. Please review our <a href="/privacy-for-international-families" class="text-brand-trust hover:underline">Privacy Policy for International Families</a> to understand how your data is handled.</p>
+        </section>
+
+        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">2. Understand Emergency Limitations</h2>
+          <p class="text-gray-700">This platform <strong>does not provide emergency care or crisis intervention.</strong> If there is a risk of harm to self or others, or severe psychiatric distress, please seek immediate help from local emergency services or hospitals.</p>
+        </section>
+
+        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">3. Prepare Documents</h2>
+          <p class="text-gray-700 mb-4">To make the most of your session, consider gathering:</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Any previous developmental or psychological reports (for context only).</li>
+            <li>Recent school reports or IEPs.</li>
+            <li>A list of the top 2-3 behaviors or routines you want to focus on.</li>
+          </ul>
+        </section>
+      </div>
+
+      <ChooseProviderCTA />
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

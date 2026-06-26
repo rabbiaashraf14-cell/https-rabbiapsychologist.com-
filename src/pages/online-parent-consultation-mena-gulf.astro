@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RegionHero from '../components/RegionHero.astro';
+import RegionProviderList from '../components/RegionProviderList.astro';
+import InternationalDisclaimerBanner from '../components/InternationalDisclaimerBanner.astro';
+import RegionFAQAccordion from '../components/RegionFAQAccordion.astro';
+import RegionPricingCards from '../components/RegionPricingCards.astro';
+import Schema from '../components/Schema.astro';
+
+const faqs = [
+  { question: "Can families from UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain, or other MENA regions book?", answer: "Yes, our educational parent guidance services are available to families across the MENA and Gulf regions." },
+  { question: "Is this therapy or parent consultation?", answer: "This is parent consultation and psychoeducation. We do not provide medical treatment or regulated therapy across international borders." },
+  { question: "Can this help with school behavior concerns?", answer: "Yes, we can provide strategies for you to implement at home and share with your child's school to support positive behavior." },
+  { question: "Can this support autism or ADHD parent routines?", answer: "Absolutely. Creating structured, supportive routines for neurodivergent children is a core part of our consultation service." },
+  { question: "Can I choose a MENA/Gulf provider if available?", answer: "Yes. You can select providers who have experience working with expatriate or local families in the region, ensuring cultural sensitivity." },
+  { question: "What if formal diagnosis is needed?", answer: "You must seek out a licensed developmental pediatrician or child psychiatrist locally within your country of residence." },
+  { question: "What should I prepare before booking?", answer: "Prepare a list of your top three concerns (e.g., sleep, school refusal, meltdowns) so the provider can focus the session on actionable solutions." }
+];
+---
+<Layout title="Online Parent Consultation MENA & Gulf | Rabbia Ashraf">
+  <SEO
+    title="Online Parent Consultation for MENA & Gulf Families"
+    description="Culturally sensitive parent guidance, ASD/ADHD support planning, behavior strategies, and school support for MENA and Gulf regions."
+    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-mena-gulf"
+    ogTitle="Online Parent Consultation for MENA & Gulf Families"
+  />
+
+  <Schema
+    type="FAQPage"
+    data={{
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }}
+  />
+
+  <Header />
+
+  <RegionHero
+    regionName="MENA & Gulf Families"
+    heroTitle="Online Parent Consultation for MENA & Gulf Families"
+    heroSubtitle="For families in MENA and Gulf regions seeking culturally sensitive parent guidance, ASD/ADHD support planning, behavior strategies, home routines, and school communication support."
+  />
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+      <InternationalDisclaimerBanner text="International support for MENA/Gulf families may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider's credentials and the client's location." />
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">Common concerns MENA/Gulf parents bring</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Expatriate families seeking English-speaking, culturally competent guidance.</li>
+          <li>Needing support navigating school environments and requesting accommodations.</li>
+          <li>Seeking practical strategies for managing challenging behaviors at home.</li>
+          <li>Looking for structured ASD/ADHD support planning and routines.</li>
+        </ul>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-8 my-12">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">Culturally Sensitive Parent Guidance</h2>
+          <p class="text-gray-700">We understand the unique dynamics of expatriate and local families in the Gulf region. Our consultation respects family structures, language nuances, and the specific challenges of navigating international or private school systems.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">ASD and ADHD Support Planning</h2>
+          <p class="text-gray-700">We provide evidence-informed strategies to help parents build supportive environments for neurodivergent children, focusing on visual schedules, sensory needs, and executive functioning support.</p>
+        </div>
+      </div>
+
+      <section class="my-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Language and Family Communication</h2>
+        <p class="text-gray-700">Consultations are primarily offered in English (and Urdu/Hindi depending on the provider). We can help parents develop strategies to communicate consistently with extended family members or nannies/caregivers about the child's support plan.</p>
+      </section>
+
+      <RegionProviderList region="MENA & Gulf Families" providers={[]} />
+
+      <RegionPricingCards />
+
+      <section class="my-16">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">MENA/Gulf FAQs</h2>
+        <RegionFAQAccordion faqs={faqs} />
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ReferralGuidanceCards from '../components/ReferralGuidanceCards.astro';
+import ChooseProviderCTA from '../components/ChooseProviderCTA.astro';
+---
+<Layout title="When to Seek Local Care | Referral Guidance">
+  <SEO
+    title="When to Seek Local Care or Assessment"
+    description="Guidance for parents on when to seek local regulated care, formal diagnosis, or emergency services instead of online consultation."
+    canonicalUrl="https://rabbiaashraf.com/referral-guidance"
+    ogTitle="When to Seek Local Care or Assessment"
+  />
+
+  <Header />
+
+  <div class="bg-brand-navy py-16 text-center">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">When to Seek Local Care</h1>
+      <p class="text-xl text-gray-300">
+        Understanding when online consultation is appropriate and when you need in-person or locally regulated professionals.
+      </p>
+    </div>
+  </div>
+
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-12">
+         <h2 class="text-2xl font-bold text-brand-navy mb-6">The Limits of Online Consultation</h2>
+         <p class="text-gray-700 mb-4">
+           Our online platform provides excellent educational, behavioral, and developmental guidance for parents. However, there are strict legal, ethical, and practical limitations to what can be achieved online across international borders.
+         </p>
+         <p class="text-gray-700">
+           For formal diagnosis, intensive therapy, and crisis management, you <strong>must</strong> engage with professionals in your local area.
+         </p>
+      </div>
+
+      <ReferralGuidanceCards />
+
+      <section class="my-16">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 text-center">Who to Consult Locally</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+           <div class="bg-white p-6 rounded-lg border border-gray-200">
+             <h3 class="font-bold text-lg mb-2">Local / Developmental Pediatrician</h3>
+             <p class="text-sm text-gray-700">For initial medical screening, formal medical diagnosis (including Autism/ADHD in many regions), and referrals to local allied health.</p>
+           </div>
+           <div class="bg-white p-6 rounded-lg border border-gray-200">
+             <h3 class="font-bold text-lg mb-2">Registered Psychologist</h3>
+             <p class="text-sm text-gray-700">For standardized cognitive, educational, or psychological assessments, formal diagnosis, and ongoing clinical therapy.</p>
+           </div>
+           <div class="bg-white p-6 rounded-lg border border-gray-200">
+             <h3 class="font-bold text-lg mb-2">Psychiatrist</h3>
+             <p class="text-sm text-gray-700">For complex psychiatric evaluations and medication prescribing and management.</p>
+           </div>
+           <div class="bg-white p-6 rounded-lg border border-gray-200">
+             <h3 class="font-bold text-lg mb-2">Speech & Occupational Therapists</h3>
+             <p class="text-sm text-gray-700">For direct, hands-on intervention regarding speech delays, motor skills, or sensory processing disorders.</p>
+           </div>
+        </div>
+      </section>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-6 max-w-2xl mx-auto">If you are confident that parent guidance and educational consultation is the right fit for your current needs, you can explore our providers below.</p>
+        <ChooseProviderCTA />
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

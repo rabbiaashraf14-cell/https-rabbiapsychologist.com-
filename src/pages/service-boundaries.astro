@@ -4,88 +4,59 @@ import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import ServiceBoundaryTable from '../components/ServiceBoundaryTable.astro';
 ---
 
-<Layout title="Service Boundaries | Rabbia Ashraf & Associates">
+<Layout title="Understanding Service Boundaries | Rabbia Ashraf">
   <SEO
-    title="International Service Boundaries | Child Development Support"
-    description="Understanding the legal and ethical boundaries of international parent consultation vs. regulated psychological therapy."
+    title="Understanding Service Boundaries"
+    description="Clear definitions of parent education, consultation, developmental guidance, psychological therapy, and assessment."
+    canonicalUrl="https://rabbiaashraf.com/service-boundaries"
+    ogTitle="Understanding Service Boundaries"
   />
 
   <DisclaimerBanner />
   <Header />
 
   <main class="py-12 md:py-20 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Service Boundaries</h1>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Understanding Service Boundaries</h1>
       <p class="text-xl text-gray-700 mb-12 text-center">
-        Clear boundaries ensure ethical, safe, and effective support for your family.
+        Clear boundaries ensure ethical, safe, and effective support for your family across international borders.
       </p>
 
       <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 space-y-8">
 
         <section>
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">International Consultations</h2>
-          <div class="bg-blue-50 border-l-4 border-brand-trust p-6 text-gray-800">
-            <p>
-              International consultations may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, and referral guidance.
-            </p>
-            <p class="mt-4 font-bold">
-              Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted.
-            </p>
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">What Our Services Encompass</h2>
+          <div class="prose max-w-none text-gray-700">
+            <p><strong>Parent Education:</strong> Providing general, evidence-informed information about child development, neurodiversity (like ASD or ADHD), and parenting strategies.</p>
+            <p><strong>Parent Consultation:</strong> A collaborative discussion focused on understanding your family's unique dynamics and problem-solving specific challenges.</p>
+            <p><strong>Developmental Guidance:</strong> Supporting parents in understanding milestones and creating environments that foster growth.</p>
+            <p><strong>Executive-Function Coaching:</strong> Helping parents design routines and visual supports to build their child's organizational and self-regulation skills.</p>
+            <p><strong>Behavior Support Planning:</strong> Identifying the "why" behind challenging behaviors and developing proactive, positive strategies for the home.</p>
+            <p><strong>School Consultation:</strong> Assisting parents and teachers in aligning on support strategies and understanding educational accommodations.</p>
           </div>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">What to Expect from Consultation</h2>
-          <ul class="space-y-4 text-gray-700">
-            <li class="flex items-start">
-              <svg class="h-6 w-6 text-brand-growth mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span><strong>Skill-building focus:</strong> We focus on equipping parents with strategies to support their child's development.</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-6 w-6 text-brand-growth mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span><strong>Proactive strategies:</strong> We work on routines, environmental adjustments, and understanding behavior.</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-6 w-6 text-brand-growth mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span><strong>Educational nature:</strong> The information provided is educational and not a substitute for local medical or psychological treatment.</span>
-            </li>
-          </ul>
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">What Requires Local Regulated Care</h2>
+          <div class="prose max-w-none text-gray-700">
+            <p><strong>Psychological Therapy:</strong> Direct, individualized treatment of mental health disorders (e.g., severe anxiety, depression, trauma). This requires a provider licensed in the client's jurisdiction.</p>
+            <p><strong>Psychological Assessment & Diagnosis:</strong> The formal administration of standardized tests (like the ADOS-2 or WISC) to diagnose conditions such as Autism or ADHD. We do not provide this internationally.</p>
+            <p><strong>Emergency Care:</strong> Immediate intervention for individuals at risk of harming themselves or others, or those experiencing severe psychiatric crises. Our platform is not equipped for emergency response.</p>
+          </div>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">What is NOT Included in Consultation</h2>
-          <ul class="space-y-4 text-gray-700">
-            <li class="flex items-start">
-              <svg class="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              <span><strong>Diagnosis:</strong> We cannot diagnose Autism, ADHD, or any other condition for clients located outside of a provider's licensed jurisdiction.</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              <span><strong>Crisis Intervention:</strong> We cannot provide support for active self-harm, abuse, or acute mental health crises.</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              <span><strong>Prescriptions:</strong> We do not prescribe or manage medication.</span>
-            </li>
-          </ul>
+        <section class="mt-12">
+          <h2 class="text-2xl font-bold text-brand-navy mb-6">Service Comparison Table</h2>
+          <ServiceBoundaryTable />
         </section>
 
-        <div class="mt-8 text-center">
-          <a href="/choose-a-provider" class="text-brand-trust hover:underline font-medium">Continue to Choose a Provider &rarr;</a>
+        <div class="mt-12 text-center">
+          <a href="/choose-a-provider" class="inline-block bg-brand-trust text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+            Choose a Provider
+          </a>
         </div>
 
       </div>
