@@ -1,0 +1,42 @@
+---
+import ProviderCard from './ProviderCard.astro';
+import ProviderFilterPanel from './ProviderFilterPanel.astro';
+
+export interface Props {
+  providers: any[];
+}
+
+const { providers } = Astro.props;
+---
+
+<div class="flex flex-col lg:flex-row gap-8">
+  <div class="w-full lg:w-1/4">
+    <ProviderFilterPanel />
+  </div>
+
+  <div class="w-full lg:w-3/4">
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold text-brand-navy mb-2">Available Providers</h2>
+      <p class="text-gray-600 text-sm">
+        The platform presents provider information, education, resources, and booking pathways for parent convenience. It does not replace local medical, psychological, educational, legal, or emergency services.
+      </p>
+    </div>
+
+    {providers.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {providers.map(provider => (
+          <ProviderCard provider={provider} />
+        ))}
+      </div>
+    ) : (
+      <div class="bg-gray-50 rounded-lg p-8 text-center border border-gray-100">
+        <h3 class="text-lg font-bold text-brand-navy mb-2">No providers found</h3>
+        <p class="text-gray-600">Try adjusting your filters to see more available professionals.</p>
+      </div>
+    )}
+
+    <div class="mt-8 text-sm text-gray-500 border-t border-gray-200 pt-6">
+      <p><strong>Important:</strong> Providers are independent professionals or collaborators responsible for the accuracy of their credentials, the services they offer, and compliance with applicable professional, ethical, and regional requirements.</p>
+    </div>
+  </div>
+</div>

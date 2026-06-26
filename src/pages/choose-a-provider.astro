@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import DisclaimerBanner from '../components/DisclaimerBanner.astro';
+import ParentChoiceCTA from '../components/ParentChoiceCTA.astro';
+---
+
+<Layout title="How to Choose Your Provider | Rabbia Ashraf & Associates">
+  <SEO
+    title="How to Choose Your Provider | Child Psychology & Development"
+    description="A step-by-step guide to helping parents choose the right child development specialist or parent coach for their family."
+  />
+
+  <DisclaimerBanner />
+  <Header />
+
+  <main class="py-12 md:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 text-center">How to Choose Your Provider</h1>
+      <p class="text-xl text-gray-700 mb-12 text-center">
+        Finding the right support for your child is an important decision. Follow these steps to find the professional that best fits your family's needs.
+      </p>
+
+      <div class="space-y-12">
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">1</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Start with your main concern</h2>
+            <p class="text-gray-600">Identify what kind of support you are looking for: are you seeking a parent coach for behavior, an ADHD consultant, an autism specialist, or a psychologist for assessment?</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">2</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Check provider region and scope</h2>
+            <p class="text-gray-600">Review where the provider is located and where they are legally permitted to offer specific services. Regulated therapy, diagnosis, assessment, or treatment is only available when the provider is legally allowed to provide it in the client’s location.</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">3</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Review credentials and verification status</h2>
+            <p class="text-gray-600">Look for the "Verified Profile" badge. Understand what credentials have been verified and what services the provider is qualified to offer.</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">4</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Compare pricing and availability</h2>
+            <p class="text-gray-600">Prices vary by provider, region, session type, and scope of service. Choose an option that fits your family's budget and schedule.</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">5</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Check language and time zone</h2>
+            <p class="text-gray-600">Ensure the provider speaks your preferred language and has availability that aligns with your time zone.</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">6</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Read service boundaries</h2>
+            <p class="text-gray-600">Understand what the provider can and cannot offer. Education and consultation are not the same as regulated therapy or diagnosis.</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">7</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Choose the provider you feel fits your family</h2>
+            <p class="text-gray-600">Parents are responsible for choosing the provider they wish to book. Review profiles carefully and select the professional you feel most comfortable with.</p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex-shrink-0 mr-6">
+            <div class="w-10 h-10 rounded-full bg-brand-trust text-white flex items-center justify-center font-bold text-xl">8</div>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-3">Seek local emergency or regulated care when needed</h2>
+            <p class="text-gray-600">This platform is not suitable for emergencies, self-harm risk, abuse crisis, medical emergencies, or immediate safety concerns. In urgent situations, contact local emergency services, the nearest hospital, or a local licensed mental health professional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <ParentChoiceCTA />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

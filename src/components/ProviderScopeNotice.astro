@@ -1,0 +1,71 @@
+---
+export interface Props {
+  canHelpWith: string[];
+  cannotProvide: string[];
+  notes?: string;
+  isInternational?: boolean;
+}
+
+const { canHelpWith, cannotProvide, notes, isInternational = false } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-8">
+  <h2 class="text-xl font-bold text-brand-navy mb-4 border-b pb-2">Service Scope</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+    <div>
+      <h3 class="text-sm font-bold text-gray-800 flex items-center mb-3">
+        <svg class="h-5 w-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        What this provider can help with
+      </h3>
+      <ul class="space-y-2">
+        {canHelpWith.map(item => (
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2 mt-0.5">•</span>
+            <span class="text-gray-700 text-sm">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-bold text-gray-800 flex items-center mb-3">
+        <svg class="h-5 w-5 text-red-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        What this provider cannot provide
+      </h3>
+      <ul class="space-y-2">
+        {cannotProvide.map(item => (
+          <li class="flex items-start">
+            <span class="text-red-500 mr-2 mt-0.5">•</span>
+            <span class="text-gray-700 text-sm">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {notes && (
+    <div class="bg-gray-50 p-4 rounded-md mb-6 border border-gray-200">
+      <h4 class="text-sm font-bold text-brand-navy mb-1">Parent Suitability Notes</h4>
+      <p class="text-sm text-gray-700">{notes}</p>
+    </div>
+  )}
+
+  <div class="bg-blue-50 p-4 rounded-md border border-blue-100 space-y-3">
+    {isInternational ? (
+      <p class="text-sm text-brand-navy">
+        <strong>International Service Note:</strong> International consultations may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, and referral guidance. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted.
+      </p>
+    ) : null}
+    <p class="text-sm text-brand-navy">
+      <strong>Professional Scope:</strong> Each provider is responsible for working within their own professional scope, qualifications, license, registration, and regional legal requirements. Education and consultation are not the same as regulated therapy or diagnosis.
+    </p>
+    <div class="mt-2 text-right">
+      <a href="/provider-scope" class="text-brand-trust text-sm hover:underline font-medium">Learn more about service boundaries →</a>
+    </div>
+  </div>
+</div>
