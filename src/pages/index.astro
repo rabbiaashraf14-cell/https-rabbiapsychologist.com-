@@ -25,16 +25,16 @@ const personSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Rabbia Ashraf Child Psychology",
+  "name": "Rabbia Ashraf Multidisciplinary Child Development Centre",
   "url": "https://rabbiapsychologist.com",
-  "description": "Global child psychology consultation and parent education platform."
+  "description": "A multidisciplinary child development and neurodiversity centre providing evidence-informed parent consultation, developmental guidance, and support for international families."
 };
 ---
 
 <Layout title="Home">
   <SEO
-    title="Clinical Child Psychologist | Autism & ADHD Support"
-    description="Rabbia Ashraf offers online parent consultation, autism support, ADHD guidance, and developmental behavior planning for international families."
+    title="Multidisciplinary Child Development Centre | Autism & ADHD Support"
+    description="Rabbia Ashraf offers evidence-informed parent consultation, developmental guidance, and assessment support for children, adolescents, and international families."
   />
   <Schema schema={personSchema} />
   <Schema schema={organizationSchema} />
@@ -43,31 +43,61 @@ const organizationSchema = {
   <Header />
 
   <Hero
-    title="From confusion to a clear support plan"
-    subtitle="Global child psychology consultation and parent education. Instead of asking, 'How do we stop this behavior?' we ask, 'What is this behavior communicating?'"
+    title="Specialist developmental and psychological support for children, adolescents, and families."
+    subtitle="Evidence-informed parent consultation, developmental guidance, assessment support, behaviour planning, school support, and multidisciplinary care for autism, ADHD, learning, speech, sensory, and emotional concerns."
+    ctaText="Book a Consultation"
+    secondaryCtaText="Not Sure Where to Start?"
   />
 
   <TrustStrip />
 
   <section class="py-16 md:py-24">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Before you book, learn what may be happening beneath the behavior</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Why Families Choose Our Centre</h2>
       <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-        When a child is not listening, the issue may not be unwillingness. It may be difficulty with attention, working memory, task initiation, emotional regulation, or processing.
+        A multidisciplinary child development and neurodiversity centre dedicated to providing evidence-informed support.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         <div class="text-left">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Online Parent Consultation</h3>
-          <p class="text-gray-600">Guidance for developmental concerns, behavior challenges, and parenting strategies from anywhere in the world.</p>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Founder-led Clinical Service</h3>
+          <p class="text-gray-600">Expert guidance led by Rabbia Ashraf, Clinical Psychologist, ensuring high standards of care.</p>
         </div>
         <div class="text-left">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Autism & ADHD Support</h3>
-          <p class="text-gray-600">Evidence-based parent training, executive function coaching, and tailored behavioral support plans.</p>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Multidisciplinary Care Model</h3>
+          <p class="text-gray-600">Collaborative support from specialists tailored to your child's unique developmental needs.</p>
         </div>
         <div class="text-left">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">School & IEP Consultation</h3>
-          <p class="text-gray-600">Collaborating with educators to create effective support systems for your child in the classroom.</p>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Child & Adolescent Focus</h3>
+          <p class="text-gray-600">Dedicated solely to the developmental, behavioral, and emotional well-being of young minds.</p>
         </div>
+        <div class="text-left">
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Parent-friendly Guidance</h3>
+          <p class="text-gray-600">Empowering families with evidence-informed resources, practical strategies, and compassionate support.</p>
+        </div>
+        <div class="text-left">
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Online Support for International Families</h3>
+          <p class="text-gray-600">Accessible developmental guidance and parent consultation from anywhere in the world, where appropriate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Conditions & Concerns We Support</h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+        We provide specialized guidance and intervention for a wide range of developmental and behavioral challenges.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Autism</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">ADHD</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Speech and language delay</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Learning difficulties</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Sensory concerns</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Behaviour challenges</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Emotional regulation</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">School refusal</span>
+        <span class="bg-brand-sky text-brand-navy px-6 py-3 rounded-full font-medium shadow-sm">Parenting challenges</span>
       </div>
     </div>
   </section>
@@ -78,26 +108,41 @@ const organizationSchema = {
         <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Core Services</h2>
         <p class="text-lg text-gray-700 max-w-2xl mx-auto">Comprehensive support for your child's unique developmental journey.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <ServiceCard
-          title="Global Consultation"
-          description="Online sessions for parents seeking expert guidance on child behavior and development."
-          href="/global-consultation"
+          title="Parent Consultation"
+          description="Initial guidance sessions to explore developmental and behavioral concerns safely."
+          href="/services"
         />
         <ServiceCard
-          title="Autism Support"
-          description="Parent training and behavioral support planning for families navigating ASD."
-          href="/autism-support"
+          title="Developmental Guidance"
+          description="Targeted support for managing developmental milestones and behavioral goals."
+          href="/services"
         />
         <ServiceCard
-          title="ADHD Support"
-          description="Executive function coaching and strategies for managing ADHD at home and school."
-          href="/adhd-support"
+          title="Behaviour & Parenting Support"
+          description="Evidence-informed strategies to manage challenges at home and in the community."
+          href="/services"
         />
         <ServiceCard
-          title="Parent Training"
-          description="Structured programs to equip parents with evidence-based behavioral strategies."
-          href="/parent-training"
+          title="Report Review"
+          description="Review of external assessments and clinical reports to plan supportive next steps."
+          href="/services"
+        />
+        <ServiceCard
+          title="School Support Planning"
+          description="Collaborative strategies for IEP development and classroom accommodations."
+          href="/services"
+        />
+        <ServiceCard
+          title="Multidisciplinary Case Review"
+          description="Comprehensive review of your child's needs by our specialized clinical team."
+          href="/services"
+        />
+        <ServiceCard
+          title="Training & Workshops"
+          description="Educational sessions for parents, caregivers, and educators on neurodiversity."
+          href="/training"
         />
       </div>
       <div class="text-center mt-12">
@@ -107,6 +152,64 @@ const organizationSchema = {
             <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Our Multidisciplinary Team</h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+        A collaborative group of specialists ensuring comprehensive care from multiple clinical perspectives.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">Developmental Pediatricians</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">Clinical Psychologists</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">Counselling Psychologists</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">Psychiatrists</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">SNE / Special Needs Educators</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">Occupational Therapists</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">SLP / Speech & Language Pathologists</div>
+        <div class="p-6 border border-brand-sky rounded-xl bg-gray-50 font-semibold text-brand-navy">Dietitians</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-sky py-16 md:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Support for International Families</h2>
+      <p class="text-lg text-gray-700 mb-6">
+        We offer secure online developmental guidance and parent consultation for overseas Pakistani families and international parents.
+      </p>
+      <p class="text-md text-gray-600 italic">
+        Please note: We do not provide licensed therapy, emergency support, or official legal diagnosis for international clients. Our global services focus on expert coaching, developmental guidance, and psychoeducation.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Your Booking Journey</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">A seamless process to get the right support for your family.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-brand-navy text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mb-4">1</div>
+          <h3 class="font-bold text-brand-navy mb-2">Share Concerns & Choose Service</h3>
+        </div>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-brand-navy text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mb-4">2</div>
+          <h3 class="font-bold text-brand-navy mb-2">Select Time Zone & Complete Intake</h3>
+        </div>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-brand-navy text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mb-4">3</div>
+          <h3 class="font-bold text-brand-navy mb-2">Confirm Payment & Attend Consultation</h3>
+        </div>
+        <div class="flex flex-col items-center text-center p-6">
+          <div class="bg-brand-navy text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mb-4">4</div>
+          <h3 class="font-bold text-brand-navy mb-2">Receive Recommendations</h3>
+        </div>
       </div>
     </div>
   </section>
