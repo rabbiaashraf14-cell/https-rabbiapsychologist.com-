@@ -8,7 +8,6 @@ import RegionProviderList from '../components/RegionProviderList.astro';
 import InternationalDisclaimerBanner from '../components/InternationalDisclaimerBanner.astro';
 import RegionFAQAccordion from '../components/RegionFAQAccordion.astro';
 import RegionPricingCards from '../components/RegionPricingCards.astro';
-import Schema from '../components/Schema.astro';
 
 const faqs = [
   { question: "Can Australian families book?", answer: "Yes, parents in Australia can access our online parent education and developmental guidance." },
@@ -20,27 +19,25 @@ const faqs = [
   { question: "What if my child needs formal assessment?", answer: "You will need to see a pediatrician or registered psychologist in Australia for formal diagnostic assessments." },
   { question: "What should I prepare?", answer: "Identify the main behaviors or routines you want to improve, and gather any existing reports for context." }
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
-<Layout title="Online Parent Consultation Australia | Rabbia Ashraf">
+<Layout title="Online Parent Consultation for Australian Families">
   <SEO
     title="Online Parent Consultation for Australian Families"
-    description="Parent education, ASD/ADHD routines, school communication preparation, behavior support planning, and developmental guidance for families in Australia."
-    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-australia"
-    ogTitle="Online Parent Consultation for Australian Families"
-  />
-
-  <Schema
-    type="FAQPage"
-    data={{
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }}
+    description="Parent education and child development guidance for Australian families seeking ASD/ADHD routines, behavior support planning, and school preparation."
+    schema={schema}
   />
 
   <Header />
@@ -59,36 +56,36 @@ const faqs = [
       <section class="my-12">
         <h2 class="text-2xl font-bold text-brand-navy mb-6">Common concerns Australian parents bring</h2>
         <ul class="list-disc pl-6 space-y-2 text-gray-700">
-          <li>Looking for interim support while on waitlists for pediatricians or allied health.</li>
-          <li>Needing practical strategies for neurodivergent children (ASD/ADHD) at home.</li>
-          <li>Seeking guidance on how to communicate effectively with schools.</li>
-          <li>Wanting to understand behavior triggers and build better family routines.</li>
+          <li>Seeking proactive strategies while navigating long public waitlists or waiting for NDIS funding approval.</li>
+          <li>Needing practical guidance on creating neurodiversity-affirming home routines.</li>
+          <li>Wanting support in understanding assessments to better advocate at school.</li>
+          <li>Managing behaviors of concern, anxiety, or emotional dysregulation at home.</li>
         </ul>
       </section>
 
       <div class="grid md:grid-cols-2 gap-8 my-12">
         <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-          <h2 class="text-xl font-bold text-brand-navy mb-4">What consultation may include</h2>
+          <h2 class="text-xl font-bold text-brand-navy mb-4">What parent consultation may include</h2>
           <ul class="space-y-2 text-gray-700">
-            <li>✔ Parent coaching on behavioral strategies.</li>
-            <li>✔ Developing visual supports and home routines.</li>
-            <li>✔ Psychoeducation regarding developmental profiles.</li>
-            <li>✔ School collaboration support and preparation.</li>
+            <li>✔ Parent education on developmental stages and neurodivergence.</li>
+            <li>✔ Brainstorming environmental adjustments for home.</li>
+            <li>✔ Discussing behavior support strategies based on current best practices.</li>
+            <li>✔ Helping you organize questions for your local GP, pediatrician, or school team.</li>
           </ul>
         </div>
         <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-           <h2 class="text-xl font-bold text-red-800 mb-4">What regulated services require</h2>
+           <h2 class="text-xl font-bold text-red-800 mb-4">What this service does NOT replace</h2>
            <ul class="space-y-2 text-gray-800">
-            <li>✘ We do not provide NDIS-funded therapies.</li>
-            <li>✘ We do not offer registered psychological services in Australia unless explicitly stated by a specific provider.</li>
-            <li>✘ We cannot formally diagnose conditions or complete Medicare-rebated plans.</li>
+            <li>✘ Registered psychological therapy under Medicare.</li>
+            <li>✘ Formal NDIS assessments or diagnostic reports.</li>
+            <li>✘ Crisis intervention or acute mental health care.</li>
           </ul>
         </div>
       </div>
 
       <section class="my-12">
-        <h2 class="text-2xl font-bold text-brand-navy mb-4">When to seek a locally registered professional</h2>
-        <p class="text-gray-700">If you are seeking to access NDIS funding, require a formal diagnosis, or need Medicare-subsidized mental health care plans, you must engage with an Australian registered psychologist, pediatrician, or appropriate allied health professional.</p>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">When to Seek Local Registered Care</h2>
+        <p class="text-gray-700">If your child requires an official diagnosis, clinical treatment for severe mental health concerns, or documentation for NDIS applications, you must seek an evaluation from a provider registered with AHPRA (e.g., a Clinical Psychologist) or a local Pediatrician in Australia.</p>
       </section>
 
       <RegionProviderList region="Australia Families" providers={[]} />

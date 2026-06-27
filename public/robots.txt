@@ -1,4 +1,29 @@
 User-agent: *
 Allow: /
 
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /client-records/
+Disallow: /api/
+Disallow: /drafts/
+Disallow: /thank-you-private/
+
+Allow: /providers/
+Allow: /services/
+Allow: /resources/
+Allow: /blog/
+Allow: /international-families/
+Allow: /pricing/
+Allow: /about/
+Allow: /contact/
+Allow: /sitemap/
+
 Sitemap: https://rabbiapsychologist.com/sitemap-index.xml
+Sitemap: https://rabbiapsychologist.com/sitemap.xml
+
+# Notes:
+# This robots.txt file allows public pages to be crawled.
+# It does not protect private information.
+# Private pages must use authentication and/or noindex where needed.
+# Do not place sensitive child or client data on public URLs.

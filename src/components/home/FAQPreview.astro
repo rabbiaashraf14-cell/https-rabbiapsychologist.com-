@@ -1,21 +1,40 @@
 ---
-import { faqs } from '../../data/faqs';
 ---
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4 max-w-3xl">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-brand-navy mb-4">Common Questions</h2>
+<section class="py-16 md:py-24 bg-white border-t border-gray-100">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-brand-navy mb-4">Frequently Asked Questions</h2>
     </div>
-    <div class="space-y-4">
-      {faqs.map(faq => (
-        <div class="border border-gray-200 rounded-lg p-6">
-          <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-          <p class="text-gray-600 text-sm">{faq.answer}</p>
-        </div>
-      ))}
+
+    <div class="space-y-6">
+      <div class="border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-brand-navy mb-2">What is parent consultation?</h3>
+        <p class="text-gray-600">Parent consultation is educational and strategic guidance focused on equipping parents with tools to support their child's development, manage behaviors, and navigate school systems. It is not individual therapy for the child.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-brand-navy mb-2">Do you provide medical diagnosis?</h3>
+        <p class="text-gray-600">This platform provides educational guidance and support planning. Formal psychological assessment and diagnosis are only available in specific regions where our providers hold the appropriate local licensing (e.g., Pakistan). International sessions focus on psychoeducation and strategy.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-brand-navy mb-2">How do I know which provider to choose?</h3>
+        <p class="text-gray-600">You can review each provider's profile to see their expertise, the regions they support, the languages they speak, and their pricing. You remain in control of selecting the professional that best fits your family's needs.</p>
+      </div>
+
+      <div class="border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-brand-navy mb-2">Can you help with my child's IEP?</h3>
+        <p class="text-gray-600">Yes, we offer school consultation services to help parents understand the IEP process, prepare for meetings, and communicate effectively with educators to ensure appropriate accommodations.</p>
+      </div>
     </div>
-    <div class="text-center mt-8">
-      <a href="/faqs" class="text-brand-trust font-bold hover:underline">Read more FAQs &rarr;</a>
+
+    <div class="text-center mt-10">
+      <a href="/faqs" class="text-brand-navy font-bold hover:text-blue-700 inline-flex items-center">
+        Read all FAQs
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
     </div>
   </div>
 </section>

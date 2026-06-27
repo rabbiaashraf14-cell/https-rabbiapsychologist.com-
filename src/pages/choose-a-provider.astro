@@ -1,16 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
+import Schema from '../components/Schema.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import ParentChoiceCTA from '../components/ParentChoiceCTA.astro';
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Choose a Child Development Provider",
+  "description": "Compare available providers by region, expertise, language, price, and service scope to choose parent guidance or child development support that fits your family."
+};
 ---
 
-<Layout title="How to Choose Your Provider | Rabbia Ashraf & Associates">
+<Layout title="Choose a Child Development Provider | Rabbia Ashraf & Associates">
   <SEO
-    title="How to Choose Your Provider | Child Psychology & Development"
-    description="A step-by-step guide to helping parents choose the right child development specialist or parent coach for their family."
+    title="Choose a Child Development Provider | Rabbia Ashraf & Associates"
+    description="Compare available providers by region, expertise, language, price, and service scope to choose parent guidance or child development support that fits your family."
+    schema={schema}
   />
 
   <DisclaimerBanner />

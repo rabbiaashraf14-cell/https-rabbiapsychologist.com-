@@ -1,22 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" width="450" height="120" aria-label="Rabbia Ashraf, Clinical Child Psychologist" role="img">
-  <title>Rabbia Ashraf, Clinical Child Psychologist</title>
 
-  <!-- Icon Group -->
-  <g transform="translate(10, 10) scale(0.8)">
-    <path d="M 20 85 C 40 100, 60 90, 60 70 C 60 90, 80 100, 100 85" fill="none" stroke="#4B8BBE" stroke-width="6" stroke-linecap="round" />
-    <path d="M 45 40 L 45 75 M 45 40 C 60 40, 60 55, 45 55 L 58 75" fill="none" stroke="#0F2742" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
-    <path d="M 75 75 L 65 40 L 55 75 M 58 60 L 72 60" fill="none" stroke="#0F2742" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
-    <circle cx="60" cy="25" r="8" fill="#8BBF9F" />
-    <path d="M 70 30 C 85 20, 95 35, 80 45" fill="#EEE9FF" opacity="0.8" />
-  </g>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20, 0)">
 
-  <!-- Wordmark -->
-  <g transform="translate(110, 0)">
-    <style>
-      .name { font-family: 'Georgia', 'Times New Roman', serif; font-size: 32px; fill: #0F2742; font-weight: bold; letter-spacing: 0.5px; }
-      .descriptor { font-family: 'Arial', 'Helvetica', sans-serif; font-size: 14px; fill: #4B8BBE; letter-spacing: 1.5px; font-weight: 600; text-transform: uppercase; }
-    </style>
-    <text x="0" y="60" class="name">Rabbia Ashraf</text>
-    <text x="2" y="85" class="descriptor">Clinical Child Psychologist</text>
+<svg width="140" height="140" x="0" y="30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2742" />
+      <stop offset="100%" stop-color="#4B8BBE" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8BBF9F" />
+      <stop offset="100%" stop-color="#4B8BBE" />
+    </linearGradient>
+    <linearGradient id="gradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+  </defs>
+  <path d="M50 140 C 50 100, 70 60, 110 60 C 140 60, 150 80, 150 100 C 150 120, 130 140, 100 140 C 75 140, 90 90, 120 100" fill="none" stroke="url(#grad1)" stroke-width="16" stroke-linecap="round" />
+  <path d="M120 100 C 130 110, 140 140, 150 150" fill="none" stroke="url(#grad2)" stroke-width="16" stroke-linecap="round" />
+  <circle cx="100" cy="50" r="8" fill="#8BBF9F" />
+</svg>
+
+    <text x="160" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'" font-size="36" font-weight="700" fill="#FFFFFF">Rabbia Ashraf &amp; Associates</text>
+    <text x="160" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'" font-size="16" font-weight="500" fill="#E2E8F0" letter-spacing="1">Child Development, Parent Guidance &amp; Specialist Consultation</text>
   </g>
 </svg>

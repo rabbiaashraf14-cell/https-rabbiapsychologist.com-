@@ -19,27 +19,26 @@ const faqs = [
   { question: "What if formal diagnosis is needed?", answer: "You must seek out a licensed developmental pediatrician or child psychiatrist locally within your country of residence." },
   { question: "What should I prepare before booking?", answer: "Prepare a list of your top three concerns (e.g., sleep, school refusal, meltdowns) so the provider can focus the session on actionable solutions." }
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": typeof faqs !== 'undefined' ? faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  })) : []
+};
 ---
-<Layout title="Online Parent Consultation MENA & Gulf | Rabbia Ashraf">
+
+<Layout title="Online Parent Consultation for MENA & Gulf Families">
   <SEO
     title="Online Parent Consultation for MENA & Gulf Families"
-    description="Culturally sensitive parent guidance, ASD/ADHD support planning, behavior strategies, and school support for MENA and Gulf regions."
-    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-mena-gulf"
-    ogTitle="Online Parent Consultation for MENA & Gulf Families"
-  />
-
-  <Schema
-    type="FAQPage"
-    data={{
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }}
+    description="Culturally sensitive parent guidance for MENA and Gulf families seeking ASD/ADHD support, behavior strategies, and school communication support."
+    schema={schema}
   />
 
   <Header />

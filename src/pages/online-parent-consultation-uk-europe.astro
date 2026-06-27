@@ -21,27 +21,25 @@ const faqs = [
   { question: "What happens after booking?", answer: "You will receive a confirmation email with a secure video link for your session and any intake forms needed." },
   { question: "Can I request deletion of submitted information?", answer: "Yes. Parents in the EU/UK may request deletion of their data at any time by contacting our support team." }
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": typeof faqs !== 'undefined' ? faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  })) : []
+};
 ---
-<Layout title="Online Parent Consultation UK & Europe | Rabbia Ashraf">
+<Layout title="Online Parent Consultation for UK & Europe Families">
   <SEO
     title="Online Parent Consultation for UK & Europe Families"
-    description="Parent psychoeducation, ASD/ADHD guidance, executive-function routines, and school support preparation for UK and European families."
-    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-uk-europe"
-    ogTitle="Online Parent Consultation for UK & Europe Families"
-  />
-
-  <Schema
-    type="FAQPage"
-    data={{
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }}
+    description="Privacy-aware parent guidance for UK and European families seeking ASD/ADHD support, child development guidance, and school communication preparation."
+    schema={schema}
   />
 
   <Header />

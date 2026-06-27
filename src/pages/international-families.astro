@@ -30,27 +30,26 @@ const faqs = [
     answer: "Review our provider profiles to find someone with expertise in your specific concerns (e.g., behavior, ASD, school support). Consider language preferences and whether they have experience with families in your region."
   }
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": typeof faqs !== 'undefined' ? faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  })) : []
+};
 ---
-<Layout title="International Families | Global Child Development Support">
+
+<Layout title="International Parent Consultation | Child Development Support">
   <SEO
-    title="International Parent Guidance and Child Development Support"
-    description="Learn from evidence-informed resources, compare available specialists, and choose support that fits your child, family, region, language, and goals."
-    canonicalUrl="https://rabbiaashraf.com/international-families"
-    ogTitle="International Parent Guidance and Child Development Support"
-    ogDescription="Evidence-informed parent resources and child development consultation for global families."
-  />
-  <Schema
-    type="FAQPage"
-    data={{
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }}
+    title="International Parent Consultation | Child Development Support"
+    description="Explore region-aware parent guidance for families in Pakistan, USA, Australia, UK/Europe, MENA/Gulf, and international school communities."
+    schema={schema}
   />
 
   <Header />

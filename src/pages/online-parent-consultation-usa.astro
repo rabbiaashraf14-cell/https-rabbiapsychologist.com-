@@ -21,26 +21,26 @@ const faqs = [
   { question: "What if my child needs urgent care?", answer: "Please contact 911 or go to your nearest emergency room. This platform does not provide crisis intervention." },
   { question: "What should I prepare before booking?", answer: "Have your primary concerns outlined and any previous reports ready for review, understanding they will be used for educational context only." }
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": typeof faqs !== 'undefined' ? faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  })) : []
+};
 ---
-<Layout title="Online Parent Consultation USA | Rabbia Ashraf & Associates">
+
+<Layout title="Online Parent Consultation for USA Families">
   <SEO
     title="Online Parent Consultation for USA Families"
-    description="Educational guidance, ASD/ADHD parent strategies, behavior support planning, and IEP preparation for parents in the USA."
-    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-usa"
-    ogTitle="Online Parent Consultation for USA Families"
-  />
-  <Schema
-    type="FAQPage"
-    data={{
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }}
+    description="Parent guidance for USA families seeking ASD/ADHD strategies, behavior support planning, executive-function routines, and school communication preparation."
+    schema={schema}
   />
 
   <Header />

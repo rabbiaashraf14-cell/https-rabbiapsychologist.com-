@@ -18,27 +18,26 @@ const faqs = [
   { question: "What should I bring for assessment?", answer: "Any previous medical records, school reports, or notes on your child's developmental history." },
   { question: "Is this emergency care?", answer: "No. If your child is in immediate danger, please go to the nearest hospital." }
 ];
----
-<Layout title="Child Psychology Support Pakistan | Rabbia Ashraf">
-  <SEO
-    title="Parent Consultation and Child Psychology Support in Pakistan"
-    description="Child psychology consultation, parent guidance, ASD/ADHD support, and local assessment pathways for families in Pakistan."
-    canonicalUrl="https://rabbiaashraf.com/online-parent-consultation-pakistan"
-    ogTitle="Parent Consultation and Child Psychology Support in Pakistan"
-  />
 
-  <Schema
-    type="FAQPage"
-    data={{
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }}
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": typeof faqs !== 'undefined' ? faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  })) : []
+};
+---
+
+<Layout title="Child Psychology & Parent Consultation in Pakistan">
+  <SEO
+    title="Child Psychology & Parent Consultation in Pakistan"
+    description="Parent consultation, ASD/ADHD support, behavior guidance, school support, and local assessment pathways for families in Pakistan."
+    schema={schema}
   />
 
   <Header />
