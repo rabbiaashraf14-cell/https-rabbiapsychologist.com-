@@ -1,0 +1,11 @@
+---
+interface Props {
+  service: any;
+}
+const { service } = Astro.props;
+---
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col">
+  <h3 class="text-xl font-bold text-brand-navy mb-2">{service.title}</h3>
+  <p class="text-gray-600 text-sm flex-grow mb-4">{service.description}</p>
+  <a href={`/services/${service.slug}`} class="text-brand-trust text-sm font-medium hover:underline mt-auto">Learn more &rarr;</a>
+</div>

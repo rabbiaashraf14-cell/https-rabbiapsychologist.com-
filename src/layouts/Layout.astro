@@ -1,31 +1,13 @@
 ---
-import '../styles/global.css';
+import BaseLayout from './BaseLayout.astro';
 
-interface Props {
-  title: string;
-  description?: string;
-}
-
-const { title, description = "Rabbia Ashraf - Clinical Child Psychologist, Researcher, Behavior Therapist. Global child psychology consultation and parent education platform." } = Astro.props;
+const {
+  title = 'Rabbia Ashraf & Associates',
+  description = 'Global parent guidance, child development support, and specialist consultation.',
+  ...rest
+} = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0F2742" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title} | Rabbia Ashraf</title>
-  </head>
-  <body class="bg-brand-cream text-brand-navy font-sans antialiased flex flex-col min-h-screen">
-    <main class="flex-grow">
-      <slot />
-    </main>
-  </body>
-</html>
+<BaseLayout title={title} description={description} {...rest}>
+  <slot />
+</BaseLayout>

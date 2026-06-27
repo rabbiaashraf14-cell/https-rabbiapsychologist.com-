@@ -1,0 +1,80 @@
+export const providers = [
+  {
+    id: 'rabbia-ashraf',
+    name: 'Rabbia Ashraf',
+    title: 'Clinical Child Psychologist',
+    location: 'Lahore, Pakistan',
+    languages: ['English', 'Urdu', 'Punjabi'],
+    supportAreas: ['ASD', 'ADHD', 'parent guidance', 'behavior support', 'psychological assessment local only', 'school consultation'],
+    price: 'PKR 7,000 / USD 35 / AUD 55',
+    bookingLink: 'https://calendar.app.google/zMKejpnpCjh91WRG7',
+    verificationStatus: 'Lead Clinician',
+    scopeNote: 'Parent consultation, developmental guidance, and local clinical services where legally permitted',
+    slug: 'rabbia-ashraf'
+  },
+  {
+    id: 'placeholder-australia',
+    name: 'Australian Provider Placeholder',
+    title: 'Developmental Specialist',
+    location: 'Australia',
+    languages: ['English'],
+    supportAreas: ['Parent Consultation'],
+    price: 'Provider-specific',
+    bookingLink: '#',
+    verificationStatus: 'Placeholder',
+    scopeNote: 'Parent consultation',
+    slug: 'placeholder-australia'
+  },
+  {
+    id: 'placeholder-usa',
+    name: 'USA Provider Placeholder',
+    title: 'Educational Consultant',
+    location: 'USA',
+    languages: ['English'],
+    supportAreas: ['Parent Consultation'],
+    price: 'Provider-specific',
+    bookingLink: '#',
+    verificationStatus: 'Placeholder',
+    scopeNote: 'Parent consultation',
+    slug: 'placeholder-usa'
+  },
+  {
+    id: 'placeholder-mena',
+    name: 'MENA/Gulf Provider Placeholder',
+    title: 'Behavior Specialist',
+    location: 'MENA/Gulf',
+    languages: ['English', 'Arabic'],
+    supportAreas: ['Parent Consultation'],
+    price: 'Provider-specific',
+    bookingLink: '#',
+    verificationStatus: 'Placeholder',
+    scopeNote: 'Parent consultation',
+    slug: 'placeholder-mena'
+  },
+  {
+    id: 'placeholder-uk',
+    name: 'UK/Europe Provider Placeholder',
+    title: 'Developmental Guide',
+    location: 'UK/Europe',
+    languages: ['English'],
+    supportAreas: ['Parent Consultation'],
+    price: 'Provider-specific',
+    bookingLink: '#',
+    verificationStatus: 'Placeholder',
+    scopeNote: 'Parent consultation',
+    slug: 'placeholder-uk'
+  },
+  {
+    id: 'placeholder-pakistan',
+    name: 'Pakistan Provider Placeholder',
+    title: 'Local Specialist',
+    location: 'Pakistan',
+    languages: ['English', 'Urdu'],
+    supportAreas: ['Parent Consultation'],
+    price: 'Provider-specific',
+    bookingLink: '#',
+    verificationStatus: 'Placeholder',
+    scopeNote: 'Parent consultation',
+    slug: 'placeholder-pakistan'
+  }
+];

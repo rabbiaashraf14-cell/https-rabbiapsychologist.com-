@@ -1,0 +1,21 @@
+---
+import { faqs } from '../../data/faqs';
+---
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-brand-navy mb-4">Common Questions</h2>
+    </div>
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <div class="border border-gray-200 rounded-lg p-6">
+          <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+          <p class="text-gray-600 text-sm">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-8">
+      <a href="/faqs" class="text-brand-trust font-bold hover:underline">Read more FAQs &rarr;</a>
+    </div>
+  </div>
+</section>
