@@ -1,0 +1,14 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Rabbia Ashraf & Associates",
+  "home_page_url": "https://rabbiapsychologist.com",
+  "feed_url": "https://rabbiapsychologist.com/feed.json",
+  "items": [
+    {
+      "id": "1",
+      "title": "JSON Feed Coming Soon",
+      "url": "https://rabbiapsychologist.com/blog",
+      "content_text": "We will be launching our professional content and parent guidance feed soon."
+    }
+  ]
+}

@@ -1,47 +1,21 @@
 # Rabbia Ashraf & Associates
 
-> Global Parent Guidance, Child Development Support, and Specialist Consultation.
+A professional, global, multidisciplinary child development centre providing parent guidance, child development support, and specialist consultation.
 
-Rabbia Ashraf & Associates is a parent education, child development guidance, specialist discovery, and consultation booking platform. The platform helps parents learn from evidence-informed resources, compare available providers, and choose support by region, concern, language, price, and service scope.
+## Purpose
+Our platform allows parents to learn from evidence-informed resources, compare available specialists by region/expertise/language/price, and book consultations.
+
+## Services & Scope
+We provide developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, and school communication preparation internationally. Regulated clinical therapy, diagnosis, and assessment are provided *only* where legally and ethically permitted by the provider's credentials and the client's location.
 
 ## Important Pages
+- Directory: /choose-a-provider
+- Services: /services
+- Resources: /resources/resource-vault
+- Pricing: /pricing
+- International Support: /international-families
 
-* [Home](https://rabbiapsychologist.com/): Overview of the platform, parent guidance, provider choice, resources, and booking.
-* [Choose a Provider](https://rabbiapsychologist.com/choose-a-provider): Compare available providers by region, scope, language, expertise, and pricing.
-* [Provider Directory](https://rabbiapsychologist.com/providers): Browse provider profiles and support options.
-* [Rabbia Ashraf Profile](https://rabbiapsychologist.com/providers/rabbia-ashraf): Lead clinician profile, services, pricing, and booking.
-* [International Families](https://rabbiapsychologist.com/international-families): Region-aware support for families worldwide.
-* [USA Families](https://rabbiapsychologist.com/online-parent-consultation-usa): Parent guidance and school preparation for families in the USA.
-* [Australia Families](https://rabbiapsychologist.com/online-parent-consultation-australia): Parent education and developmental support planning for Australian families.
-* [UK & Europe Families](https://rabbiapsychologist.com/online-parent-consultation-uk-europe): Parent guidance with privacy-aware support for UK and European families.
-* [MENA & Gulf Families](https://rabbiapsychologist.com/online-parent-consultation-mena-gulf): Culturally sensitive parent guidance for MENA and Gulf families.
-* [Pakistan Families](https://rabbiapsychologist.com/online-parent-consultation-pakistan): Child psychology support and local assessment pathways in Pakistan.
-* [Resource Vault](https://rabbiapsychologist.com/resources/resource-vault): Parent tools, worksheets, behavior logs, visual schedules, and digital products.
-* [Pricing](https://rabbiapsychologist.com/pricing): Consultation, provider, package, resource, and workshop pricing.
-* [Service Boundaries](https://rabbiapsychologist.com/service-boundaries): Explanation of education, consultation, therapy, assessment, diagnosis, and emergency boundaries.
-* [Privacy Policy](https://rabbiapsychologist.com/privacy-policy): Privacy and child data handling.
-* [Terms & Disclaimer](https://rabbiapsychologist.com/terms-and-disclaimer): Legal terms, disclaimers, and platform limitations.
-
-## Services
-
-* Parent consultation
-* Autism parent guidance
-* ADHD executive function support
-* Behavior support planning
-* Parent training
-* School and IEP consultation
-* Local psychological assessment pathways where legally and ethically available
-* Referral guidance
-
-## Safety and Scope
-
-This platform does not provide emergency care. It does not replace local medical, psychological, educational, legal, or emergency services. Regulated therapy, diagnosis, assessment, and treatment are provided only where legally and ethically permitted by the provider’s credentials and the client’s location.
-
-## Booking
-
-Rabbia Ashraf booking:
-https://calendar.app.google/zMKejpnpCjh91WRG7
-
-## LinkedIn
-
-https://www.linkedin.com/in/rabbiapsychologist
+## Contact & Booking
+- Booking: https://calendar.app.google/zMKejpnpCjh91WRG7
+- LinkedIn: https://www.linkedin.com/in/rabbiapsychologist
+- Emergency Disclaimer: This platform does not provide emergency care. Contact local emergency services for urgent concerns.
