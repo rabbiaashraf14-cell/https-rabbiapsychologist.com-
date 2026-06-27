@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SuccessMessage from '../components/ui/SuccessMessage.astro';
+---
+
+<Layout title="Provider Request Received">
+  <Header />
+  <div class="min-h-[70vh] flex items-center justify-center bg-brand-cream px-4">
+    <SuccessMessage
+      title="Matching Request Received"
+      message="Your provider matching form has been submitted. Our clinical team will review your needs to recommend the best specialist."
+      nextSteps={[
+        "We will email you provider recommendations shortly.",
+        "You can then review their profile and book a session directly."
+      ]}
+    />
+  </div>
+  <Footer />
+</Layout>

@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SuccessMessage from '../components/ui/SuccessMessage.astro';
+---
+
+<Layout title="Thank You">
+  <Header />
+  <div class="min-h-[70vh] flex items-center justify-center bg-brand-cream px-4">
+    <SuccessMessage
+      title="Action Completed Successfully"
+      message="Thank you. We have received your information."
+      nextSteps={[
+        "Check your email for confirmation.",
+        "Review our parent resources while you wait."
+      ]}
+    />
+  </div>
+  <Footer />
+</Layout>

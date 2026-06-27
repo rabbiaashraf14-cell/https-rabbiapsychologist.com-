@@ -1,0 +1,23 @@
+---
+export interface Props {
+  regions: {
+    name: string;
+    description: string;
+    link: string;
+    icon: string;
+  }[];
+}
+const { regions } = Astro.props;
+---
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto my-12">
+  {regions.map((region) => (
+    <a href={region.link} class="group bg-white rounded-xl shadow-sm hover:shadow-lg border border-gray-100 p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center">
+      <div class="w-16 h-16 rounded-full bg-brand-cream text-brand-navy flex items-center justify-center mb-6 group-hover:bg-brand-navy group-hover:text-white transition-colors duration-300">
+        <span class="text-3xl" aria-hidden="true" set:html={region.icon}></span>
+      </div>
+      <h3 class="text-xl font-bold text-gray-800 mb-3">{region.name}</h3>
+      <p class="text-sm text-gray-600 flex-grow">{region.description}</p>
+      <span class="mt-6 text-brand-trust font-bold text-sm uppercase tracking-wide group-hover:text-brand-navy transition-colors">View Support &rarr;</span>
+    </a>
+  ))}
+</div>

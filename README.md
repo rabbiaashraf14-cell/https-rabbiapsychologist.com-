@@ -1,57 +1,23 @@
 # Rabbia Ashraf & Associates
 
-## Project Overview
-Rabbia Ashraf & Associates is a global parent guidance and child development support platform built with Astro, Tailwind CSS, TypeScript, and Firebase Hosting.
+A premium global multidisciplinary platform for child development, parent guidance, provider discovery, and specialist consultation.
 
-## Tech Stack
-* Astro
-* TypeScript
-* Tailwind CSS (v4)
-* Firebase Hosting
+## Project Stack
+- Framework: Astro
+- Styling: Tailwind CSS v4
+- Hosting: Firebase Hosting
+- Languages: TypeScript, HTML/CSS
 
-## Install Steps
-```sh
-npm install
-```
+## Deployment
+This project is configured to deploy the generated static files located in `dist/` to Firebase Hosting.
 
-## Local Dev Command
-```sh
-npm run dev
-```
+### Deployment Steps
+1. Run `npm install` to install dependencies.
+2. Run `npm run build` to generate the production build in the `dist` directory.
+3. Verify build artifacts and ensure sitemaps and robots.txt exist in the root of the output.
+4. Run `npx firebase deploy --only hosting` to deploy to production.
 
-## Build Command
-```sh
-npm run build
-```
-
-## Firebase Deployment Steps
-### Preview
-```sh
-npm run firebase:preview
-```
-
-### Production Deploy
-```sh
-npm run firebase:deploy
-```
-
-## Folder Structure
-* `public/`: Static assets (images, icons, robots.txt, sitemap.xml)
-* `src/components/`: Reusable UI components
-* `src/layouts/`: Base layouts for pages
-* `src/pages/`: Astro pages
-* `src/data/`: Data files (providers, pricing, services, regions)
-* `src/styles/`: Global CSS and Tailwind tokens
-
-## Editing Content
-* **Providers:** `src/data/providers.ts`
-* **Pricing:** `src/data/pricing.ts`
-* **Services:** `src/data/services.ts`
-* **Regions:** `src/data/regions.ts`
-* **Booking Link:** Update in `src/data/site.ts`
-
-## Legal Disclaimer Note
-The site uses international service disclaimers. Always maintain safe boundaries around clinical diagnoses. Services should be framed globally as parent consultation, psychoeducation, and educational guidance unless explicitly verified by legal credentials.
-
-## Firebase Configuration
-A placeholder `.firebaserc` file is included in this repository. Before deploying to Firebase, update the `default` project ID in `.firebaserc` to match your actual Firebase project ID.
+### Post-Launch Monitoring
+- Monitor Google Search Console and Bing Webmaster Tools using the provided XML sitemaps.
+- Ensure Tawk.to live chat displays correctly and captures only appropriate inquiries.
+- Verify analytics integration and error logs in Firebase console.

@@ -1,67 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import ServiceBoundaryTable from '../components/ServiceBoundaryTable.astro';
+
+const breadcrumbs = [
+  { name: 'Service Boundaries', href: '/service-boundaries' }
+];
 ---
-
-<Layout title="Understanding Service Boundaries | Rabbia Ashraf">
-  <SEO
-    title="Understanding Service Boundaries"
-    description="Clear definitions of parent education, consultation, developmental guidance, psychological therapy, and assessment."
-    canonicalUrl="https://rabbiaashraf.com/service-boundaries"
-    ogTitle="Understanding Service Boundaries"
-  />
-
+<Layout title="Service Boundaries & Emergency Care Policy">
   <DisclaimerBanner />
   <Header />
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <h1 class="text-4xl font-bold text-brand-navy mb-6">Service Boundaries</h1>
 
-  <main class="py-12 md:py-20 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Understanding Service Boundaries</h1>
-      <p class="text-xl text-gray-700 mb-12 text-center">
-        Clear boundaries ensure ethical, safe, and effective support for your family across international borders.
+    <div class="bg-red-50 border border-red-200 p-6 rounded-lg mb-8 text-red-800">
+      <h2 class="text-xl font-bold mb-2">Not for Emergencies</h2>
+      <p>
+        This platform is not suitable for emergencies, self-harm risk, abuse crisis, medical emergencies, or immediate safety concerns. In urgent situations, contact local emergency services, the nearest hospital, or a local licensed mental health professional immediately.
       </p>
-
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 space-y-8">
-
-        <section>
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">What Our Services Encompass</h2>
-          <div class="prose max-w-none text-gray-700">
-            <p><strong>Parent Education:</strong> Providing general, evidence-informed information about child development, neurodiversity (like ASD or ADHD), and parenting strategies.</p>
-            <p><strong>Parent Consultation:</strong> A collaborative discussion focused on understanding your family's unique dynamics and problem-solving specific challenges.</p>
-            <p><strong>Developmental Guidance:</strong> Supporting parents in understanding milestones and creating environments that foster growth.</p>
-            <p><strong>Executive-Function Coaching:</strong> Helping parents design routines and visual supports to build their child's organizational and self-regulation skills.</p>
-            <p><strong>Behavior Support Planning:</strong> Identifying the "why" behind challenging behaviors and developing proactive, positive strategies for the home.</p>
-            <p><strong>School Consultation:</strong> Assisting parents and teachers in aligning on support strategies and understanding educational accommodations.</p>
-          </div>
-        </section>
-
-        <section class="mt-12">
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">What Requires Local Regulated Care</h2>
-          <div class="prose max-w-none text-gray-700">
-            <p><strong>Psychological Therapy:</strong> Direct, individualized treatment of mental health disorders (e.g., severe anxiety, depression, trauma). This requires a provider licensed in the client's jurisdiction.</p>
-            <p><strong>Psychological Assessment & Diagnosis:</strong> The formal administration of standardized tests (like the ADOS-2 or WISC) to diagnose conditions such as Autism or ADHD. We do not provide this internationally.</p>
-            <p><strong>Emergency Care:</strong> Immediate intervention for individuals at risk of harming themselves or others, or those experiencing severe psychiatric crises. Our platform is not equipped for emergency response.</p>
-          </div>
-        </section>
-
-        <section class="mt-12">
-          <h2 class="text-2xl font-bold text-brand-navy mb-6">Service Comparison Table</h2>
-          <ServiceBoundaryTable />
-        </section>
-
-        <div class="mt-12 text-center">
-          <a href="/choose-a-provider" class="inline-block bg-brand-trust text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors">
-            Choose a Provider
-          </a>
-        </div>
-
-      </div>
     </div>
-  </main>
 
+    <div class="prose prose-lg text-gray-700">
+      <h2 class="text-2xl font-bold text-brand-navy mt-8">What We Provide</h2>
+      <ul>
+        <li>Parent guidance and education</li>
+        <li>Consultation for behavior, ADHD, and ASD strategies</li>
+        <li>Referral pathway guidance</li>
+        <li>Access to digital learning resources</li>
+        <li>Local psychological assessments (only in specific legal jurisdictions such as Lahore, Pakistan)</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8">What We Do Not Provide</h2>
+      <ul>
+        <li>Crisis intervention or emergency care</li>
+        <li>Prescription of medication or medical management</li>
+        <li>Custody evaluations or forensic testimony</li>
+        <li>Regulated global clinical therapy outside the provider's licensed jurisdiction</li>
+      </ul>
+    </div>
+  </div>
   <Footer />
 </Layout>
