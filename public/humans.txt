@@ -1,9 +1,14 @@
 /* TEAM */
-  Name: Rabbia Ashraf
-  Role: Clinical Child Psychologist, Researcher, Behavior Therapist
-  Site: https://rabbiapsychologist.com
+Platform: Rabbia Ashraf & Associates
+Lead Professional: Rabbia Ashraf
+Role: Clinical Child Psychologist
+Location: Lahore, Pakistan
+Website Purpose: Parent guidance, child development support, provider discovery, resources, and consultation booking.
 
 /* SITE */
-  Framework: Astro
-  Styling: Tailwind CSS
-  Hosting: Firebase
+Technology: Astro, Tailwind CSS, TypeScript, Firebase Hosting
+Design: Premium, calm, accessible, parent-friendly, child development focused
+SEO: Structured metadata, XML sitemap, HTML sitemap, schema, LLM summary files
+
+/* IMPORTANT */
+This website does not provide emergency care. It does not replace local medical, psychological, educational, legal, or emergency services.

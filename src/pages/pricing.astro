@@ -11,12 +11,20 @@ import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 const breadcrumbs = [
   { name: 'Pricing', href: '/pricing' }
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "Pricing for Services and Resources",
+  "description": "View pricing for Rabbia consultation, provider sessions, parent packages, school consultation, workshops, and digital child development resources."
+};
 ---
 
-<Layout title="Pricing & Packages">
+<Layout title="Pricing | Parent Consultation, Provider Sessions & Resources">
   <SEO
-    title="Consultation Fees & Program Pricing"
-    description="Transparent pricing for global parent consultation, ADHD/ASD support programs, and local psychological assessments."
+    title="Pricing | Parent Consultation, Provider Sessions & Resources"
+    description="View pricing for Rabbia consultation, provider sessions, parent packages, school consultation, workshops, and digital child development resources."
+    schema={schema}
   />
 
   <DisclaimerBanner />

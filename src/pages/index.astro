@@ -1,174 +1,40 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Schema from '../components/Schema.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Hero from '../components/Hero.astro';
-import TrustStrip from '../components/TrustStrip.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import ServiceCard from '../components/ServiceCard.astro';
-import BookingCTA from '../components/BookingCTA.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnimatedHero from '../components/home/AnimatedHero.astro';
+import TrustBadgeStrip from '../components/home/TrustBadgeStrip.astro';
+import ParentChoiceSection from '../components/home/ParentChoiceSection.astro';
+import BehaviorCommunicationVisualizer from '../components/home/BehaviorCommunicationVisualizer.astro';
+import InteractiveServiceCards from '../components/home/InteractiveServiceCards.astro';
+import ProviderPreviewSection from '../components/home/ProviderPreviewSection.astro';
+import RegionSupportSection from '../components/home/RegionSupportSection.astro';
+import ParentJourneyTimeline from '../components/home/ParentJourneyTimeline.astro';
+import ResourceVaultPreview from '../components/home/ResourceVaultPreview.astro';
+import PricingPreview from '../components/home/PricingPreview.astro';
+import ResearchCredibilitySection from '../components/home/ResearchCredibilitySection.astro';
+import FAQPreview from '../components/home/FAQPreview.astro';
+import FinalBookingCTA from '../components/home/FinalBookingCTA.astro';
+import HomepageSchema from '../components/home/HomepageSchema.astro';
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Rabbia Ashraf",
-  "jobTitle": "Clinical Child Psychologist",
-  "url": "https://rabbiapsychologist.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/rabbiapsychologist"
-  ]
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Rabbia Ashraf Child Psychology",
-  "url": "https://rabbiapsychologist.com",
-  "description": "Global child psychology consultation and parent education platform."
-};
+const title = "Rabbia Ashraf & Associates | Child Development & Parent Guidance";
+const description = "Learn from parent-friendly resources, compare child development specialists, and book parent consultation for ASD, ADHD, behavior, school concerns, and developmental support.";
 ---
 
-<Layout title="Home">
-  <SEO
-    title="Clinical Child Psychologist | Autism & ADHD Support"
-    description="Rabbia Ashraf offers online parent consultation, autism support, ADHD guidance, and developmental behavior planning for international families."
-  />
-  <Schema schema={personSchema} />
-  <Schema schema={organizationSchema} />
+<BaseLayout title={title} description={description}>
+  <AnimatedHero />
+  <TrustBadgeStrip />
+  <ParentChoiceSection />
+  <BehaviorCommunicationVisualizer />
+  <InteractiveServiceCards />
+  <ProviderPreviewSection />
+  <RegionSupportSection />
+  <ParentJourneyTimeline />
+  <ResourceVaultPreview />
+  <ResearchCredibilitySection />
+  <PricingPreview />
+  <FAQPreview />
+  <FinalBookingCTA />
 
-  <DisclaimerBanner />
-  <Header />
+  <HomepageSchema slot="head" />
 
-  <Hero
-    title="From confusion to a clear support plan"
-    subtitle="Global child psychology consultation and parent education. Instead of asking, 'How do we stop this behavior?' we ask, 'What is this behavior communicating?'"
-  />
 
-  <TrustStrip />
-
-  <section class="py-16 md:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Before you book, learn what may be happening beneath the behavior</h2>
-      <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-        When a child is not listening, the issue may not be unwillingness. It may be difficulty with attention, working memory, task initiation, emotional regulation, or processing.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        <div class="text-left">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Online Parent Consultation</h3>
-          <p class="text-gray-600">Guidance for developmental concerns, behavior challenges, and parenting strategies from anywhere in the world.</p>
-        </div>
-        <div class="text-left">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Autism & ADHD Support</h3>
-          <p class="text-gray-600">Evidence-based parent training, executive function coaching, and tailored behavioral support plans.</p>
-        </div>
-        <div class="text-left">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">School & IEP Consultation</h3>
-          <p class="text-gray-600">Collaborating with educators to create effective support systems for your child in the classroom.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-brand-sky py-16 md:py-24">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Choose support in a way that fits your family</h2>
-        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Flexible options designed to meet you where you are.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-          <div class="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mx-auto mb-4 text-brand-trust text-xl font-bold">1</div>
-          <h3 class="font-bold text-brand-navy mb-2">Learn First</h3>
-          <p class="text-sm text-gray-600">Access evidence-informed parent resources and educational materials.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-          <div class="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mx-auto mb-4 text-brand-trust text-xl font-bold">2</div>
-          <h3 class="font-bold text-brand-navy mb-2">Compare Specialists</h3>
-          <p class="text-sm text-gray-600">Review profiles of verified child development professionals.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-          <div class="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mx-auto mb-4 text-brand-trust text-xl font-bold">3</div>
-          <h3 class="font-bold text-brand-navy mb-2">Filter & Choose</h3>
-          <p class="text-sm text-gray-600">Select by region, expertise, language, and pricing.</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-          <div class="w-12 h-12 bg-brand-cream rounded-full flex items-center justify-center mx-auto mb-4 text-brand-trust text-xl font-bold">4</div>
-          <h3 class="font-bold text-brand-navy mb-2">Book Consultation</h3>
-          <p class="text-sm text-gray-600">Schedule the support option that fits your family's needs.</p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl p-8 md:p-12 shadow-sm border border-brand-trust mb-16 text-center max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold text-brand-navy mb-4">Parents stay in control</h2>
-        <p class="text-gray-700 text-lg">
-          Families can review provider profiles, understand service boundaries, compare options, and choose who they want to book. Our role is to make child development guidance easier to understand and easier to access.
-        </p>
-      </div>
-
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Support options, not one-size-fits-all</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <ServiceCard
-          title="Parent Guidance"
-          description="Online sessions for parents seeking expert guidance on child behavior and development."
-          href="/global-consultation"
-        />
-        <ServiceCard
-          title="ASD Support"
-          description="Parent training and behavioral support planning for families navigating ASD."
-          href="/autism-support"
-        />
-        <ServiceCard
-          title="ADHD Support"
-          description="Executive function coaching and strategies for managing ADHD at home and school."
-          href="/adhd-support"
-        />
-        <ServiceCard
-          title="School Consultation"
-          description="Collaborative support for IEPs and school-based accommodations."
-          href="/school-iep-consultation"
-        />
-        <ServiceCard
-          title="Behavior Planning"
-          description="Structured programs to equip parents with evidence-based behavioral strategies."
-          href="/behavior-support-planning"
-        />
-        <ServiceCard
-          title="Digital Tools"
-          description="Downloadable resources, worksheets, and guides for everyday parenting."
-          href="/resources"
-        />
-        <ServiceCard
-          title="Workshops"
-          description="Educational webinars and specialized training sessions."
-          href="/webinars"
-        />
-        <ServiceCard
-          title="Local Assessment Pathways"
-          description="Psychological assessment and formal diagnosis (available in select regions)."
-          href="/psychological-assessment"
-        />
-      </div>
-      <div class="text-center mt-12">
-        <a href="/services" class="text-brand-navy font-bold hover:text-blue-700 inline-flex items-center">
-          View all services
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <BookingCTA />
-  </div>
-
-  <Footer />
-  <StickyMobileBookingCTA />
-</Layout>
+</BaseLayout>

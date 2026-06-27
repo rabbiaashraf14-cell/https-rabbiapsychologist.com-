@@ -1,0 +1,86 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://rabbiapsychologist.com/#website",
+      "url": "https://rabbiapsychologist.com",
+      "name": "Rabbia Ashraf & Associates",
+      "description": "Global parent guidance, child development support, and specialist consultation platform.",
+      "publisher": {
+        "@id": "https://rabbiapsychologist.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://rabbiapsychologist.com/#organization",
+      "name": "Rabbia Ashraf & Associates",
+      "url": "https://rabbiapsychologist.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rabbiapsychologist.com/brand/logo-primary.svg"
+      },
+      "description": "A multidisciplinary child development and neurodiversity center focusing on evidence-informed parent consultation.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@rabbiapsychologist.com",
+        "contactType": "customer support"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://rabbiapsychologist.com/#service",
+      "name": "Parent Consultation and Guidance",
+      "provider": {
+        "@id": "https://rabbiapsychologist.com/#organization"
+      },
+      "areaServed": ["PK", "US", "AU", "GB", "AE", "SA"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://rabbiapsychologist.com/#person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Child Psychologist",
+      "url": "https://rabbiapsychologist.com/providers/rabbia-ashraf",
+      "sameAs": [
+        "https://www.linkedin.com/in/rabbiapsychologist"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is parent consultation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parent consultation is educational and strategic guidance focused on equipping parents with tools to support their child's development, manage behaviors, and navigate school systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide medical diagnosis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This platform provides educational guidance and support planning. Formal psychological assessment and diagnosis are only available in specific regions where our providers hold the appropriate local licensing."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rabbiapsychologist.com/"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
