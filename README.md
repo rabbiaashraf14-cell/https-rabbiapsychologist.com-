@@ -1,58 +1,57 @@
-# Astro Starter Kit: Minimal
+# Rabbia Ashraf & Associates
 
+## Project Overview
+Rabbia Ashraf & Associates is a global parent guidance and child development support platform built with Astro, Tailwind CSS, TypeScript, and Firebase Hosting.
+
+## Tech Stack
+* Astro
+* TypeScript
+* Tailwind CSS (v4)
+* Firebase Hosting
+
+## Install Steps
 ```sh
-npm create astro@latest -- --template minimal
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+## Local Dev Command
+```sh
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Build Command
+```sh
+npm run build
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Firebase Deployment
-This project is configured for Firebase Hosting.
-
-### Build
-To build the project for production, run:
-`npm run build`
-
+## Firebase Deployment Steps
 ### Preview
-To deploy to a preview channel, run:
-`npx firebase hosting:channel:deploy preview_name`
+```sh
+npm run firebase:preview
+```
 
 ### Production Deploy
-To deploy to production, run:
-`npx firebase deploy --only hosting`
+```sh
+npm run firebase:deploy
+```
+
+## Folder Structure
+* `public/`: Static assets (images, icons, robots.txt, sitemap.xml)
+* `src/components/`: Reusable UI components
+* `src/layouts/`: Base layouts for pages
+* `src/pages/`: Astro pages
+* `src/data/`: Data files (providers, pricing, services, regions)
+* `src/styles/`: Global CSS and Tailwind tokens
+
+## Editing Content
+* **Providers:** `src/data/providers.ts`
+* **Pricing:** `src/data/pricing.ts`
+* **Services:** `src/data/services.ts`
+* **Regions:** `src/data/regions.ts`
+* **Booking Link:** Update in `src/data/site.ts`
+
+## Legal Disclaimer Note
+The site uses international service disclaimers. Always maintain safe boundaries around clinical diagnoses. Services should be framed globally as parent consultation, psychoeducation, and educational guidance unless explicitly verified by legal credentials.
+
+## Firebase Configuration
+A placeholder `.firebaserc` file is included in this repository. Before deploying to Firebase, update the `default` project ID in `.firebaserc` to match your actual Firebase project ID.

@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import SEO from '../components/seo/SEO.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalURL?: string;
+  type?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { title, description, canonicalURL, type, image, noindex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO
+      title={title}
+      description={description || "Rabbia Ashraf & Associates offers global parent guidance, child development support, and specialist consultation."}
+      canonical={canonicalURL}
+      type={type}
+      image={image}
+      noindex={noindex}
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0F2742" />
+    <meta name="generator" content={Astro.generator} />
+    <slot name="head" />
+  </head>
+  <body class="bg-brand-cream text-brand-navy font-sans antialiased flex flex-col min-h-screen">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <StickyMobileBookingCTA />
+  </body>
+</html>

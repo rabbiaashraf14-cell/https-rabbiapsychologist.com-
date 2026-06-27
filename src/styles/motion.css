@@ -1,0 +1,58 @@
+@layer utilities {
+  .fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .soft-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  .soft-scale:hover {
+    transform: scale(1.02);
+  }
+
+  .card-hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .soft-scale:hover, .card-hover-lift:hover {
+    transform: none;
+  }
+}

@@ -1,25 +1,4 @@
 ---
-import MegaMenu from './MegaMenu.astro';
-import MobileMenu from './MobileMenu.astro';
+import HeaderComponent from './global/Header.astro';
 ---
-
-<header class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center">
-          <img src="/brand/logo-primary.svg" alt="Rabbia Ashraf, Clinical Child Psychologist" class="h-10 w-auto" />
-        </a>
-      </div>
-      <nav class="hidden md:flex space-x-8">
-        <MegaMenu />
-      </nav>
-      <div class="hidden md:flex items-center">
-        <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" target="_blank" rel="noopener noreferrer" class="bg-brand-navy text-white px-6 py-2 rounded-full font-medium hover:bg-blue-900 transition-colors">Book Consultation</a>
-      </div>
-      <div class="md:hidden flex items-center">
-        <MobileMenu />
-      </div>
-    </div>
-  </div>
-</header>
+<HeaderComponent />

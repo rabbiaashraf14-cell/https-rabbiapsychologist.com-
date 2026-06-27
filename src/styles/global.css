@@ -1,15 +1,23 @@
 @import "tailwindcss";
-
-@theme {
-  --color-brand-navy: #0F2742;
-  --color-brand-sky: #DCEEFF;
-  --color-trust-blue: #4B8BBE;
-  --color-brand-cream: #FFF8EF;
-  --color-brand-lavender: #EEE9FF;
-  --color-brand-green: #8BBF9F;
-  --color-charcoal-text: #1F2933;
-}
+@import "./tokens.css";
+@import "./motion.css";
 
 body {
-  @apply bg-brand-cream text-brand-navy;
+  @apply bg-brand-cream text-brand-navy font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-brand-navy;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+input, select, textarea {
+  @apply transition-colors duration-200;
+}
+
+input:focus, select:focus, textarea:focus {
+  @apply outline-none ring-2 ring-brand-trust border-transparent;
 }

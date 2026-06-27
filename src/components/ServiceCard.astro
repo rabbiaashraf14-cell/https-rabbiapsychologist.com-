@@ -1,28 +1,6 @@
 ---
-interface Props {
-  title: string;
-  description: string;
-  href: string;
-  icon?: string;
-}
-
+import ServiceCardComponent from './services/ServiceCard.astro';
 const { title, description, href } = Astro.props;
+const service = { title, description, slug: href?.split('/').pop() || '' };
 ---
-
-<a href={href} class="block group h-full">
-  <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-full transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 group-hover:border-brand-sky flex flex-col">
-    <div class="h-12 w-12 bg-brand-sky rounded-lg flex items-center justify-center mb-4 text-brand-navy">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    </div>
-    <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-blue-700 transition-colors">{title}</h3>
-    <p class="text-gray-600 mb-4 flex-grow">{description}</p>
-    <div class="text-brand-navy font-medium inline-flex items-center group-hover:text-blue-700">
-      Learn more
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </div>
-  </div>
-</a>
+<ServiceCardComponent service={service} />
