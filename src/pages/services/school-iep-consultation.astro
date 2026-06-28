@@ -1,9 +1,140 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import Schema from '../../components/seo/Schema.astro';
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' },
+  { name: 'School & IEP Consultation', href: '/services/school-iep-consultation' }
+];
+
+const faqs = [
+  { question: "Will you attend the IEP meeting?", answer: "This depends on provider availability and your location. Most often, we provide preparation support so you are equipped to advocate effectively during the meeting." },
+  { question: "Is this legal advice?", answer: "No. We provide educational and developmental guidance, not legal services or formal IEP legal advocacy." }
+];
 ---
-<ServiceLayout title="school-iep-consultation">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-brand-navy mb-6">Service: school-iep-consultation</h1>
-    <p>Placeholder content for school-iep-consultation.</p>
+
+<Layout title="School & IEP Consultation">
+  <SEO
+    title="School & IEP Preparation Support | Consultation Services"
+    description="School and IEP preparation support for parents managing behavior concerns, learning needs, teacher communication, and support planning."
+    canonicalURL="https://rabbiapsychologist.com/services/school-iep-consultation"
+    type="WebPage"
+  />
+  <Schema
+    type="Service"
+    data={{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "School & IEP Consultation",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rabbia Ashraf & Associates"
+      },
+      "description": "School and IEP preparation support for parents managing behavior concerns, learning needs, teacher communication, and support planning."
+    }}
+  />
+  <Schema
+    type="FAQPage"
+    data={{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }}
+  />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">School & IEP Consultation</h1>
+      <p class="text-xl text-gray-700">
+        Support for parents preparing for school meetings, teacher communication, behavior concerns, learning supports, and individualized planning conversations.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Who this service is for</h2>
+        <p class="text-gray-700 mb-6">Parents who need guidance on how to effectively communicate their child's needs to educators, or who are preparing for IEP (Individualized Education Program) or 504 plan meetings.</p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Common parent concerns</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+          <li>Child is struggling academically or socially at school</li>
+          <li>Feeling unprepared for an upcoming IEP meeting</li>
+          <li>Miscommunication or conflict with school staff</li>
+          <li>Needing accommodations but not knowing what to ask for</li>
+        </ul>
+      </div>
+
+      <div class="bg-brand-cream p-6 rounded-xl border border-gray-100">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">What this service may include</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+          <li>Review of school feedback or previous plans</li>
+          <li>IEP preparation support</li>
+          <li>School communication support</li>
+          <li>Learning support planning</li>
+          <li>Recommending specific classroom accommodations</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-red-800 mb-4">What this service does not include</h2>
+        <p class="text-gray-700 font-medium bg-red-50 p-4 rounded-md border border-red-100">
+          Important boundary: We do not provide official IEP legal services in every country. We provide "IEP preparation support," "school communication support," and "learning support planning."
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">What parents may receive</h2>
+      <p class="text-gray-700 mb-6">A clear agenda for your school meeting, specific accommodation requests tailored to your child's profile, and strategies for collaborative communication with teachers.</p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">How to prepare</h2>
+      <p class="text-gray-700 mb-6">Gather your child's current IEP, any recent assessments, and recent communications from teachers. Highlight your top 3 concerns regarding their school experience.</p>
+
+      <div class="flex gap-4 flex-wrap">
+        <a href="/services/psychological-assessment-local" class="text-brand-trust font-medium hover:underline">Explore Local Assessment &rarr;</a>
+        <a href="/providers" class="text-brand-trust font-medium hover:underline">View Related Providers &rarr;</a>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Pricing</h2>
+      <ul class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4 text-gray-700">
+        <li class="flex justify-between border-b border-gray-50 pb-2"><span>School/IEP Consultation</span> <span>From USD 100 / AUD 155</span></li>
+        <li class="flex justify-between"><span>Provider Consultation</span> <span>Provider-specific</span></li>
+      </ul>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-white border border-gray-100 rounded-lg p-4">
+            <summary class="font-bold text-brand-navy cursor-pointer">{faq.question}</summary>
+            <p class="text-gray-700 mt-2">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16 bg-gray-50 p-6 rounded-xl text-sm text-gray-600 text-center border border-gray-200">
+      <strong>Safety & Legal Disclaimer:</strong> International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location.
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center bg-brand-cream border border-brand-trust/20 rounded-xl p-8">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h2>
+      <p class="text-gray-700 mb-6">Book a consultation today to discuss your child's needs and develop a tailored support plan.</p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" class="bg-brand-trust text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors">Book Consultation</a>
+      </div>
+    </div>
   </div>
-</ServiceLayout>
+</Layout>

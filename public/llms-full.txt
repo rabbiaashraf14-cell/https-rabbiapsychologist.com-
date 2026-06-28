@@ -10,6 +10,16 @@ Focuses on evidence-informed parent consultation, developmental guidance, assess
 ## Provider Model & Parent Choice
 We operate a directory where parents can review and select independent providers. Each provider is responsible for working within their own qualifications, scope, license, registration, and regional requirements.
 
+## Core Services
+- Global Parent Consultation (/services/global-parent-consultation)
+- Autism Parent Guidance (/services/autism-parent-guidance)
+- ADHD Executive Function Support (/services/adhd-executive-function-support)
+- Behavior Support Planning (/services/behavior-support-planning)
+- Parent Training (/services/parent-training)
+- School & IEP Consultation (/services/school-iep-consultation)
+- Psychological Assessment, Local Only (/services/psychological-assessment-local)
+- Referral Guidance (/services/referral-guidance)
+
 ## Service Boundaries (International vs Local)
 International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction.
 *Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location.* (e.g. Local Psychological Assessments in Lahore, Pakistan).

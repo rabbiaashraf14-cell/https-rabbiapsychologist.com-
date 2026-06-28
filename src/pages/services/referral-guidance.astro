@@ -1,9 +1,144 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import Schema from '../../components/seo/Schema.astro';
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' },
+  { name: 'Referral Guidance', href: '/services/referral-guidance' }
+];
+
+const faqs = [
+  { question: "Do you offer emergency support?", answer: "No. If there is a risk of harm or a medical emergency, you must contact local emergency services immediately." },
+  { question: "Will you refer me to a specific doctor?", answer: "We provide guidance on the type of professional (e.g., developmental pediatrician, speech therapist) you should seek based on your child's presentation, rather than recommending specific local clinics globally." }
+];
 ---
-<ServiceLayout title="referral-guidance">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-brand-navy mb-6">Service: referral-guidance</h1>
-    <p>Placeholder content for referral-guidance.</p>
+
+<Layout title="Referral Guidance">
+  <SEO
+    title="Referral Guidance | Knowing When to Seek Support"
+    description="Referral guidance for parents deciding when to seek pediatric, psychological, psychiatric, speech, occupational therapy, school, or emergency support."
+    canonicalURL="https://rabbiapsychologist.com/services/referral-guidance"
+    type="WebPage"
+  />
+  <Schema
+    type="Service"
+    data={{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Referral Guidance",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rabbia Ashraf & Associates"
+      },
+      "description": "Referral guidance for parents deciding when to seek pediatric, psychological, psychiatric, speech, occupational therapy, school, or emergency support."
+    }}
+  />
+  <Schema
+    type="FAQPage"
+    data={{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }}
+  />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Referral Guidance</h1>
+      <p class="text-xl text-gray-700">
+        Guidance on when parents should seek a pediatrician, developmental pediatrician, registered psychologist, psychiatrist, speech therapist, occupational therapist, school psychologist, special needs educator, or emergency support.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Who this service is for</h2>
+        <p class="text-gray-700 mb-6">Parents feeling overwhelmed by the various types of child specialists and unsure which professional is best suited to address their child's specific needs.</p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Common parent concerns</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+          <li>Not knowing the difference between a psychologist and a psychiatrist</li>
+          <li>Unsure if a speech delay requires a therapist or wait-and-see approach</li>
+          <li>Worrying about severe behavioral changes</li>
+          <li>Feeling lost in the healthcare system</li>
+        </ul>
+      </div>
+
+      <div class="bg-brand-cream p-6 rounded-xl border border-gray-100">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">What this service may include</h2>
+        <p class="text-gray-700 mb-4">Clarifying the roles of different specialists and discussing red flags that indicate a need for immediate evaluation, including:</p>
+        <ul class="list-disc pl-5 text-red-800 font-medium space-y-2 mb-6">
+          <li>Risk of harm</li>
+          <li>Medical emergency</li>
+          <li>Abuse/neglect concerns</li>
+          <li>Seizures or neurological concerns</li>
+          <li>Severe regression</li>
+          <li>Sudden major behavioral change</li>
+          <li>Suicidal statements</li>
+          <li>Severe aggression causing immediate danger</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-red-800 mb-4">What this service does not include</h2>
+        <p class="text-gray-700 font-medium bg-red-50 p-4 rounded-md border border-red-100">
+          Important boundary: This service is for informational guidance. It is not a medical referral, diagnosis, or substitute for emergency services.
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">What parents may receive</h2>
+      <p class="text-gray-700 mb-6">A clear map of the multidisciplinary team that could benefit your child, helping you prioritize appointments and communicate effectively with local providers.</p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">How to prepare</h2>
+      <p class="text-gray-700 mb-6">List the specific symptoms or behaviors that are concerning you the most, and bring any notes or previous brief evaluations from pediatricians or teachers.</p>
+
+      <div class="flex gap-4 flex-wrap">
+        <a href="/services/global-parent-consultation" class="text-brand-trust font-medium hover:underline">Explore Global Consultation &rarr;</a>
+        <a href="/providers" class="text-brand-trust font-medium hover:underline">View Related Providers &rarr;</a>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Pricing</h2>
+      <ul class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4 text-gray-700">
+        <li class="flex justify-between border-b border-gray-50 pb-2"><span>Initial Parent Consultation with Rabbia</span> <span>PKR 7,000 / USD 50</span></li>
+        <li class="flex justify-between"><span>Provider Consultation</span> <span>Provider-specific</span></li>
+      </ul>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-white border border-gray-100 rounded-lg p-4">
+            <summary class="font-bold text-brand-navy cursor-pointer">{faq.question}</summary>
+            <p class="text-gray-700 mt-2">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16 bg-gray-50 p-6 rounded-xl text-sm text-gray-600 text-center border border-gray-200">
+      <strong>Safety & Legal Disclaimer:</strong> International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location.
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center bg-brand-cream border border-brand-trust/20 rounded-xl p-8">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h2>
+      <p class="text-gray-700 mb-6">Book a consultation today to discuss your child's needs and develop a tailored support plan.</p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" class="bg-brand-trust text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors">Book Consultation</a>
+      </div>
+    </div>
   </div>
-</ServiceLayout>
+</Layout>

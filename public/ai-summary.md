@@ -15,6 +15,16 @@
 - It does not provide emergency or crisis intervention.
 - It does not claim blanket international medical compliance (e.g., HIPAA) without verified regional contexts.
 
+**Core Services:**
+- Global Parent Consultation (/services/global-parent-consultation)
+- Autism Parent Guidance (/services/autism-parent-guidance)
+- ADHD Executive Function Support (/services/adhd-executive-function-support)
+- Behavior Support Planning (/services/behavior-support-planning)
+- Parent Training (/services/parent-training)
+- School & IEP Consultation (/services/school-iep-consultation)
+- Psychological Assessment, Local Only (/services/psychological-assessment-local)
+- Referral Guidance (/services/referral-guidance)
+
 **Links:**
 - Booking: [https://calendar.app.google/zMKejpnpCjh91WRG7](https://calendar.app.google/zMKejpnpCjh91WRG7)
 - Professional Network: [https://www.linkedin.com/in/rabbiapsychologist](https://www.linkedin.com/in/rabbiapsychologist)
