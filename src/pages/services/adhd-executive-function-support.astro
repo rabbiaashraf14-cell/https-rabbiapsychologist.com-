@@ -1,9 +1,143 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import Schema from '../../components/seo/Schema.astro';
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' },
+  { name: 'ADHD Executive Function Support', href: '/services/adhd-executive-function-support' }
+];
+
+const faqs = [
+  { question: "Is this therapy?", answer: "No, this is parent education and developmental guidance, not regulated therapy." },
+  { question: "Can my child be diagnosed online?", answer: "No. We do not provide formal medical or psychological diagnosis online. We provide referral guidance for formal diagnosis where needed." }
+];
 ---
-<ServiceLayout title="adhd-executive-function-support">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-brand-navy mb-6">Service: adhd-executive-function-support</h1>
-    <p>Placeholder content for adhd-executive-function-support.</p>
+
+<Layout title="ADHD Executive Function Support">
+  <SEO
+    title="ADHD Executive Function Support | Parent Guidance"
+    description="ADHD parent guidance focused on attention, working memory, task initiation, routines, emotional regulation, planning, and school support."
+    canonicalURL="https://rabbiapsychologist.com/services/adhd-executive-function-support"
+    type="WebPage"
+  />
+  <Schema
+    type="Service"
+    data={{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "ADHD Executive Function Support",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rabbia Ashraf & Associates"
+      },
+      "description": "ADHD parent guidance focused on attention, working memory, task initiation, routines, emotional regulation, planning, and school support."
+    }}
+  />
+  <Schema
+    type="FAQPage"
+    data={{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }}
+  />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="max-w-4xl mx-auto mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">ADHD Executive Function Support</h1>
+      <p class="text-xl text-gray-700">
+        Guidance for attention, working memory, task initiation, impulse control, emotional regulation, planning, organization, and routines.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
+      <div>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Who this service is for</h2>
+        <p class="text-gray-700 mb-6">Parents seeking practical strategies to support their child's focus, organization, and daily routines, whether they have a formal ADHD diagnosis or show signs of executive functioning challenges.</p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Common parent concerns</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+          <li>Difficulty starting or finishing tasks</li>
+          <li>Forgetting instructions or losing items</li>
+          <li>Impulsivity and big emotional reactions</li>
+          <li>Homework struggles and school organization</li>
+          <li>Challenges with morning or bedtime routines</li>
+        </ul>
+      </div>
+
+      <div class="bg-brand-cream p-6 rounded-xl border border-gray-100">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">What this service may include</h2>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+          <li>Home routines</li>
+          <li>One-step instructions</li>
+          <li>Reinforcement systems</li>
+          <li>Homework planning</li>
+          <li>School communication</li>
+          <li>Parent strategies</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-red-800 mb-4">What this service does not include</h2>
+        <p class="text-gray-700 font-medium bg-red-50 p-4 rounded-md border border-red-100">
+          Important boundary: We do not promise medication advice or diagnosis.
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">What parents may receive</h2>
+      <p class="text-gray-700 mb-6">Step-by-step routine plans, strategies for breaking down instructions, effective reinforcement systems, and techniques to support your child's emotional regulation.</p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">How to prepare</h2>
+      <p class="text-gray-700 mb-6">Note the specific times of day or tasks that are most challenging (e.g., homework, mornings). Gather any school feedback regarding focus or organization.</p>
+
+      <div class="flex gap-4 flex-wrap">
+        <a href="/services/autism-parent-guidance" class="text-brand-trust font-medium hover:underline">Explore Autism Support &rarr;</a>
+        <a href="/providers" class="text-brand-trust font-medium hover:underline">View Related Providers &rarr;</a>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Pricing</h2>
+      <ul class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4 text-gray-700">
+        <li class="flex justify-between border-b border-gray-50 pb-2"><span>ADHD Executive Function Consultation</span> <span>USD 55 / AUD 85</span></li>
+        <li class="flex justify-between border-b border-gray-50 pb-2"><span>4-Session Parent Guidance Package</span> <span>USD 180 / AUD 280</span></li>
+        <li class="flex justify-between"><span>Provider Consultation</span> <span>Provider-specific</span></li>
+      </ul>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="bg-white border border-gray-100 rounded-lg p-4">
+            <summary class="font-bold text-brand-navy cursor-pointer">{faq.question}</summary>
+            <p class="text-gray-700 mt-2">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-16 bg-gray-50 p-6 rounded-xl text-sm text-gray-600 text-center border border-gray-200">
+      <strong>Safety & Legal Disclaimer:</strong> International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location.
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center bg-brand-cream border border-brand-trust/20 rounded-xl p-8">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h2>
+      <p class="text-gray-700 mb-6">Book a consultation today to discuss your child's needs and develop a tailored support plan.</p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" class="bg-brand-trust text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors">Book Consultation</a>
+      </div>
+    </div>
   </div>
-</ServiceLayout>
+</Layout>
