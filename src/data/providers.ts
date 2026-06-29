@@ -6,7 +6,7 @@ export const providers = [
     location: 'Lahore, Pakistan',
     languages: ['English', 'Urdu', 'Punjabi'],
     supportAreas: ['ASD', 'ADHD', 'parent guidance', 'behavior support', 'psychological assessment local only', 'school consultation'],
-    price: 'PKR 7,000 / USD 35 / AUD 55',
+    price: 'Pakistan-based families may receive local pricing or booking-stage discounts. Final pricing is confirmed during booking or consultation coordination.',
     bookingLink: 'https://calendar.app.google/zMKejpnpCjh91WRG7',
     verificationStatus: 'Lead Clinician',
     scopeNote: 'Parent consultation, developmental guidance, and local clinical services where legally permitted',

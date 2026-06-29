@@ -3,13 +3,13 @@ interface Props {
   title: string;
   priceUSD?: string;
   priceAUD?: string;
-  pricePKR?: string;
+
   description: string;
   features: string[];
   isPopular?: boolean;
 }
 
-const { title, priceUSD, priceAUD, pricePKR, description, features, isPopular = false } = Astro.props;
+const { title, priceUSD, priceAUD, description, features, isPopular = false } = Astro.props;
 ---
 
 <div class={`bg-white rounded-2xl p-8 shadow-sm border ${isPopular ? 'border-brand-navy shadow-md relative' : 'border-gray-100'} flex flex-col h-full`}>
@@ -25,7 +25,7 @@ const { title, priceUSD, priceAUD, pricePKR, description, features, isPopular = 
   <div class="mb-6 space-y-1">
     {priceUSD && <div class="text-3xl font-bold text-brand-navy">{priceUSD} <span class="text-sm font-normal text-gray-500">USD</span></div>}
     {priceAUD && <div class="text-lg text-gray-700">{priceAUD} <span class="text-sm text-gray-500">AUD</span></div>}
-    {pricePKR && <div class="text-lg text-gray-700">{pricePKR} <span class="text-sm text-gray-500">PKR</span></div>}
+
   </div>
 
   <ul class="space-y-3 mb-8 flex-grow">

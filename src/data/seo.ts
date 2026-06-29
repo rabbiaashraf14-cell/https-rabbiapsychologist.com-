@@ -1,4 +1,4 @@
 export const defaultSEO = {
-  title: "Rabbia Ashraf & Associates",
-  description: "Global Parent Guidance, Child Development Support, and Specialist Consultation",
+  title: "NeuroNest Child Development Centre",
+  description: "Multidisciplinary Child Development, Parent Guidance, and Specialist Consultation Centre",
 };

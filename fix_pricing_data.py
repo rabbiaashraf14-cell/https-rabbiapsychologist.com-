@@ -1,4 +1,4 @@
-export const pricingPakistan = "Pakistan-based families may receive local pricing or booking-stage discounts. Final pricing is confirmed during booking or consultation coordination.";
+pricing_data = """export const pricingPakistan = "Pakistan-based families may receive local pricing or booking-stage discounts. Final pricing is confirmed during booking or consultation coordination.";
 
 export const pricingInternational = [
   { name: 'Online Parent Consultation', price: 'USD 50 / AUD 75' },
@@ -15,3 +15,7 @@ export const pricingInternational = [
 
 export const pricingNote = "Prices vary by provider, region, session type, currency conversion, payment method, and scope of service. Parents can review provider profiles and select the option that fits their needs before booking. Pakistan-based families may receive local pricing or booking-stage discounts.";
 export const pricingServiceScope = "International pricing applies to parent education, developmental guidance, ASD/ADHD support planning, school communication preparation, and consultation services. Regulated therapy, diagnosis, or assessment is provided only where legally and ethically permitted.";
+"""
+
+with open('src/data/pricing.ts', 'w') as f:
+    f.write(pricing_data)

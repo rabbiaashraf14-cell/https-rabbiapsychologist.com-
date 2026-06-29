@@ -1,4 +1,4 @@
-# AI Summary: Rabbia Ashraf & Associates
+# AI Summary: NeuroNest Child Development Centre
 
 **What it is:** A global platform for child development, parent guidance, and multidisciplinary specialist consultation led by Clinical Psychologist Rabbia Ashraf.
 
@@ -27,4 +27,4 @@
 
 **Links:**
 - Booking: [https://calendar.app.google/zMKejpnpCjh91WRG7](https://calendar.app.google/zMKejpnpCjh91WRG7)
-- Professional Network: [https://www.linkedin.com/in/rabbiapsychologist](https://www.linkedin.com/in/rabbiapsychologist)
+- Professional Network: [https://www.linkedin.com/in/NeuroNest Child Development Centre](https://www.linkedin.com/in/NeuroNest Child Development Centre)
