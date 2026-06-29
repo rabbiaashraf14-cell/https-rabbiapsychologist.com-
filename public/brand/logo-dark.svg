@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
-  <rect width="800" height="200" fill="#FFF8EF" />
-  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" fill="#0F2742" text-anchor="middle" dominant-baseline="middle">NeuroNest Dark</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="150" viewBox="0 0 600 150">
+  <rect width="600" height="150" fill="#FFFFFF" />
+  <g transform="translate(20, 25)">
+
+  <path d="M 30,70 Q 50,20 70,70 Q 50,90 30,70 Z" fill="none" stroke="#102A43" stroke-width="4"/>
+  <circle cx="50" cy="40" r="15" fill="none" stroke="#102A43" stroke-width="4"/>
+  <path d="M 20,50 Q 50,110 80,50" fill="none" stroke="#2F8F8A" stroke-width="4"/>
+
+  </g>
+  <text x="140" y="70" font-family="Playfair Display, Georgia, serif" font-size="32" font-weight="bold" fill="#102A43">NeuroNest Child Development Centre</text>
+  <text x="142" y="105" font-family="Inter, Arial, sans-serif" font-size="14" fill="#2F8F8A" letter-spacing="1">Growing Minds. Guided Families. Multidisciplinary Care.</text>
 </svg>
