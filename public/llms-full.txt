@@ -19,6 +19,11 @@ We operate a directory where parents can review and select independent providers
 - School & IEP Consultation (/services/school-iep-consultation)
 - Psychological Assessment, Local Only (/services/psychological-assessment-local)
 - Referral Guidance (/services/referral-guidance)
+- Press Release (/press/neuronest-child-development-centre-launch)
+- Newsroom (/news)
+- Use Cases (/use-cases)
+- Brand Assets (/brand-assets)
+- Media Kit (/media-kit)
 
 ## Service Boundaries (International vs Local)
 International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction.
@@ -28,11 +33,7 @@ International support may include parent education, developmental guidance, ASD/
 We offer region-specific guidance to help families understand the scope of available support in their area (Pakistan, USA, Australia, UK/Europe, MENA/Gulf).
 
 ## Pricing Summary
-- Local Pakistan Consultation: PKR 7,000+
-- Local Psychological Assessments (Lahore): PKR 25,000+
-- International Parent Guidance: Starting at USD 50 / AUD 75
-- Parent Packages & School Consultations: USD 100 - USD 180
-- Free and Paid Digital Resources: $0 - $29
+- Public international pricing: Parent/Developmental Consultations USD 50/AUD 75; School/Report Reviews USD 60-80/AUD 90-120; Digital Resources Free-USD 29.
 
 ## Resource Vault
 Offers downloadable PDFs, visual schedules, behavior logs, parent worksheets, and mini-courses to support families.

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = "How NeuroNest Helps Families | Use Cases";
+const description = "Explore common parent scenarios NeuroNest can support, including ASD concerns, ADHD routines, school meetings, IEP confusion, report review, behaviour concerns, speech delay, sensory concerns, and international family guidance.";
+
+const useCases = [
+  "My child may have ASD. Where do I start?",
+  "My child struggles with attention, routines, or impulsivity.",
+  "I have an IEP or school meeting and feel confused. From IEP confusion to a clear support plan.",
+  "I received a report but do not understand what to do next.",
+  "My child has behaviour concerns at home.",
+  "My child has speech or communication delay concerns.",
+  "My child has sensory concerns.",
+  "I am an international Pakistani parent and need guidance.",
+  "I do not know whether to see a psychologist, developmental pediatrician, OT, speech therapist, psychiatrist, or special educator.",
+  "I need school guidance before meeting teachers."
+];
+---
+<BaseLayout title={title} description={description}>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 text-center">How NeuroNest Helps Families</h1>
+    <p class="text-lg text-gray-700 mb-12 text-center max-w-2xl mx-auto">Explore common parent scenarios NeuroNest can support, including ASD concerns, ADHD routines, school meetings, IEP confusion, report review, behaviour concerns, and more.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      {useCases.map(scenario => (
+        <div class="bg-white p-6 shadow-sm rounded border border-gray-100 flex items-start">
+          <div class="text-brand-trust mr-4 mt-1">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <p class="text-gray-800 font-medium">{scenario}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center bg-brand-cream p-8 rounded-lg shadow-inner">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">Find the right path for your family</h2>
+      <a href="/choose-a-provider" class="inline-block bg-brand-trust text-white px-8 py-3 rounded font-bold hover:bg-blue-700 transition-colors">Choose Support</a>
+    </div>
+  </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Use Cases",
+  "publisher": {
+    "@type": "Organization",
+    "name": "NeuroNest Child Development Centre"
+  }
+}
+</script>
+</BaseLayout>

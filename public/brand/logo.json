@@ -1,0 +1,65 @@
+{
+  "brandName": "NeuroNest Child Development Centre",
+  "tagline": "Growing Minds. Guided Families. Multidisciplinary Care.",
+  "clinicalDirector": "Rabbia Ashraf",
+  "clinicalDirectorTitle": "Clinical Psychologist licensed in Pakistan",
+  "logoAltText": "NeuroNest Child Development Centre logo",
+  "logoStyle": {
+    "tone": "premium, professional, calm, clinical, child-development focused, multidisciplinary, parent-friendly",
+    "symbolConcept": "abstract nest, child growth figure, parent-support curve, connected care nodes, subtle developmental pathway",
+    "avoid": [
+      "cartoon child",
+      "cartoon bird",
+      "generic brain icon",
+      "medical cross",
+      "fake badge",
+      "busy illustration",
+      "childish colors"
+    ]
+  },
+  "colors": {
+    "deepNavy": "#102A43",
+    "mutedTeal": "#2F8F8A",
+    "softGold": "#C9A96A",
+    "warmCream": "#F7F3EA",
+    "softSage": "#DCEBE7",
+    "charcoalText": "#263238",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "primaryFont": "Playfair Display",
+    "secondaryFont": "Inter",
+    "fallbackSerif": "Georgia, serif",
+    "fallbackSans": "Arial, sans-serif"
+  },
+  "logoFiles": {
+    "primary": "/brand/logo-primary.svg",
+    "stacked": "/brand/logo-stacked.svg",
+    "icon": "/brand/logo-icon.svg",
+    "wordmark": "/brand/logo-wordmark.svg",
+    "light": "/brand/logo-light.svg",
+    "dark": "/brand/logo-dark.svg",
+    "favicon": "/favicon.svg",
+    "appleTouchIcon": "/apple-touch-icon.png",
+    "icon192": "/icon-192.png",
+    "icon512": "/icon-512.png",
+    "openGraphCard": "/og-brand-card.png"
+  },
+  "headerLogo": {
+    "layout": "horizontal",
+    "text": "NeuroNest Child Development Centre",
+    "subText": "Led by Rabbia Ashraf, Clinical Psychologist",
+    "showTagline": false
+  },
+  "footerLogo": {
+    "layout": "stacked",
+    "text": "NeuroNest Child Development Centre",
+    "tagline": "Growing Minds. Guided Families. Multidisciplinary Care.",
+    "subText": "Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan."
+  },
+  "openGraph": {
+    "title": "NeuroNest Child Development Centre",
+    "description": "Parent guidance and child development support for families in Pakistan and abroad.",
+    "image": "/og-brand-card.png"
+  }
+}

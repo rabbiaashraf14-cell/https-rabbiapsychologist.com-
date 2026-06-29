@@ -2,7 +2,7 @@ export const siteConfig = {
   siteName: "NeuroNest Child Development Centre",
   tagline: "Growing Minds. Guided Families. Multidisciplinary Care.",
   descriptor: "Global Parent Guidance, Child Development Support, and Specialist Consultation",
-  baseUrl: "https://rabbiapsychologist.com",
+  baseUrl: "https://www.rabbiapsychologist.com",
   bookingUrl: "https://calendar.app.google/zMKejpnpCjh91WRG7",
   linkedInUrl: "https://www.linkedin.com/in/rabbiapsychologist",
   email: "hello@rabbiapsychologist.com",

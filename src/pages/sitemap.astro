@@ -55,6 +55,14 @@ const pricing = [
   { name: 'Pricing', href: '/pricing' }
 ];
 
+const brandAndMedia = [
+  { name: 'Brand Assets', href: '/brand-assets' },
+  { name: 'Media Kit', href: '/media-kit' },
+  { name: 'Press Release', href: '/press/neuronest-child-development-centre-launch' },
+  { name: 'Newsroom', href: '/news' },
+  { name: 'Use Cases', href: '/use-cases' }
+];
+
 const legalAndSafety = [
   { name: 'Service Boundaries', href: '/service-boundaries' },
   { name: 'Privacy Policy', href: '/privacy-policy' },
@@ -135,6 +143,16 @@ const legalAndSafety = [
           <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b border-gray-200 pb-2">Pricing</h2>
           <ul class="space-y-2">
             {pricing.map(link => (
+              <li><a href={link.href} class="text-gray-700 hover:text-brand-trust underline-offset-4 hover:underline">{link.name}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Brand & Media -->
+        <div>
+          <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b border-gray-200 pb-2">Brand & Media</h2>
+          <ul class="space-y-2">
+            {brandAndMedia.map(link => (
               <li><a href={link.href} class="text-gray-700 hover:text-brand-trust underline-offset-4 hover:underline">{link.name}</a></li>
             ))}
           </ul>

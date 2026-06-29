@@ -1,6 +1,6 @@
 # AI Summary: NeuroNest Child Development Centre
 
-**What it is:** A global platform for child development, parent guidance, and multidisciplinary specialist consultation led by Clinical Psychologist Rabbia Ashraf.
+**What it is:** A global platform for child development, parent guidance, and multidisciplinary specialist consultation. Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan.
 
 **Who it helps:** Parents and families worldwide seeking support for child development, neurodiversity (Autism/ADHD), behavior management, and educational planning.
 
@@ -9,6 +9,8 @@
 - A directory of multidisciplinary providers filtering by region, expertise, language, and price.
 - Digital resources (worksheets, visual schedules, behavior logs).
 - Local psychological assessments (Lahore, Pakistan only).
+- Press releases and news (/press/neuronest-child-development-centre-launch, /news, /brand-assets, /media-kit).
+- Scenarios and use cases (/use-cases).
 
 **What it DOES NOT offer:**
 - It does not offer "worldwide therapy" or "global diagnosis."
