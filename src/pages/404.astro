@@ -1,16 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<Layout title="Page Not Found - 404">
+<BaseLayout title="Page Not Found - 404" description="Page not found on NeuroNest Child Development Centre." noindex={true}>
   <div class="min-h-[70vh] flex items-center justify-center bg-brand-cream px-4">
     <div class="text-center max-w-lg">
       <div class="text-brand-sky font-bold text-6xl mb-4">404</div>
       <h1 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Page Not Found</h1>
       <p class="text-gray-600 mb-8">
-        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. If you are looking for a service or provider, please use the links below.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="/" class="px-6 py-3 bg-brand-navy text-white rounded font-bold hover:bg-blue-900 transition-colors">
@@ -19,7 +17,10 @@ import Footer from '../components/Footer.astro';
         <a href="/choose-a-provider" class="px-6 py-3 bg-white text-brand-navy border border-gray-300 rounded font-bold hover:bg-gray-50 transition-colors">
           Find Support
         </a>
+        <a href="/services" class="px-6 py-3 bg-white text-brand-navy border border-gray-300 rounded font-bold hover:bg-gray-50 transition-colors">
+          View Services
+        </a>
       </div>
     </div>
   </div>
-</Layout>
+</BaseLayout>

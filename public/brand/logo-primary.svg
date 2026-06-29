@@ -1,9 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
-  <!-- Subtle arc/growth path -->
-  <path d="M 20 80 Q 50 20 80 80 Q 110 50 140 80" fill="none" stroke="#0F2742" stroke-width="4" stroke-linecap="round"/>
-  <!-- Hidden RA monogram in abstract form -->
-  <path d="M 35 80 L 50 40 L 65 80 M 42 65 L 58 65 M 80 80 L 80 40 Q 95 40 95 55 Q 95 70 80 70 L 95 80" fill="none" stroke="#0F2742" stroke-width="3" stroke-linecap="round"/>
-
-  <text x="160" y="45" font-family="serif" font-size="24" fill="#0F2742">NeuroNest Child Development Centre</text>
-  <text x="160" y="70" font-family="sans-serif" font-size="12" fill="#0F2742" opacity="0.8">Child Development, Parent Guidance &amp; Specialist Consultation</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <rect width="800" height="200" fill="#FFF8EF" />
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="24" fill="#0F2742" text-anchor="middle" dominant-baseline="middle">NeuroNest Child Development Centre (Primary)</text>
 </svg>

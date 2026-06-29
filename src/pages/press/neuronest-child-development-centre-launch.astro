@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const title = "NeuroNest Child Development Centre Launches Parent Guidance and Child Development Support Platform";
+const description = "NeuroNest Child Development Centre announces a parent guidance and child development support platform for families seeking ASD, ADHD, school, behaviour, report-review, and multidisciplinary consultation pathways.";
+---
+<BaseLayout title={title} description={description}>
+  <div class="container mx-auto px-4 py-12 max-w-3xl bg-white shadow rounded my-12">
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">NeuroNest Child Development Centre Launches Parent Guidance and Child Development Support Platform for Families in Pakistan and Abroad</h1>
+        <h2 class="text-xl md:text-2xl text-gray-600 mb-4 font-medium">Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan, NeuroNest helps families move from developmental, behavioural, and school-related confusion toward clearer support pathways.</h2>
+        <p class="text-sm text-gray-500 uppercase tracking-wide">Lahore, Pakistan — <time datetime={new Date().toISOString()}>{new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+      </header>
+
+      <div class="prose max-w-none text-gray-700 space-y-6">
+        <p>NeuroNest Child Development Centre has launched as a child development and parent guidance platform designed to help families understand developmental, behavioural, emotional, learning, speech, sensory, ASD, ADHD, and school-related concerns through evidence-informed guidance and multidisciplinary consultation pathways.</p>
+
+        <p>The platform aims to bridge the gap between initial parental concerns and actionable support by offering structured guidance, helping families navigate complex choices across multiple disciplines.</p>
+
+        <p>Families can access consultations, parent education programs, resource materials, and referral direction to appropriate local or regional specialists as needed.</p>
+
+        <blockquote class="border-l-4 border-brand-trust pl-4 italic text-gray-800 text-lg my-6 bg-brand-cream p-4 rounded">
+          “Many parents know something is not easy for their child, but they do not always know where to begin. NeuroNest helps families understand the concern, prepare the right questions, and move toward a clearer support plan.”
+        </blockquote>
+
+        <div class="p-4 bg-gray-50 border border-gray-200 text-sm mt-8 rounded">
+          <strong>Service Boundary Note:</strong> NeuroNest provides parent guidance, developmental consultation support, report-review support, school guidance, and referral direction. It does not provide emergency care and does not replace local medical, psychological, educational, legal, or crisis services. Regulated services are provided only within the professional scope, credentials, and legal requirements of the provider and client location.
+        </div>
+
+        <div class="mt-8 text-center">
+          <a href="/book" class="inline-block bg-brand-trust text-white px-8 py-3 rounded font-bold hover:bg-blue-700 transition-colors">Book a parent consultation</a>
+        </div>
+      </div>
+
+      <footer class="mt-12 pt-8 border-t border-gray-200 text-sm text-gray-500">
+        <p>Media Contact: [Media contact placeholder]</p>
+      </footer>
+    </article>
+  </div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "NeuroNest Child Development Centre Launches Parent Guidance and Child Development Support Platform",
+  "datePublished": "2026-06-29",
+  "author": {
+    "@type": "Organization",
+    "name": "NeuroNest Child Development Centre"
+  }
+}
+</script>
+</BaseLayout>

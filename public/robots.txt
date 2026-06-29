@@ -9,8 +9,5 @@ Disallow: /api/
 Disallow: /drafts/
 Disallow: /thank-you-private/
 
-# This robots.txt file is not intended as privacy protection for sensitive data.
-# Do not store sensitive data in publicly accessible web directories.
-
-Sitemap: https://rabbiapsychologist.com/sitemap-index.xml
-Sitemap: https://rabbiapsychologist.com/sitemap.xml
+Sitemap: https://www.rabbiapsychologist.com/sitemap.xml
+Sitemap: https://www.rabbiapsychologist.com/sitemap-index.xml
