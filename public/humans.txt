@@ -1,6 +1,7 @@
 /* TEAM */
 Lead Professional: Rabbia Ashraf, Clinical Psychologist
-Platform: Rabbia Ashraf & Associates
+Platform: NeuroNest Child Development Centre
+Note: NeuroNest Child Development Centre is led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan, as Clinical Director.
 Contact: contact@rabbiapsychologist.com
 
 /* SITE */
