@@ -1,0 +1,48 @@
+---
+---
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-brand-navy mb-4">What NeuroNest Provides</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Structured parent support, resources, and between-session guidance.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        [
+          {
+            title: "Parent Guidance Consultations",
+            description: "Helping parents understand concerns, clarify next steps, and prepare practical support plans."
+          },
+          {
+            title: "Between-Session Support Programs",
+            description: "Structured home-based guidance that helps families continue progress between therapy sessions, school meetings, assessments, or professional appointments."
+          },
+          {
+            title: "Child Development Resource Hub",
+            description: "Practical tools, checklists, trackers, worksheets, and psychoeducational resources for parents."
+          },
+          {
+            title: "School & IEP Support",
+            description: "Guidance for school concerns, teacher meetings, IEP confusion, classroom behaviour concerns, and parent-school communication."
+          },
+          {
+            title: "Report Review & Next-Step Planning",
+            description: "Support for parents who have received assessment, school, therapy, ASD, ADHD, or developmental reports and need help understanding what to do next."
+          },
+          {
+            title: "Home Routine and Behaviour Support",
+            description: "Practical parent-led strategies for behaviour, emotional regulation, routines, transitions, and daily challenges."
+          }
+        ].map((item) => (
+          <div class="bg-brand-cream rounded-xl p-8 shadow-sm border border-brand-sky hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
+            <p class="text-gray-700 leading-relaxed">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

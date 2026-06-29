@@ -24,13 +24,13 @@ const breadcrumbs = [
     <Breadcrumbs paths={breadcrumbs} />
 
     <div class="max-w-4xl mx-auto mt-8 mb-16 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Resources</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Parent Resource Hub</h1>
       <p class="text-xl text-gray-700">
         Practical tools, insightful articles, and comprehensive guides designed to empower parents on their journey.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
       <ResourceCard
         title="Resource Vault"
         type="Collection"
@@ -55,6 +55,30 @@ const breadcrumbs = [
         description="Find answers to common questions about our services, approach, and how we can support your family."
         href="/faqs"
       />
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Resource Categories</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          "ASD Parent Support",
+          "ADHD Routines",
+          "Behaviour Tracking",
+          "Emotional Regulation",
+          "School & IEP Support",
+          "Report Review Tools",
+          "Parent Reflection Sheets",
+          "Speech and Communication Support",
+          "Sensory Support",
+          "Overseas Parent Guidance",
+          "Developmental Milestones",
+          "Home Routine Planning"
+        ].map(cat => (
+          <div class="p-4 bg-brand-cream border border-brand-sky rounded text-center text-sm font-bold text-brand-navy">
+            {cat}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 

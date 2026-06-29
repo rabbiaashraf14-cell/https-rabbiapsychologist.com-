@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Start Here | NeuroNest Child Development Centre"
+  description="Not sure where to begin? Start here to understand which NeuroNest support pathway may fit your family’s developmental, behavioural, school, ASD, ADHD, or report-review concerns."
+>
+  <div class="bg-brand-cream py-16 lg:py-24">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Not Sure Where to Begin?</h1>
+      <p class="text-xl text-gray-700 leading-relaxed">
+        If your child’s behaviour, school feedback, developmental progress, ASD/ADHD concerns, or report results feel confusing, this page helps you choose the right starting point.
+      </p>
+    </div>
+  </div>
+
+  <div class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="space-y-4">
+        {[
+          "I need a parent consultation.",
+          "I need help after therapy or assessment.",
+          "I need a between-session support plan.",
+          "I need help understanding a report.",
+          "I need school or IEP support.",
+          "I need ASD/ADHD parent guidance.",
+          "I need resources and worksheets.",
+          "I am an overseas Pakistani or international parent."
+        ].map(pathway => (
+          <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
+            <h3 class="text-xl font-bold text-brand-navy">{pathway}</h3>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/parent-support" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-lg">
+          Start with Parent Guidance
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
