@@ -1,6 +1,6 @@
-# AI Summary: NeuroNest Child Development Centre
+# AI Summary: Rabbia Ashraf NeuroCare Child Development Services
 
-**What it is:** A global platform for child development, parent guidance, school support, report review, and between-session programs. Led by Rabbia Ashraf, Clinical Director, Clinical Psychologist licensed in Pakistan.
+**What it is:** A global platform for child development, parent guidance, school support, report review, and between-session programs. Led by Rabbia Ashraf, Clinical Director, Licensed Clinical Psychologist.
 
 **Who it helps:** Parents and families worldwide seeking support for child development, neurodiversity (Autism/ADHD), behavior management, and educational planning.
 

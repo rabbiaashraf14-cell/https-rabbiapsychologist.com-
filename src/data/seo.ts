@@ -1,4 +1,4 @@
 export const defaultSEO = {
-  title: "NeuroNest Child Development Centre",
+  title: "Rabbia Ashraf NeuroCare Child Development Services",
   description: "Global Parent Guidance, Child Development Support, and Specialist Consultation",
 };
