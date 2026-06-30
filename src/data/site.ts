@@ -1,5 +1,5 @@
 export const siteConfig = {
-  siteName: "Rabbia Ashraf NeuroCare Child Development Services",
+  siteName: "Rabbia Psychologist — NeuroCare Child Development Services",
   tagline: "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
   descriptor: "Global Parent Guidance, Child Development Support, and Specialist Consultation",
   baseUrl: "https://www.rabbiapsychologist.com",
@@ -9,7 +9,7 @@ export const siteConfig = {
   location: "Lahore, Pakistan",
   disclaimers: {
     emergency: "If you or your child are experiencing a medical or psychological emergency, please contact your local emergency services immediately.",
-    platform: "Rabbia Ashraf NeuroCare Child Development Services is a global parent guidance and child development support platform. We connect families with specialists for consultation and education.",
+    platform: "Rabbia Psychologist — NeuroCare Child Development Services is a global parent guidance and child development support platform. We connect families with specialists for consultation and education.",
     international: "International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location."
   }
 };
