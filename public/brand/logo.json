@@ -1,9 +1,9 @@
 {
-  "brandName": "Rabbia Ashraf NeuroCare Child Development Services",
+  "brandName": "Rabbia Psychologist — NeuroCare Child Development Services",
   "tagline": "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
   "clinicalDirector": "Rabbia Ashraf",
-  "clinicalDirectorTitle": "Licensed Clinical Psychologist",
-  "logoAltText": "Rabbia Ashraf NeuroCare Child Development Services logo",
+  "clinicalDirectorTitle": "Clinical Psychologist licensed in Pakistan",
+  "logoAltText": "Rabbia Psychologist — NeuroCare Child Development Services logo",
   "logoStyle": {
     "tone": "premium, professional, calm, clinical, child-development focused, multidisciplinary, parent-friendly",
     "symbolConcept": "abstract nest, child growth figure, parent-support curve, connected care nodes, subtle developmental pathway",
@@ -47,18 +47,18 @@
   },
   "headerLogo": {
     "layout": "horizontal",
-    "text": "Rabbia Ashraf NeuroCare Child Development Services",
+    "text": "Rabbia Psychologist — NeuroCare Child Development Services",
     "subText": "Led by Rabbia Ashraf, Clinical Psychologist",
     "showTagline": false
   },
   "footerLogo": {
     "layout": "stacked",
-    "text": "Rabbia Ashraf NeuroCare Child Development Services",
+    "text": "Rabbia Psychologist — NeuroCare Child Development Services",
     "tagline": "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
-    "subText": "Led by Rabbia Ashraf, Licensed Clinical Psychologist."
+    "subText": "Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan."
   },
   "openGraph": {
-    "title": "Rabbia Ashraf NeuroCare Child Development Services",
+    "title": "Rabbia Psychologist — NeuroCare Child Development Services",
     "description": "Parent guidance and child development support for families in Pakistan and abroad.",
     "image": "/og-brand-card.png"
   }
