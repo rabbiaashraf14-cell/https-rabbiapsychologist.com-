@@ -69,10 +69,64 @@ const schema = {
   "itemListElement": [
     {
       "@type": "Offer",
-      "name": "Parent/Developmental Consultations",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Online Parent Guidance Consultation"
+      },
       "priceSpecification": {
         "@type": "PriceSpecification",
         "price": "50",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Between-Session Support Planning"
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "50",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Report Review and Next-Step Planning"
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "60",
+        "maxPrice": "80",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "School & IEP Support Session"
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "60",
+        "maxPrice": "80",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Workshops / Webinars"
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "10",
+        "maxPrice": "50",
         "priceCurrency": "USD"
       }
     }
