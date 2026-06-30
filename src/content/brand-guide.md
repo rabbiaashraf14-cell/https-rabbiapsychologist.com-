@@ -12,7 +12,7 @@ Rabbia Ashraf is a Clinical Child Psychologist based in Lahore, Pakistan, offeri
 1. Helping Parents Understand the Child Behind the Behavior
 2. Evidence-Based Guidance for Children, Parents, and Schools
 3. From Behavior Concerns to Clear Support Plans
-4. Child Psychology Support for Growing Minds and Families
+4. Child Psychology Support for ADHD & Child Development Support at Home — Care Beyond the Session
 5. Parent Guidance, Child Development, and Behavior Support
 
 ## Brand Meaning

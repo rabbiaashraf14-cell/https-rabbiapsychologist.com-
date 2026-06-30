@@ -1,9 +1,9 @@
 {
-  "brandName": "Rabbia Psychologist — NeuroCare Child Development Services",
-  "tagline": "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
+  "brandName": "Rabbia Psychologist",
+  "tagline": "ADHD & Child Development Support at Home \u2014 Care Beyond the Session",
   "clinicalDirector": "Rabbia Ashraf",
   "clinicalDirectorTitle": "Clinical Psychologist licensed in Pakistan",
-  "logoAltText": "Rabbia Psychologist — NeuroCare Child Development Services logo",
+  "logoAltText": "Rabbia Psychologist Child Development Services logo",
   "logoStyle": {
     "tone": "premium, professional, calm, clinical, child-development focused, multidisciplinary, parent-friendly",
     "symbolConcept": "abstract nest, child growth figure, parent-support curve, connected care nodes, subtle developmental pathway",
@@ -47,19 +47,19 @@
   },
   "headerLogo": {
     "layout": "horizontal",
-    "text": "Rabbia Psychologist — NeuroCare Child Development Services",
+    "text": "Rabbia Psychologist",
     "subText": "Led by Rabbia Ashraf, Clinical Psychologist",
     "showTagline": false
   },
   "footerLogo": {
     "layout": "stacked",
-    "text": "Rabbia Psychologist — NeuroCare Child Development Services",
-    "tagline": "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
+    "text": "Rabbia Psychologist",
+    "tagline": "ADHD & Child Development Support at Home \u2014 Care Beyond the Session",
     "subText": "Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan."
   },
   "openGraph": {
-    "title": "Rabbia Psychologist — NeuroCare Child Development Services",
-    "description": "Parent guidance and child development support for families in Pakistan and abroad.",
+    "title": "Rabbia Psychologist Child Development Services",
+    "description": "ADHD & Child Development Support at Home \u2014 Care Beyond the Session\nclinically led by Rabbia Ashraf, Licensed Clinical Psychologist.",
     "image": "/og-brand-card.png"
   }
 }
