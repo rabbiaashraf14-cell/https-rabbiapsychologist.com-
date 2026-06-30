@@ -1,9 +1,9 @@
 {
-  "brandName": "NeuroNest Child Development Centre",
-  "tagline": "Growing Minds. Guided Families. Multidisciplinary Care.",
+  "brandName": "Rabbia Ashraf NeuroCare Child Development Services",
+  "tagline": "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
   "clinicalDirector": "Rabbia Ashraf",
-  "clinicalDirectorTitle": "Clinical Psychologist licensed in Pakistan",
-  "logoAltText": "NeuroNest Child Development Centre logo",
+  "clinicalDirectorTitle": "Licensed Clinical Psychologist",
+  "logoAltText": "Rabbia Ashraf NeuroCare Child Development Services logo",
   "logoStyle": {
     "tone": "premium, professional, calm, clinical, child-development focused, multidisciplinary, parent-friendly",
     "symbolConcept": "abstract nest, child growth figure, parent-support curve, connected care nodes, subtle developmental pathway",
@@ -47,18 +47,18 @@
   },
   "headerLogo": {
     "layout": "horizontal",
-    "text": "NeuroNest Child Development Centre",
+    "text": "Rabbia Ashraf NeuroCare Child Development Services",
     "subText": "Led by Rabbia Ashraf, Clinical Psychologist",
     "showTagline": false
   },
   "footerLogo": {
     "layout": "stacked",
-    "text": "NeuroNest Child Development Centre",
-    "tagline": "Growing Minds. Guided Families. Multidisciplinary Care.",
-    "subText": "Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan."
+    "text": "Rabbia Ashraf NeuroCare Child Development Services",
+    "tagline": "IEP Help at Home. Less Confusion. Better Support Beyond Therapy.",
+    "subText": "Led by Rabbia Ashraf, Licensed Clinical Psychologist."
   },
   "openGraph": {
-    "title": "NeuroNest Child Development Centre",
+    "title": "Rabbia Ashraf NeuroCare Child Development Services",
     "description": "Parent guidance and child development support for families in Pakistan and abroad.",
     "image": "/og-brand-card.png"
   }

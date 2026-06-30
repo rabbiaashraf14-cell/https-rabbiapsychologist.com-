@@ -9,7 +9,7 @@ export const pricingInternational = [
   { name: 'School & IEP Support Session', price: 'USD 60–80 / AUD 90–120' },
   { name: 'Structured Parent Support Program', price: 'Custom quote depending on duration and support level' },
   { name: 'Resource Downloads', price: 'Free to USD 29' },
-  { name: 'Workshops / Webinars', price: 'USD 10–50' }
+  { name: 'Workshops / Webinars', price: 'USD 200–300' }
 ];
 
 export const pricingNote = "Pakistan-based families may receive local pricing or booking-stage discounts. Final pricing is confirmed during booking or consultation coordination.";
