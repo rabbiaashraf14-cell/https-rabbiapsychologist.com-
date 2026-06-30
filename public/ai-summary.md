@@ -1,4 +1,4 @@
-# AI Summary: Rabbia Psychologist — NeuroCare Child Development Services
+# AI Summary: Rabbia Psychologist Child Development Services
 
 **What it is:** A global platform for child development, parent guidance, school support, report review, and between-session programs. Led by Rabbia Ashraf, Clinical Director, Clinical Psychologist licensed in Pakistan.
 
