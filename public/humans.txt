@@ -6,6 +6,6 @@ Note: NeuroNest Child Development Centre is led by Rabbia Ashraf, Clinical Psych
 Contact: contact@rabbiapsychologist.com
 
 /* SITE */
-Purpose: Global Parent Guidance, Child Development Support, and Specialist Consultation
+Purpose: Global Parent Guidance, Child Development Support, and Between-Session Support Programs
 Tech Stack: Astro, TailwindCSS, TypeScript
 Safety Note: This platform does not provide emergency care or immediate safety crisis intervention.

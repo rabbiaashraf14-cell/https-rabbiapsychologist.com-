@@ -1,14 +1,13 @@
 # AI Summary: NeuroNest Child Development Centre
 
-**What it is:** A global platform for child development, parent guidance, and multidisciplinary specialist consultation. Led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan.
+**What it is:** A global platform for child development, parent guidance, school support, report review, and between-session programs. Led by Rabbia Ashraf, Clinical Director, Clinical Psychologist licensed in Pakistan.
 
 **Who it helps:** Parents and families worldwide seeking support for child development, neurodiversity (Autism/ADHD), behavior management, and educational planning.
 
 **What it offers:**
 - Parent coaching and educational consultation (worldwide).
-- A directory of multidisciplinary providers filtering by region, expertise, language, and price.
+- Between-session support programs and school/IEP help.
 - Digital resources (worksheets, visual schedules, behavior logs).
-- Local psychological assessments (Lahore, Pakistan only).
 - Press releases and news (/press/neuronest-child-development-centre-launch, /news, /brand-assets, /media-kit).
 - Scenarios and use cases (/use-cases).
 
@@ -18,14 +17,11 @@
 - It does not claim blanket international medical compliance (e.g., HIPAA) without verified regional contexts.
 
 **Core Services:**
-- Global Parent Consultation (/services/global-parent-consultation)
-- Autism Parent Guidance (/services/autism-parent-guidance)
-- ADHD Executive Function Support (/services/adhd-executive-function-support)
-- Behavior Support Planning (/services/behavior-support-planning)
-- Parent Training (/services/parent-training)
-- School & IEP Consultation (/services/school-iep-consultation)
-- Psychological Assessment, Local Only (/services/psychological-assessment-local)
-- Referral Guidance (/services/referral-guidance)
+- Start Here (/start-here)
+- Parent Support (/parent-support)
+- Between-Session Programs (/between-session-programs)
+- School & IEP Help (/school-iep-help)
+- Report Review (/report-review)
 
 **Links:**
 - Booking: [https://calendar.app.google/zMKejpnpCjh91WRG7](https://calendar.app.google/zMKejpnpCjh91WRG7)

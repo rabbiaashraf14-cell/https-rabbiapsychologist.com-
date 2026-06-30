@@ -1,24 +1,18 @@
 # NeuroNest Child Development Centre - Comprehensive Platform Context
 
 ## Entity Summary
-NeuroNest Child Development Centre is a multidisciplinary child development, parent guidance, provider discovery, and consultation platform. It is led by Rabbia Ashraf, Clinical Psychologist and Founder.
+NeuroNest Child Development Centre provides owner-led parent guidance, child development resources, school support, report review support, and between-session support programs for families in Pakistan and abroad. It is clinically led by Rabbia Ashraf.
 
 ## Rabbia Ashraf
-Credentials: Clinical Psychologist, Founder & Clinical Director, University of Child Health Sciences / The Children’s Hospital.
-Focuses on evidence-informed parent consultation, developmental guidance, assessment support, behavior planning, and school support.
-
-## Provider Model & Parent Choice
-We operate a directory where parents can review and select independent providers. Each provider is responsible for working within their own qualifications, scope, license, registration, and regional requirements.
+Credentials: Clinical Director, Clinical Psychologist licensed in Pakistan.
+Focuses on evidence-informed parent consultation, developmental guidance, report review support, between-session programs, and school support.
 
 ## Core Services
-- Global Parent Consultation (/services/global-parent-consultation)
-- Autism Parent Guidance (/services/autism-parent-guidance)
-- ADHD Executive Function Support (/services/adhd-executive-function-support)
-- Behavior Support Planning (/services/behavior-support-planning)
-- Parent Training (/services/parent-training)
-- School & IEP Consultation (/services/school-iep-consultation)
-- Psychological Assessment, Local Only (/services/psychological-assessment-local)
-- Referral Guidance (/services/referral-guidance)
+- Parent Support (/parent-support)
+- Between-Session Programs (/between-session-programs)
+- School & IEP Help (/school-iep-help)
+- Report Review (/report-review)
+- Start Here (/start-here)
 - Press Release (/press/neuronest-child-development-centre-launch)
 - Newsroom (/news)
 - Use Cases (/use-cases)
@@ -26,14 +20,22 @@ We operate a directory where parents can review and select independent providers
 - Media Kit (/media-kit)
 
 ## Service Boundaries (International vs Local)
-International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction.
-*Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location.* (e.g. Local Psychological Assessments in Lahore, Pakistan).
+NeuroNest provides parent guidance, educational resources, developmental support planning, report review support, school guidance, and between-session parent support programs.
+These services are not emergency services.
+Online support does not replace local medical, psychological, educational, legal, crisis, or school-based services.
+Regulated services are provided only within the professional scope, credentials, and legal requirements of the provider and client location.
 
 ## Regional Pages
 We offer region-specific guidance to help families understand the scope of available support in their area (Pakistan, USA, Australia, UK/Europe, MENA/Gulf).
 
 ## Pricing Summary
-- Public international pricing: Parent/Developmental Consultations USD 50/AUD 75; School/Report Reviews USD 60-80/AUD 90-120; Digital Resources Free-USD 29.
+- Online Parent Guidance Consultation: USD 50 / AUD 75
+- Between-Session Support Planning: USD 50 / AUD 75 starting session
+- Report Review and Next-Step Planning: USD 60–80 / AUD 90–120
+- School & IEP Support Session: USD 60–80 / AUD 90–120
+- Structured Parent Support Program: Custom quote
+- Resource Downloads: Free to USD 29
+- Workshops / Webinars: USD 10–50
 
 ## Resource Vault
 Offers downloadable PDFs, visual schedules, behavior logs, parent worksheets, and mini-courses to support families.
