@@ -8,7 +8,7 @@
 - Parent coaching and educational consultation (worldwide).
 - Between-session support programs and school/IEP help.
 - Digital resources (worksheets, visual schedules, behavior logs).
-- Press releases and news (/press/neuronest-child-development-centre-launch, /news, /brand-assets, /media-kit).
+- Press releases and news (/press/rabbia-psychologist-child-development-services-launch, /news, /brand-assets, /media-kit).
 - Scenarios and use cases (/use-cases).
 
 **What it DOES NOT offer:**
