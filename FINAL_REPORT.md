@@ -3,7 +3,7 @@
 ## Final Readiness Report
 
 1. **Legal/disclaimer model updated:** Yes, updated `terms-and-disclaimer.astro`, `privacy-policy.astro`, and `DisclaimerBanner.astro` with the specific owner-led and boundary disclaimers provided.
-2. **Schema updated from provider marketplace to owner-led model:** Yes. Removed provider directory schema globally. Replaced with `Organization` (NeuroNest) and `Person` (Rabbia Ashraf, Clinical Director) in `HomepageSchema.astro`, `index.astro`, and other core pages. Removed old pricing and implemented the approved public USD/AUD OfferCatalog schema in `pricing.astro`.
+2. **Schema updated from provider marketplace to owner-led model:** Yes. Removed provider directory schema globally. Replaced with `Organization` (Rabbia Psychologist Child Development Services) and `Person` (Rabbia Ashraf, Clinical Director) in `HomepageSchema.astro`, `index.astro`, and other core pages. Removed old pricing and implemented the approved public USD/AUD OfferCatalog schema in `pricing.astro`.
 3. **Old provider routes redirected:** Yes. Redirected `/providers`, `/providers/rabbia-ashraf`, `/provider`, `/find-support`, `/join-as-provider`, and `/provider-scope-boundaries` to standard owner-led fallback pages (`/about`, `/start-here`, `/terms-and-disclaimer`) in `astro.config.mjs`.
 4. **Service legacy redirects added:** Yes. Mapped `/global-consultation` -> `/parent-support`, `/autism-support` -> `/parent-support`, `/psychological-assessment` -> `/report-review`, etc.
 5. **International legacy redirects added:** Yes. Mapped `/nri-families` -> `/overseas-pakistani-families`, `/gulf-families` -> `/online-parent-consultation-mena-gulf`, etc.
