@@ -9,7 +9,7 @@ import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'About', href: '/about' }
+  { name: 'About Rabbia', href: '/about' }
 ];
 
 const personSchema = {
@@ -17,63 +17,91 @@ const personSchema = {
   "@type": "Person",
   "name": "Rabbia Ashraf",
   "jobTitle": "clinical lead",
-  "description": "Clinical Psychologist licensed in Pakistan."
+  "description": "Clinical Psychologist | Child & Adolescent Development Support"
 };
 ---
 
-<Layout title="About | Rabbia Psychologist Child Development Services">
+<Layout title="About Rabbia Ashraf | Clinical Psychologist">
   <SEO
-    title="About | Rabbia Psychologist Child Development Services"
-    description="Learn about Rabbia Psychologist Child Development Services, an owner-led parent guidance and child development support service led by Rabbia Ashraf, Licensed Clinical Psychologist."
+    title="About Rabbia Ashraf | Clinical Psychologist"
+    description="Learn about Rabbia Ashraf, Clinical Psychologist providing child development support, ADHD guidance, IEP help, parent guidance, and between-session support programs."
   />
   <Schema schema={personSchema} />
-
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
 
     <div class="max-w-4xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-8">About Rabbia Psychologist Child Development Services</h1>
 
-      <div class="prose prose-lg text-gray-700 max-w-none">
-        <p class="lead text-xl text-brand-navy font-medium mb-6">
-          Rabbia Psychologist Child Development Services is owned and clinically led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan.
-        </p>
+      <!-- 1. Hero section -->
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">About Rabbia Ashraf</h1>
+      <p class="text-2xl font-medium text-brand-trust mb-10 border-b border-gray-200 pb-6">Clinical Psychologist | Child & Adolescent Development Support</p>
 
-        <p class="text-gray-700 mb-6">
-          The centre provides parent guidance, child development resources, school support, report review support, and between-session support programs for families in Pakistan and abroad.
-        </p>
+      <div class="prose prose-lg text-gray-700 max-w-none space-y-8">
 
-        <p class="text-gray-700 mb-6">
-          Rabbia Psychologist Child Development Services may work with trained support staff, consultants, or collaborators for operations, resource development, administration, education support, or program delivery. All public communication, booking, and service coordination remains through Rabbia Psychologist Child Development Services.
-        </p>
+        <!-- 2. Short intro -->
+        <section>
+          <p class="lead text-xl text-brand-navy font-medium mb-6">
+            Rabbia Ashraf is a Clinical Psychologist working in child and adolescent development support, dedicated to helping families navigate developmental and behavioral challenges.
+          </p>
+          <p class="text-gray-700">
+            She supports parents of children with ADHD, autism-related concerns, learning difficulties, speech/language delays, behavior concerns, school adjustment issues, and developmental delays. With experience working with children and families in developmental and behavioral pediatrics settings, Rabbia provides clear, practical, and structured guidance tailored to your child's unique needs.
+          </p>
+        </section>
 
-        <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">Professional Background</h2>
-        <ul class="space-y-2 list-disc pl-6 mb-8">
-          <li>Pediatric hospital experience</li>
-          <li>Parent training experience</li>
-          <li>ABA-informed intervention knowledge</li>
-          <li>Psychological assessment background</li>
-          <li>Play therapy exposure</li>
-          <li>Research/publication experience</li>
-          <li>Involvement in ECD and Neurodiversity professional work</li>
-        </ul>
+        <!-- 3. Professional focus -->
+        <section class="bg-gray-50 p-8 rounded-xl border border-gray-200 mt-8">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">Professional Focus</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 list-none pl-0">
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ADHD Support & Guidance</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Autism Parent Guidance</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Developmental Concerns</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Behavior Support Planning</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Parent Counseling</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> School & IEP Planning Support</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Report Review & Translation</li>
+            <li class="flex items-start"><svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Assessment Guidance</li>
+          </ul>
+        </section>
 
-        <h2 id="approach" class="text-2xl font-bold text-brand-navy mt-10 mb-4">My Approach</h2>
-        <p>
-          Instead of simply asking "How do we stop this behavior?", my approach focuses on asking "What is this behavior communicating?" I work collaboratively with parents to create tailored support plans that address the root causes of behavioral and developmental challenges, empowering families with practical strategies they can implement in their daily lives.
-        </p>
+        <!-- 4. Her approach -->
+        <section class="mt-8">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">My Approach</h2>
+          <p class="text-gray-700">
+            My approach is practical, clear, parent-friendly, and realistic, firmly rooted in home-based guidance. I believe parents should not feel lost after an assessment or diagnosis. Instead of leaving you with a confusing clinical report, I focus on helping your family understand your child's needs and determining clear, actionable next steps. Together, we translate clinical jargon into effective, daily strategies.
+          </p>
+        </section>
 
-        <div class="mt-12 bg-brand-sky p-8 rounded-xl">
-          <h3 class="text-xl font-bold text-brand-navy mb-4">Connect on LinkedIn</h3>
-          <p class="mb-4">View my full professional profile, credentials, and latest updates on LinkedIn.</p>
-          <a href="https://www.linkedin.com/in/rabbiapsychologist" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-brand-navy font-bold hover:text-blue-700">
-            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
-            </svg>
-            linkedin.com/in/rabbiapsychologist
+        <!-- 5. Why families choose her -->
+        <section class="mt-8 bg-brand-cream p-8 rounded-xl border border-brand-sky">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">Why Families Choose This Support</h2>
+          <p class="text-gray-700 mb-4">Families partner with me because they value:</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li><strong>Multidisciplinary Understanding:</strong> Navigating complex systems (medical, educational, therapeutic) seamlessly.</li>
+            <li><strong>Child Development Focus:</strong> Identifying underlying needs rather than simply reacting to challenging behaviors.</li>
+            <li><strong>Parent Education:</strong> Empowering parents as the primary agents of change in their child's life.</li>
+            <li><strong>Structured Next Steps:</strong> Providing realistic, step-by-step action plans tailored to the family's capacity.</li>
+          </ul>
+        </section>
+
+        <!-- 6. Important note -->
+        <section class="mt-8 p-6 bg-blue-50 text-gray-700 text-sm border-l-4 border-brand-trust rounded-r-lg">
+          <h3 class="font-bold text-brand-navy mb-2">Important Note on Scope of Services</h3>
+          <p>
+            Online support is parent guidance, developmental consultation, and educational planning support. It does not replace emergency care, medical treatment, or in-person diagnosis where required. Rabbia Psychologist Child Development Services provides parent guidance, educational resources, developmental support planning, report review support, school guidance, and between-session parent support programs. Online support does not replace local medical, psychological, educational, legal, crisis, or school-based services. Regulated services are provided only within the professional scope, credentials, and legal requirements of the professional and client location.
+          </p>
+        </section>
+
+        <!-- 7. CTA -->
+        <section class="mt-12 text-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <a href="/book" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-md hover:-translate-y-1">
+            Book a Consultation
           </a>
-        </div>
+          <a href="/start-here" class="inline-block px-8 py-4 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
+            Start Here
+          </a>
+        </section>
+
       </div>
     </div>
   </div>
