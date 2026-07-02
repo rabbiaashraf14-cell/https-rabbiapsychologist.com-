@@ -43,7 +43,7 @@ const fullTitle = `${title} | ${siteName}`;
 <meta property="og:url" content={canonical} />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={ogDescription} />
-<meta property="og:image" content={new URL(ogImage || image, Astro.site || 'https://www.rabbiapsychologist.com').href} />
+<meta property="og:image" content={new URL(ogImage || image, Astro.site || 'https://rabbiapsychologist.com').href} />
 <meta property="og:site_name" content={siteName} />
 
 <!-- Twitter -->
@@ -51,7 +51,7 @@ const fullTitle = `${title} | ${siteName}`;
 <meta name="twitter:url" content={canonical} />
 <meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={ogDescription} />
-<meta name="twitter:image" content={new URL(ogImage || image, Astro.site || 'https://www.rabbiapsychologist.com').href} />
+<meta name="twitter:image" content={new URL(ogImage || image, Astro.site || 'https://rabbiapsychologist.com').href} />
 
 {schema && (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />

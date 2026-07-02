@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.rabbiapsychologist.com',
+  site: 'https://rabbiapsychologist.com',
   redirects: {
     '/providers': '/about',
     '/providers/rabbia-ashraf': '/about',
@@ -18,11 +18,19 @@ export default defineConfig({
     '/global-consultation': '/parent-support',
     '/resources-vault': '/resource-vault',
     '/free-resource': '/free-downloads',
-    '/nri-families': '/overseas-pakistani-families',
-    '/non-resident-pakistani-families': '/overseas-pakistani-families',
-    '/expat-pakistani-families': '/overseas-pakistani-families',
-    '/gulf-families': '/online-parent-consultation-mena-gulf',
-    '/middle-east-families': '/online-parent-consultation-mena-gulf',
+    '/nri-families': '/parent-support',
+    '/non-resident-pakistani-families': '/parent-support',
+    '/expat-pakistani-families': '/parent-support',
+    '/overseas-pakistani-families': '/parent-support',
+    '/gulf-families': '/parent-support',
+    '/middle-east-families': '/parent-support',
+    '/online-parent-consultation-mena-gulf': '/parent-support',
+    '/international-families': '/parent-support',
+    '/usa-families': '/parent-support',
+    '/australia-families': '/parent-support',
+    '/uk-europe-families': '/parent-support',
+    '/pakistan-families': '/parent-support',
+    '/international-schools': '/services/school-consultation',
 
     // New service page redirects
     '/asd-support': '/services/asd-support',

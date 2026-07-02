@@ -9,5 +9,5 @@ Disallow: /api/
 Disallow: /drafts/
 Disallow: /thank-you-private/
 
-Sitemap: https://www.rabbiapsychologist.com/sitemap.xml
-Sitemap: https://www.rabbiapsychologist.com/sitemap-index.xml
+Sitemap: https://rabbiapsychologist.com/sitemap.xml
+Sitemap: https://rabbiapsychologist.com/sitemap-index.xml

@@ -2,7 +2,7 @@ export const siteConfig = {
   siteName: "Rabbia Psychologist Child Development Services",
   tagline: "ADHD & Child Development Support at Home — Care Beyond the Session",
   descriptor: "Global Parent Guidance, Child Development Support, and Specialist Consultation",
-  baseUrl: "https://www.rabbiapsychologist.com",
+  baseUrl: "https://rabbiapsychologist.com",
   bookingUrl: "https://calendar.app.google/zMKejpnpCjh91WRG7",
   linkedInUrl: "https://www.linkedin.com/in/rabbiapsychologist",
   email: "hello@rabbiapsychologist.com",
