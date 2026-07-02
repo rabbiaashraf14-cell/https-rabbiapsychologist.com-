@@ -11,7 +11,7 @@ export const services = [
   },
   {
     title: 'Autism Parent Guidance',
-    slug: 'autism-parent-guidance',
+    slug: 'asd-support',
     description: 'Parent training and behavioral support planning for families navigating ASD.',
     whoItHelps: 'Parents of autistic children.',
     whatItIncludes: ['ASD support planning', 'Parent education'],
@@ -21,7 +21,7 @@ export const services = [
   },
   {
     title: 'ADHD Executive Function Support',
-    slug: 'adhd-executive-function-support',
+    slug: 'adhd-support',
     description: 'Strategies for managing ADHD at home and school.',
     whoItHelps: 'Parents of children with ADHD or executive dysfunction.',
     whatItIncludes: ['Executive-function routines', 'Behavior strategy'],
@@ -31,7 +31,7 @@ export const services = [
   },
   {
     title: 'Behavior Support Planning',
-    slug: 'behavior-support-planning',
+    slug: 'behaviour-planning',
     description: 'Structured programs to equip parents with evidence-based behavioral strategies.',
     whoItHelps: 'Parents experiencing challenging behaviors.',
     whatItIncludes: ['Behavior strategy discussion', 'Routine planning'],
@@ -51,7 +51,7 @@ export const services = [
   },
   {
     title: 'School & IEP Consultation',
-    slug: 'school-iep-consultation',
+    slug: 'school-consultation',
     description: 'Collaborative support for IEPs and school-based accommodations.',
     whoItHelps: 'Parents navigating the school system.',
     whatItIncludes: ['School communication preparation', 'Accommodation suggestions'],
@@ -61,7 +61,7 @@ export const services = [
   },
   {
     title: 'Psychological Assessment, Local Only',
-    slug: 'psychological-assessment-local',
+    slug: 'local-assessment',
     description: 'Local assessment and formal diagnosis.',
     whoItHelps: 'Families in regions where our providers are legally licensed to diagnose.',
     whatItIncludes: ['Formal assessment', 'Diagnostic reports'],

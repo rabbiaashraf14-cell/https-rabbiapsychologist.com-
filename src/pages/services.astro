@@ -15,8 +15,8 @@ const description = "Explore our child development services including parent gui
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {services.map(service => (
-        <div id={service.slug} class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-all scroll-mt-24">
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">{service.title}</h2>
+        <div id={service.slug} class="group bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-all scroll-mt-24 flex flex-col relative">
+          <a href={`/services/${service.slug}`} class="group-hover:text-brand-trust transition-colors"><h2 class="text-2xl font-bold text-brand-navy mb-4 group-hover:text-brand-trust">{service.title}</h2></a>
           <p class="text-gray-700 mb-6">{service.description}</p>
 
           <div class="mb-6">
@@ -44,6 +44,7 @@ const description = "Explore our child development services including parent gui
 
           <p class="text-xs text-gray-500 italic mb-6">{service.disclaimer}</p>
 
+          <a href={`/services/${service.slug}`} class="block text-center text-brand-trust font-bold mb-4 hover:underline">View Service Details &rarr;</a>
           <a href="/book" class="inline-block w-full text-center bg-brand-trust text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
             {service.cta}
           </a>
