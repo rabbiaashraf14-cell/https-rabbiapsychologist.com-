@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "ADHD Support | Parent Guidance for ADHD and Behavior | Rabbia Psychologist";
+const description = "Parent guidance for ADHD-related concerns, attention difficulties, hyperactivity, impulsivity, routines, behavior support, emotional regulation, and school planning.";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ADHD Support",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "employee": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist"
+    }
+  },
+  "areaServed": "Worldwide",
+  "serviceType": "Parent Guidance and Developmental Consultation",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.rabbiapsychologist.com/pricing"
+  }
+};
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <div class="bg-brand-cream py-16 lg:py-24">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">ADHD Support for Children and Parents</h1>
+      <p class="text-xl text-gray-700 leading-relaxed">
+        ADHD-related concerns can affect attention, routines, learning, emotional regulation, behavior, and school adjustment. Many parents feel confused when a child is active, distracted, impulsive, forgetful, or struggling with instructions. ADHD support at Rabbia Psychologist Child Development Services helps parents understand these patterns and plan practical strategies for home and school.
+      </p>
+      <div class="mt-8 flex justify-center space-x-4">
+        <a href="/book" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-lg">Book ADHD Parent Guidance Consultation &rarr;</a>
+        <a href="/services" class="inline-block px-8 py-4 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-sm">View Services</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">This support may help if your child</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Has difficulty focusing or completing tasks</li>
+          <li>Is very active, restless, or impulsive</li>
+          <li>Struggles with routines, homework, or instructions</li>
+          <li>Has emotional outbursts or low frustration tolerance</li>
+          <li>Receives repeated school complaints</li>
+          <li>Has difficulty with organization or self-control</li>
+          <li>Has an ADHD screening or report that parents want to understand</li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">What we focus on</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Parent guidance for ADHD-related behavior</li>
+          <li>Home routine and structure planning</li>
+          <li>School support and classroom strategy discussion</li>
+          <li>Emotional regulation support</li>
+          <li>Behavior planning for common daily challenges</li>
+          <li>Report review and next-step planning</li>
+          <li>Guidance on when further assessment or referral may be needed</li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-brand-cream border border-brand-sky rounded-xl p-8">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">What parents receive</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Clear explanation of the concern</li>
+          <li>Practical home strategies</li>
+          <li>School-related recommendations</li>
+          <li>Routine and behavior planning ideas</li>
+          <li>Next-step guidance based on the child’s needs</li>
+        </ul>
+      </section>
+
+      <div class="bg-gray-50 border-l-4 border-brand-trust p-6 mb-12 rounded-r-lg">
+        <p class="text-sm text-gray-600 italic">
+          <strong>Important note:</strong> ADHD support is parent guidance and developmental consultation. It does not replace medical treatment, medication management, or in-person diagnostic assessment when required.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <a href="/book" class="inline-block px-8 py-4 bg-brand-trust text-white rounded-lg font-bold text-lg hover:bg-blue-700 transition-all shadow-lg">Book ADHD Parent Guidance Consultation &rarr;</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
