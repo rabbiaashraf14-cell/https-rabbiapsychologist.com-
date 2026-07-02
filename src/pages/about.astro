@@ -16,17 +16,97 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Rabbia Ashraf",
-  "jobTitle": "clinical lead",
-  "description": "Clinical Psychologist | Child & Adolescent Development Support"
+  "jobTitle": "Clinical Psychologist",
+  "description": "Clinical Psychologist providing parent guidance, child development consultation, ADHD and behavior support, autism-related guidance, report review, and school planning support.",
+  "areaServed": "Lahore, Pakistan and online",
+  "url": "https://www.rabbiapsychologist.com/about"
+};
+
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Rabbia Psychologist Child Development Services",
+  "url": "https://www.rabbiapsychologist.com/about",
+  "description": "Providing parent guidance, child development consultation, ADHD and behavior support, autism-related guidance, report review, and school planning support.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parent Guidance Consultation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Child Development Consultation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ADHD and Behavior Support" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Autism-related Parent Guidance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Report Review and Next-Step Planning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "School and IEP Support" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Parent Consultation" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I book an online parent guidance consultation with Rabbia Ashraf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Parents can book an online consultation to discuss developmental, behavioral, emotional, learning, or school-related concerns and receive practical next-step guidance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Rabbia Ashraf support ADHD-related concerns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Parent guidance can help families understand ADHD-related behaviors, routines, school concerns, emotional regulation, and practical home-based support strategies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Rabbia Ashraf provide autism-related parent guidance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Families can seek guidance for autism-related developmental concerns, communication challenges, behavior concerns, daily routines, report review, and next-step planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I review my child’s assessment report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Report review sessions help parents understand the meaning of assessment findings, recommendations, and practical next steps for home and school."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is online consultation a replacement for in-person assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Online support is parent guidance, developmental consultation, report review, and educational planning support. It does not replace emergency care, medical treatment, or in-person diagnostic assessment when required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can families from outside Pakistan book consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Online parent guidance and report review support may be booked by families in Pakistan and abroad, depending on the nature of the concern."
+      }
+    }
+  ]
 };
 ---
 
-<Layout title="About Rabbia Ashraf | Clinical Psychologist">
+<Layout title="About Rabbia Ashraf | Clinical Psychologist for Child Development Support">
   <SEO
-    title="About Rabbia Ashraf | Clinical Psychologist"
-    description="Learn about Rabbia Ashraf, Clinical Psychologist providing child development support, ADHD guidance, IEP help, parent guidance, and between-session support programs."
+    title="About Rabbia Ashraf | Clinical Psychologist for Child Development Support"
+    description="Learn about Rabbia Ashraf, Clinical Psychologist providing parent guidance, child development consultation, ADHD and behavior support, autism-related guidance, report review, and school planning support in Lahore and online."
+    ogTitle="About Rabbia Ashraf | Rabbia Psychologist Child Development Services"
+    ogDescription="Parent guidance, child development support, ADHD support, autism-related guidance, report review, and school planning support with Rabbia Ashraf, Clinical Psychologist."
   />
-  <Schema schema={personSchema} />
+  <Schema schema={[personSchema, professionalServiceSchema, faqSchema]} />
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
@@ -40,13 +120,53 @@ const personSchema = {
       <div class="prose prose-lg text-gray-700 max-w-none space-y-8">
 
         <!-- 2. Short intro -->
-        <section>
-          <p class="lead text-xl text-brand-navy font-medium mb-6">
-            Rabbia Ashraf is a Clinical Psychologist working in child and adolescent development support, dedicated to helping families navigate developmental and behavioral challenges.
-          </p>
-          <p class="text-gray-700">
-            She supports parents of children with ADHD, autism-related concerns, learning difficulties, speech/language delays, behavior concerns, school adjustment issues, and developmental delays. With experience working with children and families in developmental and behavioral pediatrics settings, Rabbia provides clear, practical, and structured guidance tailored to your child's unique needs.
-          </p>
+        <section class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1">
+            <p class="lead text-xl text-brand-navy font-medium mb-6">
+              Rabbia Ashraf is a Clinical Psychologist providing child development support, parent guidance consultation, ADHD and behavior support, autism-related guidance, report review, and school planning support for families in Lahore, Pakistan, and online for families abroad.
+            </p>
+            <p class="text-gray-700">
+              Her work focuses on helping parents understand their child’s developmental, behavioral, emotional, learning, and school-related concerns with practical next steps. With experience working with children and families in developmental and behavioral pediatrics settings, Rabbia provides clear, practical, and structured guidance tailored to your child's unique needs.
+            </p>
+          </div>
+          <div class="md:w-1/3 shrink-0">
+            <img src="/og-brand-card.png" alt="Rabbia Ashraf Clinical Psychologist for child development and parent guidance" class="w-full rounded-xl shadow-sm border border-gray-100" />
+          </div>
+        </section>
+
+        <!-- What Families Commonly Search For -->
+        <section class="mt-12 bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
+          <h2 class="text-2xl font-bold text-brand-navy mb-6">What Families Commonly Search For</h2>
+          <ul class="space-y-4">
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“My child has ADHD symptoms. What should I do next?”</strong>
+              <a href="/services#adhd-support" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">Explore ADHD or behavior concerns support →</a>
+            </li>
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“My child has autism-related concerns and I need parent guidance.”</strong>
+              <a href="/services#asd-support" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">Explore Autism/developmental concerns support →</a>
+            </li>
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“I received my child’s assessment report but I do not understand the next steps.”</strong>
+              <a href="/services#report-review" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">Learn about Report review support →</a>
+            </li>
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“My child has behavior problems at home or school.”</strong>
+              <a href="/services" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">View behavior and child development services →</a>
+            </li>
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“I need help with school planning or IEP support.”</strong>
+              <a href="/services#school-iep-support" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">Explore School/IEP support →</a>
+            </li>
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“My child has developmental delay, speech delay, or learning difficulties.”</strong>
+              <a href="/services" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">View developmental support services →</a>
+            </li>
+            <li class="border-b border-gray-50 pb-4 last:border-0 last:pb-0">
+              <strong class="text-gray-900 block mb-1">“I need online parent consultation with a clinical psychologist.”</strong>
+              <a href="/book" class="text-brand-trust hover:text-brand-navy underline decoration-brand-sky underline-offset-4">Book a consultation →</a>
+            </li>
+          </ul>
         </section>
 
         <!-- 3. Professional focus -->
@@ -84,6 +204,62 @@ const personSchema = {
           </ul>
         </section>
 
+        <!-- Who this service is for -->
+        <section class="mt-8">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">Who This Service Is For</h2>
+          <p class="text-gray-700 mb-4">This support may be helpful for:</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Parents concerned about ADHD, autism-related concerns, developmental delay, speech/language delay, learning difficulties, behavior concerns, emotional concerns, or school adjustment issues.</li>
+            <li>Parents who have received a child assessment report and need help understanding the next steps.</li>
+            <li>Families who need practical home and school guidance.</li>
+            <li>Families looking for online parent guidance consultation.</li>
+          </ul>
+        </section>
+
+        <!-- Services are not for -->
+        <section class="mt-8">
+          <h2 class="text-2xl font-bold text-brand-navy mb-4">Who This Service Is Not For</h2>
+          <p class="text-gray-700 mb-4">This service is not for:</p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Medical emergencies</li>
+            <li>Medication management</li>
+            <li>Crisis intervention</li>
+            <li>Replacing required in-person diagnostic assessment</li>
+            <li>Replacing care from a developmental pediatrician, psychiatrist, speech therapist, occupational therapist, or other required specialist</li>
+          </ul>
+        </section>
+
+        <!-- Common Questions Parents Ask -->
+        <section class="mt-12 mb-12">
+          <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Common Questions Parents Ask</h2>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">1. Can I book an online parent guidance consultation with Rabbia Ashraf?</h3>
+              <p class="text-gray-700">Yes. Parents can book an online consultation to discuss developmental, behavioral, emotional, learning, or school-related concerns and receive practical next-step guidance.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">2. Does Rabbia Ashraf support ADHD-related concerns?</h3>
+              <p class="text-gray-700">Yes. Parent guidance can help families understand ADHD-related behaviors, routines, school concerns, emotional regulation, and practical home-based support strategies.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">3. Does Rabbia Ashraf provide autism-related parent guidance?</h3>
+              <p class="text-gray-700">Yes. Families can seek guidance for autism-related developmental concerns, communication challenges, behavior concerns, daily routines, report review, and next-step planning.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">4. Can I review my child’s assessment report?</h3>
+              <p class="text-gray-700">Yes. Report review sessions help parents understand the meaning of assessment findings, recommendations, and practical next steps for home and school.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">5. Is online consultation a replacement for in-person assessment?</h3>
+              <p class="text-gray-700">No. Online support is parent guidance, developmental consultation, report review, and educational planning support. It does not replace emergency care, medical treatment, or in-person diagnostic assessment when required.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+              <h3 class="font-bold text-lg text-brand-navy mb-2">6. Can families from outside Pakistan book consultation?</h3>
+              <p class="text-gray-700">Yes. Online parent guidance and report review support may be booked by families in Pakistan and abroad, depending on the nature of the concern.</p>
+            </div>
+          </div>
+        </section>
+
         <!-- 6. Important note -->
         <section class="mt-8 p-6 bg-blue-50 text-gray-700 text-sm border-l-4 border-brand-trust rounded-r-lg">
           <h3 class="font-bold text-brand-navy mb-2">Important Note on Scope of Services</h3>
@@ -93,13 +269,18 @@ const personSchema = {
         </section>
 
         <!-- 7. CTA -->
-        <section class="mt-12 text-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="/book" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-md hover:-translate-y-1">
-            Book a Consultation
-          </a>
-          <a href="/start-here" class="inline-block px-8 py-4 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
-            Start Here
-          </a>
+        <section class="mt-12 text-center">
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+            <a href="/book" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-md hover:-translate-y-1">
+              Book a Consultation
+            </a>
+            <a href="/start-here" class="inline-block px-8 py-4 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
+              Start Here
+            </a>
+          </div>
+          <p class="text-gray-600">
+            You can also <a href="/pricing" class="text-brand-trust hover:underline">review current pricing</a> or <a href="/resources" class="text-brand-trust hover:underline">read parent resources</a>.
+          </p>
         </section>
 
       </div>
