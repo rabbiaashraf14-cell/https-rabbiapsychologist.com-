@@ -1,24 +1,106 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import BlogCard from '../components/BlogCard.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
 const breadcrumbs = [
   { name: 'Resources', href: '/resources' },
   { name: 'Blog', href: '/blog' }
+,
+  {
+    title: "Understanding Psychological Reports",
+    excerpt: "Translate clinical jargon into practical next steps for your child.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 15, 2024",
+    categories: ["Assessments", "School Support"],
+    href: "/blog/understanding-psychological-reports"
+  },
+  {
+    title: "Screen Time and Emotional Regulation",
+    excerpt: "Strategies to manage transitions and reduce screen-related meltdowns.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 18, 2024",
+    categories: ["Behaviour", "Screen Time"],
+    href: "/blog/screen-time-and-emotional-regulation"
+  },
+  {
+    title: "Behaviour Is Communication",
+    excerpt: "Decoding what your child is trying to say through their challenging behaviours.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 22, 2024",
+    categories: ["Behaviour", "Parenting"],
+    href: "/blog/behaviour-is-communication"
+  },
+  {
+    title: "Parent Guidance After an Autism Diagnosis",
+    excerpt: "Immediate home strategies to support your newly diagnosed child.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Mar 1, 2024",
+    categories: ["Autism", "Development"],
+    href: "/blog/parent-guidance-after-an-autism-diagnosis"
+  },
+  {
+    title: "When to Seek Developmental Assessment",
+    excerpt: "Signs that it might be time to move from wait-and-see to formal evaluation.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Mar 5, 2024",
+    categories: ["Assessments", "Development"],
+    href: "/blog/when-to-seek-developmental-assessment"
+  }
+];
+
+const articles = [
+  {
+    title: "Understanding the Confusion Between ADHD and Hyperactivity in Children",
+    excerpt: "Not every child with ADHD is visibly hyperactive. Some children struggle more with attention, organization, forgetfulness, or impulsivity.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Jan 10, 2024",
+    categories: ["ADHD", "Parenting"],
+    href: "/blog/understanding-adhd-and-hyperactivity-in-children"
+  },
+  {
+    title: "The Science of Screen Time: Why It Is So Hard for Children to Unplug",
+    excerpt: "Stopping screen time is not always simple for children. Screens can strongly activate reward, desire, and emotional regulation systems.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Jan 12, 2024",
+    categories: ["Behaviour", "Screen Time"],
+    href: "/blog/why-screen-time-is-hard-for-children-to-stop"
+  },
+  {
+    title: "How to Support Executive Function at Home",
+    excerpt: "Practical tips to help your child start tasks, organize belongings, and remember instructions.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Jan 15, 2024",
+    categories: ["ADHD", "Learning"],
+    href: "/blog/how-to-support-executive-function-at-home"
+  },
+  {
+    title: "Tantrum vs Meltdown: What is the Difference?",
+    excerpt: "Why the traditional advice to 'ignore it' doesn't work for sensory meltdowns and what to do instead.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 2, 2024",
+    categories: ["Behaviour", "Emotional Regulation"],
+    href: "/blog/tantrum-vs-meltdown"
+  },
+  {
+    title: "Autism Early Signs Parents Should Notice",
+    excerpt: "A guide for parents on what to look for regarding communication, social interaction, and sensory processing differences.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 5, 2024",
+    categories: ["Autism", "Development"],
+    href: "/blog/autism-early-signs"
+  },
+  {
+    title: "School Meeting Checklist for Parents",
+    excerpt: "How to prepare for an IEP or teacher meeting so you feel confident advocating for your child's needs.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 10, 2024",
+    categories: ["School Support", "Advocacy"],
+    href: "/blog/school-meeting-checklist"
+  }
 ];
 ---
 
-<Layout title="Parenting Blog">
-  <SEO
-    title="Child Psychology & Parenting Blog"
-    description="Insights, articles, and practical advice on child development, managing ADHD/ASD, and behavior support."
-  />
+<BaseLayout title="Child Psychology & Parenting Blog | Rabbia Psychologist" description="Insights, articles, and practical advice on child development, managing ADHD/ASD, and behavior support.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
     <div class="max-w-4xl mx-auto mt-8 mb-12">
@@ -29,37 +111,23 @@ const breadcrumbs = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      <BlogCard
-        title="Understanding the Confusion Between ADHD and Hyperactivity in Children"
-        excerpt="Not every child with ADHD is visibly hyperactive. Some children struggle more with attention, organization, forgetfulness, or impulsivity. Understanding the difference helps parents seek the right support."
-        date="Latest Article"
-        href="/blog/understanding-adhd-and-hyperactivity-in-children"
-      />
-      <BlogCard
-        title="The Science of Screen Time: Why It Is So Hard for Children to Unplug"
-        excerpt="Stopping screen time is not always simple for children. Screens can strongly activate reward, desire, and emotional regulation systems, which makes transitions difficult and tantrums more likely."
-        date="Latest Article"
-        href="/blog/why-screen-time-is-hard-for-children-to-stop"
-      />
-      <BlogCard
-        title="Understanding the Difference Between a Tantrum and a Meltdown"
-        excerpt="Why the traditional advice to 'ignore it' doesn't work for sensory meltdowns and what to do instead."
-        date="October 15, 2023"
-        href="/resources"
-      />
-      <BlogCard
-        title="Creating a Morning Routine that Actually Works for ADHD"
-        excerpt="Stop the morning battles by externalizing executive function demands with these simple strategies."
-        date="September 28, 2023"
-        href="/resources"
-      />
-      <BlogCard
-        title="Why 'Look at me when I'm talking to you' Might Be Counterproductive"
-        excerpt="Exploring eye contact expectations and neurodiversity-affirming communication approaches."
-        date="September 10, 2023"
-        href="/resources"
-      />
+      {articles.map(article => (
+        <a href={article.href} class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md hover:border-brand-gold transition-all flex flex-col group">
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex gap-2 mb-3">
+              {article.categories.map(cat => (
+                <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">{cat}</span>
+              ))}
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors leading-tight">{article.title}</h3>
+            <p class="text-gray-600 mb-6 flex-grow text-sm line-clamp-3">{article.excerpt}</p>
+            <div class="mt-auto border-t border-gray-100 pt-4">
+              <p class="text-xs font-bold text-brand-navy">{article.author}</p>
+              <p class="text-xs text-gray-500 mt-1">Updated: {article.date}</p>
+            </div>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
-  <StickyMobileBookingCTA />
-</Layout>
+</BaseLayout>

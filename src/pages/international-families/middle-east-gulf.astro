@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'International Families', href: '/international-families' },
+  { name: 'Middle East & Gulf', href: '/international-families/middle-east-gulf' }
+];
+---
+
+<BaseLayout title="Parent Guidance Support for Families in the Middle East | Rabbia Psychologist" description="Culturally sensitive online parent guidance and child development support for families in the UAE, Saudi Arabia, and the Gulf.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="mt-8 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in the Middle East & Gulf</h1>
+      <p class="text-xl text-gray-700">Culturally sensitive online parent guidance and child development support for families in the UAE, Saudi Arabia, Qatar, and the wider Gulf region.</p>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-gray-700">
+      <h2 class="text-2xl font-bold text-brand-navy">Expat & Local Family Support</h2>
+      <p>We understand the unique challenges faced by both local and expatriate families navigating the education and healthcare systems in the Middle East.</p>
+
+      <ul>
+        <li><strong>Culturally Competent Guidance:</strong> Support that respects family dynamics and cultural expectations.</li>
+        <li><strong>School Inclusion Advocacy:</strong> Help communicating with international schools regarding inclusion policies and accommodations.</li>
+        <li><strong>Parent Coaching:</strong> Strategies for ADHD, Autism, and emotional regulation at home.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-brand-navy">Service Boundaries</h2>
+      <p>Our online services are parent education and consultation. We do not provide cross-border medical diagnosis, emergency care, or formal psychological testing online.</p>
+
+      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Book a Consultation</h3>
+        <p class="mb-4">Services are billed in USD.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/book" class="bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Now</a>
+          <a href="/pricing" class="bg-white text-brand-navy border-2 border-brand-navy px-6 py-3 rounded-lg font-bold hover:bg-gray-50 transition-colors">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
