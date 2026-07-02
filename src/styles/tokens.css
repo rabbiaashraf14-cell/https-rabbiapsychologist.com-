@@ -1,17 +1,20 @@
 @theme {
-  --color-brand-navy: #0F2742;
-  --color-brand-sky: #DCEEFF;
-  --color-brand-trust: #4B8BBE;
-  --color-brand-cream: #FFF8EF;
-  --color-brand-lavender: #EEE9FF;
-  --color-brand-green: #8BBF9F;
-  --color-brand-charcoal: #1F2933;
+  --color-brand-navy: #062B4F;
+  --color-brand-charcoal: #1D2B36;
+  --color-brand-green: #7C9988;
+  --color-brand-gold: #C8A15A;
+  --color-brand-cream: #FAF8F3;
+  --color-brand-mist: #F3F0E8;
+  --color-brand-border: #E8E1D2;
+  --color-brand-trust: #062B4F;
+  --color-brand-sky: #FAF8F3;
+  --color-brand-lavender: #F3F0E8;
 
-  --color-clinical-blue: #4B8BBE;
-  --color-warm-ivory: #FFF8EF;
-  --color-muted-teal: #4B8BBE;
-  --color-soft-sage: #8BBF9F;
-  --color-gentle-lavender: #EEE9FF;
+  --color-clinical-blue: #062B4F;
+  --color-warm-ivory: #FAF8F3;
+  --color-muted-teal: #7C9988;
+  --color-soft-sage: #7C9988;
+  --color-gentle-lavender: #F3F0E8;
 
   --radius-xl: 1rem;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);

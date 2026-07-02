@@ -3,7 +3,7 @@
 @import "./motion.css";
 
 body {
-  @apply bg-brand-cream text-brand-navy font-sans antialiased;
+  @apply bg-brand-cream text-brand-charcoal font-sans antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {

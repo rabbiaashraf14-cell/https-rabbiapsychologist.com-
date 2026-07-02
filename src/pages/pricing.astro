@@ -46,13 +46,19 @@ const schema = {
     </div>
 
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-16 mt-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {pricing.map((item: { name: string, price: string }) => (
-          <div class="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
-            <span class="text-gray-700">{item.name}</span>
-            <span class="font-bold text-brand-navy">{item.price}</span>
-          </div>
-        ))}
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col py-3 border-b border-gray-100">
+          <span class="font-bold text-brand-navy text-lg">Online Consultation</span>
+          <span class="text-gray-700 mt-1">For international families and online parent guidance.</span>
+        </div>
+        <div class="flex flex-col py-3 border-b border-gray-100">
+          <span class="font-bold text-brand-navy text-lg">In-Person Consultation in Lahore</span>
+          <span class="text-gray-700 mt-1">Residents of Pakistan may be eligible for discounted in-person pricing.</span>
+        </div>
+        <div class="flex flex-col py-3 border-b border-gray-100">
+          <span class="font-bold text-brand-navy text-lg">Assessment and Reports</span>
+          <span class="text-gray-700 mt-1">Fees may vary depending on the type of assessment and report required.</span>
+        </div>
       </div>
     </div>
 

@@ -1,92 +1,12 @@
 ---
-import { pricingNote, pricingServiceScope } from '../../data/pricing';
 ---
-<section class="py-16 md:py-24 bg-brand-cream border-t border-gray-100">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Transparent Pricing</h2>
-      <p class="text-lg text-gray-700 mb-6">Support should be accessible. We offer a range of options, from free resources to specialized consultation.</p>
-      <div class="bg-blue-50 border border-blue-100 rounded-lg p-4 text-sm text-gray-700 text-left mb-4">
-        <strong>Important:</strong> {pricingNote}
-      </div>
-      <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-600 text-left">
-        {pricingServiceScope}
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-
-      <!-- Tier 1 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Digital Resources & Workshops</h3>
-        <p class="text-gray-500 text-sm mb-6 flex-grow">Self-guided tools and group learning for parents.</p>
-        <div class="mb-6 space-y-3">
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">Digital Resources</span>
-            <span class="font-bold text-brand-navy">Free – $29</span>
-          </div>
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">Workshops/Webinars</span>
-            <span class="font-bold text-brand-navy">USD 200–300</span>
-          </div>
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">Parent Mini Course</span>
-            <span class="font-bold text-brand-navy">$39 – $99</span>
-          </div>
-        </div>
-        <a href="/resources" class="w-full text-center py-2 px-4 border border-brand-trust text-brand-trust font-bold rounded hover:bg-brand-trust hover:text-white transition-colors">
-          View Resources
-        </a>
-      </div>
-
-      <!-- Tier 2 -->
-      <div class="bg-white rounded-xl shadow-md border-2 border-brand-trust p-8 flex flex-col relative transform md:-translate-y-4">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-trust text-white px-4 py-1 rounded-full text-sm font-bold">
-          Lead Clinician
-        </div>
-        <h3 class="text-xl font-bold text-brand-navy mb-2 mt-2">Rabbia Ashraf Consultation</h3>
-        <p class="text-gray-500 text-sm mb-6 flex-grow">Specialized guidance with our Clinical Director.</p>
-        <div class="mb-6 space-y-3">
-          <div class="pb-3 border-b border-gray-100">
-            <p class="text-gray-700 text-sm leading-relaxed mb-3">Pakistan-based families may receive local pricing or booking-stage discounts. Final pricing is confirmed during booking or consultation coordination.</p>
-          </div>
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">USA (USD)</span>
-            <span class="font-bold text-brand-navy">$50</span>
-          </div>
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">Australia (AUD)</span>
-            <span class="font-bold text-brand-navy">$75</span>
-          </div>
-        </div>
-        <a href="https://calendar.app.google/zMKejpnpCjh91WRG7" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 px-4 bg-brand-trust text-white font-bold rounded hover:bg-blue-700 transition-colors">
-          Book Consultation
-        </a>
-      </div>
-
-      <!-- Tier 3 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
-        <h3 class="text-xl font-bold text-brand-navy mb-2">Specialized Support Programs</h3>
-        <p class="text-gray-500 text-sm mb-6 flex-grow">Comprehensive guidance for specific needs.</p>
-        <div class="mb-6 space-y-3">
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">School & IEP Help</span>
-            <span class="font-bold text-brand-navy">$60 - $80</span>
-          </div>
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">Report Review</span>
-            <span class="font-bold text-brand-navy">$60 - $80</span>
-          </div>
-          <div class="flex justify-between items-center pb-3 border-b border-gray-100">
-            <span class="text-gray-700">Between-Session Programs</span>
-            <span class="font-bold text-brand-navy text-sm">Custom Quote</span>
-          </div>
-        </div>
-        <a href="/pricing" class="w-full text-center py-2 px-4 border border-brand-trust text-brand-trust font-bold rounded hover:bg-brand-trust hover:text-white transition-colors">
-          View Full Pricing
-        </a>
-      </div>
-
+<section class="py-16 bg-brand-cream">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-brand-navy mb-8">Pricing</h2>
+    <div class="bg-brand-mist border border-brand-border rounded-xl p-6 text-brand-charcoal max-w-2xl mx-auto text-left space-y-4">
+      <p><strong>Online Consultation:</strong> For international families and online parent guidance.</p>
+      <p><strong>In-Person Consultation in Lahore:</strong> Residents of Pakistan may be eligible for discounted in-person pricing.</p>
+      <p><strong>Assessment and Reports:</strong> Fees may vary depending on the type of assessment and report required.</p>
     </div>
   </div>
 </section>

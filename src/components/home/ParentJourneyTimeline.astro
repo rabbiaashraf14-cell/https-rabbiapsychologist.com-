@@ -1,86 +1,14 @@
 ---
 ---
-<section class="py-16 md:py-24 bg-white relative">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Your Journey to Support</h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">A clear path to finding the right guidance for your family.</p>
-    </div>
-
-    <div class="relative wrap overflow-hidden p-10 h-full">
-      <div class="border-2-2 absolute border-opacity-20 border-brand-trust h-full border" style="left: 50%"></div>
-
-      <!-- Right -->
-      <div class="mb-8 flex justify-between items-center w-full right-timeline animate-timeline">
-        <div class="order-1 w-5/12"></div>
-        <div class="z-20 flex items-center order-1 bg-brand-trust shadow-xl w-8 h-8 rounded-full">
-          <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
-        </div>
-        <div class="order-1 bg-gray-50 rounded-lg shadow-sm border border-gray-100 w-5/12 px-6 py-4 text-left transition-transform hover:-translate-y-1 duration-300">
-          <h3 class="mb-2 font-bold text-gray-800 text-xl">Explore Resources</h3>
-          <p class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100">Access our free guides, behavior logs, and articles to understand your child's needs.</p>
-        </div>
-      </div>
-
-      <!-- Left -->
-      <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline animate-timeline delay-100">
-        <div class="order-1 w-5/12"></div>
-        <div class="z-20 flex items-center order-1 bg-brand-trust shadow-xl w-8 h-8 rounded-full">
-          <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
-        </div>
-        <div class="order-1 bg-gray-50 rounded-lg shadow-sm border border-gray-100 w-5/12 px-6 py-4 text-right transition-transform hover:-translate-y-1 duration-300">
-          <h3 class="mb-2 font-bold text-gray-800 text-xl">Identify Support Needs</h3>
-          <p class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100">Review our support pathways, including parent guidance, report review, and school help.</p>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div class="mb-8 flex justify-between items-center w-full right-timeline animate-timeline delay-200">
-        <div class="order-1 w-5/12"></div>
-        <div class="z-20 flex items-center order-1 bg-brand-trust shadow-xl w-8 h-8 rounded-full">
-          <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
-        </div>
-        <div class="order-1 bg-gray-50 rounded-lg shadow-sm border border-gray-100 w-5/12 px-6 py-4 text-left transition-transform hover:-translate-y-1 duration-300">
-          <h3 class="mb-2 font-bold text-gray-800 text-xl">Book Consultation</h3>
-          <p class="text-sm leading-snug tracking-wide text-gray-600 text-opacity-100">Schedule your initial session. Discuss your goals and develop a tailored action plan.</p>
-        </div>
-      </div>
-
-      <!-- Left -->
-      <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline animate-timeline delay-300">
-        <div class="order-1 w-5/12"></div>
-        <div class="z-20 flex items-center order-1 bg-brand-trust shadow-xl w-8 h-8 rounded-full">
-          <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
-        </div>
-        <div class="order-1 bg-brand-cream rounded-lg shadow-sm border border-brand-sky w-5/12 px-6 py-4 text-right transition-transform hover:-translate-y-1 duration-300">
-          <h3 class="mb-2 font-bold text-brand-navy text-xl">Implement & Grow</h3>
-          <p class="text-sm leading-snug tracking-wide text-gray-700 text-opacity-100">Apply strategies at home and school. Adjust the plan in follow-up sessions as needed.</p>
-        </div>
-      </div>
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Start Here</h2>
+    <div class="flex flex-col gap-4">
+      <a href="/services/adhd-support" class="bg-brand-cream border border-brand-border rounded-xl p-6 hover:shadow-md transition text-lg text-brand-navy font-bold">I am concerned about attention or hyperactivity &rarr;</a>
+      <a href="/services/asd-support" class="bg-brand-cream border border-brand-border rounded-xl p-6 hover:shadow-md transition text-lg text-brand-navy font-bold">I am concerned about autism or social communication &rarr;</a>
+      <a href="/services/behaviour-planning" class="bg-brand-cream border border-brand-border rounded-xl p-6 hover:shadow-md transition text-lg text-brand-navy font-bold">I need help with behaviour &rarr;</a>
+      <a href="/services/school-consultation" class="bg-brand-cream border border-brand-border rounded-xl p-6 hover:shadow-md transition text-lg text-brand-navy font-bold">I need school consultation &rarr;</a>
+      <a href="/services/local-assessment" class="bg-brand-cream border border-brand-border rounded-xl p-6 hover:shadow-md transition text-lg text-brand-navy font-bold">I need assessment and report &rarr;</a>
     </div>
   </div>
 </section>
-
-<style>
-  @media (prefers-reduced-motion: no-preference) {
-    .animate-timeline {
-      animation: fadeUp 0.6s ease-out forwards;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-  }
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @media (max-width: 768px) {
-    .wrap { padding-left: 0; padding-right: 0; }
-    .border-2-2 { left: 24px !important; }
-    .right-timeline, .left-timeline { flex-direction: row !important; }
-    .left-timeline .text-right { text-align: left !important; }
-    .w-5\/12 { width: 100% !important; padding-left: 3rem; margin-top: 1rem; }
-    .z-20 { position: absolute; left: 8px; }
-  }
-</style>

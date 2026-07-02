@@ -1,12 +1,8 @@
 export const pricing = [
-  { name: 'Online Parent Guidance Consultation', price: 'USD 50 / AUD 75' },
-  { name: 'Between-Session Support Planning', price: 'USD 50 / AUD 75 starting session' },
-  { name: 'Report Review and Next-Step Planning', price: 'USD 60–80 / AUD 90–120' },
-  { name: 'School & IEP Support Session', price: 'USD 60–80 / AUD 90–120' },
-  { name: 'Structured Parent Support Program', price: 'Custom quote depending on duration and support level' },
-  { name: 'Resource Downloads', price: 'Free to USD 29' },
-  { name: 'Workshops / Webinars', price: 'USD 200–300' }
+  { name: 'Online Consultation', price: 'For international families and online parent guidance.' },
+  { name: 'In-Person Consultation in Lahore', price: 'Residents of Pakistan may be eligible for discounted in-person pricing.' },
+  { name: 'Assessment and Reports', price: 'Fees may vary depending on the type of assessment and report required.' }
 ];
 
-export const pricingNote = "Residents of Pakistan may be eligible for discounted in-person pricing rates. Please contact us for details.";
-export const pricingServiceScope = "Pricing applies to parent education, developmental guidance, ASD/ADHD support planning, school communication preparation, and consultation services. Regulated therapy, diagnosis, or assessment is provided only where legally and ethically permitted.";
+export const pricingNote = "Residents of Pakistan may be eligible for discounted in-person pricing.";
+export const pricingServiceScope = "Pricing applies to parent education, developmental guidance, ASD/ADHD support planning, school communication preparation, and consultation services.";
