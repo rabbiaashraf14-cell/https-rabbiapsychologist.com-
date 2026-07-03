@@ -4,65 +4,111 @@ import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
-  { name: 'ASD Support', href: '/services/asd-support' }
+  { name: 'Autism Support', href: '/services/asd-support' }
 ];
 ---
 
-<BaseLayout title="Autism Parent Guidance & Support | Rabbia Psychologist" description="Online parent guidance for autism-related concerns, social communication, sensory needs, and routines.">
+<BaseLayout title="Autism Parent Guidance | Rabbia Psychologist" description="Online parent training and behavioral support planning for families navigating ASD.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Autism Parent Guidance</h1>
-      <p class="text-xl text-gray-700">Practical guidance for navigating social communication, sensory needs, rigid routines, and behaviour support at home.</p>
+    <!-- 1. Hero section -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Autism Support & Parent Guidance</h1>
+      <p class="text-xl text-gray-700 mb-4">Parent training, communication strategies, and behavioral support planning for families navigating ASD.</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">USD 95 / AUD 145</p>
+      <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
-    <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Common Parent Concerns</h2>
-      <ul>
-        <li>Difficulty understanding why a child is having frequent meltdowns.</li>
-        <li>Struggles with sensory sensitivities (clothing, food textures, noise).</li>
-        <li>Challenges with communication—understanding what the child is trying to express through behaviour.</li>
-        <li>Extreme distress during transitions or changes in routine.</li>
-        <li>Confusion about what to do immediately following an autism diagnosis.</li>
-      </ul>
+    <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
-      <h2 class="text-2xl font-bold text-brand-navy">How We Support Families</h2>
+      <!-- 2. This is right for you if -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <ul>
+          <li>You recently received an autism diagnosis for your child and feel overwhelmed.</li>
+          <li>You are seeing signs of developmental delay and want to know how to support them now.</li>
+          <li>You are struggling to manage intense meltdowns or sensory overload.</li>
+          <li>You want neurodiversity-affirming strategies to help your child thrive.</li>
+        </ul>
+      </section>
 
-      <h3>1. Parent Guidance After Diagnosis</h3>
-      <p>Receiving an autism diagnosis can be overwhelming. We help parents process the information, understand their child's unique profile, and figure out the immediate next steps for home support.</p>
+      <!-- 3. Common concerns parents bring -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <ul>
+          <li>Tantrum vs meltdown confusion.</li>
+          <li>Challenges with transitions and rigid routines.</li>
+          <li>Difficulty with communication or following instructions.</li>
+          <li>Sensory sensitivities (clothing, food, noise).</li>
+          <li>Sibling or family stress trying to adapt.</li>
+          <li>Waiting for a formal diagnosis.</li>
+        </ul>
+      </section>
 
-      <h3>2. Communication & Sensory Support</h3>
-      <p>Guidance on creating an environment that respects a child's sensory needs while encouraging functional communication and reducing frustration.</p>
+      <!-- 4. What we do in the session -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
+        <p>We take time to understand your child's unique profile—their strengths, triggers, and sensory needs. We discuss how to adapt your home environment and parenting approach to reduce stress and support their development.</p>
+      </section>
 
-      <h3>3. Routine & Behaviour Planning</h3>
-      <p>Developing visual supports, predictable structures, and proactive strategies to manage anxiety and prevent meltdowns.</p>
+      <!-- 5. What you leave with -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
+        <p>A tailored support plan that includes practical communication strategies, visual support ideas, and clear steps on how to de-escalate meltdowns effectively.</p>
+      </section>
 
-      <h3>4. Report Understanding & School Support</h3>
-      <p>We review your diagnostic reports with you, translating clinical terms into plain English, and mapping out what accommodations to request at school.</p>
+      <!-- 6. What this service does not include -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
+        <ul>
+          <li>Formal autism diagnosis.</li>
+          <li>ABA therapy or direct intervention with the child.</li>
+          <li>Promises of a "cure".</li>
+          <li>Medical treatment.</li>
+        </ul>
+      </section>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Frequently Asked Questions</h2>
-      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-4">
-        <h4 class="font-bold text-brand-navy">Do you provide ABA therapy?</h4>
-        <p class="mb-4">No. We provide parent coaching and psychoeducation based on neurodiversity-affirming, developmental, and behaviour-support principles. We focus on helping parents support their child's regulatory and communication needs.</p>
-
-        <h4 class="font-bold text-brand-navy">My child doesn't have a diagnosis yet, but I suspect autism. Can we still book?</h4>
-        <p>Yes. Parent guidance is highly effective while you are on a waitlist for formal assessment. We can start working on home routines and communication strategies immediately.</p>
-      </div>
-
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Start supporting your child today.</h3>
-        <p class="mb-6">Book an ASD Parent Guidance Consultation (USD 95 / AUD 145).</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book ASD Support</a>
-          <a href="/pricing" class="bg-white text-brand-navy border-2 border-brand-navy px-6 py-3 rounded-lg font-bold hover:bg-gray-50 transition-colors">View All Pricing</a>
+      <!-- 7. Related services -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning &rarr;</a>
+          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation &rarr;</a>
+          <a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review &rarr;</a>
         </div>
-      </div>
+      </section>
 
-      <div class="mt-8 text-sm flex gap-4 justify-center">
-        <a href="/report-review" class="text-brand-trust hover:underline">Report Review</a> |
-        <a href="/services/school-consultation" class="text-brand-trust hover:underline">School Consultation</a> |
-        <a href="/resource-vault" class="text-brand-trust hover:underline">Resource Vault</a>
+      <!-- 8. FAQ section -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">My child isn't diagnosed yet, can we still talk?</h4>
+            <p class="text-sm">Yes. We can discuss your observations and implement supportive strategies while you wait for a formal assessment.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Do you provide online autism diagnosis?</h4>
+            <p class="text-sm">No. We provide parent guidance and education. Formal diagnosis requires comprehensive, often in-person, evaluation by a qualified local professional.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Is this therapy for my child?</h4>
+            <p class="text-sm">No, this is consultation and training for parents to empower you to support your child in their natural environment.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">How many sessions will I need?</h4>
+            <p class="text-sm">Many parents start with one session to build a plan, followed by a check-in a few weeks later. We also offer a 4-session package for ongoing support.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CTA block -->
+      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to support your child with confidence?</h3>
+        <p class="mb-6">Book your parent guidance session today.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book ASD Support</a>
+        </div>
       </div>
     </div>
   </div>
