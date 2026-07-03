@@ -4,53 +4,103 @@ import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
-  { name: 'Parent Support', href: '/parent-support' }
+  { name: 'Online Parent Guidance Consultation', href: '/parent-support' }
 ];
 ---
 
-<BaseLayout title="Online Parent Guidance Consultation | Rabbia Psychologist" description="Online parent support and developmental guidance for behavior, routines, and child psychology concerns.">
+<BaseLayout title="Online Parent Guidance Consultation | Rabbia Psychologist" description="Online sessions for parents seeking expert guidance on child development and behaviour.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Online Parent Guidance Consultation</h1>
-      <p class="text-xl text-gray-700">Clear, professional guidance for parents who need help understanding their child's development, behaviour, or emotional needs.</p>
+    <!-- 1. Hero section -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Online Parent Guidance Consultation</h1>
+      <p class="text-xl text-gray-700 mb-4">Expert guidance for parents worried about their child's development, behaviour, or milestones, seeking clear direction without a formal diagnosis.</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">USD 85 / AUD 130</p>
+      <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
-    <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Common Concerns We Address</h2>
-      <p>This general consultation is the best starting point if you do not have a diagnosis but are noticing:</p>
-      <ul>
-        <li>Frequent, intense emotional outbursts that disrupt family life.</li>
-        <li>Refusal to follow basic daily routines (morning rush, bedtime, homework).</li>
-        <li>Struggles with managing screen time and transitions.</li>
-        <li>Questions about whether a behavior is "developmentally typical" or a sign of something else.</li>
-        <li>Concerns about anxiety, shyness, or social interactions at school.</li>
-      </ul>
+    <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
-      <h2 class="text-2xl font-bold text-brand-navy">The Consultation Process</h2>
+      <!-- 2. This is right for you if -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <ul>
+          <li>You have a "gut feeling" something is off but aren't sure if it's a phase.</li>
+          <li>You are feeling overwhelmed by conflicting parenting advice online.</li>
+          <li>You want to know if you should seek a formal assessment.</li>
+          <li>You need a sounding board for navigating developmental challenges.</li>
+        </ul>
+      </section>
 
-      <h3>1. Review</h3>
-      <p>We discuss your primary concerns, looking at the history of the behaviour and the contexts in which it happens (home vs. school).</p>
+      <!-- 3. Common concerns parents bring -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <ul>
+          <li>Concerns about speech or social milestones.</li>
+          <li>General worry, anxiety, or stress about parenting.</li>
+          <li>Tantrums that seem more intense than typical for their age.</li>
+          <li>Uncertainty about whether a behavior is "normal".</li>
+          <li>Screen time battles and setting healthy boundaries.</li>
+        </ul>
+      </section>
 
-      <h3>2. Education</h3>
-      <p>I help you understand the developmental or psychological 'why' behind the behaviour, removing blame and focusing on skills.</p>
+      <!-- 4. What we do in the session -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
+        <p>This is a collaborative discussion. We explore your concerns in a supportive, non-judgmental environment. We'll look at your child's developmental history, current routines, and discuss what might be underlying the behaviors or challenges you are seeing.</p>
+      </section>
 
-      <h3>3. Strategy</h3>
-      <p>We co-create a realistic, step-by-step home plan. This isn't generic advice; it's tailored to your family's actual capacity and lifestyle.</p>
+      <!-- 5. What you leave with -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
+        <p>Clarity. You will leave with a professional perspective on your concerns, a few initial practical strategies to try at home, and a recommendation on whether further assessment or specialized support is necessary.</p>
+      </section>
 
-      <h3>4. Direction</h3>
-      <p>If we determine that your child would benefit from formal assessment, therapy, or medical intervention, I will guide you on exactly what kind of professional to look for in your local area.</p>
+      <!-- 6. What this service does not include -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
+        <ul>
+          <li>Psychotherapy for the parent.</li>
+          <li>Formal medical or psychological diagnosis.</li>
+          <li>Ongoing crisis intervention.</li>
+        </ul>
+      </section>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Session Structure</h2>
-      <p>Sessions are 50–60 minutes and conducted securely online. After the session, you will typically be pointed toward relevant resources (like the <a href="/resource-vault" class="text-brand-trust">Resource Vault</a>) to help implement the strategies we discussed.</p>
+      <!-- 7. Related services -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning &rarr;</a>
+          <a href="/services/local-assessment" class="text-brand-trust font-bold hover:underline">Assessment Info &rarr;</a>
+        </div>
+      </section>
 
+      <!-- 8. FAQ section -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">I just need someone to tell me if I'm worrying too much. Is this the right service?</h4>
+            <p class="text-sm">Yes. Parent Guidance is perfect for discussing developmental concerns to get a professional perspective on whether it's a typical phase or something that needs support.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can both parents attend?</h4>
+            <p class="text-sm">Absolutely. Having both parents present is highly encouraged to ensure everyone is on the same page.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Is this therapy?</h4>
+            <p class="text-sm">No, this is psychoeducation and consultation. While it is supportive, it is not licensed psychotherapy or medical treatment.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Get clarity and a plan.</h3>
-        <p class="mb-6">Book an Online Parent Guidance Consultation (USD 85 / AUD 130).</p>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to get clarity and peace of mind?</h3>
+        <p class="mb-6">Book your Parent Guidance Consultation today.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Consultation</a>
-          <a href="/pricing" class="bg-white text-brand-navy border-2 border-brand-navy px-6 py-3 rounded-lg font-bold hover:bg-gray-50 transition-colors">View All Pricing</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
         </div>
       </div>
     </div>

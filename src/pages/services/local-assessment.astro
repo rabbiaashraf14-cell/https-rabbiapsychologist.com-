@@ -4,67 +4,108 @@ import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
-  { name: 'Local Assessment', href: '/services/local-assessment' }
+  { name: 'Local Psychological Assessment (Lahore)', href: '/services/local-assessment' }
 ];
 ---
 
-<BaseLayout title="Local Psychological Assessment in Lahore | Rabbia Psychologist" description="In-person psychological assessment and ADHD screening for families based in Lahore, Pakistan.">
+<BaseLayout title="Local Psychological Assessment Lahore | Rabbia Psychologist" description="Formal psychological testing, ADHD/ASD screening, and diagnostic reporting available locally in Pakistan.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <div class="inline-block bg-brand-navy text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">Pakistan / Lahore Only</div>
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Local Psychological Assessment</h1>
-      <p class="text-xl text-gray-700">In-person psychological evaluation, developmental observation, and ADHD screening for local families.</p>
+    <!-- 1. Hero section -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Local Psychological Assessment (Lahore)</h1>
+      <p class="text-xl text-gray-700 mb-4">Formal psychological testing, ADHD/ASD screening, and diagnostic reporting available locally in Pakistan.</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Assessment fees discussed at booking</p>
+      <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Request Assessment Info</a>
     </div>
 
-    <div class="prose prose-lg max-w-none text-gray-700">
-      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
-        <p class="text-sm m-0"><strong>Important Notice:</strong> Formal psychological testing and assessment are provided strictly <strong>in-person in Lahore, Pakistan</strong>. We do not provide formal cross-border medical or psychological diagnosis via online consultation.</p>
-      </div>
+    <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
-      <h2 class="text-2xl font-bold text-brand-navy">Assessment Services Provided</h2>
-
-      <h3>Comprehensive Psychological Assessment</h3>
-      <p>A detailed evaluation to understand a child's cognitive, developmental, and psychological profile.</p>
-      <ul>
-        <li>Parent interview to gather developmental history.</li>
-        <li>Child observation and standardized testing (where professionally appropriate).</li>
-        <li>Scoring and clinical interpretation.</li>
-        <li>A comprehensive written report (timeline varies based on complexity).</li>
-        <li>A feedback session to explain the results and recommend next steps.</li>
-      </ul>
-
-      <h3>Structured ADHD Screening</h3>
-      <p>A focused screening process to identify symptoms of ADHD and related executive function challenges.</p>
-      <ul>
-        <li>Clinical interview and standardized rating scales.</li>
-        <li>Observation where applicable.</li>
-        <li>Summary of findings and recommendations for school and home.</li>
-      </ul>
-
-      <h2 class="text-2xl font-bold text-brand-navy">Important Boundaries and Referrals</h2>
-      <p>A psychological assessment or screening is an important piece of the puzzle, but it is <strong>not the same as a medical diagnosis</strong>. If medical evaluation, ruling out physical conditions, or medication management is needed, we will provide a referral direction to a developmental pediatrician, psychiatrist, neurologist, or relevant physician.</p>
-
-      <h2 class="text-2xl font-bold text-brand-navy">Local Pricing Structure</h2>
-      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-4">
-        <ul class="list-none pl-0 space-y-4">
-          <li class="flex justify-between border-b border-gray-200 pb-2">
-            <span class="font-bold">Comprehensive Assessment with Report</span>
-            <span class="text-brand-gold font-bold">Starting from PKR 25,000+</span>
-          </li>
-          <li class="flex justify-between">
-            <span class="font-bold">ADHD Screening</span>
-            <span class="text-brand-gold font-bold">Starting from PKR 15,000+</span>
-          </li>
+      <!-- 2. This is right for you if -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <ul>
+          <li>You live in or can travel to Lahore, Pakistan.</li>
+          <li>Your child's school is requesting a formal evaluation or IQ testing.</li>
+          <li>You need diagnostic clarity regarding ADHD, Autism, or Learning Difficulties.</li>
+          <li>You want a comprehensive report outlining your child's cognitive or developmental profile.</li>
         </ul>
-        <p class="text-sm mt-4 italic text-gray-500">Note: Final fees depend on the specific testing required and the complexity of the report.</p>
-      </div>
+      </section>
 
+      <!-- 3. Common concerns parents bring -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <ul>
+          <li>"Is it ADHD or just bad behavior?"</li>
+          <li>"The school says my child is falling behind and needs testing."</li>
+          <li>"I think my child might be autistic, but I need a professional diagnosis."</li>
+          <li>"My child struggles with reading/writing, could it be dyslexia?"</li>
+        </ul>
+      </section>
+
+      <!-- 4. What we do in the process -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the process</h2>
+        <p>The assessment process typically involves an initial parent interview, direct testing/observation sessions with the child, gathering information from the school, and a final feedback session to discuss results.</p>
+      </section>
+
+      <!-- 5. What you leave with -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
+        <p>A formal, comprehensive psychological report. This report will detail the findings, provide diagnostic clarity where applicable, and offer clear, actionable recommendations for home, school, and potential further therapies.</p>
+      </section>
+
+      <!-- 6. What this service does not include -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
+        <ul>
+          <li>Online or remote international diagnosis.</li>
+          <li>Medication prescription (psychologists do not prescribe medication).</li>
+          <li>Direct ongoing therapy or ABA.</li>
+          <li>Guarantee of school admission based on the report.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Related services -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/parent-support" class="text-brand-trust font-bold hover:underline">Parent Consultation &rarr;</a>
+          <a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review &rarr;</a>
+        </div>
+      </section>
+
+      <!-- 8. FAQ section -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you diagnose my child online if I live in the USA/UK/Australia?</h4>
+            <p class="text-sm">No. We do not provide cross-border formal diagnosis. Our international services are strictly parent guidance and education. Formal assessment is only available locally.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">How long does an assessment take?</h4>
+            <p class="text-sm">It varies depending on the type of assessment, but generally involves 2-4 sessions spanning a few weeks from intake to the final feedback report.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Will this report be accepted by my child's school?</h4>
+            <p class="text-sm">Our comprehensive reports are generally accepted by schools for planning support. However, specific schools may have their own internal review processes.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you prescribe ADHD medication?</h4>
+            <p class="text-sm">No. If medication is needed, we will refer you to a psychiatrist, pediatrician, or appropriate medical doctor.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Request a Local Assessment</h3>
-        <p class="mb-6">Please contact us to discuss your child's needs and schedule an in-person evaluation in Lahore.</p>
-        <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Ask About Local Assessment</a>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to start the assessment process?</h3>
+        <p class="mb-6">Contact us to discuss your needs and schedule an intake session.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Request Assessment Info</a>
+        </div>
       </div>
     </div>
   </div>

@@ -13,12 +13,12 @@
 
       <!-- Parent Support -->
       <div>
-        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" aria-expanded="false" aria-controls="footer-parent-support">
           <span>Parent Support</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <h4 class="hidden md:block font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Parent Support</h4>
-        <ul class="hidden md:block space-y-3 text-sm">
+        <ul id="footer-parent-support" class="hidden md:block space-y-3 text-sm">
           <li><a href="/start-here" class="text-gray-300 hover:text-white transition-colors">Start Here</a></li>
           <li><a href="/parent-support" class="text-gray-300 hover:text-white transition-colors">Parent Consultation</a></li>
           <li><a href="/between-session-programs" class="text-gray-300 hover:text-white transition-colors">Between-Session Programs</a></li>
@@ -29,12 +29,12 @@
 
       <!-- Services -->
       <div>
-        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" aria-expanded="false" aria-controls="footer-services">
           <span>Services</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <h4 class="hidden md:block font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Services</h4>
-        <ul class="hidden md:block space-y-3 text-sm">
+        <ul id="footer-services" class="hidden md:block space-y-3 text-sm">
           <li><a href="/services/adhd-support" class="text-gray-300 hover:text-white transition-colors">ADHD Support</a></li>
           <li><a href="/services/asd-support" class="text-gray-300 hover:text-white transition-colors">ASD Support</a></li>
           <li><a href="/services/behaviour-planning" class="text-gray-300 hover:text-white transition-colors">Behaviour Planning</a></li>
@@ -46,12 +46,12 @@
 
       <!-- Resources -->
       <div>
-        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" aria-expanded="false" aria-controls="footer-resources">
           <span>Resources</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <h4 class="hidden md:block font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Resources</h4>
-        <ul class="hidden md:block space-y-3 text-sm">
+        <ul id="footer-resources" class="hidden md:block space-y-3 text-sm">
           <li><a href="/resources" class="text-gray-300 hover:text-white transition-colors">Resource Center</a></li>
           <li><a href="/resource-vault" class="text-gray-300 hover:text-white transition-colors">Resource Vault</a></li>
           <li><a href="/free-downloads" class="text-gray-300 hover:text-white transition-colors">Free Downloads</a></li>
@@ -62,12 +62,12 @@
 
       <!-- International & Legal -->
       <div>
-        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" aria-expanded="false" aria-controls="footer-international">
           <span>International & Legal</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
-        <div class="hidden md:block">
-          <h4 class="font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">International</h4>
+        <div id="footer-international" class="hidden md:block">
+          <h4 class="font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm md:block hidden">International</h4>
           <ul class="space-y-3 text-sm mb-8">
             <li><a href="/international-families" class="text-gray-300 hover:text-white transition-colors">Global Families Hub</a></li>
             <li><a href="/international-families/usa" class="text-gray-300 hover:text-white transition-colors">USA</a></li>
@@ -75,7 +75,7 @@
             <li><a href="/international-families/uk-europe" class="text-gray-300 hover:text-white transition-colors">UK & Europe</a></li>
             <li><a href="/international-families/overseas-pakistani-families" class="text-gray-300 hover:text-white transition-colors">Overseas Pakistani</a></li>
           </ul>
-          <h4 class="font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Legal</h4>
+          <h4 class="font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm md:block hidden">Legal</h4>
           <ul class="space-y-3 text-sm">
             <li><a href="/privacy-policy" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
             <li><a href="/terms-and-disclaimer" class="text-gray-300 hover:text-white transition-colors">Terms & Disclaimer</a></li>
@@ -94,20 +94,25 @@
 </footer>
 
 <script>
-  // Add quick mobile dropdown functionality to ul elements next to buttons
   document.addEventListener('DOMContentLoaded', () => {
     const mobileButtons = document.querySelectorAll('footer button.md\\:hidden');
     mobileButtons.forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const ul = e.currentTarget.nextElementSibling;
-        if (ul.classList.contains('hidden')) {
-          ul.classList.remove('hidden');
-          ul.classList.add('block');
-          e.currentTarget.querySelector('svg').style.transform = 'rotate(180deg)';
-        } else {
-          ul.classList.add('hidden');
-          ul.classList.remove('block');
-          e.currentTarget.querySelector('svg').style.transform = 'rotate(0deg)';
+        const targetId = btn.getAttribute('aria-controls');
+        const content = document.getElementById(targetId);
+        if (content) {
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+          if (isExpanded) {
+            content.classList.add('hidden');
+            content.classList.remove('block');
+            btn.setAttribute('aria-expanded', 'false');
+            e.currentTarget.querySelector('svg').style.transform = 'rotate(0deg)';
+          } else {
+            content.classList.remove('hidden');
+            content.classList.add('block');
+            btn.setAttribute('aria-expanded', 'true');
+            e.currentTarget.querySelector('svg').style.transform = 'rotate(180deg)';
+          }
         }
       });
     });

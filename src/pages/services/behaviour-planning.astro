@@ -8,83 +8,106 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title="Behaviour Support Planning | Rabbia Psychologist" description="Online behaviour support planning for tantrums, meltdowns, refusal, aggression, and daily routine struggles.">
+<BaseLayout title="Behaviour Support Planning | Rabbia Psychologist" description="Structured home-based guidance to help families manage challenging behaviors, meltdowns, and transitions.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Behaviour Planning Session</h1>
-      <p class="text-xl text-gray-700">A structured approach to understanding the 'why' behind tantrums, meltdowns, defiance, and refusal, and building a parent response plan.</p>
+    <!-- 1. Hero section -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Behaviour Support Planning</h1>
+      <p class="text-xl text-gray-700 mb-4">Structured home-based guidance to help families manage challenging behaviors, meltdowns, and transitions.</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">USD 95 / AUD 145</p>
+      <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
-    <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Behaviour is Communication</h2>
-      <p>Children do not want to be "bad." Challenging behaviour is almost always a sign that a child is lacking the skills to handle a situation, or they are trying to communicate an unmet need (like escaping a demand, seeking connection, or sensory overload).</p>
+    <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
-      <p>Our approach starts with decoding the behaviour rather than just trying to punish it away.</p>
+      <!-- 2. This is right for you if -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <ul>
+          <li>You feel like you are walking on eggshells around your child.</li>
+          <li>Traditional discipline methods are not working.</li>
+          <li>Your child's behavior is impacting family life or school.</li>
+          <li>You want to respond calmly but don't know how in the moment.</li>
+        </ul>
+      </section>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Tantrum vs. Meltdown</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-        <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
-          <h4 class="font-bold text-brand-navy mt-0">A Tantrum is...</h4>
-          <p class="text-sm">Usually goal-oriented. The child wants something (a toy, attention) or wants to avoid something. They are still somewhat in control and will often stop if they get what they want.</p>
+      <!-- 3. Common concerns parents bring -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <ul>
+          <li>Aggression towards siblings or parents.</li>
+          <li>Severe tantrums or meltdowns.</li>
+          <li>Refusal to follow basic instructions.</li>
+          <li>School complaints about disruptive behavior.</li>
+          <li>Difficulties with screen time limits.</li>
+          <li>Running away or unsafe behaviors.</li>
+        </ul>
+      </section>
+
+      <!-- 4. What we do in the session -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
+        <p>We work to understand the function of the behavior—what is your child trying to communicate? We look at triggers, how the environment might be contributing, and how current responses might be unintentionally maintaining the behavior.</p>
+      </section>
+
+      <!-- 5. What you leave with -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
+        <p>A structured behavior support plan. This includes preventative strategies, how to respond during the behavior (de-escalation), and how to teach a replacement skill.</p>
+      </section>
+
+      <!-- 6. What this service does not include -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
+        <ul>
+          <li>Therapy for severe psychiatric conditions.</li>
+          <li>Emergency or crisis intervention.</li>
+          <li>Quick fixes or guarantees of immediate behavior change.</li>
+          <li>Medical diagnosis.</li>
+        </ul>
+      </section>
+
+      <!-- 7. Related services -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support &rarr;</a>
+          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation &rarr;</a>
+          <a href="/parent-support" class="text-brand-trust font-bold hover:underline">Parent Consultation &rarr;</a>
         </div>
-        <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-          <h4 class="font-bold text-brand-navy mt-0">A Meltdown is...</h4>
-          <p class="text-sm">A neurological response to being completely overwhelmed (sensory, emotional, cognitive). The child has lost control and cannot be reasoned with. They need safety and co-regulation.</p>
+      </section>
+
+      <!-- 8. FAQ section -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">How long does it take to see changes?</h4>
+            <p class="text-sm">Behavior change takes time and consistency. Depending on the complexity, you may see shifts in a few weeks, but lasting change requires ongoing commitment to the plan.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Will you talk to my child?</h4>
+            <p class="text-sm">No. We work directly with parents to empower you to support your child in their everyday environment.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">What if my child's behavior is dangerous?</h4>
+            <p class="text-sm">If your child is a danger to themselves or others, you must seek immediate local crisis or emergency medical support. Online consultation is not suitable for emergency care.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Do you use punishment strategies?</h4>
+            <p class="text-sm">We focus on proactive, positive behavior support—understanding the 'why' and teaching skills, rather than punitive measures.</p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Common Parent Mistakes to Avoid</h2>
-      <ul>
-        <li>Talking too much or trying to reason with a child during a meltdown.</li>
-        <li>Focusing only on the consequence, rather than what triggered the behaviour.</li>
-        <li>Being inconsistent with boundaries.</li>
-        <li>Reacting with big emotions, which escalates the child further.</li>
-      </ul>
-
-      <h2 class="text-2xl font-bold text-brand-navy">What a Session Includes</h2>
-      <div class="overflow-x-auto my-6">
-        <table class="min-w-full bg-white border border-gray-200 shadow-sm rounded-lg">
-          <thead class="bg-gray-50">
-            <tr>
-              <th class="py-3 px-4 text-left font-semibold text-brand-navy border-b border-gray-200">Step</th>
-              <th class="py-3 px-4 text-left font-semibold text-brand-navy border-b border-gray-200">Focus</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="py-3 px-4 border-b border-gray-100">Trigger Review</td>
-              <td class="py-3 px-4 border-b border-gray-100">Identifying the hidden antecedents (what happens right before).</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 border-b border-gray-100">Pattern Mapping</td>
-              <td class="py-3 px-4 border-b border-gray-100">Using the <a href="/free-downloads" class="text-brand-trust">ABC Tracker</a> to uncover the 'why'.</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 border-b border-gray-100">Parent Response Plan</td>
-              <td class="py-3 px-4 border-b border-gray-100">Exactly what to say and do in the moment to de-escalate.</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4">Proactive Steps</td>
-              <td class="py-3 px-4">Home changes to prevent the behaviour from happening in the first place.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 class="text-2xl font-bold text-brand-navy">Frequently Asked Questions</h2>
-      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-4">
-        <h4 class="font-bold text-brand-navy">Is my child present for this session?</h4>
-        <p>No. This is a parent-only session. We focus on giving <em>you</em> the tools to manage the environment and your responses.</p>
-      </div>
-
+      <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Stop the cycle of stress and yelling.</h3>
-        <p class="mb-6">Book a Behaviour Planning Session (USD 95 / AUD 145).</p>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to create a calmer home environment?</h3>
+        <p class="mb-6">Book your Behaviour Planning Session and get a clear path forward.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Behaviour Planning</a>
-          <a href="/pricing" class="bg-white text-brand-navy border-2 border-brand-navy px-6 py-3 rounded-lg font-bold hover:bg-gray-50 transition-colors">View All Pricing</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Behaviour Support</a>
         </div>
       </div>
     </div>
