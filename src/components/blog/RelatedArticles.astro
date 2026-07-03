@@ -1,0 +1,62 @@
+---
+// src/components/blog/RelatedArticles.astro
+interface Article {
+  title: string;
+  excerpt: string;
+  href: string;
+}
+
+interface Props {
+  currentUrl: string;
+}
+
+const { currentUrl } = Astro.props;
+
+// Hardcoded articles for related section, normally fetched from a collection
+const allArticles = [
+  {
+    title: "Understanding the Confusion Between ADHD and Hyperactivity in Children",
+    excerpt: "Not every child with ADHD is visibly hyperactive. Some children struggle more with attention, organization, forgetfulness, or impulsivity.",
+    href: "/blog/understanding-adhd-and-hyperactivity-in-children"
+  },
+  {
+    title: "The Science of Screen Time: Why It Is So Hard for Children to Unplug",
+    excerpt: "Stopping screen time is not always simple for children. Screens can strongly activate reward, desire, and emotional regulation systems.",
+    href: "/blog/why-screen-time-is-hard-for-children-to-stop"
+  },
+  {
+    title: "How to Support Executive Function at Home",
+    excerpt: "Practical tips to help your child start tasks, organize belongings, and remember instructions.",
+    href: "/blog/how-to-support-executive-function-at-home"
+  },
+  {
+    title: "Behaviour Is Communication",
+    excerpt: "Decoding what your child is trying to say through their challenging behaviours.",
+    href: "/blog/behaviour-is-communication"
+  }
+];
+
+const relatedArticles = allArticles.filter(a => a.href !== currentUrl).slice(0, 2);
+---
+<div class="mt-16 pt-12 border-t border-brand-border">
+  <h3 class="text-2xl font-bold text-brand-navy mb-8">Related Articles</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {relatedArticles.map(article => (
+      <a href={article.href} class="bg-white p-6 rounded-xl border border-brand-border shadow-sm hover:shadow-md hover:border-brand-gold transition-all group flex flex-col h-full">
+        <h4 class="text-lg font-bold text-brand-navy mb-3 group-hover:text-brand-gold transition-colors leading-tight">{article.title}</h4>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">{article.excerpt}</p>
+        <span class="text-brand-navy font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+          Read Article <span aria-hidden="true">&rarr;</span>
+        </span>
+      </a>
+    ))}
+  </div>
+  <div class="mt-10 text-center">
+    <a href="/blog" class="inline-flex items-center justify-center gap-2 bg-brand-cream border border-brand-border text-brand-navy font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+      </svg>
+      Back to Blog
+    </a>
+  </div>
+</div>

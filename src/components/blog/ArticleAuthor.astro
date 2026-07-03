@@ -1,0 +1,26 @@
+---
+// src/components/blog/ArticleAuthor.astro
+interface Props {
+  datePublished: string;
+  dateModified: string;
+  readTime: string;
+}
+
+const { datePublished, dateModified, readTime } = Astro.props;
+---
+<div class="flex items-center gap-4 py-6 border-y border-gray-200 my-8">
+  <div class="w-14 h-14 rounded-full overflow-hidden bg-brand-cream border-2 border-brand-gold flex-shrink-0">
+    <img src="/images/rabbia-ashraf-psychologist.jpg" alt="Rabbia Ashraf, Clinical Psychologist" class="w-full h-full object-cover" onerror="this.src='/favicon.png'" />
+  </div>
+  <div>
+    <h3 class="font-bold text-brand-navy m-0 text-lg">Rabbia Ashraf</h3>
+    <p class="text-sm text-gray-600 m-0">Clinical Psychologist | Child & Adolescent Development</p>
+    <div class="flex items-center gap-2 text-xs text-gray-500 mt-1 font-medium tracking-wide">
+      <span>Published: {datePublished}</span>
+      <span>&bull;</span>
+      <span>Updated: {dateModified}</span>
+      <span>&bull;</span>
+      <span>{readTime} read</span>
+    </div>
+  </div>
+</div>
