@@ -18,13 +18,24 @@ export default defineConfig({
     '/global-consultation': '/parent-support',
     '/resources-vault': '/resource-vault',
     '/free-resource': '/free-downloads',
-    '/nri-families': '/overseas-pakistani-families',
-    '/non-resident-pakistani-families': '/overseas-pakistani-families',
-    '/expat-pakistani-families': '/overseas-pakistani-families',
-    '/gulf-families': '/online-parent-consultation-mena-gulf',
-    '/middle-east-families': '/online-parent-consultation-mena-gulf',
+    '/nri-families': '/international-families/overseas-pakistani-families',
+    '/non-resident-pakistani-families': '/international-families/overseas-pakistani-families',
+    '/expat-pakistani-families': '/international-families/overseas-pakistani-families',
+    '/gulf-families': '/international-families/middle-east-gulf',
+    '/middle-east-families': '/international-families/middle-east-gulf',
+    '/overseas-pakistani-families': '/international-families/overseas-pakistani-families',
+    '/online-parent-consultation-mena-gulf': '/international-families/middle-east-gulf',
 
-    // New service page redirects
+    // New service page redirects from issue description
+    '/services/global-parent-consultation': '/parent-support',
+    '/services/autism-parent-guidance': '/services/asd-support',
+    '/services/adhd-executive-function-support': '/services/adhd-support',
+    '/services/school-iep-consultation': '/services/school-consultation',
+    '/services/behavior-support-planning': '/services/behaviour-planning',
+    '/services/psychological-assessment-local': '/services/local-assessment',
+    '/services/parent-consultation': '/parent-support',
+
+    // Legacy redirects
     '/asd-support': '/services/asd-support',
     '/autism-support': '/services/asd-support',
     '/adhd-support': '/services/adhd-support',

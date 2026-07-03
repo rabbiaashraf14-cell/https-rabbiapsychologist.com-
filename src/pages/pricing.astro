@@ -1,12 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
-import { pricingNote, pricingServiceScope, pricing } from '../data/pricing';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
   { name: 'Pricing', href: '/pricing' }
@@ -20,14 +15,7 @@ const schema = {
 };
 ---
 
-<Layout title="Pricing | Rabbia Psychologist Child Development Services">
-  <SEO
-    title="Pricing | Rabbia Psychologist Child Development Services"
-    description="View pricing for parent guidance, IEP and school support, report review, between-session support planning, structured parent programs, resources, workshops, and webinars."
-    schema={schema}
-  />
-
-
+<BaseLayout title="Pricing | Rabbia Psychologist Child Development Services" description="View pricing for parent guidance, IEP and school support, report review, between-session support planning, structured parent programs, resources, workshops, and webinars.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
 
@@ -38,39 +26,208 @@ const schema = {
       </p>
 
       <div class="bg-blue-50 border border-blue-100 rounded-lg p-6 mt-8 text-sm text-gray-700 text-left">
-        <strong>Important:</strong> {pricingNote}
+        <strong>Important:</strong> Residents of Pakistan may be eligible for discounted in-person pricing.
       </div>
       <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-4 text-sm text-gray-600 text-left">
-        {pricingServiceScope}
+        These services are educational, developmental, and parent-guidance focused. They are not emergency services.
       </div>
     </div>
 
-    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200 p-8 mb-16 mt-12">
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-col py-3 border-b border-gray-100">
-          <span class="font-bold text-brand-navy text-lg">Online Consultation</span>
-          <span class="text-gray-700 mt-1">For international families and online parent guidance.</span>
+    <!-- Pricing Cards -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+
+      <!-- Card A -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">Online Parent Guidance Consultation</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 85 / AUD 130</p>
+        <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> parents who need clarity about attention, behaviour, routines, emotional regulation, developmental concerns, or school issues.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>parent concern review</li>
+          <li>practical home guidance</li>
+          <li>next-step plan</li>
+          <li>referral direction where needed</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+      </div>
+
+      <!-- Card B -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">ADHD Support Consultation</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 95 / AUD 145</p>
+        <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> attention, hyperactivity, impulsivity, executive function, homework refusal, routines, emotional regulation, and school adjustment.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>ADHD-informed parent guidance</li>
+          <li>home routine suggestions</li>
+          <li>school support recommendations</li>
+          <li>practical strategy plan</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book ADHD Support</a>
+      </div>
+
+      <!-- Card C -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">ASD Parent Guidance Consultation</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 95 / AUD 145</p>
+        <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> autism-related parent concerns, social communication, sensory needs, routines, behaviour support, and understanding reports.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>parent guidance</li>
+          <li>routine and communication support</li>
+          <li>sensory and behaviour planning direction</li>
+          <li>referral guidance where needed</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book ASD Support</a>
+      </div>
+
+      <!-- Card D -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">Behaviour Planning Session</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 95 / AUD 145</p>
+        <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> tantrums, meltdowns, refusal, aggression, withdrawal, screen transitions, and daily routine struggles.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>trigger review</li>
+          <li>behaviour pattern mapping</li>
+          <li>parent response plan</li>
+          <li>home behaviour support steps</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Behaviour Planning</a>
+      </div>
+
+      <!-- Card E -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">Report Review & Parent Explanation Session</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 125 / AUD 190</p>
+        <p class="text-sm text-gray-500 mb-4">Duration: 60–75 minutes</p>
+        <p class="text-sm text-gray-700 mb-4 h-24 overflow-hidden"><strong>Best for:</strong> parents who already have an ADHD, autism, school, speech, OT, psychological, or developmental report and need help understanding what to do next.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>report explanation in parent-friendly language</li>
+          <li>strengths and needs summary</li>
+          <li>questions to ask school or clinician</li>
+          <li>next-step home and school action plan</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Report Review</a>
+      </div>
+
+      <!-- Card F -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">School / IEP Consultation</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">From USD 140 / AUD 215</p>
+        <p class="text-sm text-gray-500 mb-4">Duration: 60–75 minutes</p>
+        <p class="text-sm text-gray-700 mb-4 h-24 overflow-hidden"><strong>Best for:</strong> parent-teacher meetings, IEP-style planning, school behaviour concerns, accommodation planning, and communication with teachers.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>school concern review</li>
+          <li>parent meeting preparation</li>
+          <li>suggested accommodations</li>
+          <li>school communication plan</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book School Consultation</a>
+      </div>
+
+      <!-- Card G -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">Four-Session Parent Guidance Package</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 320 / AUD 490</p>
+        <p class="text-sm text-gray-500 mb-4">Includes: four 50–60 minute online sessions</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> families who need ongoing support for ADHD, ASD, behaviour planning, routines, or school adjustment.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>structured parent support across 4 sessions</li>
+          <li>progress review</li>
+          <li>routine and behaviour adjustments</li>
+          <li>practical home plan</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Start 4-Session Package</a>
+      </div>
+
+      <!-- Card H -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">Workshop / Parent Training Session</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">USD 150–200 / AUD 230–305</p>
+        <p class="text-sm text-gray-500 mb-4">Format: group or custom parent/school workshop</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> schools, parent groups, international families, or organizations.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>ADHD home routines & autism parent guidance</li>
+          <li>behaviour as communication</li>
+          <li>school support and IEP-style planning</li>
+          <li>screen time and emotional regulation</li>
+        </ul>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Request Workshop</a>
+      </div>
+
+      <!-- Card I -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-brand-navy mb-2">Digital Resources and Workbooks</h3>
+        <p class="text-xl font-bold text-brand-gold mb-1">Free to USD 29 / AUD 45</p>
+        <p class="text-sm text-gray-500 mb-4">Downloadable PDF tools</p>
+        <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Includes:</strong> checklists, workbooks, parent trackers, school meeting templates, behaviour logs.</p>
+        <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
+          <li>Easy to use</li>
+          <li>Practical home strategies</li>
+        </ul>
+        <a href="/resource-vault" class="w-full text-center bg-white text-brand-navy border-2 border-brand-navy px-4 py-2 rounded-lg font-bold hover:bg-gray-50 transition-colors mt-auto">View Resource Vault</a>
+      </div>
+
+    </div>
+
+    <!-- Local Pricing -->
+    <div class="max-w-4xl mx-auto bg-brand-cream rounded-xl shadow-sm border border-gray-200 p-8 mb-16 text-center">
+      <h3 class="text-3xl font-bold text-brand-navy mb-4">Pakistan Local Services</h3>
+      <p class="text-gray-700 mb-8">Pakistan-based families may contact us for local in-person consultation and assessment pricing.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h4 class="text-xl font-bold text-brand-navy mb-2">Local Psychological Assessment with Report</h4>
+          <p class="text-lg font-bold text-brand-gold mb-2">Starting from PKR 25,000+</p>
+          <p class="text-sm text-gray-500 mb-4">Mode: in-person/local only where professionally appropriate</p>
+          <ul class="list-disc pl-5 text-gray-600 text-sm mb-6 space-y-1">
+            <li>child observation/testing where applicable</li>
+            <li>parent interview</li>
+            <li>scoring and interpretation</li>
+            <li>written report & feedback session where included</li>
+          </ul>
+          <a href="/book" class="inline-block w-full text-center bg-brand-navy text-white px-4 py-2 rounded font-bold hover:bg-blue-900">Ask About Local Assessment</a>
         </div>
-        <div class="flex flex-col py-3 border-b border-gray-100">
-          <span class="font-bold text-brand-navy text-lg">In-Person Consultation in Lahore</span>
-          <span class="text-gray-700 mt-1">Residents of Pakistan may be eligible for discounted in-person pricing.</span>
-        </div>
-        <div class="flex flex-col py-3 border-b border-gray-100">
-          <span class="font-bold text-brand-navy text-lg">Assessment and Reports</span>
-          <span class="text-gray-700 mt-1">Fees may vary depending on the type of assessment and report required.</span>
+
+        <div class="bg-white p-6 rounded-lg border border-gray-200">
+          <h4 class="text-xl font-bold text-brand-navy mb-2">ADHD Screening / Structured Screening</h4>
+          <p class="text-lg font-bold text-brand-gold mb-2">Starting from PKR 15,000+</p>
+          <p class="text-sm text-gray-500 mb-4">Mode: local/in-person or professionally appropriate format only</p>
+          <p class="text-xs text-gray-600 mb-4 italic">Screening is not the same as a medical diagnosis. If medical evaluation or medication is needed, referral to a developmental pediatrician, psychiatrist, neurologist, or relevant physician may be recommended.</p>
+          <a href="/book" class="inline-block w-full text-center bg-brand-navy text-white px-4 py-2 rounded font-bold hover:bg-blue-900 mt-auto">Ask About ADHD Screening</a>
         </div>
       </div>
     </div>
 
+    <!-- Comparison / FAQ -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6 text-center">Which option should I choose?</h2>
+      <div class="space-y-4">
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h4 class="font-bold text-lg text-brand-navy mb-2">I am worried about my child's behaviour or development, but I don't have a diagnosis.</h4>
+          <p class="text-gray-700">The <strong>Online Parent Guidance Consultation</strong> is the best starting point. We will discuss your concerns, map out a plan, and figure out if further assessment is needed.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h4 class="font-bold text-lg text-brand-navy mb-2">My child was recently diagnosed with ADHD or Autism and I feel overwhelmed.</h4>
+          <p class="text-gray-700">Choose the <strong>ADHD Support Consultation</strong> or <strong>ASD Parent Guidance Consultation</strong> for focused, practical strategies to support your child at home.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h4 class="font-bold text-lg text-brand-navy mb-2">I have a 10-page report from a specialist and I don't know what it means for school.</h4>
+          <p class="text-gray-700">Book the <strong>Report Review and Parent Explanation Session</strong>. We will translate the clinical jargon into actionable home and school steps.</p>
+        </div>
+      </div>
+    </div>
 
   </div>
 
   <StickyMobileBookingCTA />
+</BaseLayout>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
-  "name": "Rabbia Psychologist Child Development Services Services Pricing",
+  "name": "Rabbia Psychologist Child Development Services Pricing",
   "itemListElement": [
     {
       "@type": "Offer",
@@ -80,7 +237,7 @@ const schema = {
       },
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "price": "50",
+        "price": "85",
         "priceCurrency": "USD"
       }
     },
@@ -88,11 +245,11 @@ const schema = {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Between-Session Support Planning"
+        "name": "ADHD Support Consultation"
       },
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "price": "50",
+        "price": "95",
         "priceCurrency": "USD"
       }
     },
@@ -100,12 +257,11 @@ const schema = {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Report Review and Next-Step Planning"
+        "name": "ASD Parent Guidance Consultation"
       },
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "60",
-        "maxPrice": "80",
+        "price": "95",
         "priceCurrency": "USD"
       }
     },
@@ -113,12 +269,11 @@ const schema = {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "School & IEP Support Session"
+        "name": "Behaviour Planning Session"
       },
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "60",
-        "maxPrice": "80",
+        "price": "95",
         "priceCurrency": "USD"
       }
     },
@@ -126,16 +281,26 @@ const schema = {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Workshops / Webinars"
+        "name": "Report Review and Parent Explanation Session"
       },
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "200",
-        "maxPrice": "300",
+        "price": "125",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "School / IEP Consultation"
+      },
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "140",
         "priceCurrency": "USD"
       }
     }
   ]
 }
 </script>
-</Layout>

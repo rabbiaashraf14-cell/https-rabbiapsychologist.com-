@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'International Families', href: '/international-families' },
+  { name: 'USA', href: '/international-families/usa' }
+];
+---
+
+<BaseLayout title="Parent Guidance & Child Psychology Support for USA Families | Rabbia Psychologist" description="Online parent guidance, ADHD support, and IEP consultation for families in the United States.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="mt-8 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in the USA</h1>
+      <p class="text-xl text-gray-700">Expert, accessible online parent guidance and school support for families navigating ADHD, Autism, and learning differences in the United States.</p>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-gray-700">
+      <h2 class="text-2xl font-bold text-brand-navy">How We Support US Families</h2>
+      <p>Navigating the private psychology and school support systems in the US can be overwhelming and costly. We offer specialized online consultation to bridge the gap.</p>
+
+      <ul>
+        <li><strong>IEP & 504 Plan Prep:</strong> We help you understand your child's reports and prepare you to advocate for appropriate accommodations in your school district.</li>
+        <li><strong>Report Translation:</strong> Have a lengthy neuropsychological evaluation? We review it with you and translate the findings into a practical home routine.</li>
+        <li><strong>Parent Coaching:</strong> While you wait for local diagnostic services, we can immediately begin working on behavioral strategies, executive function support, and emotional regulation.</li>
+      </ul>
+
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8">
+        <h3 class="font-bold text-brand-navy text-lg mb-2 mt-0">Pricing for US Families (USD)</h3>
+        <ul class="list-none pl-0 space-y-2 mb-0">
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>Online Parent Guidance</span> <span class="font-bold text-brand-navy">USD 85</span></li>
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>ADHD/ASD Support</span> <span class="font-bold text-brand-navy">USD 95</span></li>
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>Report Review</span> <span class="font-bold text-brand-navy">USD 125</span></li>
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>School/IEP Consultation</span> <span class="font-bold text-brand-navy">From USD 140</span></li>
+          <li class="flex justify-between"><span>4-Session Support Package</span> <span class="font-bold text-brand-navy">USD 320</span></li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy">Important Service Boundaries (USA)</h2>
+      <p>Please note that our online services are categorized as parent coaching, psychoeducation, and consultation. We <strong>do not</strong> provide services that are legally regulated on a state-by-state basis in the US, such as:</p>
+      <ul>
+        <li>Formal medical or psychological diagnosis across state lines.</li>
+        <li>Direct psychotherapy (CBT, play therapy, etc.) to the child.</li>
+        <li>Prescribing medication.</li>
+        <li>Emergency crisis response (Please call 911 or visit your nearest ER).</li>
+        <li>Services that can be billed to US health insurance or Medicaid (we are strictly out-of-pocket and do not provide superbills).</li>
+      </ul>
+
+      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h3>
+        <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

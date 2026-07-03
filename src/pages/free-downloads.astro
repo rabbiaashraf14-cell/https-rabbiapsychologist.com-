@@ -1,11 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
 const breadcrumbs = [
   { name: 'Resources', href: '/resources' },
@@ -13,24 +8,89 @@ const breadcrumbs = [
 ];
 ---
 
-<Layout title="Free Downloads">
-  <SEO
-    title="Free Resources & Checklists for Parents"
-    description="Download free visual schedules, early signs checklists, and behavior tracking sheets."
-  />
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<BaseLayout title="Free Downloads & Resources for Parents | Rabbia Psychologist" description="Download free child development checklists, planners, and templates for ADHD, Autism, and behaviour support at home.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
-    <div class="max-w-4xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Free Downloads</h1>
-      <p class="text-xl text-gray-700 mb-12">
-        Start implementing foundational strategies today with our free, accessible tools.
-      </p>
 
-      <div class="bg-gray-50 p-8 rounded-xl text-center border border-gray-200">
-        <h2 class="text-2xl font-bold text-brand-navy mb-4">Downloads currently being updated</h2>
-        <p class="text-gray-600 mb-6">We are organizing our free resource library. Check back soon for checklists and templates.</p>
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Free Downloads</h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Practical, printable tools you can start using today to support your child's routines, behaviour, and development.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Resource 1 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
+        <div class="mb-4">
+          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Planner</span>
+          <h2 class="text-2xl font-bold text-brand-navy mb-2">ADHD Home Routine Planner</h2>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">A visual structure guide designed to help children with ADHD manage their morning and evening transitions with less friction.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents of children struggling with daily routines.</p>
+          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Executive function, independence, reducing morning battles.</p>
+        </div>
+        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
       </div>
+
+      <!-- Resource 2 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
+        <div class="mb-4">
+          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Tracker</span>
+          <h2 class="text-2xl font-bold text-brand-navy mb-2">Behaviour ABC Tracker</h2>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">A simple, effective log to track the Antecedents (triggers), Behaviours, and Consequences to uncover patterns in meltdowns or refusal.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents facing challenging behaviours at home.</p>
+          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Identifying hidden triggers, planning better responses.</p>
+        </div>
+        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
+      </div>
+
+      <!-- Resource 3 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
+        <div class="mb-4">
+          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Checklist</span>
+          <h2 class="text-2xl font-bold text-brand-navy mb-2">School Meeting Prep Checklist</h2>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">Ensure you go into parent-teacher meetings or IEP discussions organized, with the right questions and a clear focus on your child's needs.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents preparing for school support meetings.</p>
+          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Organizing concerns, asking the right questions, advocacy.</p>
+        </div>
+        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
+      </div>
+
+      <!-- Resource 4 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
+        <div class="mb-4">
+          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Checklist</span>
+          <h2 class="text-2xl font-bold text-brand-navy mb-2">Autism Early Signs Checklist</h2>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">A parent-friendly guide to observing communication, social, and sensory differences in your child before seeking formal assessment.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents noticing developmental differences.</p>
+          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Organizing observations for a clinician.</p>
+        </div>
+        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
+      </div>
+
+      <!-- Resource 5 -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col md:col-span-2 lg:col-span-1">
+        <div class="mb-4">
+          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Guide</span>
+          <h2 class="text-2xl font-bold text-brand-navy mb-2">Report Review Questions for Parents</h2>
+        </div>
+        <p class="text-gray-700 mb-6 flex-grow">Not sure what to ask after receiving a psychological or developmental report? Use this guide to ensure you leave your feedback session with clarity.</p>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents receiving a clinical report for their child.</p>
+          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Translating clinical jargon to next steps.</p>
+        </div>
+        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
+      </div>
+
     </div>
   </div>
-  <StickyMobileBookingCTA />
-</Layout>
+</BaseLayout>

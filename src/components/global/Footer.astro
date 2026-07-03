@@ -1,63 +1,115 @@
-<footer class="bg-brand-navy text-white py-12 mt-16">
-  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
-    <div class="col-span-1 md:col-span-1">
-      <a href="/"><img src="/logo.png" alt="Rabbia Psychologist Child Development Services logo" class="h-[60px] md:h-[70px] w-auto object-contain mb-4" /></a>
-      <p class="text-sm text-gray-300 mb-4">ADHD & Child Development Support at Home — Care Beyond the Session</p>
-      <p class="text-xs text-gray-400 mb-4">Clinical Director, Rabbia Ashraf, Licensed Clinical Psychologist.</p>
+<footer class="bg-brand-navy text-white py-12 mt-16 border-t border-brand-gold/30">
+  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+
+    <!-- Brand Info -->
+    <div class="md:col-span-12 lg:col-span-3 mb-8 lg:mb-0">
+      <a href="/"><img src="/logo.png" alt="Rabbia Psychologist Child Development Services logo" class="h-[50px] w-auto object-contain mb-6 grayscale brightness-200" /></a>
+      <p class="text-sm text-gray-300 mb-4 font-medium leading-relaxed">ADHD & Child Development Support at Home — Care Beyond the Session</p>
+      <p class="text-xs text-gray-400 mb-4">Clinically led by Rabbia Ashraf, Clinical Psychologist based in Lahore, Pakistan.</p>
     </div>
 
-    <div class="col-span-1 md:col-span-1">
-      <h4 class="font-bold mb-4">Parent Support</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/start-here" class="text-gray-300 hover:text-white">Start Here</a></li>
-        <li><a href="/parent-support" class="text-gray-300 hover:text-white">Parent Support</a></li>
-        <li><a href="/between-session-programs" class="text-gray-300 hover:text-white">Between-Session Programs</a></li>
-        <li><a href="/services/school-consultation" class="text-gray-300 hover:text-white">School & IEP Help</a></li>
-        <li><a href="/report-review" class="text-gray-300 hover:text-white">Report Review</a></li>
-        <li><a href="/pricing" class="text-gray-300 hover:text-white">Pricing</a></li>
-      </ul>
-    </div>
+    <!-- Navigation Columns Wrapper -->
+    <div class="md:col-span-12 lg:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-8">
 
-    <div class="col-span-1 md:col-span-1">
-      <h4 class="font-bold mb-4">Resources</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/resources" class="text-gray-300 hover:text-white">Resources</a></li>
-        <li><a href="/resource-vault" class="text-gray-300 hover:text-white">Resource Vault</a></li>
-        <li><a href="/free-downloads" class="text-gray-300 hover:text-white">Free Downloads</a></li>
-        <li><a href="/blog" class="text-gray-300 hover:text-white">Blog</a></li>
-        <li><a href="/faqs" class="text-gray-300 hover:text-white">FAQs</a></li>
-        <li><a href="/use-cases" class="text-gray-300 hover:text-white">Use Cases</a></li>
-      </ul>
-    </div>
+      <!-- Parent Support -->
+      <div>
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+          <span>Parent Support</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <h4 class="hidden md:block font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Parent Support</h4>
+        <ul class="hidden md:block space-y-3 text-sm">
+          <li><a href="/start-here" class="text-gray-300 hover:text-white transition-colors">Start Here</a></li>
+          <li><a href="/parent-support" class="text-gray-300 hover:text-white transition-colors">Parent Consultation</a></li>
+          <li><a href="/between-session-programs" class="text-gray-300 hover:text-white transition-colors">Between-Session Programs</a></li>
+          <li><a href="/pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="/book" class="text-gray-300 hover:text-white transition-colors font-bold">Book Consultation</a></li>
+        </ul>
+      </div>
 
-    <div class="col-span-1 md:col-span-1">
-      <h4 class="font-bold mb-4">International Families</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/before-you-book-international" class="text-gray-300 hover:text-white">Overseas Pakistani Families</a></li>
-        <li><a href="/before-you-book-international" class="text-gray-300 hover:text-white">Middle East / Gulf Families</a></li>
-        <li><a href="/before-you-book-international" class="text-gray-300 hover:text-white">UK & Europe Families</a></li>
-        <li><a href="/before-you-book-international" class="text-gray-300 hover:text-white">USA Families</a></li>
-        <li><a href="/before-you-book-international" class="text-gray-300 hover:text-white">Australia Families</a></li>
-      </ul>
-    </div>
+      <!-- Services -->
+      <div>
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+          <span>Services</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <h4 class="hidden md:block font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Services</h4>
+        <ul class="hidden md:block space-y-3 text-sm">
+          <li><a href="/services/adhd-support" class="text-gray-300 hover:text-white transition-colors">ADHD Support</a></li>
+          <li><a href="/services/asd-support" class="text-gray-300 hover:text-white transition-colors">ASD Support</a></li>
+          <li><a href="/services/behaviour-planning" class="text-gray-300 hover:text-white transition-colors">Behaviour Planning</a></li>
+          <li><a href="/services/school-consultation" class="text-gray-300 hover:text-white transition-colors">School & IEP Help</a></li>
+          <li><a href="/report-review" class="text-gray-300 hover:text-white transition-colors">Report Review</a></li>
+          <li><a href="/services/local-assessment" class="text-gray-300 hover:text-white transition-colors">Local Assessment (PK)</a></li>
+        </ul>
+      </div>
 
-    <div class="col-span-1 md:col-span-1">
-      <h4 class="font-bold mb-4">Brand & Media</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/brand-assets" class="text-gray-300 hover:text-white">Brand Assets</a></li>
-        <li><a href="/media-kit" class="text-gray-300 hover:text-white">Media Kit</a></li>
-        <li><a href="/press/rabbia-psychologist-child-development-services-launch" class="text-gray-300 hover:text-white">Press Release</a></li>
-        <li><a href="/news" class="text-gray-300 hover:text-white">Newsroom</a></li>
-      </ul>
-      <h4 class="font-bold mt-6 mb-4">Legal</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/privacy-policy" class="text-gray-300 hover:text-white">Privacy Policy</a></li>
-        <li><a href="/terms-and-disclaimer" class="text-gray-300 hover:text-white">Terms & Disclaimer</a></li>
-        <li><a href="/sitemap" class="text-gray-300 hover:text-white">Sitemap</a></li>
-      </ul>
+      <!-- Resources -->
+      <div>
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+          <span>Resources</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <h4 class="hidden md:block font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Resources</h4>
+        <ul class="hidden md:block space-y-3 text-sm">
+          <li><a href="/resources" class="text-gray-300 hover:text-white transition-colors">Resource Center</a></li>
+          <li><a href="/resource-vault" class="text-gray-300 hover:text-white transition-colors">Resource Vault</a></li>
+          <li><a href="/free-downloads" class="text-gray-300 hover:text-white transition-colors">Free Downloads</a></li>
+          <li><a href="/blog" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+          <li><a href="/faqs" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- International & Legal -->
+      <div>
+        <button class="md:hidden w-full flex justify-between items-center font-bold mb-4 text-brand-gold focus:outline-none" onclick="">
+          <span>International & Legal</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="hidden md:block">
+          <h4 class="font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">International</h4>
+          <ul class="space-y-3 text-sm mb-8">
+            <li><a href="/international-families" class="text-gray-300 hover:text-white transition-colors">Global Families Hub</a></li>
+            <li><a href="/international-families/usa" class="text-gray-300 hover:text-white transition-colors">USA</a></li>
+            <li><a href="/international-families/australia" class="text-gray-300 hover:text-white transition-colors">Australia</a></li>
+            <li><a href="/international-families/uk-europe" class="text-gray-300 hover:text-white transition-colors">UK & Europe</a></li>
+            <li><a href="/international-families/overseas-pakistani-families" class="text-gray-300 hover:text-white transition-colors">Overseas Pakistani</a></li>
+          </ul>
+          <h4 class="font-bold mb-6 text-brand-gold uppercase tracking-wider text-sm">Legal</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/privacy-policy" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms-and-disclaimer" class="text-gray-300 hover:text-white transition-colors">Terms & Disclaimer</a></li>
+            <li><a href="/sitemap" class="text-gray-300 hover:text-white transition-colors">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
-  <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-    &copy; {new Date().getFullYear()} Rabbia Psychologist Child Development Services. All rights reserved.
+
+  <div class="container mx-auto px-4 mt-12 pt-8 border-t border-gray-700/50 text-center text-xs text-gray-400">
+    <p class="mb-2">Rabbia Psychologist provides parent education, child psychology consultation, and developmental guidance. Website content is for educational purposes only and does not replace emergency care, medical diagnosis, or direct clinical assessment.</p>
+    <p>&copy; {new Date().getFullYear()} Rabbia Psychologist Child Development Services. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  // Add quick mobile dropdown functionality to ul elements next to buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileButtons = document.querySelectorAll('footer button.md\\:hidden');
+    mobileButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const ul = e.currentTarget.nextElementSibling;
+        if (ul.classList.contains('hidden')) {
+          ul.classList.remove('hidden');
+          ul.classList.add('block');
+          e.currentTarget.querySelector('svg').style.transform = 'rotate(180deg)';
+        } else {
+          ul.classList.add('hidden');
+          ul.classList.remove('block');
+          e.currentTarget.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  });
+</script>

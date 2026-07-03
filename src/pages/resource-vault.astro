@@ -1,11 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
   { name: 'Resources', href: '/resources' },
@@ -13,42 +9,52 @@ const breadcrumbs = [
 ];
 ---
 
-<Layout title="Resource Vault">
-  <SEO
-    title="Digital Products & Resource Vault for Parents"
-    description="Premium digital workbooks, planners, and behavior logs for parents managing ASD and ADHD."
-  />
+<BaseLayout title="Digital Products & Resource Vault for Parents | Rabbia Psychologist" description="Premium digital workbooks, planners, and behavior logs for parents managing ASD and ADHD.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
-    <div class="max-w-4xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Resource Vault</h1>
-      <p class="text-xl text-gray-700 mb-12">
-        Comprehensive digital tools designed to help you implement parent support strategies, routines, and guidance at home.
+    <div class="max-w-6xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Resource Vault</h1>
+      <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+        Practical digital tools, workbooks, and templates designed to help you support your child's routines, behaviour, and development at home.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="worksheets">
         {[
-          { type: 'Worksheet', title: 'ADHD Executive Function Workbook', desc: 'Practical exercises for developing routines and improving working memory.' },
-          { type: 'Toolkit', title: 'Functional Behavior Analysis Log', desc: 'Templates for tracking ABCs (Antecedent, Behavior, Consequence) to understand patterns.' },
-          { type: 'Mini Course', title: 'School Meeting Prep Course', desc: 'A short guide to preparing for IEPs and parent-teacher meetings.' },
-          { type: 'Template', title: 'Home Program Template', desc: 'Structure your child’s after-school routine effectively.' },
-          { type: 'Checklist', title: 'Developmental Milestones Tracker', desc: 'Keep track of your child’s progress week over week.' },
-          { type: 'Guide', title: 'Report Review Translation Guide', desc: 'Helpful tips for decoding common terms found in educational and psychological reports.' }
+          { type: 'Workbook', title: 'ADHD Executive Function Workbook', desc: 'Practical exercises for developing routines and improving working memory.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
+          { type: 'Log', title: 'Functional Behavior Analysis Log', desc: 'Templates for tracking ABCs (Antecedent, Behavior, Consequence) to understand patterns.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
+          { type: 'Mini Course', title: 'School Meeting Prep Course', desc: 'A short guide to preparing for IEPs and parent-teacher meetings.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
+          { type: 'Template', title: 'Home Program Template', desc: 'Structure your child’s after-school routine effectively.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
+          { type: 'Checklist', title: 'Developmental Milestones Tracker', desc: 'Keep track of your child’s progress week over week.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
+          { type: 'Guide', title: 'Report Review Translation Guide', desc: 'Helpful tips for decoding common terms found in educational and psychological reports.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
+          { type: 'Checklist', title: 'Autism Early Signs Checklist', desc: 'A parent-friendly guide to observing communication and social signs.', price: 'Free', action: 'Download Free', isFree: true, link: '/free-downloads' },
+          { type: 'Tracker', title: 'Behaviour ABC Tracker', desc: 'A simple sheet to track what happens before and after a behaviour.', price: 'Free', action: 'Download Free', isFree: true, link: '/free-downloads' },
+          { type: 'Planner', title: 'ADHD Home Routine Planner', desc: 'A visual structure guide for morning and evening routines.', price: 'Free', action: 'Download Free', isFree: true, link: '/free-downloads' },
+          { type: 'Starter Pack', title: 'Visual Schedule Starter Pack', desc: 'Basic visual cards to help with daily transitions.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false }
         ].map(item => (
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col h-full">
-            <div class="flex-grow">
+          <div class="bg-white p-0 rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden hover:shadow-md transition-shadow">
+            <div class="h-40 bg-brand-navy/10 flex items-center justify-center border-b border-gray-100">
+               <div class="text-brand-navy/30">
+                  <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+               </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
               <div class="flex justify-between items-start mb-2">
-                <div class="text-sm font-bold text-purple-600 uppercase">{item.type}</div>
-                <img src="/brand/logo-stacked.svg" alt="" class="h-8 w-auto opacity-50 grayscale" aria-hidden="true" />
+                <div class="text-sm font-bold text-brand-gold uppercase">{item.type}</div>
+                <div class="text-sm font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">{item.price}</div>
               </div>
               <h3 class="text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
-              <p class="text-gray-600 mb-4">{item.desc}</p>
+              <p class="text-gray-600 mb-6 flex-grow">{item.desc}</p>
+
+              {item.isFree ? (
+                <a href={item.link} class="bg-brand-navy text-white text-center px-4 py-2 rounded-lg font-bold hover:bg-blue-900 w-full mt-auto transition-colors">{item.action}</a>
+              ) : (
+                <button class="bg-white text-brand-navy border-2 border-brand-navy text-center px-4 py-2 rounded-lg font-bold hover:bg-gray-50 w-full mt-auto transition-colors">{item.action}</button>
+              )}
             </div>
-            <button class="bg-brand-navy text-white px-4 py-2 rounded font-medium hover:bg-blue-900 w-full mt-auto">Coming Soon</button>
           </div>
         ))}
       </div>
     </div>
   </div>
   <StickyMobileBookingCTA />
-</Layout>
+</BaseLayout>

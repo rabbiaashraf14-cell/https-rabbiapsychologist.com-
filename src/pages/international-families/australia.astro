@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'International Families', href: '/international-families' },
+  { name: 'Australia', href: '/international-families/australia' }
+];
+---
+
+<BaseLayout title="Parent Guidance & Child Psychology Support for Australian Families | Rabbia Psychologist" description="Online parent guidance, ADHD support, and school consultation for families in Australia.">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <div class="mt-8 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in Australia</h1>
+      <p class="text-xl text-gray-700">Expert, accessible online parent guidance and school support for families navigating ADHD, Autism, and learning differences in Australia.</p>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-gray-700">
+      <h2 class="text-2xl font-bold text-brand-navy">How We Support Australian Families</h2>
+      <p>Waitlists for pediatricians and child psychologists in Australia can be extensively long. We offer specialized online consultation to support you while you wait or after you receive a diagnosis.</p>
+
+      <ul>
+        <li><strong>School Advocacy:</strong> We help you understand your child's reports and prepare you to advocate for appropriate ILPs (Individual Learning Plans) or classroom adjustments.</li>
+        <li><strong>Report Translation:</strong> Have a lengthy assessment report? We review it with you and translate the clinical findings into a practical home routine.</li>
+        <li><strong>Parent Coaching:</strong> We work on behavioral strategies, executive function support, and emotional regulation at home.</li>
+      </ul>
+
+      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8">
+        <h3 class="font-bold text-brand-navy text-lg mb-2 mt-0">Pricing for Australian Families (AUD)</h3>
+        <ul class="list-none pl-0 space-y-2 mb-0">
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>Online Parent Guidance</span> <span class="font-bold text-brand-navy">AUD 130</span></li>
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>ADHD/ASD Support</span> <span class="font-bold text-brand-navy">AUD 145</span></li>
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>Report Review</span> <span class="font-bold text-brand-navy">AUD 190</span></li>
+          <li class="flex justify-between border-b border-gray-200 pb-2"><span>School Consultation</span> <span class="font-bold text-brand-navy">From AUD 215</span></li>
+          <li class="flex justify-between"><span>4-Session Support Package</span> <span class="font-bold text-brand-navy">AUD 490</span></li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy">Important Service Boundaries (Australia)</h2>
+      <p>Please note that our online services are categorized as parent coaching, psychoeducation, and consultation. We are <strong>not</strong> an NDIS registered provider, and our services are not eligible for Medicare rebates.</p>
+      <ul>
+        <li>We do not provide formal cross-border medical or psychological diagnosis.</li>
+        <li>If you require a formal diagnosis for NDIS funding or school support in Australia, you must consult a regulated professional locally (e.g., a Developmental Paediatrician or Clinical Psychologist registered with AHPRA).</li>
+        <li>We do not provide emergency care (Please call 000 or visit your nearest hospital in an emergency).</li>
+      </ul>
+
+      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h3>
+        <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
