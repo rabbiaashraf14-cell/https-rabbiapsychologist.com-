@@ -5,47 +5,6 @@ import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 const breadcrumbs = [
   { name: 'Resources', href: '/resources' },
   { name: 'Blog', href: '/blog' }
-,
-  {
-    title: "Understanding Psychological Reports",
-    excerpt: "Translate clinical jargon into practical next steps for your child.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Feb 15, 2024",
-    categories: ["Assessments", "School Support"],
-    href: "/blog/understanding-psychological-reports"
-  },
-  {
-    title: "Screen Time and Emotional Regulation",
-    excerpt: "Strategies to manage transitions and reduce screen-related meltdowns.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Feb 18, 2024",
-    categories: ["Behaviour", "Screen Time"],
-    href: "/blog/screen-time-and-emotional-regulation"
-  },
-  {
-    title: "Behaviour Is Communication",
-    excerpt: "Decoding what your child is trying to say through their challenging behaviours.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Feb 22, 2024",
-    categories: ["Behaviour", "Parenting"],
-    href: "/blog/behaviour-is-communication"
-  },
-  {
-    title: "Parent Guidance After an Autism Diagnosis",
-    excerpt: "Immediate home strategies to support your newly diagnosed child.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Mar 1, 2024",
-    categories: ["Autism", "Development"],
-    href: "/blog/parent-guidance-after-an-autism-diagnosis"
-  },
-  {
-    title: "When to Seek Developmental Assessment",
-    excerpt: "Signs that it might be time to move from wait-and-see to formal evaluation.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Mar 5, 2024",
-    categories: ["Assessments", "Development"],
-    href: "/blog/when-to-seek-developmental-assessment"
-  }
 ];
 
 const articles = [
@@ -96,8 +55,51 @@ const articles = [
     date: "Feb 10, 2024",
     categories: ["School Support", "Advocacy"],
     href: "/blog/school-meeting-checklist"
+  },
+  {
+    title: "Understanding Psychological Reports",
+    excerpt: "Translate clinical jargon into practical next steps for your child.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 15, 2024",
+    categories: ["Assessments", "School Support"],
+    href: "/blog/understanding-psychological-reports"
+  },
+  {
+    title: "Screen Time and Emotional Regulation",
+    excerpt: "Strategies to manage transitions and reduce screen-related meltdowns.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 18, 2024",
+    categories: ["Behaviour", "Screen Time"],
+    href: "/blog/screen-time-and-emotional-regulation"
+  },
+  {
+    title: "Behaviour Is Communication",
+    excerpt: "Decoding what your child is trying to say through their challenging behaviours.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 22, 2024",
+    categories: ["Behaviour", "Parenting"],
+    href: "/blog/behaviour-is-communication"
+  },
+  {
+    title: "Parent Guidance After an Autism Diagnosis",
+    excerpt: "Immediate home strategies to support your newly diagnosed child.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Mar 1, 2024",
+    categories: ["Autism", "Development"],
+    href: "/blog/parent-guidance-after-an-autism-diagnosis"
+  },
+  {
+    title: "When to Seek Developmental Assessment",
+    excerpt: "Signs that it might be time to move from wait-and-see to formal evaluation.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Mar 5, 2024",
+    categories: ["Assessments", "Development"],
+    href: "/blog/when-to-seek-developmental-assessment"
   }
 ];
+
+// Sort articles by date descending
+articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
 <BaseLayout title="Child Psychology & Parenting Blog | Rabbia Psychologist" description="Insights, articles, and practical advice on child development, managing ADHD/ASD, and behavior support.">

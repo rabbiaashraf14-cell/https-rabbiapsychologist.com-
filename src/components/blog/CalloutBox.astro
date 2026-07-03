@@ -1,0 +1,42 @@
+---
+// src/components/blog/CalloutBox.astro
+interface Props {
+  type: 'Clinical Insight' | 'Parent Tip' | 'Common Mistake' | 'Research Highlight' | 'Quick Summary' | 'Key Takeaways' | 'Warning Signs';
+  title?: string;
+}
+
+const { type, title = type } = Astro.props;
+
+const styles = {
+  'Clinical Insight': 'bg-blue-50 border-blue-200 text-blue-900',
+  'Parent Tip': 'bg-green-50 border-green-200 text-green-900',
+  'Common Mistake': 'bg-red-50 border-red-200 text-red-900',
+  'Research Highlight': 'bg-purple-50 border-purple-200 text-purple-900',
+  'Quick Summary': 'bg-brand-cream border-brand-gold text-brand-navy',
+  'Key Takeaways': 'bg-brand-cream border-brand-gold text-brand-navy',
+  'Warning Signs': 'bg-orange-50 border-orange-200 text-orange-900'
+};
+
+const iconPaths = {
+  'Clinical Insight': '<path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.82 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.496 1.508 1.333 1.508 2.316V18" />',
+  'Parent Tip': '<path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />',
+  'Common Mistake': '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />',
+  'Research Highlight': '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />',
+  'Quick Summary': '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />',
+  'Key Takeaways': '<path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />',
+  'Warning Signs': '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />'
+};
+---
+<div class={`my-8 p-6 rounded-xl border ${styles[type]} shadow-sm flex flex-col sm:flex-row gap-4 items-start`}>
+  <div class="flex-shrink-0 mt-1">
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+      <Fragment set:html={iconPaths[type]} />
+    </svg>
+  </div>
+  <div>
+    <h4 class="font-bold text-lg mb-2 mt-0 !text-inherit">{title}</h4>
+    <div class="prose-sm !text-inherit *:!text-inherit">
+      <slot />
+    </div>
+  </div>
+</div>

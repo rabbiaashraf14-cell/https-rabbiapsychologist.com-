@@ -1,0 +1,39 @@
+---
+// src/components/blog/TableOfContents.astro
+interface Props {
+  headings: { text: string; slug: string; level: number }[];
+}
+
+const { headings } = Astro.props;
+---
+<div class="sticky top-24 hidden lg:block bg-white p-6 rounded-xl border border-brand-border shadow-sm max-h-[calc(100vh-120px)] overflow-y-auto">
+  <h3 class="text-lg font-bold text-brand-navy mb-4 border-b border-brand-border pb-2">Table of Contents</h3>
+  <ul class="space-y-3 text-sm">
+    {headings.map(heading => (
+      <li class={`transition-colors duration-200 ${heading.level === 2 ? 'font-medium text-brand-navy' : 'pl-4 text-gray-600'}`}>
+        <a href={`#${heading.slug}`} class="hover:text-brand-gold toc-link" data-target={heading.slug}>
+          {heading.text}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      const tocLink = document.querySelector(`.toc-link[data-target="${id}"]`);
+      if (tocLink) {
+        if (entry.intersectionRatio > 0) {
+          document.querySelectorAll('.toc-link').forEach(link => link.classList.remove('text-brand-gold', 'font-bold'));
+          tocLink.classList.add('text-brand-gold', 'font-bold');
+        }
+      }
+    });
+  }, { rootMargin: '0px 0px -80% 0px' });
+
+  document.querySelectorAll('article h2, article h3, article h4').forEach((section) => {
+    observer.observe(section);
+  });
+</script>
