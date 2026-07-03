@@ -9,7 +9,7 @@ export const siteConfig = {
   location: "Lahore, Pakistan",
   disclaimers: {
     emergency: "If you or your child are experiencing a medical or psychological emergency, please contact your local emergency services immediately.",
-    platform: "Rabbia Psychologist Child Development Services is a global parent guidance and child development support platform. We connect families with specialists for consultation and education.",
-    international: "International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the provider’s credentials and the client’s location."
+    platform: "Rabbia Psychologist Child Development Services provides parent consultation, child development guidance, ADHD/ASD support planning, behaviour support, report review, school support, psychoeducation, parent training, and local psychological assessment in Lahore where professionally appropriate.",
+    international: "International support may include parent education, developmental guidance, ASD/ADHD support planning, behavior strategy discussion, executive-function routines, school communication preparation, resource guidance, and referral direction. Clinical therapy, diagnosis, assessment, and regulated psychological services are provided only where legally and ethically permitted by the professional’s credentials and the client’s location."
   }
 };

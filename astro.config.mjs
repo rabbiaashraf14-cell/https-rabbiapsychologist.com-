@@ -8,6 +8,14 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.rabbiapsychologist.com',
   redirects: {
+    "/school-iep-help": "/services/school-consultation",
+    "/services/behavior-support-planning": "/services/behaviour-planning",
+    "/online-parent-consultation-mena-gulf": "/international-families/middle-east-gulf",
+    "/parent-training": "/parent-support",
+    "/book/": "/book",
+    "/services/school-iep-consultation": "/services/school-consultation",
+    "/online-parent-consultation-pakistan": "/international-families/pakistan",
+    "/online-parent-consultation-australia": "/international-families/australia",
     '/providers': '/about',
     '/providers/rabbia-ashraf': '/about',
     '/rabbia-ashraf': '/about',

@@ -2,7 +2,7 @@
 Brand: Rabbia Psychologist Child Development Services
 Lead Professional: Rabbia Ashraf, Clinical Psychologist
 Platform: Rabbia Psychologist Child Development Services
-Note: Rabbia Psychologist Child Development Services is led by Rabbia Ashraf, Clinical Psychologist licensed in Pakistan, as Clinical Director.
+Note: Rabbia Psychologist Child Development Services is led by Rabbia Ashraf, Clinical Psychologist.
 Contact: contact@rabbiapsychologist.com
 
 /* SITE */
