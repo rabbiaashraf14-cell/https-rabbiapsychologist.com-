@@ -61,5 +61,19 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      filter: (page) => ![
+        "/blog/autism-early-signs",
+        "/blog/behaviour-is-communication",
+        "/blog/how-to-support-executive-function-at-home",
+        "/blog/parent-guidance-after-an-autism-diagnosis",
+        "/blog/school-meeting-checklist",
+        "/blog/screen-time-and-emotional-regulation",
+        "/blog/tantrum-vs-meltdown",
+        "/blog/understanding-psychological-reports",
+        "/blog/when-to-seek-developmental-assessment"
+      ].includes(new URL(page).pathname.replace(/\/$/, ""))
+    })
+  ]
 });
