@@ -2,5 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 ---
 <BaseLayout title={Astro.props.title} description={Astro.props.description}>
-  <slot />
+  <div class="bg-[#FAF8F3]">
+    <slot />
+  </div>
 </BaseLayout>

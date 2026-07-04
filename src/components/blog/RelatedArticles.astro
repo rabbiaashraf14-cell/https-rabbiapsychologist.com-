@@ -1,62 +1,90 @@
 ---
-// src/components/blog/RelatedArticles.astro
-interface Article {
-  title: string;
-  excerpt: string;
-  href: string;
-}
-
+// src/components/blog/RelatedArticles.astro renamed/re-purposed as RelatedContent.astro internally
 interface Props {
   currentUrl: string;
 }
 
 const { currentUrl } = Astro.props;
 
-// Hardcoded articles for related section, normally fetched from a collection
-const allArticles = [
-  {
-    title: "Understanding the Confusion Between ADHD and Hyperactivity in Children",
-    excerpt: "Not every child with ADHD is visibly hyperactive. Some children struggle more with attention, organization, forgetfulness, or impulsivity.",
-    href: "/blog/understanding-adhd-and-hyperactivity-in-children"
-  },
-  {
-    title: "The Science of Screen Time: Why It Is So Hard for Children to Unplug",
-    excerpt: "Stopping screen time is not always simple for children. Screens can strongly activate reward, desire, and emotional regulation systems.",
-    href: "/blog/why-screen-time-is-hard-for-children-to-stop"
-  },
-  {
-    title: "How to Support Executive Function at Home",
-    excerpt: "Practical tips to help your child start tasks, organize belongings, and remember instructions.",
-    href: "/blog/how-to-support-executive-function-at-home"
-  },
-  {
-    title: "Behaviour Is Communication",
-    excerpt: "Decoding what your child is trying to say through their challenging behaviours.",
-    href: "/blog/behaviour-is-communication"
-  }
-];
-
-const relatedArticles = allArticles.filter(a => a.href !== currentUrl).slice(0, 2);
+// Mock related content for demonstration. In a real CMS, this would be fetched dynamically.
+const relatedContent = {
+  blogs: [
+    { title: "Autism Early Signs Parents Should Notice", href: "/blog/autism-early-signs", type: "Blog" },
+    { title: "Behaviour Is Communication", href: "/blog/behaviour-is-communication", type: "Blog" }
+  ].filter(b => b.href !== currentUrl).slice(0, 2),
+  services: [
+    { title: "ADHD Support Consultation", href: "/services/adhd-support", type: "Service" },
+    { title: "Behaviour Planning Session", href: "/services/behaviour-planning", type: "Service" }
+  ],
+  assessments: [
+    { title: "Local Psychological Assessment", href: "/services/local-assessment", type: "Assessment" },
+    { title: "ADHD Screening", href: "/services/adhd-screening", type: "Screening" }
+  ]
+};
 ---
-<div class="mt-16 pt-12 border-t border-brand-border">
-  <h3 class="text-2xl font-bold text-brand-navy mb-8">Related Articles</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {relatedArticles.map(article => (
-      <a href={article.href} class="bg-white p-6 rounded-xl border border-brand-border shadow-sm hover:shadow-md hover:border-brand-gold transition-all group flex flex-col h-full">
-        <h4 class="text-lg font-bold text-brand-navy mb-3 group-hover:text-brand-gold transition-colors leading-tight">{article.title}</h4>
-        <p class="text-gray-600 text-sm mb-4 flex-grow">{article.excerpt}</p>
-        <span class="text-brand-navy font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
-          Read Article <span aria-hidden="true">&rarr;</span>
-        </span>
-      </a>
-    ))}
-  </div>
-  <div class="mt-10 text-center">
-    <a href="/blog" class="inline-flex items-center justify-center gap-2 bg-brand-cream border border-brand-border text-brand-navy font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors">
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-      </svg>
-      Back to Blog
-    </a>
+
+<div class="my-16 py-12 border-t border-brand-border">
+  <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-8 text-center">Continue Exploring</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Related Blogs -->
+    <div class="bg-gray-50 rounded-xl p-6 border border-brand-border">
+      <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+        </svg>
+        Related Articles
+      </h3>
+      <ul class="space-y-4 m-0 p-0 list-none">
+        {relatedContent.blogs.map(item => (
+          <li class="m-0 p-0">
+            <a href={item.href} class="text-brand-navy hover:text-brand-gold font-medium text-sm transition-colors group flex items-start gap-2">
+              <span class="text-brand-gold mt-0.5">&rarr;</span>
+              <span class="group-hover:underline decoration-brand-gold underline-offset-2">{item.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Related Services -->
+    <div class="bg-gray-50 rounded-xl p-6 border border-brand-border">
+      <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Related Services
+      </h3>
+      <ul class="space-y-4 m-0 p-0 list-none">
+        {relatedContent.services.map(item => (
+          <li class="m-0 p-0">
+            <a href={item.href} class="text-brand-navy hover:text-brand-gold font-medium text-sm transition-colors group flex items-start gap-2">
+              <span class="text-brand-gold mt-0.5">&rarr;</span>
+              <span class="group-hover:underline decoration-brand-gold underline-offset-2">{item.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Related Assessments -->
+    <div class="bg-gray-50 rounded-xl p-6 border border-brand-border">
+      <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        Assessments
+      </h3>
+      <ul class="space-y-4 m-0 p-0 list-none">
+        {relatedContent.assessments.map(item => (
+          <li class="m-0 p-0">
+            <a href={item.href} class="text-brand-navy hover:text-brand-gold font-medium text-sm transition-colors group flex items-start gap-2">
+              <span class="text-brand-gold mt-0.5">&rarr;</span>
+              <span class="group-hover:underline decoration-brand-gold underline-offset-2">{item.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 </div>

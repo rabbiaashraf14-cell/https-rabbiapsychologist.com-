@@ -6,7 +6,15 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
-import SocialShare from '../../components/blog/SocialShare.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
@@ -20,21 +28,20 @@ const currentUrl = "/blog/understanding-adhd-and-hyperactivity-in-children";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
 const headings = [
-  { text: "Hyperactivity Is a Symptom, Not the Whole Disorder", slug: "hyperactivity-is-a-symptom", level: 2 },
-  { text: "ADHD Can Present in Different Ways", slug: "adhd-presentations", level: 2 },
-  { text: "Predominantly Hyperactive/Impulsive", slug: "hyperactive-impulsive", level: 3 },
+  { text: "Hyperactivity Is a Symptom", slug: "hyperactivity-is-a-symptom", level: 2 },
+  { text: "ADHD Presentations", slug: "adhd-presentations", level: 2 },
+  { text: "Predominantly Hyperactive", slug: "hyperactive-impulsive", level: 3 },
   { text: "Predominantly Inattentive", slug: "inattentive", level: 3 },
   { text: "Combined Presentation", slug: "combined", level: 3 },
-  { text: "Why Misdiagnosis Can Happen", slug: "misdiagnosis", level: 2 },
-  { text: "Common Misconceptions", slug: "misconceptions", level: 2 },
-  { text: "Why Proper Assessment Matters", slug: "assessment-matters", level: 2 },
-  { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
+  { text: "Why Misdiagnosis Happens", slug: "misdiagnosis", level: 2 },
+  { text: "Why Assessment Matters", slug: "assessment-matters", level: 2 },
+  { text: "When to Seek Support", slug: "when-to-seek-support", level: 2 }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
-    "@type": ["Article", "MedicalWebPage"],
+    "@type": ["Article", "NewsArticle", "MedicalWebPage"],
     "headline": title,
     "description": description,
     "image": "https://www.rabbiapsychologist.com/images/blog/adhd-vs-hyperactivity-hero.jpg",
@@ -108,221 +115,193 @@ const schema = [
 
   <ProgressBar />
 
-  <article class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-7xl">
-    <div class="max-w-4xl mx-auto mb-6">
-      <Breadcrumbs paths={[
-        { name: 'Resources', href: '/resources' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'ADHD vs Hyperactivity', href: currentUrl }
-      ]} />
-    </div>
-
-    <header class="mb-10 text-center max-w-4xl mx-auto">
-      <div class="flex gap-2 justify-center mb-6">
-        <span class="bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">ADHD</span>
-        <span class="bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Parenting</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6 leading-tight">Understanding the Confusion Between ADHD and Hyperactivity in Children</h1>
-      <p class="text-xl text-gray-700 italic max-w-3xl mx-auto mb-8">Not every child with ADHD is visibly hyperactive. Some children struggle more with attention, organization, forgetfulness, or impulsivity. Understanding the difference helps parents seek the right support.</p>
-
-      <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden mb-10 shadow-lg">
-        <img src="/images/blog/adhd-vs-hyperactivity-hero.jpg" alt="Child building blocks calmly representing different presentations of ADHD" class="w-full h-full object-cover" loading="lazy" />
-      </div>
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative">
-      <div class="lg:col-span-3 lg:sticky lg:top-24 hidden lg:block">
-        <TableOfContents headings={headings} />
-      </div>
-
-      <div class="lg:col-span-8 prose prose-lg max-w-none text-gray-800 prose-headings:text-brand-navy prose-a:text-brand-trust hover:prose-a:text-blue-700">
-        <p>Attention Deficit Hyperactivity Disorder, commonly known as ADHD, is a neurodevelopmental condition that can affect a child’s attention, activity level, impulse control, learning, emotional regulation, and daily functioning.</p>
-
-        <p>Many parents first become concerned when a child is very active, restless, talkative, or unable to sit still. Because of this, hyperactivity is often confused with ADHD itself. However, hyperactivity is only one part of ADHD. A child may have ADHD with strong hyperactive symptoms, but another child may have ADHD without being visibly hyperactive.</p>
-
-        <CalloutBox type="Key Takeaways" title="Why Understanding the Difference Matters">
-          <p>Understanding the difference helps parents avoid labeling a child too quickly and helps them seek a proper <a href="/services/local-assessment">developmental assessment</a> when difficulties affect school, home routines, learning, and social life.</p>
-        </CalloutBox>
-
-        <h2 id="hyperactivity-is-a-symptom">Hyperactivity Is a Symptom, Not the Whole Disorder</h2>
-
-        <p>Many people assume that a child must be very active or disruptive to have ADHD. This is not always true.</p>
-
-        <p>Hyperactivity can be one part of ADHD, but ADHD also includes problems with attention and impulsivity. Some children show all three areas, while others mainly struggle with attention and organization.</p>
-
-        <p>Common signs of hyperactivity may include:</p>
-        <ul>
-          <li>excessive talking</li>
-          <li>difficulty sitting in one place</li>
-          <li>constant fidgeting</li>
-          <li>running or climbing in inappropriate situations</li>
-          <li>difficulty playing quietly</li>
-          <li>acting as if always “on the go”</li>
-          <li>interrupting others frequently</li>
-          <li>difficulty waiting for their turn</li>
-        </ul>
-
-        <p>These behaviours may be more visible to parents and teachers, which is why hyperactive children are often noticed earlier. However, ADHD can also be present in children who are quiet, dreamy, forgetful, or mentally distracted.</p>
-
-        <h2 id="adhd-presentations">ADHD Can Present in Different Ways</h2>
-
-        <p>ADHD is not the same in every child. Clinical tools such as the Vanderbilt ADHD Assessment Scales help professionals look at different patterns of symptoms and impairment.</p>
-
-        <p>ADHD may present in three main patterns:</p>
-
-        <h3 id="hyperactive-impulsive">1. Predominantly Hyperactive/Impulsive Presentation</h3>
-        <p>In this pattern, the child shows more difficulty with sitting still, controlling impulses, waiting, stopping, and regulating movement or speech.</p>
-
-        <h3 id="inattentive">2. Predominantly Inattentive Presentation</h3>
-        <p>In this pattern, the child may not be physically hyperactive. Instead, the child may struggle with:</p>
-        <ul>
-          <li>forgetfulness</li>
-          <li>careless mistakes</li>
-          <li>losing things</li>
-          <li>avoiding tasks that require mental effort</li>
-          <li>difficulty organizing schoolwork or daily routines</li>
-          <li>being easily distracted</li>
-          <li>not seeming to listen</li>
-          <li>difficulty completing instructions</li>
-        </ul>
-
-        <CalloutBox type="Common Mistake" title="Misunderstanding Inattentive ADHD">
-          <p>These children may be misunderstood as lazy, careless, slow, or uninterested. In reality, they may be struggling with attention regulation and executive functioning.</p>
-        </CalloutBox>
-
-        <h3 id="combined">3. Combined Presentation</h3>
-        <p>In this pattern, the child shows both inattentive and hyperactive/impulsive symptoms. This is often the pattern most people imagine when they think of ADHD, but it is not the only way ADHD appears.</p>
-
-        <h2 id="misdiagnosis">Why Misdiagnosis Can Happen</h2>
-
-        <p>Sometimes a child may look hyperactive, restless, or disorganized, but the reason may not be ADHD. Other developmental, emotional, sensory, sleep-related, or environmental factors can create ADHD-like behaviours.</p>
-
-        <p>For example, some children with sensory processing difficulties may struggle to sit still because their body needs movement input. Some may have poor body awareness, low trunk strength, weak coordination, or difficulty processing sensory information. This can make the child appear restless, clumsy, disorganized, or constantly moving.</p>
-
-        <p>In such cases, the child may be mistakenly described as “hyperactive,” when the actual concern may be sensory regulation, motor planning, anxiety, sleep problems, <a href="/services/local-assessment">learning difficulties</a>, or another developmental issue.</p>
-
-        <p>This is why a proper assessment is important before labeling the child.</p>
-
-        <h2 id="misconceptions">Common Misconceptions About ADHD</h2>
-
-        <p>There are many myths around ADHD that can delay support for children.</p>
-
-        <p>Some common misconceptions include:</p>
-        <div class="overflow-x-auto my-6">
-          <table class="min-w-full bg-white border border-brand-border rounded-lg overflow-hidden shadow-sm">
-            <thead class="bg-brand-cream border-b border-brand-border">
-              <tr>
-                <th class="py-3 px-4 text-left font-bold text-brand-navy">Myth</th>
-                <th class="py-3 px-4 text-left font-bold text-brand-navy">Fact</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-brand-border text-sm">
-              <tr>
-                <td class="py-3 px-4 text-gray-700 italic">"The child is just lazy."</td>
-                <td class="py-3 px-4 text-gray-800">The child may be struggling with executive function or attention regulation.</td>
-              </tr>
-              <tr>
-                <td class="py-3 px-4 text-gray-700 italic">"The parents are not strict enough."</td>
-                <td class="py-3 px-4 text-gray-800">ADHD is neurodevelopmental, not a result of poor parenting or discipline.</td>
-              </tr>
-              <tr>
-                <td class="py-3 px-4 text-gray-700 italic">"Too much TV or video games caused ADHD."</td>
-                <td class="py-3 px-4 text-gray-800">Screens do not cause ADHD, though excessive use can worsen attention patterns.</td>
-              </tr>
-              <tr>
-                <td class="py-3 px-4 text-gray-700 italic">"A child with ADHD cannot be intelligent."</td>
-                <td class="py-3 px-4 text-gray-800">A child with ADHD may be bright and capable but struggle with planning and completion.</td>
-              </tr>
-              <tr>
-                <td class="py-3 px-4 text-gray-700 italic">"If the child can focus on games, then they cannot have ADHD."</td>
-                <td class="py-3 px-4 text-gray-800">Children with ADHD can hyperfocus on highly stimulating tasks like video games.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p>These ideas are not accurate. ADHD is not a sign of low intelligence or poor parenting. A child with ADHD may be bright and capable but still struggle with attention, planning, impulse control, <a href="/services/behaviour-planning">emotional regulation</a>, and task completion.</p>
-
-        <h2 id="assessment-matters">Why Proper Assessment Matters</h2>
-
-        <p>A good ADHD assessment does not only ask whether the child is hyperactive. It looks at the full picture, including:</p>
-        <ul>
-          <li>attention span</li>
-          <li>impulsivity</li>
-          <li>hyperactivity</li>
-          <li>learning difficulties</li>
-          <li>emotional regulation</li>
-          <li>sensory concerns</li>
-          <li>sleep routine</li>
-          <li>school performance</li>
-          <li>home behaviour</li>
-          <li>parent and teacher observations</li>
-          <li>functional impairment in daily life</li>
-        </ul>
-
-        <p>The main question is not only whether symptoms are present. The bigger question is whether these symptoms are affecting the child’s functioning at home, school, or in social settings.</p>
-
-        <h2 id="when-to-seek-support">When Parents Should Seek Professional Support</h2>
-
-        <p>Parents should consider <a href="/parent-support">professional guidance</a> if the child is consistently struggling with:</p>
-        <ul>
-          <li>schoolwork completion</li>
-          <li>sitting through class</li>
-          <li>following instructions</li>
-          <li>emotional outbursts</li>
-          <li>impulsive behaviour</li>
-          <li>forgetfulness</li>
-          <li>poor organization</li>
-          <li>peer difficulties</li>
-          <li>excessive movement that affects learning</li>
-          <li>behaviour concerns reported by teachers</li>
-          <li>daily routines becoming stressful for the family</li>
-        </ul>
-
-        <p>Early support can help parents understand the child’s needs and create practical strategies for home, <a href="/services/school-consultation">school consultation</a>, and therapy settings. Learn about <a href="/pricing">Pricing</a> for these services.</p>
-
-        <CalloutBox type="Clinical Insight" title="Final Note for Parents">
-          <p>Not every active child has ADHD, and not every child with ADHD is hyperactive. Check our <a href="/services/adhd-support">ADHD Support</a> program. Some children show their difficulties through movement, while others show it through forgetfulness, disorganization, emotional sensitivity, or poor attention. The goal is not to label the child quickly. The goal is to understand what is happening and provide the right support.</p>
-        </CalloutBox>
-
-        <div class="bg-brand-cream border border-brand-sky p-6 rounded-lg my-8">
-          <p class="text-sm text-gray-700 italic mb-0">This article is for parent education only and does not replace a clinical assessment or medical advice. If you are concerned about your child’s attention, hyperactivity, learning, or behaviour, you may book a consultation for proper guidance.</p>
-        </div>
-
-        <ArticleAuthor datePublished="January 10, 2024" dateModified="March 1, 2024" readTime="6 min" />
-
-        <div class="mt-8">
-          <h3 class="text-xl font-bold text-brand-navy mb-4">References</h3>
-          <ul class="text-sm text-gray-600 space-y-2">
-            <li>Centers for Disease Control and Prevention. ADHD signs and symptoms.</li>
-            <li>National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</li>
-            <li>NICHQ Vanderbilt ADHD Assessment Scales.</li>
-            <li>Gibbs, V. D. (2017). Self-Regulation & Mindfulness: Over 82 Exercises & Worksheets for Sensory Processing Disorder, ADHD, & Autism Spectrum Disorder. PESI Publishing & Media.</li>
-          </ul>
-        </div>
-
-        <SocialShare url={canonicalURL} title={title} />
-
-
-        <FAQAccordion faqs={[
-          {
-            question: "Is hyperactivity the same as ADHD?",
-            answer: "No. Hyperactivity can be one part of ADHD, but ADHD also includes problems with attention and impulsivity. Some children with ADHD are not visibly hyperactive."
-          },
-          {
-            question: "Can a child have ADHD without being hyperactive?",
-            answer: "Yes. This is called the Predominantly Inattentive Presentation of ADHD. These children may struggle with forgetfulness, losing things, avoiding mental effort, and being easily distracted, rather than physical hyperactivity."
-          }
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'ADHD vs Hyperactivity', href: currentUrl }
         ]} />
+      </div>
 
-        <PrevNextNav
-          prev={{ title: "Autism Early Signs Parents Should Notice", href: "/blog/autism-early-signs" }}
-          next={{ title: "The Science of Screen Time: Why It Is So Hard for Children to Unplug", href: "/blog/why-screen-time-is-hard-for-children-to-stop" }}
-        />
+      <ArticleHero
+        title={title}
+        category="ADHD & Parenting"
+        readTime="6 min"
+        datePublished="Jan 10, 2024"
+        dateModified="Mar 1, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/adhd-vs-hyperactivity-hero.jpg"
+        imageAlt="Child building blocks calmly representing different presentations of ADHD"
+      />
 
-        <BlogCTA />
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
 
-        <RelatedArticles currentUrl={currentUrl} />
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            Many parents first become concerned about ADHD when a child is very active, restless, or unable to sit still.
+            Because of this, hyperactivity is often confused with ADHD itself.
+            However, hyperactivity is only one part of the condition.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="6 min"
+            age="All Ages"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "The difference between ADHD and hyperactivity",
+              "The three main presentations of ADHD",
+              "Why misdiagnosis often occurs",
+              "Common myths vs facts",
+              "When to seek professional assessment"
+            ]}
+          />
+
+          <p>Attention Deficit Hyperactivity Disorder, commonly known as ADHD, is a neurodevelopmental condition.</p>
+          <p>It can affect a child’s attention, activity level, impulse control, learning, and emotional regulation.</p>
+          <p>A child may have ADHD with strong hyperactive symptoms, but another child may have ADHD without being visibly hyperactive at all.</p>
+
+          <ExpertTip>
+            Understanding the difference helps parents avoid labeling a child too quickly. It also ensures they seek a proper developmental assessment when difficulties affect school, home routines, learning, and social life.
+          </ExpertTip>
+
+          <h2 id="hyperactivity-is-a-symptom">Hyperactivity Is a Symptom, Not the Whole Disorder</h2>
+
+          <p>Many people assume that a child must be very active or disruptive to have ADHD.</p>
+          <p>This is not always true.</p>
+          <p>Hyperactivity can be one part of ADHD, but ADHD also includes problems with attention and impulsivity.</p>
+
+          <p>Common signs of hyperactivity may include:</p>
+          <ul>
+            <li>Excessive talking or interrupting</li>
+            <li>Difficulty sitting in one place</li>
+            <li>Constant fidgeting</li>
+            <li>Difficulty playing quietly</li>
+            <li>Acting as if always “on the go”</li>
+          </ul>
+
+          <p>These behaviours may be more visible to parents and teachers.</p>
+          <p>Because of this, hyperactive children are often noticed earlier.</p>
+          <p>However, ADHD can also be present in children who are quiet, dreamy, forgetful, or mentally distracted.</p>
+
+          <h2 id="adhd-presentations">ADHD Can Present in Different Ways</h2>
+
+          <p>ADHD is not the same in every child.</p>
+          <p>Clinical tools help professionals look at different patterns of symptoms and impairment.</p>
+          <p>ADHD may present in three main patterns:</p>
+
+          <h3 id="hyperactive-impulsive">1. Predominantly Hyperactive/Impulsive Presentation</h3>
+          <p>In this pattern, the child shows more difficulty with sitting still, controlling impulses, and waiting.</p>
+
+          <h3 id="inattentive">2. Predominantly Inattentive Presentation</h3>
+          <p>In this pattern, the child may not be physically hyperactive.</p>
+          <p>Instead, the child may struggle with:</p>
+          <ul>
+            <li>Forgetfulness and careless mistakes</li>
+            <li>Losing things</li>
+            <li>Avoiding tasks that require mental effort</li>
+            <li>Being easily distracted</li>
+            <li>Difficulty completing instructions</li>
+          </ul>
+
+          <WarningBox
+            title="Common Mistake"
+            items={[
+              "These children may be misunderstood as lazy, careless, or uninterested.",
+              "In reality, they are struggling with attention regulation and executive functioning."
+            ]}
+          />
+
+          <h3 id="combined">3. Combined Presentation</h3>
+          <p>In this pattern, the child shows both inattentive and hyperactive/impulsive symptoms.</p>
+          <p>This is often the pattern most people imagine when they think of ADHD.</p>
+
+          <h2 id="misdiagnosis">Why Misdiagnosis Can Happen</h2>
+
+          <p>Sometimes a child may look hyperactive, restless, or disorganized, but the reason may not be ADHD.</p>
+          <p>Other developmental, emotional, sensory, or environmental factors can create ADHD-like behaviours.</p>
+          <p>For example, some children with sensory processing difficulties may struggle to sit still because their body needs movement input.</p>
+
+          <MythVsFact
+            myth="If a child can focus on video games, they cannot have ADHD."
+            fact="Children with ADHD can hyperfocus on highly stimulating tasks like video games, as these provide immediate dopamine rewards."
+          />
+
+          <h2 id="assessment-matters">Why Proper Assessment Matters</h2>
+
+          <p>A good ADHD assessment does not only ask whether the child is hyperactive.</p>
+          <p>It looks at the full picture, including attention span, impulsivity, sensory concerns, sleep routine, and school performance.</p>
+          <p>The main question is whether these symptoms are affecting the child’s functioning at home, school, or socially.</p>
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+
+          <p>Early support can help parents understand the child’s needs and create practical strategies for home and school.</p>
+
+          <ActionChecklist
+            items={[
+              "Observe if the child struggles consistently with schoolwork completion or following instructions.",
+              "Note if emotional outbursts or impulsive behaviours affect daily family life.",
+              "Track forgetfulness, poor organization, or peer difficulties.",
+              "Book a formal developmental assessment if concerns persist."
+            ]}
+          />
+
+          <KeyTakeaways
+            items={[
+              "Hyperactivity is just one possible symptom of ADHD.",
+              "Many children have 'Inattentive ADHD' and are never hyperactive.",
+              "Sensory and emotional issues can look like ADHD, making proper diagnosis crucial.",
+              "A child with ADHD can still hyperfocus on things they enjoy, like screens.",
+              "Early assessment leads to better strategies for home and school."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="January 10, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <div class="mt-8 border-t border-gray-200 pt-8">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">References</h3>
+            <ul class="text-sm text-gray-600 space-y-2 list-none p-0">
+              <li>Centers for Disease Control and Prevention. ADHD signs and symptoms.</li>
+              <li>National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</li>
+              <li>NICHQ Vanderbilt ADHD Assessment Scales.</li>
+            </ul>
+          </div>
+
+          <FAQAccordion faqs={[
+            {
+              question: "Is hyperactivity the same as ADHD?",
+              answer: "No. Hyperactivity can be one part of ADHD, but ADHD also includes problems with attention and impulsivity. Some children with ADHD are not visibly hyperactive."
+            },
+            {
+              question: "Can a child have ADHD without being hyperactive?",
+              answer: "Yes. This is called the Predominantly Inattentive Presentation of ADHD. These children may struggle with forgetfulness, losing things, avoiding mental effort, and being easily distracted, rather than physical hyperactivity."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Autism Early Signs Parents Should Notice", href: "/blog/autism-early-signs" }}
+            next={{ title: "The Science of Screen Time", href: "/blog/why-screen-time-is-hard-for-children-to-stop" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
       </div>
     </div>
   </article>

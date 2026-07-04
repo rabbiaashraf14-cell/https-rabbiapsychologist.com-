@@ -1,0 +1,30 @@
+---
+interface Props {
+  myth: string;
+  fact: string;
+}
+
+const { myth, fact } = Astro.props;
+---
+<div class="my-10 bg-white rounded-xl border border-brand-border overflow-hidden shadow-sm">
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="p-6 md:p-8 bg-gray-50 border-b md:border-b-0 md:border-r border-brand-border">
+      <div class="flex items-center gap-2 mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="font-bold text-gray-800 uppercase tracking-widest text-sm">Myth</span>
+      </div>
+      <p class="text-gray-600 m-0 italic">"{myth}"</p>
+    </div>
+    <div class="p-6 md:p-8 bg-brand-cream">
+      <div class="flex items-center gap-2 mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-trust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span class="font-bold text-brand-navy uppercase tracking-widest text-sm">Fact</span>
+      </div>
+      <p class="text-gray-800 font-medium m-0">{fact}</p>
+    </div>
+  </div>
+</div>

@@ -4,36 +4,42 @@ import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
-import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
-import SocialShare from '../../components/blog/SocialShare.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "Why Is It Hard for Children to Stop Screen Time? | Child Psychology Guide";
-const description = "Many children struggle to stop screen time because screens activate reward pathways, emotional desire, and behaviour patterns. Learn why transitions are hard and how parents can respond consistently.";
-const keywords = "screen time children, why children cannot stop screens, screen time tantrums, child psychology screen time, dopamine and screen time, parenting screen rules, behaviour planning, child psychologist";
+const title = "Why Is It Hard for Children to Stop Screen Time?";
+const description = "Many children struggle to stop screen time because screens activate reward pathways. Learn why transitions are hard and how parents can respond consistently.";
+const keywords = "screen time children, why children cannot stop screens, screen time tantrums, child psychology screen time, dopamine and screen time, parenting screen rules, behaviour planning";
 
 const currentUrl = "/blog/why-screen-time-is-hard-for-children-to-stop";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
 const headings = [
-  { text: "The Brain Likes Fast Rewards", slug: "fast-rewards", level: 2 },
-  { text: "Screens Can Become a Coping Tool", slug: "coping-tool", level: 2 },
+  { text: "Fast Rewards", slug: "fast-rewards", level: 2 },
+  { text: "Screens as a Coping Tool", slug: "coping-tool", level: 2 },
   { text: "The Power of Desire", slug: "power-of-desire", level: 2 },
-  { text: "Why Tantrums May Get Worse Before They Improve", slug: "extinction-burst", level: 2 },
-  { text: "Why Giving In Makes the Cycle Stronger", slug: "giving-in", level: 2 },
-  { text: "How Parents Can Make Screen Transitions Easier", slug: "easier-transitions", level: 2 },
-  { text: "Replace the Reward, Do Not Only Remove It", slug: "replace-reward", level: 2 },
-  { text: "When to Seek Professional Help", slug: "professional-help", level: 2 }
+  { text: "Extinction Bursts", slug: "extinction-burst", level: 2 },
+  { text: "Easier Transitions", slug: "easier-transitions", level: 2 },
+  { text: "Replace the Reward", slug: "replace-reward", level: 2 },
+  { text: "Professional Help", slug: "professional-help", level: 2 }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
-    "@type": ["Article", "MedicalWebPage"],
+    "@type": ["Article", "NewsArticle", "MedicalWebPage"],
     "headline": title,
     "description": description,
     "image": "https://www.rabbiapsychologist.com/images/blog/screen-time-hero.jpg",
@@ -107,236 +113,165 @@ const schema = [
 
   <ProgressBar />
 
-  <article class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-7xl">
-    <div class="max-w-4xl mx-auto mb-6">
-      <Breadcrumbs paths={[
-        { name: 'Resources', href: '/resources' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Science of Screen Time', href: currentUrl }
-      ]} />
-    </div>
-
-    <header class="mb-10 text-center max-w-4xl mx-auto">
-      <div class="flex gap-2 justify-center mb-6">
-        <span class="bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Behaviour</span>
-        <span class="bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Screen Time</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6 leading-tight">The Science of Screen Time: Why It Is So Hard for Children to Unplug</h1>
-      <p class="text-xl text-gray-700 italic max-w-3xl mx-auto mb-8">Stopping screen time is not always simple for children. Screens can strongly activate reward, desire, and emotional regulation systems, which makes transitions difficult and tantrums more likely.</p>
-
-      <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden mb-10 shadow-lg">
-        <img src="/images/blog/screen-time-hero.jpg" alt="Child intensely focused on a glowing tablet screen in a dimly lit room" class="w-full h-full object-cover" loading="lazy" />
-      </div>
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative">
-      <div class="lg:col-span-3 lg:sticky lg:top-24 hidden lg:block">
-        <TableOfContents headings={headings} />
-      </div>
-
-      <div class="lg:col-span-8 prose prose-lg max-w-none text-gray-800 prose-headings:text-brand-navy prose-a:text-brand-trust hover:prose-a:text-blue-700">
-        <p>In many homes, screen time becomes one of the biggest daily struggles. Parents may ask a child to turn off the tablet, stop playing a game, or leave the television, and suddenly the child becomes upset, angry, tearful, or completely refuses to listen.</p>
-
-        <p>This can be confusing for parents. They may wonder, “Why is it so hard for my child to stop?” or “Why does a simple instruction turn into a tantrum?”</p>
-
-        <p>It is important to understand that screen time is not only a behaviour issue. Screens are highly stimulating. They are designed to hold attention, give quick rewards, and keep the child engaged. For many children, especially those with attention, emotional regulation, sensory, or developmental difficulties, stopping screen time can feel very hard.</p>
-
-        <p>Also, it is a misconception that watching TV or playing video games directly causes ADHD. However, screen habits can still affect routines, sleep, attention patterns, <a href="/services/behaviour-planning">emotional regulation</a>, and family behaviour.</p>
-
-        <h2 id="fast-rewards">The Brain Likes Fast Rewards</h2>
-
-        <p>Screens provide quick stimulation. A child may win a game, unlock a new level, watch a funny video, receive instant feedback, or move from one colourful scene to another. These experiences can activate the brain’s reward system.</p>
-
-        <p>When a child feels excitement, success, or pleasure, the brain releases dopamine. Dopamine is linked with reward, motivation, and pleasure. This makes the child want to repeat the activity again and again.</p>
-
-        <CalloutBox type="Research Highlight" title="Dopamine and Screens">
-          <p>This is why games, videos, and fast-moving apps can feel so attractive to children. The child is not always being “stubborn.” Their brain is receiving strong reward signals from the screen.</p>
-        </CalloutBox>
-
-        <p>Over time, the child may begin to prefer fast-reward activities over slower activities such as homework, reading, chores, conversation, or independent play.</p>
-
-        <h2 id="coping-tool">Screens Can Become a Coping Tool</h2>
-
-        <p>For some children, screen time is not only entertainment. It becomes a way to avoid boredom, frustration, anxiety, sadness, or difficult tasks.</p>
-
-        <p>For example, a child may ask for a screen when:</p>
-        <ul>
-          <li>homework feels hard</li>
-          <li>they are tired</li>
-          <li>they feel bored</li>
-          <li>they do not know how to play independently</li>
-          <li>they want to avoid chores</li>
-          <li>they are emotionally upset</li>
-          <li>they need comfort or distraction</li>
-        </ul>
-
-        <p>When screens are used repeatedly to escape uncomfortable feelings, the child may become more dependent on them. Then, when the screen is removed, the uncomfortable feeling returns, and the child may react strongly.</p>
-
-        <h2 id="power-of-desire">The Power of Desire</h2>
-
-        <p>Children can experience strong short-term emotions. These may include frustration, anxiety, desire, and sadness.</p>
-
-        <p>Desire is especially powerful during screen time. When a child wants more screen time, you may notice:</p>
-        <ul>
-          <li>fixed eyes on the screen</li>
-          <li>difficulty listening</li>
-          <li>increased movement or excitement</li>
-          <li>repeated requests for “five more minutes”</li>
-          <li>anger when interrupted</li>
-          <li>difficulty shifting attention</li>
-          <li>fast emotional reaction when the screen is removed</li>
-        </ul>
-
-        <p>When desire takes over, the child may stop thinking about rules, routines, homework, sleep, or family expectations. Their mind becomes focused on one thing: getting more screen time.</p>
-
-        <p>This does not mean parents should give in. It means parents need to understand that transition away from screens requires structure, preparation, and consistency.</p>
-
-        <h2 id="extinction-burst">Why Tantrums May Get Worse Before They Improve</h2>
-
-        <p>One reason screen-time limits are difficult is a behaviour pattern known as an extinction burst.</p>
-
-        <CalloutBox type="Clinical Insight" title="Understanding the Extinction Burst">
-          <p>An extinction burst happens when a behaviour that used to get a reward suddenly stops working. At first, the child may increase the behaviour to try harder to get the reward back.</p>
-        </CalloutBox>
-
-        <p>For example:</p>
-
-        <p>A child cries for the tablet. The parent says no. The child cries louder. The parent still says no. The child starts screaming, throwing things, or begging.</p>
-
-        <p>This does not always mean the parent’s boundary is wrong. It may mean the child is testing whether the old behaviour will still work.</p>
-
-        <p>The difficult part is that if the parent gives in after 20 or 30 minutes of crying, the child learns that stronger crying works. The child may then cry harder next time because the brain remembers, “If I keep going, I will get the screen back.”</p>
-
-        <p>This is why consistency matters.</p>
-
-        <h2 id="giving-in">Why Giving In Makes the Cycle Stronger</h2>
-
-        <p>Many parents give in because they are tired, embarrassed, busy, or emotionally drained. This is understandable. Parenting is not easy, especially when a child has strong reactions.</p>
-
-        <p>However, when a child gets screen time after screaming, crying, or refusing, the behaviour becomes reinforced. The child learns that the tantrum is a successful strategy.</p>
-
-        <p>The next time the screen is removed, the child may protest even more.</p>
-
-        <CalloutBox type="Warning Signs" title="The Reinforcement Cycle">
-          <p>This cycle can become very difficult:</p>
-          <ol class="mt-2">
-            <li>Screen time starts.</li>
-            <li>The child enjoys the reward.</li>
-            <li>Parent asks the child to stop.</li>
-            <li>Child protests.</li>
-            <li>Parent gives in.</li>
-            <li>Child learns that protesting works.</li>
-            <li>Next transition becomes harder.</li>
-          </ol>
-        </CalloutBox>
-
-        <p>Breaking this cycle takes patience, planning, and repeated consistency.</p>
-
-        <h2 id="easier-transitions">How Parents Can Make Screen Transitions Easier</h2>
-
-        <p>Parents do not need to remove screens completely in every case. The goal is to create healthy structure around screen use.</p>
-
-        <p>Helpful strategies include:</p>
-        <ul>
-          <li>Set screen rules before the screen starts.</li>
-          <li>Use a timer or visual countdown.</li>
-          <li>Give warnings before transition time.</li>
-          <li>Avoid screens right before sleep.</li>
-          <li>Keep meals and homework screen-free.</li>
-          <li>Turn off autoplay and notifications where possible.</li>
-          <li>Offer a planned activity after screen time.</li>
-          <li>Stay calm during protests.</li>
-          <li>Do not negotiate during a tantrum.</li>
-          <li>Praise the child when they stop screen time calmly.</li>
-          <li>Use screen time as part of a routine, not as unlimited access.</li>
-        </ul>
-
-        <p>For younger children or children with developmental needs, visual schedules, first-then language, and predictable routines can be very helpful.</p>
-
-        <p>Example:<br>
-        “First tablet for 20 minutes, then dinner.”<br>
-        “First finish homework, then 30 minutes of screen time.”<br>
-        “When the timer rings, the tablet goes to charging.”</p>
-
-        <h2 id="replace-reward">Replace the Reward, Do Not Only Remove It</h2>
-
-        <p>If screen time is removed but nothing else is available, the child may feel restless, bored, or emotionally uncomfortable.</p>
-
-        <p>Parents should slowly build non-screen rewards into the child’s routine, such as:</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6">
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">outdoor play</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">board games</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">drawing</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">sensory play</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">storytelling</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">physical movement</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">cooking with parents</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">puzzles</div>
-          <div class="bg-white border border-brand-border p-3 rounded text-center text-sm">music</div>
-        </div>
-
-        <p>At first, these activities may not feel as exciting as screens. That is normal. The brain needs time to adjust from fast digital rewards to slower real-life rewards.</p>
-
-        <h2 id="professional-help">When to Seek Professional Help</h2>
-
-        <p>Parents may need <a href="/parent-support">professional support</a> if screen time is causing:</p>
-        <ul>
-          <li>daily tantrums</li>
-          <li>aggression when screens are removed</li>
-          <li>sleep problems</li>
-          <li>refusal to attend school</li>
-          <li>homework battles</li>
-          <li>loss of interest in other activities</li>
-          <li>social withdrawal</li>
-          <li>severe emotional outbursts</li>
-          <li>difficulty following any routine</li>
-          <li>major family stress</li>
-        </ul>
-
-        <p>A <a href="/about">child psychologist</a> can help parents understand whether the issue is mainly routine-based, behaviour-based, emotional, sensory-related, or connected with ADHD, autism, anxiety, or other developmental concerns. We also offer <a href="/services/parent-consultation">Parent Counselling</a>.</p>
-
-        <CalloutBox type="Parent Tip" title="Final Note for Parents">
-          <p>Stopping screen time is hard because screens give children quick reward, strong stimulation, and emotional comfort. When the screen is removed, the child may feel frustrated, bored, restless, or upset. Parents should not blame themselves, but they also should not ignore the pattern. Contact us via <a href="/contact">Contact</a> or check our <a href="/pricing">Pricing</a>. With clear limits, calm consistency, and replacement activities, children can slowly learn healthier screen habits.</p>
-        </CalloutBox>
-
-        <div class="bg-brand-cream border border-brand-sky p-6 rounded-lg my-8">
-          <p class="text-sm text-gray-700 italic mb-0">This article is for parent education only and does not replace a clinical assessment or medical advice. If screen time is becoming a daily struggle in your home, you may book a <a href="/services/behaviour-planning">behaviour planning consultation</a> for parent guidance.</p>
-        </div>
-
-        <ArticleAuthor datePublished="January 12, 2024" dateModified="March 1, 2024" readTime="7 min" />
-
-        <div class="mt-8">
-          <h3 class="text-xl font-bold text-brand-navy mb-4">References</h3>
-          <ul class="text-sm text-gray-600 space-y-2">
-            <li>American Academy of Pediatrics. Digital media and children guidance.</li>
-            <li>HealthyChildren.org. Family Media Plan.</li>
-            <li>Child Mind Institute. Healthy limits on video games.</li>
-            <li>Gibbs, V. D. (2017). Self-Regulation & Mindfulness: Over 82 Exercises & Worksheets for Sensory Processing Disorder, ADHD, & Autism Spectrum Disorder. PESI Publishing & Media.</li>
-          </ul>
-        </div>
-
-        <SocialShare url={canonicalURL} title={title} />
-
-
-        <FAQAccordion faqs={[
-          {
-            question: "Why does my child have a tantrum when I turn off the screen?",
-            answer: "Screens activate the brain's reward system by releasing dopamine. When the screen is removed, the child loses that fast stimulation, which can cause frustration, desire for more, and emotional outbursts, especially during sudden transitions."
-          },
-          {
-            question: "Should I just take the screen away completely if they act out?",
-            answer: "Not necessarily. Sudden complete removal without warning can trigger severe meltdowns. It is often better to use visual timers, give warnings before transition time, and provide a planned engaging activity immediately after screen time."
-          }
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'Science of Screen Time', href: currentUrl }
         ]} />
+      </div>
 
-        <PrevNextNav
-          prev={{ title: "Understanding the Confusion Between ADHD and Hyperactivity in Children", href: "/blog/understanding-adhd-and-hyperactivity-in-children" }}
-          next={{ title: "How to Support Executive Function at Home", href: "/blog/how-to-support-executive-function-at-home" }}
-        />
+      <ArticleHero
+        title={title}
+        category="Behaviour & Screen Time"
+        readTime="7 min"
+        datePublished="Jan 12, 2024"
+        dateModified="Mar 1, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/screen-time-hero.jpg"
+        imageAlt="Child intensely focused on a glowing tablet screen in a dimly lit room"
+      />
 
-        <BlogCTA />
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
 
-        <RelatedArticles currentUrl={currentUrl} />
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            In many homes, screen time becomes one of the biggest daily struggles.
+            A parent asks a child to turn off the tablet, and suddenly the child becomes upset, angry, tearful, or completely refuses to listen.
+            Understanding why this happens is the first step to fixing it.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="7 min"
+            age="Toddler to Teen"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "Why screens are so hard to turn off",
+              "How dopamine affects your child's brain",
+              "What an 'extinction burst' is",
+              "How to make transitions easier",
+              "Why replacing the reward is key"
+            ]}
+          />
+
+          <p>It is important to understand that screen time is not only a behaviour issue.</p>
+          <p>Screens are highly stimulating. They are designed to hold attention, give quick rewards, and keep the child engaged.</p>
+          <p>For many children, stopping screen time can feel very hard.</p>
+
+          <h2 id="fast-rewards">The Brain Likes Fast Rewards</h2>
+
+          <p>Screens provide quick stimulation.</p>
+          <p>A child may win a game, unlock a new level, or watch a funny video.</p>
+          <p>These experiences activate the brain’s reward system by releasing dopamine.</p>
+          <p>This makes the child want to repeat the activity again and again.</p>
+
+          <ExpertTip>
+            Over time, the child may begin to prefer fast-reward activities (like screens) over slower activities such as homework, reading, or independent play. Their brain is seeking that quick dopamine release.
+          </ExpertTip>
+
+          <h2 id="coping-tool">Screens Can Become a Coping Tool</h2>
+
+          <p>For some children, screen time is not only entertainment.</p>
+          <p>It becomes a way to avoid boredom, frustration, anxiety, or difficult tasks.</p>
+
+          <p>When screens are used repeatedly to escape uncomfortable feelings, the child may become dependent on them.</p>
+          <p>Then, when the screen is removed, the uncomfortable feeling returns, and the child reacts strongly.</p>
+
+          <h2 id="power-of-desire">The Power of Desire</h2>
+
+          <p>Desire is especially powerful during screen time.</p>
+          <p>When a child wants more screen time, you may notice difficulty listening, anger when interrupted, or difficulty shifting attention.</p>
+          <p>This means transitions away from screens require structure and consistency.</p>
+
+          <h2 id="extinction-burst">Why Tantrums May Get Worse Before They Improve</h2>
+
+          <p>One reason screen-time limits are difficult is a behaviour pattern known as an extinction burst.</p>
+          <p>This happens when a behaviour that used to get a reward suddenly stops working.</p>
+          <p>At first, the child may increase the behaviour (crying louder) to try harder to get the reward back.</p>
+
+          <MythVsFact
+            myth="If I just let them finish the game, they will turn it off without a fuss."
+            fact="Giving in to protests teaches the child that tantrums work, making the next transition even harder."
+          />
+
+          <h2 id="easier-transitions">How Parents Can Make Screen Transitions Easier</h2>
+
+          <p>Parents do not need to remove screens completely.</p>
+          <p>The goal is to create healthy structure around screen use.</p>
+
+          <ActionChecklist
+            items={[
+              "Set screen rules before the screen starts.",
+              "Use a visual timer or countdown.",
+              "Give warnings before transition time (e.g., '5 more minutes').",
+              "Keep meals and homework screen-free.",
+              "Offer a planned activity immediately after screen time."
+            ]}
+          />
+
+          <h2 id="replace-reward">Replace the Reward, Do Not Only Remove It</h2>
+
+          <p>If screen time is removed but nothing else is available, the child may feel restless or bored.</p>
+          <p>Parents should slowly build non-screen rewards into the child’s routine, such as outdoor play, board games, or sensory play.</p>
+
+          <WarningBox
+            title="Seek professional advice if your child"
+            items={[
+              "Shows daily aggression when screens are removed",
+              "Has severe sleep problems due to screens",
+              "Refuses to attend school or do homework",
+              "Withdraws entirely from social or family life"
+            ]}
+          />
+
+          <KeyTakeaways
+            items={[
+              "Screens release dopamine, making them hard for a child's brain to turn off.",
+              "Tantrums during transitions are common because the child's reward is abruptly removed.",
+              "Giving in to a tantrum reinforces the behaviour (extinction burst).",
+              "Visual timers and clear warnings help the brain prepare to stop.",
+              "Always have an engaging 'next activity' ready when screen time ends."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="January 12, 2024"
+            dateModified="March 1, 2024"
+            readTime="7 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "Why does my child have a tantrum when I turn off the screen?",
+              answer: "Screens activate the brain's reward system. When the screen is removed, the child loses that fast stimulation, causing frustration."
+            },
+            {
+              question: "Should I just take the screen away completely if they act out?",
+              answer: "Not necessarily. Sudden complete removal without warning can trigger severe meltdowns. It is often better to use visual timers and give warnings."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Understanding ADHD vs Hyperactivity", href: "/blog/understanding-adhd-and-hyperactivity-in-children" }}
+            next={{ title: "How to Support Executive Function", href: "/blog/how-to-support-executive-function-at-home" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
       </div>
     </div>
   </article>
