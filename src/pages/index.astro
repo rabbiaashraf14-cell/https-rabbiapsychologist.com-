@@ -15,8 +15,8 @@ import FinalBookingCTA from '../components/home/FinalBookingCTA.astro';
 import HomepageSchema from '../components/home/HomepageSchema.astro';
 import AboutPreview from '../components/home/AboutPreview.astro';
 
-const title = "Rabbia Psychologist | Child Development, ADHD, Autism & Parent Guidance";
-const description = "Professional parent guidance and child development support for ADHD, autism, behaviour concerns, school issues, report review, and local assessment in Lahore.";
+const title = "Rabbia Psychologist | ADHD, Autism & Child Development Parent Guidance";
+const description = "Parent guidance and child development support for families worldwide. Get practical help for ADHD, autism, behaviour, emotional regulation, school concerns, reports, and next steps.";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -26,6 +26,130 @@ const description = "Professional parent guidance and child development support 
   <BehaviorCommunicationVisualizer />
   <InteractiveServiceCards />
   <RegionSupportSection />
+
+  <!-- What Parents Usually Search For Before Booking -->
+  <section class="py-16 bg-brand-cream border-t border-brand-gold/20">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">What Parents Usually Search For Before Booking</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">Common questions and the best starting points for finding support.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover-lift flex flex-col h-full">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 leading-tight">"My child does not listen, is it behaviour or attention?"</h3>
+          <div class="mt-auto space-y-2">
+            <a href="/services/adhd-support" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore ADHD Support</a>
+            <a href="/services/behaviour-planning" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore Behaviour Planning</a>
+            <a href="/blog/behaviour-is-communication" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: Behaviour is Communication</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover-lift flex flex-col h-full">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 leading-tight">"How do I know if it is autism or speech delay?"</h3>
+          <div class="mt-auto space-y-2">
+            <a href="/services/asd-support" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore ASD Support</a>
+            <a href="/blog/speech-delay-vs-autism" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: Speech Delay vs Autism</a>
+            <a href="/blog/autism-early-signs" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: Autism Early Signs</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover-lift flex flex-col h-full">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 leading-tight">"My child has meltdowns after school or screen time."</h3>
+          <div class="mt-auto space-y-2">
+            <a href="/services/behaviour-planning" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore Behaviour Planning</a>
+            <a href="/blog/screen-time-and-emotional-regulation" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: Screen Time and Emotional Regulation</a>
+            <a href="/blog/tantrum-vs-meltdown" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: Tantrum vs Meltdown</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover-lift flex flex-col h-full">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 leading-tight">"The school says my child needs support, what should I do?"</h3>
+          <div class="mt-auto space-y-2">
+            <a href="/services/school-consultation" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore School & IEP Help</a>
+            <a href="/blog/school-meeting-checklist" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: School Meeting Checklist</a>
+            <a href="/report-review" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Service: Report Review</a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover-lift flex flex-col h-full">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 leading-tight">"My child struggles with homework, focus, and routines."</h3>
+          <div class="mt-auto space-y-2">
+            <a href="/services/adhd-support" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore ADHD Support</a>
+            <a href="/blog/how-to-support-executive-function-at-home" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: How to Support Executive Function</a>
+            <a href="/resource-vault" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Resource: Executive Function Workbook</a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover-lift flex flex-col h-full">
+          <h3 class="text-xl font-bold text-brand-navy mb-4 leading-tight">"I have a psychological report but do not understand it."</h3>
+          <div class="mt-auto space-y-2">
+            <a href="/report-review" class="block text-sm text-brand-trust hover:underline font-bold">&rarr; Explore Report Review</a>
+            <a href="/blog/understanding-psychological-reports" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Article: Understanding Psychological Reports</a>
+            <a href="/parent-support" class="block text-sm text-gray-600 hover:text-brand-navy">&bull; Service: Parent Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Rabbia Psychologist Helps Families Internationally -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-5xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">How Rabbia Psychologist Helps Families Internationally</h2>
+      <p class="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">Providing practical next steps and clear pathways for families navigating developmental, behavioural, and school-related concerns across the world.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-left mb-10">
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/parent-support" class="hover:underline">Online parent guidance</a></strong> and developmental concern discussion</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/services/adhd-support" class="hover:underline">ADHD</a></strong> and <strong class="text-brand-navy"><a href="/services/asd-support" class="hover:underline">autism support planning</a></strong></span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/services/behaviour-planning" class="hover:underline">Behaviour strategy planning</a></strong> and emotional regulation support</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/services/school-consultation" class="hover:underline">School meeting preparation</a></strong> and IEP guidance</span>
+          </li>
+        </ul>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/report-review" class="hover:underline">Report review</a></strong> and next-step planning</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700"><strong class="text-brand-navy">Referral direction</strong> where local assessment or regulated care is needed</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700">Access to comprehensive <strong class="text-brand-navy"><a href="/resources" class="hover:underline">resources</a></strong>, <strong class="text-brand-navy"><a href="/blog" class="hover:underline">articles</a></strong>, and <strong class="text-brand-navy"><a href="/faqs" class="hover:underline">FAQs</a></strong></span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-gray-700">Transparent <strong class="text-brand-navy"><a href="/pricing" class="hover:underline">pricing</a></strong> and straightforward <strong class="text-brand-navy"><a href="/book" class="hover:underline">booking</a></strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 border border-gray-200 rounded p-6 text-sm text-gray-600 max-w-4xl mx-auto">
+        <strong>Safety Note:</strong> International sessions are educational parent-guidance and support-planning sessions. They do not replace local medical care, emergency support, formal diagnosis, or regulated therapy where a local license is required.
+      </div>
+    </div>
+  </section>
+
   <AboutPreview />
   <ParentJourneyTimeline />
   <ResourceVaultPreview />
@@ -38,20 +162,57 @@ const description = "Professional parent guidance and child development support 
 
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Rabbia Psychologist Child Development Services",
-  "alternateName": "Rabbia Psychologist Child Development Services",
-  "url": "https://www.rabbiapsychologist.com",
-  "logo": "https://www.rabbiapsychologist.com/brand/logo-primary.svg",
-  "founder": {
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "alternateName": "Rabbia Psychologist",
+    "url": "https://www.rabbiapsychologist.com",
+    "logo": "https://www.rabbiapsychologist.com/logo.png",
+    "description": "Parent guidance and child development support for families worldwide, focused on ADHD, autism, behaviour, emotional regulation, learning concerns, school support, report review, and practical developmental next steps.",
+    "areaServed": "International",
+    "serviceType": [
+      "Parent Consultation",
+      "ADHD Support Planning",
+      "Autism Parent Guidance",
+      "Behaviour Planning",
+      "School Consultation Support",
+      "Report Review"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf"
+    }
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rabbia Ashraf",
-    "jobTitle": "clinical lead",
-    "description": "Clinical Psychologist | Child & Adolescent Development Support"
+    "jobTitle": "Clinical Psychologist | Child & Adolescent Development Support",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services"
+    },
+    "knowsAbout": [
+      "Child development",
+      "ADHD parent guidance",
+      "Autism parent guidance",
+      "Behaviour support planning",
+      "Emotional regulation",
+      "Learning difficulties",
+      "School consultation",
+      "Psychological report review",
+      "Parent counseling"
+    ]
   },
-  "description": "Owner-led parent guidance, child development resources, school support, report review support, and between-session support programs for families in Pakistan and abroad."
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Rabbia Psychologist Child Development Services",
+    "alternateName": "Rabbia Psychologist",
+    "url": "https://www.rabbiapsychologist.com/"
+  }
+]
 </script>
 </BaseLayout>

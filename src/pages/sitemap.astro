@@ -14,6 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Main Pages</h2>
         <ul class="space-y-3">
           <li><a href="/" class="text-gray-700 hover:text-brand-trust">Home</a></li>
+          <li><a href="/start-here" class="text-gray-700 hover:text-brand-trust">Start Here</a></li>
           <li><a href="/about" class="text-gray-700 hover:text-brand-trust">About</a></li>
           <li><a href="/contact" class="text-gray-700 hover:text-brand-trust">Contact</a></li>
           <li><a href="/pricing" class="text-gray-700 hover:text-brand-trust">Pricing</a></li>
@@ -22,13 +23,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Parent Support</h2>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Services</h2>
         <ul class="space-y-3">
-          <li><a href="/start-here" class="text-gray-700 hover:text-brand-trust">Start Here</a></li>
-          <li><a href="/parent-support" class="text-gray-700 hover:text-brand-trust">Parent Support</a></li>
-          <li><a href="/between-session-programs" class="text-gray-700 hover:text-brand-trust">Between-Session Programs</a></li>
+          <li><a href="/services" class="text-gray-700 hover:text-brand-trust">All Services</a></li>
+          <li><a href="/services/adhd-support" class="text-gray-700 hover:text-brand-trust">ADHD Support</a></li>
+          <li><a href="/services/asd-support" class="text-gray-700 hover:text-brand-trust">ASD Support</a></li>
+          <li><a href="/services/behaviour-planning" class="text-gray-700 hover:text-brand-trust">Behaviour Planning</a></li>
           <li><a href="/services/school-consultation" class="text-gray-700 hover:text-brand-trust">School & IEP Help</a></li>
           <li><a href="/report-review" class="text-gray-700 hover:text-brand-trust">Report Review</a></li>
+          <li><a href="/services/local-assessment" class="text-gray-700 hover:text-brand-trust">Local Assessment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Parent Support</h2>
+        <ul class="space-y-3">
+          <li><a href="/parent-support" class="text-gray-700 hover:text-brand-trust">Parent Consultation</a></li>
+          <li><a href="/between-session-programs" class="text-gray-700 hover:text-brand-trust">Between-Session Programs</a></li>
         </ul>
       </div>
 
@@ -38,33 +49,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li><a href="/resources" class="text-gray-700 hover:text-brand-trust">Resources Hub</a></li>
           <li><a href="/resource-vault" class="text-gray-700 hover:text-brand-trust">Resource Vault</a></li>
           <li><a href="/free-downloads" class="text-gray-700 hover:text-brand-trust">Free Downloads</a></li>
-          <li><a href="/blog" class="text-gray-700 hover:text-brand-trust">Blog</a></li>
           <li><a href="/faqs" class="text-gray-700 hover:text-brand-trust">FAQs</a></li>
           <li><a href="/use-cases" class="text-gray-700 hover:text-brand-trust">Use Cases</a></li>
         </ul>
       </div>
 
       <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">International Families</h2>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Blog Categories & Articles</h2>
         <ul class="space-y-3">
-          <li><a href="/international-families" class="text-gray-700 hover:text-brand-trust">International Families</a></li>
-          <li><a href="/overseas-pakistani-families" class="text-gray-700 hover:text-brand-trust">Overseas Pakistani Families</a></li>
-          <li><a href="/online-parent-consultation-mena-gulf" class="text-gray-700 hover:text-brand-trust">Middle East / Gulf Families</a></li>
-          <li><a href="/usa-families" class="text-gray-700 hover:text-brand-trust">USA Families</a></li>
-          <li><a href="/australia-families" class="text-gray-700 hover:text-brand-trust">Australia Families</a></li>
-          <li><a href="/uk-europe-families" class="text-gray-700 hover:text-brand-trust">UK & Europe Families</a></li>
-          <li><a href="/pakistan-families" class="text-gray-700 hover:text-brand-trust">Pakistan Families</a></li>
-          <li><a href="/international-schools" class="text-gray-700 hover:text-brand-trust">International Schools</a></li>
+          <li><a href="/blog" class="text-gray-700 hover:text-brand-trust font-bold">All Blog Articles</a></li>
+          <li><a href="/blog/understanding-adhd-and-hyperactivity-in-children" class="text-gray-700 hover:text-brand-trust text-sm">Understanding ADHD</a></li>
+          <li><a href="/blog/autism-early-signs" class="text-gray-700 hover:text-brand-trust text-sm">Autism Early Signs</a></li>
+          <li><a href="/blog/tantrum-vs-meltdown" class="text-gray-700 hover:text-brand-trust text-sm">Tantrum vs Meltdown</a></li>
+          <li><a href="/blog/school-meeting-checklist" class="text-gray-700 hover:text-brand-trust text-sm">School Meeting Checklist</a></li>
         </ul>
       </div>
 
       <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Brand & Media</h2>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">International Families</h2>
         <ul class="space-y-3">
-          <li><a href="/brand-assets" class="text-gray-700 hover:text-brand-trust">Brand Assets</a></li>
-          <li><a href="/media-kit" class="text-gray-700 hover:text-brand-trust">Media Kit</a></li>
+          <li><a href="/international-families" class="text-gray-700 hover:text-brand-trust">International Families Hub</a></li>
+          <li><a href="/international-families/usa" class="text-gray-700 hover:text-brand-trust">USA Families</a></li>
+          <li><a href="/international-families/uk-europe" class="text-gray-700 hover:text-brand-trust">UK & Europe Families</a></li>
+          <li><a href="/international-families/australia" class="text-gray-700 hover:text-brand-trust">Australia Families</a></li>
+          <li><a href="/international-families/middle-east-gulf" class="text-gray-700 hover:text-brand-trust">Middle East / Gulf Families</a></li>
+          <li><a href="/international-families/overseas-pakistani-families" class="text-gray-700 hover:text-brand-trust">Overseas Pakistani Families</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">News & Media</h2>
+        <ul class="space-y-3">
           <li><a href="/news" class="text-gray-700 hover:text-brand-trust">Newsroom</a></li>
-          <li><a href="/press/rabbia-psychologist-child-development-services-launch" class="text-gray-700 hover:text-brand-trust">Press Release: Launch</a></li>
+          <li><a href="/press/rabbia-psychologist-child-development-services-launch" class="text-gray-700 hover:text-brand-trust">Press Release</a></li>
+          <li><a href="/media-kit" class="text-gray-700 hover:text-brand-trust">Media Kit</a></li>
+          <li><a href="/brand-assets" class="text-gray-700 hover:text-brand-trust">Brand Assets</a></li>
         </ul>
       </div>
 
