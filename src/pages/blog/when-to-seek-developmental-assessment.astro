@@ -1,35 +1,121 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "When To Seek Developmental Assessment";
-const description = "Learn more about when to seek developmental assessment and how to support your child's development.";
+const title = "When to Seek a Developmental Assessment for Your Child";
+const description = "Learn the common signs that indicate it is time to move from a 'wait-and-see' approach to seeking a formal child developmental assessment.";
 const currentUrl = "/blog/when-to-seek-developmental-assessment";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["developmental assessment", "child psychology assessment", "when to test for ADHD", "when to test for autism", "child development milestones"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "The Problem with 'Wait and See'", slug: "wait-and-see", level: 2 },
+  { text: "Common Reasons Parents Seek Assessment", slug: "common-reasons", level: 2 },
+  { text: "What Happens During an Assessment?", slug: "what-happens", level: 2 },
+  { text: "How an Assessment Helps", slug: "how-it-helps", level: 2 },
+  { text: "Taking the First Step", slug: "taking-first-step", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/developmental-assessment-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-03-05T08:00:00+00:00",
+    "dateModified": "2024-03-10T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "When to Seek Assessment", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a developmental assessment involve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It usually involves parent interviews, reviewing school reports, and direct play-based or structured testing with the child to evaluate cognitive, social, and emotional development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will an assessment guarantee a diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The goal is clarity. Sometimes a child meets the criteria for a specific diagnosis like ADHD or Autism, and other times the assessment simply highlights a specific learning difference or environmental stressor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I wait for the school to recommend an assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You do not need to wait. Parents are often the first to notice differences, especially since many children 'mask' their difficulties at school and only melt down at home. Trust your instincts."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/developmental-assessment-hero.jpg"
     type="article"
   />
 
@@ -41,43 +127,145 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_When To Seek Developmental Assessment', href: currentUrl }
+          { name: 'When to Seek Assessment', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="Assessments & Development"
+        readTime="6 min"
+        datePublished="Mar 5, 2024"
+        dateModified="Mar 10, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/developmental-assessment-hero.jpg"
+        imageAlt="Parent and clinical psychologist discussing developmental notes in a calm office"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            It is normal for parents to worry about their child's development. You might wonder if their speech is slightly delayed, if their tantrums are typical for their age, or why homework always ends in tears.
+            Knowing when to simply monitor the situation and when to seek a formal developmental assessment is one of the hardest decisions parents face.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="Toddler to Teen"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "Why the 'wait and see' approach can sometimes delay vital support",
+              "Common signs that indicate an assessment is necessary",
+              "What actually happens during a developmental assessment",
+              "How a formal report helps parents and schools",
+              "How to prepare for your first consultation"
+            ]}
+          />
 
+          <h2 id="wait-and-see">The Problem with 'Wait and See'</h2>
+          <p>Friends and family often mean well when they say, "Oh, they will grow out of it," or "Einstein didn't talk until he was four."</p>
+          <p>While it is true that children develop at their own pace, taking a strict "wait and see" approach can sometimes delay crucial early intervention. The early years of a child's life involve rapid brain development. Providing the right support during this window can significantly improve their long-term social, emotional, and academic outcomes.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ExpertTip>
+            You do not need to wait for a crisis or for your child to fail at school before seeking help. A proactive assessment provides a roadmap to prevent severe struggles.
+          </ExpertTip>
+
+          <h2 id="common-reasons">Common Reasons Parents Seek Assessment</h2>
+          <p>Parents usually initiate a developmental assessment when they notice persistent patterns that interfere with daily life. Common triggers include:</p>
+
+          <ul>
+            <li><strong>Communication delays:</strong> Not responding to their name, lack of pointing or gesturing by 15 months, or a noticeable delay in spoken language compared to peers.</li>
+            <li><strong>Intense behavioural reactions:</strong> Frequent, severe meltdowns that last a long time and seem out of proportion to the trigger.</li>
+            <li><strong>Social difficulties:</strong> Struggling to make or keep friends, not understanding personal space, or preferring to play entirely alone.</li>
+            <li><strong>Attention and focus:</strong> Inability to finish tasks, extreme forgetfulness, or constant physical restlessness (fidgeting, running, jumping) that disrupts learning.</li>
+            <li><strong>Academic struggles:</strong> Working incredibly hard but still falling behind in reading, writing, or math.</li>
+          </ul>
+
+          <MythVsFact
+            myth="The school will tell me if my child needs an assessment."
+            fact="Schools often focus strictly on academic performance. Many children 'mask' their difficulties during the day, performing well academically but suffering extreme emotional exhaustion at home. Parents are usually the first to notice the full picture."
+          />
+
+          <h2 id="what-happens">What Happens During an Assessment?</h2>
+          <p>A comprehensive assessment is not a single test; it is a process of gathering data from multiple sources to build a complete profile of your child.</p>
+
+          <ActionChecklist
+            items={[
+              "Initial Parent Interview: A detailed discussion about your child's developmental history, medical background, and your main concerns.",
+              "Information Gathering: Questionnaires filled out by parents and teachers to see how the child behaves in different environments.",
+              "Direct Testing: Standardized play-based or table-top activities with the child to assess cognitive, academic, and emotional skills.",
+              "Feedback Session: A meeting where the psychologist explains the results, provides any diagnoses, and outlines a clear support plan."
+            ]}
+          />
+
+          <h2 id="how-it-helps">How an Assessment Helps</h2>
+          <p>The primary goal of an assessment is clarity. It answers the "why" behind your child's behaviour.</p>
+          <p>With a formal psychological report, parents can:</p>
+          <ul>
+            <li>Stop guessing and blaming themselves for their child's struggles.</li>
+            <li>Secure specific accommodations at school (like extra time on tests, sensory breaks, or an IEP).</li>
+            <li>Gain access to specialized therapies or funding support.</li>
+            <li>Learn targeted parenting strategies tailored specifically to their child's unique brain.</li>
+          </ul>
+
+          <h2 id="taking-first-step">Taking the First Step</h2>
+          <p>If you have been worried about your child's development for several months, trust your instincts. The first step is usually to book a parent consultation. During this meeting, a clinical psychologist can listen to your concerns and help you decide if a full formal assessment is the right next step.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Trust your instincts; parents are usually the first to notice developmental differences.",
+              "The 'wait and see' approach can sometimes delay critical early support.",
+              "Assessments provide clarity, answering 'why' a child is struggling.",
+              "A formal report is often required to secure school accommodations and specialized support.",
+              "The first step is a parent consultation to discuss your observations and concerns."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="March 5, 2024"
+            dateModified="March 10, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What does a developmental assessment involve?",
+              answer: "It usually involves parent interviews, reviewing school reports, and direct play-based or structured testing with the child to evaluate cognitive, social, and emotional development."
+            },
+            {
+              question: "Will an assessment guarantee a diagnosis?",
+              answer: "No. The goal is clarity. Sometimes a child meets the criteria for a specific diagnosis like ADHD or Autism, and other times the assessment simply highlights a specific learning difference or environmental stressor."
+            },
+            {
+              question: "Should I wait for the school to recommend an assessment?",
+              answer: "You do not need to wait. Parents are often the first to notice differences, especially since many children 'mask' their difficulties at school and only melt down at home. Trust your instincts."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Parent Guidance After an Autism Diagnosis", href: "/blog/parent-guidance-after-an-autism-diagnosis" }}
+            next={{ title: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

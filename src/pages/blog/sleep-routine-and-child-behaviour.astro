@@ -1,0 +1,268 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "Sleep, Routine, and Child Behaviour: The Hidden Connection";
+const description = "Is your child's challenging behaviour actually a sign of chronic sleep deprivation? Discover how sleep impacts emotional regulation and how to build a peaceful bedtime routine.";
+const currentUrl = "/blog/sleep-routine-and-child-behaviour";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const keywords = ["child sleep routine", "ADHD sleep problems", "child behaviour sleep", "toddler bedtime battles", "emotional regulation and sleep"];
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "How Sleep Impacts the Brain", slug: "how-sleep-impacts", level: 2 },
+  { text: "The Link with ADHD and Autism", slug: "adhd-autism-link", level: 2 },
+  { text: "Signs Your Child is Sleep Deprived", slug: "signs-of-sleep-deprivation", level: 2 },
+  { text: "Building a Better Bedtime Routine", slug: "building-better-routine", level: 2 },
+  { text: "When to Seek Professional Help", slug: "when-to-seek-help", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/sleep-routine-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-05-05T08:00:00+00:00",
+    "dateModified": "2024-05-05T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Sleep Routine and Child Behaviour", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can a lack of sleep look like ADHD in children?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. While overtired adults usually look sleepy, overtired children often look 'wired' or hyperactive. Chronic sleep deprivation can mimic the symptoms of ADHD, including poor focus, impulsivity, and emotional meltdowns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is screen time before bed so bad for sleep?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The blue light emitted from screens suppresses the brain's natural production of melatonin, the hormone that makes us feel sleepy. Additionally, fast-paced games or videos keep the brain in a state of high alert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should a bedtime routine take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good bedtime routine should be predictable and take about 30 to 45 minutes. The goal is to slowly lower the sensory and cognitive demands on the child so their nervous system can calm down."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    keywords={keywords}
+    schema={schema}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    ogImage="/images/blog/sleep-routine-hero.jpg"
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'Sleep and Behaviour', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="Routines & Behaviour"
+        readTime="6 min"
+        datePublished="May 5, 2024"
+        dateModified="May 5, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/sleep-routine-hero.jpg"
+        imageAlt="Parent reading a bedtime story to a calm child in a dimly lit room"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            Before looking at complex psychological or behavioural interventions, professionals often ask one simple question: "How is their sleep?"
+            Sleep is the foundational building block for emotional regulation, learning, and physical health. When a child's sleep is dysregulated, their daytime behaviour will almost certainly be dysregulated too.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="6 min"
+            age="Toddler to Teen"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "How a lack of sleep mimics the signs of ADHD",
+              "Why sleep is biologically harder for neurodivergent children",
+              "The physical signs that your child is chronically overtired",
+              "How to structure a sensory-friendly bedtime routine",
+              "The impact of screen time on melatonin production"
+            ]}
+          />
+
+          <h2 id="how-sleep-impacts">How Sleep Impacts the Brain</h2>
+          <p>During deep sleep, the brain does its 'housekeeping.' It consolidates the things learned during the day and clears out cellular waste. Without enough sleep, the brain's prefrontal cortex—the area responsible for impulse control, planning, and emotional regulation—becomes sluggish.</p>
+          <p>This is why a child who usually handles a broken crayon with a slight frown will completely melt down over a broken crayon after a bad night's sleep. They do not have the neurological "brake fluid" to stop the emotional reaction.</p>
+
+          <MythVsFact
+            myth="When my child is overtired, they look sleepy and yawn."
+            fact="While adults yawn and slow down when tired, children (especially those with ADHD) often 'wind up' and become hyperactive, loud, and physically restless to fight off the exhaustion."
+          />
+
+          <h2 id="adhd-autism-link">The Link with ADHD and Autism</h2>
+          <p>Sleep difficulties are incredibly common in children with neurodevelopmental differences.</p>
+          <ul>
+            <li><strong>In ADHD:</strong> The brain often struggles to transition from an active, 'awake' state to a resting state. Their minds may race with thoughts as soon as their head hits the pillow.</li>
+            <li><strong>In Autism:</strong> Children often experience differences in melatonin production (the sleep hormone) and may have heightened sensory sensitivities, meaning the slight hum of a refrigerator or the texture of a blanket keeps them awake.</li>
+          </ul>
+
+          <h2 id="signs-of-sleep-deprivation">Signs Your Child is Sleep Deprived</h2>
+          <p>How do you know if sleep is the root cause of the daytime battles? Look for these signs:</p>
+          <ul>
+            <li>Extreme difficulty waking up in the morning, requiring multiple alarms or physical shaking.</li>
+            <li>Falling asleep during short car rides during the day.</li>
+            <li>Increased irritability, emotional fragility, or aggression in the late afternoon.</li>
+            <li>A "second wind" around 8:00 PM where they suddenly become wildly hyperactive.</li>
+          </ul>
+
+          <h2 id="building-better-routine">Building a Better Bedtime Routine</h2>
+          <p>A good bedtime routine shouldn't start when they get into bed; it should start an hour before.</p>
+
+          <ActionChecklist
+            items={[
+              "The 1-Hour Screen Ban: Turn off all tablets, TVs, and phones at least one hour before bed. Blue light suppresses melatonin.",
+              "Lower the Lights: Dim the lights in the house to signal to the brain that it is time to wind down.",
+              "Sensory Soothing: Incorporate a warm bath or a firm, deep-pressure massage (if the child is a sensory seeker) to calm the nervous system.",
+              "Predictability: Follow the exact same sequence every night (e.g., bath, pyjamas, two books, lights out). Predictability reduces anxiety."
+            ]}
+          />
+
+          <ExpertTip>
+            Do not use the bedroom for time-outs or discipline. The bedroom should be neurologically associated strictly with safety, sleep, and calm.
+          </ExpertTip>
+
+          <h2 id="when-to-seek-help">When to Seek Professional Help</h2>
+          <p>If you have implemented a strict, calm routine, removed screens, and your child is still consistently unable to fall asleep or wakes frequently during the night, consult your pediatrician.</p>
+          <p>They can rule out physical issues like sleep apnea or restless leg syndrome. If the issue is anxiety-driven or behavioural, a parent guidance consultation can help you design a sleep-training plan tailored to your child's needs.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Chronic sleep deprivation can look exactly like ADHD (hyperactivity, impulsivity, meltdowns).",
+              "Neurodivergent children often have biological reasons for finding sleep difficult.",
+              "Remove all screens at least one hour before bed to allow melatonin production.",
+              "Create a predictable, 30-45 minute calming routine to signal safety to the nervous system.",
+              "Consult a professional if severe sleep issues persist despite a solid routine."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="May 5, 2024"
+            dateModified="May 5, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "Can a lack of sleep look like ADHD in children?",
+              answer: "Yes. While overtired adults usually look sleepy, overtired children often look 'wired' or hyperactive. Chronic sleep deprivation can mimic the symptoms of ADHD, including poor focus, impulsivity, and emotional meltdowns."
+            },
+            {
+              question: "Why is screen time before bed so bad for sleep?",
+              answer: "The blue light emitted from screens suppresses the brain's natural production of melatonin, the hormone that makes us feel sleepy. Additionally, fast-paced games or videos keep the brain in a state of high alert."
+            },
+            {
+              question: "How long should a bedtime routine take?",
+              answer: "A good bedtime routine should be predictable and take about 30 to 45 minutes. The goal is to slowly lower the sensory and cognitive demands on the child so their nervous system can calm down."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Social Communication Concerns", href: "/blog/social-communication-concerns" }}
+            next={{ title: "IEP and School Support Planning", href: "/blog/iep-and-school-support-planning" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
+      </div>
+    </div>
+  </article>
+</Layout>

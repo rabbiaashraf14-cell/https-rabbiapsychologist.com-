@@ -1,35 +1,121 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "School Meeting Checklist";
-const description = "Learn more about school meeting checklist and how to support your child's development.";
+const title = "School Meeting Checklist: How to Prepare for an IEP or Parent-Teacher Conference";
+const description = "A practical checklist for parents to confidently prepare for school meetings, IEP discussions, and advocating for their child's developmental needs.";
 const currentUrl = "/blog/school-meeting-checklist";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["school meeting checklist", "IEP meeting prep", "parent teacher conference", "advocating for child in school", "school accommodations"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "Before the Meeting", slug: "before-the-meeting", level: 2 },
+  { text: "During the Meeting", slug: "during-the-meeting", level: 2 },
+  { text: "Questions to Ask", slug: "questions-to-ask", level: 2 },
+  { text: "After the Meeting", slug: "after-the-meeting", level: 2 },
+  { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/school-meeting-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-02-10T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "School Meeting Checklist", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I bring to a school meeting or IEP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bring any recent psychological or medical reports, a list of your child's strengths, a summary of your main concerns, and a notepad to take notes during the meeting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I make sure my child's needs are heard by the teacher?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Keep the focus collaborative rather than confrontational. Share specific examples of what you see at home, and ask the teacher what they are seeing in the classroom. Use phrases like, 'How can we work together to support this?'"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if the school says my child is doing fine, but they struggle at home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is very common. Many children 'mask' or hold it together during the school day and melt down at home. Explain this pattern to the teacher and request accommodations that reduce the cognitive or sensory load during the day."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/school-meeting-hero.jpg"
     type="article"
   />
 
@@ -41,43 +127,141 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_School Meeting Checklist', href: currentUrl }
+          { name: 'School Meeting Checklist', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
+        category="School Support"
         readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        datePublished="Feb 10, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/school-meeting-hero.jpg"
+        imageAlt="Parent taking notes during a collaborative school meeting with a teacher"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            Walking into a school meeting—whether it is a routine parent-teacher conference or a formal Individualized Education Program (IEP) meeting—can feel intimidating.
+            You are the expert on your child, and the school is the expert on education. This checklist will help you bridge that gap collaboratively.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="5 min"
+            age="School-Aged Children"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "How to prepare documentation before the meeting",
+              "Strategies for staying focused and collaborative during the meeting",
+              "Key questions to ask teachers and staff",
+              "What to do if your child 'masks' at school but struggles at home",
+              "Follow-up steps to ensure the plan is put into action"
+            ]}
+          />
 
+          <h2 id="before-the-meeting">Before the Meeting</h2>
+          <p>Preparation is the key to a successful meeting. Do not wait until you sit down to figure out what you want to say.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ActionChecklist
+            items={[
+              "Review the previous IEP or report card. Note any goals that have or haven't been met.",
+              "Write down your top 2-3 concerns. Prioritize these, as meeting time is usually limited.",
+              "Gather your documents. Bring copies of any recent psychological assessments, medical reports, or private therapy summaries.",
+              "Write down your child's strengths. It is important to start the conversation by focusing on what your child does well."
+            ]}
+          />
+
+          <ExpertTip>
+            Talk to your child before the meeting. Ask them what they like about school, what is hard for them, and if there is anything they want you to tell the teacher. This includes them in the process.
+          </ExpertTip>
+
+          <h2 id="during-the-meeting">During the Meeting</h2>
+          <p>It is easy to get emotional when discussing your child's challenges. Keep the focus on collaboration and data.</p>
+
+          <p><strong>Start with the positive:</strong> Acknowledge the teacher's hard work and highlight a positive experience your child had in their class.</p>
+          <p><strong>Address the 'Masking' phenomenon:</strong> If the teacher says, "They are fine at school," but your child is having meltdowns at home, explain this. Say, "It takes all their energy to hold it together during the day, which means they are exhausted and overwhelmed by the time they get home. How can we reduce their cognitive or sensory load at school?"</p>
+
+          <MythVsFact
+            myth="I shouldn't ask for too much or the teacher will be annoyed."
+            fact="Teachers want their students to succeed. Providing clear, practical strategies (like 'He needs a 2-minute break before writing tasks') is much more helpful than leaving the teacher to guess what works."
+          />
+
+          <h2 id="questions-to-ask">Questions to Ask</h2>
+          <p>Do not just listen; actively guide the conversation to get actionable answers.</p>
+          <ul>
+            <li>"What does this behaviour look like in the classroom?"</li>
+            <li>"What strategies have you already tried, and what was the result?"</li>
+            <li>"How can we mirror the school's successful strategies at home?"</li>
+            <li>"If my child becomes overwhelmed, what is the clear plan for them to take a break?"</li>
+            <li>"How will we measure progress on this issue over the next month?"</li>
+          </ul>
+
+          <h2 id="after-the-meeting">After the Meeting</h2>
+          <p>The meeting is only the first step. The follow-up is where change happens.</p>
+          <p>Send a brief, polite email to the teacher summarizing what was agreed upon. For example: "Thank you for meeting today. To confirm our plan, we agreed that Sarah will be allowed to use noise-canceling headphones during independent reading, and I will check her planner every night."</p>
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+          <p>If you feel the school is not understanding your child's needs, or if the current plan is not working, it may be time for a formal psychological assessment or a school consultation service.</p>
+          <p>A clinical psychologist can review the school reports, assess the child, and provide a clinical report with legally and educationally sound recommendations for accommodations.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Prepare your top 2-3 concerns before the meeting starts.",
+              "Bring recent psychological reports and data to support your requests.",
+              "Focus on collaborative problem-solving, not confrontation.",
+              "Address 'masking' if the child is fine at school but exhausted at home.",
+              "Always send a follow-up email summarizing the agreed-upon plan."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
+            datePublished="February 10, 2024"
+            dateModified="March 1, 2024"
             readTime="5 min"
           />
 
+          <FAQAccordion faqs={[
+            {
+              question: "What should I bring to a school meeting or IEP?",
+              answer: "Bring any recent psychological or medical reports, a list of your child's strengths, a summary of your main concerns, and a notepad to take notes during the meeting."
+            },
+            {
+              question: "How can I make sure my child's needs are heard by the teacher?",
+              answer: "Keep the focus collaborative rather than confrontational. Share specific examples of what you see at home, and ask the teacher what they are seeing in the classroom. Use phrases like, 'How can we work together to support this?'"
+            },
+            {
+              question: "What if the school says my child is doing fine, but they struggle at home?",
+              answer: "This is very common. Many children 'mask' or hold it together during the school day and melt down at home. Explain this pattern to the teacher and request accommodations that reduce the cognitive or sensory load during the day."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Autism Early Signs Parents Should Notice", href: "/blog/autism-early-signs" }}
+            next={{ title: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" }}
+          />
+
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

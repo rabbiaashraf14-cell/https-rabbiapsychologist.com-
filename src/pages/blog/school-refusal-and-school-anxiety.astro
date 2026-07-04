@@ -1,0 +1,266 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "School Refusal and School Anxiety: When Mornings Become a Battle";
+const description = "Understand the root causes of school refusal and anxiety in children, and learn practical steps parents can take to support their child and collaborate with the school.";
+const currentUrl = "/blog/school-refusal-and-school-anxiety";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const keywords = ["school refusal", "school anxiety", "child won't go to school", "morning meltdowns", "school avoidance children"];
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "What is School Refusal?", slug: "what-is-school-refusal", level: 2 },
+  { text: "Common Root Causes", slug: "common-root-causes", level: 2 },
+  { text: "The Anxiety Cycle", slug: "the-anxiety-cycle", level: 2 },
+  { text: "What Parents Can Do", slug: "what-parents-can-do", level: 2 },
+  { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/school-refusal-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-04-01T08:00:00+00:00",
+    "dateModified": "2024-04-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "School Refusal and Anxiety", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is school refusal just a child being stubborn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. School refusal is usually driven by severe anxiety, an undiagnosed learning difficulty, or sensory overwhelm. It is a distress response, not deliberate defiance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I do if my child complains of a stomach ache every morning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, rule out actual illness with a doctor. If they are physically healthy, recognize that anxiety often manifests physically in children as stomach aches or headaches. Acknowledge the feeling without letting them stay home just to avoid the anxiety."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I force my child into the car?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Physical force usually escalates anxiety and damages trust. Instead, focus on small steps (like just getting dressed) and collaborate with the school to make arrival less overwhelming."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    keywords={keywords}
+    schema={schema}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    ogImage="/images/blog/school-refusal-hero.jpg"
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'School Refusal and Anxiety', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="School Support & Emotional Regulation"
+        readTime="7 min"
+        datePublished="Apr 1, 2024"
+        dateModified="Apr 1, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/school-refusal-hero.jpg"
+        imageAlt="Parent comforting an anxious child who is wearing a school backpack"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            For some families, weekday mornings are a chaotic mix of tears, pleading, physical complaints, and outright refusal to get in the car.
+            When a child consistently fights going to school, it takes a massive toll on the entire family.
+            Understanding that school refusal is a distress response—not just bad behaviour—is the first step toward helping them.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="7 min"
+            age="Primary to High School"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "The difference between truancy and school refusal",
+              "How anxiety manifests physically in children",
+              "The hidden root causes of school avoidance",
+              "Why letting them stay home can sometimes make anxiety worse",
+              "Practical steps parents can take to ease morning transitions"
+            ]}
+          />
+
+          <h2 id="what-is-school-refusal">What is School Refusal?</h2>
+          <p>School refusal (often clinically termed "emotionally based school avoidance") is very different from truancy. A truant child skips school without their parents' knowledge to do something they find more fun.</p>
+          <p>A child experiencing school refusal is usually at home, with their parents' knowledge, experiencing intense distress and anxiety about attending school.</p>
+
+          <ExpertTip>
+            Many children with school anxiety will complain of headaches or stomach aches right before it is time to leave. These physical symptoms are real—anxiety triggers a stress response in the gut. Validate the feeling, but investigate the cause.
+          </ExpertTip>
+
+          <h2 id="common-root-causes">Common Root Causes</h2>
+          <p>Children do not refuse school for no reason. There is almost always a root cause making the school environment feel unsafe or overwhelmingly difficult.</p>
+          <ul>
+            <li><strong>Separation Anxiety:</strong> Common in younger children, the fear of being away from a parent or caregiver.</li>
+            <li><strong>Social Anxiety or Bullying:</strong> Fear of judgment by peers, feeling isolated, or actively being bullied.</li>
+            <li><strong>Undiagnosed Learning Difficulties:</strong> If a child is secretly struggling to read or do math, school feels like a daily public failure. Avoidance is their defense mechanism.</li>
+            <li><strong>Sensory Overload:</strong> For children with autism or ADHD, the noise, crowds, and fluorescent lights of a school can be physically painful and exhausting.</li>
+          </ul>
+
+          <h2 id="the-anxiety-cycle">The Anxiety Cycle</h2>
+          <p>When a child is terrified of school and you finally say, "Okay, you can stay home today," their anxiety immediately drops. This drop in anxiety feels like a massive reward to the brain.</p>
+          <p>However, the next day, the anxiety returns even stronger because the brain learned that avoidance is the only way to feel safe. Over time, missing school leads to falling behind on work and losing touch with friends, making returning even more terrifying. This is the anxiety cycle.</p>
+
+          <MythVsFact
+            myth="They just need to be punished for refusing to go."
+            fact="Punishing a child for severe anxiety usually escalates their distress and damages their trust in you. Support and problem-solving work better than punishment."
+          />
+
+          <h2 id="what-parents-can-do">What Parents Can Do</h2>
+          <p>Breaking the cycle of school refusal requires a team effort between the parents, the child, and the school.</p>
+
+          <ActionChecklist
+            items={[
+              "Identify the trigger: Talk to your child during a calm moment (not the morning rush) to find out what exactly is making school hard.",
+              "Collaborate with the school: Set up a meeting with the teacher and counselor. Do not hide the problem. Ask if the child can have a 'soft landing' (e.g., arriving 10 minutes early to read quietly in the library).",
+              "Maintain home boundaries: If the child must stay home, it should not be a 'fun' day. No screens, no video games during school hours. Make home boring but safe.",
+              "Break it down: If a full day is too much, aim for a partial day, or even just driving to the school parking lot to build tolerance."
+            ]}
+          />
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+          <p>If school refusal has lasted for more than a couple of weeks, or if it is accompanied by severe depression or self-harm, professional intervention is necessary.</p>
+          <p>A clinical psychologist can provide a psychological assessment to uncover hidden learning or neurodevelopmental issues, and work with the family to create a structured return-to-school plan.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "School refusal is driven by intense anxiety or overwhelm, not defiance.",
+              "Physical symptoms like stomach aches are often how anxiety shows up in the body.",
+              "Look for root causes: bullying, learning difficulties, or sensory overload.",
+              "Allowing avoidance temporarily relieves anxiety but makes the long-term problem worse.",
+              "Collaborate closely with the school to create a safe, gradual return plan."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="April 1, 2024"
+            dateModified="April 1, 2024"
+            readTime="7 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "Is school refusal just a child being stubborn?",
+              answer: "No. School refusal is usually driven by severe anxiety, an undiagnosed learning difficulty, or sensory overwhelm. It is a distress response, not deliberate defiance."
+            },
+            {
+              question: "What should I do if my child complains of a stomach ache every morning?",
+              answer: "First, rule out actual illness with a doctor. If they are physically healthy, recognize that anxiety often manifests physically in children as stomach aches or headaches. Acknowledge the feeling without letting them stay home just to avoid the anxiety."
+            },
+            {
+              question: "Should I force my child into the car?",
+              answer: "Physical force usually escalates anxiety and damages trust. Instead, focus on small steps (like just getting dressed) and collaborate with the school to make arrival less overwhelming."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Learning Difficulties: Early Signs", href: "/blog/learning-difficulties-early-signs" }}
+            next={{ title: "Sensory Processing Difficulties", href: "/blog/sensory-processing-difficulties" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
+      </div>
+    </div>
+  </article>
+</Layout>

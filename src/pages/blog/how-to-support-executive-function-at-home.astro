@@ -1,35 +1,121 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "How To Support Executive Function At Home";
-const description = "Learn more about how to support executive function at home and how to support your child's development.";
+const title = "Executive Function Difficulties in Children: How to Support at Home";
+const description = "Learn what executive function means, how it relates to ADHD, and practical home strategies for planning, working memory, and time management.";
 const currentUrl = "/blog/how-to-support-executive-function-at-home";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["executive function children", "ADHD executive dysfunction", "child working memory", "time management children", "planning skills for kids"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "What is Executive Function?", slug: "what-is-executive-function", level: 2 },
+  { text: "Core Areas of Executive Function", slug: "core-areas", level: 2 },
+  { text: "The Connection with ADHD", slug: "connection-with-adhd", level: 2 },
+  { text: "Practical Home Strategies", slug: "home-strategies", level: 2 },
+  { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/executive-function-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-01-15T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Executive Function", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is executive function?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Executive function refers to the brain's 'management system.' It involves the mental skills needed to plan, focus attention, remember instructions, and juggle multiple tasks successfully."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is executive dysfunction the same as ADHD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost all children with ADHD have executive function difficulties, but you do not need an ADHD diagnosis to struggle with executive function. Things like stress, lack of sleep, or learning differences can also impact it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I help my child remember instructions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break instructions down into single steps. Use visual checklists instead of giving multiple verbal commands at once, and ask your child to repeat the instruction back to you to ensure it was processed."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/executive-function-hero.jpg"
     type="article"
   />
 
@@ -41,43 +127,141 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_How To Support Executive Function At Home', href: currentUrl }
+          { name: 'Executive Function', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="ADHD & Learning"
+        readTime="6 min"
+        datePublished="Jan 15, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/executive-function-hero.jpg"
+        imageAlt="Child looking at a visual checklist while organizing school supplies"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            Does your child often forget their homework, struggle to start a project, or become easily distracted when getting ready in the morning?
+            These challenges are rarely about laziness. Instead, they often point to difficulties with executive function.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="School-Aged Children & Teens"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "What executive function is and why it matters",
+              "The core areas of executive functioning",
+              "How executive function connects to ADHD",
+              "Practical home strategies to support your child",
+              "When to seek an assessment"
+            ]}
+          />
 
+          <h2 id="introduction">Understanding the Brain's Management System</h2>
+          <p>Imagine the brain as an airport. Executive function is the air traffic control tower. It is responsible for managing arrivals, departures, preventing collisions, and keeping everything running smoothly.</p>
+          <p>When a child’s executive function skills are still developing or delayed, they may know <em>what</em> to do, but struggle with the <em>how</em>, <em>when</em>, and <em>where</em> to do it.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ExpertTip>
+            Executive function skills are not fully developed until our mid-twenties. It is normal for children to need support in this area, especially when faced with complex multi-step tasks like a school project.
+          </ExpertTip>
+
+          <h2 id="core-areas">Core Areas of Executive Function</h2>
+          <p>Executive function is an umbrella term that covers several different cognitive skills:</p>
+
+          <ul>
+            <li><strong>Working Memory:</strong> The ability to hold information in mind while using it. (e.g., Remembering a multi-step instruction like "Go upstairs, brush your teeth, and grab your blue sweater.")</li>
+            <li><strong>Planning and Organization:</strong> Figuring out the steps needed to reach a goal and keeping track of materials. (e.g., Knowing what to pack in a school bag.)</li>
+            <li><strong>Task Initiation:</strong> The ability to begin a task without procrastinating, even if it is not highly preferred.</li>
+            <li><strong>Inhibition (Impulse Control):</strong> The ability to stop and think before acting or speaking.</li>
+            <li><strong>Time Management:</strong> Estimating how long a task will take and understanding the passage of time (avoiding "time blindness").</li>
+            <li><strong>Cognitive Flexibility:</strong> The ability to adapt to changes or switch between tasks smoothly.</li>
+          </ul>
+
+          <MythVsFact
+            myth="If a child can memorize every dinosaur name, they have great working memory and shouldn't forget their chores."
+            fact="Long-term memory (facts, interests) is different from working memory (holding instructions in mind right now). A child can be brilliant at recalling facts but still struggle to remember a three-step instruction."
+          />
+
+          <h2 id="connection-with-adhd">The Connection with ADHD</h2>
+          <p>Almost all children diagnosed with ADHD experience significant difficulties with executive function. In fact, many experts consider ADHD primarily a disorder of executive functioning.</p>
+          <p>However, you do not need to have ADHD to have executive function challenges. Stress, lack of sleep, anxiety, and specific learning differences can also impact these skills.</p>
+
+          <h2 id="home-strategies">Practical Home Strategies</h2>
+          <p>The goal is to provide external "scaffolding" until the child’s internal air traffic control system is stronger.</p>
+
+          <ActionChecklist
+            items={[
+              "Make time visual: Use analog clocks or visual timers (like a Time Timer) so they can 'see' time passing.",
+              "Reduce verbal instructions: Instead of telling them 5 things to do, write a short list or use a picture chart.",
+              "Break it down: If 'Clean your room' is too overwhelming, change it to 'Put the books on the shelf, then come tell me.'",
+              "Use the 'Body Double' technique: Simply sitting quietly in the same room while they do homework can help them initiate and stay on task."
+            ]}
+          />
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+          <p>If executive function difficulties are causing daily stress, leading to homework battles, or impacting the child's self-esteem, it may be time to seek a formal assessment or parent guidance.</p>
+          <p>A clinical psychologist can help identify specific areas of weakness and provide tailored strategies for home and school.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Executive function is the brain's management system for planning, focus, and memory.",
+              "Children may know what they need to do, but lack the executive skills to execute the plan.",
+              "ADHD is closely linked to executive dysfunction.",
+              "Externalize the skills: use visual timers, written checklists, and break tasks down into micro-steps.",
+              "Professional support can help clarify the specific challenges and provide a roadmap."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="January 15, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What is executive function?",
+              answer: "Executive function refers to the brain's 'management system.' It involves the mental skills needed to plan, focus attention, remember instructions, and juggle multiple tasks successfully."
+            },
+            {
+              question: "Is executive dysfunction the same as ADHD?",
+              answer: "Almost all children with ADHD have executive function difficulties, but you do not need an ADHD diagnosis to struggle with executive function. Things like stress, lack of sleep, or learning differences can also impact it."
+            },
+            {
+              question: "How can I help my child remember instructions?",
+              answer: "Break instructions down into single steps. Use visual checklists instead of giving multiple verbal commands at once, and ask your child to repeat the instruction back to you to ensure it was processed."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "The Science of Screen Time", href: "/blog/why-screen-time-is-hard-for-children-to-stop" }}
+            next={{ title: "Understanding ADHD vs Hyperactivity", href: "/blog/understanding-adhd-and-hyperactivity-in-children" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

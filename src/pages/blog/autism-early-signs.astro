@@ -1,35 +1,133 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "Autism Early Signs";
-const description = "Learn more about autism early signs and how to support your child's development.";
+const title = "Autism Early Signs Parents Should Notice";
+const description = "Learn early autism signs in children, including communication, play, sensory responses, and when parents should seek developmental guidance.";
 const currentUrl = "/blog/autism-early-signs";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["autism early signs", "signs of autism in toddlers", "autism symptoms children", "autism assessment", "social communication autism"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "Early Social Communication Signs", slug: "social-communication-signs", level: 2 },
+  { text: "Response to Name", slug: "response-to-name", level: 3 },
+  { text: "Eye Contact Differences", slug: "eye-contact", level: 3 },
+  { text: "Gestures and Pointing", slug: "gestures-pointing", level: 3 },
+  { text: "Repetitive Behaviours and Play Differences", slug: "repetitive-behaviours-play", level: 2 },
+  { text: "Sensory Responses", slug: "sensory-responses", level: 2 },
+  { text: "Speech and Language Concerns", slug: "speech-language", level: 2 },
+  { text: "Why Early Support Matters", slug: "early-support", level: 2 },
+  { text: "When to Seek Developmental Assessment", slug: "when-to-seek-assessment", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/autism-early-signs-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-02-05T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are early autism signs parents may notice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Early signs may include differences in eye contact, not responding consistently to their name, delays in pointing or gesturing, repetitive play or movements, and differences in sensory processing, like sensitivity to sounds or textures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does speech delay always mean autism?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Many children experience speech delays without having autism. However, if a speech delay is combined with differences in non-verbal communication (like eye contact, gestures, and sharing interests), it may be a sign to seek a developmental assessment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I wait and see if my child catches up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is generally not recommended to 'wait and see' if you have concerns about your child's development. Early guidance helps parents learn supportive strategies and provides the child with the right environment for their developmental needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I track before an assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is helpful to track how your child communicates (using words, gestures, or pulling you to objects), how they play with toys, how they react to sensory input (sounds, textures, movement), and how they interact with others."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/autism-early-signs-hero.jpg"
     type="article"
   />
 
@@ -41,43 +139,171 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_Autism Early Signs', href: currentUrl }
+          { name: 'Autism Early Signs', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="Autism & Development"
+        readTime="6 min"
+        datePublished="Feb 5, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/autism-early-signs-hero.jpg"
+        imageAlt="Child engaging in focused play with blocks, demonstrating early developmental patterns"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            Parents are often the first to notice when a child’s development feels different.
+            You might observe that your child plays differently than their peers, doesn’t respond when you call their name, or seems delayed in their speech.
+            Understanding early autism signs can help you make informed decisions about seeking support.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="Toddler to Early Childhood"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "The early signs of autism in social communication",
+              "Differences in play and repetitive behaviours",
+              "How sensory processing connects to autism signs",
+              "Why speech delay alone doesn't always mean autism",
+              "When it is helpful to seek a developmental assessment"
+            ]}
+          />
 
+          <h2 id="introduction">Understanding the Early Signs</h2>
+          <p>Autism Spectrum Disorder (ASD) is a neurodevelopmental difference that affects how a person communicates, interacts with the world, and processes sensory information.</p>
+          <p>Signs of autism can sometimes be noticeable in the first two years of life, though for some children, differences become more apparent later when social demands increase.</p>
+          <p>It is important to remember that every child is unique, and displaying one or two signs does not automatically mean a child is autistic. Rather, professionals look for a pattern of behaviours across different areas of development.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ExpertTip>
+            Don't panic if you notice some of these signs. Children develop at different rates. The goal of identifying early signs is not to label, but to understand your child's unique developmental profile so you can provide the right support.
+          </ExpertTip>
+
+          <h2 id="social-communication-signs">Early Social Communication Signs</h2>
+          <p>Differences in social communication are often some of the earliest signs parents notice.</p>
+
+          <h3 id="response-to-name">Response to Name</h3>
+          <p>Many parents report that their child does not respond when their name is called. It might seem as though the child has a hearing problem, even when their hearing is fine.</p>
+          <p>They might respond to a favorite song or the sound of a TV turning on, but not to someone calling their name.</p>
+
+          <h3 id="eye-contact">Eye Contact Differences</h3>
+          <p>A child might make less eye contact than expected, or their eye contact might seem fleeting. They might not look at you when you are talking to them or when they want something.</p>
+          <p>However, many autistic children do make eye contact, but it may feel different—perhaps very intense, or they may avoid it when feeling overwhelmed.</p>
+
+          <h3 id="gestures-pointing">Gestures and Pointing</h3>
+          <p>By 12 to 14 months, most children use gestures like pointing, waving, or reaching. A key early sign of autism is a difference in "joint attention"—the ability to share an experience with someone else.</p>
+          <p>For example, instead of pointing to a bird in the sky to show you, or looking where you point, a child might primarily use your hand as a tool to get what they want (like placing your hand on a jar to open it).</p>
+
+          <h2 id="repetitive-behaviours-play">Repetitive Behaviours and Play Differences</h2>
+          <p>How a child plays can also provide important clues.</p>
+          <ul>
+            <li><strong>Lining things up:</strong> A strong preference for lining up toys or objects, rather than playing with them in expected ways (e.g., lining up cars instead of pretending to drive them).</li>
+            <li><strong>Focusing on parts:</strong> Intensely focusing on parts of an object, like spinning the wheels of a toy car or staring at a fan.</li>
+            <li><strong>Repetitive movements:</strong> Hand-flapping, rocking, spinning, or walking on tiptoes. These are often ways to self-regulate or express excitement.</li>
+            <li><strong>Need for routine:</strong> Becoming very upset by minor changes in routine or transitions.</li>
+          </ul>
+
+          <h2 id="sensory-responses">Sensory Responses</h2>
+          <p>Sensory processing differences are very common in autistic children. They might be overly sensitive (hyper-reactive) or under-sensitive (hypo-reactive) to sensory input.</p>
+          <p>This can look like:</p>
+          <ul>
+            <li>Covering ears for everyday sounds like a vacuum or blender.</li>
+            <li>Strong aversions to certain food textures or clothing tags.</li>
+            <li>Seeking out deep pressure, spinning, or crashing into things.</li>
+            <li>Having a high tolerance for pain.</li>
+          </ul>
+
+          <h2 id="speech-language">Speech and Language Concerns</h2>
+          <p>While speech delay is a common reason parents seek help, a speech delay alone does not equal autism.</p>
+
+          <MythVsFact
+            myth="My child doesn't speak yet, so they must have autism."
+            fact="Many children have isolated speech delays. Professionals look at the broader picture of communication, including non-verbal cues like gestures, eye contact, and social engagement."
+          />
+
+          <p>Some autistic children develop speech on time but use language differently. They might repeat words or phrases they hear on TV (echolalia) or struggle with back-and-forth conversation.</p>
+
+          <h2 id="early-support">Why Early Support Matters</h2>
+          <p>Early identification is not about rushing to a diagnosis; it’s about providing support during critical periods of brain development.</p>
+          <p>Parent guidance and early intervention can help you understand how your child learns best, how to support their communication, and how to navigate sensory challenges at home.</p>
+
+          <h2 id="when-to-seek-assessment">When to Seek Developmental Assessment</h2>
+          <p>If you observe several of these signs, it is helpful to consult a professional. Trust your instincts as a parent.</p>
+          <p>A developmental assessment provides clarity. It helps rule out other concerns (like hearing issues or isolated speech delays) and gives you a roadmap for supporting your child's unique needs.</p>
+
+          <ActionChecklist
+            items={[
+              "Note down specific examples of what you observe in different settings (home, park, daycare).",
+              "Check your child's hearing to rule out auditory issues.",
+              "Discuss your concerns with a pediatrician or a clinical psychologist who specializes in child development.",
+              "Consider a parent consultation to learn home strategies while you wait for a formal assessment."
+            ]}
+          />
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Early signs often involve differences in social communication, such as response to name and eye contact.",
+              "Differences in play, repetitive behaviours, and sensory processing are common indicators.",
+              "Speech delay alone does not confirm autism; non-verbal communication is equally important.",
+              "Early support and parent guidance are crucial for helping your child thrive.",
+              "If you have concerns, seeking a professional developmental assessment is the best next step."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="February 5, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What are early autism signs parents may notice?",
+              answer: "Early signs may include differences in eye contact, not responding consistently to their name, delays in pointing or gesturing, repetitive play or movements, and differences in sensory processing, like sensitivity to sounds or textures."
+            },
+            {
+              question: "Does speech delay always mean autism?",
+              answer: "No. Many children experience speech delays without having autism. However, if a speech delay is combined with differences in non-verbal communication (like eye contact, gestures, and sharing interests), it may be a sign to seek a developmental assessment."
+            },
+            {
+              question: "Should I wait and see if my child catches up?",
+              answer: "It is generally not recommended to 'wait and see' if you have concerns about your child's development. Early guidance helps parents learn supportive strategies and provides the child with the right environment for their developmental needs."
+            },
+            {
+              question: "What should I track before an assessment?",
+              answer: "It is helpful to track how your child communicates (using words, gestures, or pulling you to objects), how they play with toys, how they react to sensory input (sounds, textures, movement), and how they interact with others."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Tantrum vs Meltdown: What is the Difference?", href: "/blog/tantrum-vs-meltdown" }}
+            next={{ title: "School Meeting Checklist for Parents", href: "/blog/school-meeting-checklist" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>
