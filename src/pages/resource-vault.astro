@@ -7,49 +7,69 @@ const breadcrumbs = [
   { name: 'Resources', href: '/resources' },
   { name: 'Resource Vault', href: '/resource-vault' }
 ];
+
+const items = [
+  { type: 'Planner', tag: 'ADHD', title: 'ADHD Home Planner', desc: 'A comprehensive planner for organizing routines, tasks, and home structures for children with ADHD. (24 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Visuals', tag: 'Routine', title: 'Daily Visual Schedule', desc: 'Customizable visual schedule cards to help children navigate daily transitions with less anxiety. (50+ Cards)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Planner', tag: 'Routine', title: 'Morning Routine Planner', desc: 'Step-by-step visual and written guides to reduce morning battles and get out the door on time. (12 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Planner', tag: 'School', title: 'Homework Routine Planner', desc: 'Strategies and visual aids to help your child initiate and complete homework with fewer tears. (15 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Tracker', tag: 'Behaviour', title: 'Behaviour ABC Tracker', desc: 'A template for tracking Antecedents, Behaviours, and Consequences to uncover patterns. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Log', tag: 'Behaviour', title: 'Behaviour Observation Log', desc: 'A structured log for parents and teachers to objectively record frequency and intensity of challenging behaviours. (8 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'System', tag: 'Behaviour', title: 'Reward Chart', desc: 'Positive reinforcement charts designed to encourage and track desired behaviours. (5 Variations)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'System', tag: 'Behaviour', title: 'Token Economy Sheet', desc: 'A more advanced token economy system template for motivating older children. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Sheet', tag: 'Sensory', title: 'Sensory Observation Sheet', desc: 'Help identify your child\'s sensory seekers or avoidant triggers across different environments. (6 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Tracker', tag: 'Sensory', title: 'Meltdown Tracker', desc: 'Document the duration, triggers, and recovery time of meltdowns to better understand sensory overload. (8 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Guide', tag: 'Behaviour', title: 'Tantrum vs Meltdown Guide', desc: 'A quick reference guide to distinguish between behavioral tantrums and sensory meltdowns, and how to respond. (15 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Planner', tag: 'School', title: 'Teacher Meeting Planner', desc: 'An organized template to help you prepare questions and goals before parent-teacher conferences or IEP meetings. (12 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Notes', tag: 'School', title: 'School Observation Notes', desc: 'A guided note-taking sheet for observing your child or their classroom environment. (5 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Workbook', tag: 'Parents', title: 'Parent Reflection Workbook', desc: 'Exercises to help parents process their own emotions and parenting style to better support their child. (30 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Checklist', tag: 'Assessment', title: 'Assessment Preparation Checklist', desc: 'Everything you need to gather and prepare before a psychological or developmental assessment. (5 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Guide', tag: 'Assessment', title: 'Report Review Questions', desc: 'A list of crucial questions to ask your clinician after receiving a diagnostic or educational report. (8 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Planner', tag: 'Routine', title: 'Sleep Routine Planner', desc: 'A calming evening schedule template to help children wind down and improve sleep hygiene. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Planner', tag: 'Routine', title: 'Screen Time Planner', desc: 'Tools and contracts to help establish healthy boundaries and manage difficult screen time transitions. (12 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Cards', tag: 'Emotions', title: 'Emotion Regulation Cards', desc: 'Printable cards offering immediate coping strategies for children experiencing big emotions. (20 Cards)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Sheets', tag: 'Social', title: 'Social Skills Practice Sheets', desc: 'Role-play scenarios and discussion prompts to practice social interactions at home. (15 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Planner', tag: 'Exec Function', title: 'Executive Function Planner', desc: 'Practical exercises for developing routines and improving working memory and organization. (25 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
+  { type: 'Notes', tag: 'Parents', title: 'Parent Consultation Notes', desc: 'A dedicated notebook template to record key takeaways and action items from your consultation sessions. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false }
+];
 ---
 
 <BaseLayout title="Digital Products & Resource Vault for Parents | Rabbia Psychologist" description="Premium digital workbooks, planners, and behavior logs for parents managing ASD and ADHD.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
     <div class="max-w-6xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Resource Vault</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Premium Resource Vault</h1>
       <p class="text-xl text-gray-700 mb-12 text-center max-w-3xl mx-auto">
-        Practical digital tools, workbooks, and templates designed to help you support your child's routines, behaviour, and development at home.
+        Professionally designed digital tools, workbooks, and templates to help you support your child's routines, behaviour, and development at home.
       </p>
 
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <span class="text-sm font-bold text-gray-500 uppercase tracking-wider mt-1 mr-2">Filter By:</span>
+        {['All', 'ADHD', 'Behaviour', 'Routine', 'School', 'Parents', 'Assessment'].map(tag => (
+          <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 cursor-pointer transition-colors border border-gray-200">{tag}</span>
+        ))}
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="worksheets">
-        {[
-          { type: 'Workbook', title: 'ADHD Executive Function Workbook', desc: 'Practical exercises for developing routines and improving working memory.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
-          { type: 'Log', title: 'Functional Behavior Analysis Log', desc: 'Templates for tracking ABCs (Antecedent, Behavior, Consequence) to understand patterns.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
-          { type: 'Mini Course', title: 'School Meeting Prep Course', desc: 'A short guide to preparing for IEPs and parent-teacher meetings.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
-          { type: 'Template', title: 'Home Program Template', desc: 'Structure your child’s after-school routine effectively.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
-          { type: 'Checklist', title: 'Developmental Milestones Tracker', desc: 'Keep track of your child’s progress week over week.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
-          { type: 'Guide', title: 'Report Review Translation Guide', desc: 'Helpful tips for decoding common terms found in educational and psychological reports.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false },
-          { type: 'Checklist', title: 'Autism Early Signs Checklist', desc: 'A parent-friendly guide to observing communication and social signs.', price: 'Free', action: 'Download Free', isFree: true, link: '/free-downloads' },
-          { type: 'Tracker', title: 'Behaviour ABC Tracker', desc: 'A simple sheet to track what happens before and after a behaviour.', price: 'Free', action: 'Download Free', isFree: true, link: '/free-downloads' },
-          { type: 'Planner', title: 'ADHD Home Routine Planner', desc: 'A visual structure guide for morning and evening routines.', price: 'Free', action: 'Download Free', isFree: true, link: '/free-downloads' },
-          { type: 'Starter Pack', title: 'Visual Schedule Starter Pack', desc: 'Basic visual cards to help with daily transitions.', price: 'Coming Soon', action: 'Join Waitlist', isFree: false }
-        ].map(item => (
-          <div class="bg-white p-0 rounded-xl shadow-sm border border-gray-200 flex flex-col h-full overflow-hidden hover:shadow-md transition-shadow">
-            <div class="h-40 bg-brand-navy/10 flex items-center justify-center border-b border-gray-100">
-               <div class="text-brand-navy/30">
-                  <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        {items.map(item => (
+          <div class="bg-white p-0 rounded-2xl shadow-md border border-gray-200 flex flex-col h-full overflow-hidden hover:shadow-xl hover:border-brand-gold/50 transition-all group">
+            <div class="h-48 bg-gradient-to-br from-brand-sky/20 to-brand-cream flex items-center justify-center border-b border-gray-100 relative">
+               <div class="absolute top-4 left-4 bg-white/80 backdrop-blur text-brand-navy text-xs font-bold px-2 py-1 rounded-md shadow-sm border border-gray-100 uppercase tracking-wider">
+                 {item.tag}
+               </div>
+               <div class="text-brand-navy/40 group-hover:scale-110 group-hover:text-brand-gold transition-all duration-300">
+                  <svg class="w-20 h-20 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                </div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
-              <div class="flex justify-between items-start mb-2">
-                <div class="text-sm font-bold text-brand-gold uppercase">{item.type}</div>
-                <div class="text-sm font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded">{item.price}</div>
+              <div class="flex justify-between items-start mb-3">
+                <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">{item.type}</div>
+                <div class="text-xs font-bold text-brand-navy bg-brand-gold/20 px-2 py-1 rounded-md">{item.price}</div>
               </div>
-              <h3 class="text-xl font-bold text-brand-navy mb-3">{item.title}</h3>
-              <p class="text-gray-600 mb-6 flex-grow">{item.desc}</p>
+              <h3 class="text-xl font-bold text-brand-navy mb-3 leading-tight">{item.title}</h3>
+              <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">{item.desc}</p>
 
-              {item.isFree ? (
-                <a href={item.link} class="bg-brand-navy text-white text-center px-4 py-2 rounded-lg font-bold hover:bg-blue-900 w-full mt-auto transition-colors">{item.action}</a>
-              ) : (
-                <button class="bg-white text-brand-navy border-2 border-brand-navy text-center px-4 py-2 rounded-lg font-bold hover:bg-gray-50 w-full mt-auto transition-colors">{item.action}</button>
-              )}
+              <a href="/contact" class="bg-brand-cream text-brand-navy border-2 border-brand-gold/30 text-center px-4 py-3 rounded-xl font-bold hover:bg-brand-navy hover:text-white hover:border-brand-navy w-full mt-auto transition-all block">{item.action}</a>
             </div>
           </div>
         ))}
