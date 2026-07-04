@@ -9,7 +9,7 @@ interface Props {
 
 const { time, age, evidenceBased = true, reviewed = true, parentFriendly = true } = Astro.props;
 ---
-<div class="bg-brand-cream rounded-xl p-6 my-8 border border-brand-border">
+<div class="bg-brand-cream/50 rounded-xl p-6 my-8 border border-brand-border/50 shadow-sm">
   <h3 class="text-brand-navy font-bold text-lg mb-4 flex items-center gap-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

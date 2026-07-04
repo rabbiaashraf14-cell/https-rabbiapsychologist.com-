@@ -1,4 +1,5 @@
 ---
+// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
@@ -23,6 +24,7 @@ const headings = [
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
+    noindex={true}
     title={title}
     description={description}
     canonical={canonicalURL}
@@ -57,14 +59,12 @@ const headings = [
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
         <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
-          <ArticleIntro>
-            Placeholder content for the new article. (To be expanded by copywriter later).
-          </ArticleIntro>
 
-          <QuickFacts time="5 min" age="All Ages" />
 
-          <h2 id="introduction">Introduction</h2>
-          <p>This article is currently being updated. Please check back later for full content.</p>
+
+
+
+          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
 
           <ArticleAuthor
             datePublished="Jan 2024"
