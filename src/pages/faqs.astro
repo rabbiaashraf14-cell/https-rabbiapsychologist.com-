@@ -13,30 +13,257 @@ const breadcrumbs = [
   { name: 'FAQs', href: '/faqs' }
 ];
 
-const faqs = [
+const categories = [
   {
-    question: "Do you provide online consultations globally?",
-    answer: "Yes, I provide online parent consultation and educational support for families worldwide, including the US, UK, Australia, Canada, and the Gulf countries. Please note that international sessions are strictly educational parent-guidance and support-planning, not regulated clinical therapy or diagnosis."
+    title: "Online Parent Guidance",
+    faqs: [
+      {
+        question: "Do you provide online parent consultations internationally?",
+        answer: "Yes, I provide online parent consultation and educational support for families worldwide, including the US, UK, Australia, Canada, and the Gulf countries. Please note that international sessions are strictly educational parent-guidance and support-planning, not regulated clinical therapy or diagnosis."
+      },
+      {
+        question: "What happens in an online parent guidance session?",
+        answer: "We discuss your child's developmental concerns, current challenges, and daily routines. I provide practical, evidence-informed guidance to help you understand your child's needs and create a support plan that works at home."
+      },
+      {
+        question: "Can parents book a session without the child attending?",
+        answer: "Yes. Parent consultation sessions are specifically for parents and caregivers to discuss concerns, learn strategies, and plan support without the child needing to be present."
+      },
+      {
+        question: "Can you guide us if we live outside Pakistan?",
+        answer: "Yes. Many of our families are based in the <a href='/international-families/usa' class='text-brand-trust underline'>USA</a>, <a href='/international-families/uk-europe' class='text-brand-trust underline'>UK & Europe</a>, <a href='/international-families/australia' class='text-brand-trust underline'>Australia</a>, and the <a href='/international-families/middle-east-gulf' class='text-brand-trust underline'>Middle East</a>. The guidance is focused on parenting strategies and support planning that applies globally."
+      },
+      {
+        question: "Is online parent guidance the same as therapy?",
+        answer: "No. Parent guidance focuses on education, coaching, and strategy planning. It is not regulated clinical therapy, medical treatment, or a replacement for local emergency care."
+      },
+      {
+        question: "What should I prepare before a parent consultation?",
+        answer: "It is helpful to write down your main concerns, any specific behaviors you've observed, and questions you want to ask. If you have a psychological report, you can securely share it beforehand for a <a href='/report-review' class='text-brand-trust underline'>report review</a>."
+      }
+    ]
   },
   {
-    question: "What is the difference between parent training and child therapy?",
-    answer: "In parent training, the focus is on equipping you with the tools to manage behaviors and support your child's development at home. Research shows that for many behavioral challenges, training parents is highly effective because you spend the most time with your child and can implement strategies consistently."
+    title: "ADHD Support",
+    faqs: [
+      {
+        question: "How do I know if my child has ADHD or is just active?",
+        answer: "While many children are active, ADHD often involves persistent challenges with attention, hyperactivity, and impulsivity that significantly impact daily life across different settings (home, school, etc.). A <a href='/services/adhd-support' class='text-brand-trust underline'>consultation</a> can help clarify what to look for."
+      },
+      {
+        question: "Can ADHD look like laziness or poor motivation?",
+        answer: "Yes, frequently. Executive function challenges common in ADHD can make starting tasks, staying organized, and sustaining effort very difficult, which is often misinterpreted as laziness."
+      },
+      {
+        question: "Why are mornings difficult for children with ADHD?",
+        answer: "Mornings require a high level of executive functioning—remembering multiple steps, managing time, and transitioning quickly. We can work on visual routines to ease this transition."
+      },
+      {
+        question: "How can I help my child follow routines?",
+        answer: "Using visual schedules, breaking tasks into smaller steps, and providing immediate, clear feedback are effective strategies. We cover these in <a href='/services/behaviour-planning' class='text-brand-trust underline'>behaviour planning</a> sessions."
+      },
+      {
+        question: "Can you help with executive function problems?",
+        answer: "Yes. I provide practical guidance on supporting executive function skills like organization, time management, and task initiation at home."
+      },
+      {
+        question: "Do you provide ADHD medication advice?",
+        answer: "No. Medication decisions must be discussed with a medical doctor, pediatrician, or psychiatrist. I provide behavioural and educational support strategies."
+      }
+    ]
   },
   {
-    question: "Do you assess for Autism or ADHD online?",
-    answer: "No. Formal psychological assessments, diagnosis, and psychological testing require structured, standardized, often in-person evaluations. I provide formal assessments locally in Lahore. For international clients, I provide screening discussions and guidance on what to look for, but not formal diagnoses."
+    title: "Autism / ASD Support",
+    faqs: [
+      {
+        question: "What are early signs of autism parents should notice?",
+        answer: "Early signs may include delayed speech, lack of pointing or shared attention, differences in eye contact, repetitive movements, and strong reactions to sensory input. Read more in our <a href='/blog/autism-early-signs' class='text-brand-trust underline'>Autism Early Signs article</a>."
+      },
+      {
+        question: "Is speech delay always autism?",
+        answer: "No. Speech delays can occur for many reasons. An assessment considers if there are also differences in social communication and restricted or repetitive behaviors."
+      },
+      {
+        question: "Can autism signs appear differently in girls?",
+        answer: "Yes. Girls may sometimes mask their challenges more effectively or have special interests that appear more 'typical', which can lead to delayed identification."
+      },
+      {
+        question: "What should parents do after an autism diagnosis?",
+        answer: "An <a href='/services/asd-support' class='text-brand-trust underline'>ASD Parent Guidance Consultation</a> is a great next step to help you understand the diagnosis and plan practical support strategies for your home."
+      },
+      {
+        question: "Can you diagnose autism online?",
+        answer: "No online formal diagnosis. I provide guidance and next-step planning only. Formal diagnostic assessments must be conducted according to local legal and professional standards, often in person."
+      }
+    ]
   },
   {
-    question: "How many sessions will we need?",
-    answer: "This varies entirely based on your goals. Some parents only need 1-2 sessions to troubleshoot a specific routine issue. Others opt for a structured 4-6 session package for comprehensive behavior planning."
+    title: "Behaviour and Meltdowns",
+    faqs: [
+      {
+        question: "What is the difference between tantrum and meltdown?",
+        answer: "A tantrum is usually goal-directed (wanting something), whereas a meltdown is a reaction to feeling overwhelmed (sensory, emotional, or cognitive overload) and is not within the child's control."
+      },
+      {
+        question: "Why does my child behave well at school but melt down at home?",
+        answer: "This is common. Children may 'hold it together' all day in a structured environment and release their exhaustion and stress when they reach their safe space (home)."
+      },
+      {
+        question: "What is an ABC behaviour tracker?",
+        answer: "An ABC tracker looks at the Antecedent (what happened before), Behaviour (what the child did), and Consequence (what happened after). It's a tool we use in <a href='/services/behaviour-planning' class='text-brand-trust underline'>behaviour planning</a> to understand the function of a behaviour."
+      },
+      {
+        question: "Should I ignore challenging behaviour?",
+        answer: "Not necessarily. It depends on the function of the behaviour. We aim to understand *why* the behaviour is happening and teach alternative, more appropriate ways for the child to communicate their needs."
+      },
+      {
+        question: "How do I manage screen-time meltdowns?",
+        answer: "Transitioning away from screens is hard because it involves shifting from a highly stimulating activity. Visual timers, clear transition warnings, and having a preferred activity ready can help."
+      }
+    ]
+  },
+  {
+    title: "Emotional Regulation",
+    faqs: [
+      {
+        question: "Why does my child cry or shout over small things?",
+        answer: "This can be a sign of emotional dysregulation, where the child's 'emotional cup' is already full, and a small event causes it to overflow."
+      },
+      {
+        question: "How can I teach emotional regulation at home?",
+        answer: "We can work on co-regulation strategies, teaching your child to identify their feelings, and creating a 'calm down' plan before they become overwhelmed."
+      },
+      {
+        question: "Is emotional dysregulation common in ADHD and autism?",
+        answer: "Yes, very common. Differences in executive functioning and sensory processing can make managing emotions more challenging for neurodivergent children."
+      },
+      {
+        question: "What should I do during a meltdown?",
+        answer: "Prioritize safety and calm. Reduce sensory input, minimize talking, and provide a safe space. A meltdown is not a teachable moment; learning happens after everyone is calm."
+      }
+    ]
+  },
+  {
+    title: "Learning and School Concerns",
+    faqs: [
+      {
+        question: "Can you help with IEP or school meetings?",
+        answer: "Yes. In a <a href='/services/school-consultation' class='text-brand-trust underline'>School & IEP Consultation</a>, we can review school reports and prepare you with the right questions and accommodation requests."
+      },
+      {
+        question: "What should I ask the teacher before a school meeting?",
+        answer: "Ask for specific examples of when the child struggles (e.g., transition times, unstructured play, specific subjects) to help pinpoint the underlying difficulty."
+      },
+      {
+        question: "What if the school says my child is lazy?",
+        answer: "We need to reframe this. We look for the underlying barriers—are there attention issues, learning difficulties, or executive function challenges making the work too hard?"
+      },
+      {
+        question: "How do I know if my child has a learning difficulty?",
+        answer: "Signs might include struggling to keep up with peers, avoiding reading/writing, or showing high anxiety around schoolwork. A screening consultation can help decide if a formal assessment is needed."
+      }
+    ]
+  },
+  {
+    title: "Psychological Reports",
+    faqs: [
+      {
+        question: "Can you explain my child’s psychological report?",
+        answer: "Yes. I offer a <a href='/report-review' class='text-brand-trust underline'>Report Review</a> service where we go through the document together, translating clinical jargon into practical next steps."
+      },
+      {
+        question: "What should parents look for in an assessment report?",
+        answer: "Look beyond the diagnosis at the specific recommendations for home and school. Those are your action items."
+      },
+      {
+        question: "What if the report diagnosis does not match what we see at home?",
+        answer: "This is a common concern. A review session can help explore these discrepancies and plan how to communicate your observations to your care team."
+      },
+      {
+        question: "Can you give a second opinion?",
+        answer: "I provide 'report review and guidance,' not a formal legal/medical second opinion, unless it falls within my scope for local clients."
+      }
+    ]
+  },
+  {
+    title: "International Families",
+    faqs: [
+      {
+        question: "Can families in the USA, UK, Europe, Australia, Canada, or Gulf countries book?",
+        answer: "Yes, families worldwide can book online parent guidance sessions to discuss developmental concerns and support planning."
+      },
+      {
+        question: "Do international sessions include diagnosis?",
+        answer: "No. Formal diagnosis must be conducted locally by professionals licensed in your jurisdiction."
+      },
+      {
+        question: "Can you coordinate with my child’s school?",
+        answer: "I can help *you* prepare for school meetings and draft communication, but direct school coordination depends on location and scope."
+      },
+      {
+        question: "Can you suggest what kind of specialist we should see locally?",
+        answer: "Yes, part of the guidance process involves helping you understand which local professionals (e.g., Speech Therapist, Occupational Therapist) might be appropriate next steps."
+      }
+    ]
+  },
+  {
+    title: "Booking, Pricing, and Sessions",
+    faqs: [
+      {
+        question: "How many sessions will we need?",
+        answer: "This varies based on your goals. Some parents need 1-2 sessions for a specific issue, while others opt for a structured package for comprehensive planning."
+      },
+      {
+        question: "What is the difference between one session and a package?",
+        answer: "A single session is great for targeted troubleshooting. Packages allow for deeper strategy development, implementation, and follow-up."
+      },
+      {
+        question: "Do you offer report review sessions?",
+        answer: "Yes, this is a dedicated service designed to help you understand assessment results."
+      },
+      {
+        question: "Are sessions for parents, children, or both?",
+        answer: "Online consultations are strictly for parents and caregivers."
+      },
+      {
+        question: "How do I book?",
+        answer: "You can book directly through the <a href='/book' class='text-brand-trust underline'>booking portal</a>."
+      }
+    ]
+  },
+  {
+    title: "Safety and Scope",
+    faqs: [
+      {
+        question: "What should I do in an emergency?",
+        answer: "If you or your child are experiencing a medical or psychological emergency, please contact your local emergency services or go to the nearest hospital immediately."
+      },
+      {
+        question: "Can website content replace professional care?",
+        answer: "No. Website content is for educational purposes only and does not replace emergency care, medical diagnosis, or direct clinical assessment."
+      },
+      {
+        question: "What are the limits of online guidance?",
+        answer: "Online guidance is educational and strategic. It is not clinical therapy, formal diagnosis, or a replacement for regulated local medical care."
+      }
+    ]
   }
 ];
+
+const schemaFaqs = categories.flatMap(cat => cat.faqs).slice(0, 20).map(faq => ({
+  "@type": "Question",
+  "name": faq.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": faq.answer.replace(/<[^>]*>?/gm, '') // Strip HTML for schema
+  }
+}));
 ---
 
-<Layout title="Frequently Asked Questions">
+<Layout title="FAQs | ADHD, Autism, Parent Guidance & Child Development Support">
   <SEO
-    title="FAQs | Consultation & Services Info"
-    description="Answers to common questions about our global online consultations, parent training, and local assessment services."
+    title="FAQs | ADHD, Autism, Parent Guidance & Child Development Support"
+    description="Answers for parents about ADHD, autism, behaviour, meltdowns, school concerns, report review, online guidance, international sessions, booking, and service boundaries."
   />
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
@@ -46,7 +273,16 @@ const faqs = [
         Find quick answers regarding our services, approach, and booking process.
       </p>
 
-      <FAQAccordion faqs={faqs} />
+
+      <div class="space-y-12">
+        {categories.map(category => (
+          <div>
+            <h2 class="text-2xl font-bold text-brand-navy mb-6 border-b border-gray-200 pb-2">{category.title}</h2>
+            <FAQAccordion faqs={category.faqs} />
+          </div>
+        ))}
+      </div>
+
 
       <div class="mt-16 text-center">
         <p class="text-lg text-gray-700 mb-6">Still have questions?</p>
@@ -57,4 +293,10 @@ const faqs = [
     </div>
   </div>
   <StickyMobileBookingCTA />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": schemaFaqs
+})} />
 </Layout>

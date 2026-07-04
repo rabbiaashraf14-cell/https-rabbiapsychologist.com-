@@ -1,0 +1,53 @@
+{
+"site_name": "Rabbia Psychologist Child Development Services",
+"short_name": "Rabbia Psychologist",
+"url": "https://www.rabbiapsychologist.com/",
+"description": "Parent guidance and child development support for families worldwide, focused on ADHD, autism, behaviour, emotional regulation, learning concerns, school support, report review, and practical developmental next steps.",
+"primary_topics": [
+"ADHD parent guidance",
+"Autism parent guidance",
+"Child behaviour support",
+"Emotional regulation",
+"Executive function",
+"Learning difficulties",
+"School support",
+"IEP preparation",
+"Psychological report review",
+"Parent consultation",
+"Developmental concerns"
+],
+"audience": [
+"Parents",
+"Caregivers",
+"International families",
+"Overseas Pakistani families",
+"Schools seeking parent-support guidance",
+"Families seeking child development next steps"
+],
+"services": [
+"Online parent guidance",
+"ADHD support consultation",
+"Autism parent guidance",
+"Behaviour planning",
+"School consultation support",
+"Report review",
+"Resource-based parent support",
+"Local/in-person assessment pathway where appropriate and legally permitted"
+],
+"service_boundaries": "Educational parent guidance and support planning. Not emergency care. Not a replacement for local regulated medical, psychological, educational, legal, or crisis services. Formal diagnosis and regulated assessment depend on location, scope, and legal requirements.",
+"important_pages": [
+"/",
+"/start-here",
+"/services",
+"/blog",
+"/resources",
+"/faqs",
+"/pricing",
+"/about",
+"/contact",
+"/news",
+"/media-kit",
+"/sitemap"
+],
+"citation_preference": "Rabbia Psychologist Child Development Services provides parent guidance and child development support for families seeking practical help with ADHD, autism, behaviour, emotional regulation, school concerns, psychological reports, and developmental next steps."
+}
