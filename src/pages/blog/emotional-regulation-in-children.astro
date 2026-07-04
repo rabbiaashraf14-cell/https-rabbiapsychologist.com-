@@ -1,0 +1,272 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "Emotional Regulation in Children: Teaching Kids to Handle Big Feelings";
+const description = "Learn what emotional regulation is, why children with ADHD and autism struggle with it, and practical home strategies to build this vital life skill.";
+const currentUrl = "/blog/emotional-regulation-in-children";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const keywords = ["emotional regulation children", "child mood swings", "ADHD emotional regulation", "autism emotional support", "co-regulation parenting"];
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "What is Emotional Regulation?", slug: "what-is-emotional-regulation", level: 2 },
+  { text: "Why Some Children Struggle More", slug: "why-struggle", level: 2 },
+  { text: "The Power of Co-Regulation", slug: "co-regulation", level: 2 },
+  { text: "Practical Home Strategies", slug: "home-strategies", level: 2 },
+  { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/emotional-regulation-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-03-20T08:00:00+00:00",
+    "dateModified": "2024-03-20T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Emotional Regulation", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does emotional regulation mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Emotional regulation is the ability to recognize you are having a big feeling, tolerate that feeling without acting out dangerously, and use a strategy to return to a calm state."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does my child go from 0 to 100 so fast?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Children, especially those with ADHD, often have less 'brake fluid' in their brain. Their emotional center reacts strongly before their logical brain has time to step in and apply the brakes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calm down a highly emotional child?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Before you can teach a child to calm down (self-regulation), you must share your calm with them (co-regulation). Lower your voice, reduce words, stay physically present, and breathe slowly."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    keywords={keywords}
+    schema={schema}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    ogImage="/images/blog/emotional-regulation-hero.jpg"
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'Emotional Regulation', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="Behaviour & Parenting"
+        readTime="6 min"
+        datePublished="Mar 20, 2024"
+        dateModified="Mar 20, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/emotional-regulation-hero.jpg"
+        imageAlt="Parent kneeling down to eye level, comforting a frustrated child"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            Some children seem to take life's little bumps in stride, while others react to a broken cookie as if the world has ended.
+            If your child frequently goes from "0 to 100" in a matter of seconds, they are likely struggling with a core developmental skill: emotional regulation.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="6 min"
+            age="Toddlers to Teens"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "What emotional regulation actually looks like in practice",
+              "Why children with ADHD and autism struggle more with big feelings",
+              "The critical difference between self-regulation and co-regulation",
+              "Actionable home strategies to teach emotional control",
+              "When to consult a professional for parent guidance"
+            ]}
+          />
+
+          <h2 id="what-is-emotional-regulation">What is Emotional Regulation?</h2>
+          <p>Emotional regulation is not about ignoring feelings or pretending to be happy all the time. It is a three-step process:</p>
+          <ul>
+            <li><strong>Recognition:</strong> Realizing you are experiencing a big emotion (e.g., "I feel hot and tight—I am getting angry").</li>
+            <li><strong>Tolerance:</strong> Being able to sit with that uncomfortable feeling without lashing out violently.</li>
+            <li><strong>Recovery:</strong> Using a tool or strategy to return the nervous system to a baseline, calm state.</li>
+          </ul>
+          <p>This is a complex neurological process. Children are not born with it; it must be taught, modeled, and practiced over many years.</p>
+
+          <ExpertTip>
+            Do not try to teach emotional regulation skills while the child is actively upset. A dysregulated brain cannot learn. Teach the skills when they are completely calm, and prompt them to use the skills when they are upset.
+          </ExpertTip>
+
+          <h2 id="why-struggle">Why Some Children Struggle More</h2>
+          <p>If your child has ADHD, autism, or sensory processing differences, emotional regulation is naturally harder.</p>
+          <p>In ADHD, the brain's "brakes" (the prefrontal cortex) are often delayed in development. This means the emotional reaction happens instantly, before the logical brain can step in and say, "Wait, it's just a cookie."</p>
+          <p>In autism, poor emotional regulation is often the result of sensory or cognitive overload. The child's nervous system is taking in too much data from the environment, leading to a meltdown.</p>
+
+          <MythVsFact
+            myth="My child throws fits because they are trying to manipulate me."
+            fact="While some behaviour is goal-driven, true emotional dysregulation is a loss of control. The child is overwhelmed and lacks the skills to manage the intensity of their feelings."
+          />
+
+          <h2 id="co-regulation">The Power of Co-Regulation</h2>
+          <p>A child cannot learn to self-regulate until they have experienced thousands of hours of <strong>co-regulation</strong>. Co-regulation means lending the child your calm nervous system when theirs is out of control.</p>
+          <p>When a child is screaming, our natural instinct is often to yell back to get them to stop. This adds fuel to the fire. Instead, co-regulation looks like:</p>
+          <ul>
+            <li>Dropping your volume to a whisper.</li>
+            <li>Using very few words (language processing shuts down during stress).</li>
+            <li>Getting down on their physical level.</li>
+            <li>Taking deep, visible breaths yourself.</li>
+          </ul>
+
+          <h2 id="home-strategies">Practical Home Strategies</h2>
+          <p>Building emotional regulation takes time, but you can start laying the groundwork today.</p>
+
+          <ActionChecklist
+            items={[
+              "Name it to tame it: Validate their feelings out loud. 'I see you are so frustrated that the tower fell down.'",
+              "Create a 'Calm Corner': Designate a cozy spot with sensory items (weighted blanket, fidgets) where they can go to recover. Never use it as a punishment.",
+              "Practice deep breathing when calm: Blow bubbles or pretend to blow out birthday candles together.",
+              "Model your own regulation: Let them see you manage frustration. 'I'm feeling stressed about traffic. I'm going to take three deep breaths.'"
+            ]}
+          />
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+          <p>If a child's lack of emotional regulation leads to frequent aggression, self-harm, severe school disruption, or leaves the whole family walking on eggshells, it is time to seek professional support.</p>
+          <p>A parent guidance consultation can help you build a personalized plan to reduce triggers, improve your co-regulation skills, and explicitly teach your child how to manage their inner world.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Emotional regulation means recognizing, tolerating, and recovering from big feelings.",
+              "Children with ADHD and autism have neurological reasons why this is much harder for them.",
+              "You must 'co-regulate' (share your calm) before a child can learn to 'self-regulate'.",
+              "Teach calming strategies like deep breathing only when the child is already calm.",
+              "Model your own healthy emotional regulation out loud for your child to see."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="March 20, 2024"
+            dateModified="March 20, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What does emotional regulation mean?",
+              answer: "Emotional regulation is the ability to recognize you are having a big feeling, tolerate that feeling without acting out dangerously, and use a strategy to return to a calm state."
+            },
+            {
+              question: "Why does my child go from 0 to 100 so fast?",
+              answer: "Children, especially those with ADHD, often have less 'brake fluid' in their brain. Their emotional center reacts strongly before their logical brain has time to step in and apply the brakes."
+            },
+            {
+              question: "How do I calm down a highly emotional child?",
+              answer: "Before you can teach a child to calm down (self-regulation), you must share your calm with them (co-regulation). Lower your voice, reduce words, stay physically present, and breathe slowly."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Speech Delay vs Autism", href: "/blog/speech-delay-vs-autism" }}
+            next={{ title: "Tantrum vs Meltdown", href: "/blog/tantrum-vs-meltdown" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
+      </div>
+    </div>
+  </article>
+</Layout>

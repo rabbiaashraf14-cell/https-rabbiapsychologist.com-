@@ -1,35 +1,121 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "Behaviour Is Communication";
-const description = "Learn more about behaviour is communication and how to support your child's development.";
+const title = "Behaviour Is Communication: Decoding What Your Child Needs";
+const description = "Learn why challenging behaviour happens, how to decode what your child is trying to say, and when parents should seek behavioural support.";
 const currentUrl = "/blog/behaviour-is-communication";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["behaviour is communication", "child behaviour concerns", "decoding child behaviour", "tantrums", "parenting guidance", "autism behaviour support"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "The ABCs of Behaviour", slug: "abcs-of-behaviour", level: 2 },
+  { text: "The Four Main Functions of Behaviour", slug: "four-functions", level: 2 },
+  { text: "Sensory vs. Behavioural Needs", slug: "sensory-vs-behavioural", level: 2 },
+  { text: "How Parents Can Respond Effectively", slug: "how-parents-can-respond", level: 2 },
+  { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/behaviour-communication-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-02-22T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Behaviour Is Communication", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does 'behaviour is communication' mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It means that children often act out when they cannot find the words or lack the emotional regulation skills to express what they need, such as avoiding a task, seeking attention, or managing sensory overload."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my child is acting out for attention or because they are overwhelmed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Look at the triggers. If the behaviour stops when you give them attention, it's likely attention-seeking. If they continue to be distressed even when comforted or in a quiet room, it may be sensory or emotional overwhelm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I punish my child for challenging behaviour?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Punishment often suppresses behaviour temporarily but doesn't teach a new skill. It is much more effective to understand the function of the behaviour and teach the child a better way to get their needs met (like asking for a break)."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/behaviour-communication-hero.jpg"
     type="article"
   />
 
@@ -41,43 +127,155 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_Behaviour Is Communication', href: currentUrl }
+          { name: 'Behaviour Is Communication', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="Behaviour & Parenting"
+        readTime="6 min"
+        datePublished="Feb 22, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/behaviour-communication-hero.jpg"
+        imageAlt="Parent calmly talking to a child, demonstrating positive behaviour support"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            When a child acts out, throws a toy, or refuses to follow an instruction, it is easy to view them as being "naughty" or "stubborn."
+            However, in developmental psychology, we look at behaviour differently: every behaviour is a form of communication.
+            Once parents understand what a child is trying to say, the behaviour becomes much easier to manage.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="Toddler to Teen"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "The ABC model for understanding behaviour triggers",
+              "The four main reasons children act out",
+              "How to tell the difference between sensory needs and behavioural issues",
+              "Practical strategies to respond to challenging moments",
+              "When to seek professional parent guidance"
+            ]}
+          />
 
+          <h2 id="introduction">Changing the Lens on Behaviour</h2>
+          <p>Children, especially those with developmental differences like ADHD, autism, or language delays, often lack the vocabulary or emotional regulation skills to express complex feelings.</p>
+          <p>When they feel overwhelmed, tired, hungry, or frustrated, they use their bodies and actions to communicate.</p>
+          <p>Instead of asking, "How do I stop this behaviour?" the better question is, "What is this behaviour trying to tell me?"</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ExpertTip>
+            Think of challenging behaviour as an iceberg. The behaviour you see (yelling, hitting, refusing) is just the tip. The real cause (anxiety, sensory overload, lack of skills, hunger) is hidden beneath the surface.
+          </ExpertTip>
+
+          <h2 id="abcs-of-behaviour">The ABCs of Behaviour</h2>
+          <p>Professionals use the "ABC Model" to decode behaviour. You can use this at home, too:</p>
+          <ul>
+            <li><strong>Antecedent:</strong> What happened exactly before the behaviour? (e.g., Mom said it was time to turn off the iPad).</li>
+            <li><strong>Behaviour:</strong> What did the child do? (e.g., The child screamed and threw a toy).</li>
+            <li><strong>Consequence:</strong> What happened immediately after? (e.g., Mom gave the child 5 more minutes on the iPad to calm them down).</li>
+          </ul>
+          <p>By tracking the ABCs, you can often identify a pattern that explains why the behaviour keeps happening.</p>
+
+          <h2 id="four-functions">The Four Main Functions of Behaviour</h2>
+          <p>Almost all behaviour serves one of four functions. Understanding these can change how you respond.</p>
+
+          <h3>1. Escape or Avoidance</h3>
+          <p>The child wants to get out of a non-preferred task or situation. For example, tearing up a worksheet because math is too hard, or running away when asked to brush their teeth.</p>
+
+          <h3>2. Attention Seeking</h3>
+          <p>The child wants interaction. Even negative attention (like being yelled at) is sometimes better than no attention for a child. This might look like poking a sibling while you are on a phone call.</p>
+
+          <h3>3. Access to Tangibles</h3>
+          <p>The child wants an item or activity they cannot have right now. A classic example is having a tantrum in the grocery store because they want a candy bar.</p>
+
+          <h3>4. Sensory Regulation (Automatic)</h3>
+          <p>The behaviour feels good internally or helps the child manage sensory input. This includes rocking, humming, or chewing on clothing. It is not done for attention or escape; it is done for internal regulation.</p>
+
+          <MythVsFact
+            myth="If I ignore the bad behaviour, it will just go away."
+            fact="Ignoring only works if the behaviour is strictly for attention. If a child is acting out to escape homework, ignoring them actually rewards them—they successfully got out of the task!"
+          />
+
+          <h2 id="sensory-vs-behavioural">Sensory vs. Behavioural Needs</h2>
+          <p>It is crucial to differentiate between a behavioural tantrum and a sensory meltdown. A tantrum is driven by a goal (wanting a toy). A meltdown is driven by overload (too much noise, too much stress) and is out of the child's control.</p>
+          <p>You can negotiate with a tantrum, but you must soothe and reduce demands during a meltdown.</p>
+
+          <h2 id="how-parents-can-respond">How Parents Can Respond Effectively</h2>
+          <p>Once you identify the function, you can teach the child a better way to communicate.</p>
+
+          <ActionChecklist
+            items={[
+              "For Escape: Teach the child to ask for a 'break' using words or a visual card, instead of throwing things.",
+              "For Attention: Provide frequent, proactive positive attention when they are playing nicely. Teach them to tap you and say 'Excuse me'.",
+              "For Tangibles: Use 'First/Then' language. 'First we put away the shoes, then you can have the tablet.'",
+              "For Sensory: Provide appropriate sensory outlets, like a chewy necklace or a quiet tent space, before they become overwhelmed."
+            ]}
+          />
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+          <p>If challenging behaviour is affecting your family's daily life, causing safety concerns, or if the child is struggling significantly at school, it is time to seek support.</p>
+          <p>Parent guidance consultations can help you develop a personalized behaviour plan that focuses on teaching new skills rather than just punishing the old ones.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Every challenging behaviour is a form of communication.",
+              "Look at the Antecedent, Behaviour, and Consequence (ABCs) to find patterns.",
+              "Behaviours usually serve one of four functions: Escape, Attention, Tangibles, or Sensory.",
+              "Teach your child a replacement skill (like asking for a break) rather than just punishing.",
+              "Professional parent guidance can provide you with practical, tailored strategies."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="February 22, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What does 'behaviour is communication' mean?",
+              answer: "It means that children often act out when they cannot find the words or lack the emotional regulation skills to express what they need, such as avoiding a task, seeking attention, or managing sensory overload."
+            },
+            {
+              question: "How do I know if my child is acting out for attention or because they are overwhelmed?",
+              answer: "Look at the triggers. If the behaviour stops when you give them attention, it's likely attention-seeking. If they continue to be distressed even when comforted or in a quiet room, it may be sensory or emotional overwhelm."
+            },
+            {
+              question: "Should I punish my child for challenging behaviour?",
+              answer: "Punishment often suppresses behaviour temporarily but doesn't teach a new skill. It is much more effective to understand the function of the behaviour and teach the child a better way to get their needs met (like asking for a break)."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Screen Time and Emotional Regulation", href: "/blog/screen-time-and-emotional-regulation" }}
+            next={{ title: "Parent Guidance After an Autism Diagnosis", href: "/blog/parent-guidance-after-an-autism-diagnosis" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

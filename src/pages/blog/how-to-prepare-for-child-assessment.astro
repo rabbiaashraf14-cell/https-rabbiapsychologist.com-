@@ -1,0 +1,273 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "How to Prepare for a Child Developmental Assessment";
+const description = "Learn what documents to bring, what to expect during the evaluation, and exactly what to tell your child before a psychological or developmental assessment.";
+const currentUrl = "/blog/how-to-prepare-for-child-assessment";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const keywords = ["prepare for child assessment", "child psychological testing", "what to tell child before evaluation", "developmental assessment prep", "IEP documentation"];
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "Gathering Your Documents", slug: "gathering-documents", level: 2 },
+  { text: "What to Tell Your Child", slug: "what-to-tell-child", level: 2 },
+  { text: "What to Expect on Testing Day", slug: "what-to-expect", level: 2 },
+  { text: "How to Manage Your Own Anxiety", slug: "managing-parent-anxiety", level: 2 },
+  { text: "Next Steps After the Assessment", slug: "next-steps", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/assessment-prep-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-04-10T08:00:00+00:00",
+    "dateModified": "2024-04-10T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Prepare for Assessment", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I tell my child they are going to the doctor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Avoid using the word 'doctor' if it makes them think of shots or medicine. Instead, say they are going to meet someone who helps kids learn how their brains work by doing puzzles, drawing, and talking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to bring my child's old report cards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bringing report cards, teacher emails, previous therapy reports, and a timeline of developmental milestones provides critical context for the psychologist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I stay in the room with my child during testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the child's age and the specific tests. For older children, parents usually wait outside so the child isn't distracted. For very young children or those with severe separation anxiety, parents may sit quietly in the back of the room."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    keywords={keywords}
+    schema={schema}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    ogImage="/images/blog/assessment-prep-hero.jpg"
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'Prepare for Assessment', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="Assessments & Development"
+        readTime="6 min"
+        datePublished="Apr 10, 2024"
+        dateModified="Apr 10, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/assessment-prep-hero.jpg"
+        imageAlt="Parent organizing school documents and medical files into a folder at a desk"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            Booking a developmental or psychoeducational assessment for your child is a big step.
+            Once the appointment is on the calendar, many parents feel a mix of relief and anxiety.
+            Proper preparation will not only ease your nerves but will ensure the clinical psychologist gets the most accurate picture of your child.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="6 min"
+            age="All Ages"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "The essential documents and history you need to gather",
+              "The exact phrasing to use when explaining the test to your child",
+              "What a typical testing day looks like",
+              "How to manage your own stress so your child stays calm",
+              "What happens immediately after the assessment is complete"
+            ]}
+          />
+
+          <h2 id="gathering-documents">Gathering Your Documents</h2>
+          <p>A psychologist needs context. How your child performs in the clinic for two hours is important, but how they perform in daily life over the last five years is even more crucial.</p>
+
+          <ActionChecklist
+            items={[
+              "Report cards: Bring the last 2-3 years of school reports.",
+              "Previous assessments: If they have had speech therapy, occupational therapy, or medical evaluations, bring those reports.",
+              "Teacher communications: Bring a few printed emails if there has been ongoing correspondence about behaviour or learning struggles.",
+              "A timeline: Write down a rough timeline of when they hit major milestones (walking, talking) and when you first noticed your main concern."
+            ]}
+          />
+
+          <ExpertTip>
+            Do not forget to write down your child's strengths! Parents get so focused on documenting the problems that they forget to mention what the child loves to do. Strengths are a vital part of building a successful support plan.
+          </ExpertTip>
+
+          <h2 id="what-to-tell-child">What to Tell Your Child</h2>
+          <p>How you frame the assessment will dictate your child's anxiety level on the day.</p>
+
+          <MythVsFact
+            myth="I should just tell them we are going to see a doctor."
+            fact="For many children, 'doctor' means getting a shot or taking medicine. Avoid medical terminology. Frame it as meeting a 'learning helper' or a 'brain coach'."
+          />
+
+          <p><strong>For younger children (Under 8):</strong><br/>
+          "Tomorrow we are going to meet someone named Rabbia. She helps kids figure out how their brains learn best. You are going to play with some blocks, look at pictures, and do some puzzles. There are no shots and no medicine."</p>
+
+          <p><strong>For older children and teens:</strong><br/>
+          "You know how reading (or math, or focusing) has been really frustrating lately? We are going to meet with a psychologist to figure out why. They are going to give you some different types of puzzles and questions. It's not a school test you can fail; it's just to see how your brain works so we can make school easier."</p>
+
+          <h2 id="what-to-expect">What to Expect on Testing Day</h2>
+          <p>Ensure your child has a good night's sleep and a solid breakfast (bring their medication if they take it, unless the psychologist specified otherwise).</p>
+          <p>The assessment usually involves a mix of:</p>
+          <ul>
+            <li>Conversations and interviews.</li>
+            <li>Table-top tasks (like block building or pattern matching).</li>
+            <li>Academic tasks (reading a paragraph, doing some math).</li>
+            <li>iPad or computer-based attention tasks.</li>
+          </ul>
+          <p>The clinician will provide breaks as needed. Bring water and a preferred, non-messy snack.</p>
+
+          <h2 id="managing-parent-anxiety">How to Manage Your Own Anxiety</h2>
+          <p>Children are emotional sponges. If you are visibly nervous about the testing, they will assume there is something to be afraid of.</p>
+          <p>Remember that the assessment is not a judgment of your parenting. It is simply an information-gathering mission. Your child is the exact same person walking out of the clinic as they were walking in; you will just have a better instruction manual for them.</p>
+
+          <h2 id="next-steps">Next Steps After the Assessment</h2>
+          <p>You will not get a full diagnosis or report on the day of testing. The clinician needs time to score the data, analyze the patterns, and write a comprehensive report.</p>
+          <p>You will typically be scheduled for a "feedback session" a few weeks later. During this session, the psychologist will explain the results without the child present, allowing you to ask questions freely.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Gather all relevant school and medical history before the appointment.",
+              "Do not use the word 'doctor'; explain the visit as doing puzzles to learn how their brain works.",
+              "Ensure they are well-rested and bring a preferred snack.",
+              "Manage your own anxiety so you do not accidentally transfer it to your child.",
+              "Be prepared to wait a few weeks for the final report and feedback session."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="April 10, 2024"
+            dateModified="April 10, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "Should I tell my child they are going to the doctor?",
+              answer: "Avoid using the word 'doctor' if it makes them think of shots or medicine. Instead, say they are going to meet someone who helps kids learn how their brains work by doing puzzles, drawing, and talking."
+            },
+            {
+              question: "Do I need to bring my child's old report cards?",
+              answer: "Yes. Bringing report cards, teacher emails, previous therapy reports, and a timeline of developmental milestones provides critical context for the psychologist."
+            },
+            {
+              question: "Can I stay in the room with my child during testing?",
+              answer: "It depends on the child's age and the specific tests. For older children, parents usually wait outside so the child isn't distracted. For very young children or those with severe separation anxiety, parents may sit quietly in the back of the room."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Sensory Processing Difficulties", href: "/blog/sensory-processing-difficulties" }}
+            next={{ title: "Parent Guidance for Behaviour", href: "/blog/parent-guidance-for-behaviour-concerns" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
+      </div>
+    </div>
+  </article>
+</Layout>

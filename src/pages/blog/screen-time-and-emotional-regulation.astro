@@ -1,35 +1,121 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "Screen Time And Emotional Regulation";
-const description = "Learn more about screen time and emotional regulation and how to support your child's development.";
+const title = "Screen Time and Emotional Regulation in Children";
+const description = "Discover the link between screen time and emotional regulation, why transitions are hard, and how parents can manage screens to reduce meltdowns.";
 const currentUrl = "/blog/screen-time-and-emotional-regulation";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["screen time children", "emotional regulation", "child meltdowns", "screen time limits", "parenting advice screen time"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "Why Screens Hijack the Brain", slug: "why-screens-hijack-the-brain", level: 2 },
+  { text: "The Transition Struggle", slug: "the-transition-struggle", level: 2 },
+  { text: "Signs Screen Time is Impacting Regulation", slug: "signs-of-impact", level: 2 },
+  { text: "Practical Strategies for Parents", slug: "practical-strategies", level: 2 },
+  { text: "When to Seek Support", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/screen-time-regulation-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-02-18T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Screen Time and Emotional Regulation", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is my child so angry when I turn off the TV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Screens provide a constant stream of dopamine, a feel-good chemical in the brain. Turning off the screen causes a sudden drop in dopamine, leading to frustration, irritability, and often a tantrum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I ban all screen time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually, no. Complete bans can make screens a 'forbidden fruit' and increase desire. It is more effective to teach healthy boundaries, use visual timers, and ensure screens do not replace physical play and sleep."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long before bed should screen time end?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is highly recommended to stop all screen use at least one hour before bedtime. The blue light from screens suppresses melatonin (the sleep hormone), and the engaging content keeps the brain alert."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/screen-time-regulation-hero.jpg"
     type="article"
   />
 
@@ -41,43 +127,138 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_Screen Time And Emotional Regulation', href: currentUrl }
+          { name: 'Screen Time & Regulation', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="Behaviour & Parenting"
+        readTime="6 min"
+        datePublished="Feb 18, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/screen-time-regulation-hero.jpg"
+        imageAlt="Parent setting a visual timer next to a child using a tablet"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            In modern parenting, screen time is one of the most common battlegrounds. Many parents report that their child is calm while watching a screen, but becomes irritable, aggressive, or deeply upset the moment the screen is turned off.
+            Understanding the link between screens and your child's emotional regulation is the key to bringing peace back to your routines.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="Toddler to Teen"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "Why screens have such a powerful hold on a child's brain",
+              "Why the transition away from screens causes meltdowns",
+              "Signs that screen time is negatively impacting your child's mood",
+              "Practical, brain-based strategies to manage screen time limits",
+              "How to replace screen time with regulating activities"
+            ]}
+          />
 
+          <h2 id="why-screens-hijack-the-brain">Why Screens Hijack the Brain</h2>
+          <p>Screens—especially fast-paced video games and short-form videos—are designed to capture and hold attention. They do this by triggering the release of dopamine, the brain's reward chemical.</p>
+          <p>When a child is watching a screen, their brain is receiving a steady, effortless stream of dopamine. This feels incredibly rewarding, and the child's brain naturally wants this feeling to continue.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ExpertTip>
+            For children with ADHD, whose brains naturally crave higher levels of stimulation, pulling away from a highly stimulating screen is physically and neurologically more difficult than it is for neurotypical children.
+          </ExpertTip>
+
+          <h2 id="the-transition-struggle">The Transition Struggle</h2>
+          <p>When you say, "Time to turn it off," you are asking the brain to do something very difficult: abruptly cut off its supply of dopamine and transition to a much less stimulating task (like eating dinner or doing homework).</p>
+          <p>This sudden drop in stimulation feels uncomfortable, leading to emotional dysregulation. The resulting tantrum is the child's way of expressing that discomfort and protesting the loss of the reward.</p>
+
+          <MythVsFact
+            myth="My child throws a tantrum when I take the iPad away because they are spoiled."
+            fact="The tantrum is a neurological response to a sudden drop in dopamine. It is about brain chemistry and difficulty with transitions, not just 'bad behaviour.'"
+          />
+
+          <h2 id="signs-of-impact">Signs Screen Time is Impacting Regulation</h2>
+          <p>It is normal for a child to be mildly disappointed when screen time ends. However, you should take a closer look at screen habits if you notice:</p>
+          <ul>
+            <li>Severe meltdowns, aggression, or prolonged crying when the screen is removed.</li>
+            <li>Loss of interest in non-screen activities (toys, going outside, playing with siblings).</li>
+            <li>Difficulty falling asleep or staying asleep.</li>
+            <li>Increased irritability, defiance, or mood swings during non-screen times.</li>
+          </ul>
+
+          <h2 id="practical-strategies">Practical Strategies for Parents</h2>
+          <p>The goal is not necessarily to ban screens forever, but to build structure that helps the child's brain regulate.</p>
+
+          <ActionChecklist
+            items={[
+              "Use visual timers: Instead of saying '5 minutes,' set a visual timer so they can see time running out.",
+              "Give transition warnings: Say, 'When this episode is over, the TV goes off,' rather than stopping a video in the middle.",
+              "Bridge the transition: Have a moderately engaging activity ready immediately after the screen goes off (e.g., a snack or a preferred toy).",
+              "Create screen-free zones: Keep screens out of bedrooms and away from the dinner table."
+            ]}
+          />
+
+          <h2 id="when-to-seek-support">When to Seek Support</h2>
+          <p>If screen time has become an unmanageable addiction that is disrupting your family's life, sleep, or your child's school attendance, it is time to seek professional support.</p>
+          <p>A parent guidance consultation can help you design a step-by-step behaviour plan to regain control of screen time without constant conflict.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Screens provide a massive dopamine hit that makes turning them off physically difficult for the brain.",
+              "Tantrums during screen transitions are a sign of emotional dysregulation, not just stubbornness.",
+              "Children with ADHD often find screen transitions even harder due to their need for stimulation.",
+              "Use visual timers, clear warnings, and 'bridging' activities to ease the transition.",
+              "Stop screen use at least one hour before bed to protect your child's sleep routine."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="February 18, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "Why is my child so angry when I turn off the TV?",
+              answer: "Screens provide a constant stream of dopamine, a feel-good chemical in the brain. Turning off the screen causes a sudden drop in dopamine, leading to frustration, irritability, and often a tantrum."
+            },
+            {
+              question: "Should I ban all screen time?",
+              answer: "Usually, no. Complete bans can make screens a 'forbidden fruit' and increase desire. It is more effective to teach healthy boundaries, use visual timers, and ensure screens do not replace physical play and sleep."
+            },
+            {
+              question: "How long before bed should screen time end?",
+              answer: "It is highly recommended to stop all screen use at least one hour before bedtime. The blue light from screens suppresses melatonin (the sleep hormone), and the engaging content keeps the brain alert."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" }}
+            next={{ title: "Behaviour Is Communication", href: "/blog/behaviour-is-communication" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

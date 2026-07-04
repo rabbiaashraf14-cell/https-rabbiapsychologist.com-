@@ -1,0 +1,262 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "IEP and School Support Planning: A Parent's Guide";
+const description = "From IEP confusion to a clear support plan. Learn how to prepare for school meetings, request effective accommodations, and turn school concerns into practical next steps.";
+const currentUrl = "/blog/iep-and-school-support-planning";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const keywords = ["IEP planning", "school support plan", "special education accommodations", "child learning plan", "advocating for child in school"];
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "What is an IEP or Support Plan?", slug: "what-is-an-iep", level: 2 },
+  { text: "The Role of Assessment Reports", slug: "role-of-assessment-reports", level: 2 },
+  { text: "Requesting the Right Accommodations", slug: "requesting-accommodations", level: 2 },
+  { text: "Communicating with Teachers", slug: "communicating-with-teachers", level: 2 },
+  { text: "When to Seek a School Consultation", slug: "when-to-seek-consultation", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/iep-support-planning-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-05-10T08:00:00+00:00",
+    "dateModified": "2024-05-10T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "IEP & School Support Planning", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does an IEP do for my child?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An Individualized Education Program (IEP) is a formal plan that legally outlines the special education instruction, supports, and accommodations your child needs to succeed in school."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a formal diagnosis to get school support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the school system, but generally, yes. A formal psychoeducational assessment provides the data necessary to prove a child needs specific accommodations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if the school says they don't have the resources?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many effective accommodations (like seating a child near the teacher, allowing sensory breaks, or reducing homework volume) cost nothing. A clinical psychologist can help you advocate for practical, low-cost strategies."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    keywords={keywords}
+    schema={schema}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    ogImage="/images/blog/iep-support-planning-hero.jpg"
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'IEP & School Support Planning', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="School Support & Assessments"
+        readTime="7 min"
+        datePublished="May 10, 2024"
+        dateModified="May 10, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/iep-support-planning-hero.jpg"
+        imageAlt="Parent and teacher reviewing an individualized education plan document together"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            From IEP confusion to a clear support plan.
+            Navigating the special education system can feel like learning a foreign language.
+            When your child is struggling academically or behaviourally, you need to know how to prepare for school meetings, request the right accommodations, and turn school concerns into practical next steps.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="7 min"
+            age="School-Aged Children"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "The purpose of an Individualized Education Program (IEP)",
+              "How to use psychological assessment reports effectively",
+              "Examples of practical, evidence-based classroom accommodations",
+              "How to communicate collaboratively with teachers",
+              "When to bring a clinical professional into the process"
+            ]}
+          />
+
+          <h2 id="what-is-an-iep">What is an IEP or Support Plan?</h2>
+          <p>An Individualized Education Program (IEP) or a specialized support plan is a formal document designed to ensure that a child with an identified disability or learning difference receives specialized instruction and related services.</p>
+          <p>It is not a punishment, and it does not mean your child is "less than." It levels the playing field. Think of an IEP like giving glasses to a child who is near-sighted; it provides the specific tool they need to access the curriculum.</p>
+
+          <ExpertTip>
+            Do not wait for the school to initiate the process. If you see your child struggling with reading, experiencing severe anxiety about school, or unable to focus, you have the right to request a meeting to discuss a support plan.
+          </ExpertTip>
+
+          <h2 id="role-of-assessment-reports">The Role of Assessment Reports</h2>
+          <p>To get an IEP, the school needs data. A formal psychoeducational assessment provides the roadmap.</p>
+          <p>The report will identify the specific cognitive or academic roadblock (e.g., poor working memory, dyslexia, or ADHD) and provide a list of recommended accommodations. This document is your strongest tool when advocating for your child, as it shifts the conversation from "opinion" to "clinical evidence."</p>
+
+          <MythVsFact
+            myth="Having an IEP will stigmatize my child forever."
+            fact="Unsupported learning difficulties cause far more stigma and self-esteem damage than an IEP. A good support plan allows a child to experience success, building their confidence."
+          />
+
+          <h2 id="requesting-accommodations">Requesting the Right Accommodations</h2>
+          <p>Accommodations change <em>how</em> a child learns, not <em>what</em> they learn. The best accommodations are highly specific.</p>
+
+          <ActionChecklist
+            items={[
+              "For ADHD/Attention: Request seating near the point of instruction, frequent movement breaks, and visual checklists on their desk.",
+              "For Dyslexia/Reading: Request audiobooks, extra time on written tests, and not being forced to read aloud without preparation.",
+              "For Sensory/Autism: Request the ability to wear noise-canceling headphones, access to a quiet 'chill out' space, and warnings before loud alarms.",
+              "For Executive Function: Request that the teacher checks the child's planner at the end of the day, and break long projects into weekly mini-deadlines."
+            ]}
+          />
+
+          <h2 id="communicating-with-teachers">Communicating with Teachers</h2>
+          <p>Teachers want their students to succeed, but they are often managing 30 different needs at once. Approach the IEP meeting as a collaboration, not a battle.</p>
+          <p>Instead of saying, "You need to fix this," try saying, "We notice he is melting down after math class. What are you seeing in the classroom, and how can we work together to support him?"</p>
+          <p>Always send a follow-up email after a meeting summarizing what was agreed upon so there is a written record of the plan.</p>
+
+          <h2 id="when-to-seek-consultation">When to Seek a School Consultation</h2>
+          <p>Sometimes, despite your best efforts, the school plan is not working, or the school refuses to implement the recommendations in the psychological report.</p>
+          <p>A School/IEP Consultation with a clinical psychologist can be invaluable. The psychologist can review the existing IEP, explain the clinical data to the school staff in educational terms, and help draft highly specific, legally sound accommodations that the school can actually implement.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "An IEP is a tool that levels the playing field for children with learning differences.",
+              "A formal psychoeducational assessment provides the clinical evidence needed for support.",
+              "Request specific accommodations (e.g., 'extra time') rather than vague concepts.",
+              "Approach school meetings collaboratively, and always get the plan in writing.",
+              "A clinical psychologist can consult with the school if the plan is not working."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="May 10, 2024"
+            dateModified="May 10, 2024"
+            readTime="7 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What does an IEP do for my child?",
+              answer: "An Individualized Education Program (IEP) is a formal plan that legally outlines the special education instruction, supports, and accommodations your child needs to succeed in school."
+            },
+            {
+              question: "Do I need a formal diagnosis to get school support?",
+              answer: "It depends on the school system, but generally, yes. A formal psychoeducational assessment provides the data necessary to prove a child needs specific accommodations."
+            },
+            {
+              question: "What if the school says they don't have the resources?",
+              answer: "Many effective accommodations (like seating a child near the teacher, allowing sensory breaks, or reducing homework volume) cost nothing. A clinical psychologist can help you advocate for practical, low-cost strategies."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "Sleep, Routine, and Child Behaviour", href: "/blog/sleep-routine-and-child-behaviour" }}
+            next={{ title: "Parent Burnout and Child Development", href: "/blog/parent-burnout-child-development-support" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
+      </div>
+    </div>
+  </article>
+</Layout>

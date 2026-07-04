@@ -1,35 +1,122 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "Tantrum Vs Meltdown";
-const description = "Learn more about tantrum vs meltdown and how to support your child's development.";
+const title = "Tantrum vs Meltdown: What is the Difference?";
+const description = "Understand the critical difference between a behavioural tantrum and a sensory meltdown, and learn how to respond effectively to each.";
 const currentUrl = "/blog/tantrum-vs-meltdown";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["tantrum vs meltdown", "sensory meltdown autism", "toddler tantrums", "emotional regulation", "parenting challenging behaviour"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "What is a Tantrum?", slug: "what-is-a-tantrum", level: 2 },
+  { text: "What is a Meltdown?", slug: "what-is-a-meltdown", level: 2 },
+  { text: "How to Tell the Difference", slug: "how-to-tell", level: 2 },
+  { text: "How to Respond to a Tantrum", slug: "respond-tantrum", level: 2 },
+  { text: "How to Respond to a Meltdown", slug: "respond-meltdown", level: 2 },
+  { text: "When to Seek Professional Guidance", slug: "when-to-seek-guidance", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/tantrum-vs-meltdown-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-02-02T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Tantrum vs Meltdown", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the main difference between a tantrum and a meltdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A tantrum is goal-driven; the child wants something and will usually calm down once they get it or realize they won't. A meltdown is caused by sensory or emotional overload; the child has lost control and cannot be reasoned with until they feel safe and calm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I ignore a meltdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. While ignoring can sometimes work for attention-seeking tantrums, ignoring a meltdown can be harmful. A child having a meltdown is in distress and needs a calm, supportive presence to co-regulate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do only autistic children have meltdowns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. While meltdowns are common in children with autism and ADHD due to sensory and emotional regulation challenges, any child (or adult) can experience a meltdown if pushed past their neurological limits of stress and exhaustion."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/tantrum-vs-meltdown-hero.jpg"
     type="article"
   />
 
@@ -41,43 +128,151 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_Tantrum Vs Meltdown', href: currentUrl }
+          { name: 'Tantrum vs Meltdown', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="Behaviour & Emotional Regulation"
+        readTime="6 min"
+        datePublished="Feb 2, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/tantrum-vs-meltdown-hero.jpg"
+        imageAlt="Parent sitting quietly on the floor offering a calm presence to a distressed child"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            To the untrained eye, a tantrum and a meltdown look exactly the same: crying, screaming, throwing things, and refusing to listen.
+            However, underneath the surface, they are driven by entirely different mechanisms in the brain.
+            Understanding this difference is crucial, because the parenting strategy that fixes a tantrum will make a meltdown much worse.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="Toddler to School-Age"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "The goal-driven nature of a tantrum",
+              "The neurological overload behind a meltdown",
+              "Key signs to help you tell the difference in the moment",
+              "Why you can't reason with a meltdown",
+              "Effective, distinct strategies for responding to both"
+            ]}
+          />
 
+          <h2 id="what-is-a-tantrum">What is a Tantrum?</h2>
+          <p>A tantrum is <strong>goal-driven behaviour</strong>. The child wants something—a toy, a candy bar, or to stay at the park—and they are using an intense emotional display to try and get it.</p>
+          <p>During a tantrum, the child is still largely in control of their behaviour. They are actively monitoring your reaction to see if their strategy is working.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <h2 id="what-is-a-meltdown">What is a Meltdown?</h2>
+          <p>A meltdown is a <strong>neurological reaction to being overwhelmed</strong>. It is not goal-driven. The child's nervous system has taken in more sensory, emotional, or cognitive information than it can process.</p>
+          <p>During a meltdown, the brain's 'fight or flight' response has taken over. The child is no longer in control of their behaviour and they are not looking for an audience or a reward.</p>
+
+          <ExpertTip>
+            Think of a tantrum like driving a car and deliberately honking the horn to get someone to move. Think of a meltdown like the car's engine overheating and smoking—the driver has lost control of the vehicle.
+          </ExpertTip>
+
+          <h2 id="how-to-tell">How to Tell the Difference</h2>
+          <p>In the heat of the moment, look for these clues:</p>
+
+          <ul>
+            <li><strong>The Audience Check:</strong> A child having a tantrum will occasionally check to see if you are watching. A child having a meltdown does not care if anyone is there.</li>
+            <li><strong>The Resolution:</strong> If you give a child what they want during a tantrum, it usually stops immediately. If you give a child what they want during a meltdown, they usually keep crying because their nervous system is still overloaded.</li>
+            <li><strong>Safety:</strong> A child having a tantrum will usually make sure they don't get hurt when they throw themselves down. A child in a meltdown may act without any regard for their own safety.</li>
+          </ul>
+
+          <MythVsFact
+            myth="Older children don't have meltdowns; they just need more discipline."
+            fact="While tantrums usually decrease with age as children learn to communicate, meltdowns can happen at any age (even adulthood) if the person's neurological threshold for stress or sensory input is crossed."
+          />
+
+          <h2 id="respond-tantrum">How to Respond to a Tantrum</h2>
+          <p>Because a tantrum is a learned behaviour to achieve a goal, the best response is clear boundaries and lack of reward.</p>
+
+          <ActionChecklist
+            items={[
+              "Acknowledge the feeling briefly: 'I know you are mad we are leaving the park.'",
+              "Hold the boundary: Do not give in to the demand, or you teach them that screaming works.",
+              "Ignore the behaviour (if safe): Do not provide excessive attention, eye contact, or arguing while they are screaming.",
+              "Praise the calm down: Once they settle, offer positive attention and transition to the next activity."
+            ]}
+          />
+
+          <h2 id="respond-meltdown">How to Respond to a Meltdown</h2>
+          <p>Because a meltdown is an involuntary stress response, you cannot discipline or reason it away. Your goal is strictly safety and de-escalation.</p>
+
+          <ActionChecklist
+            items={[
+              "Reduce input: Turn off lights, stop talking, and move them to a quiet space if possible.",
+              "Provide a calm presence: Sit near them. You do not need to speak; your calm, regulated body language helps co-regulate their nervous system.",
+              "Wait it out: Do not ask questions or make demands ('Tell me what's wrong!'). Their brain's language center is currently offline.",
+              "Offer comfort later: Once the storm passes, they will likely be exhausted. Offer a drink, a hug, or a quiet activity."
+            ]}
+          />
+
+          <h2 id="when-to-seek-guidance">When to Seek Professional Guidance</h2>
+          <p>Frequent meltdowns are often a sign of underlying challenges, such as sensory processing differences, autism, or anxiety.</p>
+          <p>If your child is having daily meltdowns that impact family life, school, or safety, a parent guidance consultation can help you identify their specific triggers and develop a proactive plan to reduce overload before it happens.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "A tantrum is a goal-driven behaviour used to get a desired outcome.",
+              "A meltdown is an involuntary neurological response to being overwhelmed.",
+              "Giving in stops a tantrum, but it does not stop a meltdown.",
+              "For tantrums, hold the boundary and do not reward the behaviour with excessive attention.",
+              "For meltdowns, reduce sensory input, stay quiet, and provide a calm, safe presence."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="February 2, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What is the main difference between a tantrum and a meltdown?",
+              answer: "A tantrum is goal-driven; the child wants something and will usually calm down once they get it or realize they won't. A meltdown is caused by sensory or emotional overload; the child has lost control and cannot be reasoned with until they feel safe and calm."
+            },
+            {
+              question: "Should I ignore a meltdown?",
+              answer: "No. While ignoring can sometimes work for attention-seeking tantrums, ignoring a meltdown can be harmful. A child having a meltdown is in distress and needs a calm, supportive presence to co-regulate."
+            },
+            {
+              question: "Do only autistic children have meltdowns?",
+              answer: "No. While meltdowns are common in children with autism and ADHD due to sensory and emotional regulation challenges, any child (or adult) can experience a meltdown if pushed past their neurological limits of stress and exhaustion."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "How to Support Executive Function", href: "/blog/how-to-support-executive-function-at-home" }}
+            next={{ title: "Autism Early Signs Parents Should Notice", href: "/blog/autism-early-signs" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

@@ -1,35 +1,122 @@
 ---
-// TODO: Part 2 - Complete article content
 import Layout from '../../layouts/Layout.astro';
 import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import ArticleHero from '../../components/blog/ArticleHero.astro';
 import ArticleIntro from '../../components/blog/ArticleIntro.astro';
 import QuickFacts from '../../components/blog/QuickFacts.astro';
 import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 
-const title = "Understanding Psychological Reports";
-const description = "Learn more about understanding psychological reports and how to support your child's development.";
+const title = "Understanding Psychological Reports: A Guide for Parents";
+const description = "Learn how to read a child's psychological report, translate clinical jargon into practical next steps, and advocate for school accommodations.";
 const currentUrl = "/blog/understanding-psychological-reports";
 const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
 
+const keywords = ["psychological reports", "child assessment report", "understanding IEP documentation", "cognitive testing", "educational accommodations"];
+
 const headings = [
-  { text: "Introduction", slug: "introduction", level: 2 }
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "The Purpose of the Report", slug: "purpose-of-the-report", level: 2 },
+  { text: "Key Sections of a Psychological Report", slug: "key-sections", level: 2 },
+  { text: "Understanding the Numbers", slug: "understanding-the-numbers", level: 2 },
+  { text: "Red Flags to Look For", slug: "red-flags", level: 2 },
+  { text: "How to Use the Recommendations", slug: "using-recommendations", level: 2 },
+  { text: "When to Seek a Report Review", slug: "when-to-seek-review", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/psychological-report-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-02-15T08:00:00+00:00",
+    "dateModified": "2024-03-01T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Understanding Psychological Reports", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a psychological report include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard report includes the child's background history, observations during testing, the actual test results (cognitive, academic, behavioural), clinical conclusions, and a list of specific recommendations for home and school."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the report focus so much on my child's weaknesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In order to secure funding, an IEP, or specific school accommodations, a report must clinically prove 'impairment' or a 'deficit.' It is a legal and medical document, not a complete reflection of your child's personality or potential."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I ask the school to follow the recommendations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. While schools are not always legally bound to follow every single recommendation from a private report, the data provides strong evidence to support your requests during an IEP or support planning meeting."
+        }
+      }
+    ]
+  }
 ];
 ---
 
 <Layout title={`${title} | Rabbia Psychologist`} description={description}>
   <SEO
-    noindex={true}
     title={title}
     description={description}
+    keywords={keywords}
+    schema={schema}
     canonical={canonicalURL}
     ogTitle={title}
     ogDescription={description}
+    ogImage="/images/blog/psychological-report-hero.jpg"
     type="article"
   />
 
@@ -41,43 +128,147 @@ const headings = [
         <Breadcrumbs paths={[
           { name: 'Resources', href: '/resources' },
           { name: 'Blog', href: '/blog' },
-          { name: 'SHORT_Understanding Psychological Reports', href: currentUrl }
+          { name: 'Psychological Reports', href: currentUrl }
         ]} />
       </div>
 
       <ArticleHero
         title={title}
-        category="Child Development"
-        readTime="5 min"
-        datePublished="Jan 2024"
-        dateModified="Mar 2024"
+        category="Assessments & School Support"
+        readTime="6 min"
+        datePublished="Feb 15, 2024"
+        dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/placeholder-hero.jpg"
-        imageAlt={title}
+        imageSrc="/images/blog/psychological-report-hero.jpg"
+        imageAlt="Parent reviewing a structured psychological assessment document with a pen"
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
-        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
 
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
 
+          <ArticleIntro>
+            You have waited months for an assessment, attended the feedback session, and finally received a thick, 20-page psychological report.
+            Now you are looking at terms like "percentiles," "working memory," and "processing speed."
+            Translating this clinical document into practical help for your child is the next crucial step.
+          </ArticleIntro>
 
+          <QuickFacts
+            time="6 min"
+            age="School-Aged Children"
+          />
 
+          <WhatYouWillLearn
+            items={[
+              "The standard structure of a child's psychological report",
+              "How to understand percentiles and standard scores simply",
+              "Why reports sound so negative (and why you shouldn't panic)",
+              "How to translate recommendations into school accommodations",
+              "When to seek professional help to review an old report"
+            ]}
+          />
 
+          <h2 id="purpose-of-the-report">The Purpose of the Report</h2>
+          <p>A psychological report has two main jobs: to answer the question of <em>why</em> a child is struggling, and to provide evidence to secure support (like an IEP or therapy funding).</p>
+          <p>Because its job is to secure support, it must legally document "impairment." This is why reports often sound very negative. It is not because your child doesn't have amazing strengths, but because "amazing strengths" do not trigger school funding.</p>
 
-          <div class="bg-brand-cream p-8 rounded-xl text-center shadow-sm border border-brand-border my-12"><h3 class="text-2xl font-bold text-brand-navy mb-2">Article Update In Progress</h3><p class="text-gray-600">This content is currently being expanded by our clinical team. Please check back soon.</p></div>
+          <ExpertTip>
+            Read the report once all the way through, then put it away for 24 hours. The first read is often highly emotional. The second read will be much more practical.
+          </ExpertTip>
+
+          <h2 id="key-sections">Key Sections of a Psychological Report</h2>
+          <p>Most comprehensive reports follow a similar structure:</p>
+          <ul>
+            <li><strong>Background History:</strong> A summary of your child's early development, medical history, and school history. <em>(Check this section closely for factual errors).</em></li>
+            <li><strong>Behavioral Observations:</strong> How your child acted during the test. Were they anxious? Distracted? Hardworking? This provides context for the scores.</li>
+            <li><strong>Test Results:</strong> The hard data. This usually includes Cognitive (IQ) testing, Academic achievement, and Behavioural/Emotional questionnaires.</li>
+            <li><strong>Summary and Formulation:</strong> Where the psychologist pulls all the data together to explain <em>why</em> your child is struggling and provides any formal diagnoses.</li>
+            <li><strong>Recommendations:</strong> The most important section. A bulleted list of what should happen next at home, at school, and clinically.</li>
+          </ul>
+
+          <h2 id="understanding-the-numbers">Understanding the Numbers</h2>
+          <p>Psychologists use statistics to compare your child to other children exactly their age. The most common term you will see is "Percentile."</p>
+
+          <MythVsFact
+            myth="My child scored in the 50th percentile on reading. That's an F (50%)!"
+            fact="Percentiles are not test grades. The 50th percentile means your child scored better than 50 out of 100 children their age. It is exactly average."
+          />
+
+          <p>Generally speaking:</p>
+          <ul>
+            <li><strong>90th percentile and above:</strong> High / Superior</li>
+            <li><strong>25th to 75th percentile:</strong> Average range (where most children score)</li>
+            <li><strong>9th to 24th percentile:</strong> Low Average (might struggle, but not severely delayed)</li>
+            <li><strong>Below the 9th percentile:</strong> Very Low / Impaired (indicates a need for significant support)</li>
+          </ul>
+
+          <h2 id="using-recommendations">How to Use the Recommendations</h2>
+          <p>The recommendations section is your roadmap. However, some recommendations are vague (e.g., "Provide a quiet space"). You need to translate these into actionable school accommodations.</p>
+
+          <ActionChecklist
+            items={[
+              "Highlight the top 3-4 recommendations that you feel will make the biggest immediate difference.",
+              "Rewrite vague recommendations into specific requests for the IEP. (e.g., change 'Provide a quiet space' to 'Student will be allowed to use noise-canceling headphones during independent reading').",
+              "Share a copy of the report (or just the summary/recommendations) with your child's teacher and the school's special education coordinator.",
+              "Keep the original report safe. You will need it for future school transitions or funding applications."
+            ]}
+          />
+
+          <h2 id="when-to-seek-review">When to Seek a Report Review</h2>
+          <p>Sometimes parents receive a report from a clinic or a school, but they do not fully understand what it means for daily life, or the school refuses to implement the findings.</p>
+          <p>A Report Review consultation with a clinical psychologist can help. They can translate the jargon, explain the cognitive profile, and help you draft specific, evidence-based requests for your next school meeting.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Psychological reports focus heavily on deficits to secure necessary funding and support.",
+              "Percentiles are not school grades; the 50th percentile is exactly average.",
+              "Check the background history section for any factual errors.",
+              "The recommendations section is the most important part—use it to request specific IEP accommodations.",
+              "If you are confused by a past report, a clinical consultation can help translate it into practical steps."
+            ]}
+          />
 
           <ArticleAuthor
-            datePublished="Jan 2024"
-            dateModified="Mar 2024"
-            readTime="5 min"
+            datePublished="February 15, 2024"
+            dateModified="March 1, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "What does a psychological report include?",
+              answer: "A standard report includes the child's background history, observations during testing, the actual test results (cognitive, academic, behavioural), clinical conclusions, and a list of specific recommendations for home and school."
+            },
+            {
+              question: "Why does the report focus so much on my child's weaknesses?",
+              answer: "In order to secure funding, an IEP, or specific school accommodations, a report must clinically prove 'impairment' or a 'deficit.' It is a legal and medical document, not a complete reflection of your child's personality or potential."
+            },
+            {
+              question: "Can I ask the school to follow the recommendations?",
+              answer: "Yes. While schools are not always legally bound to follow every single recommendation from a private report, the data provides strong evidence to support your requests during an IEP or support planning meeting."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "School Meeting Checklist for Parents", href: "/blog/school-meeting-checklist" }}
+            next={{ title: "Screen Time and Emotional Regulation", href: "/blog/screen-time-and-emotional-regulation" }}
           />
 
           <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
         </div>
 
+        {/* Sidebar / Table of Contents */}
         <div class="lg:col-span-4 order-first lg:order-last">
           <TableOfContents headings={headings} />
         </div>
+
       </div>
     </div>
   </article>

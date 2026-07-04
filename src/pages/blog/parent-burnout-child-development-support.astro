@@ -1,0 +1,266 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import WarningBox from '../../components/blog/WarningBox.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import PrevNextNav from '../../components/blog/PrevNextNav.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "Parent Burnout When Supporting a Child with Developmental Needs";
+const description = "Raising a child with ADHD, autism, or learning difficulties carries a heavy emotional load. Learn the signs of parent burnout and why seeking your own support is critical.";
+const currentUrl = "/blog/parent-burnout-child-development-support";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const keywords = ["parent burnout", "special needs parenting", "caregiver fatigue", "parenting an autistic child", "ADHD parent stress"];
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 },
+  { text: "The Invisible Load of Special Needs Parenting", slug: "the-invisible-load", level: 2 },
+  { text: "Signs You Are Experiencing Burnout", slug: "signs-of-burnout", level: 2 },
+  { text: "The Cycle of Guilt and Exhaustion", slug: "guilt-and-exhaustion", level: 2 },
+  { text: "Realistic Strategies for Survival", slug: "realistic-strategies", level: 2 },
+  { text: "When to Seek Professional Support for Yourself", slug: "when-to-seek-support", level: 2 }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": "https://www.rabbiapsychologist.com/images/blog/parent-burnout-hero.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Rabbia Ashraf",
+      "jobTitle": "Clinical Psychologist",
+      "url": "https://www.rabbiapsychologist.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
+      }
+    },
+    "datePublished": "2024-05-15T08:00:00+00:00",
+    "dateModified": "2024-05-15T08:00:00+00:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalURL
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rabbiapsychologist.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rabbiapsychologist.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Parent Burnout", "item": canonicalURL }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it normal to feel angry or resentful about parenting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It is entirely normal to feel grief, anger, and resentment when raising a child with high developmental needs. These feelings do not mean you love your child any less; they mean you are exhausted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I take a break when my child only wants me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is a common challenge, especially with separation anxiety. Start micro-breaks (5 minutes alone in a room). Gradually build a network of safe people (like a partner or trusted sitter) and tolerate the child's short-term distress while they learn you will always return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can parent consultation help with burnout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Parent consultation focuses on giving you effective strategies to reduce daily battles, which directly lowers your stress. It also provides a safe, non-judgmental space to process the heavy emotional load you are carrying."
+        }
+      }
+    ]
+  }
+];
+---
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    keywords={keywords}
+    schema={schema}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    ogImage="/images/blog/parent-burnout-hero.jpg"
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'Parent Burnout', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="Parent Support"
+        readTime="6 min"
+        datePublished="May 15, 2024"
+        dateModified="May 15, 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/parent-burnout-hero.jpg"
+        imageAlt="Exhausted parent sitting on the couch with their head in their hands while a child plays nearby"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+
+        {/* Main Content Area */}
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-[820px] mx-auto text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-a:text-brand-trust hover:prose-a:text-blue-700 prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            When we talk about child development, the focus is almost entirely on the child.
+            Therapies, assessments, school plans, and routines are all designed to help the child succeed.
+            But behind every well-supported child is an exhausted parent managing the logistics, absorbing the meltdowns, and carrying an invisible emotional load.
+          </ArticleIntro>
+
+          <QuickFacts
+            time="6 min"
+            age="Parents & Caregivers"
+          />
+
+          <WhatYouWillLearn
+            items={[
+              "The reality of the 'invisible load' of special needs parenting",
+              "How to recognize the physical and emotional signs of burnout",
+              "Why guilt is the enemy of recovery",
+              "Realistic strategies to survive when you cannot just 'take a vacation'",
+              "How parent consultation supports the parent, not just the child"
+            ]}
+          />
+
+          <h2 id="the-invisible-load">The Invisible Load of Special Needs Parenting</h2>
+          <p>Parenting is hard for everyone, but raising a neurodivergent child or a child with developmental delays requires a different level of vigilance.</p>
+          <p>You are not just a parent. You are an occupational therapist, an IEP advocate, a sensory-meltdown de-escalator, a schedule manager, and a translator for the rest of the world. This constant state of hyper-vigilance keeps your nervous system in "fight or flight" mode for years.</p>
+
+          <ExpertTip>
+            Burnout is not a sign of weakness. It is a biological response to prolonged, inescapable stress. You cannot pour from an empty cup, and you cannot co-regulate a dysregulated child if your own nervous system is fried.
+          </ExpertTip>
+
+          <h2 id="signs-of-burnout">Signs You Are Experiencing Burnout</h2>
+          <p>Parent burnout goes beyond just needing a nap. It is a chronic state of physical, emotional, and mental exhaustion. Signs include:</p>
+          <ul>
+            <li><strong>Emotional Detachment:</strong> Feeling numb or disconnected from your child, or just going through the motions.</li>
+            <li><strong>A Short Fuse:</strong> Yelling over minor infractions that you used to handle calmly.</li>
+            <li><strong>Physical Symptoms:</strong> Chronic headaches, stomach issues, or getting sick frequently because your immune system is depressed.</li>
+            <li><strong>Resentment:</strong> Feeling jealous of parents with neurotypical children, and then feeling crushing guilt for having those thoughts.</li>
+          </ul>
+
+          <MythVsFact
+            myth="Good parents never feel angry at their children."
+            fact="Anger and resentment are normal human responses to chronic stress and lack of sleep. Feeling angry does not mean you don't love your child; it means you are exhausted."
+          />
+
+          <h2 id="guilt-and-exhaustion">The Cycle of Guilt and Exhaustion</h2>
+          <p>The hardest part of parent burnout is the guilt loop. You lose your temper because you are exhausted. Then, you feel immense guilt for yelling at a child who has developmental challenges. To make up for it, you push yourself even harder the next day, leading to more exhaustion and another loss of temper.</p>
+          <p>Breaking this cycle requires dropping the guilt and accepting that you are a human being with limits.</p>
+
+          <h2 id="realistic-strategies">Realistic Strategies for Survival</h2>
+          <p>When you are in the thick of burnout, advice like "take a bubble bath" or "go on a vacation" feels insulting. You need realistic, in-the-trenches strategies.</p>
+
+          <ActionChecklist
+            items={[
+              "Lower the bar: If your child eats chicken nuggets for dinner three days in a row so you can avoid a meltdown and sit in silence, that is a win.",
+              "Enforce 'Quiet Time': Even if your child no longer naps, enforce 45 minutes of mandatory independent quiet time (screens are fine) so you can literally just sit and stare at a wall.",
+              "Drop the therapies that aren't working: If dragging your child to a specific therapy is ruining your relationship with them and destroying your afternoon, take a pause.",
+              "Find your people: Connect with other parents of neurodivergent children. You need people who 'get it' without you having to explain."
+            ]}
+          />
+
+          <h2 id="when-to-seek-support">When to Seek Professional Support for Yourself</h2>
+          <p>If you are experiencing symptoms of clinical depression, panic attacks, or having thoughts of harming yourself or running away, seek immediate psychological support.</p>
+          <p>Additionally, a Parent Guidance Consultation is not just about fixing the child. It is a space for you to offload the mental burden. A clinical psychologist can take the lead on creating the behaviour plans, telling you exactly what to do, so you don't have to figure it out alone anymore.</p>
+
+          <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
+            <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace professional medical or psychological support. If you are experiencing severe depression or a mental health crisis, please contact your local emergency services or a mental health provider immediately.</p>
+          </div>
+
+          <KeyTakeaways
+            items={[
+              "Parent burnout is a biological response to the chronic stress of special needs parenting.",
+              "Anger, numbness, and resentment are normal symptoms of burnout, not signs of bad parenting.",
+              "The cycle of guilt and exhaustion only makes burnout worse.",
+              "Lower your daily expectations to focus on survival and nervous system regulation.",
+              "Parent consultation provides a safe space to offload the mental burden of caregiving."
+            ]}
+          />
+
+          <ArticleAuthor
+            datePublished="May 15, 2024"
+            dateModified="May 15, 2024"
+            readTime="6 min"
+          />
+
+          <FAQAccordion faqs={[
+            {
+              question: "Is it normal to feel angry or resentful about parenting?",
+              answer: "Yes. It is entirely normal to feel grief, anger, and resentment when raising a child with high developmental needs. These feelings do not mean you love your child any less; they mean you are exhausted."
+            },
+            {
+              question: "How can I take a break when my child only wants me?",
+              answer: "This is a common challenge, especially with separation anxiety. Start micro-breaks (5 minutes alone in a room). Gradually build a network of safe people (like a partner or trusted sitter) and tolerate the child's short-term distress while they learn you will always return."
+            },
+            {
+              question: "Can parent consultation help with burnout?",
+              answer: "Absolutely. Parent consultation focuses on giving you effective strategies to reduce daily battles, which directly lowers your stress. It also provides a safe, non-judgmental space to process the heavy emotional load you are carrying."
+            }
+          ]} />
+
+          <PrevNextNav
+            prev={{ title: "IEP and School Support Planning", href: "/blog/iep-and-school-support-planning" }}
+            next={{ title: "Understanding ADHD and Hyperactivity", href: "/blog/understanding-adhd-and-hyperactivity-in-children" }}
+          />
+
+          <BlogCTA />
+
+          <RelatedArticles currentUrl={currentUrl} />
+        </div>
+
+        {/* Sidebar / Table of Contents */}
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+
+      </div>
+    </div>
+  </article>
+</Layout>
