@@ -1,0 +1,25 @@
+---
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+<div class="my-8 bg-white border-l-4 border-brand-gold p-6 rounded-r-lg shadow-sm">
+  <h3 class="text-xl font-bold text-brand-navy mb-4 m-0 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+    </svg>
+    In this article you'll learn
+  </h3>
+  <ul class="space-y-2 mt-4 ml-0 pl-0 list-none m-0">
+    {items.map(item => (
+      <li class="flex items-start gap-3 text-gray-700 m-0 p-0">
+        <svg class="h-5 w-5 text-brand-trust flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span class="font-medium">{item}</span>
+      </li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+---
+interface Props {
+  text?: string;
+}
+
+const { text } = Astro.props;
+---
+<div class="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed my-8 pb-8 border-b-2 border-brand-cream max-w-3xl mx-auto text-center md:text-left">
+  {text ? <p>{text}</p> : <slot />}
+</div>

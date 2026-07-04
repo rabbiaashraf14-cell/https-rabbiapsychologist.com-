@@ -1,10 +1,84 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import ArticleHero from '../../components/blog/ArticleHero.astro';
+import ArticleIntro from '../../components/blog/ArticleIntro.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+
+const title = "How To Support Executive Function At Home";
+const description = "Learn more about how to support executive function at home and how to support your child's development.";
+const currentUrl = "/blog/how-to-support-executive-function-at-home";
+const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+
+const headings = [
+  { text: "Introduction", slug: "introduction", level: 2 }
+];
 ---
-<BaseLayout title="How to Support Executive Function at Home | Rabbia Psychologist">
-  <div class="container mx-auto px-4 py-12 max-w-3xl prose">
-    <h1>How to Support Executive Function at Home</h1>
-    <p>Placeholder content for the new article. (To be expanded by copywriter later).</p>
-    <a href="/services/adhd-support">Learn about ADHD Support</a>
-  </div>
-</BaseLayout>
+
+<Layout title={`${title} | Rabbia Psychologist`} description={description}>
+  <SEO
+    title={title}
+    description={description}
+    canonical={canonicalURL}
+    ogTitle={title}
+    ogDescription={description}
+    type="article"
+  />
+
+  <ProgressBar />
+
+  <article class="bg-[#FAF8F3] min-h-screen pb-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div class="max-w-4xl mx-auto pt-6 mb-4">
+        <Breadcrumbs paths={[
+          { name: 'Resources', href: '/resources' },
+          { name: 'Blog', href: '/blog' },
+          { name: 'SHORT_How To Support Executive Function At Home', href: currentUrl }
+        ]} />
+      </div>
+
+      <ArticleHero
+        title={title}
+        category="Child Development"
+        readTime="5 min"
+        datePublished="Jan 2024"
+        dateModified="Mar 2024"
+        authorName="Rabbia Ashraf"
+        imageSrc="/images/blog/placeholder-hero.jpg"
+        imageAlt={title}
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative mt-12">
+        <div class="lg:col-span-8 prose prose-lg md:prose-xl max-w-none text-gray-800 prose-headings:text-brand-navy prose-headings:font-bold prose-p:leading-relaxed prose-p:mb-6">
+
+          <ArticleIntro>
+            Placeholder content for the new article. (To be expanded by copywriter later).
+          </ArticleIntro>
+
+          <QuickFacts time="5 min" age="All Ages" />
+
+          <h2 id="introduction">Introduction</h2>
+          <p>This article is currently being updated. Please check back later for full content.</p>
+
+          <ArticleAuthor
+            datePublished="Jan 2024"
+            dateModified="Mar 2024"
+            readTime="5 min"
+          />
+
+          <BlogCTA />
+        </div>
+
+        <div class="lg:col-span-4 order-first lg:order-last">
+          <TableOfContents headings={headings} />
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>
