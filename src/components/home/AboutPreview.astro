@@ -1,9 +1,61 @@
 ---
+import { Image } from 'astro:assets';
+import heroPortrait from '../../assets/hero-portrait.png';
 ---
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-4 max-w-3xl text-center">
-    <h2 class="text-3xl font-bold text-brand-navy mb-4">About Rabbia Psychologist</h2>
-    <p class="text-lg text-gray-700 mb-6">Rabbia Ashraf is a Clinical Psychologist specializing in child and adolescent psychology. With extensive experience in child development, ADHD, autism, learning, and behaviour, she provides a multidisciplinary, parent-friendly approach.</p>
-    <a href="/about" class="text-brand-trust font-bold">Read Full Profile &rarr;</a>
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+      <!-- Image Left -->
+      <div class="flex justify-center md:justify-start fade-in">
+        <div class="relative">
+          <div class="absolute inset-0 bg-brand-sky/40 blur-2xl rounded-full"></div>
+          <Image
+            src={heroPortrait}
+            alt="Rabbia Ashraf Clinical Psychologist Portrait"
+            class="relative z-10 w-full max-w-[400px] h-auto object-cover rounded-[24px] shadow-md hover-lift transition-all duration-300"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 400px"
+          />
+        </div>
+      </div>
+
+      <!-- Text Right -->
+      <div class="text-center md:text-left fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Meet Your Psychologist</h2>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+          Rabbia Ashraf is a Clinical Psychologist specializing in child and adolescent psychology. With extensive experience in child development, ADHD, autism, learning, and behaviour, she provides a multidisciplinary, parent-friendly approach.
+        </p>
+
+        <ul class="space-y-3 mb-8 text-gray-700 text-left mx-auto md:mx-0 max-w-md">
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <strong>Years of Experience</strong> in Child Development
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <strong>Clinical Focus:</strong> ADHD, Autism, Behaviour
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <strong>Hospital Experience</strong> & Multidisciplinary Care
+          </li>
+          <li class="flex items-start">
+            <svg class="w-6 h-6 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <strong>Parent-Centred Approach</strong>
+          </li>
+        </ul>
+
+        <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4">
+          <a href="/book" class="w-full sm:w-auto px-6 py-3 bg-brand-navy text-white rounded-lg font-bold hover:bg-blue-900 transition-all shadow-md hover:-translate-y-1">
+            Book Consultation
+          </a>
+          <a href="/about" class="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
+            About Rabbia
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
