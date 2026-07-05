@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import clinicPhoto from '../assets/clinic-photo.png';
+
 
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
@@ -133,13 +133,11 @@ const faqSchema = {
           <div class="w-full md:w-5/12 shrink-0 order-1 md:order-2 fade-in">
             <div class="relative">
               <div class="absolute inset-0 bg-brand-sky/30 blur-3xl rounded-full"></div>
-              <Image
-                src={clinicPhoto}
-                alt="Rabbia Ashraf Clinical Psychologist at child development clinic"
-                class="relative z-10 w-full rounded-[24px] shadow-md border border-gray-100 hover-lift transition-all duration-300"
-                widths={[400, 800]}
-                sizes="(max-width: 768px) 100vw, 400px"
-              />
+              <div class="relative z-10 w-full rounded-[24px] shadow-md border border-gray-100 hover-lift transition-all duration-300 aspect-[4/5] bg-brand-cream flex items-center justify-center p-8 text-center text-brand-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
+              </div>
             </div>
 
             <div class="mt-6 space-y-2 text-sm text-gray-700 font-medium">

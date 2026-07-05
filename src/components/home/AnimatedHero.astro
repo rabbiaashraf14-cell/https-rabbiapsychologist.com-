@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroPortrait from '../../assets/hero-portrait.png';
+
 ---
 <div class="relative overflow-hidden bg-brand-cream py-20 lg:py-32 flex items-center min-h-[70vh]">
   <div class="absolute inset-0 bg-gradient-to-br from-brand-sky/30 to-brand-cream z-0 pointer-events-none"></div>
@@ -15,14 +15,11 @@ import heroPortrait from '../../assets/hero-portrait.png';
         <div class="relative">
           <!-- Background Glow -->
           <div class="absolute inset-0 bg-brand-sky/30 blur-3xl rounded-full"></div>
-          <Image
-            src={heroPortrait}
-            alt="Rabbia Ashraf Clinical Psychologist Portrait"
-            class="relative z-10 w-full max-w-[500px] h-auto object-cover rounded-[28px] shadow-md hover-lift transition-all duration-300"
-            loading="eager"
-            widths={[400, 800]}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+          <div class="relative z-10 w-full max-w-[500px] aspect-[4/5] rounded-[28px] shadow-md hover-lift transition-all duration-300 bg-brand-cream flex items-center justify-center p-8 text-center text-brand-gold">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </div>
         </div>
       </div>
 
