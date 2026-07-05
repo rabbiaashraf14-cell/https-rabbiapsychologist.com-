@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "Parent Guidance for Behaviour Concerns: Why Changing Your Response Changes Theirs";
+const description = "When traditional discipline fails, parent guidance helps. Learn how understanding the 'why' behind behaviour and changing your response can transform your home.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/parent-guidance-for-behaviour-concerns";
+const lastUpdated = "2024-03-25";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Parent Guidance for Behaviour', href: '/blog/parent-guidance-for-behaviour-concerns' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "datePublished": "2024-03-25",
+  "dateModified": lastUpdated
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does parent guidance mean I am doing a bad job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at all. Seeking parent guidance means you recognise that standard parenting advice isn't working for your unique child. It is a proactive step to learn specialised strategies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't therapy just focus on the child?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children live in their environment, which is largely managed by their parents. Equipping parents with strategies provides the child with consistent support 24/7, which is far more effective than an hour of therapy a week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see changes in behaviour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Behaviour often gets slightly worse before it gets better (an 'extinction burst') as the child tests the new boundaries. However, with consistency, parents usually begin seeing positive shifts within a few weeks."
+      }
+    }
+  ]
+};
+
+const headings = [
+  { depth: 2, slug: "what-parents-notice", text: "What parents usually notice" },
+  { depth: 2, slug: "what-this-means", text: "What this means: The role of the environment" },
+  { depth: 2, slug: "what-to-try-at-home", text: "What parents can try at home" },
+  { depth: 2, slug: "when-to-seek-support", text: "When to seek professional support" },
+  { depth: 2, slug: "parents-also-ask", text: "Parents Also Ask" },
+  { depth: 2, slug: "faqs", text: "Frequently Asked Questions" }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Article Hero -->
+    <div class="mt-8 mb-8">
+      <div class="flex gap-2 mb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2 py-1 rounded">Behaviour</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2 py-1 rounded">Parent Guidance</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-4 leading-tight">{title}</h1>
+      <p class="text-xl text-gray-700 mb-6">When traditional discipline fails, parent guidance helps. Learn how understanding the 'why' behind behaviour and changing your response can transform your home.</p>
+
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 border-b pb-6">
+        <span>Estimated reading time: 6 min</span>
+        <span>&bull;</span>
+        <span>Updated: {new Date(lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12">
+      <!-- Sidebar TOC -->
+      <aside class="hidden lg:block lg:w-1/4 flex-shrink-0">
+        <div class="sticky top-24">
+          <TableOfContents headings={headings} />
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <article class="prose prose-lg max-w-none text-gray-800 lg:w-3/4">
+
+        <p class="lead">Many parents come to consultation feeling exhausted. They have read the books, tried the sticker charts, and implemented the time-outs, but the challenging behaviour continues. They often ask, "Why won't my child just listen?" The shift begins when we change the question to: "What is my child trying to communicate, and how is my response affecting it?"</p>
+
+        <!-- Disclaimer -->
+        <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg text-sm text-gray-600 mb-8 italic">
+          This article is for parent education only. It does not replace emergency care, local diagnosis, medical treatment, or individualized professional advice.
+        </div>
+
+        <h2 id="what-parents-notice">What parents usually notice</h2>
+        <p>When families seek parent guidance for behaviour, they usually report cycles of conflict that seem impossible to break. You might notice:</p>
+        <ul>
+          <li><strong>Escalation:</strong> A minor request (like "put your shoes on") quickly turns into a major argument.</li>
+          <li><strong>Ineffective Consequences:</strong> The child no longer cares if you take away their screen time or toys.</li>
+          <li><strong>Walking on Eggshells:</strong> You find yourself avoiding setting boundaries because you dread the meltdown that will follow.</li>
+          <li><strong>Inconsistency:</strong> Because you are exhausted, you sometimes give in just to keep the peace, which sends mixed signals to the child.</li>
+        </ul>
+
+        <h2 id="what-this-means">What this means: The role of the environment</h2>
+        <p>Behaviour does not happen in a vacuum; it happens in an environment. And in a home, the parents are the primary environment. This doesn't mean parents are to blame for the behaviour. It means parents have the power to change it by altering how they respond.</p>
+        <p>If a child learns that screaming eventually results in getting what they want (because the parent eventually gives in out of exhaustion), the screaming behaviour is reinforced. Parent guidance focuses on mapping these patterns (the Antecedent, the Behaviour, and the Consequence) and systematically changing the adult's response to break the cycle.</p>
+
+        <h2 id="what-to-try-at-home">What parents can try at home</h2>
+        <p>Shifting from reactive parenting to proactive parenting takes practice. Here are foundational strategies you can try:</p>
+        <ul>
+          <li><strong>Respond, Don't React:</strong> Take a deep breath before you engage. If you enter the interaction dysregulated, your child will escalate. Your calm presence is required to de-escalate the situation.</li>
+          <li><strong>Identify the Function:</strong> Ask yourself what the child is getting out of the behaviour. Are they avoiding a difficult task? Seeking connection (even negative connection)? Once you know the 'why', you can teach them a safer way to get that need met.</li>
+          <li><strong>Hold the Boundary with Empathy:</strong> You can validate a feeling while still enforcing the rule. "I know you are so angry that screen time is over. It is hard to stop playing. But the iPad is going away now."</li>
+          <li><strong>Catch Them Being Good:</strong> We often only give our children focused attention when they are misbehaving. Make a point to offer specific, positive attention when they are playing quietly or following instructions.</li>
+        </ul>
+
+        <h2 id="when-to-seek-support">When to seek professional support</h2>
+        <p>If you feel like you are stuck in a negative cycle, if the behaviour is causing significant stress in your family, or if you feel unsupported by traditional parenting advice, parent guidance can provide you with a tailored, evidence-informed plan.</p>
+
+        <!-- Parents Also Ask -->
+        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-8">
+          <h2 id="parents-also-ask" class="text-xl font-bold text-brand-navy mb-4 !mt-0">Parents Also Ask</h2>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-bold text-brand-navy">Is this normal behaviour or something more?</h4>
+              <p class="text-sm">If standard parenting strategies are consistently failing, it often indicates the child is missing a skill (like emotional regulation) rather than simply being defiant. We discuss this deeply in <a href="/blog/behaviour-is-communication" class="text-brand-trust hover:underline">Behaviour is Communication</a>.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-navy">Can this improve with home strategies?</h4>
+              <p class="text-sm">Yes. In fact, changing the parent's response is the most effective way to change a child's behaviour.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-navy">Do I need an assessment?</h4>
+              <p class="text-sm">If the challenging behaviour is accompanied by signs of delayed development, rigid routines, or extreme inattention, an assessment may provide clarity on underlying needs.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="faqs">Frequently Asked Questions</h2>
+        <div class="space-y-4 not-prose">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Does parent guidance mean I am doing a bad job?</h4>
+            <p class="text-sm">Not at all. Seeking parent guidance means you recognise that standard parenting advice isn't working for your unique child. It is a proactive step to learn specialised strategies.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Why doesn't therapy just focus on the child?</h4>
+            <p class="text-sm">Children live in their environment, which is largely managed by their parents. Equipping parents with strategies provides the child with consistent support 24/7, which is far more effective than an hour of therapy a week.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">How long does it take to see changes in behaviour?</h4>
+            <p class="text-sm">Behaviour often gets slightly worse before it gets better (an 'extinction burst') as the child tests the new boundaries. However, with consistency, parents usually begin seeing positive shifts within a few weeks.</p>
+          </div>
+        </div>
+
+        <!-- Related Services -->
+        <div class="bg-brand-cream p-6 rounded-xl border border-brand-sky my-8 not-prose">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
+          <ul class="space-y-2">
+            <li><a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Support Planning</a></li>
+            <li><a href="/services/emotional-regulation-support" class="text-brand-trust font-bold hover:underline">Emotional Regulation Support</a></li>
+            <li><a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School & IEP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="bg-white p-6 rounded-xl border border-gray-200 my-8 not-prose">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+          <ul class="space-y-2">
+            <li><a href="/blog/behaviour-is-communication" class="text-brand-trust hover:underline">Behaviour is Communication: Finding the 'Why'</a></li>
+            <li><a href="/blog/tantrum-vs-meltdown" class="text-brand-trust hover:underline">Tantrum vs Meltdown</a></li>
+            <li><a href="/blog/parent-burnout-child-development-support" class="text-brand-trust hover:underline">Parent Burnout in Child Development</a></li>
+          </ul>
+        </div>
+
+
+        <ArticleAuthor
+          author="Rabbia Ashraf"
+          title="Clinical Psychologist | Child & Adolescent Development Support"
+          bio="Rabbia supports families with ADHD, autism, behaviour concerns, emotional regulation, learning difficulties, school support, parent counseling, and psychological report review."
+        />
+
+        <BlogCTA
+          title="Ready to break the cycle?"
+          description="Book a behaviour support session to map your child's triggers and learn effective response strategies."
+          buttonText="Book Parent Consultation"
+          buttonLink="/book"
+        />
+
+      </article>
+    </div>
+  </div>
+</BaseLayout>

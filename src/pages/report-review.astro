@@ -2,77 +2,195 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
+const title = "Psychological Report Review & Parent Next-Step Guidance | Rabbia Psychologist";
+const description = "Translate long clinical reports or a new diagnosis into actionable next steps for home and school. Understand your child's assessment results.";
+const canonicalURL = "https://www.rabbiapsychologist.com/report-review";
+
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
   { name: 'Report Review & Parent Explanation', href: '/report-review' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Psychological Report Review and Parent Next-Step Guidance",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Translate clinical reports or new diagnoses into actionable next steps for home and school.",
+  "areaServed": "International",
+  "serviceType": "Parent Guidance",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "125"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you explain my child’s psychological report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we help you understand the clinical jargon, what the scores mean in real life, and how the diagnosis or findings impact your child's daily functioning at home and school."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you give a second opinion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This service is for educational guidance and understanding the report you have. It does not replace the original evaluator's clinical opinion or provide a formal new diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if the report is confusing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many reports are written for other professionals, not parents. We review it together and translate the recommendations into practical steps you can start taking today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help prepare questions for school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. One of the most important steps after an assessment is sharing the findings with the school. We help you pull out the key information and prepare specific requests for accommodations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I disagree with the report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We can discuss your concerns, help clarify what the assessor observed, and guide you on how to follow up with the evaluating professional or seek further assessment if needed."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Report Review & Parent Explanation | Rabbia Psychologist" description="Translate long clinical reports or a new diagnosis into actionable next steps for home and school.">
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
     <!-- 1. Hero section -->
     <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Report Review & Parent Explanation</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Psychological Report Review and Parent Next-Step Guidance</h1>
       <p class="text-xl text-gray-700 mb-4">Translate long clinical reports or a new diagnosis into actionable next steps for home and school.</p>
-      <p class="text-lg font-bold text-brand-gold mb-6">USD 125 / AUD 190</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Pricing available at <a href="/pricing" class="hover:underline">Pricing</a></p>
       <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
     <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
+      <!-- Parent problem statement -->
+      <section>
+        <p class="lead text-xl">Many parents receive assessment reports but still feel unsure what the results mean, what the diagnosis means, what the scores mean, what the school should do, or what parents should do at home. Report review helps translate technical information into practical next steps.</p>
+      </section>
+
       <!-- 2. This is right for you if -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This service is right for you if:</h2>
         <ul>
           <li>You just received a diagnostic report and don't know what it means.</li>
           <li>The report is full of clinical jargon you don't understand.</li>
-          <li>You need to explain the report's recommendations to your child's school.</li>
-          <li>You have the diagnosis, but no practical plan for what to do at home.</li>
+          <li>You are unsure how to explain the results to your child's school.</li>
+          <li>You want to turn general recommendations into a daily home plan.</li>
         </ul>
       </section>
 
-      <!-- 3. Common concerns parents bring -->
+      <!-- 3. What parents can bring -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Reports parents may bring:</h2>
         <ul>
-          <li>"The doctor gave us this 10-page report and told us to 'get support', but what kind?"</li>
-          <li>"I don't understand what 'executive dysfunction' or 'working memory deficit' actually means for my child."</li>
-          <li>"How do I tell the school about this without them labeling my child negatively?"</li>
+          <li>Autism assessment report</li>
+          <li>ADHD screening report</li>
+          <li>IQ/cognitive report</li>
+          <li>Learning difficulty report</li>
+          <li>Speech/language report</li>
+          <li>Occupational therapy report</li>
+          <li>School observation notes</li>
+          <li>Behaviour report</li>
+          <li>IEP or school support plan</li>
         </ul>
       </section>
 
-      <!-- 4. What we do in the session -->
+      <!-- 4. How this service helps (What we do) -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
-        <p>You provide the report before the session so I can review it thoroughly. During the session, we will go through the key findings, translate the clinical terms into plain English, and discuss what these findings actually look like in your child's day-to-day life.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">How this service helps (What can be reviewed):</h2>
+        <ul>
+          <li>What parents usually misunderstand</li>
+          <li>How scores are explained</li>
+          <li>How recommendations are turned into action</li>
+          <li>How to prepare school questions</li>
+        </ul>
       </section>
 
       <!-- 5. What you leave with -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
-        <p>A clear understanding of your child's profile and a prioritized list of next steps. You'll know exactly which accommodations to ask the school for and which strategies to start using at home immediately.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with:</h2>
+        <p>You will leave with a clear, plain-language understanding of your child's cognitive or developmental profile. We provide specific action steps for home routines and a prioritized list of accommodations to discuss with the school.</p>
       </section>
 
-      <!-- 6. What this service does not include -->
+      <!-- 6. What this service does not include / Safety Boundary -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2 mb-4">What this service does not include</h2>
+        <p><strong>Safety Boundary:</strong> Report review is educational guidance and does not automatically replace the original evaluator’s clinical opinion, local diagnosis, or legal educational process.</p>
+      </section>
+
+      <!-- Parents Also Ask Block -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Parents Also Ask</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-brand-navy">Do I need an assessment?</h4>
+            <p class="text-sm">If you are unsure if you need an assessment to begin with, read our guide on <a href="/blog/when-to-seek-developmental-assessment" class="text-brand-trust hover:underline">when to seek an assessment</a>.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can this improve with home strategies?</h4>
+            <p class="text-sm">Understanding the report allows you to implement the right home strategies, which can significantly improve daily functioning.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Should I speak to the school first?</h4>
+            <p class="text-sm">We recommend reviewing the report to clearly define what accommodations you are asking for before meeting with the school.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Related resources & internal links -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
-        <ul>
-          <li>Second opinions or changes to the diagnosis.</li>
-          <li>Rewriting the original medical or psychological report.</li>
-          <li>Legal review for special education disputes.</li>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services & Resources</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <li><a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation</a></li>
+          <li><a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support</a></li>
+          <li><a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">Autism Support</a></li>
+          <li><a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center</a></li>
+          <li><a href="/faqs" class="text-brand-trust font-bold hover:underline">Frequently Asked Questions</a></li>
         </ul>
       </section>
 
-      <!-- 7. Related services -->
-      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation &rarr;</a>
-          <a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support &rarr;</a>
-          <a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">ASD Support &rarr;</a>
-        </div>
+      <!-- Related blog articles -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <ul class="list-disc pl-5">
+          <li><a href="/blog/understanding-psychological-reports" class="text-brand-trust hover:underline">Understanding Psychological Reports</a></li>
+          <li><a href="/blog/how-to-prepare-for-child-assessment" class="text-brand-trust hover:underline">How to Prepare for Child Assessment</a></li>
+          <li><a href="/blog/school-meeting-checklist" class="text-brand-trust hover:underline">School Meeting Checklist</a></li>
+        </ul>
       </section>
 
       <!-- 8. FAQ section -->
@@ -80,26 +198,34 @@ const breadcrumbs = [
         <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-4">
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Do I need to send the report before the session?</h4>
-            <p class="text-sm">Yes, please send the report at least 48 hours in advance so I can review it and prepare for our discussion.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can you explain my child’s psychological report?</h4>
+            <p class="text-sm">Yes, we help you understand the clinical jargon, what the scores mean in real life, and how the diagnosis or findings impact your child's daily functioning at home and school.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Can you disagree with the diagnosis?</h4>
-            <p class="text-sm">My role is not to provide a second diagnostic opinion online, but rather to help you understand the information presented in the report and how to use it constructively.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can you give a second opinion?</h4>
+            <p class="text-sm">This service is for educational guidance and understanding the report you have. It does not replace the original evaluator's clinical opinion or provide a formal new diagnosis.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Is this session just for reports from psychologists?</h4>
-            <p class="text-sm">I can review psychoeducational reports, autism assessments, ADHD evaluations, and allied health (OT/Speech) reports to help synthesize a support plan.</p>
+            <h4 class="font-bold text-brand-navy mb-2">What should I do if the report is confusing?</h4>
+            <p class="text-sm">Many reports are written for other professionals, not parents. We review it together and translate the recommendations into practical steps you can start taking today.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you help prepare questions for school?</h4>
+            <p class="text-sm">Yes. One of the most important steps after an assessment is sharing the findings with the school. We help you pull out the key information and prepare specific requests for accommodations.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">What if I disagree with the report?</h4>
+            <p class="text-sm">We can discuss your concerns, help clarify what the assessor observed, and guide you on how to follow up with the evaluating professional or seek further assessment if needed.</p>
           </div>
         </div>
       </section>
 
       <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to understand your child's report?</h3>
-        <p class="mb-6">Book your Report Review and get clarity on the next steps.</p>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready for clarity and a clear plan?</h3>
+        <p class="mb-6">Book your parent guidance session today and turn confusing assessment results into a practical plan.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Report Review</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
         </div>
       </div>
     </div>

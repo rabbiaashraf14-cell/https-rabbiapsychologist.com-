@@ -2,81 +2,199 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Child Behaviour Support and Parent Strategy Planning | Rabbia Psychologist";
+const description = "Understand challenging behavior, triggers, and meltdowns. Learn practical home strategies and replacement skills for your child.";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/behaviour-planning";
+
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
   { name: 'Behaviour Planning', href: '/services/behaviour-planning' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Child Behaviour Support and Parent Strategy Planning",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Understand challenging behavior, triggers, and meltdowns. Learn practical home strategies and replacement skills.",
+  "areaServed": "International",
+  "serviceType": "Parent Guidance",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "95"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between tantrum and meltdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tantrum is typically driven by a want or goal and stops when the goal is met or the child gives up. A meltdown is a physiological response to sensory overload or emotional overwhelm; the child has lost control and needs co-regulation, not discipline, to recover."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I ignore challenging behaviour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While ignoring minor attention-seeking behavior can sometimes work, ignoring behavior caused by dysregulation, sensory overload, or missing skills is ineffective. The child needs to be taught safer replacement skills."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my child behave well at school but not at home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is very common and often referred to as the 'after-school restraint collapse.' Children use all their energy to hold it together in the structured school environment, and release their exhaustion and tension in their safe space: home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an ABC behaviour tracker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ABC stands for Antecedent (what happened right before), Behaviour (what the child did), and Consequence (what happened right after). It helps identify the underlying function or trigger of a behavior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should parents seek professional support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should seek support when the behavior is significantly impacting family life, causing safety concerns, affecting learning, or if you feel exhausted and unsure how to respond effectively."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Behaviour Support Planning | Rabbia Psychologist" description="Structured home-based guidance to help families manage challenging behaviors, meltdowns, and transitions.">
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
     <!-- 1. Hero section -->
     <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Behaviour Support Planning</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Child Behaviour Support and Parent Strategy Planning</h1>
       <p class="text-xl text-gray-700 mb-4">Structured home-based guidance to help families manage challenging behaviors, meltdowns, and transitions.</p>
-      <p class="text-lg font-bold text-brand-gold mb-6">USD 95 / AUD 145</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Pricing available at <a href="/pricing" class="hover:underline">Pricing</a></p>
       <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
     <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
+      <!-- Parent problem statement -->
+      <section>
+        <p class="lead text-xl">Challenging behaviour is often communication. A child may be avoiding a task, seeking connection, reacting to sensory overload, struggling with transitions, or showing emotional distress through behaviour. The goal is not to label the child as difficult, but to understand the pattern and teach safer replacement skills.</p>
+      </section>
+
       <!-- 2. This is right for you if -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This service is right for you if:</h2>
         <ul>
           <li>You feel like you are walking on eggshells around your child.</li>
           <li>Traditional discipline methods are not working.</li>
-          <li>Your child's behavior is impacting family life or school.</li>
-          <li>You want to respond calmly but don't know how in the moment.</li>
+          <li>Your child struggles significantly with transitions (like stopping screen time).</li>
+          <li>You want to understand the 'why' behind the meltdowns.</li>
         </ul>
       </section>
 
-      <!-- 3. Common concerns parents bring -->
+      <!-- 3. Behaviour concerns parents search for -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Behaviour concerns parents search for:</h2>
         <ul>
-          <li>Aggression towards siblings or parents.</li>
-          <li>Severe tantrums or meltdowns.</li>
-          <li>Refusal to follow basic instructions.</li>
-          <li>School complaints about disruptive behavior.</li>
-          <li>Difficulties with screen time limits.</li>
-          <li>Running away or unsafe behaviors.</li>
+          <li>My child does not listen</li>
+          <li>My child hits, screams, or throws things</li>
+          <li>My child has meltdowns after school</li>
+          <li>My child refuses homework</li>
+          <li>My child only behaves badly at home</li>
+          <li>My child has screen-time meltdowns</li>
+          <li>My child argues over every instruction</li>
+          <li>My child becomes aggressive during transitions</li>
         </ul>
       </section>
 
-      <!-- 4. What we do in the session -->
+      <!-- 4. What the session covers (What happens) -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
-        <p>We work to understand the function of the behavior—what is your child trying to communicate? We look at triggers, how the environment might be contributing, and how current responses might be unintentionally maintaining the behavior.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What the session covers (What happens in the session):</h2>
+        <ul>
+          <li>Behaviour pattern review</li>
+          <li>Trigger identification</li>
+          <li>ABC behaviour map</li>
+          <li>Parent response planning</li>
+          <li>Calm-down routines</li>
+          <li>Replacement skills</li>
+          <li>Visual supports</li>
+          <li>Home rules and consistency</li>
+          <li>School-home communication if needed</li>
+        </ul>
       </section>
 
       <!-- 5. What you leave with -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
-        <p>A structured behavior support plan. This includes preventative strategies, how to respond during the behavior (de-escalation), and how to teach a replacement skill.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with:</h2>
+        <p>You will leave with a clear understanding of what is driving the behaviour and a practical, step-by-step strategy for how to respond. You'll learn how to de-escalate situations and teach your child safer ways to express their needs.</p>
       </section>
 
-      <!-- 6. What this service does not include -->
+      <!-- 6. What this service does not include / Safety Boundary -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2 mb-4">What this service does not include</h2>
+        <p><strong>Safety Boundary:</strong> This service provides parent guidance and behavior support planning. We do not provide emergency crisis intervention, direct therapy for the child, or formal medical diagnosis.</p>
+      </section>
+
+      <!-- Parents Also Ask Block -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Parents Also Ask</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-brand-navy">Is this normal behaviour or something more?</h4>
+            <p class="text-sm">While all children push boundaries, frequent aggression or severe meltdowns often indicate they are missing key regulation skills. Understanding the <a href="/blog/behaviour-is-communication" class="text-brand-trust hover:underline">communication behind the behavior</a> is the first step.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can this improve with home strategies?</h4>
+            <p class="text-sm">Yes, changing how adults respond to the behavior and altering the environment can lead to significant improvements.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can online guidance help?</h4>
+            <p class="text-sm">Absolutely. Behavior happens in the environment, and equipping parents to handle it confidently at home is highly effective.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Related resources & internal links -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
-        <ul>
-          <li>Therapy for severe psychiatric conditions.</li>
-          <li>Emergency or crisis intervention.</li>
-          <li>Quick fixes or guarantees of immediate behavior change.</li>
-          <li>Medical diagnosis.</li>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services & Resources</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <li><a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support</a></li>
+          <li><a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">Autism Support</a></li>
+          <li><a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation</a></li>
+          <li><a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center</a></li>
+          <li><a href="/faqs" class="text-brand-trust font-bold hover:underline">Frequently Asked Questions</a></li>
         </ul>
       </section>
 
-      <!-- 7. Related services -->
-      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support &rarr;</a>
-          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation &rarr;</a>
-          <a href="/parent-support" class="text-brand-trust font-bold hover:underline">Parent Consultation &rarr;</a>
-        </div>
+      <!-- Related blog articles -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <ul class="list-disc pl-5">
+          <li><a href="/blog/behaviour-is-communication" class="text-brand-trust hover:underline">Behaviour is Communication</a></li>
+          <li><a href="/blog/tantrum-vs-meltdown" class="text-brand-trust hover:underline">Tantrum vs Meltdown</a></li>
+          <li><a href="/blog/screen-time-and-emotional-regulation" class="text-brand-trust hover:underline">Screen Time and Emotional Regulation</a></li>
+        </ul>
       </section>
 
       <!-- 8. FAQ section -->
@@ -84,30 +202,34 @@ const breadcrumbs = [
         <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-4">
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">How long does it take to see changes?</h4>
-            <p class="text-sm">Behavior change takes time and consistency. Depending on the complexity, you may see shifts in a few weeks, but lasting change requires ongoing commitment to the plan.</p>
+            <h4 class="font-bold text-brand-navy mb-2">What is the difference between tantrum and meltdown?</h4>
+            <p class="text-sm">A tantrum is typically driven by a want or goal and stops when the goal is met or the child gives up. A meltdown is a physiological response to sensory overload or emotional overwhelm; the child has lost control and needs co-regulation, not discipline, to recover.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Will you talk to my child?</h4>
-            <p class="text-sm">No. We work directly with parents to empower you to support your child in their everyday environment.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Should I ignore challenging behaviour?</h4>
+            <p class="text-sm">While ignoring minor attention-seeking behavior can sometimes work, ignoring behavior caused by dysregulation, sensory overload, or missing skills is ineffective. The child needs to be taught safer replacement skills.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">What if my child's behavior is dangerous?</h4>
-            <p class="text-sm">If your child is a danger to themselves or others, you must seek immediate local crisis or emergency medical support. Online consultation is not suitable for emergency care.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Why does my child behave well at school but not at home?</h4>
+            <p class="text-sm">This is very common and often referred to as the 'after-school restraint collapse.' Children use all their energy to hold it together in the structured school environment, and release their exhaustion and tension in their safe space: home.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Do you use punishment strategies?</h4>
-            <p class="text-sm">We focus on proactive, positive behavior support—understanding the 'why' and teaching skills, rather than punitive measures.</p>
+            <h4 class="font-bold text-brand-navy mb-2">What is an ABC behaviour tracker?</h4>
+            <p class="text-sm">ABC stands for Antecedent (what happened right before), Behaviour (what the child did), and Consequence (what happened right after). It helps identify the underlying function or trigger of a behavior.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">When should parents seek professional support?</h4>
+            <p class="text-sm">You should seek support when the behavior is significantly impacting family life, causing safety concerns, affecting learning, or if you feel exhausted and unsure how to respond effectively.</p>
           </div>
         </div>
       </section>
 
       <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to create a calmer home environment?</h3>
-        <p class="mb-6">Book your Behaviour Planning Session and get a clear path forward.</p>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready for clarity and a clear plan?</h3>
+        <p class="mb-6">Book your parent guidance session today and take the first step towards a calmer home.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Behaviour Support</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
         </div>
       </div>
     </div>

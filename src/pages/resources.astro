@@ -1,12 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import ResourceCard from '../components/ResourceCard.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import ResourceCard from '../components/resources/ResourceCard.astro';
+import DisclaimerBanner from '../components/global/DisclaimerBanner.astro';
+import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
+import { resources } from '../data/resources';
 
 const breadcrumbs = [
   { name: 'Resources', href: '/resources' }
@@ -14,259 +12,285 @@ const breadcrumbs = [
 
 const categories = [
   {
-    title: "ADHD",
-    description: "Resources for supporting focus, routine, and emotional regulation.",
-    resources: [{ name: "ADHD Home Planner", href: "/resource-vault" }, { name: "Daily Visual Schedule", href: "/resource-vault" }],
-    blogs: [{ name: "Understanding ADHD and Hyperactivity", href: "/blog/understanding-adhd-and-hyperactivity-in-children" }],
+    title: "1. ADHD",
+    description: "ADHD support starts with understanding how attention, impulse control, routines, emotional regulation, working memory, and school demands interact. These resources help parents move from constant correction to practical structure.",
+    faq: [
+      { q: "How can I help my child focus at home?", a: "Visual schedules and breaking tasks into smaller steps are effective strategies." }
+    ],
+    blogs: [
+      { name: "Morning Routine Problems in ADHD", href: "/blog/morning-routine-problems-in-adhd" },
+      { name: "Understanding ADHD and Hyperactivity", href: "/blog/understanding-adhd-and-hyperactivity-in-children" }
+    ],
     services: [{ name: "ADHD Support Consultation", href: "/services/adhd-support" }],
-    faq: [{ q: "How can I help my child focus at home?", a: "Visual schedules and breaking tasks into smaller steps are effective strategies." }],
     cta: "Explore ADHD Support"
   },
   {
-    title: "Autism Spectrum Disorder",
-    description: "Guidance for neurodivergent development, communication, and sensory needs.",
-    resources: [{ name: "Autism Early Signs Checklist", href: "/free-downloads" }],
-    blogs: [{ name: "Autism Early Signs", href: "/blog/autism-early-signs" }, { name: "Parent Guidance After an Autism Diagnosis", href: "/blog/parent-guidance-after-an-autism-diagnosis" }],
+    title: "2. Autism Spectrum Disorder",
+    description: "Autism support is not only about a diagnosis. Parents often need help understanding communication, play, sensory needs, routines, behaviour, and school expectations. These resources help families plan the next step.",
+    faq: [
+      { q: "Is speech delay always autism?", a: "No. Speech delay is common, but in autism, delays are often in social communication." }
+    ],
+    blogs: [
+      { name: "Autism Early Signs", href: "/blog/autism-early-signs" },
+      { name: "Parent Guidance After an Autism Diagnosis", href: "/blog/parent-guidance-after-an-autism-diagnosis" }
+    ],
     services: [{ name: "ASD Parent Guidance Consultation", href: "/services/asd-support" }],
-    faq: [{ q: "What should I do after a diagnosis?", a: "Focus on understanding your child's unique sensory profile and communication style." }],
-    cta: "Explore ASD Support"
+    cta: "Explore Autism Support"
   },
   {
-    title: "Child Behaviour",
-    description: "Strategies for understanding and managing challenging behaviours.",
-    resources: [{ name: "Behaviour ABC Tracker", href: "/free-downloads" }, { name: "Behaviour Observation Log", href: "/resource-vault" }],
-    blogs: [{ name: "Behaviour Is Communication", href: "/blog/behaviour-is-communication" }, { name: "Tantrum vs Meltdown", href: "/blog/tantrum-vs-meltdown" }],
-    services: [{ name: "Behaviour Planning Session", href: "/services/behaviour-planning" }],
-    faq: [{ q: "Why is my child acting out?", a: "Behaviour is often a form of communication when a child is overwhelmed or lacks the skills to express their needs." }],
+    title: "3. Child Behaviour",
+    description: "Behaviour is often the visible part of a deeper need. These resources help parents understand triggers, meltdowns, transitions, screen-time reactions, and replacement skills.",
+    faq: [
+      { q: "Why does my child behave well at school but not at home?", a: "Children use all their energy to hold it together at school, releasing exhaustion at home (restraint collapse)." }
+    ],
+    blogs: [
+      { name: "Behaviour is Communication", href: "/blog/behaviour-is-communication" },
+      { name: "Parent Guidance for Behaviour Concerns", href: "/blog/parent-guidance-for-behaviour-concerns" }
+    ],
+    services: [{ name: "Behaviour Support Planning", href: "/services/behaviour-planning" }],
     cta: "Explore Behaviour Support"
   },
   {
-    title: "Emotional Regulation",
-    description: "Tools to help children manage big feelings and navigate transitions.",
-    resources: [{ name: "Emotion Regulation Cards", href: "/resource-vault" }, { name: "Meltdown Tracker", href: "/resource-vault" }],
-    blogs: [{ name: "Screen Time and Emotional Regulation", href: "/blog/screen-time-and-emotional-regulation" }],
-    services: [{ name: "Online Parent Guidance Consultation", href: "/book" }],
-    faq: [{ q: "How do I calm a meltdown?", a: "Provide a safe space, reduce sensory input, and wait until the child is calm to talk about it." }],
-    cta: "Learn About Emotional Support"
+    title: "4. Emotional Regulation",
+    description: "Emotional regulation requires time and adult support to develop. Learn how to help your child notice feelings, manage frustration, and recover safely.",
+    faq: [
+      { q: "How can I help my child calm down?", a: "The most effective way is through co-regulation. Remain calm, reduce demands, and validate the feeling." }
+    ],
+    blogs: [
+      { name: "Emotional Regulation in Children", href: "/blog/emotional-regulation-in-children" },
+      { name: "Tantrum vs Meltdown", href: "/blog/tantrum-vs-meltdown" }
+    ],
+    services: [{ name: "Emotional Regulation Support", href: "/services/emotional-regulation-support" }],
+    cta: "Explore Emotional Regulation Support"
   },
   {
-    title: "Executive Function",
-    description: "Planners and tips for organization, working memory, and task initiation.",
-    resources: [{ name: "Executive Function Planner", href: "/resource-vault" }, { name: "Homework Routine Planner", href: "/resource-vault" }],
-    blogs: [{ name: "How to Support Executive Function at Home", href: "/blog/how-to-support-executive-function-at-home" }],
+    title: "5. Executive Function",
+    description: "Support for planning, working memory, task initiation, and organization. These skills are often the hidden challenge behind homework battles and morning chaos.",
+    faq: [
+      { q: "Can executive function improve?", a: "Yes, by adapting the environment and practicing specific skills, executive functioning can be strengthened." }
+    ],
+    blogs: [
+      { name: "How to Support Executive Function at Home", href: "/blog/how-to-support-executive-function-at-home" }
+    ],
     services: [{ name: "ADHD Support Consultation", href: "/services/adhd-support" }],
-    faq: [{ q: "What is executive function?", a: "It refers to mental skills that include working memory, flexible thinking, and self-control." }],
     cta: "Explore Executive Function Help"
   },
   {
-    title: "Learning Difficulties",
-    description: "Support for understanding reports and helping your child learn differently.",
-    resources: [{ name: "Report Review Questions", href: "/resource-vault" }],
-    blogs: [{ name: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" }],
-    services: [{ name: "Report Review & Parent Explanation", href: "/report-review" }],
-    faq: [{ q: "How do I know if my child has a learning difficulty?", a: "Persistent struggles with reading, writing, or math despite extra help can be signs." }],
-    cta: "Get Help with Learning Difficulties"
+    title: "6. Learning Difficulties",
+    description: "Resources for when a child struggles to read, write, or calculate despite adequate instruction. Learn how to advocate for appropriate school supports.",
+    faq: [
+      { q: "What are early signs of learning difficulties?", a: "Difficulty with rhyming, avoiding reading aloud, or struggling to remember sequences." }
+    ],
+    blogs: [
+      { name: "Learning Difficulties Early Signs", href: "/blog/learning-difficulties-early-signs" }
+    ],
+    services: [{ name: "School Consultation", href: "/services/school-consultation" }],
+    cta: "Explore Learning Support"
   },
   {
-    title: "School & Classroom Support",
-    description: "Guides for IEP meetings, teacher communication, and school accommodations.",
-    resources: [{ name: "Teacher Meeting Planner", href: "/resource-vault" }, { name: "School Observation Notes", href: "/resource-vault" }],
-    blogs: [{ name: "School Meeting Checklist for Parents", href: "/blog/school-meeting-checklist" }],
-    services: [{ name: "School / IEP Consultation", href: "/services/school-consultation" }],
-    faq: [{ q: "How can I prepare for an IEP meeting?", a: "Review current reports, write down your goals, and ask what accommodations will be provided." }],
+    title: "7. School & Classroom Support",
+    description: "Guidance for understanding IEPs, school refusal, and collaborating with teachers to create effective accommodations.",
+    faq: [
+      { q: "What should I ask at an IEP meeting?", a: "Ask how goals will be measured and what specific accommodations will be implemented daily." }
+    ],
+    blogs: [
+      { name: "School Meeting Checklist", href: "/blog/school-meeting-checklist" },
+      { name: "School Refusal and School Anxiety", href: "/blog/school-refusal-and-school-anxiety" }
+    ],
+    services: [{ name: "School Consultation", href: "/services/school-consultation" }],
     cta: "Explore School Support"
   },
   {
-    title: "Parent Guidance",
-    description: "Reflective workbooks and ongoing support strategies for parents.",
-    resources: [{ name: "Parent Reflection Workbook", href: "/resource-vault" }, { name: "Parent Consultation Notes", href: "/resource-vault" }],
-    blogs: [{ name: "When to Seek Developmental Assessment", href: "/blog/when-to-seek-developmental-assessment" }],
-    services: [{ name: "Online Parent Guidance Consultation", href: "/book" }],
-    faq: [{ q: "Is parent guidance right for me?", a: "If you feel overwhelmed by your child's behavior or need clarity on next steps, parent guidance can help." }],
-    cta: "Book Parent Guidance"
+    title: "8. Parent Guidance",
+    description: "The core of our approach. Empowering parents with knowledge, strategies, and confidence to be the best support for their child's development.",
+    faq: [
+      { q: "Does parent guidance really work?", a: "Yes, parents are the primary environment for the child. Changing parent responses often changes child behaviour." }
+    ],
+    blogs: [
+      { name: "Parent Burnout in Child Development", href: "/blog/parent-burnout-child-development-support" }
+    ],
+    services: [{ name: "Behaviour Planning", href: "/services/behaviour-planning" }],
+    cta: "Explore Parent Guidance"
   },
   {
-    title: "Daily Routines",
-    description: "Visual schedules and planners for smoother mornings, bedtimes, and screen time.",
-    resources: [{ name: "Morning Routine Planner", href: "/resource-vault" }, { name: "Sleep Routine Planner", href: "/resource-vault" }, { name: "Screen Time Planner", href: "/resource-vault" }],
-    blogs: [{ name: "Why Screen Time is Hard for Children to Stop", href: "/blog/why-screen-time-is-hard-for-children-to-stop" }],
-    services: [{ name: "Behaviour Planning Session", href: "/services/behaviour-planning" }],
-    faq: [{ q: "How do I create a daily routine?", a: "Start small with consistent wake and sleep times, and use visual charts to guide transitions." }],
-    cta: "Improve Daily Routines"
+    title: "9. Daily Routines",
+    description: "Mastering mornings, bedtimes, and transitions. Predictability reduces anxiety and behavioural challenges.",
+    faq: [
+      { q: "How do I make mornings less stressful?", a: "Use visual schedules, prepare the night before, and build in extra time for transitions." }
+    ],
+    blogs: [
+      { name: "Sleep Routine and Child Behaviour", href: "/blog/sleep-routine-and-child-behaviour" }
+    ],
+    services: [{ name: "ADHD Support Consultation", href: "/services/adhd-support" }],
+    cta: "Explore Routine Support"
   },
   {
-    title: "Sensory Processing",
-    description: "Observation sheets and strategies for sensory seekers and avoiders.",
-    resources: [{ name: "Sensory Observation Sheet", href: "/resource-vault" }],
-    blogs: [{ name: "Tantrum vs Meltdown", href: "/blog/tantrum-vs-meltdown" }],
+    title: "10. Sensory Processing",
+    description: "Understanding how your child perceives and responds to sensory input (sound, touch, movement) and how to create a sensory-friendly home.",
+    faq: [
+      { q: "What is sensory overload?", a: "When the brain receives more sensory input than it can process, often leading to a meltdown or shutdown." }
+    ],
+    blogs: [
+      { name: "Sensory Processing Difficulties", href: "/blog/sensory-processing-difficulties" }
+    ],
     services: [{ name: "ASD Parent Guidance Consultation", href: "/services/asd-support" }],
-    faq: [{ q: "What does sensory overload look like?", a: "It can appear as irritability, covering ears or eyes, or trying to escape a busy environment." }],
-    cta: "Learn About Sensory Support"
+    cta: "Explore Sensory Support"
   },
   {
-    title: "Speech & Communication",
-    description: "Resources for encouraging language development and alternative communication.",
-    resources: [{ name: "Social Skills Practice Sheets", href: "/resource-vault" }],
-    blogs: [{ name: "Autism Early Signs", href: "/blog/autism-early-signs" }],
-    services: [{ name: "Online Parent Guidance Consultation", href: "/book" }],
-    faq: [{ q: "When should I worry about speech delay?", a: "If your child isn't babbling by 12 months or using single words by 16 months, consider a consultation." }],
+    title: "11. Speech & Communication",
+    description: "Resources on language development, speech delays, and alternative forms of communication for neurodivergent children.",
+    faq: [
+      { q: "When should I worry about speech delay?", a: "If your child is not using gestures by 12 months or single words by 16 months, seek guidance." }
+    ],
+    blogs: [
+      { name: "Speech Delay vs Autism", href: "/blog/speech-delay-vs-autism" },
+      { name: "Social Communication Concerns", href: "/blog/social-communication-concerns" }
+    ],
+    services: [{ name: "ASD Parent Guidance Consultation", href: "/services/asd-support" }],
     cta: "Explore Communication Support"
   },
   {
-    title: "Assessment & Reports",
-    description: "Checklists and guides to prepare for assessments and understand the results.",
-    resources: [{ name: "Assessment Preparation Checklist", href: "/resource-vault" }, { name: "Report Review Translation Guide", href: "/resource-vault" }],
-    blogs: [{ name: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" }],
-    services: [{ name: "Report Review & Parent Explanation", href: "/report-review" }],
-    faq: [{ q: "What should I bring to an assessment?", a: "Bring any previous school reports, medical records, and notes on your observations." }],
-    cta: "Get Help with Reports"
+    title: "12. Assessment & Reports",
+    description: "Demystifying psychological assessments, understanding clinical jargon, and turning reports into actionable steps.",
+    faq: [
+      { q: "How do I explain an assessment report to the school?", a: "Focus on the key findings and the specific accommodations recommended by the evaluator." }
+    ],
+    blogs: [
+      { name: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" },
+      { name: "How to Prepare for Child Assessment", href: "/blog/how-to-prepare-for-child-assessment" }
+    ],
+    services: [{ name: "Report Review", href: "/report-review" }],
+    cta: "Explore Report Review"
+  },
+  {
+    title: "13. International Parent Guidance",
+    description: "Tailored support for families living abroad, navigating different educational systems and cultural expectations.",
+    faq: [
+      { q: "Do you offer consultations for families outside Pakistan?", a: "Yes, we provide online developmental and parent guidance to families worldwide." }
+    ],
+    blogs: [
+      { name: "Parent Guidance After an Autism Diagnosis", href: "/blog/parent-guidance-after-an-autism-diagnosis" }
+    ],
+    services: [{ name: "Behaviour Planning", href: "/services/behaviour-planning" }],
+    cta: "Explore International Support"
+  },
+  {
+    title: "14. Free Downloads",
+    description: "Accessible tools, checklists, and visual schedules you can download and use at home today.",
+    faq: [
+      { q: "Are the downloads free?", a: "Yes, these are provided as a starting point to support your child's development." }
+    ],
+    blogs: [],
+    services: [],
+    cta: "View Free Downloads",
+    ctaLink: "/free-downloads"
+  },
+  {
+    title: "15. Resource Vault",
+    description: "A comprehensive collection of our premium resources, templates, and guided videos for members and clients.",
+    faq: [
+      { q: "How do I access the Resource Vault?", a: "Access is often provided as part of our consultation packages or available for separate purchase." }
+    ],
+    blogs: [],
+    services: [],
+    cta: "Access Resource Vault",
+    ctaLink: "/resource-vault"
   }
 ];
+
+// Combine all actual resources to display at the top
+const featuredResources = resources || [];
+
 ---
 
-<Layout title="Parent Resource Center">
-  <SEO
-    title="Parent Resource Center | ADHD, Autism, Behaviour & Child Development Tools"
-    description="Explore parent-friendly resources, guides, checklists, workbooks, and downloads for ADHD, autism, routines, behaviour tracking, school meetings, and child development support."
-  />
-
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<BaseLayout
+  title="Parent Support Resource Center | Rabbia Psychologist"
+  description="Explore resources for ADHD, autism, child behavior, emotional regulation, and school support. Practical guidance for parents."
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="max-w-4xl mx-auto mt-8 mb-16 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Parent Resource Center</h1>
-      <p class="text-xl text-gray-700 mb-8">
-        A structured library of practical tools, insightful articles, and comprehensive guides designed to empower parents. Browse by category to find exactly what you need.
+    <div class="text-center mt-8 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Parent Support Resource Center</h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Practical, parent-friendly resources on child development, ADHD, autism, behaviour, emotional regulation, and learning difficulties.
       </p>
-
-      <!-- New Added Section: Search/Filter Stub & Popular -->
-      <div class="flex flex-col md:flex-row justify-center gap-4 mb-8">
-         <input type="text" placeholder="Search resources (e.g. 'ADHD', 'Meltdown')..." class="px-4 py-2 border border-gray-300 rounded-lg w-full md:w-96 focus:outline-none focus:ring-2 focus:ring-brand-gold" />
-         <button class="bg-brand-navy text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors">Search</button>
-      </div>
-      <div class="flex flex-wrap justify-center gap-2 mb-8">
-        <span class="text-sm font-bold text-gray-500 uppercase tracking-wider mt-1 mr-2">Popular Tags:</span>
-        {['ADHD Planners', 'Visual Schedules', 'Behaviour Tracking', 'IEP Preparation'].map(tag => (
-          <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 cursor-pointer transition-colors">{tag}</span>
-        ))}
-      </div>
     </div>
 
-    <!-- Featured Resources (NEW) -->
-    <div class="max-w-6xl mx-auto mb-16">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6 flex items-center gap-2">
-        <svg class="w-6 h-6 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-        Featured Resources
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-         <div class="bg-white p-6 rounded-xl border-2 border-brand-gold/50 shadow-md relative overflow-hidden group">
-            <div class="absolute -right-6 -top-6 bg-brand-gold text-white text-xs font-bold px-8 py-1 rotate-45">NEW</div>
-            <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-trust transition-colors">ADHD Home Planner</h3>
-            <p class="text-sm text-gray-600 mb-4">Complete routine structuring for children with ADHD.</p>
-            <a href="/resource-vault" class="text-brand-trust font-bold text-sm hover:underline">Request Resource &rarr;</a>
-         </div>
-         <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden group">
-            <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-trust transition-colors">Visual Schedule Starter Pack</h3>
-            <p class="text-sm text-gray-600 mb-4">Essential transition cards for daily home routines.</p>
-            <a href="/resource-vault" class="text-brand-trust font-bold text-sm hover:underline">Request Resource &rarr;</a>
-         </div>
-         <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden group">
-            <div class="absolute -right-8 -top-6 bg-brand-navy text-white text-xs font-bold px-8 py-1 rotate-45">POPULAR</div>
-            <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-trust transition-colors">Tantrum vs Meltdown Guide</h3>
-            <p class="text-sm text-gray-600 mb-4">How to distinguish and respond effectively to both.</p>
-            <a href="/resource-vault" class="text-brand-trust font-bold text-sm hover:underline">Request Resource &rarr;</a>
-         </div>
+    {featuredResources.length > 0 && (
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-brand-navy mb-6 text-center border-b pb-4">Featured Resources</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredResources.map(resource => (
+            <ResourceCard resource={resource} />
+          ))}
+        </div>
       </div>
-    </div>
+    )}
 
-    <!-- Top Level Links -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-      <ResourceCard
-        title="Resource Vault"
-        type="Premium Digital Tools"
-        description="Access our comprehensive digital library including workbooks, planners, and behavior logs."
-        href="/resource-vault"
-      />
-      <ResourceCard
-        title="Parent Blog"
-        type="Knowledge Hub"
-        description="Read evidence-informed articles on child development, neurodiversity, and parenting strategies."
-        href="/blog"
-      />
-    </div>
-
-    <!-- Resource Categories -->
-    <div class="max-w-6xl mx-auto space-y-16 mb-24">
-      {categories.map((category, index) => (
-        <div class="bg-white p-8 md:p-12 rounded-xl shadow-sm border-t-4 border-brand-navy">
+    <div class="space-y-16">
+      {categories.map((category) => (
+        <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover-lift">
           <h2 class="text-3xl font-bold text-brand-navy mb-4">{category.title}</h2>
-          <p class="text-lg text-gray-700 mb-8 border-b border-gray-100 pb-6">{category.description}</p>
+          <p class="text-lg text-gray-700 mb-6">{category.description}</p>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <div>
-              <h3 class="font-bold text-brand-navy mb-4 text-sm uppercase tracking-wider">Featured Resources</h3>
-              <ul class="space-y-3 mb-8">
-                {category.resources.map(res => (
-                  <li>
-                    <a href={res.href} class="text-brand-trust hover:underline font-medium flex items-center gap-2">
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                      {res.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <h3 class="text-xl font-bold text-brand-navy mb-3">Common Questions</h3>
+              {category.faq.map((f) => (
+                <div class="mb-4">
+                  <h4 class="font-bold text-gray-800">{f.q}</h4>
+                  <p class="text-gray-600 text-sm">{f.a}</p>
+                </div>
+              ))}
 
-              <h3 class="font-bold text-brand-navy mb-4 text-sm uppercase tracking-wider">Related Articles</h3>
-              <ul class="space-y-3">
-                {category.blogs.map(blog => (
-                  <li>
-                    <a href={blog.href} class="text-gray-700 hover:text-brand-trust hover:underline transition-colors block leading-tight">
-                      {blog.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div class="bg-brand-cream p-6 rounded-lg border border-brand-gold/20 flex flex-col h-full">
-               <h3 class="font-bold text-brand-navy mb-4 text-sm uppercase tracking-wider">Common Question</h3>
-               {category.faq.map(f => (
-                 <div class="mb-6 flex-grow">
-                   <p class="font-bold text-gray-800 mb-2">{f.q}</p>
-                   <p class="text-gray-600 text-sm">{f.a}</p>
-                 </div>
-               ))}
-
-               <div class="mt-auto">
-                 <h3 class="font-bold text-brand-navy mb-3 text-sm uppercase tracking-wider">Related Services</h3>
-                 <ul class="space-y-2 mb-6">
-                   {category.services.map(svc => (
-                     <li>
-                       <a href={svc.href} class="text-sm font-semibold text-brand-navy hover:text-brand-trust hover:underline">{svc.name}</a>
-                     </li>
-                   ))}
-                 </ul>
-                 <a href="/book" class="inline-block w-full text-center bg-white border-2 border-brand-navy text-brand-navy px-4 py-2 rounded-lg font-bold hover:bg-gray-50 transition-colors">
-                   {category.cta}
-                 </a>
+              <h3 class="text-xl font-bold text-brand-navy mb-3 mt-6">Parents Also Ask</h3>
+               <div class="space-y-2">
+                 <p class="text-sm font-bold text-gray-800">Is this normal behaviour or something more?</p>
+                 <p class="text-sm text-gray-600">If it significantly impacts daily life, it may need support. Read our <a href="/blog/when-to-seek-developmental-assessment" class="text-brand-trust hover:underline">guide on assessments</a>.</p>
                </div>
             </div>
+
+            <div>
+              {category.blogs.length > 0 && (
+                <div class="mb-6">
+                  <h3 class="text-xl font-bold text-brand-navy mb-3">Featured Articles</h3>
+                  <ul class="list-disc pl-5 space-y-2">
+                    {category.blogs.map((blog) => (
+                      <li><a href={blog.href} class="text-brand-trust hover:underline font-medium">{blog.name}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {category.services.length > 0 && (
+                <div>
+                  <h3 class="text-xl font-bold text-brand-navy mb-3">Related Services</h3>
+                  <ul class="list-disc pl-5 space-y-2">
+                    {category.services.map((service) => (
+                      <li><a href={service.href} class="text-brand-trust hover:underline font-medium">{service.name}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+
+          <div class="mt-6 text-center md:text-left">
+            {category.ctaLink ? (
+              <a href={category.ctaLink} class="inline-block bg-brand-trust text-white px-6 py-3 rounded-lg font-bold hover:bg-teal-800 transition-colors">
+                {category.cta}
+              </a>
+            ) : (
+              <a href="/book" class="inline-block bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">
+                Book a Parent Consultation
+              </a>
+            )}
+          </div>
+        </section>
       ))}
     </div>
+
   </div>
 
-  <StickyMobileBookingCTA />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Parent Resource Center",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Rabbia Psychologist Child Development Services"
-  }
-}
-</script>
-</Layout>
+</BaseLayout>
