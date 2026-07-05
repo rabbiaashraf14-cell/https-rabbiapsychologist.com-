@@ -1,31 +1,56 @@
 ---
+import { Image } from 'astro:assets';
+import heroPortrait from '../../assets/hero-portrait.png';
 ---
-<div class="relative overflow-hidden bg-brand-cream py-20 lg:py-32 flex items-center justify-center min-h-[70vh]">
+<div class="relative overflow-hidden bg-brand-cream py-20 lg:py-32 flex items-center min-h-[70vh]">
   <div class="absolute inset-0 bg-gradient-to-br from-brand-sky/30 to-brand-cream z-0 pointer-events-none"></div>
   <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-sky/20 rounded-full blur-3xl opacity-60"></div>
   <div class="absolute top-40 -left-40 w-96 h-96 bg-brand-lavender/30 rounded-full blur-3xl opacity-60"></div>
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fade-in-up">
-    <span class="inline-block py-1 px-3 rounded-full bg-brand-cream text-brand-navy text-sm font-bold tracking-wide uppercase mb-6 shadow-sm border border-brand-gold">
-      Guiding Child Development with Care, Clarity, and Expertise
-    </span>
-    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-navy mb-6 tracking-tight leading-tight">
-      Child Development, ADHD & Autism Parent Guidance
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
-      Support for parents who need practical next steps for ADHD, autism, behaviour concerns, school difficulties, emotional regulation, report understanding, and developmental concerns.<br/><br/>
-      <strong>Parent guidance online worldwide. Local assessment in Lahore where appropriate.</strong>
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-      <a href="/book" class="w-full sm:w-auto px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-        Book Parent Consultation
-      </a>
-      <a href="/services" class="w-full sm:w-auto px-8 py-4 bg-white text-brand-navy border-2 border-brand-navy rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
-        View Services
-      </a>
-      <a href="/pricing" class="w-full sm:w-auto px-8 py-4 text-brand-navy font-bold text-lg hover:underline transition-all">
-        See Pricing
-      </a>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Mobile: Image centers above the heading due to order-1, Desktop: order-2 -->
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-up">
+        <div class="relative">
+          <!-- Background Glow -->
+          <div class="absolute inset-0 bg-brand-sky/30 blur-3xl rounded-full"></div>
+          <Image
+            src={heroPortrait}
+            alt="Rabbia Ashraf Clinical Psychologist Portrait"
+            class="relative z-10 w-full max-w-[500px] h-auto object-cover rounded-[28px] shadow-md hover-lift transition-all duration-300"
+            loading="eager"
+            widths={[400, 800]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+
+      <!-- Text Content: Mobile order-2, Desktop: order-1 -->
+      <div class="order-2 lg:order-1 text-center lg:text-left animate-fade-in-up">
+        <span class="inline-block py-1 px-3 rounded-full bg-brand-cream text-brand-navy text-sm font-bold tracking-wide uppercase mb-6 shadow-sm border border-brand-gold">
+          Guiding Child Development with Care, Clarity, and Expertise
+        </span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-navy mb-6 tracking-tight leading-tight">
+          Child Development, ADHD & Autism Parent Guidance
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 max-w-3xl lg:max-w-none mx-auto lg:mx-0 mb-10 leading-relaxed">
+          Support for parents who need practical next steps for ADHD, autism, behaviour concerns, school difficulties, emotional regulation, report understanding, and developmental concerns.<br/><br/>
+          <strong>Parent guidance online worldwide. Local assessment in Lahore where appropriate.</strong>
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+          <a href="/book" class="w-full sm:w-auto px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+            Book Parent Consultation
+          </a>
+          <a href="/services" class="w-full sm:w-auto px-8 py-4 bg-white text-brand-navy border-2 border-brand-navy rounded-lg font-bold text-lg hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
+            View Services
+          </a>
+          <a href="/pricing" class="w-full sm:w-auto px-8 py-4 text-brand-navy font-bold text-lg hover:underline transition-all">
+            See Pricing
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

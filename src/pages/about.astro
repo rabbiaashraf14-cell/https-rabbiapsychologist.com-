@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import clinicPhoto from '../assets/clinic-photo.png';
+
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
 import Schema from '../components/Schema.astro';
@@ -121,14 +124,34 @@ const faqSchema = {
 
         <!-- 2. Short intro -->
         <section class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="flex-1">
+          <div class="flex-1 order-2 md:order-1">
             <p class="lead text-xl text-brand-navy font-medium mb-6">Rabbia Ashraf is a Clinical Psychologist focusing on child and adolescent psychology. She has extensive experience with child development, ADHD, autism, learning, behaviour, parent counselling, school support, and developmental-behavioural pediatrics.</p>
             <h3 class="text-2xl font-bold text-brand-navy mt-8 mb-4">My Approach</h3>
             <p class="text-gray-700 mb-4">Her approach is professional, warm, and simple. Families partner with Rabbia because of her multidisciplinary understanding and parent-friendly care philosophy.</p>
-            <a href="/book" class="bg-brand-navy text-white px-6 py-3 rounded-xl font-bold mt-6 inline-block">Book Consultation</a>
+            <a href="/book" class="bg-brand-navy text-white px-6 py-3 rounded-xl font-bold mt-6 inline-block shadow-sm hover-lift transition-all">Book Consultation</a>
           </div>
-          <div class="md:w-1/3 shrink-0">
-            <img src="/og-brand-card.png" alt="Rabbia Ashraf Clinical Psychologist for child development and parent guidance" class="w-full rounded-xl shadow-sm border border-gray-100" />
+          <div class="w-full md:w-5/12 shrink-0 order-1 md:order-2 fade-in">
+            <div class="relative">
+              <div class="absolute inset-0 bg-brand-sky/30 blur-3xl rounded-full"></div>
+              <Image
+                src={clinicPhoto}
+                alt="Rabbia Ashraf Clinical Psychologist at child development clinic"
+                class="relative z-10 w-full rounded-[24px] shadow-md border border-gray-100 hover-lift transition-all duration-300"
+                widths={[400, 800]}
+                sizes="(max-width: 768px) 100vw, 400px"
+              />
+            </div>
+
+            <div class="mt-6 space-y-2 text-sm text-gray-700 font-medium">
+              <ul class="list-none pl-0 space-y-2 m-0">
+                <li class="flex items-center"><svg class="w-4 h-4 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Child Development</li>
+                <li class="flex items-center"><svg class="w-4 h-4 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> ADHD Support</li>
+                <li class="flex items-center"><svg class="w-4 h-4 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Autism Assessment</li>
+                <li class="flex items-center"><svg class="w-4 h-4 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Parent Guidance</li>
+                <li class="flex items-center"><svg class="w-4 h-4 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Psychological Assessment</li>
+                <li class="flex items-center"><svg class="w-4 h-4 text-brand-trust mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Evidence-Based Practice</li>
+              </ul>
+            </div>
           </div>
         </section>
 
