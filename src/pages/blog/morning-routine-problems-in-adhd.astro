@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import QuickFacts from '../../components/blog/QuickFacts.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import ActionChecklist from '../../components/blog/ActionChecklist.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+
+const title = "Morning Routine Problems in ADHD: Why It's So Hard and What to Do";
+const description = "Mornings are often the hardest part of the day for families with ADHD. Understand the executive function struggles behind morning chaos and learn practical parent strategies.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/morning-routine-problems-in-adhd";
+const lastUpdated = "2024-03-25";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Morning Routine Problems in ADHD', href: '/blog/morning-routine-problems-in-adhd' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "datePublished": "2024-03-25",
+  "dateModified": lastUpdated
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is waking up so hard for children with ADHD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children with ADHD often have delayed circadian rhythms, making falling asleep and waking up difficult. They also face 'sleep inertia,' a groggy state that makes transitioning from sleep to wakefulness physically harder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I stop the arguing every morning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reduce the number of decisions your child has to make in the morning. Use a visual checklist, lay out clothes the night before, and minimize verbal instructions which demand high working memory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are visual schedules really effective for older kids?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Even teenagers benefit from visual or written checklists. Executive function struggles don't disappear with age; offloading the 'remembering' onto a physical list frees up cognitive energy."
+      }
+    }
+  ]
+};
+
+const headings = [
+  { depth: 2, slug: "what-parents-notice", text: "What parents usually notice" },
+  { depth: 2, slug: "what-this-means", text: "What this means: The executive function barrier" },
+  { depth: 2, slug: "what-to-try-at-home", text: "What parents can try at home" },
+  { depth: 2, slug: "when-to-seek-support", text: "When to seek professional support" },
+  { depth: 2, slug: "parents-also-ask", text: "Parents Also Ask" },
+  { depth: 2, slug: "faqs", text: "Frequently Asked Questions" }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Article Hero -->
+    <div class="mt-8 mb-8">
+      <div class="flex gap-2 mb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2 py-1 rounded">ADHD</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2 py-1 rounded">Routines</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-4 leading-tight">{title}</h1>
+      <p class="text-xl text-gray-700 mb-6">Mornings are often the hardest part of the day for families with ADHD. Understand the executive function struggles behind morning chaos and learn practical parent strategies.</p>
+
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 border-b pb-6">
+        <span>Estimated reading time: 6 min</span>
+        <span>&bull;</span>
+        <span>Updated: {new Date(lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-12">
+      <!-- Sidebar TOC -->
+      <aside class="hidden lg:block lg:w-1/4 flex-shrink-0">
+        <div class="sticky top-24">
+          <TableOfContents headings={headings} />
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <article class="prose prose-lg max-w-none text-gray-800 lg:w-3/4">
+
+        <p class="lead">If you feel like you have run a marathon before 8:00 AM, you are not alone. For children with ADHD, getting ready for school is not just a matter of waking up; it is an immense executive function challenge. The repeated reminders, the refusal to get dressed, and the sudden meltdowns are all common signs of a brain struggling to manage the demands of the morning.</p>
+
+        <!-- Disclaimer -->
+        <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg text-sm text-gray-600 mb-8 italic">
+          This article is for parent education only. It does not replace emergency care, local diagnosis, medical treatment, or individualized professional advice.
+        </div>
+
+        <h2 id="what-parents-notice">What parents usually notice</h2>
+        <p>Morning chaos rarely looks like a child simply deciding to be difficult. It usually presents as specific friction points:</p>
+        <ul>
+          <li><strong>Extreme difficulty waking up:</strong> The child seems unusually groggy or irritable, no matter how much they slept.</li>
+          <li><strong>Getting 'stuck':</strong> You find them staring at the wall holding one sock, completely distracted from the task of getting dressed.</li>
+          <li><strong>Emotional volatility:</strong> A slightly scratchy shirt tag or the wrong breakfast bowl triggers a major meltdown.</li>
+          <li><strong>Time blindness:</strong> The child acts as if they have all the time in the world, even when the bus is arriving in three minutes.</li>
+          <li><strong>Defiance:</strong> The child outright refuses to follow instructions or argues over every step of the routine.</li>
+        </ul>
+
+        <h2 id="what-this-means">What this means: The executive function barrier</h2>
+        <p>A morning routine requires high levels of executive functioning. The child must transition from sleep to wakefulness (task initiation), remember the sequence of getting ready (working memory), manage their time (time awareness), and ignore the distraction of their toys (inhibitory control). </p>
+        <p>In ADHD, these specific cognitive skills are delayed. The brain becomes quickly overwhelmed by the number of steps. The child isn't refusing to get dressed out of spite; they are often experiencing cognitive overload. When we add rushed, frustrated parental demands into this mix, the child's nervous system detects a threat, leading to fight-or-flight behaviour (the meltdown).</p>
+
+        <h2 id="what-to-try-at-home">What parents can try at home</h2>
+        <p>The goal is to externalize the executive function demands—meaning, take the pressure off the child's brain and put the structure into the environment.</p>
+        <ul>
+          <li><strong>The 'Night Before' Strategy:</strong> Remove decisions from the morning. Lay out clothes (down to the socks and underwear), pack the school bag, and decide on breakfast the night before. </li>
+          <li><strong>Visual Schedules:</strong> Create a simple picture checklist for the morning (e.g., Toilet, Dress, Eat, Brush Teeth, Shoes). Do not rely on verbal reminders, which stress working memory. Instead, point to the chart: "What's next on your list?"</li>
+          <li><strong>Rethink the Wake-Up:</strong> Children with ADHD often suffer from sleep inertia. Try waking them gently 15 minutes earlier than necessary with a dim light or soft music, allowing them time to transition before demanding they get out of bed.</li>
+          <li><strong>Limit Verbal Instructions:</strong> When you are rushed, you likely talk more. "Hurry up, get your shoes, why is your bag not packed?" This is too much verbal information. Give one short, clear instruction at a time.</li>
+        </ul>
+
+        <h2 id="when-to-seek-support">When to seek professional support</h2>
+        <p>You should consider seeking parent guidance if morning routines are consistently ending in tears or yelling, if your child is frequently late to school, or if the stress of the morning is ruining your relationship with your child. A professional can help you map out the exact points of friction and design a customized routine.</p>
+
+        <!-- Parents Also Ask -->
+        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-8">
+          <h2 id="parents-also-ask" class="text-xl font-bold text-brand-navy mb-4 !mt-0">Parents Also Ask</h2>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-bold text-brand-navy">Is this normal behaviour or something more?</h4>
+              <p class="text-sm">While all children drag their feet occasionally, if mornings are a daily battle that impacts school attendance and family peace, it suggests an underlying executive function struggle.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-navy">Can this improve with home strategies?</h4>
+              <p class="text-sm">Absolutely. Modifying the environment and reducing morning demands is highly effective for children with ADHD.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-navy">Do I need an assessment?</h4>
+              <p class="text-sm">If these challenges are persistent and occur alongside other signs of inattention or hyperactivity, you may want to review our guide on <a href="/blog/when-to-seek-developmental-assessment" class="text-brand-trust hover:underline">when to seek an assessment</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="faqs">Frequently Asked Questions</h2>
+        <div class="space-y-4 not-prose">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Why is waking up so hard for children with ADHD?</h4>
+            <p class="text-sm">Children with ADHD often have delayed circadian rhythms, making falling asleep and waking up difficult. They also face 'sleep inertia,' a groggy state that makes transitioning from sleep to wakefulness physically harder.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">How can I stop the arguing every morning?</h4>
+            <p class="text-sm">Reduce the number of decisions your child has to make in the morning. Use a visual checklist, lay out clothes the night before, and minimize verbal instructions which demand high working memory.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Are visual schedules really effective for older kids?</h4>
+            <p class="text-sm">Yes. Even teenagers benefit from visual or written checklists. Executive function struggles don't disappear with age; offloading the 'remembering' onto a physical list frees up cognitive energy.</p>
+          </div>
+        </div>
+
+        <!-- Related Services -->
+        <div class="bg-brand-cream p-6 rounded-xl border border-brand-sky my-8 not-prose">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
+          <ul class="space-y-2">
+            <li><a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Parent Guidance & Executive Function Support</a></li>
+            <li><a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Support Planning</a></li>
+            <li><a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School & IEP Consultation</a></li>
+          </ul>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="bg-white p-6 rounded-xl border border-gray-200 my-8 not-prose">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+          <ul class="space-y-2">
+            <li><a href="/blog/how-to-support-executive-function-at-home" class="text-brand-trust hover:underline">How to Support Executive Function at Home</a></li>
+            <li><a href="/blog/understanding-adhd-and-hyperactivity-in-children" class="text-brand-trust hover:underline">Understanding ADHD and Hyperactivity in Children</a></li>
+            <li><a href="/blog/sleep-routine-and-child-behaviour" class="text-brand-trust hover:underline">Sleep Routine and Child Behaviour</a></li>
+          </ul>
+        </div>
+
+
+        <ArticleAuthor
+          author="Rabbia Ashraf"
+          title="Clinical Psychologist | Child & Adolescent Development Support"
+          bio="Rabbia supports families with ADHD, autism, behaviour concerns, emotional regulation, learning difficulties, school support, parent counseling, and psychological report review."
+        />
+
+        <BlogCTA
+          title="Need help creating a morning routine that works?"
+          description="Book a parent guidance session to get a personalized, step-by-step plan for your family's mornings."
+          buttonText="Book Parent Consultation"
+          buttonLink="/book"
+        />
+
+      </article>
+    </div>
+  </div>
+</BaseLayout>

@@ -2,29 +2,109 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "ADHD Parent Guidance & Executive Function Support | Rabbia Psychologist";
+const description = "Online parent guidance for ADHD routines, executive function, school support, and emotional regulation. Get practical help for your child's development.";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/adhd-support";
+
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
   { name: 'ADHD Support', href: '/services/adhd-support' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ADHD Parent Guidance and Executive Function Support",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Online parent guidance for ADHD routines, executive function, school support, and emotional regulation.",
+  "areaServed": "International",
+  "serviceType": "Parent Guidance",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "95"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if my child has ADHD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children with ADHD often show persistent patterns of inattention, hyperactivity, or impulsivity that interfere with daily life. Common signs include difficulty sustaining focus, seeming not to listen, struggling with organization, fidgeting, and acting without thinking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ADHD look like laziness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, to an observer, executive function struggles—such as difficulty starting tasks, low working memory, and mental fatigue—can look like laziness or lack of motivation. In reality, the child is often struggling with the cognitive load of organizing and completing the task."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are mornings so hard for children with ADHD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mornings require a high sequence of steps, time management, task switching, and working memory—all of which fall under executive functioning. Children with ADHD often become overwhelmed by these demands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can parent guidance help before a formal diagnosis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. You do not need a formal diagnosis to start implementing structural supports at home. Creating visual routines, breaking tasks into smaller steps, and understanding your child's triggers can help immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you prescribe ADHD medication?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We provide parent guidance, behavioral strategies, and developmental consultation. Medication advice, formal diagnosis, and medical treatment decisions should be discussed with a qualified medical professional in your local area."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="ADHD Support & Parent Guidance | Rabbia Psychologist" description="Online parent guidance for ADHD routines, executive function, school support, and emotional regulation.">
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
     <!-- 1. Hero section -->
     <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">ADHD Support & Parent Guidance</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">ADHD Parent Guidance and Executive Function Support</h1>
       <p class="text-xl text-gray-700 mb-4">Practical strategies for attention, hyperactivity, impulsivity, and executive function struggles at home and school.</p>
-      <p class="text-lg font-bold text-brand-gold mb-6">USD 95 / AUD 145</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Pricing available at <a href="/pricing" class="hover:underline">Pricing</a></p>
       <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
     <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
+      <!-- Parent problem statement -->
+      <section>
+        <p class="lead text-xl">ADHD can affect attention, impulse control, emotional regulation, routines, homework, transitions, sleep, school performance, and family stress. Parents often notice the behaviour first, but the real difficulty may be attention regulation, working memory, planning, task initiation, or emotional overload.</p>
+      </section>
+
       <!-- 2. This is right for you if -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This service is right for you if:</h2>
         <ul>
           <li>Your child has a recent ADHD diagnosis and you need a home plan.</li>
           <li>You are waiting for an assessment but need strategies right now.</li>
@@ -33,50 +113,92 @@ const breadcrumbs = [
         </ul>
       </section>
 
-      <!-- 3. Common concerns parents bring -->
+      <!-- 3. Common signs parents ask about -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common signs parents ask about:</h2>
         <ul>
-          <li>Morning routine battles and refusing to get dressed.</li>
-          <li>Homework refusal or taking hours to do simple tasks.</li>
-          <li>Screen transitions resulting in meltdowns.</li>
-          <li>Child not following instructions or seeming to ignore you.</li>
-          <li>Emotional outbursts that escalate quickly.</li>
-          <li>Teacher complaints about fidgeting or distraction.</li>
+          <li>Child does not listen even after repeated reminders</li>
+          <li>Child starts homework but cannot finish</li>
+          <li>Morning routines feel impossible</li>
+          <li>Child forgets instructions quickly</li>
+          <li>Emotional reactions feel bigger than expected</li>
+          <li>Child interrupts, rushes, or acts before thinking</li>
+          <li>Teacher reports incomplete work or careless mistakes</li>
+          <li>Parent feels exhausted from constant reminding</li>
         </ul>
       </section>
 
-      <!-- 4. What we do in the session -->
+      <!-- 4. How this service helps (What we do) -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
-        <p>We review your specific challenges, analyze what is triggering the behavior or resistance, and map out a practical intervention. We focus heavily on executive functioning—how to adapt the environment so your child can succeed.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">How this service helps (What happens in the session):</h2>
+        <ul>
+          <li>Parent interview and concern mapping</li>
+          <li>Routine review</li>
+          <li>Behaviour and attention pattern review</li>
+          <li>Executive function support strategies</li>
+          <li>Home structure and visual routine planning</li>
+          <li>School communication guidance</li>
+          <li>Next-step planning for assessment if needed</li>
+          <li>Referral direction where medical or diagnostic evaluation is needed</li>
+        </ul>
       </section>
 
       <!-- 5. What you leave with -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with:</h2>
         <p>You will leave with a clear, step-by-step action plan. This might include a custom morning routine structure, a script for how to respond during an outburst, or a list of specific accommodations to ask the school for.</p>
       </section>
 
-      <!-- 6. What this service does not include -->
+      <!-- 6. What this service does not include / Safety Boundary -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2 mb-4">What this service does not include</h2>
+        <p><strong>Safety Boundary:</strong> This service provides parent guidance and support planning. Medication advice, formal diagnosis, and medical treatment decisions should be discussed with a qualified medical professional in the family’s local area.</p>
+        <p>It also does not include direct therapy with the child or emergency crisis intervention.</p>
+      </section>
+
+      <!-- Parents Also Ask Block -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Parents Also Ask</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-brand-navy">Is this normal behaviour or something more?</h4>
+            <p class="text-sm">Many children struggle with attention occasionally, but if it frequently affects routines and learning, it may need support. We explore <a href="/blog/when-to-seek-developmental-assessment" class="text-brand-trust hover:underline">when to seek an assessment</a>.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">When should I seek help?</h4>
+            <p class="text-sm">Seek help when daily routines cause constant stress, or school performance is affected. Early guidance can make a significant difference.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can this improve with home strategies?</h4>
+            <p class="text-sm">Yes, creating visual routines and modifying the environment can greatly help children better manage their attention and tasks.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Should I speak to the school first?</h4>
+            <p class="text-sm">It's often helpful to connect home and school strategies. We can help you with <a href="/services/school-consultation" class="text-brand-trust hover:underline">school support planning</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Related resources & internal links -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
-        <ul>
-          <li>Medical diagnosis of ADHD.</li>
-          <li>Medication prescription or management.</li>
-          <li>Direct therapy with the child (this is parent guidance).</li>
-          <li>Emergency crisis intervention.</li>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services & Resources</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <li><a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning</a></li>
+          <li><a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation</a></li>
+          <li><a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review</a></li>
+          <li><a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center</a></li>
+          <li><a href="/faqs" class="text-brand-trust font-bold hover:underline">Frequently Asked Questions</a></li>
         </ul>
       </section>
 
-      <!-- 7. Related services -->
-      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning &rarr;</a>
-          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation &rarr;</a>
-          <a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review &rarr;</a>
-        </div>
+      <!-- Related blog articles -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <ul class="list-disc pl-5">
+          <li><a href="/blog/morning-routine-problems-in-adhd" class="text-brand-trust hover:underline">Morning Routine Problems in ADHD</a></li>
+          <li><a href="/blog/how-to-support-executive-function-at-home" class="text-brand-trust hover:underline">How to Support Executive Function at Home</a></li>
+          <li><a href="/blog/screen-time-and-emotional-regulation" class="text-brand-trust hover:underline">Screen Time and Emotional Regulation</a></li>
+        </ul>
       </section>
 
       <!-- 8. FAQ section -->
@@ -84,20 +206,24 @@ const breadcrumbs = [
         <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-4">
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Do you diagnose ADHD online?</h4>
-            <p class="text-sm">No. Online consultation is for parent guidance, not formal medical diagnosis. We help you manage the symptoms at home.</p>
+            <h4 class="font-bold text-brand-navy mb-2">How do I know if my child has ADHD?</h4>
+            <p class="text-sm">Children with ADHD often show persistent patterns of inattention, hyperactivity, or impulsivity that interfere with daily life. Common signs include difficulty sustaining focus, seeming not to listen, struggling with organization, fidgeting, and acting without thinking.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">What if we already have a diagnosis?</h4>
-            <p class="text-sm">Perfect. Our guidance sessions focus purely on action—routines, behavior responses, and school planning based on your existing report.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can ADHD look like laziness?</h4>
+            <p class="text-sm">Yes, to an observer, executive function struggles—such as difficulty starting tasks, low working memory, and mental fatigue—can look like laziness or lack of motivation. In reality, the child is often struggling with the cognitive load of organizing and completing the task.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Can you help with school IEPs?</h4>
-            <p class="text-sm">Yes, we can help you prepare for the meeting and suggest reasonable accommodations to request.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Why are mornings so hard for children with ADHD?</h4>
+            <p class="text-sm">Mornings require a high sequence of steps, time management, task switching, and working memory—all of which fall under executive functioning. Children with ADHD often become overwhelmed by these demands.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Is my child involved in the session?</h4>
-            <p class="text-sm">No, this is a parent-focused session to equip you with strategies to use at home.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can parent guidance help before a formal diagnosis?</h4>
+            <p class="text-sm">Absolutely. You do not need a formal diagnosis to start implementing structural supports at home. Creating visual routines, breaking tasks into smaller steps, and understanding your child's triggers can help immediately.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Do you prescribe ADHD medication?</h4>
+            <p class="text-sm">No. We provide parent guidance, behavioral strategies, and developmental consultation. Medication advice, formal diagnosis, and medical treatment decisions should be discussed with a qualified medical professional in your local area.</p>
           </div>
         </div>
       </section>
@@ -105,9 +231,9 @@ const breadcrumbs = [
       <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
         <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready for clarity and a clear plan?</h3>
-        <p class="mb-6">Book your consultation today and take the first step towards a calmer home.</p>
+        <p class="mb-6">Book your parent guidance session today and take the first step towards a calmer home.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book ADHD Support</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
         </div>
       </div>
     </div>

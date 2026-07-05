@@ -2,81 +2,204 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Autism Parent Guidance & Developmental Support Planning | Rabbia Psychologist";
+const description = "Online parent guidance for autism, communication strategies, and behavioral support planning. Help your child's development at home and school.";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/asd-support";
+
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
   { name: 'Autism Support', href: '/services/asd-support' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Autism Parent Guidance and Developmental Support Planning",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Online parent guidance for autism, communication strategies, and behavioral support planning.",
+  "areaServed": "International",
+  "serviceType": "Parent Guidance",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "95"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can autism be diagnosed online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our services provide parent guidance and developmental consultation, not formal online medical diagnosis. A formal medical or diagnostic evaluation for autism should be done locally where legally permitted, which we can guide you towards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is speech delay the same as autism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Speech delay is common but can happen for many reasons. In autism, delays are often in social communication—such as eye contact, joint attention, or using gestures—not just spoken words."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should parents do after an autism diagnosis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After a diagnosis, the focus shifts to understanding your child's unique profile. This includes adapting the environment to support their sensory needs, building communication through play, establishing predictable routines, and planning school supports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can autism look different in girls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Girls often 'mask' or camouflage their traits, mimicking peers in social settings. Their special interests might also be more socially acceptable (like animals or books), making their autism less obvious to teachers and even parents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can parent guidance help while waiting for assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Parent guidance is highly effective while waiting for an assessment. You can begin implementing visual supports, sensory breaks, and communication strategies immediately to ease daily routines."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Autism Parent Guidance | Rabbia Psychologist" description="Online parent training and behavioral support planning for families navigating ASD.">
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
     <!-- 1. Hero section -->
     <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Autism Support & Parent Guidance</h1>
-      <p class="text-xl text-gray-700 mb-4">Parent training, communication strategies, and behavioral support planning for families navigating ASD.</p>
-      <p class="text-lg font-bold text-brand-gold mb-6">USD 95 / AUD 145</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Autism Parent Guidance and Developmental Support Planning</h1>
+      <p class="text-xl text-gray-700 mb-4">Parent guidance, communication strategies, and behavioral support planning for families navigating ASD.</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Pricing available at <a href="/pricing" class="hover:underline">Pricing</a></p>
       <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
     <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
+      <!-- Parent problem statement -->
+      <section>
+        <p class="lead text-xl">Autism may affect social communication, play, flexibility, sensory processing, emotional regulation, routines, and behaviour. Some children show early signs clearly, while others may be missed because they speak well, perform academically, or mask difficulties in structured settings.</p>
+      </section>
+
       <!-- 2. This is right for you if -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This service is right for you if:</h2>
         <ul>
           <li>You recently received an autism diagnosis for your child and feel overwhelmed.</li>
           <li>You are seeing signs of developmental delay and want to know how to support them now.</li>
-          <li>You are struggling to manage intense meltdowns or sensory overload.</li>
-          <li>You want neurodiversity-affirming strategies to help your child thrive.</li>
+          <li>You need help understanding your child's sensory needs or behavior.</li>
+          <li>You are waiting for an assessment and need practical guidance for home and school.</li>
         </ul>
       </section>
 
-      <!-- 3. Common concerns parents bring -->
+      <!-- 3. Common signs parents ask about -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Parents often ask:</h2>
         <ul>
-          <li>Tantrum vs meltdown confusion.</li>
-          <li>Challenges with transitions and rigid routines.</li>
-          <li>Difficulty with communication or following instructions.</li>
-          <li>Sensory sensitivities (clothing, food, noise).</li>
-          <li>Sibling or family stress trying to adapt.</li>
-          <li>Waiting for a formal diagnosis.</li>
+          <li>Is speech delay always autism?</li>
+          <li>Why does my child avoid eye contact?</li>
+          <li>Why does my child repeat words or phrases?</li>
+          <li>Why does my child line up toys or play the same way?</li>
+          <li>Why does my child panic when routines change?</li>
+          <li>Why does my child cover ears or avoid textures?</li>
+          <li>Can autism signs look different in girls?</li>
+          <li>What should we do after an autism diagnosis?</li>
         </ul>
       </section>
 
-      <!-- 4. What we do in the session -->
+      <!-- 4. How this service helps (What we do) -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
-        <p>We take time to understand your child's unique profile—their strengths, triggers, and sensory needs. We discuss how to adapt your home environment and parenting approach to reduce stress and support their development.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">How this service helps (What happens in the session):</h2>
+        <ul>
+          <li>Parent concern mapping</li>
+          <li>Developmental history review</li>
+          <li>Communication and play pattern discussion</li>
+          <li>Sensory and routine concerns</li>
+          <li>Behaviour triggers</li>
+          <li>Home support strategies</li>
+          <li>School support planning</li>
+          <li>Report review if family already has assessment documents</li>
+          <li>Referral guidance for formal assessment where needed</li>
+        </ul>
       </section>
 
       <!-- 5. What you leave with -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
-        <p>A tailored support plan that includes practical communication strategies, visual support ideas, and clear steps on how to de-escalate meltdowns effectively.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with:</h2>
+        <p>You will leave with a clear, step-by-step action plan tailored to your child's profile. This includes practical strategies for building communication, supporting sensory needs, managing transitions, and advocating for your child at school.</p>
       </section>
 
-      <!-- 6. What this service does not include -->
+      <!-- 6. What this service does not include / Safety Boundary -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2 mb-4">What this service does not include</h2>
+        <p><strong>Safety Boundary:</strong> Online sessions can support parents with understanding concerns and planning next steps, but they do not replace formal local diagnostic assessment where required. We do not provide online medical diagnosis or prescribe medication.</p>
+      </section>
+
+      <!-- Parents Also Ask Block -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Parents Also Ask</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-brand-navy">Is this normal behaviour or something more?</h4>
+            <p class="text-sm">If you notice differences in your child's communication, social interaction, or play, it's worth exploring. Read more about <a href="/blog/autism-early-signs" class="text-brand-trust hover:underline">early autism signs</a>.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">When should I seek help?</h4>
+            <p class="text-sm">Early support is always beneficial. If you have concerns about your child's development, seeking parent guidance can provide you with practical tools to help them thrive.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Do I need an assessment?</h4>
+            <p class="text-sm">A formal assessment can provide clarity and open doors to targeted support. However, parent guidance can start immediately to support your child at home.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can online guidance help?</h4>
+            <p class="text-sm">Yes, equipping you, the parent, with strategies to use in your child's daily environment is one of the most effective ways to support their development.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Related resources & internal links -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
-        <ul>
-          <li>Formal autism diagnosis.</li>
-          <li>ABA therapy or direct intervention with the child.</li>
-          <li>Promises of a "cure".</li>
-          <li>Medical treatment.</li>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services & Resources</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <li><a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning</a></li>
+          <li><a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation</a></li>
+          <li><a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review</a></li>
+          <li><a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center</a></li>
+          <li><a href="/faqs" class="text-brand-trust font-bold hover:underline">Frequently Asked Questions</a></li>
         </ul>
       </section>
 
-      <!-- 7. Related services -->
-      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning &rarr;</a>
-          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Consultation &rarr;</a>
-          <a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review &rarr;</a>
-        </div>
+      <!-- Related blog articles -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <ul class="list-disc pl-5">
+          <li><a href="/blog/autism-early-signs" class="text-brand-trust hover:underline">Autism Early Signs</a></li>
+          <li><a href="/blog/speech-delay-vs-autism" class="text-brand-trust hover:underline">Speech Delay vs Autism</a></li>
+          <li><a href="/blog/parent-guidance-after-an-autism-diagnosis" class="text-brand-trust hover:underline">Parent Guidance After an Autism Diagnosis</a></li>
+          <li><a href="/blog/sensory-processing-difficulties" class="text-brand-trust hover:underline">Sensory Processing Difficulties</a></li>
+        </ul>
       </section>
 
       <!-- 8. FAQ section -->
@@ -84,30 +207,34 @@ const breadcrumbs = [
         <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-4">
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">My child isn't diagnosed yet, can we still talk?</h4>
-            <p class="text-sm">Yes. We can discuss your observations and implement supportive strategies while you wait for a formal assessment.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can autism be diagnosed online?</h4>
+            <p class="text-sm">Our services provide parent guidance and developmental consultation, not formal online medical diagnosis. A formal medical or diagnostic evaluation for autism should be done locally where legally permitted, which we can guide you towards.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Do you provide online autism diagnosis?</h4>
-            <p class="text-sm">No. We provide parent guidance and education. Formal diagnosis requires comprehensive, often in-person, evaluation by a qualified local professional.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Is speech delay the same as autism?</h4>
+            <p class="text-sm">No. Speech delay is common but can happen for many reasons. In autism, delays are often in social communication—such as eye contact, joint attention, or using gestures—not just spoken words.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Is this therapy for my child?</h4>
-            <p class="text-sm">No, this is consultation and training for parents to empower you to support your child in their natural environment.</p>
+            <h4 class="font-bold text-brand-navy mb-2">What should parents do after an autism diagnosis?</h4>
+            <p class="text-sm">After a diagnosis, the focus shifts to understanding your child's unique profile. This includes adapting the environment to support their sensory needs, building communication through play, establishing predictable routines, and planning school supports.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">How many sessions will I need?</h4>
-            <p class="text-sm">Many parents start with one session to build a plan, followed by a check-in a few weeks later. We also offer a 4-session package for ongoing support.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can autism look different in girls?</h4>
+            <p class="text-sm">Yes. Girls often 'mask' or camouflage their traits, mimicking peers in social settings. Their special interests might also be more socially acceptable (like animals or books), making their autism less obvious to teachers and even parents.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can parent guidance help while waiting for assessment?</h4>
+            <p class="text-sm">Yes. Parent guidance is highly effective while waiting for an assessment. You can begin implementing visual supports, sensory breaks, and communication strategies immediately to ease daily routines.</p>
           </div>
         </div>
       </section>
 
       <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to support your child with confidence?</h3>
-        <p class="mb-6">Book your parent guidance session today.</p>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready for clarity and a clear plan?</h3>
+        <p class="mb-6">Book your parent guidance session today and take the first step towards a supportive home environment.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book ASD Support</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
         </div>
       </div>
     </div>

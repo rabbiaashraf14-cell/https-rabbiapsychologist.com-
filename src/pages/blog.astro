@@ -2,9 +2,44 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
+const title = "Child Psychology, ADHD, Autism & Parent Guidance Blog | Rabbia Psychologist";
+const description = "Practical, parent-friendly articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog";
+
 const breadcrumbs = [
-  { name: 'Resources', href: '/resources' },
   { name: 'Blog', href: '/blog' }
+];
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Child Psychology and Parent Guidance Blog",
+  "description": "Articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.",
+  "url": canonicalURL
+};
+
+// Reverting deletions to ensure no blogs are lost while adding improvements
+const categories = [
+  "ADHD",
+  "Autism",
+  "Behaviour",
+  "Emotional Regulation",
+  "Learning Difficulties",
+  "School Support",
+  "Reports & Assessments",
+  "Parent Guidance",
+  "Sensory Processing",
+  "Speech & Communication"
+];
+
+const startingArticles = [
+  { title: "Autism Early Signs", href: "/blog/autism-early-signs" },
+  { title: "Speech Delay vs Autism", href: "/blog/speech-delay-vs-autism" },
+  { title: "Tantrum vs Meltdown", href: "/blog/tantrum-vs-meltdown" },
+  { title: "Behaviour Is Communication", href: "/blog/behaviour-is-communication" },
+  { title: "School Meeting Checklist", href: "/blog/school-meeting-checklist" },
+  { title: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports" },
+  { title: "Morning Routine Problems in ADHD", href: "/blog/morning-routine-problems-in-adhd" }
 ];
 
 const articles = [
@@ -49,253 +84,252 @@ const articles = [
     href: "/blog/autism-early-signs"
   },
   {
-    title: "School Meeting Checklist for Parents",
-    excerpt: "How to prepare for an IEP or teacher meeting so you feel confident advocating for your child's needs.",
+    title: "When to Seek a Developmental Assessment for Your Child",
+    excerpt: "How to know if your child's struggles are a normal part of development or if it's time to get a professional opinion.",
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 10, 2024",
-    categories: ["School Support", "Advocacy"],
-    href: "/blog/school-meeting-checklist"
+    categories: ["Assessments", "Parenting"],
+    href: "/blog/when-to-seek-developmental-assessment"
   },
   {
-    title: "Understanding Psychological Reports",
-    excerpt: "Translate clinical jargon into practical next steps for your child.",
+    title: "Parent Guidance After an Autism Diagnosis: What Next?",
+    excerpt: "You have the diagnosis, but what do you do at home? A guide to focusing on support over labels.",
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 15, 2024",
+    categories: ["Autism", "Parenting"],
+    href: "/blog/parent-guidance-after-an-autism-diagnosis"
+  },
+  {
+    title: "Understanding Psychological Reports: A Guide for Parents",
+    excerpt: "How to decode standard scores, percentiles, and clinical language so you can advocate for your child.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Feb 20, 2024",
     categories: ["Assessments", "School Support"],
     href: "/blog/understanding-psychological-reports"
   },
   {
-    title: "Screen Time and Emotional Regulation",
-    excerpt: "Strategies to manage transitions and reduce screen-related meltdowns.",
+    title: "How to Prepare Your Child for a Psychological Assessment",
+    excerpt: "Practical tips to reduce anxiety and explain testing to your child without making them feel broken.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Feb 18, 2024",
-    categories: ["Behaviour", "Screen Time"],
-    href: "/blog/screen-time-and-emotional-regulation"
+    date: "Feb 25, 2024",
+    categories: ["Assessments", "Parenting"],
+    href: "/blog/how-to-prepare-for-child-assessment"
   },
   {
-    title: "Behaviour Is Communication",
-    excerpt: "Decoding what your child is trying to say through their challenging behaviours.",
+    title: "Behaviour is Communication: Finding the 'Why'",
+    excerpt: "Children don't act out for no reason. Learn how to map triggers and understand what your child is trying to tell you.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Feb 22, 2024",
+    date: "Mar 1, 2024",
     categories: ["Behaviour", "Parenting"],
     href: "/blog/behaviour-is-communication"
   },
   {
-    title: "Parent Guidance After an Autism Diagnosis",
-    excerpt: "Immediate home strategies to support your newly diagnosed child.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Mar 1, 2024",
-    categories: ["Autism", "Development"],
-    href: "/blog/parent-guidance-after-an-autism-diagnosis"
-  },
-  {
-    title: "When to Seek Developmental Assessment",
-    excerpt: "Signs that it might be time to move from wait-and-see to formal evaluation.",
+    title: "Speech Delay vs Autism: Understanding the Difference",
+    excerpt: "Not all late talkers have autism. Learn how social communication differences set ASD apart from a simple speech delay.",
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 5, 2024",
-    categories: ["Assessments", "Development"],
-    href: "/blog/when-to-seek-developmental-assessment"
-  },
-  {
-    title: "Speech Delay vs. Autism: How to Tell the Difference",
-    excerpt: "Does late talking mean autism? Learn the critical differences between a speech delay and autism spectrum disorder, and what non-verbal signs parents should look for.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Mar 15, 2024",
-    categories: ["Autism", "Communication"],
+    categories: ["Autism", "Development"],
     href: "/blog/speech-delay-vs-autism"
   },
   {
-    title: "Emotional Regulation in Children: Teaching Kids to Handle Big Feelings",
-    excerpt: "Learn what emotional regulation is, why children with ADHD and autism struggle with it, and practical home strategies to build this vital life skill.",
+    title: "Emotional Regulation in Children: Why They Struggle to Calm Down",
+    excerpt: "Emotional regulation is a learned skill, not an automatic one. Why co-regulation is the key to helping your child manage big feelings.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Mar 20, 2024",
-    categories: ["Behaviour", "Parenting"],
+    date: "Mar 10, 2024",
+    categories: ["Emotional Regulation", "Parenting"],
     href: "/blog/emotional-regulation-in-children"
   },
   {
-    title: "Learning Difficulties: Early Signs Parents Need to Notice",
-    excerpt: "Is your child lazy, or is it a learning difficulty? Learn the early signs of reading, writing, and math struggles, and how a formal assessment can help.",
+    title: "Learning Difficulties Early Signs",
+    excerpt: "Learn how to spot the early signs of learning difficulties, like dyslexia or dyscalculia, and how to advocate for your child at school.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Mar 25, 2024",
+    date: "Mar 12, 2024",
     categories: ["Learning Difficulties", "School Support"],
     href: "/blog/learning-difficulties-early-signs"
   },
   {
-    title: "School Refusal and School Anxiety: When Mornings Become a Battle",
-    excerpt: "Understand the root causes of school refusal and anxiety in children, and learn practical steps parents can take to support their child and collaborate with the school.",
+    title: "School Refusal and School Anxiety",
+    excerpt: "When a child refuses to go to school, it is a sign of intense anxiety, not defiance. Learn how to support your child and communicate with the school.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 1, 2024",
-    categories: ["School Support", "Emotional Regulation"],
+    date: "Mar 15, 2024",
+    categories: ["Anxiety", "School Support"],
     href: "/blog/school-refusal-and-school-anxiety"
   },
   {
-    title: "Sensory Processing Difficulties: When the World is Too Loud",
-    excerpt: "Understand sensory processing differences in children, the difference between sensory seeking and avoiding, and how to create a sensory-friendly home.",
+    title: "Sensory Processing Difficulties",
+    excerpt: "Understand sensory processing differences in children, how to spot sensory overload, and practical ways to create a sensory-friendly home.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 5, 2024",
-    categories: ["Autism", "Sensory Support"],
+    date: "Mar 18, 2024",
+    categories: ["Sensory", "Autism"],
     href: "/blog/sensory-processing-difficulties"
   },
   {
-    title: "How to Prepare for a Child Developmental Assessment",
-    excerpt: "Learn what documents to bring, what to expect during the evaluation, and exactly what to tell your child before a psychological or developmental assessment.",
+    title: "School Meeting Checklist",
+    excerpt: "Don't go into a school meeting unprepared. Use this checklist to organize your thoughts, ask the right questions, and secure practical accommodations.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 10, 2024",
-    categories: ["Assessments", "Development"],
-    href: "/blog/how-to-prepare-for-child-assessment"
+    date: "Mar 20, 2024",
+    categories: ["School Support", "Advocacy"],
+    href: "/blog/school-meeting-checklist"
   },
   {
-    title: "Parent Guidance for Behaviour Concerns: A Clinical Approach",
-    excerpt: "When time-outs and sticker charts stop working, what is next? Discover clinical parent guidance strategies for managing challenging child behaviour effectively.",
+    title: "IEP and School Support Planning",
+    excerpt: "A guide for parents on how to navigate IEP meetings and ensure their child receives the right support.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 15, 2024",
+    date: "Mar 22, 2024",
+    categories: ["School Support", "Advocacy"],
+    href: "/blog/iep-and-school-support-planning"
+  },
+  {
+    title: "Parent Burnout in Child Development Support",
+    excerpt: "Supporting a child with developmental differences is exhausting. Learn why parent burnout happens and how to manage it.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Mar 25, 2024",
+    categories: ["Parenting", "Mental Health"],
+    href: "/blog/parent-burnout-child-development-support"
+  },
+  {
+    title: "Sleep Routine and Child Behaviour",
+    excerpt: "How sleep impacts behaviour, emotional regulation, and attention, plus practical strategies for better bedtime routines.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Mar 28, 2024",
+    categories: ["Behaviour", "Routines"],
+    href: "/blog/sleep-routine-and-child-behaviour"
+  },
+  {
+    title: "Social Communication Concerns",
+    excerpt: "Understanding the difference between speech delays and social communication challenges in young children.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Apr 2, 2024",
+    categories: ["Communication", "Autism"],
+    href: "/blog/social-communication-concerns"
+  },
+  {
+    title: "Homework Battles and Attention Difficulties",
+    excerpt: "Why homework is a battleground for children with attention difficulties and how parents can help.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Apr 5, 2024",
+    categories: ["ADHD", "School Support"],
+    href: "/blog/homework-battles-and-attention-difficulties"
+  },
+  {
+    title: "Morning Routine Problems in ADHD",
+    excerpt: "Mornings are often the hardest part of the day for families with ADHD. Understand the executive function struggles behind morning chaos and learn practical parent strategies.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Apr 8, 2024",
+    categories: ["ADHD", "Routines"],
+    href: "/blog/morning-routine-problems-in-adhd"
+  },
+  {
+    title: "Parent Guidance for Behaviour Concerns",
+    excerpt: "When traditional discipline fails, parent guidance helps. Learn how understanding the 'why' behind behaviour and changing your response can transform your home.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Apr 10, 2024",
     categories: ["Behaviour", "Parenting"],
     href: "/blog/parent-guidance-for-behaviour-concerns"
   },
   {
-    title: "Morning Routine Problems in ADHD: Why Mornings Are So Hard",
-    excerpt: "Are mornings a daily battle? Discover why children with ADHD struggle with morning routines and learn practical, visual strategies to get out the door on time.",
+    title: "Screen Time and Emotional Regulation",
+    excerpt: "Understand the neurological reasons behind screen-time meltdowns and learn practical parent strategies to manage transitions without the battle.",
     author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 20, 2024",
-    categories: ["ADHD", "Executive Function"],
-    href: "/blog/morning-routine-problems-in-adhd"
-  },
-  {
-    title: "Homework Battles and Attention Difficulties: How to Help Your Child Focus",
-    excerpt: "End the nightly homework struggle. Learn why attention fatigue happens, how to structure homework for ADHD brains, and when a formal assessment is needed.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 25, 2024",
-    categories: ["Learning", "ADHD"],
-    href: "/blog/homework-battles-and-attention-difficulties"
-  },
-  {
-    title: "Social Communication Concerns: Beyond Just Talking",
-    excerpt: "Social communication is more than speech. Learn the hidden signs of social communication difficulties in children, the connection to autism, and how to support your child.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "Apr 30, 2024",
-    categories: ["Autism", "Communication"],
-    href: "/blog/social-communication-concerns"
-  },
-  {
-    title: "Sleep, Routine, and Child Behaviour: The Hidden Connection",
-    excerpt: "Is your child's challenging behaviour actually a sign of chronic sleep deprivation? Discover how sleep impacts emotional regulation and how to build a peaceful bedtime routine.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "May 5, 2024",
-    categories: ["Routines", "Behaviour"],
-    href: "/blog/sleep-routine-and-child-behaviour"
-  },
-  {
-    title: "IEP and School Support Planning: A Parent's Guide",
-    excerpt: "From IEP confusion to a clear support plan. Learn how to prepare for school meetings, request effective accommodations, and turn school concerns into practical next steps.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "May 10, 2024",
-    categories: ["School Support", "Assessments"],
-    href: "/blog/iep-and-school-support-planning"
-  },
-  {
-    title: "Parent Burnout When Supporting a Child with Developmental Needs",
-    excerpt: "Raising a child with ADHD, autism, or learning difficulties carries a heavy emotional load. Learn the signs of parent burnout and why seeking your own support is critical.",
-    author: "Rabbia Ashraf, Clinical Psychologist",
-    date: "May 15, 2024",
-    categories: ["Parent Support", "Parenting"],
-    href: "/blog/parent-burnout-child-development-support"
+    date: "Apr 12, 2024",
+    categories: ["Behaviour", "Screen Time"],
+    href: "/blog/screen-time-and-emotional-regulation"
   }
 ];
 
 // Sort articles by date descending
 articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-const categories = ["ADHD", "Autism", "Behaviour", "Emotional Regulation", "Learning Difficulties", "School Support", "Assessments", "Parent Guidance"];
-
-const startHereSlugs = [
-  "/blog/understanding-adhd-and-hyperactivity-in-children",
-  "/blog/autism-early-signs",
-  "/blog/when-to-seek-developmental-assessment",
-  "/blog/why-screen-time-is-hard-for-children-to-stop"
-];
-const startHereArticles = articles.filter(a => startHereSlugs.includes(a.href));
-const otherArticles = articles.filter(a => !startHereSlugs.includes(a.href));
 ---
 
-<BaseLayout title="Child Psychology & Parenting Blog | ADHD, Autism, Behaviour & School Support" description="Practical articles for parents on ADHD, autism, emotional regulation, behaviour, learning difficulties, school support, developmental concerns, and assessment reports.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  </Fragment>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <section class="bg-gradient-to-b from-brand-cream to-white py-16 px-6 mt-8 mb-12 text-center rounded-2xl shadow-sm border border-brand-border/50">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Insights & Articles</h1>
-        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8 font-light">
-          Practical child development guidance for parents who want to understand behaviour, learning, attention, emotions, and developmental concerns with more clarity.
-        </p>
+    <!-- 1. Blog hero -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Child Psychology, ADHD, Autism & Parent Guidance Blog</h1>
 
-        <div class="flex overflow-x-auto gap-3 pb-4 justify-center flex-wrap sm:flex-nowrap sm:justify-start md:justify-center px-4 -mx-4 sm:mx-0 no-scrollbar">
-          {categories.map(cat => (
-            <span class="inline-block bg-white text-brand-navy border border-brand-border text-sm font-bold px-4 py-2 rounded-full whitespace-nowrap shadow-sm hover:border-brand-gold hover:text-brand-gold transition-colors cursor-pointer">{cat}</span>
-          ))}
+      <!-- 2. Intro -->
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+        Practical, parent-friendly articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+      <!-- Sidebar / Filters -->
+      <div class="lg:col-span-1 space-y-8">
+        <!-- 3. Featured categories -->
+        <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-4 border-b pb-2">Browse by Concern</h2>
+          <ul class="space-y-2">
+            {categories.map((category) => (
+              <li><a href="/resources" class="text-brand-trust hover:underline font-medium">{category}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- 5. Most helpful for parents starting today -->
+        <div class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+          <h2 class="text-xl font-bold text-brand-navy mb-4 border-b pb-2 border-brand-navy/20">Most Helpful for Parents Starting Today</h2>
+          <ul class="space-y-3">
+            {startingArticles.map((article) => (
+              <li><a href={article.href} class="text-brand-trust hover:underline font-medium block">{article.title}</a></li>
+            ))}
+          </ul>
         </div>
       </div>
-    </section>
 
-    <div class="mb-16">
-      <h2 class="text-3xl font-bold text-brand-navy mb-8 border-b border-brand-border pb-4">Start Here for Parents</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {startHereArticles.map(article => (
-          <a href={article.href} class="hover-lift bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col group h-full">
-            <div class="p-5 flex flex-col flex-grow">
+      <!-- Main Blog List -->
+      <div class="lg:col-span-3">
+        <!-- 4. Featured articles section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {articles.map((article) => (
+            <article class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover-lift flex flex-col group h-full">
               <div class="flex gap-2 mb-3 flex-wrap">
-                {article.categories.map(cat => (
-                  <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">{cat}</span>
+                {article.categories.map((cat) => (
+                  <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2 py-1 rounded">{cat}</span>
                 ))}
               </div>
-              <h3 class="text-lg font-bold text-brand-navy mb-2 group-hover:text-brand-trust transition-colors leading-tight">{article.title}</h3>
-              <p class="text-gray-600 mb-4 flex-grow text-sm line-clamp-3">{article.excerpt}</p>
-              <div class="mt-auto border-t border-gray-100 pt-3">
-                <p class="text-[11px] font-bold text-brand-navy">{article.author}</p>
-                <div class="flex justify-between items-center mt-1">
-                  <p class="text-[11px] text-gray-500">{article.date}</p>
-                  <span class="text-brand-gold font-bold text-xs group-hover:translate-x-1 transition-transform">Read &rarr;</span>
-                </div>
+              <h3 class="text-xl font-bold text-brand-navy mb-2 leading-tight">
+                <a href={article.href} class="hover:text-brand-trust transition-colors">{article.title}</a>
+              </h3>
+              <p class="text-gray-600 mb-4 flex-grow">{article.excerpt}</p>
+              <div class="text-sm text-gray-500 mt-auto border-t pt-4 flex justify-between items-center">
+                <span>{article.author}</span>
+                <span class="text-brand-gold font-bold text-sm group-hover:translate-x-1 transition-transform">Read article &rarr;</span>
               </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
+            </article>
+          ))}
+        </div>
 
-    <div class="bg-brand-navy text-white rounded-xl p-8 md:p-10 mb-16 text-center shadow-lg mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="text-left md:w-2/3">
-        <h3 class="text-2xl font-bold mb-2">Not sure what your child needs?</h3>
-        <p class="text-lg text-gray-200 font-light">Book a parent consultation and get clear next steps from a clinical psychologist.</p>
-      </div>
-      <div>
-        <a href="/book" class="inline-block bg-brand-gold text-brand-navy font-bold px-8 py-3 rounded-lg hover:bg-yellow-500 transition-colors shadow-sm text-lg whitespace-nowrap">Book Consultation</a>
-      </div>
-    </div>
+        <!-- 7. Blog CTA -->
+        <div class="mt-12 bg-brand-navy text-white p-8 rounded-xl text-center shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-left md:w-2/3">
+            <h2 class="text-2xl font-bold mb-4">Need help applying this to your child?</h2>
+            <p class="text-brand-cream">Turn reading into action. Get a personalized plan for your family's unique situation.</p>
+          </div>
+          <div>
+            <a href="/start-here" class="inline-block bg-white text-brand-navy px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors whitespace-nowrap">Find Your Support Pathway</a>
+          </div>
+        </div>
 
-    <div>
-      <h2 class="text-3xl font-bold text-brand-navy mb-8 border-b border-brand-border pb-4">Latest Articles</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {otherArticles.map(article => (
-          <a href={article.href} class="hover-lift bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col group h-full">
-            <div class="p-6 flex flex-col flex-grow">
-              <div class="flex gap-2 mb-3 flex-wrap">
-                {article.categories.map(cat => (
-                  <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">{cat}</span>
-                ))}
-              </div>
-              <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors leading-tight">{article.title}</h3>
-              <p class="text-gray-600 mb-6 flex-grow text-sm line-clamp-3">{article.excerpt}</p>
-              <div class="mt-auto border-t border-gray-100 pt-4">
-                <p class="text-xs font-bold text-brand-navy">{article.author}</p>
-                <div class="flex justify-between items-center mt-1">
-                  <p class="text-xs text-gray-500">{article.date}</p>
-                  <span class="text-brand-gold font-bold text-sm group-hover:translate-x-1 transition-transform">Read article &rarr;</span>
-                </div>
-              </div>
-            </div>
-          </a>
-        ))}
+        <!-- Internal Links for discovery -->
+        <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium">
+           <a href="/services" class="text-brand-trust hover:underline">Services</a>
+           <span class="text-gray-300">|</span>
+           <a href="/pricing" class="text-brand-trust hover:underline">Pricing</a>
+           <span class="text-gray-300">|</span>
+           <a href="/faqs" class="text-brand-trust hover:underline">FAQs</a>
+        </div>
       </div>
+
     </div>
   </div>
 </BaseLayout>

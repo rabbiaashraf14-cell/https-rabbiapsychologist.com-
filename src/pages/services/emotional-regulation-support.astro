@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const title = "Emotional Regulation Support for Children and Parents | Rabbia Psychologist";
+const description = "Help your child manage big feelings, frustration, and meltdowns. Learn practical emotional regulation and co-regulation strategies.";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/emotional-regulation-support";
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' },
+  { name: 'Emotional Regulation Support', href: '/services/emotional-regulation-support' }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Emotional Regulation Support for Children and Parents",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Help your child manage big feelings, frustration, and meltdowns. Learn practical emotional regulation and co-regulation strategies.",
+  "areaServed": "International",
+  "serviceType": "Parent Guidance",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "95"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is emotional regulation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emotional regulation is the child’s ability to notice feelings, manage frustration, recover after an upset, and respond safely. It is a learned skill that requires time and adult support to develop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my child overreact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children often overreact when the demands of a situation exceed their current coping skills. This can be due to sensory overload, exhaustion, unmet expectations, or lagging executive function skills."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I help my child calm down?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most effective way to help a child calm down is through co-regulation. This means the adult remains calm, reduces demands, validates the feeling, and models calming strategies rather than trying to reason with the child while they are upset."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is emotional dysregulation common in ADHD and autism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is very common. Both ADHD and autism can impact the brain's ability to smoothly shift attention, manage sensory input, and process strong emotions, making meltdowns more frequent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do during a meltdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During a meltdown, prioritize safety and connection. Do not try to teach a lesson or demand compliance. Wait until the child is fully calm and regulated before discussing what happened."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- 1. Hero section -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Emotional Regulation Support for Children and Parents</h1>
+      <p class="text-xl text-gray-700 mb-4">Help your child manage big feelings, frustration, and meltdowns. Learn practical emotional regulation and co-regulation strategies.</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Pricing available at <a href="/pricing" class="hover:underline">Pricing</a></p>
+      <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
+
+      <!-- Parent problem statement -->
+      <section>
+        <p class="lead text-xl">Emotional regulation is the child’s ability to notice feelings, manage frustration, recover after upset, and respond safely. Many children do not automatically know how to calm down. They need repeated modelling, predictable routines, language for feelings, and adult co-regulation.</p>
+      </section>
+
+      <!-- 2. This is right for you if -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This service is right for you if:</h2>
+        <ul>
+          <li>Your child gets stuck in big emotions and cannot recover easily.</li>
+          <li>You feel exhausted trying to manage frequent emotional outbursts.</li>
+          <li>Your child is struggling with frustration tolerance.</li>
+          <li>You want to learn how to effectively co-regulate with your child.</li>
+        </ul>
+      </section>
+
+      <!-- 3. Common signs parents ask about -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common parent concerns:</h2>
+        <ul>
+          <li>My child cries over small things</li>
+          <li>My child gets angry very quickly</li>
+          <li>My child cannot calm down after being upset</li>
+          <li>My child has meltdowns after school</li>
+          <li>My child becomes aggressive when frustrated</li>
+          <li>My child cannot tolerate losing</li>
+          <li>My child becomes dysregulated after screens</li>
+          <li>My child has big feelings but cannot explain them</li>
+        </ul>
+      </section>
+
+      <!-- 4. How this service helps (What we do) -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">How this service helps (What happens in the session):</h2>
+        <ul>
+          <li>Emotional trigger mapping</li>
+          <li>Calm-down plan</li>
+          <li>Co-regulation coaching for parents</li>
+          <li>Language for emotions</li>
+          <li>Visual emotional scales</li>
+          <li>Screen-time regulation planning</li>
+          <li>School transition support</li>
+          <li>Parent response scripts</li>
+        </ul>
+      </section>
+
+      <!-- 5. What you leave with -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with:</h2>
+        <p>You will leave with a personalized emotional support plan. This includes specific scripts on what to say (and what not to say) during an outburst, a step-by-step calming routine, and strategies to proactively build your child's emotional vocabulary.</p>
+      </section>
+
+      <!-- 6. What this service does not include / Safety Boundary -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2 mb-4">What this service does not include</h2>
+        <p><strong>Safety Boundary:</strong> This service provides parent guidance and emotional regulation strategies. We do not provide emergency crisis intervention, direct therapy for the child, or formal medical diagnosis.</p>
+      </section>
+
+      <!-- Parents Also Ask Block -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Parents Also Ask</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-brand-navy">Is this normal behaviour or something more?</h4>
+            <p class="text-sm">While all children experience strong emotions, if outbursts are frequent, intense, and disruptive to daily life, it often indicates they are missing key regulation skills. Learn more about <a href="/blog/emotional-regulation-in-children" class="text-brand-trust hover:underline">emotional regulation in children</a>.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can this improve with home strategies?</h4>
+            <p class="text-sm">Yes, parents play the most crucial role in teaching emotional regulation through co-regulation and predictable routines.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">When should I seek help?</h4>
+            <p class="text-sm">Seek help when your child's emotional distress is impacting their ability to participate in school or family activities, or if you feel overwhelmed and unsure how to support them.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Related resources & internal links -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services & Resources</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <li><a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning</a></li>
+          <li><a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support</a></li>
+          <li><a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">Autism Support</a></li>
+          <li><a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center</a></li>
+          <li><a href="/faqs" class="text-brand-trust font-bold hover:underline">Frequently Asked Questions</a></li>
+        </ul>
+      </section>
+
+      <!-- Related blog articles -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <ul class="list-disc pl-5">
+          <li><a href="/blog/emotional-regulation-in-children" class="text-brand-trust hover:underline">Emotional Regulation in Children</a></li>
+          <li><a href="/blog/screen-time-and-emotional-regulation" class="text-brand-trust hover:underline">Screen Time and Emotional Regulation</a></li>
+          <li><a href="/blog/tantrum-vs-meltdown" class="text-brand-trust hover:underline">Tantrum vs Meltdown</a></li>
+          <li><a href="/blog/behaviour-is-communication" class="text-brand-trust hover:underline">Behaviour is Communication</a></li>
+        </ul>
+      </section>
+
+      <!-- 8. FAQ section -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">What is emotional regulation?</h4>
+            <p class="text-sm">Emotional regulation is the child’s ability to notice feelings, manage frustration, recover after an upset, and respond safely. It is a learned skill that requires time and adult support to develop.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Why does my child overreact?</h4>
+            <p class="text-sm">Children often overreact when the demands of a situation exceed their current coping skills. This can be due to sensory overload, exhaustion, unmet expectations, or lagging executive function skills.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">How can I help my child calm down?</h4>
+            <p class="text-sm">The most effective way to help a child calm down is through co-regulation. This means the adult remains calm, reduces demands, validates the feeling, and models calming strategies rather than trying to reason with the child while they are upset.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Is emotional dysregulation common in ADHD and autism?</h4>
+            <p class="text-sm">Yes, it is very common. Both ADHD and autism can impact the brain's ability to smoothly shift attention, manage sensory input, and process strong emotions, making meltdowns more frequent.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">What should I do during a meltdown?</h4>
+            <p class="text-sm">During a meltdown, prioritize safety and connection. Do not try to teach a lesson or demand compliance. Wait until the child is fully calm and regulated before discussing what happened.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CTA block -->
+      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready for clarity and a clear plan?</h3>
+        <p class="mb-6">Book your parent guidance session today and take the first step towards a calmer home.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

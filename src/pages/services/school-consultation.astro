@@ -2,80 +2,197 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "School Support, IEP Guidance, and Parent Meeting Preparation | Rabbia Psychologist";
+const description = "Guidance for school concerns, teacher meetings, IEP confusion, and parent-school communication plans. Get practical help for your child.";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/school-consultation";
+
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
-  { name: 'School & IEP Consultation', href: '/services/school-consultation' }
+  { name: 'School Consultation', href: '/services/school-consultation' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "School Support, IEP Guidance, and Parent Meeting Preparation",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Guidance for school concerns, teacher meetings, IEP confusion, and parent-school communication plans.",
+  "areaServed": "International",
+  "serviceType": "Parent Guidance",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "140"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you help prepare for a school meeting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we help you understand your child's profile, translate clinical reports into classroom strategies, and prepare specific, actionable questions to ask the school team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I ask my child’s teacher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instead of asking 'how are they doing?', ask specific questions like 'what does it look like when they lose focus?', 'what accommodations are currently in place?', and 'how are transitions handled?'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the school says my child is lazy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Labels like 'lazy' usually point to an unrecognized executive function struggle, learning difficulty, or anxiety. We can help you reframe this conversation with the school to focus on finding the underlying barrier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can parent guidance help with IEP planning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. IEPs can be overwhelming. We help you review the proposed goals to ensure they are measurable, appropriate, and truly supportive of your child's needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you speak directly with the school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our primary focus is equipping you, the parent, to advocate effectively. In specific circumstances and depending on location, direct school consultation can be arranged, but our standard service empowers the parent to lead the process."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="School & IEP Consultation | Rabbia Psychologist" description="Guidance for school concerns, teacher meetings, IEP confusion, and parent-school communication plans.">
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
 
     <!-- 1. Hero section -->
     <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">School & IEP Consultation</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">School Support, IEP Guidance, and Parent Meeting Preparation</h1>
       <p class="text-xl text-gray-700 mb-4">From IEP confusion to a clear support plan. Understand the meeting, prepare the right questions, and turn school concerns into practical next steps for your child.</p>
-      <p class="text-lg font-bold text-brand-gold mb-6">From USD 140 / AUD 215</p>
+      <p class="text-lg font-bold text-brand-gold mb-6">Pricing available at <a href="/pricing" class="hover:underline">Pricing</a></p>
       <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
 
     <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
+      <!-- Parent problem statement -->
+      <section>
+        <p class="lead text-xl">Many parents feel confused when schools report attention problems, behaviour concerns, learning gaps, refusal, anxiety, or social difficulties. This service helps parents understand what the school is saying, organize concerns, prepare questions, and request practical support.</p>
+      </section>
+
       <!-- 2. This is right for you if -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">This is right for you if</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">When school concerns need support:</h2>
         <ul>
           <li>You are preparing for an important school meeting (like an IEP or support plan review).</li>
           <li>Your child is struggling academically or socially but the school isn't sure how to help.</li>
-          <li>You feel intimidated or overwhelmed communicating with teachers and school admin.</li>
-          <li>You want to know what realistic accommodations you can ask for.</li>
+          <li>You receive frequent negative reports or calls from the school.</li>
+          <li>You have a diagnostic report but the school doesn't know how to implement it.</li>
         </ul>
       </section>
 
-      <!-- 3. Common concerns parents bring -->
+      <!-- 3. Common signs parents ask about -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common concerns parents bring</h2>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Common school concerns parents bring:</h2>
         <ul>
-          <li>The school is suggesting an assessment and you don't know why.</li>
-          <li>Your child's current IEP or learning plan isn't working.</li>
-          <li>Teacher complaints about behavior or attention.</li>
-          <li>Your child is refusing to go to school (school can't).</li>
-          <li>You don't understand the jargon being used by the school SENCO/support team.</li>
+          <li>Teacher says child is lazy</li>
+          <li>Child refuses school</li>
+          <li>Child avoids writing or reading</li>
+          <li>Child cannot sit still</li>
+          <li>Child has friendship problems</li>
+          <li>Child has meltdowns after school</li>
+          <li>Child performs well at home but not school</li>
+          <li>Child performs well at school but falls apart at home</li>
         </ul>
       </section>
 
-      <!-- 4. What we do in the session -->
+      <!-- 4. How this service helps (What we do) -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What we do in the session</h2>
-        <p>We review your child's current challenges, read over any existing school documents or plans you have, and help you understand your child's needs in the school context. We practice how to advocate effectively without being adversarial.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">How this service helps (What we do in the session):</h2>
+        <ul>
+          <li>How to prepare for a school meeting</li>
+          <li>What to ask teachers</li>
+          <li>What information parents should collect</li>
+          <li>How to understand classroom behaviour patterns</li>
+          <li>How to connect home and school strategies</li>
+          <li>How to use reports during school meetings</li>
+        </ul>
       </section>
 
       <!-- 5. What you leave with -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with</h2>
-        <p>A clear meeting preparation plan. You'll leave with specific questions to ask, a list of reasonable accommodations to request, and a strategy for maintaining positive communication with the school.</p>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What you leave with:</h2>
+        <p>You will leave with a structured meeting plan. This includes a list of specific questions to ask the school, a summary of your child's strengths and needs to share with the teacher, and a clear understanding of what reasonable accommodations you can request.</p>
       </section>
 
-      <!-- 6. What this service does not include -->
+      <!-- 6. What this service does not include / Safety Boundary -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky">
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2 mb-4">What this service does not include</h2>
+        <p><strong>Safety Boundary:</strong> This service provides parent guidance and educational advocacy preparation. It does not provide legal advice regarding special education law in your specific jurisdiction.</p>
+      </section>
+
+      <!-- Parents Also Ask Block -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Parents Also Ask</h3>
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-brand-navy">Should I speak to the school first?</h4>
+            <p class="text-sm">If you are unsure how to approach the conversation, a consultation can help you organize your thoughts first. Read our <a href="/blog/school-meeting-checklist" class="text-brand-trust hover:underline">school meeting checklist</a>.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">Can online guidance help?</h4>
+            <p class="text-sm">Yes, empowering parents to confidently advocate for their child is a highly effective way to create change in the school environment.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-brand-navy">What if the school won't help?</h4>
+            <p class="text-sm">We can help you understand your options, how to escalate concerns professionally, or how to seek external assessments if the school's internal processes are stalled.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Related resources & internal links -->
       <section>
-        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">What this service does not include</h2>
-        <ul>
-          <li>Legal advocacy or representation at school meetings.</li>
-          <li>Guaranteeing school placement or compliance.</li>
-          <li>Direct communication with the school on your behalf (we coach you).</li>
-          <li>Formal diagnostic assessments.</li>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services & Resources</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <li><a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support</a></li>
+          <li><a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">Autism Support</a></li>
+          <li><a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review</a></li>
+          <li><a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center</a></li>
+          <li><a href="/faqs" class="text-brand-trust font-bold hover:underline">Frequently Asked Questions</a></li>
         </ul>
       </section>
 
-      <!-- 7. Related services -->
-      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Services</h3>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review &rarr;</a>
-          <a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Support &rarr;</a>
-          <a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">ASD Support &rarr;</a>
-        </div>
+      <!-- Related blog articles -->
+      <section>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <ul class="list-disc pl-5">
+          <li><a href="/blog/school-meeting-checklist" class="text-brand-trust hover:underline">School Meeting Checklist</a></li>
+          <li><a href="/blog/school-refusal-and-school-anxiety" class="text-brand-trust hover:underline">School Refusal and School Anxiety</a></li>
+          <li><a href="/blog/learning-difficulties-early-signs" class="text-brand-trust hover:underline">Learning Difficulties Early Signs</a></li>
+          <li><a href="/blog/understanding-psychological-reports" class="text-brand-trust hover:underline">Understanding Psychological Reports</a></li>
+        </ul>
       </section>
 
       <!-- 8. FAQ section -->
@@ -83,30 +200,34 @@ const breadcrumbs = [
         <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
         <div class="space-y-4">
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Can you attend the school meeting with me?</h4>
-            <p class="text-sm">No, this is a consultation service to prepare and coach you prior to the meeting. We do not act as your legal advocate or attend the meetings.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can you help prepare for a school meeting?</h4>
+            <p class="text-sm">Yes, we help you understand your child's profile, translate clinical reports into classroom strategies, and prepare specific, actionable questions to ask the school team.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Do you review IEP documents before the session?</h4>
-            <p class="text-sm">Yes, you can share relevant documents prior to the session for review, so our time is spent efficiently discussing strategy.</p>
+            <h4 class="font-bold text-brand-navy mb-2">What should I ask my child’s teacher?</h4>
+            <p class="text-sm">Instead of asking 'how are they doing?', ask specific questions like 'what does it look like when they lose focus?', 'what accommodations are currently in place?', and 'how are transitions handled?'.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">Are you familiar with international school systems?</h4>
-            <p class="text-sm">We provide general, evidence-based recommendations for support. However, we do not provide legal advice regarding specific education laws (like IDEA in the US) in your country.</p>
+            <h4 class="font-bold text-brand-navy mb-2">What if the school says my child is lazy?</h4>
+            <p class="text-sm">Labels like 'lazy' usually point to an unrecognized executive function struggle, learning difficulty, or anxiety. We can help you reframe this conversation with the school to focus on finding the underlying barrier.</p>
           </div>
           <div class="border border-gray-200 rounded-lg p-4">
-            <h4 class="font-bold text-brand-navy mb-2">What if the school refuses accommodations?</h4>
-            <p class="text-sm">We can brainstorm alternative approaches and help you plan your next steps for communication and collaboration.</p>
+            <h4 class="font-bold text-brand-navy mb-2">Can parent guidance help with IEP planning?</h4>
+            <p class="text-sm">Absolutely. IEPs can be overwhelming. We help you review the proposed goals to ensure they are measurable, appropriate, and truly supportive of your child's needs.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you speak directly with the school?</h4>
+            <p class="text-sm">Our primary focus is equipping you, the parent, to advocate effectively. In specific circumstances and depending on location, direct school consultation can be arranged, but our standard service empowers the parent to lead the process.</p>
           </div>
         </div>
       </section>
 
       <!-- 9. CTA block -->
       <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to advocate clearly for your child?</h3>
-        <p class="mb-6">Book your School Consultation to prepare for your next meeting.</p>
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready for clarity and a clear plan?</h3>
+        <p class="mb-6">Book your parent guidance session today and take the first step towards a successful school experience for your child.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book School Consultation</a>
+          <a href="/book" class="bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Parent Consultation</a>
         </div>
       </div>
     </div>

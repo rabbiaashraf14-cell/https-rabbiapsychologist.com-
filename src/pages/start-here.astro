@@ -1,13 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+
+const title = "Start Here: Find the Right Child Development Support | Rabbia Psychologist";
+const description = "Help overwhelmed parents choose the right service or resource for ADHD, autism, behaviour, learning difficulties, or report review.";
+const canonicalURL = "https://www.rabbiapsychologist.com/start-here";
+
+const breadcrumbs = [
+  { name: 'Start Here', href: '/start-here' }
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Start Here: Find the Right Child Development Support",
+  "description": "Choose the right service or resource for ADHD, autism, behaviour, learning difficulties, or report review.",
+  "url": canonicalURL
+};
 ---
-<BaseLayout
-  title="Start Here | Rabbia Psychologist Child Development Services"
-  description="Not sure where to begin? Start here to understand which Rabbia Psychologist Child Development Services support pathway may fit your family’s developmental, behavioural, school, ASD, ADHD, or report-review concerns."
->
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <link rel="canonical" href={canonicalURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+  </Fragment>
+
   <div class="bg-brand-cream py-16 lg:py-24">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Not Sure Where to Begin?</h1>
+      <Breadcrumbs paths={breadcrumbs} />
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 mt-4">Start Here: Find the Right Child Development Support</h1>
       <p class="text-xl text-gray-700 leading-relaxed">
         If your child’s behaviour, school feedback, developmental progress, ASD/ADHD concerns, or report results feel confusing, this page helps you choose the right starting point.
       </p>
@@ -15,53 +36,122 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
   <div class="py-16 bg-white">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Find Your Support Pathway</h2>
+    <div class="container mx-auto px-4 max-w-5xl">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Parent Support & Guidance</h3>
-          <p class="text-gray-700 mb-4">Navigating daily routines, behavioral challenges, or understanding developmental milestones? Start here to explore how we guide parents step-by-step.</p>
-          <a href="/parent-support" class="text-brand-trust font-bold hover:underline">Explore Parent Support &rarr;</a>
-        </div>
+      <!-- 1. What are you worried about today? -->
+      <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center border-b pb-4">What are you worried about today?</h2>
 
-        <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Between-Session Programs</h3>
-          <p class="text-gray-700 mb-4">Need structured activities and support to maintain momentum while waiting for therapy or between formal sessions? We provide targeted guidance.</p>
-          <a href="/between-session-programs" class="text-brand-trust font-bold hover:underline">Explore Programs &rarr;</a>
-        </div>
-
-        <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">School & IEP Help</h3>
-          <p class="text-gray-700 mb-4">Confused by school feedback or IEP meetings? Let's turn academic concerns into a practical support plan you can take to the classroom.</p>
-          <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">Get School Help &rarr;</a>
-        </div>
-
-        <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Report Review</h3>
-          <p class="text-gray-700 mb-4">Received an assessment report but unsure what it means for daily life? We help you translate clinical language into actionable strategies.</p>
-          <a href="/report-review" class="text-brand-trust font-bold hover:underline">Review a Report &rarr;</a>
-        </div>
-
-        <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">International Families</h3>
-          <p class="text-gray-700 mb-4">Living abroad and struggling to find culturally responsive guidance? We support overseas Pakistani families globally.</p>
-          <a href="/international-families" class="text-brand-trust font-bold hover:underline">International Support &rarr;</a>
-        </div>
-
-        <div class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition">
-          <h3 class="text-xl font-bold text-brand-navy mb-3">Resource Hub</h3>
-          <p class="text-gray-700 mb-4">Looking for worksheets, visual schedules, or tracking tools to use right now? Browse our library of free and premium resources.</p>
-          <a href="/resources" class="text-brand-trust font-bold hover:underline">Access Resources &rarr;</a>
-        </div>
-      </div>
-
-      <div class="mt-16 text-center">
-        <h2 class="text-2xl font-bold text-brand-navy mb-6">Ready to take the next step?</h2>
-        <a href="/book" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-lg">
-          Book a Consultation
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        <a href="/services/adhd-support" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">ADHD & Attention</h3>
+          <p class="text-sm text-gray-700">Focus, routines, impulsivity, and executive function struggles.</p>
+        </a>
+        <a href="/services/asd-support" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Autism & Development</h3>
+          <p class="text-sm text-gray-700">Speech delay, social communication, play, and sensory needs.</p>
+        </a>
+        <a href="/services/behaviour-planning" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Behaviour</h3>
+          <p class="text-sm text-gray-700">Aggression, meltdowns, non-compliance, and transitions.</p>
+        </a>
+        <a href="/services/emotional-regulation-support" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Emotional Regulation</h3>
+          <p class="text-sm text-gray-700">Big feelings, frustration tolerance, and co-regulation.</p>
+        </a>
+        <a href="/services/school-consultation" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Learning & School</h3>
+          <p class="text-sm text-gray-700">Learning difficulties, school refusal, and IEP meetings.</p>
+        </a>
+        <a href="/report-review" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Report Review</h3>
+          <p class="text-sm text-gray-700">Assessment confusion and translating clinical jargon.</p>
+        </a>
+        <a href="/services/behaviour-planning" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Parent Guidance</h3>
+          <p class="text-sm text-gray-700">Next-step planning and home strategies.</p>
+        </a>
+        <a href="/services" class="p-6 bg-brand-cream border border-brand-sky rounded-lg hover:shadow-md transition text-center hover-lift block">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">International Support</h3>
+          <p class="text-sm text-gray-700">Online parent guidance for families living abroad.</p>
         </a>
       </div>
+
+      <!-- 2. Choose your situation -->
+      <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center border-b pb-4">Choose your situation</h2>
+
+      <div class="space-y-6 max-w-3xl mx-auto mb-16">
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"I need one consultation to understand my child better."</h3>
+          <p class="text-gray-700 mb-4">You have specific concerns and need expert guidance to map out a plan.</p>
+          <div class="flex gap-4">
+             <a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning &rarr;</a>
+             <a href="/pricing" class="text-gray-500 hover:underline">View Pricing</a>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"I have a report and need explanation."</h3>
+          <p class="text-gray-700 mb-4">You received an assessment report but aren't sure how to apply the recommendations.</p>
+          <div class="flex gap-4">
+             <a href="/report-review" class="text-brand-trust font-bold hover:underline">Report Review &rarr;</a>
+             <a href="/blog/understanding-psychological-reports" class="text-gray-500 hover:underline">Read Article</a>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"My child’s school is concerned."</h3>
+          <p class="text-gray-700 mb-4">You need help preparing for a school meeting or understanding teacher feedback.</p>
+          <div class="flex gap-4">
+             <a href="/services/school-consultation" class="text-brand-trust font-bold hover:underline">School Support &rarr;</a>
+             <a href="/blog/school-meeting-checklist" class="text-gray-500 hover:underline">Meeting Checklist</a>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"I am waiting for an assessment."</h3>
+          <p class="text-gray-700 mb-4">You are on a waitlist but need practical home strategies right now.</p>
+          <div class="flex gap-4">
+             <a href="/services/adhd-support" class="text-brand-trust font-bold hover:underline">ADHD Strategies &rarr;</a>
+             <a href="/services/asd-support" class="text-brand-trust font-bold hover:underline">Autism Strategies &rarr;</a>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"I already have a diagnosis."</h3>
+          <p class="text-gray-700 mb-4">You know the diagnosis but need help navigating daily routines and behaviours.</p>
+          <div class="flex gap-4">
+             <a href="/services/behaviour-planning" class="text-brand-trust font-bold hover:underline">Behaviour Planning &rarr;</a>
+             <a href="/blog/parent-guidance-after-an-autism-diagnosis" class="text-gray-500 hover:underline">Read Next Steps</a>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"I need home strategies."</h3>
+          <p class="text-gray-700 mb-4">You are struggling with morning routines, screen time, or meltdowns at home.</p>
+          <div class="flex gap-4">
+             <a href="/resources" class="text-brand-trust font-bold hover:underline">Resource Center &rarr;</a>
+             <a href="/blog" class="text-gray-500 hover:underline">Read Blog</a>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 bg-white hover-lift">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">"I live outside Pakistan and need parent guidance."</h3>
+          <p class="text-gray-700 mb-4">You are an international family looking for culturally responsive parent support.</p>
+          <div class="flex gap-4">
+             <a href="/services" class="text-brand-trust font-bold hover:underline">International Support &rarr;</a>
+             <a href="/faqs" class="text-gray-500 hover:underline">View FAQs</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. CTA -->
+      <div class="text-center mt-12">
+         <h2 class="text-2xl font-bold text-brand-navy mb-4">Ready to take the next step?</h2>
+         <a href="/book" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md text-lg">Book a Parent Guidance Session</a>
+      </div>
+
     </div>
   </div>
 </BaseLayout>
