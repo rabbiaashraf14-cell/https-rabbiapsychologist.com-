@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedHero from '../components/home/AnimatedHero.astro';
+import FeaturedCarousel from '../components/home/FeaturedCarousel.astro';
 import TrustBadgeStrip from '../components/home/TrustBadgeStrip.astro';
 import HowIHelpSection from '../components/home/HowIHelpSection.astro';
 
@@ -21,6 +22,7 @@ const description = "Parent guidance and child development support for families 
 ---
 
 <BaseLayout title={title} description={description}>
+  <FeaturedCarousel />
   <AnimatedHero />
   <TrustBadgeStrip />
 

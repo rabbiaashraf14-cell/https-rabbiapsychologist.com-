@@ -1,0 +1,246 @@
+---
+import { articles } from '../../data/blogArticles';
+
+// 1. Priority topics per user request
+// Find closest matches from the exported articles array
+const priorityTopics = [
+  "Understanding the Confusion Between ADHD and Hyperactivity in Children", // Closest to ADHD in Children
+  "Sensory Processing Difficulties", // Closest to Autism & Sensory Processing
+  "Emotional Regulation in Children: Why They Struggle to Calm Down", // Closest to Helping Your Child Manage Big Emotions
+  "IEP and School Support Planning", // Closest to School Difficulties
+  "Behaviour is Communication: Finding the 'Why'" // Closest to Behaviour is Communication
+];
+
+const selectedArticles = priorityTopics.map(title => {
+  return articles.find(a => a.title === title) || articles[0]; // fallback to first if not found (shouldn't happen)
+});
+
+// Final array to pass to client
+const slidesData = selectedArticles.map(article => ({
+  title: article.title,
+  excerpt: article.excerpt,
+  category: article.categories[0].toUpperCase(),
+  href: article.href,
+  imageSrc: `/images/blog/${article.href.replace('/blog/', '')}.jpg`
+}));
+---
+
+<section class="py-12 bg-brand-cream border-b border-brand-gold/10 overflow-hidden relative" aria-label="Featured Resources Carousel">
+  <div class="container mx-auto px-4 max-w-7xl relative">
+
+    <div class="relative group">
+      <!-- Carousel Container -->
+      <div
+        id="featured-carousel"
+        class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 touch-pan-x"
+        style="scrollbar-width: none; -ms-overflow-style: none;"
+      >
+        {slidesData.map((slide, index) => (
+          <div class="flex-none w-[85vw] sm:w-[350px] snap-center">
+            <a href={slide.href} class="block bg-white rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100 flex flex-col group/card overflow-hidden outline-none focus:ring-2 focus:ring-brand-trust">
+
+              <!-- Image Area with graceful fallback handled via CSS/HTML -->
+              <div class="relative h-48 bg-gradient-to-br from-brand-cream to-gray-50 flex items-center justify-center border-b border-gray-100 overflow-hidden">
+                <!-- Image Tag -->
+                <img
+                  src={slide.imageSrc}
+                  alt=""
+                  loading="lazy"
+                  class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                  onload="this.classList.remove('opacity-0')"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  aria-hidden="true"
+                />
+
+                <!-- Fallback Icon (Hidden by default, shown if image errors) -->
+                <div class="fallback-icon flex hidden items-center justify-center w-full h-full absolute inset-0 z-10 bg-gradient-to-br from-brand-cream to-gray-100">
+                  <svg class="w-12 h-12 text-brand-gold/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+
+                <!-- Category Badge -->
+                <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-navy shadow-sm z-20">
+                  {slide.category}
+                </span>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-lg font-bold text-brand-navy mb-3 leading-snug line-clamp-2 group-hover/card:text-brand-trust transition-colors">
+                  {slide.title}
+                </h3>
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2 flex-grow">
+                  {slide.excerpt}
+                </p>
+                <div class="mt-auto flex items-center text-sm font-bold text-brand-trust">
+                  Read More
+                  <svg class="w-4 h-4 ml-1 transform group-hover/card:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+
+        <!-- Final Card: Book Consultation -->
+        <div class="flex-none w-[85vw] sm:w-[350px] snap-center">
+          <a href="/start-here" class="block bg-brand-navy rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full border border-brand-navy flex flex-col group/card relative overflow-hidden outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-navy">
+
+            <div class="absolute top-0 right-0 p-8 opacity-10 transform translate-x-4 -translate-y-4">
+               <svg class="w-32 h-32 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+               </svg>
+            </div>
+
+            <div class="p-8 flex flex-col h-full justify-center relative z-10">
+              <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6">
+                 <svg class="w-6 h-6 text-brand-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                 </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
+                Book a Consultation
+              </h3>
+              <p class="text-brand-cream/90 mb-8 flex-grow text-sm leading-relaxed">
+                Take the first step towards understanding your child's needs.
+              </p>
+              <div class="mt-auto inline-flex items-center text-sm font-bold text-brand-navy bg-white px-6 py-3 rounded-full w-max hover:bg-gray-50 transition-colors">
+                Book Now
+                <svg class="w-4 h-4 ml-2 transform group-hover/card:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows (Desktop mostly) -->
+      <button id="carousel-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-brand-navy hover:text-brand-trust hover:scale-105 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-brand-trust" aria-label="Previous slide">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="carousel-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-brand-navy hover:text-brand-trust hover:scale-105 transition-all z-10 focus:outline-none focus:ring-2 focus:ring-brand-trust" aria-label="Next slide">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="flex justify-center gap-2 mt-2" id="carousel-dots" role="tablist" aria-label="Carousel pagination">
+      <!-- Dots injected via JS -->
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('featured-carousel');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
+
+    if (!carousel) return;
+
+    const cards = Array.from(carousel.children) as HTMLElement[];
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24; // 1.5rem gap
+    const scrollAmount = cardWidth + gap;
+
+    // Create dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `w-2 h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-navy focus:ring-offset-2 ${i === 0 ? 'bg-brand-navy w-6' : 'bg-gray-300'}`;
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+
+      dot.addEventListener('click', () => {
+        carousel.scrollTo({
+          left: i * scrollAmount,
+          behavior: 'smooth'
+        });
+        resetAutoScroll();
+      });
+      dotsContainer?.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer?.children || []);
+
+    const updateDots = () => {
+      if(!dots.length) return;
+      const scrollPosition = carousel.scrollLeft;
+      const activeIndex = Math.round(scrollPosition / scrollAmount);
+
+      dots.forEach((dot, i) => {
+        if (i === activeIndex) {
+          dot.className = 'w-6 h-2 rounded-full bg-brand-navy transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-navy focus:ring-offset-2';
+          dot.setAttribute('aria-selected', 'true');
+        } else {
+          dot.className = 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-navy focus:ring-offset-2';
+          dot.setAttribute('aria-selected', 'false');
+        }
+      });
+    };
+
+    carousel.addEventListener('scroll', () => {
+      // Use requestAnimationFrame for performance on scroll
+      window.requestAnimationFrame(updateDots);
+    });
+
+    // Navigation arrows
+    prevBtn?.addEventListener('click', () => {
+      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      resetAutoScroll();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+        // Wrap around to start
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+      resetAutoScroll();
+    });
+
+    // Autoplay logic
+    let autoScrollInterval: number | null = null;
+    const startAutoScroll = () => {
+      autoScrollInterval = window.setInterval(() => {
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }, 4000);
+    };
+
+    const stopAutoScroll = () => {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+      }
+    };
+
+    const resetAutoScroll = () => {
+      stopAutoScroll();
+      startAutoScroll();
+    };
+
+    // Pause on hover (desktop) or touch (mobile)
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+    carousel.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    carousel.addEventListener('touchend', startAutoScroll, { passive: true });
+
+    // Start initially
+    startAutoScroll();
+  });
+</script>
