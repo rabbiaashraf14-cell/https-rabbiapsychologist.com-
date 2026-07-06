@@ -1,60 +1,75 @@
 ---
 ---
 <section class="py-20 bg-white">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Resource Vault</h2>
-      <p class="text-gray-700 max-w-2xl mx-auto">Practical digital tools, workbooks, and templates designed to help you support your child's routines, behaviour, and development at home.</p>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Parent Resource Center</h2>
+        <p class="text-lg text-gray-700 max-w-2xl">Practical articles, templates, and digital tools to help you support your child at home.</p>
+      </div>
+      <a href="/resources" class="shrink-0 hidden md:inline-flex bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm items-center gap-2">
+        Explore Resources
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
-      <!-- Resource 1 -->
-      <div class="bg-gray-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
-        <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 self-start">Planner</span>
-        <h3 class="text-lg font-bold text-brand-navy mb-2">ADHD Home Routine Planner</h3>
-        <p class="text-sm text-gray-600 mb-4 flex-grow">A visual structure guide for morning and evening routines.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-sm font-bold text-gray-500">Free</span>
-          <a href="/free-downloads" class="text-sm font-bold text-brand-navy hover:text-blue-700">Download &rarr;</a>
-        </div>
-      </div>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
-      <!-- Resource 2 -->
-      <div class="bg-gray-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
-        <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 self-start">Tracker</span>
-        <h3 class="text-lg font-bold text-brand-navy mb-2">Behaviour ABC Tracker</h3>
-        <p class="text-sm text-gray-600 mb-4 flex-grow">A simple sheet to track what happens before and after a behaviour.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-sm font-bold text-gray-500">Free</span>
-          <a href="/free-downloads" class="text-sm font-bold text-brand-navy hover:text-blue-700">Download &rarr;</a>
+      <!-- ADHD Resources -->
+      <a href="/blog#adhd" class="bg-gray-50 border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brand-gold/50 transition-all group flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-trust mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
         </div>
-      </div>
+        <h3 class="font-bold text-brand-navy group-hover:text-brand-trust transition-colors">ADHD Resources</h3>
+      </a>
 
-      <!-- Resource 3 -->
-      <div class="bg-gray-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
-        <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 self-start">Checklist</span>
-        <h3 class="text-lg font-bold text-brand-navy mb-2">School Meeting Prep</h3>
-        <p class="text-sm text-gray-600 mb-4 flex-grow">Prepare for IEPs and parent-teacher meetings with clarity.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-sm font-bold text-gray-500">Free</span>
-          <a href="/free-downloads" class="text-sm font-bold text-brand-navy hover:text-blue-700">Download &rarr;</a>
+      <!-- Autism Resources -->
+      <a href="/blog#autism" class="bg-gray-50 border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brand-gold/50 transition-all group flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-trust mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
         </div>
-      </div>
+        <h3 class="font-bold text-brand-navy group-hover:text-brand-trust transition-colors">Autism Resources</h3>
+      </a>
 
-      <!-- Resource 4 -->
-      <div class="bg-gray-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col hover:shadow-md transition-shadow">
-        <span class="inline-block bg-brand-cream text-brand-navy text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-3 self-start">Workbook</span>
-        <h3 class="text-lg font-bold text-brand-navy mb-2">Executive Function Workbook</h3>
-        <p class="text-sm text-gray-600 mb-4 flex-grow">Practical exercises for developing routines and working memory.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-sm font-bold text-gray-500">Coming Soon</span>
-          <a href="/resource-vault" class="text-sm font-bold text-brand-navy hover:text-blue-700">View Details &rarr;</a>
+      <!-- Behaviour Support -->
+      <a href="/blog#behaviour" class="bg-gray-50 border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brand-gold/50 transition-all group flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-trust mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
         </div>
-      </div>
+        <h3 class="font-bold text-brand-navy group-hover:text-brand-trust transition-colors">Behaviour Support</h3>
+      </a>
+
+      <!-- Emotional Regulation -->
+      <a href="/blog#emotions" class="bg-gray-50 border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brand-gold/50 transition-all group flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-trust mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h3 class="font-bold text-brand-navy group-hover:text-brand-trust transition-colors">Emotional Regulation</h3>
+      </a>
+
+      <!-- School Support -->
+      <a href="/blog#school" class="bg-gray-50 border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brand-gold/50 transition-all group flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-trust mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14v6"></path></svg>
+        </div>
+        <h3 class="font-bold text-brand-navy group-hover:text-brand-trust transition-colors">School Support</h3>
+      </a>
+
+      <!-- Parent Guidance -->
+      <a href="/blog#parents" class="bg-gray-50 border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-brand-gold/50 transition-all group flex flex-col items-center text-center">
+        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-trust mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </div>
+        <h3 class="font-bold text-brand-navy group-hover:text-brand-trust transition-colors">Parent Guidance</h3>
+      </a>
+
     </div>
 
-    <div class="text-center">
-      <a href="/resource-vault" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-900 transition-colors shadow-sm">Explore All Resources</a>
+    <div class="mt-8 text-center md:hidden">
+      <a href="/resources" class="inline-flex bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm items-center gap-2">
+        Explore Resources
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
     </div>
   </div>
 </section>
