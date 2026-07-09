@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
@@ -13,6 +15,7 @@ import MythVsFact from '../../components/blog/MythVsFact.astro';
 import ActionChecklist from '../../components/blog/ActionChecklist.astro';
 import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import heroImage from '../../assets/blog/morning-routine-problems-in-adhd.webp';
 
 const title = "Morning Routine Problems in ADHD: Why It's So Hard and What to Do";
 const description = "Mornings are often the hardest part of the day for families with ADHD. Understand the executive function struggles behind morning chaos and learn practical parent strategies.";
@@ -103,10 +106,13 @@ const headings = [
       <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-4 leading-tight">{title}</h1>
       <p class="text-xl text-gray-700 mb-6">Mornings are often the hardest part of the day for families with ADHD. Understand the executive function struggles behind morning chaos and learn practical parent strategies.</p>
 
-      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 border-b pb-6">
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 border-b pb-6 mb-6">
         <span>Estimated reading time: 6 min</span>
         <span>&bull;</span>
         <span>Updated: {new Date(lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+      </div>
+      <div class="mb-10 rounded-2xl overflow-hidden shadow-sm">
+        <Image src={heroImage} alt={title} class="w-full h-auto object-cover max-h-[500px]" />
       </div>
     </div>
 
