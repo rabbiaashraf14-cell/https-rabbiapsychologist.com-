@@ -19,6 +19,7 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import heroImage from '../../assets/blog/understanding-the-confusion-between-adhd-and-hyperactivity-in-children.webp';
 
 const title = "Understanding the Confusion Between ADHD and Hyperactivity in Children";
 const description = "Many parents confuse ADHD with hyperactivity. Learn how ADHD can present as inattention, hyperactivity, impulsivity, or a combined pattern, and why proper assessment matters.";
@@ -132,7 +133,7 @@ const schema = [
         datePublished="Jan 10, 2024"
         dateModified="Mar 1, 2024"
         authorName="Rabbia Ashraf"
-        imageSrc="/images/blog/adhd-vs-hyperactivity-hero.jpg"
+        imageSrc={heroImage}
         imageAlt="Child building blocks calmly representing different presentations of ADHD"
       />
 
