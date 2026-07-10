@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedHero from '../components/home/AnimatedHero.astro';
-import FeaturedCarousel from '../components/home/FeaturedCarousel.astro';
 import TrustBadgeStrip from '../components/home/TrustBadgeStrip.astro';
+import FeaturedSidebar from '../components/home/FeaturedSidebar.astro';
 import HowIHelpSection from '../components/home/HowIHelpSection.astro';
 
 import BehaviorCommunicationVisualizer from '../components/home/BehaviorCommunicationVisualizer.astro';
@@ -22,14 +22,25 @@ const description = "Parent guidance and child development support for families 
 ---
 
 <BaseLayout title={title} description={description}>
-  <FeaturedCarousel />
   <AnimatedHero />
   <TrustBadgeStrip />
 
+  <div class="container mx-auto px-4 max-w-7xl py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <!-- Main Content Left -->
+      <div class="lg:col-span-8 flex flex-col gap-16">
   <HowIHelpSection />
 
   <BehaviorCommunicationVisualizer />
   <InteractiveServiceCards />
+      </div>
+      <!-- Sidebar Right -->
+      <div class="lg:col-span-4">
+        <FeaturedSidebar />
+      </div>
+    </div>
+  </div>
+
   <RegionSupportSection />
 
   <!-- What Parents Usually Search For Before Booking -->
