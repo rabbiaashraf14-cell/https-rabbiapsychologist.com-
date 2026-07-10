@@ -29,9 +29,9 @@ input:focus, select:focus, textarea:focus {
 /* Offset Tawk.to chat widget on mobile so it doesn't overlap sticky CTA */
 @media (max-width: 768px) {
   #tawk-mobi-min {
-    bottom: 80px !important;
+    bottom: 100px !important;
   }
   iframe[title="chat widget"] {
-    bottom: 80px !important;
+    bottom: 100px !important;
   }
 }
