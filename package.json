@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate:locations": "tsx src/data/locations/validateLocations.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@playwright/test": "^1.61.1",
     "playwright": "^1.61.1",
-    "sharp": "^0.35.2"
+    "sharp": "^0.35.2",
+    "tsx": "^4.23.0"
   }
 }
