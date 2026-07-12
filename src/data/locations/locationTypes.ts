@@ -62,7 +62,26 @@ export interface CityContentFields {
   bookingCallToAction: string;
 }
 
-export interface CityLocation extends CityServiceFields, CityContentFields, LocationReviewStatuses {
+export interface CityLocation extends Partial<CityServiceFields>, Partial<CityContentFields>, Partial<LocationReviewStatuses> {
+
+  publicationRegion: string;
+  marketCategory: string[];
+  supportedFutureLocales: string[];
+  internationalSchoolRelevance: string;
+  expatriateFamilyRelevance: string;
+  overseasPakistaniRelevance: string;
+  EnglishServiceAccessibility: string;
+  ArabicServiceAccessibility: string;
+  UrduServiceAccessibility: string;
+  parentGuidanceMarketPotential: string;
+  reportReviewMarketPotential: string;
+  schoolGuidanceMarketPotential: string;
+  culturalLocalizationRequired: boolean;
+  legalScopeResearchRequired: boolean;
+  translationRequired: boolean;
+  reviewStatus: 'not-started' | 'in-progress' | 'completed';
+  notes?: string;
+
   id: string;
   cityName: string;
   citySlug: string;
@@ -72,8 +91,8 @@ export interface CityLocation extends CityServiceFields, CityContentFields, Loca
   continentName: string;
   continentSlug: string;
   geographicRegion: string;
-  canonicalPath: string;
-  canonicalUrl: string;
+  canonicalPath?: string;
+  canonicalUrl?: string;
   priorityTier: 1 | 2 | 3;
   priorityScore?: number;
   priorityReasons?: string[];
@@ -87,7 +106,7 @@ export interface CityLocation extends CityServiceFields, CityContentFields, Loca
   localLanguages: string[];
   timeZone: string;
   currency: string;
-  status: 'draft' | 'published' | 'archived';
+  status: 'planned' | 'draft' | 'published' | 'archived';
   published: boolean;
   indexable: boolean;
   featured: boolean;
@@ -105,6 +124,32 @@ export interface Country {
   countryCode: string;
   continentSlug: string;
   primaryLocale: string;
+
+  // Phase 1 Part 2 Additions
+  continent?: string;
+  geographicRegion?: string;
+  publicationRegion?: string;
+  futureSitemapGroup?: string;
+  primaryLanguages?: string[];
+  additionalLanguages?: string[];
+  supportedFutureLocales?: string[];
+  timeZones?: string[];
+  currency?: string;
+  educationSystemType?: string;
+  healthcareSystemType?: string;
+  internationalSchoolPresence?: string;
+  overseasPakistaniRelevance?: string;
+  expatriateFamilyRelevance?: string;
+  onlineServiceFeasibility?: string;
+  legalScopeResearchRequired?: boolean;
+  translationRequired?: boolean;
+  priorityTier?: 1 | 2 | 3;
+  publicationBatch?: string;
+  status?: 'planned' | 'draft' | 'published' | 'archived';
+  published?: boolean;
+  indexable?: boolean;
+  existingRegionalPage?: string;
+  notes?: string;
 }
 
 export interface Continent {
