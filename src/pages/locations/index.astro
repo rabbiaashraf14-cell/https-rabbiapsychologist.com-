@@ -1,0 +1,423 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import Schema from '../../components/seo/Schema.astro';
+import SEO from '../../components/seo/SEO.astro';
+import InternationalDisclaimerBanner from '../../components/InternationalDisclaimerBanner.astro';
+
+import { getFeaturedLocationsByGroup, type PublicCityProjection } from '../../data/locations/locationHelpers';
+import { continents } from '../../data/locations/continents';
+
+// SEO & Schema
+const title = "Global Online Parent Guidance and Child Development Support | Rabbia Psychologist";
+const description = "Parent guidance and child development support for families worldwide. Get practical help for ADHD, autism, behaviour, emotional regulation, school concerns, reports, and next steps.";
+const canonicalUrl = "https://www.rabbiapsychologist.com/locations";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.rabbiapsychologist.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Locations",
+      "item": "https://www.rabbiapsychologist.com/locations"
+    }
+  ]
+};
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Global Locations Directory",
+  "description": "Browse online child development parent guidance support available worldwide."
+};
+
+// Data
+const featuredCountries = [
+  { name: 'Pakistan', slug: 'pakistan', region: 'South Asia' },
+  { name: 'United Arab Emirates', slug: 'united-arab-emirates', region: 'Middle East & Gulf' },
+  { name: 'United Kingdom', slug: 'united-kingdom', region: 'UK & Ireland' },
+  { name: 'United States', slug: 'united-states', region: 'North America' },
+  { name: 'Canada', slug: 'canada', region: 'North America' },
+  { name: 'Australia', slug: 'australia', region: 'Australia & NZ' },
+  { name: 'Saudi Arabia', slug: 'saudi-arabia', region: 'Middle East & Gulf' },
+  { name: 'Qatar', slug: 'qatar', region: 'Middle East & Gulf' }
+];
+
+const regions = [
+  { name: "North America", slug: "north-america" },
+  { name: "Latin America and the Caribbean", slug: "latin-america-caribbean" },
+  { name: "United Kingdom & Ireland", slug: "uk-ireland" },
+  { name: "Western Europe", slug: "western-europe" },
+  { name: "Northern Europe", slug: "northern-europe" },
+  { name: "Southern Europe", slug: "southern-europe" },
+  { name: "Central & Eastern Europe", slug: "central-eastern-europe" },
+  { name: "Middle East and Gulf", slug: "middle-east-gulf" },
+  { name: "South Asia", slug: "south-asia" },
+  { name: "Southeast Asia", slug: "southeast-asia" },
+  { name: "East Asia", slug: "east-asia" },
+  { name: "Central Asia", slug: "central-asia" },
+  { name: "Africa", slug: "africa" },
+  { name: "Australia and New Zealand", slug: "australia-new-zealand" },
+  { name: "Pacific and Island Regions", slug: "pacific-islands" }
+];
+
+const featuredCities = getFeaturedLocationsByGroup('globalCities', 16);
+---
+
+<Layout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <SEO slot="head" title={title} description={description} canonicalUrl={canonicalUrl} />
+  <Schema slot="head" schema={breadcrumbSchema} />
+  <Schema slot="head" schema={collectionSchema} />
+
+  {/* HERO SECTION */}
+  <section class="bg-brand-navy text-white pt-32 pb-20 rounded-b-[40px] relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-brand-gold text-sm font-bold tracking-wide mb-6">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Global Support
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+        Online Parent Guidance for Families Around the World
+      </h1>
+      <p class="text-lg md:text-xl text-brand-mist mb-10 max-w-3xl mx-auto leading-relaxed">
+        Providing parents with practical child development strategies, behaviour guidance, and school support—no matter where you live.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/book" class="w-full sm:w-auto bg-brand-gold text-brand-navy font-bold py-4 px-8 rounded-full hover:bg-white hover-lift transition-all shadow-lg text-center text-lg">
+          Book Consultation
+        </a>
+        <a href="#how-it-works" class="w-full sm:w-auto bg-white/10 text-white font-bold py-4 px-8 rounded-full hover:bg-white/20 transition-all text-center">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* HOW ONLINE SUPPORT WORKS */}
+  <section id="how-it-works" class="py-24 bg-brand-warm-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">How Online Support Works</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">A structured, practical approach to understanding and supporting your child's developmental needs from home.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-[24px] shadow-sm hover-lift text-center">
+          <div class="w-16 h-16 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Share Your Concerns</h3>
+          <p class="text-gray-600">Parents discuss current challenges, behaviours, and family background in a structured session.</p>
+        </div>
+        <div class="bg-white p-8 rounded-[24px] shadow-sm hover-lift text-center">
+          <div class="w-16 h-16 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Review Information</h3>
+          <p class="text-gray-600">Existing psychological reports, IEPs, and school feedback can be reviewed to gain full context.</p>
+        </div>
+        <div class="bg-white p-8 rounded-[24px] shadow-sm hover-lift text-center">
+          <div class="w-16 h-16 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Discuss Guidance</h3>
+          <p class="text-gray-600">Receive practical, actionable strategies tailored to your child's unique developmental profile.</p>
+        </div>
+        <div class="bg-white p-8 rounded-[24px] shadow-sm hover-lift text-center">
+          <div class="w-16 h-16 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">4</div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Next Steps</h3>
+          <p class="text-gray-600">Get clear recommendations, follow-up plans, and guidance on local referrals where appropriate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* INTERNATIONAL DISCLAIMER - PROMINENT */}
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+       <div class="bg-gray-50 border border-gray-200 rounded-[24px] p-8 md:p-12 shadow-sm text-center">
+         <h2 class="text-2xl font-bold text-brand-navy mb-4">Important Service Scope</h2>
+         <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
+           Rabbia Psychologist provides online parent consultation and developmental guidance.
+           Services do not replace emergency care, and do not automatically provide formal diagnosis across borders.
+           Local assessment and treatment should be obtained from locally regulated professionals.
+           In-person services are only available where explicitly stated on the website, and no physical clinic is implied in international cities.
+         </p>
+         <div class="flex flex-wrap justify-center gap-4 text-sm font-medium text-brand-navy">
+           <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">✔ Behaviour Guidance</span>
+           <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">✔ Report Review</span>
+           <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">✔ School Guidance</span>
+           <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">✔ Parent Education</span>
+         </div>
+       </div>
+    </div>
+  </section>
+
+  {/* SERVICES AVAILABLE INTERNATIONALLY */}
+  <section class="py-24 bg-brand-warm-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Services Available Internationally</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Explore online support options tailored for parents navigating child development challenges.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/parent-support" class="bg-white p-8 rounded-[24px] shadow-sm hover-lift border border-gray-100 group">
+          <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">Online Parent Consultation</h3>
+          <p class="text-gray-600 text-sm">Comprehensive developmental guidance and strategy planning for parents.</p>
+        </a>
+        <a href="/services/behaviour-planning" class="bg-white p-8 rounded-[24px] shadow-sm hover-lift border border-gray-100 group">
+          <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">Behaviour & Parenting Guidance</h3>
+          <p class="text-gray-600 text-sm">Strategies to manage challenging behaviours, tantrums, and routines.</p>
+        </a>
+        <a href="/report-review" class="bg-white p-8 rounded-[24px] shadow-sm hover-lift border border-gray-100 group">
+          <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">Psychological Report Review</h3>
+          <p class="text-gray-600 text-sm">Help translating complex clinical reports into actionable home strategies.</p>
+        </a>
+        <a href="/services/school-consultation" class="bg-white p-8 rounded-[24px] shadow-sm hover-lift border border-gray-100 group">
+          <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">School Guidance</h3>
+          <p class="text-gray-600 text-sm">Preparation for school meetings and understanding educational accommodations.</p>
+        </a>
+        <a href="/services/adhd-support" class="bg-white p-8 rounded-[24px] shadow-sm hover-lift border border-gray-100 group">
+          <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">ADHD Support Information</h3>
+          <p class="text-gray-600 text-sm">Guidance for executive functioning, attention, and focus challenges.</p>
+        </a>
+        <a href="/services/asd-support" class="bg-white p-8 rounded-[24px] shadow-sm hover-lift border border-gray-100 group">
+          <h3 class="text-xl font-bold text-brand-navy mb-2 group-hover:text-brand-gold transition-colors">Autism Support Information</h3>
+          <p class="text-gray-600 text-sm">Parent strategies for supporting autistic children and fostering development.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* BROWSE BY WORLD REGION */}
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Browse by World Region</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">Find support information tailored to your geographic area.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {regions.map(region => (
+          <a href={`/locations/${region.slug}`} class="bg-brand-warm-white p-6 rounded-[20px] shadow-sm hover-lift text-center border border-brand-mist/50 group">
+            <h3 class="text-md font-bold text-brand-navy group-hover:text-brand-gold transition-colors">{region.name}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* FEATURED COUNTRIES */}
+  <section class="py-24 bg-brand-navy text-white rounded-[40px] mx-4 mb-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay"></div>
+    <div class="container mx-auto px-8 relative z-10 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Featured Countries</h2>
+        <p class="text-lg text-brand-mist max-w-2xl mx-auto">Explore targeted parent guidance information for these key regions.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {featuredCountries.map(country => (
+          <a href={`/locations/${country.slug}`} class="bg-white/5 border border-white/10 p-6 rounded-[20px] hover:bg-white/10 transition-all text-center group">
+             <div class="text-xl font-bold text-white group-hover:text-brand-gold mb-1">{country.name}</div>
+             <div class="text-xs text-brand-mist/70">{country.region}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* SEARCH LOCATION DIRECTORY CONTAINER (JS-driven) */}
+  <section class="py-24 bg-brand-warm-white" id="search-directory-section">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Location Directory</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">Search our supported locations. (Note: City pages link to their respective country or regional hub).</p>
+
+        {/* Search UI Component - Placeholder for JS hydration */}
+        <div id="location-search-ui" class="max-w-3xl mx-auto">
+          <div class="relative">
+            <input type="text" id="location-search-input" placeholder="Search by city, country, or region..." class="w-full px-6 py-4 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-gold text-lg pl-12" />
+            <svg class="w-6 h-6 absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-2 justify-center" id="location-filters">
+             <button class="filter-btn active bg-brand-navy text-white px-4 py-2 rounded-full text-sm font-medium transition-colors" data-filter="all">All</button>
+             <button class="filter-btn bg-white text-brand-navy border border-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors" data-filter="featured">Featured Only</button>
+             <button class="filter-btn bg-white text-brand-navy border border-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors" data-filter="overseas-pakistani">Overseas Pakistani</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="location-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* JS will populate this, but we pre-render featured cities for non-JS/initial view */}
+        {featuredCities.map(city => (
+           <a href={city.destinationUrl} class="location-card bg-white p-6 rounded-[24px] shadow-sm hover-lift border border-gray-100 block" data-featured="true" data-name={city.cityName.toLowerCase()} data-country={city.countryName.toLowerCase()} data-region={city.regionName.toLowerCase()}>
+             <h3 class="text-xl font-bold text-brand-navy mb-1">{city.cityName}</h3>
+             <div class="text-sm text-gray-500 mb-3">{city.countryName} • {city.regionName}</div>
+             <div class="inline-block bg-brand-warm-white text-brand-navy text-xs px-3 py-1 rounded-full mb-3">Online Support Available</div>
+             <div class="text-xs text-brand-gold font-medium">Explore Support &rarr;</div>
+           </a>
+        ))}
+      </div>
+      <div id="no-results" class="hidden text-center text-gray-500 py-12">No locations found matching your search.</div>
+    </div>
+  </section>
+
+  {/* AUDIENCE & MULTILINGUAL SUPPORT */}
+  <section class="py-24 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">Support for Multilingual and Expatriate Families</h2>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Raising a child across different cultures or in an international school system comes with unique challenges. We provide culturally sensitive support tailored to your family's background.
+          </p>
+          <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-sage flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Consultations available in <strong>English</strong> and <strong>Urdu</strong>.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-sage flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Guidance for families navigating international school systems and curricula.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-sage flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Strategies that respect and integrate multiple household cultures.</span>
+            </li>
+          </ul>
+
+          <a href="/international-families" class="text-brand-navy font-bold hover:text-brand-gold transition-colors inline-flex items-center gap-2">
+            Read more about international support
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+        <div class="bg-brand-navy rounded-[32px] p-8 text-center text-white relative overflow-hidden">
+           <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay"></div>
+           <div class="relative z-10">
+             <h3 class="text-2xl font-bold mb-4">Overseas Pakistani Families</h3>
+             <p class="text-brand-mist mb-6 leading-relaxed text-sm">
+               We deeply understand the cultural nuances and challenges faced by Pakistani families living abroad. Get guidance that honors your cultural background while navigating foreign healthcare and education systems.
+             </p>
+             <a href="/international-families/overseas-pakistani-families" class="inline-block bg-white text-brand-navy font-bold py-3 px-6 rounded-full hover:bg-brand-gold transition-colors text-sm">
+               Support for Overseas Pakistanis
+             </a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <BookingCTA
+    title="Ready to Find Practical Solutions?"
+    subtitle="Book an online consultation to discuss your child's needs and create a tailored plan for home support."
+  />
+</Layout>
+
+{/* Client-side search script */}
+<script>
+  // We fetch a minimal JSON chunk of all locations safely exposed for client-side search.
+  // Instead of fetching from sanity dynamically, we use an API endpoint or inject statically.
+  // Since we don't have a JSON endpoint ready, we will request it statically during build and inject,
+  // or fetch it from a static public file if one was generated.
+  // For this step, we will inject a minimal payload of the full city projection to avoid extra roundtrips,
+  // BUT to avoid enormous HTML, we'll implement a robust lightweight fuzzy search on a generated JSON file.
+
+  // As a static first approach, we'll write a simple script that fetches a statically generated location list.
+  // We'll simulate it here by searching the DOM elements pre-rendered or fetching a small static list.
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      // In a real implementation, we'd fetch `/api/locations.json` which is built statically.
+      // For now, we fetch it if we generate it, else fallback to just filtering the DOM.
+
+      const res = await fetch('/locations-data.json').catch(() => null);
+      let allLocations = [];
+      if (res && res.ok) {
+         allLocations = await res.json();
+      }
+
+      const searchInput = document.getElementById('location-search-input') as HTMLInputElement;
+      const resultsContainer = document.getElementById('location-results');
+      const noResults = document.getElementById('no-results');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      let currentFilter = 'all'; // all, featured, overseas-pakistani
+      let currentSearch = '';
+
+      if (!searchInput || !resultsContainer) return;
+
+      function renderLocations(locations) {
+        if (!locations || locations.length === 0) {
+           resultsContainer.innerHTML = '';
+           noResults.classList.remove('hidden');
+           return;
+        }
+        noResults.classList.add('hidden');
+        resultsContainer.innerHTML = locations.map(city => `
+           <a href="${city.destinationUrl}" class="location-card bg-white p-6 rounded-[24px] shadow-sm hover:-translate-y-1 hover:shadow-md transition-transform duration-300 border border-gray-100 block">
+             <h3 class="text-xl font-bold text-brand-navy mb-1">${city.cityName}</h3>
+             <div class="text-sm text-gray-500 mb-3">${city.countryName} • ${city.regionName}</div>
+             <div class="inline-block bg-brand-warm-white text-brand-navy text-xs px-3 py-1 rounded-full mb-3">Online Support Available</div>
+             <div class="text-xs text-brand-gold font-medium">Explore Support &rarr;</div>
+           </a>
+        `).join('');
+      }
+
+      function updateResults() {
+        if (allLocations.length === 0) return; // Fallback to DOM filtering if no JSON loaded
+
+        const filtered = allLocations.filter(city => {
+           const matchSearch = currentSearch === '' ||
+                               city.cityName.toLowerCase().includes(currentSearch) ||
+                               city.countryName.toLowerCase().includes(currentSearch) ||
+                               city.regionName.toLowerCase().includes(currentSearch);
+
+           let matchFilter = true;
+           if (currentFilter === 'featured') {
+              matchFilter = city.featured;
+           } else if (currentFilter === 'overseas-pakistani') {
+              // Simple heuristic or read from data if available
+              matchFilter = city.countryName === 'United Arab Emirates' || city.countryName === 'Saudi Arabia' || city.countryName === 'United Kingdom' || city.countryName === 'United States' || city.countryName === 'Canada' || city.countryName === 'Australia';
+           }
+
+           return matchSearch && matchFilter;
+        });
+
+        // Limit to 50 results to prevent UI freezing
+        renderLocations(filtered.slice(0, 50));
+      }
+
+      // If we have data, hook up events
+      if (allLocations.length > 0) {
+          searchInput.addEventListener('input', (e) => {
+             currentSearch = (e.target as HTMLInputElement).value.toLowerCase();
+             updateResults();
+          });
+
+          filterBtns.forEach(btn => {
+             btn.addEventListener('click', (e) => {
+                const target = e.target as HTMLElement;
+                filterBtns.forEach(b => {
+                   b.classList.remove('bg-brand-navy', 'text-white');
+                   b.classList.add('bg-white', 'text-brand-navy');
+                });
+                target.classList.remove('bg-white', 'text-brand-navy');
+                target.classList.add('bg-brand-navy', 'text-white');
+
+                currentFilter = target.getAttribute('data-filter') || 'all';
+                updateResults();
+             });
+          });
+      }
+
+    } catch (e) {
+      console.error('Location search init failed:', e);
+    }
+  });
+</script>
