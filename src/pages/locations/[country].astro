@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import BookingCTA from '../../components/BookingCTA.astro';
+import SEO from '../../components/seo/SEO.astro';
+import Schema from '../../components/seo/Schema.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+
+import { countries } from '../../data/locations/countries';
+import { cities } from '../../data/locations/cities';
+import { getRegionSlug, type PublicCityProjection } from '../../data/locations/locationHelpers';
+
+export function getStaticPaths() {
+  // Only publish countries that are marked 'planned' for now (representing the first rollout/valid countries)
+  const approvedCountries = countries.filter(c => c.status === 'planned');
+
+  return approvedCountries.map(country => ({
+    params: { country: country.countrySlug },
+    props: { country }
+  }));
+}
+
+const { country } = Astro.props;
+const regionSlug = getRegionSlug(country.countrySlug, country.publicationRegion);
+
+// Find cities in this country to display as text (since city pages are not published)
+const countryCities = cities.filter(c => c.countrySlug === country.countrySlug);
+
+// SEO & Schema
+const title = `Online Parent Guidance in ${country.countryName} | Rabbia Psychologist`;
+const description = `Parent guidance and child development support for families in ${country.countryName}. Get practical help for ADHD, autism, behaviour, and emotional regulation.`;
+const canonicalUrl = `https://www.rabbiapsychologist.com/locations/${country.countrySlug}`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.rabbiapsychologist.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Locations",
+      "item": "https://www.rabbiapsychologist.com/locations"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": country.countryName,
+      "item": canonicalUrl
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `Online Child Development Parent Guidance - ${country.countryName}`,
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": country.countryName
+  },
+  "description": description
+};
+
+// Generic safe AEO/GEO FAQ blocks for country pages
+const faqs = [
+  {
+    question: `Can parents in ${country.countryName} book an online consultation?`,
+    answer: `Yes, parents in ${country.countryName} can book online consultations. These sessions provide educational parent guidance, behaviour support, and developmental strategies. They do not replace local emergency care or clinical treatment.`
+  },
+  {
+    question: `Can you diagnose ADHD or autism internationally?`,
+    answer: `No. We provide online developmental guidance and support strategies based on your child's presentation, but formal medical diagnoses should be conducted by locally regulated healthcare professionals in ${country.countryName}.`
+  },
+  {
+    question: `Can you review an existing psychological report?`,
+    answer: `Yes, we offer Psychological Report Review sessions to help you understand complex clinical language, translate the findings into practical home strategies, and plan your next steps.`
+  },
+  {
+    question: `What can parents do while waiting for a local assessment?`,
+    answer: `While waiting for a formal local assessment, parents can use our online consultations to implement practical routines, behaviour support strategies, and emotional regulation techniques at home.`
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+---
+
+<Layout title={title} description={description} canonicalUrl={canonicalUrl}>
+  <SEO slot="head" title={title} description={description} canonicalUrl={canonicalUrl} />
+  <Schema slot="head" schema={breadcrumbSchema} />
+  <Schema slot="head" schema={serviceSchema} />
+  <Schema slot="head" schema={faqSchema} />
+
+  {/* COUNTRY HERO */}
+  <section class="bg-brand-navy text-white pt-32 pb-20 rounded-b-[40px] relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+      <nav class="mb-6 flex justify-center text-sm font-medium text-brand-mist/80" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="/" class="hover:text-brand-gold transition-colors">Home</a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+              <a href="/locations" class="hover:text-brand-gold transition-colors">Locations</a>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+              <a href={`/locations/${regionSlug}`} class="hover:text-brand-gold transition-colors">{country.publicationRegion || country.geographicRegion || 'Region'}</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg class="w-3 h-3 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+              <span class="ml-1 text-white">{country.countryName}</span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+        Parent Support in {country.countryName}
+      </h1>
+      <p class="text-lg md:text-xl text-brand-mist mb-10 max-w-3xl mx-auto leading-relaxed">
+        We provide online consultation and practical developmental guidance for families navigating parenting challenges, behaviour concerns, and school support in {country.countryName}.
+      </p>
+      <div class="flex justify-center">
+        <a href="/book" class="bg-brand-gold text-brand-navy font-bold py-4 px-8 rounded-full hover:bg-white hover-lift transition-all shadow-lg text-center text-lg">
+          Book Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* COUNTRY CONTEXT */}
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+         <div>
+           <h2 class="text-3xl font-bold text-brand-navy mb-6">Expert Guidance for Families in {country.countryName}</h2>
+           <p class="text-gray-700 leading-relaxed mb-6">
+             Finding the right support for your child's development can be challenging. Our online parent consultations offer a practical space to discuss your concerns, review existing reports, and develop actionable strategies tailored to your family's routine.
+           </p>
+           <p class="text-gray-700 leading-relaxed mb-6">
+             Whether you are waiting for a local assessment or need help managing daily challenging behaviours, we bridge the gap with professional, evidence-based guidance. Support is delivered securely online, meaning you can access expertise from home.
+           </p>
+
+           <div class="bg-brand-warm-white p-6 rounded-[20px] border border-brand-mist/50">
+             <h3 class="font-bold text-brand-navy mb-3">Online Service Scope:</h3>
+             <ul class="space-y-2 text-sm text-gray-700">
+               <li class="flex items-center gap-2">
+                 <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                 Parent Behaviour Guidance
+               </li>
+               <li class="flex items-center gap-2">
+                 <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                 Psychological Report Review
+               </li>
+               <li class="flex items-center gap-2">
+                 <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                 School Strategy Preparation
+               </li>
+               <li class="flex items-center gap-2">
+                 <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                 ADHD & Autism Parent Support
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         {/* INTERNATIONAL DISCLAIMER - REQUIRED */}
+         <div class="bg-gray-50 border border-gray-200 rounded-[32px] p-8 shadow-sm">
+           <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-navy mb-4 shadow-sm">
+             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+           </div>
+           <h3 class="text-xl font-bold text-brand-navy mb-3">Important Service Information</h3>
+           <p class="text-gray-700 text-sm leading-relaxed mb-4">
+             Rabbia Psychologist provides educational parent consultation and developmental guidance.
+             Website content is for educational purposes only and does not replace emergency care, medical diagnosis, or direct clinical assessment.
+           </p>
+           <p class="text-gray-700 text-sm leading-relaxed">
+             Regulated services are provided only within the professional scope, credentials, and legal requirements of the professional and client location. Families in {country.countryName} are encouraged to seek local, regulated healthcare providers for formal diagnosis and treatment.
+           </p>
+         </div>
+       </div>
+    </div>
+  </section>
+
+  {/* PLANNED CITIES IN COUNTRY */}
+  {countryCities.length > 0 && (
+    <section class="py-24 bg-brand-warm-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Online Support Available</h2>
+          <p class="text-lg text-gray-700 max-w-2xl mx-auto">We offer online support to families across {country.countryName}, including parents located in or near these areas.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          {countryCities.map(city => (
+            <span class="bg-white px-4 py-2 rounded-full shadow-sm text-brand-navy border border-gray-100 text-sm font-medium">
+              {city.cityName}
+            </span>
+          ))}
+        </div>
+
+        <div class="text-center mt-12 text-sm text-gray-500">
+           Note: Support is provided via secure online video consultation. We do not operate physical clinics in these locations unless explicitly stated.
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* FAQs */}
+  <section class="py-24 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-brand-navy mb-4">Frequently Asked Questions</h2>
+        <p class="text-gray-600">Common questions from parents seeking support in {country.countryName}.</p>
+      </div>
+
+      <FAQAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <BookingCTA
+    title="Ready to Find Practical Solutions?"
+    subtitle="Book an online consultation to discuss your child's needs and create a tailored plan for home support."
+  />
+</Layout>
