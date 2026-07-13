@@ -1,0 +1,57 @@
+---
+import type { CityLocation, Source } from '../../../data/locations/locationTypes';
+import { locationSources } from '../../../data/locations/locationSources';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+
+if (!city.sourceIds || city.sourceIds.length === 0) {
+    return;
+}
+
+const sources = locationSources.filter(s => city.sourceIds.includes(s.sourceId));
+
+if (sources.length === 0) {
+    return;
+}
+---
+
+<section class="py-12 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Research & Official Guidance</h2>
+
+    {city.officialGuidanceSummary && (
+      <div class="prose max-w-none text-gray-700 mb-8">
+        <p>{city.officialGuidanceSummary}</p>
+      </div>
+    )}
+
+    <div class="space-y-4">
+      {sources.map(source => (
+        <div class="bg-white p-5 rounded-lg border border-gray-200 text-sm shadow-sm">
+          <p class="font-semibold text-gray-900 mb-1">{source.sourceTitle}</p>
+          <p class="text-gray-600 mb-2">
+            {source.author || source.institution}
+            {source.publicationYear && ` (${source.publicationYear})`}.
+            {source.publisher || source.journal}
+          </p>
+          <div class="flex flex-wrap gap-2 items-center text-xs text-gray-500 mt-2">
+             <span class="bg-gray-100 px-2 py-1 rounded">{source.sourceType}</span>
+             {source.evidenceLevel && (
+               <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded">Evidence Level: {source.evidenceLevel}</span>
+             )}
+             {source.sourceUrl && (
+               <a href={source.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline inline-flex items-center">
+                 View Source
+                 <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+               </a>
+             )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

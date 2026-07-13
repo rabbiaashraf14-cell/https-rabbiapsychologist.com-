@@ -1,0 +1,19 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+---
+
+<section class="bg-blue-600 py-16 text-center text-white px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">{city.bookingCallToAction || 'Ready to support your child\'s development?'}</h2>
+    <p class="text-blue-100 mb-8 text-lg">Book an online parent consultation to discuss your concerns and create a practical action plan.</p>
+    <a href="/booking" class="inline-block bg-white text-blue-600 font-bold py-4 px-10 rounded-[28px] shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+      Book Parent Consultation
+    </a>
+  </div>
+</section>

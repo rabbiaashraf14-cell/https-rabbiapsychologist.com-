@@ -1,0 +1,36 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+import { cities } from '../../../data/locations/cities';
+import { getCityPath } from '../../../data/locations/locationHelpers';
+import { isLocationEligibleForPublicRoute } from '../../../data/locations/locationValidation';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+
+let related: CityLocation[] = [];
+
+if (city.relatedCitySlugs && city.relatedCitySlugs.length > 0) {
+    related = cities.filter(c => city.relatedCitySlugs.includes(c.citySlug) && isLocationEligibleForPublicRoute(c)).slice(0, 6);
+}
+
+if (related.length === 0) {
+    return;
+}
+---
+
+<section class="py-12 bg-gray-50 border-t border-gray-100">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Nearby Locations</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {related.map(relatedCity => (
+         <a href={getCityPath(relatedCity)} class="bg-white p-4 rounded-[16px] shadow-sm hover:shadow-md hover-lift transition-all border border-gray-200 text-center">
+            <span class="block font-semibold text-blue-900">{relatedCity.cityName}</span>
+            <span class="text-xs text-gray-500">{relatedCity.countryName}</span>
+         </a>
+      ))}
+    </div>
+  </div>
+</section>

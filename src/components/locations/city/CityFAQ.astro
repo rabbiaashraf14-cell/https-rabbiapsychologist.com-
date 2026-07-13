@@ -1,0 +1,25 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+import FAQAccordion from '../../FAQAccordion.astro';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+
+if (!city.frequentlyAskedQuestions || city.frequentlyAskedQuestions.length === 0) {
+    return;
+}
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      {city.frequentlyAskedQuestions.map((faq, index) => (
+         <FAQAccordion question={faq.question} answer={faq.answer} index={index} />
+      ))}
+    </div>
+  </div>
+</section>

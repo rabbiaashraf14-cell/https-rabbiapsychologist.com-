@@ -1,0 +1,52 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+---
+
+<section class="py-12 px-6 lg:px-8 max-w-4xl mx-auto">
+  <div class="bg-white rounded-[24px] shadow-md p-8 hover-lift border border-gray-100">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Support Available in {city.cityName}</h2>
+
+    <div class="prose max-w-none text-gray-700">
+      <p class="font-medium text-blue-800 mb-4">{city.serviceScopeStatement || `Rabbia Psychologist provides online parent guidance for families in ${city.cityName}.`}</p>
+
+      <ul class="grid sm:grid-cols-2 gap-3 mt-6">
+        {city.onlineParentConsultationAvailable !== false && (
+          <li class="flex items-start">
+             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+             Parent Consultation
+          </li>
+        )}
+        {city.developmentalGuidanceAvailable !== false && (
+           <li class="flex items-start">
+             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+             Developmental Guidance
+          </li>
+        )}
+        {city.behaviourParentingGuidanceAvailable !== false && (
+           <li class="flex items-start">
+             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+             Behaviour Strategies
+          </li>
+        )}
+        {city.schoolGuidanceAvailable !== false && (
+           <li class="flex items-start">
+             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+             School Support & Reviews
+          </li>
+        )}
+      </ul>
+
+      {city.physicalOfficeAvailable === false && (
+        <div class="mt-8 bg-blue-50 border-l-4 border-blue-400 p-4 text-sm text-blue-800 rounded-r-lg">
+           <strong>Please Note:</strong> Services for {city.cityName} are provided entirely online. There is no physical clinic location in {city.cityName}. We specialize in parent-focused guidance that can be implemented from home.
+        </div>
+      )}
+    </div>
+  </div>
+</section>

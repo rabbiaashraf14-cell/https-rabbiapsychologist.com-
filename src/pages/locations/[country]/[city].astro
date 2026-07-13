@@ -1,0 +1,84 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import SEO from '../../../components/seo/SEO.astro';
+import Schema from '../../../components/seo/Schema.astro';
+
+import CityBreadcrumbs from '../../../components/locations/city/CityBreadcrumbs.astro';
+import CityHero from '../../../components/locations/city/CityHero.astro';
+import CityOverview from '../../../components/locations/city/CityOverview.astro';
+import LocalParentConcerns from '../../../components/locations/city/LocalParentConcerns.astro';
+import SchoolSupportOverview from '../../../components/locations/city/SchoolSupportOverview.astro';
+import WaitingForAssessmentSupport from '../../../components/locations/city/WaitingForAssessmentSupport.astro';
+import ResearchEvidence from '../../../components/locations/city/ResearchEvidence.astro';
+import CityFAQ from '../../../components/locations/city/CityFAQ.astro';
+import ReviewInformation from '../../../components/locations/city/ReviewInformation.astro';
+import InternationalServiceDisclaimer from '../../../components/locations/city/InternationalServiceDisclaimer.astro';
+import CityBookingCTA from '../../../components/locations/city/CityBookingCTA.astro';
+import RelatedLocations from '../../../components/locations/city/RelatedLocations.astro';
+
+import { cities } from '../../../data/locations/cities';
+import { isLocationEligibleForPublicRoute } from '../../../data/locations/locationValidation';
+import { getCitySeoMetadata, generateCityServiceSchema, generateCityFAQSchema, generateCityBreadcrumbSchema, generateHreflangTags } from '../../../data/locations/locationHelpers';
+
+export function getStaticPaths() {
+  const eligibleCities = cities.filter(city => isLocationEligibleForPublicRoute(city));
+
+  return eligibleCities.map(city => ({
+    params: {
+      country: city.countrySlug,
+      city: city.citySlug
+    },
+    props: { city }
+  }));
+}
+
+const { city } = Astro.props;
+const seoMetadata = getCitySeoMetadata(city);
+const hreflangTags = generateHreflangTags(city);
+const serviceSchema = generateCityServiceSchema(city);
+const faqSchema = generateCityFAQSchema(city);
+const breadcrumbSchema = generateCityBreadcrumbSchema(city);
+
+const schemas = [];
+if (serviceSchema) schemas.push(serviceSchema);
+if (faqSchema) schemas.push(faqSchema);
+if (breadcrumbSchema) schemas.push(breadcrumbSchema);
+
+---
+
+<Layout>
+  <SEO
+    title={seoMetadata.seoTitle}
+    description={seoMetadata.metaDescription}
+    canonical={seoMetadata.canonicalUrl}
+  />
+
+  <meta slot="head" name="robots" content={seoMetadata.robots} />
+
+  {hreflangTags.map(tag => (
+    <link slot="head" rel="alternate" href={tag.href} hreflang={tag.hreflang} />
+  ))}
+
+  {schemas.length > 0 && (
+    <Fragment slot="head">
+      {schemas.map(schema => (
+        <Schema schema={schema} />
+      ))}
+    </Fragment>
+  )}
+
+  <main>
+    <CityBreadcrumbs city={city} />
+    <CityHero city={city} />
+    <CityOverview city={city} />
+    <LocalParentConcerns city={city} />
+    <SchoolSupportOverview city={city} />
+    <WaitingForAssessmentSupport city={city} />
+    <ResearchEvidence city={city} />
+    <CityFAQ city={city} />
+    <InternationalServiceDisclaimer city={city} />
+    <CityBookingCTA city={city} />
+    <RelatedLocations city={city} />
+    <ReviewInformation city={city} />
+  </main>
+</Layout>

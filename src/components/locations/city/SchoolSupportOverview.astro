@@ -1,0 +1,43 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+
+if (!city.schoolSystemOverview) {
+    return;
+}
+---
+
+<section class="py-12">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <div class="bg-blue-50 rounded-[24px] p-8 md:p-12 border border-blue-100 hover-lift">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">School & Education Support in {city.countryName}</h2>
+
+      <div class="prose max-w-none text-gray-700">
+        <p>{city.schoolSystemOverview}</p>
+
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-900">How Parent Consultation Helps</h3>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-start">
+               <svg class="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+               Understanding school reports and teacher feedback
+            </li>
+            <li class="flex items-start">
+               <svg class="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+               Preparing for meetings with school support teams
+            </li>
+            <li class="flex items-start">
+               <svg class="w-5 h-5 text-blue-500 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+               Translating clinical recommendations into practical home routines
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

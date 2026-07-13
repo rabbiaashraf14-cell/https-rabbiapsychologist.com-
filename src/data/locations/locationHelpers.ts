@@ -139,3 +139,44 @@ export function getFeaturedLocationsByGroup(group: string = 'globalCities', limi
 
   return cities.filter(c => slugs.includes(c.citySlug)).map(getPublicCityProjection).slice(0, limit);
 }
+
+
+export function getCitySeoMetadata(city: CityLocation) {
+  const domain = 'https://www.rabbiapsychologist.com';
+  const canonicalUrl = city.canonicalUrl || `${domain}${getCityPath(city)}`;
+  const robots = city.indexable ? "index, follow" : "noindex, nofollow";
+
+  return {
+    seoTitle: city.seoTitle || `Online Parent Guidance in ${city.cityName} | Rabbia Psychologist`,
+    metaDescription: city.metaDescription || `Parent guidance and child development support for families in ${city.cityName}, ${city.countryName}. Get practical help for ADHD, autism, behaviour, emotional regulation, school concerns, reports, and next steps.`,
+    canonicalUrl,
+    robots,
+    language: city.primaryLocale || 'en',
+  };
+}
+
+export function generateCityServiceSchema(city: CityLocation, domain: string = 'https://www.rabbiapsychologist.com') {
+  if (!city.serviceScopeStatement) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Online Parent Guidance for ${city.cityName}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "Rabbia Psychologist Child Development Services",
+      "url": domain
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": city.cityName
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Parents and Caregivers"
+    },
+    "availableLanguage": city.localLanguages || ["English"],
+    "description": city.serviceScopeStatement,
+    "url": `${domain}${getCityPath(city)}`
+  };
+}

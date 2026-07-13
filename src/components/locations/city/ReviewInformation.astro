@@ -1,0 +1,36 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+
+if (city.reviewStatus !== 'completed' && city.reviewStatus !== 'approved') {
+    return;
+}
+---
+
+<section class="py-8 border-t border-gray-100 bg-gray-50 mt-12">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500">
+      <div class="mb-4 sm:mb-0">
+        <p class="font-medium text-gray-700 mb-1">Content Review Information</p>
+        <p>This information has been reviewed for clinical accuracy and local relevance.</p>
+      </div>
+      <div class="flex gap-4">
+        {city.clinicalReviewStatus === 'approved' && (
+           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+             Clinically Reviewed
+           </span>
+        )}
+        {city.researchStatus === 'approved' && (
+           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+             Evidence Checked
+           </span>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
