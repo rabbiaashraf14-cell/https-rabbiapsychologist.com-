@@ -1,6 +1,29 @@
 ---
 import { Image } from 'astro:assets';
+import { articles } from '../../data/blogArticles';
 
+// Sort by date, newest first, take top 5
+const latestArticles = [...articles]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 5);
+
+// Dynamically import all blog images for proper image priority system
+const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/*.{jpeg,jpg,png,webp,gif}', { eager: true });
+
+function getArticleImage(article: any) {
+  if (article.sanityImage) {
+    return { type: 'remote', src: article.sanityImage };
+  }
+  const slug = article.href.replace('/blog/', '').replace(/\/$/, '');
+  const imagePath = Object.keys(localImages).find(path => path.includes(`/${slug}.`));
+  if (imagePath && localImages[imagePath]) {
+    return { type: 'local', src: localImages[imagePath].default };
+  }
+  if (article.imageUrl) {
+    return { type: 'remote', src: article.imageUrl };
+  }
+  return { type: 'fallback', src: '/favicon.png' }; // fallback image
+}
 ---
 <div class="relative overflow-hidden bg-brand-cream py-8 lg:py-24 flex items-center min-h-[75vh]">
   <div class="absolute inset-0 bg-gradient-to-br from-brand-cream to-blue-50 z-0 pointer-events-none"></div>
@@ -69,12 +92,80 @@ import { Image } from 'astro:assets';
           <!-- Background Glow -->
           <div class="absolute inset-0 bg-brand-sky/40 blur-3xl rounded-full"></div>
 
-          <div class="relative z-10">
-            <Image
-              src={import('../../assets/blog/behaviour-is-communication-finding-the-why.webp')}
-              alt="Parent and child consultation"
-              class="w-full h-auto object-cover rounded-[24px] shadow-md hover-lift transition-transform duration-300"
-            />
+          <div class="relative z-10 w-full overflow-hidden rounded-[24px] shadow-lg group hero-blog-slider" data-autoplay="true" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Featured blog articles">
+            {latestArticles.length > 0 ? (
+              <>
+              <div class="flex transition-transform duration-500 ease-in-out hero-slider-track h-full" style="width: 100%;">
+                {latestArticles.map((article, index) => {
+                  const image = getArticleImage(article);
+                  const isFirst = index === 0;
+                  return (
+                    <div class="w-full flex-shrink-0 relative hero-slide h-full" aria-hidden={index === 0 ? "false" : "true"} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${latestArticles.length}`}>
+                      <a href={article.href} class="block relative w-full h-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] overflow-hidden" aria-label={`Read article: ${article.title}`}>
+                        {image.type === 'local' ? (
+                          <Image
+                            src={image.src as ImageMetadata}
+                            alt={article.title}
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            loading={isFirst ? "eager" : "lazy"}
+                          />
+                        ) : (
+                          <img
+                            src={image.src as string}
+                            alt={article.title}
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            loading={isFirst ? "eager" : "lazy"}
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                          />
+                        )}
+
+                        {/* Overlay gradient for text readability */}
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent"></div>
+
+                        {/* Text Content over image */}
+                        <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 flex flex-col justify-end text-white h-full z-10">
+                          <span class="inline-block px-3 py-1 bg-brand-gold text-brand-navy text-xs font-bold uppercase tracking-wide rounded-full self-start mb-3 shadow-sm">
+                            {article.categories && article.categories.length > 0 ? article.categories[0] : 'Blog'}
+                          </span>
+                          <h3 class="text-xl sm:text-2xl font-bold mb-2 leading-tight text-white drop-shadow-md">
+                            {article.title}
+                          </h3>
+                          <p class="text-white/90 text-sm sm:text-base line-clamp-2 mb-4 drop-shadow-sm">
+                            {article.excerpt}
+                          </p>
+                          <div class="flex items-center gap-2 text-brand-gold font-semibold text-sm group-hover:text-white transition-colors">
+                            Read Article
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Controls */}
+              <button aria-label="Previous slide" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/40 focus:opacity-100 hero-slider-prev z-20">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button aria-label="Next slide" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white/40 focus:opacity-100 hero-slider-next z-20">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+
+              {/* Pagination Dots */}
+              <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 hero-slider-dots z-20">
+                {latestArticles.map((_, index) => (
+                  <button aria-label={`Go to slide ${index + 1}`} class={`w-2 h-2 rounded-full transition-all ${index === 0 ? 'bg-white w-4' : 'bg-white/50 hover:bg-white/80'}`} data-index={index}></button>
+                ))}
+              </div>
+              </>
+            ) : (
+              <div class="bg-white p-8 h-full min-h-[400px] flex flex-col justify-center items-center text-center">
+                 <h3 class="text-2xl font-bold text-brand-navy mb-4">Support & Resources</h3>
+                 <p class="text-gray-600 mb-6">Discover practical guides, home strategies, and expert advice for child development.</p>
+                 <a href="/resources" class="px-6 py-3 bg-brand-navy text-white rounded-lg font-bold hover:bg-blue-900 transition-colors">View Resources</a>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -97,4 +188,148 @@ import { Image } from 'astro:assets';
       transform: translateY(0);
     }
   }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 </style>
+
+<script lang="ts">
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.hero-blog-slider') as HTMLElement;
+    if (!slider) return;
+
+    const track = slider.querySelector('.hero-slider-track') as HTMLElement;
+    const slides = slider.querySelectorAll('.hero-slide');
+    const prevBtn = slider.querySelector('.hero-slider-prev') as HTMLButtonElement;
+    const nextBtn = slider.querySelector('.hero-slider-next') as HTMLButtonElement;
+    const dots = slider.querySelectorAll('.hero-slider-dots button') as NodeListOf<HTMLButtonElement>;
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoplayInterval: number | undefined;
+    const autoplayDelay = 5500;
+    let isInteracting = false;
+    let startX = 0;
+    let currentX = 0;
+
+    function goToSlide(index: number) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+
+      currentIndex = index;
+      const offset = -currentIndex * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      // Update ARIA
+      slides.forEach((slide, i) => {
+        slide.setAttribute('aria-hidden', i === currentIndex ? 'false' : 'true');
+      });
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === currentIndex) {
+          dot.classList.add('bg-white', 'w-4');
+          dot.classList.remove('bg-white/50');
+        } else {
+          dot.classList.remove('bg-white', 'w-4');
+          dot.classList.add('bg-white/50');
+        }
+      });
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoplay() {
+      if (autoplayInterval) clearInterval(autoplayInterval);
+      autoplayInterval = window.setInterval(() => {
+        if (!isInteracting) {
+          nextSlide();
+        }
+      }, autoplayDelay);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval) clearInterval(autoplayInterval);
+    }
+
+    // Event Listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => goToSlide(i));
+    });
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => {
+      isInteracting = true;
+      stopAutoplay();
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isInteracting = false;
+      startAutoplay();
+    });
+
+    // Touch support for swipe
+    slider.addEventListener('touchstart', (e: TouchEvent) => {
+      isInteracting = true;
+      stopAutoplay();
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', (e: TouchEvent) => {
+      currentX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', () => {
+      isInteracting = false;
+      if (startX > 0 && currentX > 0) {
+        const diff = startX - currentX;
+        if (diff > 50) {
+          nextSlide(); // Swiped left
+        } else if (diff < -50) {
+          prevSlide(); // Swiped right
+        }
+      }
+      startX = 0;
+      currentX = 0;
+      startAutoplay();
+    });
+
+    // Keyboard navigation
+    slider.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    });
+
+    // Focus handling
+    slider.addEventListener('focusin', () => {
+      isInteracting = true;
+      stopAutoplay();
+    });
+
+    slider.addEventListener('focusout', () => {
+      isInteracting = false;
+      startAutoplay();
+    });
+
+    // Initialize
+    goToSlide(0);
+    startAutoplay();
+  });
+</script>
