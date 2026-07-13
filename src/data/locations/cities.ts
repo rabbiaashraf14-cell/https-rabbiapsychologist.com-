@@ -1,5 +1,6 @@
-import type { CityLocation } from './locationTypes';
 
-export const cities: CityLocation[] = [
-  // Examples of some cities (to be expanded with actual data in phase 1, part 2)
-];
+import { tier1Cities } from './cities/cities-tier-1';
+import { tier2Cities } from './cities/cities-tier-2';
+import { tier3Cities } from './cities/cities-tier-3';
+
+export const cities = [...tier1Cities, ...tier2Cities, ...tier3Cities];

@@ -1,6 +1,7 @@
 import type { CityLocation, Source } from './locationTypes';
 import { continents } from './continents';
 import { countries } from './countries';
+import { featuredLocations } from './featuredLocations';
 import { locationSources } from './locationSources';
 
 export interface ValidationResult {
@@ -9,7 +10,46 @@ export interface ValidationResult {
   warnings: string[];
 }
 
+
+export function validateCityPlanningRecord(location: CityLocation): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (!location.id) errors.push('Missing unique city ID');
+  if (!location.cityName) errors.push('Missing city name');
+  if (!location.citySlug) errors.push('Missing unique city slug');
+  if (!location.countryCode) errors.push('Missing country code');
+  if (!location.geographicRegion) errors.push('Missing geographic region');
+  if (!location.publicationRegion) errors.push('Missing publication region');
+
+  if (location.priorityTier !== 1 && location.priorityTier !== 2 && location.priorityTier !== 3) {
+    errors.push('Invalid priority tier');
+  }
+
+  if (location.priorityScore === undefined || location.priorityScore < 0 || location.priorityScore > 100) {
+     errors.push('Missing or invalid priority score');
+  }
+
+  if (!location.priorityReasons || location.priorityReasons.length === 0) {
+    errors.push('Missing priority reasons');
+  }
+
+  if (!location.publicationBatch) errors.push('Missing publication batch');
+
+  if (location.published) errors.push('New city cannot be published');
+  if (location.indexable) errors.push('New city cannot be indexable');
+  if (location.legalScopeResearchRequired === undefined) errors.push('Missing legal-research status');
+
+
+      if (location.relatedCitySlugs && location.relatedCitySlugs.some(slug => !slug)) {
+      errors.push('Related cities that do not exist');
+  }
+
+  return { valid: errors.length === 0, errors, warnings };
+}
+
 export function isLocationEligibleForIndexing(location: CityLocation): ValidationResult {
+
   const errors: string[] = [];
   const warnings: string[] = [];
 
@@ -89,29 +129,68 @@ export function isLocationEligibleForIndexing(location: CityLocation): Validatio
   };
 }
 
+
 export function validateAllLocations(locations: CityLocation[]): { [cityId: string]: ValidationResult } {
+  const errors: string[] = [];
+
+  let tier1 = 0;
+  let tier2 = 0;
+  let tier3 = 0;
+
+  for (const loc of locations) {
+      if (loc.priorityTier === 1) tier1++;
+      if (loc.priorityTier === 2) tier2++;
+      if (loc.priorityTier === 3) tier3++;
+  }
+
   const results: { [cityId: string]: ValidationResult } = {};
 
   const ids = new Set<string>();
   const slugs = new Set<string>();
   const canonicals = new Set<string>();
+  const citySlugMap = new Map();
+  locations.forEach(c => citySlugMap.set(c.citySlug, c));
 
   for (const loc of locations) {
-    const locRes = isLocationEligibleForIndexing(loc);
+    let locRes = validateCityPlanningRecord(loc);
 
-    // Check duplicates across all locations
+    if (loc.status !== 'planned') {
+      const indexingRes = isLocationEligibleForIndexing(loc);
+      locRes.errors.push(...indexingRes.errors);
+      locRes.warnings.push(...indexingRes.warnings);
+      locRes.valid = locRes.errors.length === 0;
+    }
+
     if (ids.has(loc.id)) locRes.errors.push(`Duplicate ID: ${loc.id}`);
     ids.add(loc.id);
 
     if (slugs.has(loc.citySlug)) locRes.errors.push(`Duplicate slug: ${loc.citySlug}`);
     slugs.add(loc.citySlug);
 
-    if (canonicals.has(loc.canonicalUrl)) locRes.errors.push(`Duplicate canonical URL: ${loc.canonicalUrl}`);
-    canonicals.add(loc.canonicalUrl);
+    if (loc.canonicalUrl) {
+      if (canonicals.has(loc.canonicalUrl)) locRes.errors.push(`Duplicate canonical URL: ${loc.canonicalUrl}`);
+      canonicals.add(loc.canonicalUrl);
+    }
 
-    // Check fake physical clinic issues
-    if (loc.physicalOfficeAvailable === true && loc.serviceMode === 'online') {
-        locRes.errors.push('Contradictory service availability: marked online but claiming physical office');
+    if (!loc.timeZone) {
+      locRes.errors.push('Missing timeZone');
+    }
+
+    const countryExists = countries.some(c => c.countryCode === loc.countryCode);
+    if (!countryExists) locRes.errors.push('Invalid country code');
+
+    // Reciprocal relationship check
+    if (loc.relatedCitySlugs) {
+        loc.relatedCitySlugs.forEach(slug => {
+            let rel = citySlugMap.get(slug);
+            if (!rel) {
+                locRes.errors.push('Related city slug does not exist: ' + slug);
+            } else {
+                if (!rel.relatedCitySlugs || !rel.relatedCitySlugs.includes(loc.citySlug)) {
+                    locRes.errors.push('Non-reciprocal relationship with ' + slug);
+                }
+            }
+        });
     }
 
     if (loc.indexable && locRes.errors.length > 0) {
@@ -120,6 +199,17 @@ export function validateAllLocations(locations: CityLocation[]): { [cityId: stri
 
     results[loc.id] = locRes;
   }
+
+
+  // Check featured cities exist
+  const globalFeatured = featuredLocations.globalCities || [];
+  globalFeatured.forEach(slug => {
+     if (!slugs.has(slug)) {
+         console.error('Featured global city not included in inventory: ' + slug);
+         results['featured-check'] = results['featured-check'] || {valid: false, errors: [], warnings: []};
+         results['featured-check'].errors.push('Featured global city not included in inventory: ' + slug);
+     }
+  });
 
   return results;
 }
