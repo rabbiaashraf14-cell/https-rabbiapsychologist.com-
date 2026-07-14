@@ -1,0 +1,41 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+import { countries } from '../../../data/locations/countries';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+const country = countries.find(c => c.countrySlug === city.countrySlug);
+---
+
+<nav aria-label="Breadcrumb" class="bg-blue-50 py-3 px-6 lg:px-8 border-b border-blue-100">
+  <div class="max-w-4xl mx-auto">
+    <ol class="flex items-center space-x-2 text-sm text-gray-600 overflow-x-auto whitespace-nowrap">
+      <li>
+        <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+      </li>
+      <li><span class="mx-2 text-gray-400">/</span></li>
+      <li>
+        <a href="/locations" class="hover:text-blue-600 transition-colors">Locations</a>
+      </li>
+      {country?.existingRegionalPage && (
+        <>
+          <li><span class="mx-2 text-gray-400">/</span></li>
+          <li>
+            <a href={`/locations/${country.existingRegionalPage}`} class="hover:text-blue-600 transition-colors capitalize">{country.existingRegionalPage.replace(/-/g, ' ')}</a>
+          </li>
+        </>
+      )}
+      <li><span class="mx-2 text-gray-400">/</span></li>
+      <li>
+        <a href={`/locations/${city.countrySlug}`} class="hover:text-blue-600 transition-colors">{city.countryName}</a>
+      </li>
+      <li><span class="mx-2 text-gray-400">/</span></li>
+      <li class="text-gray-900 font-medium" aria-current="page">
+        {city.cityName}
+      </li>
+    </ol>
+  </div>
+</nav>

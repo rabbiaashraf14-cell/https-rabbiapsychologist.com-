@@ -1,0 +1,28 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+---
+
+<section class="bg-gradient-to-b from-blue-50 to-white pt-24 pb-12 px-6 lg:px-8 text-center">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      {city.pageHeading || `Online Parent Guidance in ${city.cityName}`}
+    </h1>
+    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+      {city.introductorySummary || `Developmental consultation and behaviour guidance for families in ${city.cityName}, ${city.countryName}. Supporting your child's growth through practical, evidence-based strategies from home.`}
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="/booking" class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-[24px] shadow-md hover-lift hover:bg-blue-700 transition-colors">
+        Book Parent Consultation
+      </a>
+      <a href="/services" class="inline-block bg-white text-blue-600 border border-blue-200 font-semibold py-3 px-8 rounded-[24px] hover-lift hover:bg-blue-50 transition-colors">
+        View Services
+      </a>
+    </div>
+  </div>
+</section>

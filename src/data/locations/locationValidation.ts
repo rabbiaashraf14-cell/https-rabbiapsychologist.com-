@@ -11,6 +11,35 @@ export interface ValidationResult {
 }
 
 
+export function isLocationEligibleForPublicRoute(location: CityLocation): boolean {
+  if (!location.published) return false;
+
+  if (location.reviewStatus !== 'completed' && location.reviewStatus !== 'approved' && location.contentStatus !== 'approved') return false;
+  if (location.clinicalReviewStatus !== 'approved') return false;
+  if (location.researchStatus !== 'approved') return false;
+  if (location.culturalReviewStatus !== 'approved') return false;
+  if (location.seoReviewStatus !== 'approved') return false;
+  if (location.legalScopeResearchRequired && location.legalScopeReviewStatus !== 'approved') return false;
+
+  if (location.localLanguages && location.localLanguages.length > 0 && location.translationRequired && location.translationReviewStatus !== 'approved') return false;
+
+  if (!location.canonicalPath || !location.canonicalUrl) return false;
+  if (!location.seoTitle || !location.metaDescription) return false;
+  if (!location.crossBorderDisclaimer || !location.formalDiagnosisDisclaimer || !location.emergencyServiceDisclaimer) return false;
+  if (location.indexable && (!location.frequentlyAskedQuestions || location.frequentlyAskedQuestions.length < 5)) return false;
+
+  const sources = locationSources.filter(s => location.sourceIds?.includes(s.sourceId));
+  if (sources.length === 0) return false;
+
+  const validCountry = countries.some(c => c.countryCode === location.countryCode && c.countrySlug === location.countrySlug);
+  if (!validCountry) return false;
+
+  if (location.status === 'planned' || location.status === 'draft' || location.status === 'archived') return false;
+  if (!location.introductorySummary || location.introductorySummary.includes('TODO')) return false;
+
+  return true;
+}
+
 export function validateCityPlanningRecord(location: CityLocation): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -146,6 +175,9 @@ export function validateAllLocations(locations: CityLocation[]): { [cityId: stri
   const results: { [cityId: string]: ValidationResult } = {};
 
   const ids = new Set<string>();
+  const introSummaries = new Set<string>();
+  const seoTitles = new Set<string>();
+  const metaDescriptions = new Set<string>();
   const slugs = new Set<string>();
   const canonicals = new Set<string>();
   const citySlugMap = new Map();
@@ -165,6 +197,31 @@ export function validateAllLocations(locations: CityLocation[]): { [cityId: stri
     ids.add(loc.id);
 
     if (slugs.has(loc.citySlug)) locRes.errors.push(`Duplicate slug: ${loc.citySlug}`);
+
+    // Similarity Checks
+    if (loc.published || loc.indexable) {
+        if (loc.introductorySummary) {
+            const sumHash = loc.introductorySummary.toLowerCase().trim();
+            if (introSummaries.has(sumHash) && sumHash.length > 50) {
+               locRes.errors.push('Excessive content similarity: identical introductory summary');
+            }
+            introSummaries.add(sumHash);
+        }
+        if (loc.seoTitle) {
+            const titleHash = loc.seoTitle.toLowerCase().trim();
+            if (seoTitles.has(titleHash)) {
+               locRes.errors.push('Excessive content similarity: identical SEO Title');
+            }
+            seoTitles.add(titleHash);
+        }
+        if (loc.metaDescription) {
+            const descHash = loc.metaDescription.toLowerCase().trim();
+            if (metaDescriptions.has(descHash) && descHash.length > 30) {
+               locRes.errors.push('Excessive content similarity: identical Meta Description');
+            }
+            metaDescriptions.add(descHash);
+        }
+    }
     slugs.add(loc.citySlug);
 
     if (loc.canonicalUrl) {
