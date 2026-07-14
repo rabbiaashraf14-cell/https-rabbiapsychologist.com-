@@ -1,0 +1,11 @@
+export * from './types';
+export { lahoreResearch } from './lahore';
+export { dubaiResearch } from './dubai';
+export { riyadhResearch } from './riyadh';
+export { dohaResearch } from './doha';
+export { londonResearch } from './london';
+export { newYorkCityResearch } from './new-york-city';
+export { torontoResearch } from './toronto';
+export { sydneyResearch } from './sydney';
+export { kualaLumpurResearch } from './kuala-lumpur';
+export { johannesburgResearch } from './johannesburg';
