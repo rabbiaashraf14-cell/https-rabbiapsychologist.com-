@@ -1,0 +1,11 @@
+---
+import { promotion } from '../../config/promotion';
+import { isPromotionActive } from '../../utils/pricing';
+
+const active = isPromotionActive();
+---
+{active && (
+  <span class="inline-block bg-brand-navy text-brand-gold text-xs font-bold px-2 py-1 rounded shadow-sm animate-pulse whitespace-nowrap">
+    🔥 JULY SALE {promotion.discount}% OFF
+  </span>
+)}

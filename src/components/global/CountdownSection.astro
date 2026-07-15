@@ -1,0 +1,85 @@
+---
+import { promotion } from '../../config/promotion';
+import { isPromotionActive } from '../../utils/pricing';
+
+const active = isPromotionActive();
+---
+{active && promotion.countdownEnabled && (
+  <div class="bg-brand-cream border-2 border-brand-navy rounded-xl p-8 mb-12 text-center max-w-4xl mx-auto shadow-md">
+    <h2 class="text-3xl font-bold text-brand-navy mb-2">🎉 July Parent Support Sale</h2>
+    <p class="text-xl text-gray-700 font-medium mb-6">{promotion.discount}% OFF All Consultations</p>
+
+    <p class="text-sm text-gray-500 uppercase font-bold tracking-wider mb-4">Offer Ends In</p>
+    <div id="main-countdown-timer" class="flex justify-center gap-4 md:gap-8 font-bold text-brand-navy">
+      <div class="flex flex-col items-center bg-white border border-gray-200 shadow-sm rounded-lg w-20 h-24 justify-center">
+        <span id="main-cd-days" class="text-4xl leading-none flip-number">00</span>
+        <span class="text-xs uppercase font-normal text-gray-500 mt-2">Days</span>
+      </div>
+      <span class="text-4xl leading-none self-center pb-6">:</span>
+      <div class="flex flex-col items-center bg-white border border-gray-200 shadow-sm rounded-lg w-20 h-24 justify-center">
+        <span id="main-cd-hours" class="text-4xl leading-none flip-number">00</span>
+        <span class="text-xs uppercase font-normal text-gray-500 mt-2">Hours</span>
+      </div>
+      <span class="text-4xl leading-none self-center pb-6">:</span>
+      <div class="flex flex-col items-center bg-white border border-gray-200 shadow-sm rounded-lg w-20 h-24 justify-center">
+        <span id="main-cd-minutes" class="text-4xl leading-none flip-number">00</span>
+        <span class="text-xs uppercase font-normal text-gray-500 mt-2">Minutes</span>
+      </div>
+      <span class="text-4xl leading-none self-center pb-6">:</span>
+      <div class="flex flex-col items-center bg-white border border-gray-200 shadow-sm rounded-lg w-20 h-24 justify-center">
+        <span id="main-cd-seconds" class="text-4xl leading-none flip-number">00</span>
+        <span class="text-xs uppercase font-normal text-gray-500 mt-2">Seconds</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Simple flip animation placeholder */
+    .flip-number {
+      transition: all 0.3s ease;
+    }
+  </style>
+
+  <script define:vars={{ endDate: promotion.endDate }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const countDownDate = new Date(endDate).getTime();
+
+      const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        if (distance < 0) {
+          clearInterval(x);
+          // Optional: Handle expiry dynamically on client side
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const updateValue = (id, value) => {
+          const el = document.getElementById(id);
+          if (el) {
+            const formatted = value < 10 ? '0' + value : value.toString();
+            if (el.innerHTML !== formatted) {
+              el.innerHTML = formatted;
+              el.classList.remove('scale-110');
+              void el.offsetWidth; // trigger reflow
+              el.classList.add('scale-110');
+              setTimeout(() => {
+                if(el) el.classList.remove('scale-110');
+              }, 150);
+            }
+          }
+        };
+
+        updateValue("main-cd-days", days);
+        updateValue("main-cd-hours", hours);
+        updateValue("main-cd-minutes", minutes);
+        updateValue("main-cd-seconds", seconds);
+      }, 1000);
+    });
+  </script>
+)}

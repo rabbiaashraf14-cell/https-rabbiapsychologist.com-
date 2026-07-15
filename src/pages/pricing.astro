@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
+import PriceDisplay from '../components/global/PriceDisplay.astro';
+import CountdownSection from '../components/global/CountdownSection.astro';
+import { isPromotionActive } from '../utils/pricing';
 
 const title = "Pricing & Fees | Rabbia Psychologist";
 const description = "Transparent pricing for online parent consultation, ADHD/ASD support, behavior planning, and report reviews.";
@@ -15,86 +18,88 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       </p>
     </div>
 
+    <CountdownSection />
+
     <!-- Core Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
 
       <!-- Card A -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Online Parent Guidance Consultation</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 85 / AUD 130</p>
+        <PriceDisplay price="USD 85 / AUD 130" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> general developmental concerns, parenting stress, and initial guidance without a formal diagnosis.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>developmental review</li>
           <li>initial strategies</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card B -->
       <div class="bg-white rounded-xl shadow-sm border border-brand-navy p-8 flex flex-col h-full hover:shadow-md transition-shadow relative">
         <div class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-brand-navy text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase whitespace-nowrap">Most Popular</div>
         <h3 class="text-2xl font-bold text-brand-navy mb-2">ADHD Support Consultation</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 95 / AUD 145</p>
+        <PriceDisplay price="USD 95 / AUD 145" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> home routines, executive function, and managing attention/hyperactivity.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>routine planning</li>
           <li>executive function support</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card C -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">ASD Parent Guidance Consultation</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 95 / AUD 145</p>
+        <PriceDisplay price="USD 95 / AUD 145" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> communication strategies, sensory needs, and autism parent training.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>sensory accommodation</li>
           <li>behavior support</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card D -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Behaviour Planning Session</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 95 / AUD 145</p>
+        <PriceDisplay price="USD 95 / AUD 145" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> meltdowns, tantrums, aggression, and difficult transitions.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>de-escalation strategies</li>
           <li>proactive routine building</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card E -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Report Review & Parent Explanation</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 125 / AUD 190</p>
+        <PriceDisplay price="USD 125 / AUD 190" />
         <p class="text-sm text-gray-500 mb-4">Duration: 60–75 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> parents who have a clinical/psychological report and need help translating it into action.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>plain English explanation</li>
           <li>next steps mapped out</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card F -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">School / IEP Consultation</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">From USD 140 / AUD 215</p>
+        <PriceDisplay price="From USD 140 / AUD 215" />
         <p class="text-sm text-gray-500 mb-4">Duration: 60–75 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> parent-teacher meetings, accommodation planning, and school communication.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>meeting preparation</li>
           <li>suggested accommodations</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card G -->
@@ -107,26 +112,26 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
           <li>structured progress review</li>
           <li>practical home plan adjustments</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card H -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Workshop / Parent Training</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 150–200 / AUD 230–305</p>
+        <PriceDisplay price="USD 150–200 / AUD 230–305" />
         <p class="text-sm text-gray-500 mb-4">Format: group or custom workshop</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> schools, parent groups, or organizations.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
           <li>custom topics</li>
           <li>practical strategies</li>
         </ul>
-        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">Book Consultation</a>
+        <a href="/book" class="w-full text-center bg-brand-navy text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-900 transition-colors mt-auto">{isPromotionActive() ? 'Book Now – Save 35%' : 'Book Consultation'}</a>
       </div>
 
       <!-- Card I -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Digital Resources</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">Free to USD 29 / AUD 45</p>
+        <PriceDisplay price="Free to USD 29 / AUD 45" />
         <p class="text-sm text-gray-500 mb-4">Downloadable PDF tools</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Includes:</strong> checklists, workbooks, school meeting templates, behaviour logs.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -252,4 +257,43 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
     }
   ]
 }
+</script>
+
+<script>
+  import { getDiscountedPrice, isPromotionActive } from '../utils/pricing';
+
+  if (isPromotionActive()) {
+    try {
+      const schemaScript = document.querySelector('script[type="application/ld+json"]');
+
+      // Inject new SEO script for Limited Time Offer
+      const promoScript = document.createElement('script');
+      promoScript.type = 'application/ld+json';
+      promoScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "July Promotion - Limited Time Offer",
+        "description": "Parent Consultation Discount - 35% OFF mid-July promotion."
+      });
+      document.head.appendChild(promoScript);
+
+      if (schemaScript && schemaScript.textContent) {
+        const schema = JSON.parse(schemaScript.textContent);
+        if (schema.itemListElement) {
+          schema.itemListElement.forEach((item: any) => {
+            if (item.priceSpecification) {
+              if (item.priceSpecification.price) {
+                item.priceSpecification.price = getDiscountedPrice(Number(item.priceSpecification.price)).toString();
+              } else if (item.priceSpecification.minPrice) {
+                item.priceSpecification.minPrice = getDiscountedPrice(Number(item.priceSpecification.minPrice)).toString();
+              }
+            }
+          });
+          schemaScript.textContent = JSON.stringify(schema);
+        }
+      }
+    } catch (e) {
+      console.error('Error updating pricing schema dynamically', e);
+    }
+  }
 </script>
