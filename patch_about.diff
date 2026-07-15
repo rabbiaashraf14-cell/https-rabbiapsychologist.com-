@@ -1,0 +1,15 @@
+<<<<<<< SEARCH
+              <Image
+                src={profileImage}
+                alt="Rabbia Ashraf, clinical psychologist and child development specialist"
+                class="relative z-10 w-full h-full object-cover object-top rounded-[24px] shadow-md border border-gray-100 hover-lift transition-all duration-300 aspect-[4/5] bg-brand-cream"
+                loading="lazy"
+              />
+=======
+              <Image
+                src={profileImage}
+                alt="Rabbia Ashraf, clinical psychologist and child development specialist"
+                class="relative z-10 w-full h-full object-cover object-top rounded-[24px] shadow-md hover-lift transition-all duration-300 aspect-[4/5] bg-brand-cream"
+                loading="lazy"
+              />
+>>>>>>> REPLACE
