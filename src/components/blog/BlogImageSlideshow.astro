@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  articleUrl?: string; // Make it optional
+  articleTitle: string;
+  fallbackSvg?: string;
+}
+
+const { articleUrl, articleTitle, fallbackSvg } = Astro.props;
+
+// Dynamically import some specific reliable images to use in the slideshow as a visual fallback
+const allLocalImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/*.{jpeg,jpg,png,webp,gif}', { eager: true });
+const imageKeys = Object.keys(allLocalImages).slice(0, 5); // Take up to 5 images for the slideshow
+const fallbackImages = imageKeys.map(key => allLocalImages[key].default);
+
+// Determine wrapping element (either anchor tag or simple div)
+const Wrapper = articleUrl ? 'a' : 'div';
+const wrapperProps = articleUrl ? { href: articleUrl } : {};
+---
+
+<blog-slideshow class="block relative w-full h-full min-h-full">
+  <Wrapper {...wrapperProps} class="block relative w-full h-full overflow-hidden group min-h-full">
+    {fallbackImages.length > 0 ? (
+      fallbackImages.map((img, index) => (
+        <div class={`slide absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-index={index}>
+          <Image
+            src={img}
+            alt={`Rotating image for ${articleTitle}`}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            width={600}
+            height={338}
+          />
+        </div>
+      ))
+    ) : fallbackSvg ? (
+      <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-100 z-10">
+        <img
+          src={fallbackSvg}
+          alt={`Fallback illustration for ${articleTitle}`}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    ) : (
+      <div class="absolute inset-0 w-full h-full bg-brand-cream flex items-center justify-center">
+        <span class="text-brand-navy opacity-50">Image unavailable</span>
+      </div>
+    )}
+
+    <div class="absolute inset-0 bg-brand-navy/5 pointer-events-none group-hover:bg-transparent transition-colors duration-300 z-20"></div>
+  </Wrapper>
+</blog-slideshow>
+
+<script>
+  class BlogSlideshow extends HTMLElement {
+    constructor() {
+      super();
+      const slides = this.querySelectorAll('.slide');
+      if (slides.length <= 1) return;
+
+      let currentIndex = 0;
+      let interval: number;
+
+      const nextSlide = () => {
+        slides[currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[currentIndex].classList.add('opacity-0', 'z-0');
+
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        slides[currentIndex].classList.remove('opacity-0', 'z-0');
+        slides[currentIndex].classList.add('opacity-100', 'z-10');
+      };
+
+      const startSlideshow = () => {
+        interval = window.setInterval(nextSlide, 4500);
+      };
+
+      const stopSlideshow = () => {
+        if (interval) clearInterval(interval);
+      };
+
+      startSlideshow();
+
+      this.addEventListener('mouseenter', stopSlideshow);
+      this.addEventListener('mouseleave', startSlideshow);
+    }
+  }
+
+  if (!customElements.get('blog-slideshow')) {
+    customElements.define('blog-slideshow', BlogSlideshow);
+  }
+</script>
