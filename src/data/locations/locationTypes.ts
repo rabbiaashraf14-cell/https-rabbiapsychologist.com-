@@ -43,6 +43,10 @@ export interface CityContentFields {
   pageHeading: string;
   introductorySummary: string;
   parentConcerns: string[];
+  howConsultationWorks?: string[];
+  preparingForSchoolMeeting?: string[];
+  reportReviewSupport?: string;
+  overseasPakistaniSupport?: string;
   localParentChallenges: string[];
   culturalContext: string;
   multilingualFamilyContext: string;
