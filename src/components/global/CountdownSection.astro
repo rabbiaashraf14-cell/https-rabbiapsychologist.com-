@@ -42,6 +42,9 @@ const active = isPromotionActive();
 
   <script define:vars={{ endDate: promotion.endDate }}>
     document.addEventListener('DOMContentLoaded', () => {
+      // Create date by ensuring it's interpreted correctly in local or UTC as needed
+      // Append Z to enforce UTC parsing if needed, but Astro uses ISO string.
+      // Make sure date string works in Safari/Firefox.
       const countDownDate = new Date(endDate).getTime();
 
       const x = setInterval(function() {
