@@ -4,6 +4,7 @@ import SEO from '../components/seo/SEO.astro';
 import Header from '../components/global/Header.astro';
 import Footer from '../components/global/Footer.astro';
 import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
+import CountdownBanner from '../components/global/CountdownBanner.astro';
 
 interface Props {
   title: string;
@@ -43,6 +44,7 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <CountdownBanner />
     <StickyMobileBookingCTA />
 
     <!--Start of Tawk.to Script-->
@@ -58,5 +60,38 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
     })();
     </script>
     <!--End of Tawk.to Script-->
+
+    <!-- Analytics Tracking Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Track Sale Banner Clicks
+        const promoBanner = document.getElementById('promo-banner');
+        if (promoBanner) {
+          // Log impression
+          console.log('[Analytics] countdown impressions');
+
+          promoBanner.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            // Ignore close button clicks for the banner click metric
+            if (!target.closest('#close-promo')) {
+               console.log('[Analytics] sale banner clicks');
+            }
+          });
+        }
+
+        // Track Booking Button Clicks
+        const bookingButtons = document.querySelectorAll('a[href="/book"], a[href^="https://calendar.app.google"]');
+        bookingButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+             console.log('[Analytics] booking button clicks');
+
+             // Pseudo conversion logic for this specific button that leads to booking
+             if (btn.classList.contains('track-booking-btn') || btn.getAttribute('href')?.startsWith('https://calendar.app.google')) {
+               console.log('[Analytics] conversion rate');
+             }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,26 @@
+---
+import { formatPricingString, isPromotionActive } from '../../utils/pricing';
+import SaleBadge from './SaleBadge.astro';
+
+interface Props {
+  price: string;
+  size?: 'lg' | 'xl';
+}
+
+const { price, size = 'xl' } = Astro.props;
+const { original, discounted, hasDiscount } = formatPricingString(price);
+const textSize = size === 'xl' ? 'text-xl' : 'text-lg';
+---
+<div class="mb-4">
+  {hasDiscount ? (
+    <div class="flex flex-col">
+      <div class="flex items-center gap-2 mb-1">
+        <SaleBadge />
+      </div>
+      <p class={`text-sm text-gray-500 line-through mb-1`}>{original}</p>
+      <p class={`${textSize} font-bold text-brand-navy mb-1`}>{discounted}</p>
+    </div>
+  ) : (
+    <p class={`${textSize} font-bold text-brand-gold mb-1`}>{original}</p>
+  )}
+</div>

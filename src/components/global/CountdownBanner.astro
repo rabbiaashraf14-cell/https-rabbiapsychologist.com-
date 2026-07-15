@@ -1,0 +1,84 @@
+---
+import { promotion } from '../../config/promotion';
+import { isPromotionActive } from '../../utils/pricing';
+
+const active = isPromotionActive();
+---
+{active && promotion.bannerEnabled && (
+  <div id="promo-banner" class="fixed bottom-4 left-4 z-50 bg-white border-2 border-brand-navy shadow-lg rounded-xl p-4 w-72 max-w-[calc(100vw-2rem)] transition-all duration-300">
+    <button id="close-promo" class="absolute top-2 right-2 text-gray-500 hover:text-brand-navy focus:outline-none">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <div class="text-center">
+      <p class="font-bold text-brand-navy mb-1 text-lg">🎉 July Sale</p>
+      <p class="text-sm text-gray-700 font-medium mb-3">{promotion.discount}% OFF All Parent Consultations</p>
+
+      <div class="bg-gray-50 rounded p-2 mb-3">
+        <p class="text-xs text-gray-500 mb-1">Offer Ends In:</p>
+        <div id="countdown-timer" class="flex justify-center gap-2 font-bold text-brand-navy">
+          <div class="flex flex-col items-center"><span id="cd-days" class="text-lg leading-none">00</span><span class="text-[10px] uppercase font-normal">d</span></div>
+          <span class="text-lg leading-none">:</span>
+          <div class="flex flex-col items-center"><span id="cd-hours" class="text-lg leading-none">00</span><span class="text-[10px] uppercase font-normal">h</span></div>
+          <span class="text-lg leading-none">:</span>
+          <div class="flex flex-col items-center"><span id="cd-minutes" class="text-lg leading-none">00</span><span class="text-[10px] uppercase font-normal">m</span></div>
+          <span class="text-lg leading-none">:</span>
+          <div class="flex flex-col items-center"><span id="cd-seconds" class="text-lg leading-none">00</span><span class="text-[10px] uppercase font-normal">s</span></div>
+        </div>
+      </div>
+
+      <a href="/pricing" class="block w-full bg-brand-navy text-white text-sm font-bold py-2 rounded hover:bg-blue-900 transition-colors">
+        Claim July Discount
+      </a>
+    </div>
+  </div>
+
+  <script define:vars={{ endDate: promotion.endDate }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const banner = document.getElementById('promo-banner');
+      const closeBtn = document.getElementById('close-promo');
+      const countDownDate = new Date(endDate).getTime();
+
+      // Check if user previously closed it
+      if (sessionStorage.getItem('promoBannerClosed') === 'true') {
+        if (banner) banner.style.display = 'none';
+        return;
+      }
+
+      if (closeBtn && banner) {
+        closeBtn.addEventListener('click', () => {
+          banner.style.opacity = '0';
+          setTimeout(() => {
+            banner.style.display = 'none';
+          }, 300);
+          sessionStorage.setItem('promoBannerClosed', 'true');
+        });
+      }
+
+      const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        if (distance < 0) {
+          clearInterval(x);
+          if (banner) banner.style.display = 'none';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const elDays = document.getElementById("cd-days");
+        const elHours = document.getElementById("cd-hours");
+        const elMins = document.getElementById("cd-minutes");
+        const elSecs = document.getElementById("cd-seconds");
+
+        if (elDays) elDays.innerHTML = days < 10 ? '0' + days : days.toString();
+        if (elHours) elHours.innerHTML = hours < 10 ? '0' + hours : hours.toString();
+        if (elMins) elMins.innerHTML = minutes < 10 ? '0' + minutes : minutes.toString();
+        if (elSecs) elSecs.innerHTML = seconds < 10 ? '0' + seconds : seconds.toString();
+      }, 1000);
+    });
+  </script>
+)}
