@@ -3,6 +3,13 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import fs from 'fs';
+let excludes = [];
+try {
+  if (fs.existsSync('sitemap-excludes.json')) {
+    excludes = JSON.parse(fs.readFileSync('sitemap-excludes.json', 'utf-8'));
+  }
+} catch (e) {}
 
 // https://astro.build/config
 export default defineConfig({
@@ -62,6 +69,15 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [
-    sitemap()
+    sitemap({
+      filter: (page) => {
+        const url = new URL(page);
+        const path = url.pathname;
+        for (const exclude of excludes) {
+           if (path.includes(exclude)) return false;
+        }
+        return true;
+      }
+    })
   ]
 });

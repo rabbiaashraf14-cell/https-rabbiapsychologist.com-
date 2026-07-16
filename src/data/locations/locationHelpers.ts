@@ -12,6 +12,12 @@ export function getCityPath(location: CityLocation): string {
 }
 
 export function generateHreflangTags(location: CityLocation, domain: string = 'https://www.rabbiapsychologist.com'): Array<{ href: string, hreflang: string }> {
+  const softLaunch = getSoftLaunchCity(location.citySlug);
+
+  if (!location.indexable || (softLaunch && softLaunch.approvalStatus === 'approved-for-noindex-soft-launch')) {
+    return [];
+  }
+
   const tags: Array<{ href: string, hreflang: string }> = [];
 
   tags.push({

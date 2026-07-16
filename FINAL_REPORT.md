@@ -1,44 +1,33 @@
-# Phase 1, Part 1: Global Location Architecture
+# PHASE 2, PART 4: Controlled Noindex Soft Launch Report
 
-## Discovered Architecture
-- **Framework**: Astro (Static-first build)
-- **Deployment**: Vercel (dist output configured)
-- **Data Management**: Existing regional pages exist in `src/data/regions.ts`.
-- **Navigation/SEO**: Sitemaps are handled via `@astrojs/sitemap` integration in `astro.config.mjs`, and standard indexing control occurs via `public/robots.txt` and `public/llms.txt`.
-- **Global Components**: Found a global footer in `src/components/global/Footer.astro` to prepare future navigation.
-- **Node Requirement**: Project strictly requires Node >= 22.12.0.
+## 1. Route Eligibility Logic Corrected
+The `isLocationEligibleForPublicRoute` function in `src/data/locations/locationValidation.ts` has been explicitly branched into two pathways:
+- **Branch A (Controlled Noindex Soft Launch):** Only allows cities that have an explicit soft-launch approval manifest entry. The logic explicitly mandates that missing, AI, placeholder, or generic reviewer roles fail validation. It checks expiration dates and mandates strict negative properties for sitemaps, indexing, and LLMs. The `indexable: true` check is bypassed, but **all** underlying human review (cultural, clinical, content, legal, seo) checks are still enforced.
+- **Branch B (Standard Production):** Enforces full standard validation including minimum FAQ lengths and full `indexable` requirements.
 
-## Files Created
-1. `src/data/locations/locationTypes.ts`: Strict TypeScript schemas mapping Cities, Countries, Continents, Research Sources, and multi-tier Review Statuses.
-2. `src/data/locations/continents.ts`: Skeleton array for major continent hubs.
-3. `src/data/locations/countries.ts`: Skeleton array for country relationships.
-4. `src/data/locations/cities.ts`: Primary array built for 500+ locations in Part 2.
-5. `src/data/locations/regionalMarkets.ts`: Safely re-exported the legacy regions from `src/data/regions.ts` to ensure compatibility and integration.
-6. `src/data/locations/locationSources.ts`: Container for scientific and official references required for indexing.
-7. `src/data/locations/locationValidation.ts`: The central gatekeeper protecting the SEO directory, evaluating strict rules like disclaimers, required review statuses, and the 2+1 source rules.
-8. `src/data/locations/locationHelpers.ts`: Generators for routing, hreflang tags, and schemas (Breadcrumb & FAQPage, explicitly avoiding LocalBusiness).
-9. `src/data/locations/validateLocations.ts`: The execution script that powers the CLI check.
-10. `src/data/locations/README.md`: Developer documentation explaining tiers, indexable criteria, translations, and adding logic.
+## 2. City Soft Launch Manifest Status
+A `src/data/locations/citySoftLaunchManifest.ts` file has been created. Currently, **0 cities** have been enabled.
+- All candidates (Lahore, Dubai, London, Toronto) are marked as `routeEnabled: false` and `approvalStatus: 'awaiting-human-approval'`.
+- This ensures no routes are generated prematurely without legitimate manual human QA sign-off in the system.
 
-## Files Modified
-1. `src/components/global/Footer.astro`: Appended the future "Global Locations" section wrapped in Astro `{/* */}` JSX comments.
-2. `package.json`:
-   - Installed `tsx` as a dev dependency to cleanly run the validation logic without legacy `--experimental-strip-types` issues.
-   - Added `"validate:locations": "tsx src/data/locations/validateLocations.ts"`.
+## 3. SEO, Canonicals, and Robots
+For any explicitly soft-launched city, `getCitySeoMetadata` forces `robots: "noindex, follow"`.
+Sitemap exclusions are correctly integrated into `astro.config.mjs` via a fallback array mechanism (`filter: (page) => { ... }`) resolving URL patterns statically, preventing any explicit soft-launched page from leaking into `sitemap-index.xml`. The `build` step dynamically extracts any indexable path from validation checks via `generateSitemapExcludes.ts`, but no hardcoded names are written in `astro.config.mjs` anymore.
+Currently, as 0 cities are enabled, they naturally do not exist in the build output.
 
-## Quality Gates & Safety Controls Installed
-- **Indexable Protections**: Pages require `published: true` and `indexable: true`. Even when true, `validateLocations.ts` will strictly reject any page lacking emergency disclaimers, cross-border therapy disclaimers, proper references (2 official + 1 peer-reviewed), comprehensive localized FAQs, and full human review status approvals (Content, Clinical, Legal, SEO, Cultural).
-- **Physical Clinic Constraint**: Fails build if an online-only location accidentally flags `physicalOfficeAvailable: true`.
-- **Static First Performance**: Enforced entirely via static `.ts` mapping arrays. No runtime API calls to Sanity exist to bottleneck Vercel edge responses for these 500 locations.
+## 4. Hreflang Exclusion
+The `generateHreflangTags` helper strictly checks `location.indexable` and specifically aborts (returns `[]`) if the city route is identified as a soft-launch route in the manifest.
 
-## Build and Testing Results
-- Type checking / TypeScript resolution errors were resolved by installing `tsx` and ensuring correct internal module pathing without `.ts` extensions.
-- `npm run validate:locations` passes completely on the baseline setup.
-- `npm run build` completed static generation flawlessly (75 pages). No runtime breakage occurred.
+## 5. Source Data Merging
+Pilot research packages for explicit cities (Lahore, Dubai, London, Toronto) were correctly loaded into `locationSources.ts` by flattening and mapping `SourceRecords` to the schema-safe `Source` objects, stripping internal review notes and verification metadata from the public output array.
 
-## Recommended Next Steps for Phase 1, Part 2
-1. Populate `continents.ts` and `countries.ts` with the foundational lookup data.
-2. Begin batching Tier 1 `cities.ts` data (e.g., UAE, US, UK hubs).
-3. Populate `locationSources.ts` with foundational official medical/educational links for the initial batch.
-4. Connect the dynamic path routing into `src/pages/locations/[continent]/[country]/[city].astro`.
-5. Connect `sitemap.astro` and standard `/sitemaps/locations.xml` generation logic to filter purely by `isLocationEligibleForIndexing`.
+## 6. Privacy-Safe Analytics
+Analyzed the current `BaseLayout.astro`. No major third-party tracking like PostHog or Clarity currently captures form inputs. The base tracking utilizes standard `console.log` placeholders for basic user interaction (countdown impressions, sale clicks, booking button clicks) wrapped in an allowed events/params tracker. Thus, no sensitive child/parent information or clinical query strings are logged or forwarded by default.
+
+## 7. Tests & Validation
+- Executed `npm run test:soft-launch` specifically tailored to verifying that placeholders, missing reviewer roles, expired review statuses, or missing version constraints safely bypass and reject soft launch pathways.
+- Ran `npx astro build` multiple times during iterations. Build finishes successfully under 6s.
+- `CityFAQ` was corrected from mapping an array as a pseudo-object.
+- Validated script tests confirm missing reviewer approvals fail the build routing process automatically.
+
+No URLs have been submitted to search engines or published globally.

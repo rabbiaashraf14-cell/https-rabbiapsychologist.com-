@@ -1,33 +1,21 @@
 {
   "name": "vigorous-velocity",
-  "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "tsx src/data/locations/generateSitemapExcludes.ts && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "validate:locations": "tsx src/data/locations/validateLocations.ts"
+    "validate:locations": "tsx src/data/locations/validateLocations.ts",
+    "test:soft-launch": "tsx src/data/locations/tests/softLaunchEligibility.test.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",
-    "astro": "^7.0.2",
-    "clsx": "^2.1.1",
-    "reading-time": "^1.5.0",
-    "tailwind-merge": "^3.6.0",
-    "tailwindcss": "^4.3.1"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@playwright/test": "^1.61.1",
-    "playwright": "^1.61.1",
-    "sharp": "^0.35.2",
-    "tsx": "^4.23.1",
-    "typescript": "^6.0.3"
+    "astro": "^5.4.1",
+    "tailwindcss": "^4.0.9",
+    "tsx": "^4.23.1"
   }
 }
