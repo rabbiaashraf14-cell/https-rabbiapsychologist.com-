@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import { articles } from '../../data/blogArticles';
+import { getArticleImage, getCategoryFallbackSvg } from '../../utils/imageMatching';
+import BlogImageSlideshow from './BlogImageSlideshow.astro';
 
 interface Props {
   currentUrl: string;
@@ -33,29 +35,6 @@ relatedArticles.sort((a, b) => {
 const displayArticles = relatedArticles.slice(0, 4);
 
 // Function to find the image for an article based on requested logic: sanityImage -> localImage -> imageUrl -> fallback
-function getArticleImage(article: any) {
-  // 1. Check sanityImage
-  if (article.sanityImage) {
-    return { type: 'remote', src: article.sanityImage };
-  }
-
-  // Extract slug from href (e.g., "/blog/autism-early-signs" -> "autism-early-signs")
-  const slug = article.href.replace('/blog/', '').replace(/\/$/, '');
-
-  // 2. Check localImage (using glob)
-  const imagePath = Object.keys(localImages).find(path => path.includes(`/${slug}.`));
-  if (imagePath && localImages[imagePath]) {
-    return { type: 'local', src: localImages[imagePath].default };
-  }
-
-  // 3. Check explicit imageUrl in article data
-  if (article.imageUrl) {
-    return { type: 'remote', src: article.imageUrl };
-  }
-
-  // 4. Fallback image
-  return { type: 'fallback', src: '/favicon.png' };
-}
 
 ---
 
@@ -64,35 +43,33 @@ function getArticleImage(article: any) {
 
   <div class="flex flex-col gap-6">
     {displayArticles.map(article => {
-      const imageData = getArticleImage(article);
+      const imageData = getArticleImage(article, localImages);
       return (
         <a href={article.href} class="group block bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden hover-lift transition-all">
-          {imageData.type === 'local' ? (
+
+          {imageData.type === 'local' || imageData.type === 'remote' ? (
             <div class="aspect-w-16 aspect-h-9 w-full overflow-hidden bg-gray-100 border-b border-gray-100">
-              <Image
-                src={imageData.src}
-                alt={article.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                width={400}
-                height={225}
-              />
+              {imageData.type === 'local' ? (
+                <Image
+                  src={imageData.src as ImageMetadata}
+                  alt={article.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={400}
+                  height={225}
+                />
+              ) : (
+                <img
+                  src={imageData.src as string}
+                  alt={article.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onerror={`this.onerror=null; this.src='${getCategoryFallbackSvg(article.categories)}';`}
+                />
+              )}
             </div>
-          ) : imageData.type === 'remote' ? (
-             <div class="aspect-w-16 aspect-h-9 w-full overflow-hidden bg-gray-100 border-b border-gray-100">
-               <img
-                 src={imageData.src}
-                 alt={article.title}
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-               />
-               <div class="hidden w-full h-full items-center justify-center bg-brand-cream">
-                 <img src="/favicon.png" alt="" class="w-16 h-16 opacity-20 object-contain" />
-               </div>
-             </div>
           ) : (
-             <div class="aspect-w-16 aspect-h-9 w-full bg-brand-cream flex items-center justify-center border-b border-gray-100">
-               <img src="/favicon.png" alt={article.title} class="w-16 h-16 opacity-20 object-contain group-hover:scale-105 transition-transform duration-500" />
-             </div>
+            <div class="aspect-w-16 aspect-h-9 w-full overflow-hidden bg-gray-100 border-b border-gray-100">
+              <BlogImageSlideshow articleTitle={article.title} fallbackSvg={imageData.src as string} />
+            </div>
           )}
           <div class="p-4">
             <div class="flex flex-wrap gap-2 mb-2">

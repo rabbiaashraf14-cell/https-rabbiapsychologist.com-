@@ -3,6 +3,8 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 import { articles } from '../data/blogArticles';
+import { getArticleImage, getCategoryFallbackSvg } from '../utils/imageMatching';
+import BlogImageSlideshow from '../components/blog/BlogImageSlideshow.astro';
 
 // Dynamically import all blog images for proper image priority system
 const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/*.{jpeg,jpg,png,webp,gif}', { eager: true });
@@ -51,53 +53,6 @@ const startingArticles = [
 // Sort articles by date descending
 const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-function getCategoryFallbackSvg(categories: string[]) {
-  const cats = categories.map(c => c.toLowerCase());
-
-  // Default base SVG with a soft background glow
-  let svgContent = `<rect width="100%" height="100%" fill="#F3F0E8" />`;
-  let icon = `<circle cx="50%" cy="50%" r="20" fill="#062B4F" opacity="0.1" />`;
-
-  if (cats.includes('adhd') || cats.includes('attention')) {
-    icon = `<circle cx="30%" cy="50%" r="15" fill="#062B4F" opacity="0.1" /><circle cx="50%" cy="40%" r="20" fill="#7C9988" opacity="0.15" /><circle cx="70%" cy="60%" r="10" fill="#C8A15A" opacity="0.2" />`;
-  } else if (cats.includes('autism') || cats.includes('asd')) {
-    icon = `<path d="M 30 50 Q 50 20 70 50 T 110 50" stroke="#7C9988" stroke-width="4" fill="none" opacity="0.3" transform="scale(3) translate(0, -10)" />`;
-  } else if (cats.includes('behaviour') || cats.includes('behavior')) {
-    icon = `<rect x="35%" y="40%" width="30%" height="20%" rx="10" fill="#062B4F" opacity="0.1" /><rect x="45%" y="30%" width="10%" height="40%" rx="5" fill="#C8A15A" opacity="0.2" />`;
-  } else if (cats.includes('emotional regulation') || cats.includes('anxiety')) {
-    icon = `<path d="M 20 50 C 40 10, 60 90, 80 50 S 120 10, 140 50" stroke="#C8A15A" stroke-width="5" fill="none" opacity="0.2" transform="scale(2) translate(10, 0)" />`;
-  } else if (cats.includes('school support') || cats.includes('learning')) {
-    icon = `<polygon points="50,20 80,40 80,80 20,80 20,40" fill="#7C9988" opacity="0.15" transform="scale(1.5) translate(20, -5)" />`;
-  } else if (cats.includes('sensory') || cats.includes('sensory processing')) {
-    icon = `<circle cx="50%" cy="50%" r="30" fill="none" stroke="#062B4F" stroke-width="2" stroke-dasharray="5,5" opacity="0.2" /><circle cx="50%" cy="50%" r="15" fill="#7C9988" opacity="0.15" />`;
-  } else if (cats.includes('parenting') || cats.includes('parent guidance')) {
-    icon = `<circle cx="45%" cy="50%" r="25" fill="#062B4F" opacity="0.1" /><circle cx="55%" cy="55%" r="15" fill="#C8A15A" opacity="0.2" />`;
-  }
-
-  const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="225" viewBox="0 0 400 225">${svgContent}${icon}</svg>`;
-  // Base64 encode the SVG to ensure it works correctly as a data URI across all browsers without hex color parsing issues.
-  const encodedSvg = Buffer.from(svgString).toString('base64');
-  return `data:image/svg+xml;base64,${encodedSvg}`;
-}
-
-function getArticleImage(article: any) {
-  if (article.sanityImage) {
-    return { type: 'remote', src: article.sanityImage };
-  }
-
-  const slug = article.href.replace('/blog/', '').replace(/\/$/, '');
-  const imagePath = Object.keys(localImages).find(path => path.includes(`/${slug}.`));
-
-  if (imagePath && localImages[imagePath]) {
-    return { type: 'local', src: localImages[imagePath].default };
-  }
-
-  if (article.imageUrl) {
-    return { type: 'remote', src: article.imageUrl };
-  }
-
-  return { type: 'fallback', src: getCategoryFallbackSvg(article.categories) };
-}
 
 ---
 
@@ -150,29 +105,36 @@ function getArticleImage(article: any) {
         <!-- 4. Featured articles section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {sortedArticles.map((article) => {
-            const imageData = getArticleImage(article);
+            const imageData = getArticleImage(article, localImages);
             return (
             <article class="bg-white rounded-2xl shadow-sm border border-gray-100 hover-lift flex flex-col group h-full overflow-hidden">
-              <a href={article.href} class="block relative aspect-video w-full bg-brand-cream border-b border-gray-100 overflow-hidden shrink-0">
-                {imageData.type === 'local' ? (
-                  <Image
-                    src={imageData.src}
-                    alt={article.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    width={600}
-                    height={338}
-                    loading="lazy"
-                  />
-                ) : (
-                  <img
-                    src={imageData.src}
-                    alt={article.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    onerror={`this.onerror=null; this.src='${getCategoryFallbackSvg(article.categories)}';`}
-                  />
-                )}
-              </a>
+
+              {imageData.type === 'local' || imageData.type === 'remote' ? (
+                <a href={article.href} class="block relative aspect-video w-full bg-brand-cream border-b border-gray-100 overflow-hidden shrink-0">
+                  {imageData.type === 'local' ? (
+                    <Image
+                      src={imageData.src as ImageMetadata}
+                      alt={article.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      width={600}
+                      height={338}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src={imageData.src as string}
+                      alt={article.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      onerror={`this.onerror=null; this.src='${getCategoryFallbackSvg(article.categories)}';`}
+                    />
+                  )}
+                </a>
+              ) : (
+                <div class="block relative aspect-video w-full bg-brand-cream border-b border-gray-100 overflow-hidden shrink-0">
+                  <BlogImageSlideshow articleUrl={article.href} articleTitle={article.title} fallbackSvg={imageData.src as string} />
+                </div>
+              )}
               <div class="p-6 flex flex-col flex-grow">
                 <div class="flex gap-2 mb-3 flex-wrap">
                   {article.categories.map((cat) => (
