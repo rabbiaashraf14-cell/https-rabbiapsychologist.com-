@@ -5,7 +5,8 @@ export const siteConfig = {
   baseUrl: "https://www.rabbiapsychologist.com",
   bookingUrl: "https://calendar.app.google/zMKejpnpCjh91WRG7",
   linkedInUrl: "https://www.linkedin.com/in/rabbiapsychologist",
-  email: "hello@rabbiapsychologist.com",
+  email: "psychologistrabbia@gmail.com",
+  whatsapp: "+92 336 4114002",
   location: "International (Online Guidance) & Lahore (Local Assessment)",
   disclaimers: {
     emergency: "If you or your child are experiencing a medical or psychological emergency, please contact your local emergency services immediately.",
