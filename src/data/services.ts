@@ -80,6 +80,16 @@ export const services = [
     ctaUrl: '/services/school-consultation'
   },
   {
+    title: 'School Partnership Services',
+    slug: 'school-partnerships',
+    description: 'Practical guidance for schools, teachers, and support teams to manage developmental, behavioural, and learning needs.',
+    whoItIsFor: 'Preschools, primary/secondary schools, special education centres, and international schools seeking professional guidance.',
+    commonConcerns: 'Classroom disruption, learning difficulties, teacher confidence with neurodivergence, whole-school inclusion strategies.',
+    whatItIncludes: ['Teacher training', 'Student consultation', 'IEP/support planning guidance', 'Case conferences'],
+    whatItDoesNotInclude: ['Direct medical treatment', 'Emergency psychiatric care', 'Legal advocacy'],
+    ctaUrl: '/school-partnerships'
+  },
+  {
     title: 'Parent Counselling',
     slug: 'parent-counselling',
     description: 'Online or in-person emotional support and stress management for parents.',
