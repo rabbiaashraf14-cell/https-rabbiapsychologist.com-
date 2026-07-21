@@ -1,0 +1,478 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services' },
+  { name: 'School Partnership Services', href: '/services/school-partnership' }
+];
+
+const title = "School Partnership & Student Support Services | Rabbia Psychologist";
+const description = "Support every child with greater confidence. Practical guidance for schools, teachers, and support teams to manage developmental, behavioural, and learning needs.";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "School Partnership Services",
+  "description": description,
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "areaServed": "International"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you work with individual students referred by our school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The appropriate service will depend on the student’s concern, location, available records, parental consent, and whether consultation, observation, screening, assessment, or referral is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you train our entire teaching team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Workshops can be customized for teachers, coordinators, counsellors, learning-support staff, school leadership, or parents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide online school consultation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Online consultation, staff training, report discussion, support planning, and case conferences can be arranged for schools in different cities and countries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help us develop Individualized Education Plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Guidance can be provided for developing practical goals, accommodations, support strategies, and progress-monitoring procedures."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Hero section -->
+    <div class="mt-8 mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">School Partnership & Student Support Services</h1>
+      <p class="text-xl text-gray-700 mb-4">Support Every Child with Greater Confidence</p>
+      <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">Schools do not always need another general recommendation. They need practical guidance that teachers can apply in the classroom, parents can continue at home, and support teams can monitor over time.</p>
+      <a href="/contact" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Request a School Partnership Consultation</a>
+    </div>
+
+    <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
+
+      <section>
+        <p class="lead text-xl">Rabbia Psychologist Child Development Services partners with schools, preschools, special education centres, and educational organisations to support students experiencing developmental, behavioural, emotional, attention, communication, and learning difficulties.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">A Practical Partnership Between Psychology, School and Family</h2>
+        <p>Children may behave very differently at school and at home. Effective support therefore requires communication between teachers, parents, psychologists, special educators, therapists, and school leadership.</p>
+        <p>Our school partnership services help educational teams understand the reason behind a student’s difficulties and develop realistic strategies that can be applied within the actual classroom environment.</p>
+        <p>Support may be provided through individual student consultation, teacher guidance, parent meetings, staff workshops, classroom-support planning, and ongoing school partnerships.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">School Partnership Services</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Student Development and Behaviour Consultation</h3>
+        <p>Professional consultation for students experiencing concerns related to:</p>
+        <ul>
+          <li>Attention and concentration</li>
+          <li>Hyperactivity and impulsivity</li>
+          <li>Autism and social communication</li>
+          <li>Challenging or disruptive behaviour</li>
+          <li>Emotional regulation</li>
+          <li>Learning difficulties</li>
+          <li>Developmental delays</li>
+          <li>School refusal or adjustment difficulties</li>
+          <li>Peer interaction and social skills</li>
+          <li>Classroom participation</li>
+          <li>Following instructions and completing work</li>
+        </ul>
+        <p>The aim is to understand the student’s needs and identify appropriate next steps for the school and family.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Classroom Observation and Behaviour Support</h3>
+        <p>Where appropriate and professionally permitted, classroom observation can help identify:</p>
+        <ul>
+          <li>Situations that trigger difficult behaviour</li>
+          <li>Environmental or sensory challenges</li>
+          <li>Communication difficulties</li>
+          <li>Attention and executive-function needs</li>
+          <li>Academic demands affecting behaviour</li>
+          <li>Patterns of avoidance, refusal, withdrawal, or emotional distress</li>
+          <li>Strategies already working for the student</li>
+        </ul>
+        <p>Following consultation, the school may receive practical recommendations for classroom routines, transitions, reinforcement, communication, and behaviour management.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Individualized Education and Support Planning</h3>
+        <p>Schools can receive guidance in developing or reviewing:</p>
+        <ul>
+          <li>Individualized Education Plans</li>
+          <li>Individual Support Plans</li>
+          <li>Behaviour Support Plans</li>
+          <li>Classroom accommodations</li>
+          <li>Learning and participation goals</li>
+          <li>Emotional-regulation strategies</li>
+          <li>Communication goals</li>
+          <li>Home-school progress plans</li>
+          <li>Monitoring and review systems</li>
+        </ul>
+        <p>Recommendations are designed to be clear, measurable, realistic, and manageable for teachers and families.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Teacher Consultation and Classroom Strategies</h3>
+        <p>Teachers are often the first people to notice that a student is struggling. Consultation helps teachers understand what may be happening beneath the behaviour and how to respond more effectively.</p>
+        <p>Teacher guidance may include:</p>
+        <ul>
+          <li>Managing attention and impulsivity</li>
+          <li>Supporting students with autism</li>
+          <li>Responding to meltdowns and emotional distress</li>
+          <li>Improving classroom participation</li>
+          <li>Giving effective instructions</li>
+          <li>Supporting transitions and changes in routine</li>
+          <li>Using positive behaviour strategies</li>
+          <li>Adapting work without lowering meaningful expectations</li>
+          <li>Communicating concerns sensitively with parents</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Staff Training and Professional Workshops</h3>
+        <p>Schools may arrange customized workshops for teachers, coordinators, counsellors, learning-support staff, and school leadership.</p>
+        <p>Training topics may include:</p>
+        <ul>
+          <li>Early signs of developmental difficulties</li>
+          <li>Understanding ADHD in the classroom</li>
+          <li>Autism and neurodiversity in schools</li>
+          <li>Behaviour is communication</li>
+          <li>Positive behaviour support</li>
+          <li>Emotional regulation in children</li>
+          <li>Learning disabilities and classroom support</li>
+          <li>Developing effective Individualized Education Plans</li>
+          <li>Communicating developmental concerns to parents</li>
+          <li>Preventing teacher burnout while supporting challenging students</li>
+          <li>Building an inclusive school environment</li>
+          <li>Understanding when and where to refer a student</li>
+        </ul>
+        <p>Workshops can be delivered online or in person, depending on location and availability.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Parent Education and School-Based Sessions</h3>
+        <p>Schools can arrange parent seminars, individual parent meetings, or small-group guidance sessions.</p>
+        <p>Parent sessions may focus on:</p>
+        <ul>
+          <li>Understanding school feedback</li>
+          <li>Managing behaviour at home</li>
+          <li>Developing consistent home and school routines</li>
+          <li>Supporting homework and attention</li>
+          <li>Responding to emotional outbursts</li>
+          <li>Understanding assessment reports</li>
+          <li>Preparing for further professional assessment</li>
+          <li>Supporting children with ADHD, autism, learning, or developmental needs</li>
+          <li>Improving communication between parents and teachers</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">Case Conferences and Multidisciplinary Coordination</h3>
+        <p>Complex student needs often require collaboration between several professionals.</p>
+        <p>School partnership support may include structured meetings with:</p>
+        <ul>
+          <li>Parents</li>
+          <li>Teachers</li>
+          <li>School coordinators</li>
+          <li>Special educators</li>
+          <li>Clinical psychologists</li>
+          <li>Developmental paediatricians</li>
+          <li>Speech and language therapists</li>
+          <li>Occupational therapists</li>
+          <li>Behaviour therapists</li>
+          <li>Other professionals involved in the child’s care</li>
+        </ul>
+        <p>The purpose is to develop a coordinated plan and reduce conflicting recommendations between home, school, and clinical teams.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-6">School Systems and Inclusion Support</h3>
+        <p>Schools developing or improving their student-support services can receive consultation regarding:</p>
+        <ul>
+          <li>Student referral procedures</li>
+          <li>Learning-support pathways</li>
+          <li>Behaviour incident documentation</li>
+          <li>Parent communication systems</li>
+          <li>Individual support plan templates</li>
+          <li>Progress-monitoring procedures</li>
+          <li>Classroom inclusion practices</li>
+          <li>Teacher-support structures</li>
+          <li>Multidisciplinary coordination</li>
+          <li>Policies for supporting neurodivergent students</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Why Schools Partner With Us</h2>
+        <ul>
+          <li><strong>Practical Recommendations:</strong> Schools receive guidance that can be applied in real classrooms rather than recommendations that are difficult for teachers to manage.</li>
+          <li><strong>Better Understanding of Student Behaviour:</strong> Teachers and parents learn to understand what may be happening beneath refusal, aggression, withdrawal, poor attention, or emotional outbursts.</li>
+          <li><strong>Stronger Teacher Confidence:</strong> Training and consultation help teachers respond consistently and feel better prepared to support students with different developmental needs.</li>
+          <li><strong>Improved Parent-School Collaboration:</strong> Structured guidance reduces blame and helps families and schools work toward the same goals.</li>
+          <li><strong>Earlier Identification and Referral:</strong> Schools receive support in recognising concerns and guiding families toward suitable assessment or specialist services where needed.</li>
+          <li><strong>Support for Inclusive Education:</strong> The partnership helps schools create environments where students with different developmental, behavioural, and learning needs can participate meaningfully.</li>
+          <li><strong>Multidisciplinary Experience:</strong> Recommendations are informed by experience working with children, parents, teachers, psychologists, special educators, therapists, and medical teams.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Partnership Options</h2>
+        <ul>
+          <li><strong>One-Time School Consultation:</strong> Suitable when a school needs guidance regarding a particular student, classroom concern, policy, or support plan.</li>
+          <li><strong>Student Support Package:</strong> A structured package involving consultation, school feedback, parent discussion, recommendations, and follow-up review.</li>
+          <li><strong>Teacher Training Package:</strong> Customized workshops or training sessions based on the needs of the school and its staff.</li>
+          <li><strong>Term-Based Partnership:</strong> Ongoing consultation during an academic term, including selected student cases, teacher support, parent guidance, and progress review.</li>
+          <li><strong>Annual School Partnership:</strong> A longer-term arrangement for schools that want regular professional consultation, staff development, student-support planning, and coordinated parent guidance throughout the academic year.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">How the Partnership Works</h2>
+        <ol>
+          <li><strong>Tell Us About Your School:</strong> Share your school level, location, number of students, current support system, and the main difficulties your team is facing.</li>
+          <li><strong>Attend an Initial Consultation:</strong> We discuss your priorities, student population, staff needs, and the type of support required.</li>
+          <li><strong>Receive a Customized Proposal:</strong> Your school receives a recommended service plan based on its needs, preferred timeline, and level of support.</li>
+          <li><strong>Begin the Partnership:</strong> Consultations, workshops, student-support meetings, or ongoing services are scheduled according to the agreed plan.</li>
+          <li><strong>Review Progress:</strong> The school and professional team review what is working, what needs adjustment, and what the next priorities should be.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-2">Who We Work With</h2>
+        <p>School partnership services are suitable for:</p>
+        <ul>
+          <li>Preschools and early-years centres</li>
+          <li>Primary and secondary schools</li>
+          <li>Mainstream schools</li>
+          <li>Inclusive schools</li>
+          <li>Special education schools and centres</li>
+          <li>International schools</li>
+          <li>School counselling departments</li>
+          <li>Learning-support departments</li>
+          <li>Educational organisations</li>
+          <li>Teacher-training institutions</li>
+        </ul>
+        <p>Services may be provided to schools in Pakistan and internationally, subject to professional, ethical, and location-based service boundaries.</p>
+      </section>
+
+      <!-- FAQ section -->
+      <section>
+        <h2 class="text-2xl font-bold text-brand-navy border-b pb-4 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you work with individual students referred by our school?</h4>
+            <p class="text-sm">Yes. The appropriate service will depend on the student’s concern, location, available records, parental consent, and whether consultation, observation, screening, assessment, or referral is required.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you train our entire teaching team?</h4>
+            <p class="text-sm">Yes. Workshops can be customized for teachers, coordinators, counsellors, learning-support staff, school leadership, or parents.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Do you provide online school consultation?</h4>
+            <p class="text-sm">Yes. Online consultation, staff training, report discussion, support planning, and case conferences can be arranged for schools in different cities and countries.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can you help us develop Individualized Education Plans?</h4>
+            <p class="text-sm">Yes. Guidance can be provided for developing practical goals, accommodations, support strategies, and progress-monitoring procedures.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Can the school refer parents directly?</h4>
+            <p class="text-sm">A referral pathway can be developed so that parents receive clear information about the available service and can provide informed consent before any student-specific consultation takes place.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Do you provide formal diagnosis for every referred student?</h4>
+            <p class="text-sm">Not every student requires a formal diagnosis. The first step is understanding the concern and deciding whether consultation, classroom support, screening, a comprehensive assessment, or referral to another professional is appropriate. Formal services are provided only within applicable professional and location-based requirements.</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-bold text-brand-navy mb-2">Is student information kept confidential?</h4>
+            <p class="text-sm">Student and family information is handled carefully. Before beginning a partnership, the school and service provider should agree on consent, documentation, communication, and confidentiality procedures.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety Boundary / Disclaimer -->
+      <section class="bg-brand-cream p-6 rounded-xl border border-brand-sky mt-12 text-sm italic">
+        <p>School services are educational, consultative, developmental, and professional-support services. Availability of assessment, diagnosis, therapy, observation, or other regulated services depends on the professional’s credentials, student location, consent, and applicable legal and ethical requirements.</p>
+      </section>
+
+      <!-- CTA block -->
+      <div id="enquiry-form" class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4 text-center">Build a Stronger Student Support System</h3>
+        <p class="mb-6 text-center">Whether your school needs help with one student, teacher training, parent education, or a complete student-support partnership, the first step is understanding what your team currently needs.</p>
+        <p class="mb-8 text-center">Tell us about your school, the challenges you are facing, and the type of support you would like to explore.</p>
+
+        <form id="partnership-form" class="space-y-6 max-w-2xl mx-auto bg-white p-6 rounded-xl border border-brand-sky">
+          <input type="hidden" name="access_key" value="00b217a7-53e3-46fb-a0b2-ff59f8db11be" />
+          <input type="hidden" name="subject" value="New School Partnership Enquiry from RabbiaPsychologist.com" />
+          <input type="hidden" name="from_name" value="School Partnership Form" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" />
+            </div>
+            <div>
+              <label for="position" class="block text-sm font-medium text-gray-700 mb-1">Position or role *</label>
+              <input type="text" id="position" name="position" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="school" class="block text-sm font-medium text-gray-700 mb-1">School or organisation name *</label>
+              <input type="text" id="school" name="school" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" />
+            </div>
+            <div>
+              <label for="website" class="block text-sm font-medium text-gray-700 mb-1">School website</label>
+              <input type="url" id="website" name="website" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" placeholder="https://" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="city_country" class="block text-sm font-medium text-gray-700 mb-1">City and country *</label>
+              <input type="text" id="city_country" name="city_country" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" />
+            </div>
+            <div>
+              <label for="age_range" class="block text-sm font-medium text-gray-700 mb-1">Student age range *</label>
+              <input type="text" id="age_range" name="age_range" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="num_students" class="block text-sm font-medium text-gray-700 mb-1">Approximate number of students *</label>
+              <input type="text" id="num_students" name="num_students" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" />
+            </div>
+            <div>
+              <label for="timeline" class="block text-sm font-medium text-gray-700 mb-1">Expected timeline *</label>
+              <input type="text" id="timeline" name="timeline" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" placeholder="e.g. ASAP, Next term" />
+            </div>
+          </div>
+
+          <div>
+            <label for="services_req" class="block text-sm font-medium text-gray-700 mb-1">Services required *</label>
+            <input type="text" id="services_req" name="services_req" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" placeholder="e.g. Teacher training, student consultation" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred support format *</label>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input type="radio" id="format_online" name="support_format" value="Online" required class="w-4 h-4 text-brand-navy border-gray-300 focus:ring-brand-navy" />
+                <label for="format_online" class="ml-2 text-gray-700">Online</label>
+              </div>
+              <div class="flex items-center">
+                <input type="radio" id="format_inperson" name="support_format" value="In-person" class="w-4 h-4 text-brand-navy border-gray-300 focus:ring-brand-navy" />
+                <label for="format_inperson" class="ml-2 text-gray-700">In-person</label>
+              </div>
+              <div class="flex items-center">
+                <input type="radio" id="format_both" name="support_format" value="Both" class="w-4 h-4 text-brand-navy border-gray-300 focus:ring-brand-navy" />
+                <label for="format_both" class="ml-2 text-gray-700">Both</label>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-navy focus:border-brand-navy outline-none transition-shadow" placeholder="Tell us more about your needs..."></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="w-full bg-brand-navy text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-blue-900 transition-colors shadow-md flex items-center justify-center gap-2">
+            <span>Request a Partnership Call</span>
+            <svg id="submit-spinner" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+
+          <div id="form-result" class="hidden rounded-lg p-4 mt-4 text-center"></div>
+
+          <div class="text-center mt-4">
+             <a href="https://wa.me/923364114002" target="_blank" rel="noopener noreferrer" class="inline-block text-brand-navy underline hover:text-blue-700">Or Contact Us on WhatsApp</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('partnership-form') as HTMLFormElement;
+      const resultDiv = document.getElementById('form-result') as HTMLDivElement;
+      const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+      const spinner = document.getElementById('submit-spinner') as HTMLElement;
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
+
+          if (object.botcheck) {
+             return;
+          }
+
+          resultDiv.classList.add('hidden');
+          submitBtn.disabled = true;
+          submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+          spinner.classList.remove('hidden');
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+            const result = await response.json();
+
+            resultDiv.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'border-red-200');
+
+            if (response.status === 200) {
+              resultDiv.classList.add('bg-green-50', 'text-green-700', 'border', 'border-green-200');
+              resultDiv.innerHTML = "Thank you for your enquiry. Our team will review your requirements and get back to you shortly to discuss a potential partnership.";
+              form.reset();
+            } else {
+              resultDiv.classList.add('bg-red-50', 'text-red-700', 'border', 'border-red-200');
+              resultDiv.innerHTML = "We could not send your message at this time. Please contact us through WhatsApp at <a href='https://wa.me/923364114002' class='underline'>+92 336 4114002</a>.";
+            }
+          } catch (error) {
+            resultDiv.classList.remove('hidden', 'bg-green-50', 'text-green-700', 'border-green-200');
+            resultDiv.classList.add('bg-red-50', 'text-red-700', 'border', 'border-red-200');
+            resultDiv.innerHTML = "We could not send your message at this time. Please contact us through WhatsApp at <a href='https://wa.me/923364114002' class='underline'>+92 336 4114002</a>.";
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            spinner.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
+</BaseLayout>
