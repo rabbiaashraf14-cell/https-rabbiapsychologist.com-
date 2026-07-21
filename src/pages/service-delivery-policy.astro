@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Service Delivery Policy', href: '/service-delivery-policy' }
+];
+---
+
+<Layout title="Service Delivery Policy | Rabbia Psychologist">
+  <SEO
+    title="Service Delivery Policy | Rabbia Psychologist"
+    description="Read our policy regarding how our consultations, assessments, and related services are delivered."
+  />
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+    <div class="max-w-4xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Service Delivery Policy</h1>
+      <div class="prose prose-lg text-gray-700 max-w-none mb-16">
+        <ul class="space-y-4 list-disc pl-6">
+          <li>The website provides psychology consultations, parent guidance, assessments, report reviews, school guidance and related professional services.</li>
+          <li>No physical products are shipped unless clearly stated on a specific product page.</li>
+          <li>Online consultations are delivered through Zoom, Google Meet, WhatsApp video or another agreed platform.</li>
+          <li>The meeting link and appointment details are shared after payment and booking confirmation.</li>
+          <li>In-person consultations are provided at 519 F2, Johar Town, Lahore, Punjab, Pakistan.</li>
+          <li>Clients must provide a correct phone number, WhatsApp number and email address.</li>
+          <li>Appointment confirmation is usually sent within one business day after payment verification.</li>
+          <li>Reports, written recommendations and assessment documents will be delivered according to the timeline communicated during booking.</li>
+          <li>Delays may occur if the client does not provide the required information, forms, records or assessment documents.</li>
+          <li>Services are delivered only at the confirmed date and time.</li>
+          <li>Online clients are responsible for having a stable internet connection and a private environment.</li>
+          <li>International clients may receive consultation, parent guidance, report review and educational support according to applicable professional limitations.</li>
+          <li>Emergency and crisis services are not provided through the website.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <StickyMobileBookingCTA />
+</Layout>
