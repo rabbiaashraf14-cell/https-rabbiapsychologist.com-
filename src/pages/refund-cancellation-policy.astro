@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
+
+const breadcrumbs = [
+  { name: 'Refund and Cancellation Policy', href: '/refund-cancellation-policy' }
+];
+---
+
+<Layout title="Refund and Cancellation Policy | Rabbia Psychologist">
+  <SEO
+    title="Refund and Cancellation Policy | Rabbia Psychologist"
+    description="Read our policies regarding refunds, cancellations, and rescheduling for consultations and services."
+  />
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumbs paths={breadcrumbs} />
+    <div class="max-w-4xl mx-auto mt-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Refund and Cancellation Policy</h1>
+      <div class="prose prose-lg text-gray-700 max-w-none mb-16">
+        <ul class="space-y-4 list-disc pl-6">
+          <li>Payment is required before confirming an appointment.</li>
+          <li>Clients must give at least 24 hours’ notice to cancel or reschedule.</li>
+          <li>Late cancellations made less than 24 hours before the appointment may not qualify for a refund.</li>
+          <li>Missed appointments and no-shows are non-refundable.</li>
+          <li>If the psychologist cancels a confirmed appointment, the client may choose rescheduling or a full refund.</li>
+          <li>Approved refunds will be processed within 7 to 10 business days.</li>
+          <li>Bank, card or payment-gateway processing time may vary.</li>
+          <li>Digital products, downloadable resources and completed services are non-refundable.</li>
+          <li>Refund requests must be sent through email or WhatsApp with the client’s booking details.</li>
+          <li>Refund eligibility will be reviewed according to the service status and cancellation time.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <StickyMobileBookingCTA />
+</Layout>
