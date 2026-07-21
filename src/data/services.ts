@@ -60,6 +60,16 @@ export const services = [
     ctaUrl: '/services/school-consultation'
   },
   {
+    title: 'School Partnership Services',
+    slug: 'school-partnership',
+    description: 'Practical guidance for schools, teachers, and support teams.',
+    whoItIsFor: 'Schools, preschools, special education centres, and educational organisations.',
+    commonConcerns: 'Classroom management, IEP development, staff training, complex student needs.',
+    whatItIncludes: ['Teacher consultation', 'Staff workshops', 'Support planning'],
+    whatItDoesNotInclude: ['Formal diagnosis without consent', 'Medical treatment'],
+    ctaUrl: '/services/school-partnership'
+  },
+  {
     title: 'Local Psychological Assessment in Lahore',
     slug: 'local-assessment',
     description: 'Local assessment and formal diagnostic reporting.',
