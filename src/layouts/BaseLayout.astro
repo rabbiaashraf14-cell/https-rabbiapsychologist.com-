@@ -66,6 +66,27 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
     <!-- Analytics Tracking Script -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+        // Privacy-safe analytics logging
+        const trackEvent = (eventName, params = {}) => {
+           // Ensure we only log allowed events
+           const allowedEvents = ['city_page_view', 'city_primary_cta_click', 'city_secondary_cta_click', 'city_service_link_click', 'city_booking_start', 'city_country_link_click', 'city_region_link_click', 'city_faq_open', 'city_source_link_click', 'city_related_resource_click', 'city_error_encountered'];
+           const allowedParams = ['city_id', 'city_slug', 'country_code', 'content_version', 'destination_type', 'faq_id', 'source_type', 'device_category'];
+
+           if (!allowedEvents.includes(eventName)) return;
+
+           const safeParams = {};
+           for (const [key, value] of Object.entries(params)) {
+             if (allowedParams.includes(key)) safeParams[key] = value;
+           }
+
+           console.log(`[Analytics] ${eventName}`, safeParams);
+        };
+
+        // If on a city page, log view
+        if (window.location.pathname.includes('/locations/')) {
+           trackEvent('city_page_view', { device_category: window.innerWidth < 768 ? 'mobile' : 'desktop' });
+        }
+
         // Track Sale Banner Clicks
         const promoBanner = document.getElementById('promo-banner');
         if (promoBanner) {
@@ -86,6 +107,7 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
         bookingButtons.forEach(btn => {
           btn.addEventListener('click', () => {
              console.log('[Analytics] booking button clicks');
+             trackEvent('city_booking_start', {});
 
              // Pseudo conversion logic for this specific button that leads to booking
              if (btn.classList.contains('track-booking-btn') || btn.getAttribute('href')?.startsWith('https://calendar.app.google')) {
