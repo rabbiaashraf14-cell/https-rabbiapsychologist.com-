@@ -3,21 +3,12 @@
 <script is:inline>
   (function() {
     try {
-      var savedRegion = localStorage.getItem('rabbia_pricing_region');
-      if (savedRegion === 'pakistan' || savedRegion === 'international') {
-        document.documentElement.setAttribute('data-pricing-region', savedRegion);
-        return;
-      }
-
-      var sessionRegion = sessionStorage.getItem('rabbia_pricing_region_session');
-      if (sessionRegion === 'pakistan' || sessionRegion === 'international') {
-        document.documentElement.setAttribute('data-pricing-region', sessionRegion);
-        return;
-      }
+      // Remove any previously saved manual preference to enforce residence-based pricing
+      localStorage.removeItem('rabbia_pricing_region');
+      sessionStorage.removeItem('rabbia_pricing_region_session');
 
       var setRegion = function(region) {
         document.documentElement.setAttribute('data-pricing-region', region);
-        sessionStorage.setItem('rabbia_pricing_region_session', region);
       };
 
       // Set fallback while loading
