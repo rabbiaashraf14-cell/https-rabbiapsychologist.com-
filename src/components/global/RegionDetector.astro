@@ -3,11 +3,8 @@
 <script is:inline>
   (function() {
     try {
-      var savedRegion = localStorage.getItem('rabbia_pricing_region');
-      if (savedRegion === 'pakistan' || savedRegion === 'international') {
-        document.documentElement.setAttribute('data-pricing-region', savedRegion);
-        return;
-      }
+      // Clear out any old manual preference to enforce residence-based pricing
+      localStorage.removeItem('rabbia_pricing_region');
 
       var sessionRegion = sessionStorage.getItem('rabbia_pricing_region_session');
       if (sessionRegion === 'pakistan' || sessionRegion === 'international') {
