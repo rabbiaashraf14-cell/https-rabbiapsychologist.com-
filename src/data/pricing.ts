@@ -1,3 +1,44 @@
+export const regionalPricing = {
+  parentGuidance: {
+    pakistan: { currency: "PKR", price: 5000 },
+    international: { currency: "USD", price: 85 }
+  },
+  adhdSupport: {
+    pakistan: { currency: "PKR", price: 5000 },
+    international: { currency: "USD", price: 85 }
+  },
+  asdParentGuidance: {
+    pakistan: { currency: "PKR", price: 5000 },
+    international: { currency: "USD", price: 85 }
+  },
+  behaviourPlanning: {
+    pakistan: { currency: "PKR", price: 6500 },
+    international: { currency: "USD", price: 85 }
+  },
+  reportReview: {
+    pakistan: { currency: "PKR", price: 8500 },
+    international: { currency: "USD", price: 125 }
+  },
+  schoolIEP: {
+    pakistan: { currency: "PKR", price: 10000, prefix: "From " },
+    international: { currency: "USD", price: 140, prefix: "From " }
+  },
+  fourSessionPackage: {
+    pakistan: { currency: "PKR", price: 20000 },
+    international: { currency: "USD", price: 320 }
+  },
+  workshopTraining: {
+    pakistan: { currency: "PKR", min: 15000, max: 25000 },
+    international: { currency: "USD", min: 150, max: 200 }
+  },
+  digitalResources: {
+    pakistan: { currency: "PKR", min: 0, max: 2500, prefix: "Free–" },
+    international: { currency: "USD", min: 0, max: 29, prefix: "Free–" }
+  }
+} as const;
+
+export type ServiceKey = keyof typeof regionalPricing;
+
 export const pricing = [
   { name: 'Online Parent Guidance Consultation', price: 'USD 85 / AUD 130' },
   { name: 'ADHD Support Consultation', price: 'USD 95 / AUD 145' },

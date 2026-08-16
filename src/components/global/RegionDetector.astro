@@ -1,0 +1,50 @@
+---
+---
+<script is:inline>
+  (function() {
+    try {
+      var savedRegion = localStorage.getItem('rabbia_pricing_region');
+      if (savedRegion === 'pakistan' || savedRegion === 'international') {
+        document.documentElement.setAttribute('data-pricing-region', savedRegion);
+        return;
+      }
+
+      var sessionRegion = sessionStorage.getItem('rabbia_pricing_region_session');
+      if (sessionRegion === 'pakistan' || sessionRegion === 'international') {
+        document.documentElement.setAttribute('data-pricing-region', sessionRegion);
+        return;
+      }
+
+      var setRegion = function(region) {
+        document.documentElement.setAttribute('data-pricing-region', region);
+        sessionStorage.setItem('rabbia_pricing_region_session', region);
+      };
+
+      // Set fallback while loading
+      document.documentElement.setAttribute('data-pricing-region', 'international');
+
+      fetch('https://1.1.1.1/cdn-cgi/trace')
+        .then(function(res) { return res.text(); })
+        .then(function(data) {
+          var match = data.match(/loc=([A-Z]{2})/);
+          if (match && match[1]) {
+            setRegion(match[1] === 'PK' ? 'pakistan' : 'international');
+          } else {
+            throw new Error('No loc found');
+          }
+        })
+        .catch(function() {
+          fetch('https://get.geojs.io/v1/ip/country')
+            .then(function(res) { return res.text(); })
+            .then(function(country) {
+              setRegion(country.trim() === 'PK' ? 'pakistan' : 'international');
+            })
+            .catch(function() {
+              setRegion('international'); // fallback
+            });
+        });
+    } catch (e) {
+      document.documentElement.setAttribute('data-pricing-region', 'international');
+    }
+  })();
+</script>

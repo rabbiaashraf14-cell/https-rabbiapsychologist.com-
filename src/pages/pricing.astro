@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
 import PriceDisplay from '../components/global/PriceDisplay.astro';
+import RegionSelector from '../components/global/RegionSelector.astro';
 import CountdownSection from '../components/global/CountdownSection.astro';
 import { isPromotionActive } from '../utils/pricing';
 
@@ -12,8 +13,13 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
 <BaseLayout title={title} description={description}>
   <div class="container mx-auto px-4 py-16 max-w-5xl">
     <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Pricing</h1>
-      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 flex flex-col items-center">
+        <span>Pricing</span>
+        <span class="text-sm font-medium text-gray-500 mt-4 tracking-widest uppercase flex items-center gap-2 price-pakistan">Pakistan Regional Pricing</span>
+        <span class="text-sm font-medium text-gray-500 mt-4 tracking-widest uppercase flex items-center gap-2 price-international">International Pricing &middot; USD</span>
+      </h1>
+      <RegionSelector />
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
         Clear and transparent fees for parent guidance and child development support.
       </p>
     </div>
@@ -26,7 +32,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card A -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Online Parent Guidance Consultation</h3>
-        <PriceDisplay price="USD 85 / AUD 130" />
+        <PriceDisplay serviceKey="parentGuidance" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> general developmental concerns, parenting stress, and initial guidance without a formal diagnosis.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -40,7 +46,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <div class="bg-white rounded-xl shadow-sm border border-brand-navy p-8 flex flex-col h-full hover:shadow-md transition-shadow relative">
         <div class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-brand-navy text-white px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase whitespace-nowrap">Most Popular</div>
         <h3 class="text-2xl font-bold text-brand-navy mb-2">ADHD Support Consultation</h3>
-        <PriceDisplay price="USD 95 / AUD 145" />
+        <PriceDisplay serviceKey="adhdSupport" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> home routines, executive function, and managing attention/hyperactivity.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -53,7 +59,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card C -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">ASD Parent Guidance Consultation</h3>
-        <PriceDisplay price="USD 95 / AUD 145" />
+        <PriceDisplay serviceKey="asdParentGuidance" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> communication strategies, sensory needs, and autism parent training.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -66,7 +72,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card D -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Behaviour Planning Session</h3>
-        <PriceDisplay price="USD 95 / AUD 145" />
+        <PriceDisplay serviceKey="behaviourPlanning" />
         <p class="text-sm text-gray-500 mb-4">Duration: 50–60 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> meltdowns, tantrums, aggression, and difficult transitions.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -79,7 +85,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card E -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Report Review & Parent Explanation</h3>
-        <PriceDisplay price="USD 125 / AUD 190" />
+        <PriceDisplay serviceKey="reportReview" />
         <p class="text-sm text-gray-500 mb-4">Duration: 60–75 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> parents who have a clinical/psychological report and need help translating it into action.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -92,7 +98,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card F -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">School / IEP Consultation</h3>
-        <PriceDisplay price="From USD 140 / AUD 215" />
+        <PriceDisplay serviceKey="schoolIEP" />
         <p class="text-sm text-gray-500 mb-4">Duration: 60–75 minutes</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> parent-teacher meetings, accommodation planning, and school communication.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -105,7 +111,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card G -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Four-Session Parent Guidance Package</h3>
-        <p class="text-xl font-bold text-brand-gold mb-1">USD 320 / AUD 490</p>
+        <PriceDisplay serviceKey="fourSessionPackage" />
         <p class="text-sm text-gray-500 mb-4">Includes: four 50–60 minute online sessions</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> families who need ongoing support for ADHD, ASD, or behaviour planning.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -118,7 +124,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card H -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Workshop / Parent Training</h3>
-        <PriceDisplay price="USD 150–200 / AUD 230–305" />
+        <PriceDisplay serviceKey="workshopTraining" />
         <p class="text-sm text-gray-500 mb-4">Format: group or custom workshop</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Best for:</strong> schools, parent groups, or organizations.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">
@@ -131,7 +137,7 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <!-- Card I -->
       <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col h-full hover:shadow-md transition-shadow">
         <h3 class="text-2xl font-bold text-brand-navy mb-2">Digital Resources</h3>
-        <PriceDisplay price="Free to USD 29 / AUD 45" />
+        <PriceDisplay serviceKey="digitalResources" />
         <p class="text-sm text-gray-500 mb-4">Downloadable PDF tools</p>
         <p class="text-sm text-gray-700 mb-4 h-20 overflow-hidden"><strong>Includes:</strong> checklists, workbooks, school meeting templates, behaviour logs.</p>
         <ul class="list-disc pl-5 text-gray-600 text-sm mb-8 space-y-1 flex-grow">

@@ -6,6 +6,38 @@ body {
   @apply bg-brand-cream text-brand-charcoal font-sans antialiased;
 }
 
+html[data-pricing-region="pakistan"] .price-international {
+  display: none !important;
+}
+
+html[data-pricing-region="pakistan"] .price-pakistan {
+  display: block !important;
+}
+
+html[data-pricing-region="international"] .price-pakistan {
+  display: none !important;
+}
+
+html[data-pricing-region="international"] .price-international {
+  display: block !important;
+}
+
+/* Base styles to prevent flashing before JS runs */
+.price-pakistan {
+  display: none;
+}
+.price-international {
+  display: none;
+}
+
+/* When script hasn't run or is still determining, show international as fallback */
+html:not([data-pricing-region]) .price-international {
+  display: block !important;
+}
+html:not([data-pricing-region]) .price-pakistan {
+  display: none !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   @apply text-brand-navy;
 }

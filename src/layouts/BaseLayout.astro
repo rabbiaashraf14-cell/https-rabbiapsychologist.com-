@@ -6,6 +6,7 @@ import Footer from '../components/global/Footer.astro';
 import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
 import CountdownBanner from '../components/global/CountdownBanner.astro';
 import FloatingWhatsApp from '../components/global/FloatingWhatsApp.astro';
+import RegionDetector from '../components/global/RegionDetector.astro';
 
 interface Props {
   title: string;
@@ -37,6 +38,7 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0F2742" />
     <meta name="generator" content={Astro.generator} />
+    <RegionDetector />
     <slot name="head" />
 
     <!-- Google tag (gtag.js) -->
