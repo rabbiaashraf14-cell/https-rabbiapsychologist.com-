@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
 import PriceDisplay from '../components/global/PriceDisplay.astro';
-import RegionSelector from '../components/global/RegionSelector.astro';
 import CountdownSection from '../components/global/CountdownSection.astro';
 import { isPromotionActive } from '../utils/pricing';
 
@@ -15,12 +14,20 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
     <div class="text-center mb-16">
       <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 flex flex-col items-center">
         <span>Pricing</span>
-        <span class="text-sm font-medium text-gray-500 mt-4 tracking-widest uppercase flex items-center gap-2 price-pakistan">Pakistan Regional Pricing</span>
-        <span class="text-sm font-medium text-gray-500 mt-4 tracking-widest uppercase flex items-center gap-2 price-international">International Pricing &middot; USD</span>
+        <span class="text-sm font-medium text-gray-500 mt-4 tracking-widest uppercase flex flex-col items-center gap-2 price-pakistan">
+          Pakistan Resident Pricing
+          <span class="text-xs font-normal normal-case text-gray-500 mt-1">Local rates are available for clients currently residing in Pakistan.</span>
+        </span>
+        <span class="text-sm font-medium text-gray-500 mt-4 tracking-widest uppercase flex flex-col items-center gap-2 price-international">
+          International Client Pricing &middot; USD
+          <span class="text-xs font-normal normal-case text-gray-500 mt-1">Rates apply to clients currently residing outside Pakistan.</span>
+        </span>
       </h1>
-      <RegionSelector />
       <p class="text-xl text-gray-700 max-w-3xl mx-auto mt-4">
         Clear and transparent fees for parent guidance and child development support.
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        Currently residing in a different country? Let us know when booking.
       </p>
     </div>
 
@@ -176,6 +183,21 @@ const description = "Transparent pricing for online parent consultation, ADHD/AS
       <div class="bg-brand-cream border border-brand-gold/30 rounded-lg p-8 text-center">
         <p class="text-gray-700 text-lg">Fees do not include emergency care, medication prescription or management, guarantee of school placement, or formal cross-border clinical diagnosis.</p>
       </div>
+    </div>
+
+    <!-- Pricing Policy FAQ -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <details class="bg-white border border-gray-200 rounded-lg p-6 group">
+        <summary class="font-bold text-lg text-brand-navy cursor-pointer list-none flex justify-between items-center">
+          How is my rate determined?
+          <span class="transition-transform group-open:rotate-180">
+            <svg class="w-5 h-5 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </span>
+        </summary>
+        <div class="mt-4 text-gray-700 text-base">
+          Rates are based on your current country of residence rather than nationality. Pakistan Resident Pricing is available to clients currently residing in Pakistan, while International Client Pricing applies to clients residing outside Pakistan.
+        </div>
+      </details>
     </div>
 
   </div>
