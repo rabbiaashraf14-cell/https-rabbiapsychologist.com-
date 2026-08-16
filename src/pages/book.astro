@@ -8,10 +8,20 @@ import DisclaimerBanner from '../components/DisclaimerBanner.astro';
 import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 import { promotion } from '../config/promotion';
 import { isPromotionActive } from '../utils/pricing';
+import { regionalPricing } from '../data/pricing';
 
 const breadcrumbs = [
   { name: 'Book', href: '/book' }
 ];
+
+const intlBasePrice = regionalPricing.parentGuidance.international.price;
+const pkBasePrice = regionalPricing.parentGuidance.pakistan.price;
+
+const intlDiscountAmount = Math.round(intlBasePrice * (promotion.discount / 100));
+const intlFinalPrice = Math.round(intlBasePrice * (1 - promotion.discount / 100));
+
+const pkDiscountAmount = Math.round(pkBasePrice * (promotion.discount / 100));
+const pkFinalPrice = Math.round(pkBasePrice * (1 - promotion.discount / 100));
 ---
 
 <Layout title="Book a Consultation">
@@ -120,26 +130,46 @@ const breadcrumbs = [
       {isPromotionActive() && (
         <div class="bg-brand-cream border-2 border-brand-navy rounded-2xl p-8 mb-16 shadow-md text-left max-w-xl mx-auto" id="checkout-pricing-summary">
           <h2 class="text-2xl font-bold text-brand-navy mb-4 text-center">🎉 July Promotion Applied</h2>
-          <p class="text-gray-700 mb-6 text-center">Your 35% discount will be applied to your final invoice.</p>
+          <p class="text-gray-700 mb-6 text-center">Your {promotion.discount}% discount will be applied to your final invoice.</p>
 
-          <div class="space-y-3">
+          <div class="space-y-3 price-international">
             <div class="flex justify-between items-center text-gray-500">
               <span>Original Price (e.g., Parent Support)</span>
-              <span class="line-through">USD 85.00</span>
+              <span class="line-through">${intlBasePrice}</span>
             </div>
             <div class="flex justify-between items-center text-brand-gold font-bold">
               <span>Discount ({promotion.discount}%)</span>
-              <span>- USD 29.75</span>
+              <span>- ${intlDiscountAmount}</span>
             </div>
             <div class="border-t border-gray-200 pt-3 flex justify-between items-center font-bold text-xl text-brand-navy">
               <span>Today's Price</span>
-              <span>USD 55.25</span>
+              <span>${intlFinalPrice}</span>
             </div>
             <div class="flex justify-between items-center text-sm font-bold text-green-600 mt-2">
               <span>You Saved</span>
-              <span>USD 29.75</span>
+              <span>${intlDiscountAmount}</span>
             </div>
           </div>
+
+          <div class="space-y-3 price-pakistan">
+            <div class="flex justify-between items-center text-gray-500">
+              <span>Original Price (e.g., Parent Support)</span>
+              <span class="line-through">PKR {pkBasePrice.toLocaleString()}</span>
+            </div>
+            <div class="flex justify-between items-center text-brand-gold font-bold">
+              <span>Discount ({promotion.discount}%)</span>
+              <span>- PKR {pkDiscountAmount.toLocaleString()}</span>
+            </div>
+            <div class="border-t border-gray-200 pt-3 flex justify-between items-center font-bold text-xl text-brand-navy">
+              <span>Today's Price</span>
+              <span>PKR {pkFinalPrice.toLocaleString()}</span>
+            </div>
+            <div class="flex justify-between items-center text-sm font-bold text-green-600 mt-2">
+              <span>You Saved</span>
+              <span>PKR {pkDiscountAmount.toLocaleString()}</span>
+            </div>
+          </div>
+
           <p class="text-xs text-gray-500 mt-6 text-center italic">* Discount automatically applied to all consultation types during July.</p>
         </div>
       )}
