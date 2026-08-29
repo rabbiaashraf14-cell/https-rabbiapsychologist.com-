@@ -1,7 +1,7 @@
 # Brand Guide
 
 ## Brand Overview
-Rabbia Ashraf is a Clinical Child Psychologist based in Lahore, Pakistan, offering local and international consultation, autism/ADHD support, and behavioral interventions.
+Rabbia Ashraf is a Clinical Child Psychologist offering local and international consultation, autism/ADHD support, and behavioral interventions.
 
 ## Taglines
 
