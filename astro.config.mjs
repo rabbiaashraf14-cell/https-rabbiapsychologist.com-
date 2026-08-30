@@ -8,6 +8,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.rabbiapsychologist.com',
   redirects: {
+
+    '/services/local-assessment': '/services',
+
+
+    '/child-psychologist-lahore': '/about',
+    '/parent-training-lahore': '/parent-support',
+    '/adhd-child-psychologist-lahore': '/services/adhd-support',
+    '/autism-assessment-lahore': '/services/asd-support',
+
     "/school-iep-help": "/services/school-consultation",
     "/services/behavior-support-planning": "/services/behaviour-planning",
     "/online-parent-consultation-mena-gulf": "/international-families/middle-east-gulf",
@@ -40,7 +49,7 @@ export default defineConfig({
     '/services/adhd-executive-function-support': '/services/adhd-support',
     '/services/school-iep-consultation': '/services/school-consultation',
     '/services/behavior-support-planning': '/services/behaviour-planning',
-    '/services/psychological-assessment-local': '/services/local-assessment',
+    '/services/psychological-assessment-local': '/services',
     '/services/parent-consultation': '/parent-support',
 
     // Legacy redirects
@@ -53,8 +62,8 @@ export default defineConfig({
     '/behaviour-planning': '/services/behaviour-planning',
     '/behavior-planning': '/services/behaviour-planning',
     '/behavior-support-planning': '/services/behaviour-planning',
-    '/local-assessment': '/services/local-assessment',
-    '/psychological-assessment': '/services/local-assessment',
+    '/local-assessment': '/services',
+    '/psychological-assessment': '/services',
     '/parent-guidance-consultations': '/services',
     '/between-session-support-programs': '/between-session-programs'
   },
