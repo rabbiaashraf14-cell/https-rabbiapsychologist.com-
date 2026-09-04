@@ -1,0 +1,255 @@
+<<<<<<< SEARCH
+        <!-- Remaining Services condensed for scanning -->
+        <div class="grid md:grid-cols-2 gap-6 pt-6 border-t border-brand-border">
+
+           <div class="bg-white p-6 rounded-[16px] shadow-sm border border-brand-border">
+              <h4 class="text-lg font-bold text-brand-navy mb-2">Teacher Consultation & Strategies</h4>
+              <p class="text-sm text-gray-700 mb-3">Teachers are often the first people to notice that a student is struggling. Consultation helps teachers understand what may be happening beneath the behaviour.</p>
+              <ul class="text-sm space-y-1 text-gray-600">
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Managing attention, impulsivity, and autism</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Responding to emotional distress</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Using positive behaviour strategies</li>
+              </ul>
+           </div>
+
+           <div class="bg-white p-6 rounded-[16px] shadow-sm border border-brand-border">
+              <h4 class="text-lg font-bold text-brand-navy mb-2">Staff Training & Workshops</h4>
+              <p class="text-sm text-gray-700 mb-3">Schools may arrange customized workshops for teachers, coordinators, counsellors, learning-support staff, and leadership.</p>
+              <ul class="text-sm space-y-1 text-gray-600">
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Early signs of developmental difficulties</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Understanding ADHD & Autism in class</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Building an inclusive school environment</li>
+              </ul>
+           </div>
+
+           <div class="bg-white p-6 rounded-[16px] shadow-sm border border-brand-border">
+              <h4 class="text-lg font-bold text-brand-navy mb-2">Parent Education Sessions</h4>
+              <p class="text-sm text-gray-700 mb-3">Schools can arrange parent seminars, individual parent meetings, or small-group guidance sessions.</p>
+              <ul class="text-sm space-y-1 text-gray-600">
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Understanding school feedback & reports</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Developing consistent routines</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Supporting children with ADHD or autism</li>
+              </ul>
+           </div>
+
+           <div class="bg-white p-6 rounded-[16px] shadow-sm border border-brand-border">
+              <h4 class="text-lg font-bold text-brand-navy mb-2">Multidisciplinary Coordination</h4>
+              <p class="text-sm text-gray-700 mb-3">Complex student needs often require collaboration. We structure meetings with parents, teachers, and other clinical professionals.</p>
+              <ul class="text-sm space-y-1 text-gray-600">
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Case conferences</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> School systems consultation</li>
+                 <li class="flex items-start"><span class="text-brand-gold mr-2">•</span> Coordinated support planning</li>
+              </ul>
+           </div>
+
+        </div>
+
+      </section>
+
+      <section class="bg-white p-8 md:p-12 rounded-[24px] shadow-sm border border-brand-border max-w-4xl mx-auto mt-24">
+=======
+        <div class="bg-white p-8 md:p-10 rounded-[20px] shadow-sm border border-brand-border">
+          <div class="flex items-center gap-4 mb-4">
+             <div class="w-10 h-10 bg-brand-mist rounded-full flex items-center justify-center text-brand-navy shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+             </div>
+             <h3 class="text-2xl font-bold text-brand-navy">Teacher Consultation and Classroom Strategies</h3>
+          </div>
+          <p class="text-gray-700 mb-6 text-lg">Teachers are often the first people to notice that a student is struggling. Consultation helps teachers understand what may be happening beneath the behaviour and how to respond more effectively.</p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT WE CAN EXPLORE</p>
+               <ul class="space-y-2 text-gray-700">
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Managing attention and impulsivity</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Supporting students with autism</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Responding to meltdowns and emotional distress</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Improving classroom participation</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Supporting transitions and changes in routine</li>
+               </ul>
+            </div>
+            <div class="bg-brand-mist p-5 rounded-[12px] h-fit">
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT THE SCHOOL RECEIVES</p>
+               <ul class="space-y-3 text-brand-navy">
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Positive behaviour strategies</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Guidance on adapting work without lowering meaningful expectations</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Guidance on communicating concerns sensitively with parents</li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-[20px] shadow-sm border border-brand-border">
+          <div class="flex items-center gap-4 mb-4">
+             <div class="w-10 h-10 bg-brand-mist rounded-full flex items-center justify-center text-brand-navy shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+             </div>
+             <h3 class="text-2xl font-bold text-brand-navy">Staff Training and Professional Workshops</h3>
+          </div>
+          <p class="text-gray-700 mb-6 text-lg">Schools may arrange customized workshops for teachers, coordinators, counsellors, learning-support staff, and school leadership. Delivered online or in person, depending on location.</p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">TRAINING TOPICS CAN INCLUDE</p>
+               <ul class="space-y-2 text-gray-700">
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Early signs of developmental difficulties</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Understanding ADHD and Autism in the classroom</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Behaviour is communication & Positive behaviour support</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Emotional regulation in children</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Developing effective Individualized Education Plans</li>
+               </ul>
+            </div>
+            <div class="bg-brand-mist p-5 rounded-[12px] h-fit">
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT THE SCHOOL RECEIVES</p>
+               <ul class="space-y-3 text-brand-navy">
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Stronger teacher confidence</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Support for an inclusive school environment</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Better identification and referral protocols</li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-[20px] shadow-sm border border-brand-border">
+          <div class="flex items-center gap-4 mb-4">
+             <div class="w-10 h-10 bg-brand-mist rounded-full flex items-center justify-center text-brand-navy shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+             </div>
+             <h3 class="text-2xl font-bold text-brand-navy">Parent Education and School-Based Sessions</h3>
+          </div>
+          <p class="text-gray-700 mb-6 text-lg">Schools can arrange parent seminars, individual parent meetings, or small-group guidance sessions.</p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT WE CAN EXPLORE</p>
+               <ul class="space-y-2 text-gray-700">
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Understanding school feedback and assessment reports</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Managing behaviour at home</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Developing consistent home and school routines</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Supporting homework and attention</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Preparing for further professional assessment</li>
+               </ul>
+            </div>
+            <div class="bg-brand-mist p-5 rounded-[12px] h-fit">
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT THE SCHOOL RECEIVES</p>
+               <ul class="space-y-3 text-brand-navy">
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Improved communication between parents and teachers</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Better home-school consistency</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Guidance for families dealing with ADHD, autism, or developmental needs</li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-[20px] shadow-sm border border-brand-border">
+          <div class="flex items-center gap-4 mb-4">
+             <div class="w-10 h-10 bg-brand-mist rounded-full flex items-center justify-center text-brand-navy shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+             </div>
+             <h3 class="text-2xl font-bold text-brand-navy">Case Conferences and Multidisciplinary Coordination</h3>
+          </div>
+          <p class="text-gray-700 mb-6 text-lg">Complex student needs often require collaboration between several professionals to develop a coordinated plan and reduce conflicting recommendations.</p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHO CAN BE INVOLVED</p>
+               <ul class="space-y-2 text-gray-700">
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Parents, teachers, and school coordinators</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Special educators and clinical psychologists</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Developmental paediatricians</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Speech and language therapists</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Occupational and behaviour therapists</li>
+               </ul>
+            </div>
+            <div class="bg-brand-mist p-5 rounded-[12px] h-fit">
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT THE SCHOOL RECEIVES</p>
+               <ul class="space-y-3 text-brand-navy">
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Unified support planning</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Clarity on multi-professional recommendations</li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-[20px] shadow-sm border border-brand-border">
+          <div class="flex items-center gap-4 mb-4">
+             <div class="w-10 h-10 bg-brand-mist rounded-full flex items-center justify-center text-brand-navy shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+             </div>
+             <h3 class="text-2xl font-bold text-brand-navy">School Systems and Inclusion Support</h3>
+          </div>
+          <p class="text-gray-700 mb-6 text-lg">Schools developing or improving their student-support services can receive consultation regarding structural policies and procedures.</p>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT WE CAN EXPLORE</p>
+               <ul class="space-y-2 text-gray-700">
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Student referral procedures & learning-support pathways</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Behaviour incident documentation</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Parent communication systems</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Individual support plan templates & monitoring procedures</li>
+                 <li class="flex items-start"><svg class="w-5 h-5 text-brand-gold mr-2 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Policies for supporting neurodivergent students</li>
+               </ul>
+            </div>
+            <div class="bg-brand-mist p-5 rounded-[12px] h-fit">
+               <p class="font-bold text-brand-navy mb-3 text-sm tracking-wide uppercase">WHAT THE SCHOOL RECEIVES</p>
+               <ul class="space-y-3 text-brand-navy">
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Robust inclusion practices</li>
+                 <li class="flex items-start"><span class="text-brand-navy mr-2 font-bold">→</span> Better teacher-support structures</li>
+               </ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="max-w-5xl mx-auto space-y-8 my-20">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Who We Work With</h2>
+        <div class="bg-white p-8 rounded-[20px] shadow-sm border border-brand-border">
+           <p class="text-lg text-gray-700 mb-6 text-center max-w-3xl mx-auto">School partnership services are suitable for educational institutions locally and internationally.</p>
+
+           <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Preschools and early-years centres</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Primary and secondary schools</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Mainstream and inclusive schools</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Special education schools</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">International schools</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">School counselling departments</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Learning-support departments</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Educational organisations</span>
+              </div>
+              <div class="flex items-start">
+                 <svg class="w-5 h-5 text-brand-gold mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                 <span class="text-gray-700 font-medium">Teacher-training institutions</span>
+              </div>
+           </div>
+
+           <p class="mt-8 text-sm text-gray-500 italic text-center max-w-2xl mx-auto">Services may be provided to schools in Pakistan and internationally, subject to professional, ethical, and location-based service boundaries.</p>
+        </div>
+      </section>
+
+      <section class="bg-white p-8 md:p-12 rounded-[24px] shadow-sm border border-brand-border max-w-4xl mx-auto mt-24">
+>>>>>>> REPLACEEOF
