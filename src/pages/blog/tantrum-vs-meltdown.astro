@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
@@ -22,10 +21,10 @@ import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 import heroImage from '../../assets/blog/tantrum-vs-meltdown-what-is-the-difference.webp';
 
-const title = "Tantrum vs Meltdown: What is the Difference?";
-const description = "Understand the critical difference between a behavioural tantrum and a sensory meltdown, and learn how to respond effectively to each.";
-const currentUrl = "/blog/tantrum-vs-meltdown";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const title = "Tantrum vs Meltdown: Key Differences & Practical Response Guide";
+const description = "Understand the crucial differences between a behavioural tantrum and a sensory meltdown. Compare triggers, signs, comparison chart, and de-escalation strategies.";
+const currentUrl = "/blog/tantrum-vs-meltdown/";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/tantrum-vs-meltdown/";
 
 const keywords = ["tantrum vs meltdown", "sensory meltdown autism", "toddler tantrums", "emotional regulation", "parenting challenging behaviour"];
 
@@ -33,7 +32,7 @@ const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
   { text: "What is a Tantrum?", slug: "what-is-a-tantrum", level: 2 },
   { text: "What is a Meltdown?", slug: "what-is-a-meltdown", level: 2 },
-  { text: "How to Tell the Difference", slug: "how-to-tell", level: 2 },
+  { text: "How to Tell the Difference (Comparison Table)", slug: "how-to-tell", level: 2 },
   { text: "How to Respond to a Tantrum", slug: "respond-tantrum", level: 2 },
   { text: "How to Respond to a Meltdown", slug: "respond-meltdown", level: 2 },
   { text: "When to Seek Professional Guidance", slug: "when-to-seek-guidance", level: 2 }
@@ -109,18 +108,14 @@ const schema = [
 ];
 ---
 
-<Layout title={`${title} | Rabbia Psychologist`} description={description}>
-  <SEO
-    title={title}
-    description={description}
-    keywords={keywords}
-    schema={schema}
-    canonical={canonicalURL}
-    ogTitle={title}
-    ogDescription={description}
-    ogImage="/images/blog/tantrum-vs-meltdown-hero.jpg"
-    type="article"
-  />
+<Layout
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  schema={schema}
+  keywords={keywords}
+  type="article"
+>
 
   <ProgressBar />
 
@@ -183,7 +178,54 @@ const schema = [
             Think of a tantrum like driving a car and deliberately honking the horn to get someone to move. Think of a meltdown like the car's engine overheating and smoking—the driver has lost control of the vehicle.
           </ExpertTip>
 
-          <h2 id="how-to-tell">How to Tell the Difference</h2>
+          
+          <h2 id="how-to-tell">How to Tell the Difference (Comparison Table)</h2>
+          <p>In the heat of the moment, distinguishing a tantrum from a sensory meltdown is essential because giving discipline or ignoring during a meltdown can escalate trauma, while giving in during a tantrum reinforces the behavior.</p>
+
+          <div class="overflow-x-auto my-6 not-prose">
+            <table class="w-full text-left border-collapse border border-gray-200 bg-white rounded-lg shadow-sm text-sm md:text-base">
+              <thead>
+                <tr class="bg-brand-navy text-white">
+                  <th class="p-3 font-semibold border-b">Feature</th>
+                  <th class="p-3 font-semibold border-b">Behavioural Tantrum</th>
+                  <th class="p-3 font-semibold border-b">Sensory / Autistic Meltdown</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 text-gray-700">
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Primary Driver</td>
+                  <td class="p-3"><strong>Goal-driven:</strong> Wants a specific outcome, object, or boundary tested.</td>
+                  <td class="p-3"><strong>Overload-driven:</strong> Neurological fight-or-flight triggered by sensory or emotional exhaustion.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Cognitive Control</td>
+                  <td class="p-3">Child retains conscious awareness and negotiates or watches reactions.</td>
+                  <td class="p-3">Child has lost cognitive control; prefrontal cortex is offline.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Audience Awareness</td>
+                  <td class="p-3">Checks to see if parents/caregivers are watching or reacting.</td>
+                  <td class="p-3">Does not care who is present; occurs even when alone.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Resolution on Yielding</td>
+                  <td class="p-3">Stops quickly if the desired item or privilege is granted.</td>
+                  <td class="p-3">Does not stop; giving items may increase agitation due to overload.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Safety Concerns</td>
+                  <td class="p-3">Typically protects self from injury when throwing self on floor.</td>
+                  <td class="p-3">May inadvertently self-injure, bolt, or thrash without safety awareness.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Aftermath</td>
+                  <td class="p-3">Recovers rapidly once the incident concludes and moves on.</td>
+                  <td class="p-3">Intense fatigue, shame, confusion, and deep physical exhaustion.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <p>In the heat of the moment, look for these clues:</p>
 
           <ul>

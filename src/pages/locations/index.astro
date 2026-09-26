@@ -3,7 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import BookingCTA from '../../components/BookingCTA.astro';
 import Schema from '../../components/seo/Schema.astro';
-import SEO from '../../components/seo/SEO.astro';
 import InternationalDisclaimerBanner from '../../components/InternationalDisclaimerBanner.astro';
 
 import { getFeaturedLocationsByGroup, type PublicCityProjection } from '../../data/locations/locationHelpers';
@@ -73,8 +72,7 @@ const regions = [
 const featuredCities = getFeaturedLocationsByGroup('globalCities', 16);
 ---
 
-<Layout title={title} description={description} canonicalUrl={canonicalUrl}>
-  <SEO slot="head" title={title} description={description} canonicalUrl={canonicalUrl} />
+<Layout title={title} description={description} canonicalURL={canonicalUrl}>
   <Schema slot="head" schema={breadcrumbSchema} />
   <Schema slot="head" schema={collectionSchema} />
 

@@ -15,9 +15,11 @@ interface Props {
   type?: string;
   image?: string;
   noindex?: boolean;
+  schema?: any;
+  keywords?: string;
 }
 
-const { title, description, canonicalURL, type, image, noindex } = Astro.props;
+const { title, description, canonicalURL, type, image, noindex, schema, keywords } = Astro.props;
 ---
 
 <!doctype html>
@@ -32,6 +34,8 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
       type={type}
       image={image}
       noindex={noindex}
+      schema={schema}
+      keywords={keywords}
     />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -52,8 +56,11 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
     </script>
   </head>
   <body class="bg-brand-cream text-brand-navy font-sans antialiased flex flex-col min-h-screen">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-navy focus:text-white focus:rounded-md">
+      Skip to main content
+    </a>
     <Header />
-    <main class="flex-grow pb-24 md:pb-0">
+    <main id="main-content" class="flex-grow pb-24 md:pb-0">
       <slot />
     </main>
     <Footer />
@@ -76,33 +83,52 @@ const { title, description, canonicalURL, type, image, noindex } = Astro.props;
     <!--End of Tawk.to Script-->
 
     <!-- Analytics Tracking Script -->
-    <script>
+    <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-        // Track Sale Banner Clicks
+        // Track Sale Banner Impressions and Clicks
         const promoBanner = document.getElementById('promo-banner');
         if (promoBanner) {
-          // Log impression
-          console.log('[Analytics] countdown impressions');
+          if (typeof gtag === 'function') {
+            gtag('event', 'promotion_impression', {
+              promotion_id: 'promo_banner',
+              promotion_name: 'Parent Consultation Promo'
+            });
+          }
 
           promoBanner.addEventListener('click', (e) => {
-            const target = e.target as HTMLElement;
-            // Ignore close button clicks for the banner click metric
-            if (!target.closest('#close-promo')) {
-               console.log('[Analytics] sale banner clicks');
+            const target = e.target;
+            if (!target.closest('#close-promo') && typeof gtag === 'function') {
+              gtag('event', 'select_promotion', {
+                promotion_id: 'promo_banner',
+                promotion_name: 'Parent Consultation Promo'
+              });
             }
           });
         }
 
         // Track Booking Button Clicks
-        const bookingButtons = document.querySelectorAll('a[href="/book"], a[href^="https://calendar.app.google"]');
+        const bookingButtons = document.querySelectorAll('a[href^="/book"], a[href^="https://calendar.app.google"]');
         bookingButtons.forEach(btn => {
           btn.addEventListener('click', () => {
-             console.log('[Analytics] booking button clicks');
+            if (typeof gtag === 'function') {
+              gtag('event', 'begin_checkout', {
+                event_category: 'booking',
+                event_label: btn.getAttribute('href') || 'booking_button'
+              });
+            }
+          });
+        });
 
-             // Pseudo conversion logic for this specific button that leads to booking
-             if (btn.classList.contains('track-booking-btn') || btn.getAttribute('href')?.startsWith('https://calendar.app.google')) {
-               console.log('[Analytics] conversion rate');
-             }
+        // Track WhatsApp Clicks
+        const whatsappButtons = document.querySelectorAll('a[href^="https://wa.me"]');
+        whatsappButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                event_category: 'contact',
+                event_label: 'whatsapp_click'
+              });
+            }
           });
         });
       });

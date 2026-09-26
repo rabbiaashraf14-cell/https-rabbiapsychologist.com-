@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
@@ -109,18 +108,14 @@ const schema = [
 ];
 ---
 
-<Layout title={`${title} | Rabbia Psychologist`} description={description}>
-  <SEO
-    title={title}
-    description={description}
-    keywords={keywords}
-    schema={schema}
-    canonical={canonicalURL}
-    ogTitle={title}
-    ogDescription={description}
-    ogImage="/images/blog/psychological-report-hero.jpg"
-    type="article"
-  />
+<Layout
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  schema={schema}
+  keywords={keywords}
+  type="article"
+>
 
   <ProgressBar />
 

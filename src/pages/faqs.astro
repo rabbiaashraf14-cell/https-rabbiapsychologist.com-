@@ -1,16 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'Resources', href: '/resources' },
-  { name: 'FAQs', href: '/faqs' }
+  { name: 'Resources', href: '/resources/' },
+  { name: 'FAQs', href: '/faqs/' }
 ];
 
 const categories = [
@@ -250,21 +245,32 @@ const categories = [
   }
 ];
 
-const schemaFaqs = categories.flatMap(cat => cat.faqs).slice(0, 20).map(faq => ({
-  "@type": "Question",
-  "name": faq.question,
-  "acceptedAnswer": {
-    "@type": "Answer",
-    "text": faq.answer.replace(/<[^>]*>?/gm, '') // Strip HTML for schema
-  }
-}));
+const schemaFaqs = categories.flatMap(category =>
+  category.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer.replace(/<[^>]*>?/gm, '')
+    }
+  }))
+);
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": schemaFaqs
+};
 ---
 
-<Layout title="FAQs | ADHD, Autism, Parent Guidance & Child Development Support">
-  <SEO
-    title="FAQs | ADHD, Autism, Parent Guidance & Child Development Support"
-    description="Answers for parents about ADHD, autism, behaviour, meltdowns, school concerns, report review, online guidance, international sessions, booking, and service boundaries."
-  />
+<Layout 
+  title="Frequently Asked Questions | Child Psychology & Parent Support"
+  description="Answers for parents about ADHD, autism, behaviour, meltdowns, school concerns, report review, online guidance, international sessions, booking, and service boundaries."
+  canonicalURL="https://www.rabbiapsychologist.com/faqs/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
     <div class="max-w-4xl mx-auto mt-8">
@@ -292,11 +298,4 @@ const schemaFaqs = categories.flatMap(cat => cat.faqs).slice(0, 20).map(faq => (
       </div>
     </div>
   </div>
-  <StickyMobileBookingCTA />
-
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": schemaFaqs
-})} />
 </Layout>

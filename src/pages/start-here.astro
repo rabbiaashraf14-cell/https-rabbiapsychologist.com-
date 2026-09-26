@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
 const title = "Start Here: Find the Right Child Development Support | Rabbia Psychologist";
 const description = "Help overwhelmed parents choose the right service or resource for ADHD, autism, behaviour, learning difficulties, or report review.";
-const canonicalURL = "https://www.rabbiapsychologist.com/start-here";
+const canonicalURL = "https://www.rabbiapsychologist.com/start-here/";
 
 const breadcrumbs = [
   { name: 'Start Here', href: '/start-here' }
@@ -19,9 +19,8 @@ const pageSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
   </Fragment>
 

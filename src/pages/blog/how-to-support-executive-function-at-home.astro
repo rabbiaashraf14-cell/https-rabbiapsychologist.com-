@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
@@ -22,10 +21,10 @@ import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 import heroImage from '../../assets/blog/how-to-support-executive-function-at-home.webp';
 
-const title = "Executive Function Difficulties in Children: How to Support at Home";
-const description = "Learn what executive function means, how it relates to ADHD, and practical home strategies for planning, working memory, and time management.";
-const currentUrl = "/blog/how-to-support-executive-function-at-home";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const title = "Executive Function Deficits in Children: Home & Daily Living Support Guide";
+const description = "Practical residential and home support strategies for children with executive functioning deficits and ADHD. Build routines, working memory, and focus.";
+const currentUrl = "/blog/how-to-support-executive-function-at-home/";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/how-to-support-executive-function-at-home/";
 
 const keywords = ["executive function children", "ADHD executive dysfunction", "child working memory", "time management children", "planning skills for kids"];
 
@@ -35,6 +34,7 @@ const headings = [
   { text: "Core Areas of Executive Function", slug: "core-areas", level: 2 },
   { text: "The Connection with ADHD", slug: "connection-with-adhd", level: 2 },
   { text: "Practical Home Strategies", slug: "home-strategies", level: 2 },
+  { text: "Home & Residential Support for Deficits", slug: "home-environmental-support", level: 2 },
   { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
 ];
 
@@ -108,18 +108,14 @@ const schema = [
 ];
 ---
 
-<Layout title={`${title} | Rabbia Psychologist`} description={description}>
-  <SEO
-    title={title}
-    description={description}
-    keywords={keywords}
-    schema={schema}
-    canonical={canonicalURL}
-    ogTitle={title}
-    ogDescription={description}
-    ogImage="/images/blog/executive-function-hero.jpg"
-    type="article"
-  />
+<Layout
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  schema={schema}
+  keywords={keywords}
+  type="article"
+>
 
   <ProgressBar />
 
@@ -210,7 +206,31 @@ const schema = [
             ]}
           />
 
+          
+          <h2 id="home-environmental-support">Home & Residential Support for Executive Function Deficits</h2>
+          <p>When a child struggles with executive functioning deficits at home, telling them to 'try harder' or 'just remember' is ineffective because the neural pathways for self-monitoring are still developing. Instead, parents can externalize executive control into the physical environment:</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
+            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+              <h4 class="font-bold text-brand-navy mb-2">Visual Launchpad Stations</h4>
+              <p class="text-sm text-gray-700">Designate an exact entryway basket or shelf for school bags, shoes, and forms. Remove the need to remember where daily items belong.</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+              <h4 class="font-bold text-brand-navy mb-2">Externalized Working Memory</h4>
+              <p class="text-sm text-gray-700">Post step-by-step visual checklists on bathroom mirrors and bedroom doors instead of giving verbal multi-step instructions.</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+              <h4 class="font-bold text-brand-navy mb-2">Body Doubling for Homework</h4>
+              <p class="text-sm text-gray-700">Sit quietly nearby doing paperwork while your child starts difficult tasks. Your calm, focused presence provides external accountability and reduces task paralysis.</p>
+            </div>
+            <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
+              <h4 class="font-bold text-brand-navy mb-2">Analog & Visual Timers</h4>
+              <p class="text-sm text-gray-700">Use a visual countdown timer (like a Time Timer) that physically shows remaining time disappearing, helping 'time-blind' children transition smoothly.</p>
+            </div>
+          </div>
+
           <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+
           <p>If executive function difficulties are causing daily stress, leading to homework battles, or impacting the child's self-esteem, it may be time to seek a formal assessment or parent guidance.</p>
           <p>A clinical psychologist can help identify specific areas of weakness and provide tailored strategies for home and school.</p>
 

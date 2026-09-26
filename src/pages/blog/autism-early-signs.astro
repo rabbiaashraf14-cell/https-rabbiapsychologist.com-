@@ -20,7 +20,7 @@ import heroImage from '../../assets/blog/autism-early-signs-parents-should-notic
 
 const title = "Autism Early Signs Parents Should Notice";
 const description = "Learn early autism signs in children, including communication, play, sensory responses, and when parents should seek developmental guidance.";
-const canonicalURL = "https://www.rabbiapsychologist.com/blog/autism-early-signs";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/autism-early-signs/";
 const lastUpdated = "2024-03-25";
 
 const breadcrumbs = [
@@ -103,9 +103,8 @@ const faqs = [
 
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

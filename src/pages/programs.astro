@@ -1,24 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ProgramCard from '../components/ProgramCard.astro';
 import BookingCTA from '../components/BookingCTA.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'Programs', href: '/programs' }
+  { name: 'Programs', href: '/programs/' }
 ];
 ---
 
-<Layout title="Programs & Packages">
-  <SEO
-    title="Parent Training Programs & Workshops"
-    description="Structured parent guidance programs for ASD, ADHD executive function, and comprehensive behavioral training packages."
-  />
+<Layout title="Parent Training Programs & Workshops" description="Structured parent guidance programs for ASD, ADHD executive function, and comprehensive behavioral training packages.">
 
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -69,6 +60,4 @@ const breadcrumbs = [
       description="Book an initial consultation to discuss your needs and we'll recommend the best path forward."
     />
   </div>
-
-  <StickyMobileBookingCTA />
 </Layout>

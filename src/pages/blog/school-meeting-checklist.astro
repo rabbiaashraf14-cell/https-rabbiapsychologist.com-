@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SEO from '../../components/seo/SEO.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import ProgressBar from '../../components/blog/ProgressBar.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
@@ -22,10 +21,10 @@ import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 import heroImage from '../../assets/blog/school-meeting-checklist.webp';
 
-const title = "School Meeting Checklist: How to Prepare for an IEP or Parent-Teacher Conference";
-const description = "A practical checklist for parents to confidently prepare for school meetings, IEP discussions, and advocating for their child's developmental needs.";
-const currentUrl = "/blog/school-meeting-checklist";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const title = "IEP & School Meeting Checklist: Step-by-Step Guide for Parents and Teachers";
+const description = "A complete IEP and school meeting checklist for parents and teachers. Plan accommodations, document classroom observations, and advocate for student success.";
+const currentUrl = "/blog/school-meeting-checklist/";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/school-meeting-checklist/";
 
 const keywords = ["school meeting checklist", "IEP meeting prep", "parent teacher conference", "advocating for child in school", "school accommodations"];
 
@@ -35,6 +34,7 @@ const headings = [
   { text: "During the Meeting", slug: "during-the-meeting", level: 2 },
   { text: "Questions to Ask", slug: "questions-to-ask", level: 2 },
   { text: "After the Meeting", slug: "after-the-meeting", level: 2 },
+  { text: "IEP Checklist for Teachers & Support Teams", slug: "iep-checklist-for-teachers", level: 2 },
   { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
 ];
 
@@ -108,18 +108,14 @@ const schema = [
 ];
 ---
 
-<Layout title={`${title} | Rabbia Psychologist`} description={description}>
-  <SEO
-    title={title}
-    description={description}
-    keywords={keywords}
-    schema={schema}
-    canonical={canonicalURL}
-    ogTitle={title}
-    ogDescription={description}
-    ogImage="/images/blog/school-meeting-hero.jpg"
-    type="article"
-  />
+<Layout
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+  schema={schema}
+  keywords={keywords}
+  type="article"
+>
 
   <ProgressBar />
 
@@ -210,7 +206,21 @@ const schema = [
           <p>The meeting is only the first step. The follow-up is where change happens.</p>
           <p>Send a brief, polite email to the teacher summarizing what was agreed upon. For example: "Thank you for meeting today. To confirm our plan, we agreed that Sarah will be allowed to use noise-canceling headphones during independent reading, and I will check her planner every night."</p>
 
+          
+          <h2 id="iep-checklist-for-teachers">IEP Meeting Checklist for Teachers & Support Teams</h2>
+          <p>Productive school meetings require collaborative preparation from classroom educators and special education coordinators. Teachers can use this preparation checklist prior to entering the conference:</p>
+
+          <ActionChecklist
+            items={[
+              "Objective Classroom Observations: Bring concrete work samples, time-stamped incident logs, and data on when difficulties occur (e.g. unstructured times, reading circles).",
+              "Successful Scaffolding Strategies: Document what strategies have already proven helpful (e.g., visual cue cards, seating near the teacher, sensory breaks).",
+              "Specific Environmental Accommodations: Formulate actionable proposals such as chunked assignments, noise-dampening headphones, or alternative exam spaces.",
+              "Clear Progress Metrics: Outline how accommodation success will be measured over 6-week or 12-week review cycles."
+            ]}
+          />
+
           <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
+
           <p>If you feel the school is not understanding your child's needs, or if the current plan is not working, it may be time for a formal psychological assessment or a school consultation service.</p>
           <p>A clinical psychologist can review the school reports, assess the child, and provide a clinical report with legally and educationally sound recommendations for accommodations.</p>
 

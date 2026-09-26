@@ -19,7 +19,7 @@ import heroImage from '../../assets/blog/parent-guidance-for-behaviour-concerns.
 
 const title = "Parent Guidance for Behaviour Concerns: Why Changing Your Response Changes Theirs";
 const description = "When traditional discipline fails, parent guidance helps. Learn how understanding the 'why' behind behaviour and changing your response can transform your home.";
-const canonicalURL = "https://www.rabbiapsychologist.com/blog/parent-guidance-for-behaviour-concerns";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/parent-guidance-for-behaviour-concerns/";
 const lastUpdated = "2024-03-25";
 
 const breadcrumbs = [
@@ -85,9 +85,8 @@ const headings = [
 ];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

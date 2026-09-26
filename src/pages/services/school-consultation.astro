@@ -5,7 +5,7 @@ import PriceDisplay from '../../components/global/PriceDisplay.astro';
 
 const title = "School Support, IEP Guidance, and Parent Meeting Preparation | Rabbia Psychologist";
 const description = "Guidance for school concerns, teacher meetings, IEP confusion, and parent-school communication plans. Get practical help for your child.";
-const canonicalURL = "https://www.rabbiapsychologist.com/services/school-consultation";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/school-consultation/";
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
@@ -78,9 +78,8 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

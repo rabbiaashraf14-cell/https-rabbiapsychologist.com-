@@ -1,22 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'Privacy Policy', href: '/privacy-policy' }
+  { name: 'Privacy Policy', href: '/privacy-policy/' }
 ];
 ---
 
-<Layout title="Privacy Policy">
-  <SEO
-    title="Privacy Policy | Rabbia Ashraf"
-    description="Privacy policy and data protection information for website users and clients."
-  />
+<Layout title="Privacy Policy | Rabbia Ashraf" description="Privacy policy and data protection information for website users and clients.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
     <div class="max-w-4xl mx-auto mt-8">
@@ -100,5 +91,4 @@ const breadcrumbs = [
       </div>
     </div>
   </div>
-  <StickyMobileBookingCTA />
 </Layout>

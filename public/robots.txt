@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /client-records/
+Disallow: /api/
+Disallow: /drafts/
+Disallow: /thank-you-private/
 
 User-agent: Googlebot
 Allow: /
@@ -45,13 +52,5 @@ Allow: /
 
 User-agent: CCBot
 Allow: /
-
-Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /private/
-Disallow: /client-records/
-Disallow: /api/
-Disallow: /drafts/
-Disallow: /thank-you-private/
 
 Sitemap: https://www.rabbiapsychologist.com/sitemap-index.xml

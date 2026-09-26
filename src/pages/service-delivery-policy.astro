@@ -1,19 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'Service Delivery Policy', href: '/service-delivery-policy' }
+  { name: 'Service Delivery Policy', href: '/service-delivery-policy/' }
 ];
 ---
 
-<Layout title="Service Delivery Policy | Rabbia Psychologist">
-  <SEO
-    title="Service Delivery Policy | Rabbia Psychologist"
-    description="Read our policy regarding how our consultations, assessments, and related services are delivered."
-  />
+<Layout title="Service Delivery Policy | Rabbia Psychologist" description="Read our policy regarding how our consultations, assessments, and related services are delivered.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
     <div class="max-w-4xl mx-auto mt-8">
@@ -37,5 +31,4 @@ const breadcrumbs = [
       </div>
     </div>
   </div>
-  <StickyMobileBookingCTA />
 </Layout>

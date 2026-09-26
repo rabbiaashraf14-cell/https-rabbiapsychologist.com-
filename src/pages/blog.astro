@@ -11,7 +11,7 @@ const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/bl
 
 const title = "Child Psychology, ADHD, Autism & Parent Guidance Blog | Rabbia Psychologist";
 const description = "Practical, parent-friendly articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.";
-const canonicalURL = "https://www.rabbiapsychologist.com/blog";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/";
 
 const breadcrumbs = [
   { name: 'Blog', href: '/blog' }
@@ -56,9 +56,8 @@ const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() -
 
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
   </Fragment>
 

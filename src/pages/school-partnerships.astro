@@ -555,6 +555,14 @@ const faqSchema = {
              return;
           }
 
+          // Check if key is configured
+          if (!object.access_key) {
+            resultDiv.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'border-red-200');
+            resultDiv.classList.add('bg-blue-50', 'text-brand-navy', 'border', 'border-blue-200');
+            resultDiv.innerHTML = "To connect immediately for school partnerships, please reach out via WhatsApp at <a href='https://wa.me/923364114002' class='underline font-bold'>+92 336 4114002</a> or by email at <a href='mailto:psychologistrabbia@gmail.com' class='underline font-bold'>psychologistrabbia@gmail.com</a>.";
+            return;
+          }
+
           resultDiv.classList.add('hidden');
           submitBtn.disabled = true;
           submitBtn.classList.add('opacity-75', 'cursor-not-allowed');

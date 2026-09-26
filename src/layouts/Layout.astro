@@ -9,5 +9,6 @@ const {
 ---
 
 <BaseLayout title={title} description={description} {...rest}>
+  <slot name="head" slot="head" />
   <slot />
 </BaseLayout>

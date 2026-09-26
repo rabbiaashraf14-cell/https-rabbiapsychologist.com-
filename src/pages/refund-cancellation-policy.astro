@@ -1,19 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'Refund and Cancellation Policy', href: '/refund-cancellation-policy' }
+  { name: 'Refund and Cancellation Policy', href: '/refund-cancellation-policy/' }
 ];
 ---
 
-<Layout title="Refund and Cancellation Policy | Rabbia Psychologist">
-  <SEO
-    title="Refund and Cancellation Policy | Rabbia Psychologist"
-    description="Read our policies regarding refunds, cancellations, and rescheduling for consultations and services."
-  />
+<Layout title="Refund and Cancellation Policy | Rabbia Psychologist" description="Read our policies regarding refunds, cancellations, and rescheduling for consultations and services.">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
     <div class="max-w-4xl mx-auto mt-8">
@@ -34,5 +28,4 @@ const breadcrumbs = [
       </div>
     </div>
   </div>
-  <StickyMobileBookingCTA />
 </Layout>

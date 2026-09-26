@@ -1,6 +1,5 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
-import SEO from '../../../components/seo/SEO.astro';
 import Schema from '../../../components/seo/Schema.astro';
 
 import CityBreadcrumbs from '../../../components/locations/city/CityBreadcrumbs.astro';
@@ -46,12 +45,11 @@ if (breadcrumbSchema) schemas.push(breadcrumbSchema);
 
 ---
 
-<Layout>
-  <SEO
-    title={seoMetadata.seoTitle}
-    description={seoMetadata.metaDescription}
-    canonical={seoMetadata.canonicalUrl}
-  />
+<Layout
+  title={seoMetadata.seoTitle}
+  description={seoMetadata.metaDescription}
+  canonicalURL={seoMetadata.canonicalUrl}
+>
 
   <meta slot="head" name="robots" content={seoMetadata.robots} />
 

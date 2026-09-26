@@ -3,23 +3,28 @@
 <script is:inline>
   (function() {
     try {
-      // Remove any previously saved manual preference to enforce residence-based pricing
-      localStorage.removeItem('rabbia_pricing_region');
-      sessionStorage.removeItem('rabbia_pricing_region_session');
-
       var setRegion = function(region) {
         document.documentElement.setAttribute('data-pricing-region', region);
       };
 
-      // Set fallback while loading
-      document.documentElement.setAttribute('data-pricing-region', 'international');
+      // Check for user-selected preference first to prevent layout shift
+      var saved = localStorage.getItem('rabbia_pricing_region') || sessionStorage.getItem('rabbia_pricing_region_session');
+      if (saved === 'pakistan' || saved === 'international') {
+        setRegion(saved);
+        return;
+      }
+
+      // Default fallback while determining
+      setRegion('international');
 
       fetch('https://1.1.1.1/cdn-cgi/trace')
         .then(function(res) { return res.text(); })
         .then(function(data) {
           var match = data.match(/loc=([A-Z]{2})/);
           if (match && match[1]) {
-            setRegion(match[1] === 'PK' ? 'pakistan' : 'international');
+            var detected = match[1] === 'PK' ? 'pakistan' : 'international';
+            setRegion(detected);
+            sessionStorage.setItem('rabbia_pricing_region_session', detected);
           } else {
             throw new Error('No loc found');
           }
@@ -28,10 +33,12 @@
           fetch('https://get.geojs.io/v1/ip/country')
             .then(function(res) { return res.text(); })
             .then(function(country) {
-              setRegion(country.trim() === 'PK' ? 'pakistan' : 'international');
+              var detected = country.trim() === 'PK' ? 'pakistan' : 'international';
+              setRegion(detected);
+              sessionStorage.setItem('rabbia_pricing_region_session', detected);
             })
             .catch(function() {
-              setRegion('international'); // fallback
+              setRegion('international');
             });
         });
     } catch (e) {

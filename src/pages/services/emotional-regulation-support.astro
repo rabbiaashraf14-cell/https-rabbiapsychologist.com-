@@ -5,7 +5,7 @@ import PriceDisplay from '../../components/global/PriceDisplay.astro';
 
 const title = "Emotional Regulation Support for Children and Parents | Rabbia Psychologist";
 const description = "Help your child manage big feelings, frustration, and meltdowns. Learn practical emotional regulation and co-regulation strategies.";
-const canonicalURL = "https://www.rabbiapsychologist.com/services/emotional-regulation-support";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/emotional-regulation-support/";
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
@@ -78,9 +78,8 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

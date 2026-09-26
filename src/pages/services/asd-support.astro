@@ -5,7 +5,7 @@ import PriceDisplay from '../../components/global/PriceDisplay.astro';
 
 const title = "Autism Parent Guidance & Developmental Support Planning | Rabbia Psychologist";
 const description = "Online parent guidance for autism, communication strategies, and behavioral support planning. Help your child's development at home and school.";
-const canonicalURL = "https://www.rabbiapsychologist.com/services/asd-support";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/asd-support/";
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
@@ -78,9 +78,8 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
@@ -194,10 +193,31 @@ const faqSchema = {
         </ul>
       </section>
 
+      <!-- Evidence-Based Foundation -->
+      <section class="bg-blue-50/60 border border-blue-100 rounded-xl p-6 my-8">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-xs font-bold text-brand-navy uppercase tracking-wider bg-white px-2.5 py-1 rounded border border-blue-200">Clinical Research & Evidence</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-2">Our Clinical Approach is Grounded in Scientific Literature</h3>
+        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+          Families frequently hear about various treatments online. Our guidance is strictly anchored in gold-standard peer-reviewed research:
+        </p>
+        <ul class="space-y-2 text-xs md:text-sm text-gray-700 mb-4 list-disc pl-5">
+          <li><strong>Medication in Autism:</strong> FDA-approved medications (Risperidone, Aripiprazole) target severe co-occurring irritability and aggression, not the core communication traits of autism.</li>
+          <li><strong>Stem Cell Therapy Realities:</strong> The Duke University double-blind Phase II RCT (Dawson et al., 2020) and international meta-analyses confirm that cord blood stem cells have not demonstrated significant efficacy over placebo.</li>
+          <li><strong>Modern NDBIs & ABA:</strong> We advocate for naturalistic, assent-based developmental interventions (such as ESDM) that prioritize communication, emotional regulation, and joyful connection over rigid compliance.</li>
+        </ul>
+        <a href="/knowledge-hub" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy hover:text-blue-700 underline">
+          <span>Read the full research papers & clinical trials in our Knowledge Hub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </section>
+
       <!-- Related blog articles -->
       <section>
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles & Research</h3>
         <ul class="list-disc pl-5">
+          <li><a href="/knowledge-hub" class="text-brand-trust font-bold hover:underline">Autism Scientific Research & Clinical Trials (Knowledge Hub)</a></li>
           <li><a href="/blog/autism-early-signs" class="text-brand-trust hover:underline">Autism Early Signs</a></li>
           <li><a href="/blog/speech-delay-vs-autism" class="text-brand-trust hover:underline">Speech Delay vs Autism</a></li>
           <li><a href="/blog/parent-guidance-after-an-autism-diagnosis" class="text-brand-trust hover:underline">Parent Guidance After an Autism Diagnosis</a></li>

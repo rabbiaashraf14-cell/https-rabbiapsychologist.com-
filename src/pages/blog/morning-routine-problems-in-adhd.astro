@@ -17,9 +17,9 @@ import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
 import heroImage from '../../assets/blog/morning-routine-problems-in-adhd.webp';
 
-const title = "Morning Routine Problems in ADHD: Why It's So Hard and What to Do";
-const description = "Mornings are often the hardest part of the day for families with ADHD. Understand the executive function struggles behind morning chaos and learn practical parent strategies.";
-const canonicalURL = "https://www.rabbiapsychologist.com/blog/morning-routine-problems-in-adhd";
+const title = "Morning Routine Problems in ADHD: Why Mornings Are Chaos & How to Fix Them";
+const description = "Understand the neurological causes of morning chaos in ADHD—sleep inertia, delayed circadian rhythm, and executive dysfunction—plus practical parent solutions.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/morning-routine-problems-in-adhd/";
 const lastUpdated = "2024-03-25";
 
 const breadcrumbs = [
@@ -85,9 +85,8 @@ const headings = [
 ];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

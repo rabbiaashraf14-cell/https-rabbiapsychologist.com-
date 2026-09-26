@@ -1,24 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'Contact', href: '/contact' }
+  { name: 'Contact', href: '/contact/' }
 ];
 ---
 
-<Layout title="Contact">
-  <SEO
-    title="Contact Rabbia Ashraf | Child Psychology Consultation"
-    description="Get in touch for inquiries about online parent consultation, autism support, ADHD guidance, or local psychological assessments."
-  />
-
-
+<Layout 
+  title="Contact Rabbia Ashraf | Child Psychology Consultation"
+  description="Get in touch for inquiries about online parent consultation, autism support, ADHD guidance, or local psychological assessments."
+>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
 
@@ -198,8 +190,6 @@ const breadcrumbs = [
     </div>
   </div>
 
-  <StickyMobileBookingCTA />
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('contact-form') as HTMLFormElement;
@@ -221,6 +211,14 @@ const breadcrumbs = [
           // Honeypot check
           if (object.botcheck) {
              return; // Silent fail for bots
+          }
+
+          // Check if key is configured
+          if (!object.access_key) {
+            resultDiv.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'border-red-200');
+            resultDiv.classList.add('bg-blue-50', 'text-brand-navy', 'border', 'border-blue-200');
+            resultDiv.innerHTML = "To connect immediately, please contact us on WhatsApp at <a href='https://wa.me/923364114002' class='underline font-bold'>+92 336 4114002</a> or by email at <a href='mailto:psychologistrabbia@gmail.com' class='underline font-bold'>psychologistrabbia@gmail.com</a>.";
+            return;
           }
 
           resultDiv.classList.add('hidden');

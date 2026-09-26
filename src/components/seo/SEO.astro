@@ -16,7 +16,7 @@ interface Props {
 const {
   title,
   description,
-  canonical = new URL(Astro.url.pathname, Astro.site).href,
+  canonical,
   ogTitle = title,
   ogDescription = description,
   ogImage = "/og-brand-card.png",
@@ -28,7 +28,21 @@ const {
 } = Astro.props;
 
 const siteName = "Rabbia Psychologist Child Development Services";
-const fullTitle = `${title} | ${siteName}`;
+const shortSiteName = "Rabbia Psychologist";
+const fullTitle = title.includes("Rabbia")
+  ? title
+  : `${title} | ${shortSiteName}`;
+
+let canonicalNormalized = canonical;
+if (!canonicalNormalized) {
+  let pathname = Astro.url.pathname;
+  if (!pathname.endsWith('/')) {
+    pathname = `${pathname}/`;
+  }
+  canonicalNormalized = new URL(pathname, Astro.site || 'https://www.rabbiapsychologist.com').href;
+} else if (!canonicalNormalized.endsWith('/') && !canonicalNormalized.split('/').pop()?.includes('.')) {
+  canonicalNormalized = `${canonicalNormalized}/`;
+}
 ---
 
 <title>{fullTitle}</title>
@@ -36,11 +50,11 @@ const fullTitle = `${title} | ${siteName}`;
 {keywords && <meta name="keywords" content={keywords} />}
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 {!noindex && <meta name="robots" content="index, follow" />}
-<link rel="canonical" href={canonical} />
+<link rel="canonical" href={canonicalNormalized} />
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />
-<meta property="og:url" content={canonical} />
+<meta property="og:url" content={canonicalNormalized} />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={ogDescription} />
 <meta property="og:image" content={new URL(ogImage || image, Astro.site || 'https://www.rabbiapsychologist.com').href} />
@@ -48,7 +62,7 @@ const fullTitle = `${title} | ${siteName}`;
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={canonical} />
+<meta name="twitter:url" content={canonicalNormalized} />
 <meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={ogDescription} />
 <meta name="twitter:image" content={new URL(ogImage || image, Astro.site || 'https://www.rabbiapsychologist.com').href} />

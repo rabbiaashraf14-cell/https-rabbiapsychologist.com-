@@ -5,7 +5,7 @@ import PriceDisplay from '../components/global/PriceDisplay.astro';
 
 const title = "Psychological Report Review & Parent Next-Step Guidance | Rabbia Psychologist";
 const description = "Translate long clinical reports or a new diagnosis into actionable next steps for home and school. Understand your child's assessment results.";
-const canonicalURL = "https://www.rabbiapsychologist.com/report-review";
+const canonicalURL = "https://www.rabbiapsychologist.com/report-review/";
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
@@ -78,9 +78,8 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

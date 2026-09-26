@@ -5,7 +5,7 @@ import PriceDisplay from '../../components/global/PriceDisplay.astro';
 
 const title = "Child Behaviour Support and Parent Strategy Planning | Rabbia Psychologist";
 const description = "Understand challenging behavior, triggers, and meltdowns. Learn practical home strategies and replacement skills for your child.";
-const canonicalURL = "https://www.rabbiapsychologist.com/services/behaviour-planning";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/behaviour-planning/";
 
 const breadcrumbs = [
   { name: 'Services', href: '/services' },
@@ -78,9 +78,8 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalURL} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
@@ -190,10 +189,31 @@ const faqSchema = {
         </ul>
       </section>
 
+      <!-- Evidence-Based Foundation -->
+      <section class="bg-blue-50/60 border border-blue-100 rounded-xl p-6 my-8">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-xs font-bold text-brand-navy uppercase tracking-wider bg-white px-2.5 py-1 rounded border border-blue-200">Clinical Research & Evidence</span>
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-2">Behavioral Support Grounded in Clinical Science</h3>
+        <p class="text-sm text-gray-700 leading-relaxed mb-4">
+          Effective behavior plans are not based on punishment or rigid compliance. Clinical research validates proactive, skill-building strategies:
+        </p>
+        <ul class="space-y-2 text-xs md:text-sm text-gray-700 mb-4 list-disc pl-5">
+          <li><strong>Parent-Mediated Interventions:</strong> Extensive meta-analyses show that parent training in behavior management (PTBM) delivers sustainable reductions in family stress and increases child adaptive functioning.</li>
+          <li><strong>Sensory-Informed Antecedents:</strong> Addressing sensory distress and emotional dysregulation before behavioral demands occur dramatically reduces the incidence of meltdowns.</li>
+          <li><strong>Assent & Co-Regulation:</strong> Modern behavioral science emphasizes teaching functional communication and co-regulation over outdated compliance-driven methods.</li>
+        </ul>
+        <a href="/knowledge-hub" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy hover:text-blue-700 underline">
+          <span>Explore behavioral science & clinical trial evidence in our Knowledge Hub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </section>
+
       <!-- Related blog articles -->
       <section>
-        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles</h3>
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Related Articles & Research</h3>
         <ul class="list-disc pl-5">
+          <li><a href="/knowledge-hub" class="text-brand-trust font-bold hover:underline">Behavioral Science & ABA Literature (Knowledge Hub)</a></li>
           <li><a href="/blog/behaviour-is-communication" class="text-brand-trust hover:underline">Behaviour is Communication</a></li>
           <li><a href="/blog/tantrum-vs-meltdown" class="text-brand-trust hover:underline">Tantrum vs Meltdown</a></li>
           <li><a href="/blog/screen-time-and-emotional-regulation" class="text-brand-trust hover:underline">Screen Time and Emotional Regulation</a></li>

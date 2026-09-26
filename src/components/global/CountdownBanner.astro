@@ -5,7 +5,7 @@ import { isPromotionActive } from '../../utils/pricing';
 const active = isPromotionActive();
 ---
 {active && promotion.bannerEnabled && (
-  <div id="promo-banner" class="fixed bottom-4 left-4 z-50 bg-white border-2 border-brand-navy shadow-lg rounded-xl p-4 w-72 max-w-[calc(100vw-2rem)] transition-all duration-300">
+  <div id="promo-banner" class="fixed top-20 right-4 md:top-auto md:bottom-6 md:left-6 md:right-auto z-50 bg-white border-2 border-brand-navy shadow-xl rounded-xl p-4 w-72 max-w-[calc(100vw-2rem)] transition-all duration-300">
     <button id="close-promo" class="absolute top-2 right-2 text-gray-500 hover:text-brand-navy focus:outline-none">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
     </button>

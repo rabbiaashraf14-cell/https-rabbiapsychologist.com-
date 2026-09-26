@@ -1,31 +1,147 @@
 ---
+import type { ResearchItem } from '../data/researchPapers';
+
 interface Props {
-  title: string;
-  journal: string;
-  year: string;
+  item?: ResearchItem;
+  title?: string;
+  journal?: string;
+  year?: string;
   href?: string;
 }
 
-const { title, journal, year, href } = Astro.props;
+const { item, title: propTitle, journal: propJournal, year: propYear, href: propHref } = Astro.props;
+
+const title = item ? item.title : propTitle;
+const journal = item ? item.journalOrPlatform : propJournal;
+const year = item ? item.year : propYear;
+const href = item ? item.doiOrUrl : propHref;
+const type = item?.type;
+const categoryLabel = item?.categoryLabel;
+const authors = item?.authors;
+const parentTakeaway = item?.parentTakeaway;
+const clinicalTakeaway = item?.clinicalTakeaway;
+const tags = item?.tags || [];
+
+// Badge style colors based on study type
+const getTypeBadgeClass = (studyType?: string) => {
+  switch (studyType) {
+    case 'RCT':
+      return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+    case 'Meta-Analysis':
+    case 'Systematic Review':
+      return 'bg-purple-100 text-purple-800 border-purple-200';
+    case 'Clinical Guideline':
+      return 'bg-blue-100 text-blue-800 border-blue-200';
+    case 'Open Source Tool':
+      return 'bg-gray-900 text-white border-gray-700';
+    case 'Dataset':
+      return 'bg-amber-100 text-amber-800 border-amber-200';
+    case 'AI Model':
+      return 'bg-rose-100 text-rose-800 border-rose-200';
+    default:
+      return 'bg-gray-100 text-gray-800 border-gray-200';
+  }
+};
 ---
 
-<div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-  <div class="flex items-start justify-between">
-    <div>
-      <h3 class="text-lg font-bold text-brand-navy mb-2">{title}</h3>
-      <div class="flex flex-wrap items-center text-sm text-gray-600 gap-2 mb-3">
-        <span class="font-medium bg-gray-100 px-2 py-1 rounded">{journal}</span>
-        <span>•</span>
+<article class="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between" data-category={item?.category || 'general'}>
+  <div>
+    <!-- Top Metadata Header -->
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+      <div class="flex flex-wrap items-center gap-2">
+        {categoryLabel && (
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 text-brand-navy border border-blue-100">
+            {categoryLabel}
+          </span>
+        )}
+        {type && (
+          <span class={`text-xs font-bold px-2.5 py-1 rounded-full border ${getTypeBadgeClass(type)}`}>
+            {type}
+          </span>
+        )}
+      </div>
+      <div class="text-xs text-gray-500 font-medium">
         <span>{year}</span>
       </div>
     </div>
+
+    <!-- Title -->
+    <h3 class="text-xl font-bold text-brand-navy mb-2 leading-snug">
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" class="hover:text-blue-700 transition-colors inline-flex items-center gap-1.5">
+          <span>{title}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-gray-400 group-hover:text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      ) : (
+        title
+      )}
+    </h3>
+
+    <!-- Citation & Authors -->
+    <div class="text-sm text-gray-600 mb-4 space-y-1">
+      {authors && <p class="italic text-gray-700 font-serif text-xs md:text-sm"><span class="font-sans font-semibold not-italic text-gray-500">Authors:</span> {authors}</p>}
+      <p class="font-medium text-brand-navy text-xs md:text-sm">
+        <span class="text-gray-500 font-normal">Source:</span> {journal}
+      </p>
+    </div>
+
+    <!-- Parent Takeaway Section -->
+    {parentTakeaway && (
+      <div class="bg-amber-50/70 border-l-4 border-brand-gold rounded-r-lg p-3.5 mb-3 text-xs md:text-sm text-gray-800">
+        <div class="flex items-center gap-1.5 font-bold text-amber-900 mb-1">
+          <svg class="w-4 h-4 text-brand-gold shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14H8a4 4 0 01-.8-7.92A4.002 4.002 0 0112 14z" />
+          </svg>
+          <span>What This Means For Parents</span>
+        </div>
+        <p class="leading-relaxed">{parentTakeaway}</p>
+      </div>
+    )}
+
+    <!-- Clinical Takeaway Section -->
+    {clinicalTakeaway && (
+      <div class="bg-slate-50 border border-slate-200 rounded-lg p-3.5 mb-4 text-xs md:text-sm text-slate-700">
+        <div class="flex items-center gap-1.5 font-bold text-slate-800 mb-1">
+          <svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span>Clinical & Evidence Summary</span>
+        </div>
+        <p class="leading-relaxed font-mono text-xs text-slate-600">{clinicalTakeaway}</p>
+      </div>
+    )}
+
+    <!-- Tags -->
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5 mb-4">
+        {tags.map((tag: string) => (
+          <span class="text-[11px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    )}
   </div>
+
+  <!-- Action Button / Link -->
   {href && (
-    <a href={href} target="_blank" rel="noopener noreferrer" class="text-sm text-brand-navy hover:text-blue-700 font-medium inline-flex items-center">
-      View Publication
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </a>
+    <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand-navy hover:text-blue-700 transition-colors"
+      >
+        <span>
+          {type === 'Open Source Tool' ? 'View on GitHub' : (type === 'Dataset' || type === 'AI Model') ? 'View on Hugging Face' : 'Access Original Paper / DOI'}
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+      <span class="text-[11px] text-gray-400">Peer-Reviewed / Open-Access</span>
+    </div>
   )}
-</div>
+</article>

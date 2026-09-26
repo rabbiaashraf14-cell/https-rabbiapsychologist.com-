@@ -3,16 +3,11 @@ import { Image } from 'astro:assets';
 import profileImage from '../assets/rabbia-ashraf-professional-profile.webp';
 
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 import Schema from '../components/Schema.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import DisclaimerBanner from '../components/DisclaimerBanner.astro';
-import StickyMobileBookingCTA from '../components/StickyMobileBookingCTA.astro';
 
 const breadcrumbs = [
-  { name: 'About Rabbia', href: '/about' }
+  { name: 'About Rabbia', href: '/about/' }
 ];
 
 const personSchema = {
@@ -102,14 +97,12 @@ const faqSchema = {
 };
 ---
 
-<Layout title="About Rabbia Ashraf | Clinical Psychologist for Child Development Support">
-  <SEO
-    title="About Rabbia Ashraf | Clinical Psychologist for Child Development Support"
-    description="Learn about Rabbia Ashraf, Clinical Psychologist providing parent guidance, child development consultation, ADHD and behavior support, autism-related guidance, report review, and school planning support serving clients locally and internationally."
-    ogTitle="About Rabbia Ashraf | Rabbia Psychologist Child Development Services"
-    ogDescription="Parent guidance, child development support, ADHD support, autism-related guidance, report review, and school planning support with Rabbia Ashraf, Clinical Psychologist."
-  />
-  <Schema schema={[personSchema, professionalServiceSchema, faqSchema]} />
+<Layout 
+  title="About Rabbia Ashraf | Clinical Psychologist"
+  description="Learn about Rabbia Ashraf, Clinical Psychologist providing parent guidance, child development consultation, ADHD and behavior support, autism-related guidance, report review, and school planning support."
+  canonicalURL="https://www.rabbiapsychologist.com/about/"
+>
+  <Schema slot="head" schema={[personSchema, professionalServiceSchema, faqSchema]} />
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumbs paths={breadcrumbs} />
@@ -273,6 +266,4 @@ const faqSchema = {
       </div>
     </div>
   </div>
-
-  <StickyMobileBookingCTA />
 </Layout>
