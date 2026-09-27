@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Resources', href: '/resources' },
+  { name: 'Free Downloads', href: '/free-downloads' },
+  { name: 'Sensory Regulation Matrix', href: '/free-downloads/sensory-regulation-matrix' }
+];
+
+const title = "Sensory Diet & Emotional Regulation Matrix | Free Printable Worksheet";
+const description = "Printable sensory diet audit and co-regulation worksheet. Identify sensory seeking vs avoiding triggers across vestibular, proprioceptive, and auditory systems.";
+const canonicalURL = "https://www.rabbiapsychologist.com/free-downloads/sensory-regulation-matrix/";
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
+    
+    <!-- Action Bar (Hidden when printing) -->
+    <div class="no-print mb-8">
+      <Breadcrumbs paths={breadcrumbs} />
+      
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+        <div>
+          <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">Sensory & Regulation Tool</span>
+          <h1 class="text-2xl md:text-3xl font-bold text-brand-navy">Sensory Diet & Regulation Matrix</h1>
+          <p class="text-gray-700 text-sm mt-1">Audit sensory triggers and match your child with rapid, evidence-based calming interventions.</p>
+        </div>
+        <div class="flex items-center gap-3 w-full md:w-auto shrink-0">
+          <button onclick="window.print()" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <span>Print / Save as PDF</span>
+          </button>
+          <a href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20am%20using%20the%20Sensory%20Regulation%20Matrix%20and%20would%20like%20guidance%20on%20building%20a%20sensory%20diet." target="_blank" rel="noopener noreferrer" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-lg font-bold hover:bg-[#1EBE5D] transition-colors shadow-sm">
+            <span>WhatsApp Rabbia</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Printable Sheet Document Container -->
+    <div class="printable-sheet bg-white rounded-xl shadow-lg border border-gray-200 p-8 md:p-12 text-gray-900">
+      
+      <!-- Clinical Header -->
+      <div class="border-b-2 border-brand-navy pb-4 mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Rabbia Psychologist Child Development Services</span>
+          <h2 class="text-3xl font-extrabold text-brand-navy mt-1">Sensory Profile Audit & Co-Regulation Matrix</h2>
+          <p class="text-xs text-gray-600">Framework: Ayres Sensory Integration (ASI) Principles & Polyvagal Co-Regulation Science</p>
+        </div>
+        <div class="text-right text-xs text-gray-500 hidden md:block">
+          <p>www.rabbiapsychologist.com</p>
+          <p>Clinical Parent Resource</p>
+        </div>
+      </div>
+
+      <!-- Child Profile Header Info -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-200 mb-8 text-sm">
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Child's Name:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Age:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Evaluation Date:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Arousal State at Peak:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+      </div>
+
+      <!-- Sensory Audit Matrix Table -->
+      <div class="border border-gray-300 rounded-lg overflow-x-auto mb-8">
+        <table class="w-full text-left text-xs md:text-sm">
+          <thead class="bg-brand-navy text-white uppercase text-xs">
+            <tr>
+              <th class="p-3 w-32 border-r border-navy-700">Sensory System</th>
+              <th class="p-3 w-1/3 border-r border-navy-700">Over-Responsive (Avoidant Signs)</th>
+              <th class="p-3 w-1/3 border-r border-navy-700">Under-Responsive (Seeking Signs)</th>
+              <th class="p-3">Calming / Regulatory Intervention</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="p-3 font-bold text-brand-navy border-r border-gray-200">Proprioceptive<br /><span class="font-normal text-xs text-gray-500">(Body Position & Muscle)</span></td>
+              <td class="p-3 border-r border-gray-200">Avoids physical contact, dislikes wearing clothes with tags or seams.</td>
+              <td class="p-3 border-r border-gray-200">Crashes into furniture, stomps feet, hugs too tightly, constantly jumps.</td>
+              <td class="p-3 text-gray-800"><strong>Heavy Work:</strong> Carrying weighted laundry basket, wall push-ups, bear hugs, crawling through obstacle courses.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-brand-navy border-r border-gray-200">Vestibular<br /><span class="font-normal text-xs text-gray-500">(Balance & Movement)</span></td>
+              <td class="p-3 border-r border-gray-200">Fearful of feet leaving ground, swings, elevators, or tipping head back.</td>
+              <td class="p-3 border-r border-gray-200">Constantly spins, rocks in chair, hangs upside down without dizziness.</td>
+              <td class="p-3 text-gray-800"><strong>Linear Rhythmic Motion:</strong> Gentle back-and-forth hammock or rocking chair (avoid erratic spinning).</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-brand-navy border-r border-gray-200">Auditory<br /><span class="font-normal text-xs text-gray-500">(Hearing & Volume)</span></td>
+              <td class="p-3 border-r border-gray-200">Covers ears with hand dryers, vacuum cleaners, crowds, or echoey halls.</td>
+              <td class="p-3 border-r border-gray-200">Makes repetitive loud vocal noises, turns TV volume to maximum.</td>
+              <td class="p-3 text-gray-800"><strong>Sound Dampening:</strong> Over-ear headphones; calming brown-noise audio tracks; quiet acoustic corners.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-brand-navy border-r border-gray-200">Tactile<br /><span class="font-normal text-xs text-gray-500">(Touch & Texture)</span></td>
+              <td class="p-3 border-r border-gray-200">Distressed by messy play (slime, glue), hair washing, nail trimming, wet socks.</td>
+              <td class="p-3 border-r border-gray-200">Touches every surface and person; rubs face on specific blankets or fabrics.</td>
+              <td class="p-3 text-gray-800"><strong>Deep Touch Pressure:</strong> Firm massage, seamless sensory socks, compression vests, predictable dry textures.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-brand-navy border-r border-gray-200">Visual<br /><span class="font-normal text-xs text-gray-500">(Light & Patterns)</span></td>
+              <td class="p-3 border-r border-gray-200">Squints in sunlight; gets agitated under flickering fluorescent classroom tubes.</td>
+              <td class="p-3 border-r border-gray-200">Stares intently at spinning wheels, bright screen lights, or optical patterns.</td>
+              <td class="p-3 text-gray-800"><strong>Visual Resting:</strong> Warm dim lamplight; sunglasses outdoors; reducing visual clutter in study spaces.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Parent Co-Regulation Script Box -->
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-300 mb-8 text-xs leading-relaxed">
+        <h4 class="font-bold text-brand-navy text-sm uppercase tracking-wider mb-2">Psychologist's Meltdown De-escalation Protocol:</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+          <div class="bg-white p-3 rounded-lg border border-gray-200">
+            <span class="font-bold text-brand-navy block mb-1">Step 1: Low Arousal Presence</span>
+            <p class="text-gray-600">Lower your vocal volume and pitch. Sit below their eye level. Silence talking; the auditory center is overloaded.</p>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-gray-200">
+            <span class="font-bold text-brand-navy block mb-1">Step 2: Remove Demands</span>
+            <p class="text-gray-600">Suspend homework, shoes, or lectures immediately. The only goal is restoring nervous system equilibrium.</p>
+          </div>
+          <div class="bg-white p-3 rounded-lg border border-gray-200">
+            <span class="font-bold text-brand-navy block mb-1">Step 3: Proprioceptive Anchor</span>
+            <p class="text-gray-600">Offer a firm blanket wrap or cold drink of water with a straw (sucking provides instant oral motor calming).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Disclaimer & Footer -->
+      <div class="border-t border-gray-300 pt-4 text-[11px] text-gray-500 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p><strong>Clinical Notice:</strong> Sensory diet strategies are supportive developmental aids. If your child exhibits severe sensory defensiveness impacting nutrition or mobility, consult an Occupational Therapist specializing in sensory integration.</p>
+        <p class="shrink-0 font-medium">© 2026 Rabbia Psychologist Child Development Services</p>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub (no-print) -->
+    <div class="no-print mt-8 text-center">
+      <a href="/free-downloads" class="inline-flex items-center gap-2 text-brand-navy hover:text-blue-800 font-bold">
+        <span>&larr; Return to Free Downloads Hub</span>
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>

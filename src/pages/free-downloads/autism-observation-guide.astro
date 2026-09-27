@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Resources', href: '/resources' },
+  { name: 'Free Downloads', href: '/free-downloads' },
+  { name: 'Autism Observation Guide', href: '/free-downloads/autism-observation-guide' }
+];
+
+const title = "Autism Spectrum & Developmental Milestone Observation Guide | Free Printable";
+const description = "Printable Autism Spectrum observation guide for parents based on DSM-5-TR and CDC developmental milestones. Track communication, sensory, and repetitive behaviours.";
+const canonicalURL = "https://www.rabbiapsychologist.com/free-downloads/autism-observation-guide/";
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
+    
+    <!-- Action Bar (Hidden when printing) -->
+    <div class="no-print mb-8">
+      <Breadcrumbs paths={breadcrumbs} />
+      
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+        <div>
+          <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">Developmental Screening Tool</span>
+          <h1 class="text-2xl md:text-3xl font-bold text-brand-navy">Autism & Social Communication Observation Guide</h1>
+          <p class="text-gray-700 text-sm mt-1">Organize concrete behavioural observations across home and community settings before clinical assessment.</p>
+        </div>
+        <div class="flex items-center gap-3 w-full md:w-auto shrink-0">
+          <button onclick="window.print()" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <span>Print / Save as PDF</span>
+          </button>
+          <a href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20have%20completed%20the%20Autism%20Observation%20Guide%20and%20would%20like%20to%20discuss%20an%20assessment%20consultation." target="_blank" rel="noopener noreferrer" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-lg font-bold hover:bg-[#1EBE5D] transition-colors shadow-sm">
+            <span>WhatsApp Rabbia</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Printable Sheet Document Container -->
+    <div class="printable-sheet bg-white rounded-xl shadow-lg border border-gray-200 p-8 md:p-12 text-gray-900">
+      
+      <!-- Clinical Header -->
+      <div class="border-b-2 border-brand-navy pb-4 mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Rabbia Psychologist Child Development Services</span>
+          <h2 class="text-3xl font-extrabold text-brand-navy mt-1">Autism & Social Communication Observation Log</h2>
+          <p class="text-xs text-gray-600">Framework: DSM-5-TR Diagnostic Criteria & CDC Developmental Surveillance Guidelines</p>
+        </div>
+        <div class="text-right text-xs text-gray-500 hidden md:block">
+          <p>www.rabbiapsychologist.com</p>
+          <p>Clinical Parent Resource</p>
+        </div>
+      </div>
+
+      <!-- Child Profile Header Info -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-200 mb-8 text-sm">
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Child's Name:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Date of Birth / Age:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Observation Window:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Primary Concern:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+      </div>
+
+      <!-- Domain A: Social Communication & Reciprocity -->
+      <div class="mb-8">
+        <h3 class="bg-brand-navy text-white px-4 py-2 rounded-t-lg font-bold text-sm md:text-base">
+          DOMAIN A: Social-Emotional Reciprocity & Communication Patterns
+        </h3>
+        <div class="border border-t-0 border-gray-300 rounded-b-lg p-5 space-y-3 text-sm">
+          <p class="text-xs text-gray-500 italic mb-2">Check items observed regularly and note specific examples below:</p>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Response to Name:</strong> Does not consistently turn head or make eye contact when called from across the room (hearing verified intact).</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Joint Attention & Pointing:</strong> Rarely points to show interest ("Look at that plane!") or follows another person's pointing finger.</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Conversational Turn-Taking:</strong> Struggles with two-way conversation; may monologue extensively on preferred topics or repeat phrases (echolalia).</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Peer Play Differences:</strong> Prefers solitary play or parallel play; difficulty understanding rules of reciprocal games or imaginary play.</span>
+          </label>
+          <div class="mt-2 pt-2">
+            <span class="text-xs font-bold text-gray-700">Specific Observations / Examples:</span>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain B: Sensory Processing & Repetitive Patterns -->
+      <div class="mb-8">
+        <h3 class="bg-brand-navy text-white px-4 py-2 rounded-t-lg font-bold text-sm md:text-base">
+          DOMAIN B: Restricted, Repetitive Patterns & Sensory Sensitivities
+        </h3>
+        <div class="border border-t-0 border-gray-300 rounded-b-lg p-5 space-y-3 text-sm">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Insistence on Sameness / Transitions:</strong> Extreme distress over minor route changes, clothing tags, food textures, or routine shifts.</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Repetitive Motor Movements:</strong> Hand flapping, rocking, toe-walking, spinning objects, or lining up toys instead of functional play.</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Sensory Hyper-reactivity:</strong> Covering ears during blenders/hand dryers; extreme sensitivity to bright fluorescent lights or specific clothing fabrics.</span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded border-gray-400 text-brand-navy mt-0.5 shrink-0" />
+            <span><strong>Sensory Hypo-reactivity / Seeking:</strong> High pain tolerance; seeking intense deep pressure, spinning, or smelling/licking non-food objects.</span>
+          </label>
+          <div class="mt-2 pt-2">
+            <span class="text-xs font-bold text-gray-700">Specific Observations / Examples:</span>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Disclaimer & Footer -->
+      <div class="border-t border-gray-300 pt-4 text-[11px] text-gray-500 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p><strong>Clinical Notice:</strong> This checklist is an observational recording sheet, not a diagnostic instrument. An Autism Spectrum diagnosis requires comprehensive standardized clinical assessment (e.g. ADOS-2, ADI-R) by a qualified developmental specialist.</p>
+        <p class="shrink-0 font-medium">© 2026 Rabbia Psychologist Child Development Services</p>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub (no-print) -->
+    <div class="no-print mt-8 text-center">
+      <a href="/free-downloads" class="inline-flex items-center gap-2 text-brand-navy hover:text-blue-800 font-bold">
+        <span>&larr; Return to Free Downloads Hub</span>
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>

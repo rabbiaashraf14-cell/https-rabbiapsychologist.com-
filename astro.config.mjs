@@ -61,7 +61,9 @@ export default defineConfig({
     '/local-assessment': '/services/#local-assessment',
     '/psychological-assessment': '/services/#local-assessment',
     '/parent-guidance-consultations': '/services/',
-    '/between-session-support-programs': '/between-session-programs/'
+    '/between-session-support-programs': '/between-session-programs/',
+    '/resources/free-downloads': '/free-downloads/',
+    '/resources/resource-vault': '/resource-vault/'
   },
   vite: {
     plugins: [tailwindcss()]

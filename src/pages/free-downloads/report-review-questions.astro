@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'Resources', href: '/resources' },
+  { name: 'Free Downloads', href: '/free-downloads' },
+  { name: 'Report Review Questions', href: '/free-downloads/report-review-questions' }
+];
+
+const title = "Psychological Report Review Questions for Parents | Free Printable Guide";
+const description = "Printable clinical guide with 15 essential questions parents should ask psychologists, developmental pediatricians, and schools after receiving an assessment report.";
+const canonicalURL = "https://www.rabbiapsychologist.com/free-downloads/report-review-questions/";
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
+    
+    <!-- Action Bar (Hidden when printing) -->
+    <div class="no-print mb-8">
+      <Breadcrumbs paths={breadcrumbs} />
+      
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+        <div>
+          <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">Clinical Feedback Tool</span>
+          <h1 class="text-2xl md:text-3xl font-bold text-brand-navy">Report Review Questions for Parents</h1>
+          <p class="text-gray-700 text-sm mt-1">Translate psychometric jargon, standard scores, and percentiles into actionable home and school support.</p>
+        </div>
+        <div class="flex items-center gap-3 w-full md:w-auto shrink-0">
+          <button onclick="window.print()" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            <span>Print / Save as PDF</span>
+          </button>
+          <a href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20have%20received%20a%20psychological%20report%20and%20need%20help%20interpreting%20the%20results." target="_blank" rel="noopener noreferrer" class="flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-lg font-bold hover:bg-[#1EBE5D] transition-colors shadow-sm">
+            <span>WhatsApp Rabbia</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Printable Sheet Document Container -->
+    <div class="printable-sheet bg-white rounded-xl shadow-lg border border-gray-200 p-8 md:p-12 text-gray-900">
+      
+      <!-- Clinical Header -->
+      <div class="border-b-2 border-brand-navy pb-4 mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Rabbia Psychologist Child Development Services</span>
+          <h2 class="text-3xl font-extrabold text-brand-navy mt-1">Clinical Report Review & Debriefing Questions</h2>
+          <p class="text-xs text-gray-600">Framework: Psychoeducational Report Literacy & Translation to IEP / Home Action Plans</p>
+        </div>
+        <div class="text-right text-xs text-gray-500 hidden md:block">
+          <p>www.rabbiapsychologist.com</p>
+          <p>Clinical Parent Resource</p>
+        </div>
+      </div>
+
+      <!-- Child Profile Header Info -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-200 mb-8 text-sm">
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Child's Name:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Assessing Clinician:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Test Date:</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+        <div>
+          <span class="font-bold text-gray-600 block text-xs">Assessments Used (e.g. WISC/ADOS):</span>
+          <div class="border-b border-gray-400 h-6 mt-1"></div>
+        </div>
+      </div>
+
+      <!-- Category 1: Understanding Test Results -->
+      <div class="mb-8">
+        <h3 class="bg-brand-navy text-white px-4 py-2 rounded-t-lg font-bold text-sm md:text-base">
+          CATEGORY 1: Translating the Scores (Standardized Intelligence & Achievement)
+        </h3>
+        <div class="border border-t-0 border-gray-300 rounded-b-lg p-5 space-y-4 text-sm">
+          <div>
+            <p class="font-bold text-brand-navy mb-1">1. "Which scores reflect my child's true cognitive potential vs. test fatigue or anxiety?"</p>
+            <p class="text-xs text-gray-600">Why to ask: A low processing speed or working memory score can artificially depress Full Scale IQ (FSIQ). Look for the General Ability Index (GAI).</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+          <div>
+            <p class="font-bold text-brand-navy mb-1">2. "Are the discrepancies between verbal and non-verbal skills clinically significant?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Large splits between verbal comprehension and perceptual reasoning often signal specific learning differences (dyslexia, NVLD).</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+          <div>
+            <p class="font-bold text-brand-navy mb-1">3. "How did my child behave during one-on-one testing compared to a noisy classroom?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Children with ADHD often test well in quiet 1-on-1 rooms with an examiner, masking difficulties that emerge in 25-student classrooms.</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: School & Accommodation Translation -->
+      <div class="mb-8">
+        <h3 class="bg-brand-navy text-white px-4 py-2 rounded-t-lg font-bold text-sm md:text-base">
+          CATEGORY 2: Turning Clinical Findings into School Accommodations
+        </h3>
+        <div class="border border-t-0 border-gray-300 rounded-b-lg p-5 space-y-4 text-sm">
+          <div>
+            <p class="font-bold text-brand-navy mb-1">4. "What are the top 3 classroom accommodations that will have the biggest immediate impact?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Reports often list 25 generic recommendations. You need the top 3 priority items to write into their IEP.</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+          <div>
+            <p class="font-bold text-brand-navy mb-1">5. "How should the school modify exam formats to reflect my child's knowledge accurately?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Extra time alone is rarely enough; chunked testing, oral examination, or quiet room testing are often critical.</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+          <div>
+            <p class="font-bold text-brand-navy mb-1">6. "Who on the school team needs to be trained on these specific findings?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Subject teachers, PE instructors, and substitute teachers often never see the full report.</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Home & Family Next Steps -->
+      <div class="mb-8">
+        <h3 class="bg-brand-navy text-white px-4 py-2 rounded-t-lg font-bold text-sm md:text-base">
+          CATEGORY 3: Home Life & Co-Regulation
+        </h3>
+        <div class="border border-t-0 border-gray-300 rounded-b-lg p-5 space-y-4 text-sm">
+          <div>
+            <p class="font-bold text-brand-navy mb-1">7. "How should we explain this diagnosis / profile to our child in strengths-based language?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Children know they are struggling; framing it as "how your brain learns differently" preserves self-esteem.</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+          <div>
+            <p class="font-bold text-brand-navy mb-1">8. "When should we schedule a re-evaluation or progress check?"</p>
+            <p class="text-xs text-gray-600">Why to ask: Cognitive and adaptive profiles shift rapidly through developmental transitions (e.g., elementary to middle school).</p>
+            <div class="border-b border-gray-300 h-6 mt-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Disclaimer & Footer -->
+      <div class="border-t border-gray-300 pt-4 text-[11px] text-gray-500 flex flex-col md:flex-row justify-between items-center gap-2">
+        <p><strong>Clinical Notice:</strong> This guide helps parents prepare for debrief conferences. For an independent second-opinion psychological report review, explore our dedicated consultation services.</p>
+        <p class="shrink-0 font-medium">© 2026 Rabbia Psychologist Child Development Services</p>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub (no-print) -->
+    <div class="no-print mt-8 text-center">
+      <a href="/free-downloads" class="inline-flex items-center gap-2 text-brand-navy hover:text-blue-800 font-bold">
+        <span>&larr; Return to Free Downloads Hub</span>
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>

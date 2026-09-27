@@ -3,94 +3,313 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
 const breadcrumbs = [
+  { name: 'Home', href: '/' },
   { name: 'Resources', href: '/resources' },
   { name: 'Free Downloads', href: '/free-downloads' }
 ];
+
+const title = "Free Evidence-Based Tools & Clinical Downloads for Parents | Rabbia Psychologist";
+const description = "Printable evidence-based tools, ADHD routine planners, ABA behavior ABC trackers, and IEP checklists developed by Clinical Psychologist Rabbia Ashraf.";
+const canonicalURL = "https://www.rabbiapsychologist.com/free-downloads/";
+
+const tools = [
+  {
+    id: "adhd-planner",
+    badge: "ADHD & Executive Function",
+    framework: "Barkley EF Scaffolding Model",
+    title: "ADHD Home Routine Planner & Visual Schedule",
+    description: "Externalize working memory demands with morning launchpad checklists, dopamine transition bridges, and low-friction evening wind-down sequences.",
+    targetAudience: "Parents of children struggling with focus, morning chaos, and bedtime battles.",
+    keyOutcome: "Reduces transition resistance and builds independent daily habits.",
+    printUrl: "/free-downloads/adhd-routine-planner/",
+    whatsappMessage: "Hi Rabbia, I would like to receive the PDF copy of the ADHD Home Routine Planner.",
+    pages: "Printable Worksheet"
+  },
+  {
+    id: "abc-tracker",
+    badge: "Behaviour Analysis",
+    framework: "Functional Behaviour Assessment (FBA)",
+    title: "Behaviour ABC Incident & Meltdown Tracker",
+    description: "Systematically log Antecedents (hidden triggers), Behaviours (intensity & duration), and Consequences to understand what emotional need your child is communicating.",
+    targetAudience: "Parents facing recurring tantrums, aggressive outbursts, or task refusal.",
+    keyOutcome: "Identifies whether behavior is driven by Escape, Attention, Access, or Sensory Overload.",
+    printUrl: "/free-downloads/behaviour-abc-tracker/",
+    whatsappMessage: "Hi Rabbia, I would like to receive the PDF copy of the Behaviour ABC Tracker.",
+    pages: "Printable Worksheet"
+  },
+  {
+    id: "iep-checklist",
+    badge: "School & Special Ed",
+    framework: "IDEA Inclusion & Advocacy Standards",
+    title: "School IEP & Teacher Conference Advocacy Checklist",
+    description: "A comprehensive preparation framework: organize clinical documentation, propose classroom accommodations (sensory, testing, breaks), and establish meeting minutes accountability.",
+    targetAudience: "Parents preparing for school meetings, IEP reviews, or 504 accommodation conferences.",
+    keyOutcome: "Secures concrete classroom adjustments and teacher collaboration.",
+    printUrl: "/free-downloads/school-iep-checklist/",
+    whatsappMessage: "Hi Rabbia, I would like to receive the PDF copy of the School IEP Meeting Checklist.",
+    pages: "Printable Guide"
+  },
+  {
+    id: "autism-guide",
+    badge: "Autism & Development",
+    framework: "DSM-5-TR & CDC Milestone Guidelines",
+    title: "Autism Spectrum & Social Communication Observation Guide",
+    description: "Track social-emotional reciprocity, joint attention, sensory reactivity, and repetitive play patterns across home and community settings before diagnostic consultation.",
+    targetAudience: "Parents noticing developmental differences, speech delays, or sensory sensitivities.",
+    keyOutcome: "Creates structured clinical observations to present to a developmental pediatrician.",
+    printUrl: "/free-downloads/autism-observation-guide/",
+    whatsappMessage: "Hi Rabbia, I would like to receive the PDF copy of the Autism Observation Guide.",
+    pages: "Printable Log"
+  },
+  {
+    id: "report-review",
+    badge: "Clinical Assessment",
+    framework: "Psychoeducational Report Literacy",
+    title: "Psychological Report Review Questions for Parents",
+    description: "15 essential questions to ask during feedback debriefs to translate psychometric jargon, standard scores, percentiles, and diagnosis into home action items.",
+    targetAudience: "Parents who have received a psychological, speech, or developmental evaluation report.",
+    keyOutcome: "Transforms confusing test scores into practical classroom and daily living accommodations.",
+    printUrl: "/free-downloads/report-review-questions/",
+    whatsappMessage: "Hi Rabbia, I would like to receive the PDF copy of the Report Review Questions Guide.",
+    pages: "Printable Guide"
+  },
+  {
+    id: "sensory-matrix",
+    badge: "Sensory & Co-Regulation",
+    framework: "Ayres Sensory Integration (ASI) Principles",
+    title: "Sensory Diet & Regulation Strategy Matrix",
+    description: "Audit sensory seekers vs. avoiders across 5 sensory domains (vestibular, proprioceptive, auditory, tactile, visual) and match with rapid calming heavy-work exercises.",
+    targetAudience: "Children sensitive to noise, textures, clothing tags, or seeking continuous physical crashing.",
+    keyOutcome: "Restores nervous system equilibrium and prevents sensory meltdown escalation.",
+    printUrl: "/free-downloads/sensory-regulation-matrix/",
+    whatsappMessage: "Hi Rabbia, I would like to receive the PDF copy of the Sensory Regulation Matrix.",
+    pages: "Printable Worksheet"
+  }
+];
 ---
 
-<BaseLayout title="Free Downloads & Resources for Parents | Rabbia Psychologist" description="Download free child development checklists, planners, and templates for ADHD, Autism, and behaviour support at home.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-6xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Free Downloads</h1>
-      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
-        Practical, printable tools you can start using today to support your child's routines, behaviour, and development.
+    <!-- Hero Header -->
+    <div class="mt-8 mb-12 text-center max-w-3xl mx-auto">
+      <span class="inline-block bg-blue-100 text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+        Clinical Evidence-Based Practice
+      </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4">Free Evidence-Based Clinical Tools</h1>
+      <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+        Practical, printable clinical worksheets and planners developed by Clinical Psychologist Rabbia Ashraf. Designed to scaffold daily routines, decode challenging behaviour, and empower family advocacy.
+      </p>
+      
+      <!-- Value Props -->
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs md:text-sm text-gray-600 font-medium">
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-2xs">
+          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          100% Free &amp; Instant Access
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-2xs">
+          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          Print-Ready &amp; PDF Friendly
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-2xs">
+          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+          Gold-Standard Psychological Models
+        </span>
+      </div>
+    </div>
+
+    <!-- Clinical Resources Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {tools.map((tool) => (
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-200 p-6 flex flex-col justify-between transition-shadow">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-brand-cream text-brand-navy text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                {tool.badge}
+              </span>
+              <span class="text-xs text-gray-500 font-medium">{tool.pages}</span>
+            </div>
+
+            <h2 class="text-xl font-bold text-brand-navy mb-2 leading-snug">
+              {tool.title}
+            </h2>
+
+            <p class="text-xs text-brand-trust font-semibold mb-3">
+              Framework: {tool.framework}
+            </p>
+
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+              {tool.description}
+            </p>
+
+            <div class="bg-gray-50 p-3.5 rounded-xl border border-gray-100 mb-6 text-xs space-y-2">
+              <div>
+                <strong class="text-gray-700 block">Who It Helps:</strong>
+                <span class="text-gray-600">{tool.targetAudience}</span>
+              </div>
+              <div>
+                <strong class="text-gray-700 block">Clinical Impact:</strong>
+                <span class="text-gray-600">{tool.keyOutcome}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual Action Buttons -->
+          <div class="space-y-2.5 pt-2 border-t border-gray-100">
+            <a
+              href={tool.printUrl}
+              class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy text-white text-sm font-bold py-3 px-4 rounded-xl hover:bg-blue-900 transition-colors shadow-2xs text-center"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+              <span>Open &amp; Print Tool</span>
+            </a>
+
+            <a
+              href={`https://wa.me/923364114002?text=${encodeURIComponent(tool.whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 bg-gray-50 text-gray-700 hover:text-brand-navy hover:bg-gray-100 border border-gray-200 text-xs font-semibold py-2.5 px-4 rounded-xl transition-colors text-center"
+            >
+              <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Request PDF via WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Email Bundle Form -->
+    <div id="request-bundle" class="bg-gradient-to-br from-brand-navy to-[#18395e] text-white rounded-2xl p-8 md:p-12 shadow-lg mb-12">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="inline-block bg-brand-gold/20 text-brand-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+          Direct Inbox Delivery
+        </span>
+        <h2 class="text-3xl font-extrabold mb-3 text-white">Receive All 6 Clinical Tools by Email</h2>
+        <p class="text-gray-200 text-sm md:text-base mb-8">
+          Enter your email below to receive the complete, print-ready evidence-based toolkit directly to your inbox.
+        </p>
+
+        <form id="free-downloads-form" class="space-y-4 text-left max-w-md mx-auto">
+          <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="New Request for Free Evidence-Based Parent Downloads" />
+          <input type="hidden" name="from_name" value="Free Downloads Page" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+          <div>
+            <label for="parent_name" class="block text-xs font-semibold text-gray-200 mb-1">Your Name *</label>
+            <input
+              type="text"
+              id="parent_name"
+              name="name"
+              required
+              placeholder="e.g. Sarah Jenkins"
+              class="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            />
+          </div>
+
+          <div>
+            <label for="parent_email" class="block text-xs font-semibold text-gray-200 mb-1">Email Address *</label>
+            <input
+              type="email"
+              id="parent_email"
+              name="email"
+              required
+              placeholder="sarah@example.com"
+              class="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            />
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="submit"
+              id="bundle-submit-btn"
+              class="w-full bg-brand-gold text-brand-navy font-bold py-3.5 px-6 rounded-lg text-base hover:bg-yellow-400 transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>Send Me the Complete Toolkit</span>
+              <svg id="bundle-spinner" class="animate-spin h-5 w-5 text-brand-navy hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div id="bundle-result" class="hidden rounded-lg p-3 text-xs text-center font-medium mt-3"></div>
+
+          <p class="text-[11px] text-gray-300 text-center mt-2">
+            We value your family's privacy. Zero spam. Unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Clinical Disclaimer -->
+    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 text-xs text-gray-600 leading-relaxed text-center max-w-4xl mx-auto">
+      <p class="font-bold text-gray-800 mb-1">Clinical Ethics & Practice Boundary Notice</p>
+      <p>
+        These downloadable worksheets, trackers, and schedules are evidence-based educational aids designed by Rabbia Ashraf (Clinical Psychologist). They are not intended as diagnostic tools or clinical treatments. For formal developmental, psychoeducational, or autism assessments, please schedule a specialized clinical consultation.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <!-- Resource 1 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
-        <div class="mb-4">
-          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Planner</span>
-          <h2 class="text-2xl font-bold text-brand-navy mb-2">ADHD Home Routine Planner</h2>
-        </div>
-        <p class="text-gray-700 mb-6 flex-grow">A visual structure guide designed to help children with ADHD manage their morning and evening transitions with less friction.</p>
-        <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents of children struggling with daily routines.</p>
-          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Executive function, independence, reducing morning battles.</p>
-        </div>
-        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
-      </div>
-
-      <!-- Resource 2 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
-        <div class="mb-4">
-          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Tracker</span>
-          <h2 class="text-2xl font-bold text-brand-navy mb-2">Behaviour ABC Tracker</h2>
-        </div>
-        <p class="text-gray-700 mb-6 flex-grow">A simple, effective log to track the Antecedents (triggers), Behaviours, and Consequences to uncover patterns in meltdowns or refusal.</p>
-        <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents facing challenging behaviours at home.</p>
-          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Identifying hidden triggers, planning better responses.</p>
-        </div>
-        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
-      </div>
-
-      <!-- Resource 3 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
-        <div class="mb-4">
-          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Checklist</span>
-          <h2 class="text-2xl font-bold text-brand-navy mb-2">School Meeting Prep Checklist</h2>
-        </div>
-        <p class="text-gray-700 mb-6 flex-grow">Ensure you go into parent-teacher meetings or IEP discussions organized, with the right questions and a clear focus on your child's needs.</p>
-        <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents preparing for school support meetings.</p>
-          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Organizing concerns, asking the right questions, advocacy.</p>
-        </div>
-        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
-      </div>
-
-      <!-- Resource 4 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col">
-        <div class="mb-4">
-          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Checklist</span>
-          <h2 class="text-2xl font-bold text-brand-navy mb-2">Autism Early Signs Checklist</h2>
-        </div>
-        <p class="text-gray-700 mb-6 flex-grow">A parent-friendly guide to observing communication, social, and sensory differences in your child before seeking formal assessment.</p>
-        <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents noticing developmental differences.</p>
-          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Organizing observations for a clinician.</p>
-        </div>
-        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
-      </div>
-
-      <!-- Resource 5 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col md:col-span-2 lg:col-span-1">
-        <div class="mb-4">
-          <span class="inline-block bg-brand-cream text-brand-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Guide</span>
-          <h2 class="text-2xl font-bold text-brand-navy mb-2">Report Review Questions for Parents</h2>
-        </div>
-        <p class="text-gray-700 mb-6 flex-grow">Not sure what to ask after receiving a psychological or developmental report? Use this guide to ensure you leave your feedback session with clarity.</p>
-        <div class="bg-gray-50 rounded-lg p-4 mb-6">
-          <p class="text-sm text-gray-800 mb-1"><strong>Who it is for:</strong> Parents receiving a clinical report for their child.</p>
-          <p class="text-sm text-gray-800"><strong>What it helps with:</strong> Translating clinical jargon to next steps.</p>
-        </div>
-        <button class="w-full bg-brand-navy text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-900 transition-colors">Request by Email</button>
-      </div>
-
-    </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('free-downloads-form') as HTMLFormElement;
+      const resultDiv = document.getElementById('bundle-result') as HTMLDivElement;
+      const submitBtn = document.getElementById('bundle-submit-btn') as HTMLButtonElement;
+      const spinner = document.getElementById('bundle-spinner') as HTMLElement;
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+
+          if (object.botcheck) return;
+
+          // Graceful fallback if Web3Forms key is not configured in env
+          if (!object.access_key) {
+            resultDiv.classList.remove('hidden', 'bg-red-500/20', 'text-red-200');
+            resultDiv.classList.add('bg-green-500/20', 'text-green-100', 'border', 'border-green-400/40');
+            resultDiv.innerHTML = `Thank you, ${object.name}! You can immediately open and print any tool above. To receive PDF files directly via message, <a href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20requested%20the%20complete%20toolkit%20for%20${encodeURIComponent(object.email as string)}" target="_blank" class="underline font-bold text-brand-gold">click here to message Rabbia on WhatsApp</a>.`;
+            form.reset();
+            return;
+          }
+
+          resultDiv.classList.add('hidden');
+          submitBtn.disabled = true;
+          submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+          spinner.classList.remove('hidden');
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(object)
+            });
+            const data = await response.json();
+
+            resultDiv.classList.remove('hidden');
+            if (response.status === 200) {
+              resultDiv.classList.add('bg-green-500/20', 'text-green-100', 'border', 'border-green-400/40');
+              resultDiv.innerHTML = "Thank you! Your request has been received. You will receive your resource pack shortly, or you can print them directly from this page.";
+              form.reset();
+            } else {
+              resultDiv.classList.add('bg-blue-500/20', 'text-blue-100');
+              resultDiv.innerHTML = `Please connect on WhatsApp at <a href="https://wa.me/923364114002" class="underline font-bold text-brand-gold">+92 336 4114002</a> to get your toolkit instantly.`;
+            }
+          } catch (err) {
+            resultDiv.classList.remove('hidden');
+            resultDiv.classList.add('bg-blue-500/20', 'text-blue-100');
+            resultDiv.innerHTML = `To receive your files immediately, please WhatsApp Rabbia directly at <a href="https://wa.me/923364114002" class="underline font-bold text-brand-gold">+92 336 4114002</a>.`;
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            spinner.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
 </BaseLayout>

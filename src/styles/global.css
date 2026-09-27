@@ -67,3 +67,24 @@ input:focus, select:focus, textarea:focus {
     bottom: 100px !important;
   }
 }
+
+/* Print Styles for Printable Tools and Clinical Resources */
+@media print {
+  header, footer, nav, #mobile-menu, #mobile-menu-overlay, #reading-progress-container,
+  .no-print, [data-countdown-banner], [data-whatsapp-button], [data-mobile-cta] {
+    display: none !important;
+  }
+  body, main {
+    background: #ffffff !important;
+    color: #111827 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .printable-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
