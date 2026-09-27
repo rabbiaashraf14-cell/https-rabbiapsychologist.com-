@@ -1,87 +1,374 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/global/Breadcrumbs.astro';
-import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
+import { vaultResources, vaultCategories } from '../data/vaultResources';
 
 const breadcrumbs = [
+  { name: 'Home', href: '/' },
   { name: 'Resources', href: '/resources' },
   { name: 'Resource Vault', href: '/resource-vault' }
 ];
 
-const items = [
-  { type: 'Planner', tag: 'ADHD', title: 'ADHD Home Planner', desc: 'A comprehensive planner for organizing routines, tasks, and home structures for children with ADHD. (24 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Visuals', tag: 'Routine', title: 'Daily Visual Schedule', desc: 'Customizable visual schedule cards to help children navigate daily transitions with less anxiety. (50+ Cards)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Planner', tag: 'Routine', title: 'Morning Routine Planner', desc: 'Step-by-step visual and written guides to reduce morning battles and get out the door on time. (12 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Planner', tag: 'School', title: 'Homework Routine Planner', desc: 'Strategies and visual aids to help your child initiate and complete homework with fewer tears. (15 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Tracker', tag: 'Behaviour', title: 'Behaviour ABC Tracker', desc: 'A template for tracking Antecedents, Behaviours, and Consequences to uncover patterns. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Log', tag: 'Behaviour', title: 'Behaviour Observation Log', desc: 'A structured log for parents and teachers to objectively record frequency and intensity of challenging behaviours. (8 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'System', tag: 'Behaviour', title: 'Reward Chart', desc: 'Positive reinforcement charts designed to encourage and track desired behaviours. (5 Variations)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'System', tag: 'Behaviour', title: 'Token Economy Sheet', desc: 'A more advanced token economy system template for motivating older children. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Sheet', tag: 'Sensory', title: 'Sensory Observation Sheet', desc: 'Help identify your child\'s sensory seekers or avoidant triggers across different environments. (6 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Tracker', tag: 'Sensory', title: 'Meltdown Tracker', desc: 'Document the triggers, patterns, and recovery time of meltdowns to better understand sensory overload. (8 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Guide', tag: 'Behaviour', title: 'Tantrum vs Meltdown Guide', desc: 'A quick reference guide to distinguish between behavioral tantrums and sensory meltdowns, and how to respond. (15 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Planner', tag: 'School', title: 'Teacher Meeting Planner', desc: 'An organized template to help you prepare questions and goals before parent-teacher conferences or IEP meetings. (12 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Notes', tag: 'School', title: 'School Observation Notes', desc: 'A guided note-taking sheet for observing your child or their classroom environment. (5 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Workbook', tag: 'Parents', title: 'Parent Reflection Workbook', desc: 'Exercises to help parents process their own emotions and parenting style to better support their child. (30 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Checklist', tag: 'Assessment', title: 'Assessment Preparation Checklist', desc: 'Everything you need to gather and prepare before a psychological or developmental assessment. (5 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Guide', tag: 'Assessment', title: 'Report Review Questions', desc: 'A list of crucial questions to ask your clinician after receiving a diagnostic or educational report. (8 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Planner', tag: 'Routine', title: 'Sleep Routine Planner', desc: 'A calming evening schedule template to help children wind down and improve sleep hygiene. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Planner', tag: 'Routine', title: 'Screen Time Planner', desc: 'Tools and contracts to help establish healthy boundaries and manage difficult screen time transitions. (12 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Cards', tag: 'Emotions', title: 'Emotion Regulation Cards', desc: 'Printable cards offering immediate coping strategies for children experiencing big emotions. (20 Cards)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Sheets', tag: 'Social', title: 'Social Skills Practice Sheets', desc: 'Role-play scenarios and discussion prompts to practice social interactions at home. (15 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Planner', tag: 'Exec Function', title: 'Executive Function Planner', desc: 'Practical exercises for developing routines and improving working memory and organization. (25 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false },
-  { type: 'Notes', tag: 'Parents', title: 'Parent Consultation Notes', desc: 'A dedicated notebook template to record key takeaways and action items from your consultation sessions. (10 Pages)', price: 'Coming Soon', action: 'Request this Resource', isFree: false }
-];
+const title = "Clinical Resource Vault: Worksheets, Books, GitHub & Hugging Face AI | Rabbia Psychologist";
+const description = "Explore evidence-based clinical worksheets, gold-standard parent manuals, and cutting-edge GitHub repositories & Hugging Face AI tools for ADHD, Autism, and child development.";
+const canonicalURL = "https://www.rabbiapsychologist.com/resource-vault/";
+
+const vaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Clinical Resource Vault: Pediatric Psychology, Worksheets, Books & Open Science AI",
+  "description": description,
+  "url": canonicalURL,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  }
+};
 ---
 
-<BaseLayout title="Digital Products & Resource Vault for Parents | Rabbia Psychologist" description="Premium digital workbooks, planners, and behavior logs for parents managing ASD and ADHD.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <Breadcrumbs paths={breadcrumbs} />
-    <div class="max-w-6xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 text-center">Premium Resource Vault</h1>
-      <p class="text-xl text-gray-700 mb-6 text-center max-w-3xl mx-auto">
-        Professionally designed digital tools, workbooks, and templates to help you support your child's routines, behaviour, and development at home.
-      </p>
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL} schema={vaultSchema}>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-blue-50/70 to-white pt-8 pb-12 border-b border-gray-100">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <Breadcrumbs paths={breadcrumbs} />
 
-      <div class="mb-10 text-center">
-        <a href="/knowledge-hub" class="inline-flex items-center gap-2 bg-blue-50 text-brand-navy border border-blue-200 hover:bg-blue-100 font-semibold px-4 py-2 rounded-full text-xs md:text-sm transition-colors">
-          <svg class="w-4 h-4 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-          <span>Looking for scientific research papers & clinical trials? Visit our <strong>Knowledge Hub &rarr;</strong></span>
+      <div class="mt-6 text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100/80 text-brand-navy text-xs font-bold tracking-wide uppercase mb-4">
+          <svg class="w-4 h-4 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+          Comprehensive Pediatric Psychology Resource Library
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-extrabold text-brand-navy tracking-tight mb-4">
+          Clinical Resource Vault
+        </h1>
+
+        <p class="text-base md:text-lg text-gray-700 leading-relaxed">
+          A curated ecosystem of evidence-based psychological tools: printable daily routine planners, seminal clinical literature, and open-source AI projects across GitHub and Hugging Face.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-gray-200/60 text-left">
+          <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
+            <div class="text-2xl font-extrabold text-brand-navy">9+</div>
+            <div class="text-xs text-gray-600 font-medium">Printable Worksheets</div>
+          </div>
+          <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
+            <div class="text-2xl font-extrabold text-amber-700">6+</div>
+            <div class="text-xs text-gray-600 font-medium">Gold-Standard Books</div>
+          </div>
+          <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
+            <div class="text-2xl font-extrabold text-purple-700">GitHub &amp; HF</div>
+            <div class="text-xs text-gray-600 font-medium">Open Source AI Repos</div>
+          </div>
+          <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
+            <div class="text-2xl font-extrabold text-emerald-700">100% Free</div>
+            <div class="text-xs text-gray-600 font-medium">Open Clinical Access</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Controls -->
+  <section class="py-6 bg-white border-b border-gray-200 sticky top-[80px] z-30 shadow-2xs">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        
+        <!-- Live Search Input -->
+        <div class="relative w-full md:w-80 shrink-0">
+          <input
+            type="text"
+            id="vault-search-input"
+            placeholder="Search worksheets, books, GitHub repos..."
+            class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-brand-navy shadow-inner"
+            aria-label="Search resources"
+          />
+          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+
+        <!-- Format Category Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto w-full pb-2 md:pb-0 scrollbar-thin" id="category-tabs">
+          {vaultCategories.map((cat, idx) => (
+            <button
+              type="button"
+              class={`vault-category-tab px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer ${
+                idx === 0
+                  ? 'bg-brand-navy text-white shadow-xs'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+              }`}
+              data-category={cat.id}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tag Filters -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full pt-3 mt-2 border-t border-gray-100 text-xs text-gray-600">
+        <span class="font-bold text-gray-500 uppercase tracking-wider mr-1 text-[11px]">Topic:</span>
+        {['All', 'ADHD', 'Autism', 'Behaviour', 'Sensory', 'School', 'Parenting', 'AI & Tech'].map((tag, idx) => (
+          <button
+            type="button"
+            class={`vault-tag-pill px-2.5 py-1 rounded-md text-xs font-medium cursor-pointer transition-colors ${
+              idx === 0
+                ? 'bg-brand-gold/30 text-brand-navy font-bold'
+                : 'bg-gray-50 text-gray-600 hover:bg-gray-200/80 border border-gray-200'
+            }`}
+            data-tag={tag === 'All' ? 'all' : tag}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Resource Grid -->
+  <main class="py-12 bg-[#FAF8F3]/60 min-h-[60vh]">
+    <div class="container mx-auto px-4 max-w-6xl">
+      
+      <!-- Counter & Active Filter Badge -->
+      <div class="flex items-center justify-between mb-8 pb-3 border-b border-gray-200">
+        <span class="text-sm font-semibold text-gray-600" id="results-count">
+          Showing all {vaultResources.length} resources
+        </span>
+        <a href="/free-downloads" class="text-xs font-bold text-brand-navy hover:underline flex items-center gap-1">
+          <span>View Printable Free Downloads Hub</span>
+          <span>&rarr;</span>
         </a>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-2 mb-12">
-        <span class="text-sm font-bold text-gray-500 uppercase tracking-wider mt-1 mr-2">Filter By:</span>
-        {['All', 'ADHD', 'Behaviour', 'Routine', 'School', 'Parents', 'Assessment'].map(tag => (
-          <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 cursor-pointer transition-colors border border-gray-200">{tag}</span>
-        ))}
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="worksheets">
-        {items.map(item => (
-          <div class="bg-white p-0 rounded-2xl shadow-md border border-gray-200 flex flex-col h-full overflow-hidden hover:shadow-xl hover:border-brand-gold/50 transition-all group">
-            <div class="h-48 bg-gradient-to-br from-brand-sky/20 to-brand-cream flex items-center justify-center border-b border-gray-100 relative">
-               <div class="absolute top-4 left-4 bg-white/80 backdrop-blur text-brand-navy text-xs font-bold px-2 py-1 rounded-md shadow-sm border border-gray-100 uppercase tracking-wider">
-                 {item.tag}
-               </div>
-               <div class="text-brand-navy/40 group-hover:scale-110 group-hover:text-brand-gold transition-all duration-300">
-                  <svg class="w-20 h-20 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-               </div>
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-              <div class="flex justify-between items-start mb-3">
-                <div class="text-xs font-bold text-gray-500 uppercase tracking-wider">{item.type}</div>
-                <div class="text-xs font-bold text-brand-navy bg-brand-gold/20 px-2 py-1 rounded-md">{item.price}</div>
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="vault-grid">
+        {vaultResources.map((item) => (
+          <div
+            class="vault-card bg-white rounded-2xl p-6 shadow-xs hover:shadow-md border border-gray-200 flex flex-col justify-between transition-all duration-200"
+            data-category={item.category}
+            data-tag={item.tag}
+            data-search={`${item.title} ${item.subtitle || ''} ${item.authorOrCreator} ${item.description} ${item.tag}`.toLowerCase()}
+          >
+            <div>
+              <!-- Top Badges -->
+              <div class="flex items-center justify-between mb-3">
+                <span class="bg-brand-cream text-brand-navy text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border border-brand-sky/20">
+                  {item.categoryLabel}
+                </span>
+                <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2 py-0.5 rounded-md">
+                  {item.tag}
+                </span>
               </div>
-              <h3 class="text-xl font-bold text-brand-navy mb-3 leading-tight">{item.title}</h3>
-              <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">{item.desc}</p>
 
-              <a href="/contact" class="bg-brand-cream text-brand-navy border-2 border-brand-gold/30 text-center px-4 py-3 rounded-xl font-bold hover:bg-brand-navy hover:text-white hover:border-brand-navy w-full mt-auto transition-all block">{item.action}</a>
+              <!-- Title & Subtitle -->
+              <h2 class="text-lg font-bold text-brand-navy mb-1 leading-snug">
+                {item.title}
+              </h2>
+              {item.subtitle && (
+                <p class="text-xs text-brand-trust font-medium mb-3">
+                  {item.subtitle}
+                </p>
+              )}
+
+              <!-- Creator/Author -->
+              <p class="text-xs text-gray-500 mb-3 font-medium">
+                By: <span class="text-gray-700 font-semibold">{item.authorOrCreator}</span>
+              </p>
+
+              <!-- Description -->
+              <p class="text-xs md:text-sm text-gray-600 mb-5 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+
+            <!-- Card Action Footer -->
+            <div class="pt-4 border-t border-gray-100 mt-auto">
+              <div class="text-[11px] text-gray-500 mb-2 font-medium">
+                Format: <span class="text-gray-700 font-semibold">{item.formatOrType}</span>
+              </div>
+
+              {item.actionType === 'print' ? (
+                <a
+                  href={item.actionUrl}
+                  class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-blue-900 transition-colors shadow-2xs text-center"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                  <span>{item.actionText}</span>
+                </a>
+              ) : item.actionType === 'github' ? (
+                <a
+                  href={item.actionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center gap-2 bg-[#24292e] text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-black transition-colors shadow-2xs text-center"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                  <span>{item.actionText}</span>
+                </a>
+              ) : item.actionType === 'huggingface' ? (
+                <a
+                  href={item.actionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center gap-2 bg-[#FFD21E] text-brand-navy text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-yellow-400 transition-colors shadow-2xs text-center"
+                >
+                  <span class="text-sm">🤗</span>
+                  <span>{item.actionText}</span>
+                </a>
+              ) : item.actionType === 'whatsapp' ? (
+                <a
+                  href={item.actionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-[#1EBE5D] transition-colors shadow-2xs text-center"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>{item.actionText}</span>
+                </a>
+              ) : (
+                <a
+                  href={item.actionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center gap-1.5 bg-gray-100 text-brand-navy hover:bg-brand-navy hover:text-white border border-gray-200 text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl transition-colors text-center"
+                >
+                  <span>{item.actionText}</span>
+                  <span>&rarr;</span>
+                </a>
+              )}
             </div>
           </div>
         ))}
       </div>
+
+      <!-- No Results State -->
+      <div id="no-results" class="hidden text-center py-16 bg-white rounded-2xl border border-gray-200 mt-6 p-8">
+        <svg class="w-12 h-12 text-gray-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <h3 class="text-lg font-bold text-brand-navy mb-1">No matching resources found</h3>
+        <p class="text-sm text-gray-500 mb-4">Try clearing your search query or selecting a different category.</p>
+        <button id="reset-filters" class="bg-brand-navy text-white text-xs font-bold px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-900 transition-colors">
+          Reset All Filters
+        </button>
+      </div>
+
     </div>
-  </div>
-  <StickyMobileBookingCTA />
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('vault-search-input') as HTMLInputElement;
+      const categoryTabs = document.querySelectorAll('.vault-category-tab');
+      const tagPills = document.querySelectorAll('.vault-tag-pill');
+      const cards = document.querySelectorAll('.vault-card') as NodeListOf<HTMLElement>;
+      const resultsCount = document.getElementById('results-count');
+      const noResults = document.getElementById('no-results');
+      const resetBtn = document.getElementById('reset-filters');
+
+      let currentCategory = 'all';
+      let currentTag = 'all';
+      let currentQuery = '';
+
+      function filterCards() {
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const cardCategory = card.getAttribute('data-category') || '';
+          const cardTag = card.getAttribute('data-tag') || '';
+          const cardSearch = card.getAttribute('data-search') || '';
+
+          const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
+          const matchesTag = currentTag === 'all' || cardTag.toLowerCase() === currentTag.toLowerCase();
+          const matchesQuery = !currentQuery || cardSearch.includes(currentQuery.toLowerCase());
+
+          if (matchesCategory && matchesTag && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (resultsCount) {
+          resultsCount.textContent = `Showing ${visibleCount} of ${cards.length} resources`;
+        }
+
+        if (noResults) {
+          if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+          } else {
+            noResults.classList.add('hidden');
+          }
+        }
+      }
+
+      // Search Handler
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = (e.target as HTMLInputElement).value.trim();
+          filterCards();
+        });
+      }
+
+      // Category Tabs Handler
+      categoryTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          categoryTabs.forEach((t) => {
+            t.classList.remove('bg-brand-navy', 'text-white', 'shadow-xs');
+            t.classList.add('bg-gray-100', 'text-gray-700', 'border', 'border-gray-200');
+          });
+          tab.classList.remove('bg-gray-100', 'text-gray-700', 'border', 'border-gray-200');
+          tab.classList.add('bg-brand-navy', 'text-white', 'shadow-xs');
+
+          currentCategory = tab.getAttribute('data-category') || 'all';
+          filterCards();
+        });
+      });
+
+      // Tag Pills Handler
+      tagPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          tagPills.forEach((p) => {
+            p.classList.remove('bg-brand-gold/30', 'text-brand-navy', 'font-bold');
+            p.classList.add('bg-gray-50', 'text-gray-600', 'border', 'border-gray-200');
+          });
+          pill.classList.remove('bg-gray-50', 'text-gray-600', 'border', 'border-gray-200');
+          pill.classList.add('bg-brand-gold/30', 'text-brand-navy', 'font-bold');
+
+          currentTag = pill.getAttribute('data-tag') || 'all';
+          filterCards();
+        });
+      });
+
+      // Reset Button
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          currentQuery = '';
+          currentCategory = 'all';
+          currentTag = 'all';
+
+          categoryTabs.forEach((t, i) => {
+            if (i === 0) {
+              t.classList.add('bg-brand-navy', 'text-white');
+              t.classList.remove('bg-gray-100', 'text-gray-700');
+            } else {
+              t.classList.remove('bg-brand-navy', 'text-white');
+              t.classList.add('bg-gray-100', 'text-gray-700');
+            }
+          });
+
+          tagPills.forEach((p, i) => {
+            if (i === 0) {
+              p.classList.add('bg-brand-gold/30', 'text-brand-navy', 'font-bold');
+            } else {
+              p.classList.remove('bg-brand-gold/30', 'text-brand-navy', 'font-bold');
+            }
+          });
+
+          filterCards();
+        });
+      }
+    });
+  </script>
 </BaseLayout>
