@@ -1,5 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
@@ -64,6 +67,20 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [
-    sitemap()
+    sitemap(),
+    {
+      name: 'sitemap-compatibility-alias',
+      hooks: {
+        'astro:build:done': ({ dir }) => {
+          const outDir = fileURLToPath(dir);
+          const indexFile = path.join(outDir, 'sitemap-index.xml');
+          const legacyFile = path.join(outDir, 'sitemap.xml');
+          if (fs.existsSync(indexFile)) {
+            fs.copyFileSync(indexFile, legacyFile);
+            console.log('Created sitemap.xml compatibility alias from sitemap-index.xml');
+          }
+        }
+      }
+    }
   ]
 });
