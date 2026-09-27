@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import ChildTriageScreener from '../components/home/ChildTriageScreener.astro';
+
+const title = "Free Child Development Consultation Screener | Rabbia Psychologist";
+const description = "Take our 60-second child development triage screener to identify your child's developmental, ADHD, autism, or behavioural needs and get recommended clinical pathways.";
+const canonicalURL = "https://www.rabbiapsychologist.com/screener/";
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Consultation Screener', href: '/screener/' }
+];
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <div class="container mx-auto px-4 max-w-5xl pt-8">
+    <Breadcrumbs paths={breadcrumbs} />
+  </div>
+
+  <ChildTriageScreener />
+
+  <!-- Why Triage Matters Section -->
+  <section class="py-12 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl text-left">
+      <h2 class="text-2xl font-bold text-brand-navy mb-4">Why Early Clinical Triage Matters</h2>
+      <p class="text-gray-700 text-sm md:text-base leading-relaxed mb-6">
+        When a child experiences meltdowns, focus struggles in school, or delayed speech, parents often spend months feeling stuck in uncertainty or overwhelmed by contradictory advice online. Early triage helps clarify whether symptoms stem from executive function deficits, sensory dysregulation, social communication differences, or emotional overwhelm.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <div class="font-bold text-brand-navy mb-1.5">No Diagnosis Required</div>
+          <p class="text-xs text-gray-600 leading-relaxed">You do not need a formal diagnostic report to begin receiving supportive home routines and behavioral accommodations.</p>
+        </div>
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <div class="font-bold text-brand-navy mb-1.5">Evidence-Based Models</div>
+          <p class="text-xs text-gray-600 leading-relaxed">All guidance is grounded in gold-standard frameworks (Barkley, FBA, SCERTS, Ayres Sensory Integration).</p>
+        </div>
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200">
+          <div class="font-bold text-brand-navy mb-1.5">Global Telehealth Access</div>
+          <p class="text-xs text-gray-600 leading-relaxed">Sessions are conducted via secure video calls tailored to your local time zone across the UK, USA, Gulf, and worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

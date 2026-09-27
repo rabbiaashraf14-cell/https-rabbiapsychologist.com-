@@ -1,0 +1,352 @@
+---
+// ChildTriageScreener.astro
+// Interactive 60-second child development triage tool for parents worldwide
+---
+
+<section class="py-16 md:py-20 bg-gradient-to-b from-[#FAF8F3] to-white border-y border-gray-200/80" id="child-triage">
+  <div class="container mx-auto px-4 max-w-4xl">
+    
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <span class="inline-flex items-center gap-1.5 bg-blue-100 text-brand-navy text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+        <svg class="w-3.5 h-3.5 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        60-Second Parent Assessment Triage
+      </span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-3">
+        Not sure which support your child needs?
+      </h2>
+      <p class="text-gray-700 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        Answer 3 quick questions to identify the evidence-based clinical pathway, get recommended tools, and connect with Clinical Psychologist Rabbia Ashraf.
+      </p>
+    </div>
+
+    <!-- Triage Card Container -->
+    <div class="bg-white rounded-3xl shadow-md border border-gray-200 p-6 md:p-10 relative overflow-hidden">
+      
+      <!-- Progress Bar -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between text-xs font-bold text-gray-500 mb-2">
+          <span id="step-indicator">Step 1 of 3: Child's Age</span>
+          <span id="step-percentage" class="text-brand-navy font-extrabold">33%</span>
+        </div>
+        <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="bg-brand-navy h-full w-1/3 transition-all duration-300 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Step 1: Age Selection -->
+      <div id="triage-step-1" class="triage-step">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">What age bracket is your child in?</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <button type="button" class="triage-btn-option p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center gap-3.5" data-val="Toddler (2-4 yrs)">
+            <span class="w-10 h-10 rounded-xl bg-blue-100 text-brand-navy flex items-center justify-center font-bold text-base shrink-0">🌱</span>
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Toddler & Preschool (2–4 yrs)</div>
+              <div class="text-xs text-gray-500">Milestone delays, speech, early tantrums</div>
+            </div>
+          </button>
+          
+          <button type="button" class="triage-btn-option p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center gap-3.5" data-val="Early Primary (5-7 yrs)">
+            <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-base shrink-0">🎒</span>
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Early Primary (5–7 yrs)</div>
+              <div class="text-xs text-gray-500">School readiness, morning battles, focus</div>
+            </div>
+          </button>
+
+          <button type="button" class="triage-btn-option p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center gap-3.5" data-val="Middle Childhood (8-11 yrs)">
+            <span class="w-10 h-10 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-base shrink-0">📚</span>
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Middle Childhood (8–11 yrs)</div>
+              <div class="text-xs text-gray-500">Homework battles, emotional regulation, peer skills</div>
+            </div>
+          </button>
+
+          <button type="button" class="triage-btn-option p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center gap-3.5" data-val="Adolescent (12-16 yrs)">
+            <span class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-base shrink-0">🎯</span>
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Adolescent / Teen (12–16 yrs)</div>
+              <div class="text-xs text-gray-500">Executive burnout, exam anxiety, masking</div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Primary Challenge -->
+      <div id="triage-step-2" class="triage-step hidden">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">What is your primary daily concern?</h3>
+        <div class="space-y-3">
+          <button type="button" class="triage-btn-option w-full p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center justify-between" data-val="ADHD & Executive Function">
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Attention, Focus & Morning Battles</div>
+              <div class="text-xs text-gray-500">Distractibility, homework resistance, disorganization, forgotten routines</div>
+            </div>
+            <span class="text-xs font-bold text-brand-trust bg-brand-sky/20 px-2.5 py-1 rounded-md">ADHD Guidance</span>
+          </button>
+
+          <button type="button" class="triage-btn-option w-full p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center justify-between" data-val="Autism & Social Communication">
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Social Reciprocity & Developmental Signs</div>
+              <div class="text-xs text-gray-500">Eye contact, speech differences, repetitive behaviors, peer difficulty</div>
+            </div>
+            <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2.5 py-1 rounded-md">ASD Support</span>
+          </button>
+
+          <button type="button" class="triage-btn-option w-full p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center justify-between" data-val="Emotional Meltdowns & Dysregulation">
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Explosive Meltdowns & Sensory Overload</div>
+              <div class="text-xs text-gray-500">Extreme tantrums, sound/texture sensitivity, aggression during transitions</div>
+            </div>
+            <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md">Sensory / Behaviour</span>
+          </button>
+
+          <button type="button" class="triage-btn-option w-full p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center justify-between" data-val="School Support & IEP Accommodations">
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">School Complaints & Special Education (IEP)</div>
+              <div class="text-xs text-gray-500">Teacher concerns, school refusal, securing classroom exam accommodations</div>
+            </div>
+            <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2.5 py-1 rounded-md">School Advocacy</span>
+          </button>
+
+          <button type="button" class="triage-btn-option w-full p-4 rounded-2xl border-2 border-gray-200 hover:border-brand-navy hover:bg-blue-50/40 text-left transition-all cursor-pointer flex items-center justify-between" data-val="Report Review & Second Opinion">
+            <div>
+              <div class="font-bold text-brand-navy text-sm md:text-base">Making Sense of an Assessment Report</div>
+              <div class="text-xs text-gray-500">Received psychometric/speech testing and need a clear, practical debrief</div>
+            </div>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-md">Report Review</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Location / Country -->
+      <div id="triage-step-3" class="triage-step hidden">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Where are you located? (For time zone & fees)</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+          <button type="button" class="triage-location-btn p-3.5 rounded-xl border border-gray-200 hover:border-brand-navy hover:bg-blue-50/50 text-center font-bold text-sm text-brand-navy transition-all cursor-pointer" data-val="United Kingdom (UK)">
+            🇬🇧 UK & Europe
+          </button>
+          <button type="button" class="triage-location-btn p-3.5 rounded-xl border border-gray-200 hover:border-brand-navy hover:bg-blue-50/50 text-center font-bold text-sm text-brand-navy transition-all cursor-pointer" data-val="USA & Canada">
+            🇺🇸 USA / Canada
+          </button>
+          <button type="button" class="triage-location-btn p-3.5 rounded-xl border border-gray-200 hover:border-brand-navy hover:bg-blue-50/50 text-center font-bold text-sm text-brand-navy transition-all cursor-pointer" data-val="UAE & Middle East">
+            🇦🇪 UAE / Gulf
+          </button>
+          <button type="button" class="triage-location-btn p-3.5 rounded-xl border border-gray-200 hover:border-brand-navy hover:bg-blue-50/50 text-center font-bold text-sm text-brand-navy transition-all cursor-pointer" data-val="Pakistan">
+            🇵🇰 Pakistan
+          </button>
+          <button type="button" class="triage-location-btn p-3.5 rounded-xl border border-gray-200 hover:border-brand-navy hover:bg-blue-50/50 text-center font-bold text-sm text-brand-navy transition-all cursor-pointer" data-val="Australia & NZ">
+            🇦🇺 Australia / NZ
+          </button>
+          <button type="button" class="triage-location-btn p-3.5 rounded-xl border border-gray-200 hover:border-brand-navy hover:bg-blue-50/50 text-center font-bold text-sm text-brand-navy transition-all cursor-pointer" data-val="Other International">
+            🌐 Other Country
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Results & Lead Generation Card -->
+      <div id="triage-step-result" class="triage-step hidden text-left">
+        <div class="bg-gradient-to-br from-blue-50 to-[#FAF8F3] p-6 rounded-2xl border border-blue-200/80 mb-6">
+          <div class="flex items-center gap-2 text-xs font-bold text-brand-trust uppercase tracking-wider mb-1">
+            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Personalized Clinical Recommendation
+          </div>
+          <h4 id="result-title" class="text-2xl font-extrabold text-brand-navy mb-2">ADHD Executive Function Consultation</h4>
+          <p id="result-description" class="text-sm text-gray-700 leading-relaxed mb-4">
+            Based on your child's age and challenges, we recommend a focused parent consultation utilizing Dr. Russell Barkley's executive scaffolding model to establish low-friction morning routines and homework focus.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-600 font-medium pt-3 border-t border-blue-200/60">
+            <div>📍 <strong>Location:</strong> <span id="summary-location" class="text-brand-navy font-bold">United Kingdom</span></div>
+            <div>👶 <strong>Age Group:</strong> <span id="summary-age" class="text-brand-navy font-bold">5–7 yrs</span></div>
+            <div>📋 <strong>Clinical Focus:</strong> <span id="summary-concern" class="text-brand-navy font-bold">ADHD &amp; Executive Function</span></div>
+            <div>💻 <strong>Delivery:</strong> <span class="text-emerald-700 font-bold">Secure Online Telehealth (Zoom/Meet)</span></div>
+          </div>
+        </div>
+
+        <!-- Recommended Tool Box -->
+        <div class="bg-white p-4 rounded-xl border border-gray-200 mb-6 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-lg bg-brand-cream flex items-center justify-center text-xl shrink-0">📄</span>
+            <div>
+              <div class="text-xs font-bold text-gray-500 uppercase">Immediate Free Clinical Tool</div>
+              <div id="result-tool-name" class="text-sm font-bold text-brand-navy">ADHD Home Routine Planner (PDF)</div>
+            </div>
+          </div>
+          <a
+            id="result-tool-link"
+            href="/downloads/adhd-home-routine-planner.pdf"
+            download
+            class="text-xs font-bold text-brand-navy hover:underline bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg shrink-0"
+          >
+            Download PDF
+          </a>
+        </div>
+
+        <!-- Next Actions: Book or WhatsApp -->
+        <div class="space-y-3">
+          <a
+            id="result-book-btn"
+            href="/book"
+            class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy text-white text-base font-bold py-3.5 px-6 rounded-xl hover:bg-blue-900 transition-colors shadow-md text-center"
+          >
+            <span>Proceed to Book Consultation</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+
+          <a
+            id="result-whatsapp-btn"
+            href="https://wa.me/923364114002"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-sm font-bold py-3 px-6 rounded-xl hover:bg-[#1EBE5D] transition-colors shadow-xs text-center"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Ask Rabbia Directly on WhatsApp with These Answers</span>
+          </a>
+
+          <div class="text-center pt-2">
+            <button type="button" id="triage-restart-btn" class="text-xs text-gray-500 hover:text-brand-navy underline cursor-pointer">
+              ← Restart Assessment Screener
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let selectedAge = '';
+    let selectedConcern = '';
+    let selectedLocation = '';
+
+    const step1 = document.getElementById('triage-step-1');
+    const step2 = document.getElementById('triage-step-2');
+    const step3 = document.getElementById('triage-step-3');
+    const stepResult = document.getElementById('triage-step-result');
+
+    const stepIndicator = document.getElementById('step-indicator');
+    const stepPercentage = document.getElementById('step-percentage');
+    const progressBarFill = document.getElementById('progress-bar-fill');
+
+    const summaryAge = document.getElementById('summary-age');
+    const summaryConcern = document.getElementById('summary-concern');
+    const summaryLocation = document.getElementById('summary-location');
+    const resultTitle = document.getElementById('result-title');
+    const resultDescription = document.getElementById('result-description');
+    const resultToolName = document.getElementById('result-tool-name');
+    const resultToolLink = document.getElementById('result-tool-link') as HTMLAnchorElement;
+    const resultBookBtn = document.getElementById('result-book-btn') as HTMLAnchorElement;
+    const resultWhatsappBtn = document.getElementById('result-whatsapp-btn') as HTMLAnchorElement;
+    const restartBtn = document.getElementById('triage-restart-btn');
+
+    // Step 1: Age button clicks
+    step1?.querySelectorAll('.triage-btn-option').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedAge = (btn as HTMLElement).getAttribute('data-val') || '';
+        step1.classList.add('hidden');
+        step2?.classList.remove('hidden');
+        if (stepIndicator) stepIndicator.textContent = "Step 2 of 3: Primary Concern";
+        if (stepPercentage) stepPercentage.textContent = "66%";
+        if (progressBarFill) progressBarFill.style.width = "66%";
+      });
+    });
+
+    // Step 2: Concern button clicks
+    step2?.querySelectorAll('.triage-btn-option').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedConcern = (btn as HTMLElement).getAttribute('data-val') || '';
+        step2.classList.add('hidden');
+        step3?.classList.remove('hidden');
+        if (stepIndicator) stepIndicator.textContent = "Step 3 of 3: Country / Location";
+        if (stepPercentage) stepPercentage.textContent = "90%";
+        if (progressBarFill) progressBarFill.style.width = "90%";
+      });
+    });
+
+    // Step 3: Location button clicks
+    step3?.querySelectorAll('.triage-location-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedLocation = (btn as HTMLElement).getAttribute('data-val') || '';
+        showResults();
+      });
+    });
+
+    function showResults() {
+      step3?.classList.add('hidden');
+      stepResult?.classList.remove('hidden');
+      if (stepIndicator) stepIndicator.textContent = "Assessment Complete";
+      if (stepPercentage) stepPercentage.textContent = "100%";
+      if (progressBarFill) progressBarFill.style.width = "100%";
+
+      if (summaryAge) summaryAge.textContent = selectedAge;
+      if (summaryConcern) summaryConcern.textContent = selectedConcern;
+      if (summaryLocation) summaryLocation.textContent = selectedLocation;
+
+      // Dynamic mapping
+      let title = "Child Development Parent Consultation";
+      let desc = "We will conduct a comprehensive parent debrief to evaluate developmental milestones, sensory patterns, and outline immediate home support strategies.";
+      let toolName = "ADHD Home Routine Planner (PDF)";
+      let toolUrl = "/downloads/adhd-home-routine-planner.pdf";
+
+      if (selectedConcern.includes('ADHD')) {
+        title = "ADHD Executive Function Parent Consultation";
+        desc = "Based on Dr. Russell Barkley's executive scaffolding model: we design visual schedules, dopamine transition bridges, and point-of-performance supports to reduce home conflicts.";
+        toolName = "ADHD Home Routine Planner & Visual Schedule";
+        toolUrl = "/downloads/adhd-home-routine-planner.pdf";
+      } else if (selectedConcern.includes('Autism')) {
+        title = "Autism Spectrum & Social Communication Guidance";
+        desc = "Following DSM-5-TR and SCERTS principles: we assess sensory reactivity, communication differences, and neurodiversity-affirming adjustments tailored for your child.";
+        toolName = "Autism Observation & Communication Guide";
+        toolUrl = "/downloads/autism-observation-guide.pdf";
+      } else if (selectedConcern.includes('Meltdowns')) {
+        title = "Behaviour ABC & Co-Regulation Planning";
+        desc = "Utilizing Functional Behaviour Assessment (FBA): we isolate Antecedents, map autonomic arousal triggers, and build positive replacement strategies.";
+        toolName = "Behaviour ABC Incident & Meltdown Tracker";
+        toolUrl = "/downloads/behaviour-abc-incident-tracker.pdf";
+      } else if (selectedConcern.includes('School')) {
+        title = "School IEP & Classroom Advocacy Consultation";
+        desc = "We review your child's academic challenges and prepare a structured rubric of formal accommodations (chunked exams, sensory break passes, visual timers) for teacher meetings.";
+        toolName = "School IEP & Parent Advocacy Checklist";
+        toolUrl = "/downloads/school-iep-advocacy-checklist.pdf";
+      } else if (selectedConcern.includes('Report')) {
+        title = "Psychological Report Review & Second Opinion";
+        desc = "We translate clinical psychometric percentiles, WISC-V / Conners-3 scores, and diagnostic reports into actionable, plain-English home and school accommodations.";
+        toolName = "Psychological Report Review Questions Guide";
+        toolUrl = "/downloads/psychological-report-review-questions.pdf";
+      }
+
+      if (resultTitle) resultTitle.textContent = title;
+      if (resultDescription) resultDescription.textContent = desc;
+      if (resultToolName) resultToolName.textContent = toolName;
+      if (resultToolLink) {
+        resultToolLink.href = toolUrl;
+        resultToolLink.download = '';
+      }
+
+      // Update booking link with URL parameters
+      if (resultBookBtn) {
+        resultBookBtn.href = `/book?service=${encodeURIComponent(title)}&age=${encodeURIComponent(selectedAge)}&location=${encodeURIComponent(selectedLocation)}`;
+      }
+
+      // Update WhatsApp link with formatted enquiry
+      if (resultWhatsappBtn) {
+        const text = `Hi Rabbia, I completed your online triage screener from ${selectedLocation}.\n\n• Child Age: ${selectedAge}\n• Primary Concern: ${selectedConcern}\n• Recommended: ${title}\n\nI would like to enquire about your next available consultation slots.`;
+        resultWhatsappBtn.href = `https://wa.me/923364114002?text=${encodeURIComponent(text)}`;
+      }
+    }
+
+    restartBtn?.addEventListener('click', () => {
+      selectedAge = '';
+      selectedConcern = '';
+      selectedLocation = '';
+      stepResult?.classList.add('hidden');
+      step1?.classList.remove('hidden');
+      if (stepIndicator) stepIndicator.textContent = "Step 1 of 3: Child's Age";
+      if (stepPercentage) stepPercentage.textContent = "33%";
+      if (progressBarFill) progressBarFill.style.width = "33%";
+    });
+  });
+</script>
