@@ -9,14 +9,14 @@ const breadcrumbs = [
   { name: 'Resource Vault', href: '/resource-vault' }
 ];
 
-const title = "Clinical Resource Vault: Worksheets, Books, GitHub & Hugging Face AI | Rabbia Psychologist";
-const description = "Explore evidence-based clinical worksheets, gold-standard parent manuals, and cutting-edge GitHub repositories & Hugging Face AI tools for ADHD, Autism, and child development.";
+const title = "Clinical Resource Vault: Worksheets, Books & Screening Kits | Rabbia Psychologist";
+const description = "Comprehensive clinical resource vault featuring printable worksheets, ADHD routine planners, ABA behavior trackers, clinical book summaries, and pediatric screening toolkits available via WhatsApp.";
 const canonicalURL = "https://www.rabbiapsychologist.com/resource-vault/";
 
 const vaultSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Clinical Resource Vault: Pediatric Psychology, Worksheets, Books & Open Science AI",
+  "name": "Clinical Resource Vault: Pediatric Psychology, Worksheets, Book Summaries & Screening Kits",
   "description": description,
   "url": canonicalURL,
   "publisher": {
@@ -35,7 +35,7 @@ const vaultSchema = {
       <div class="mt-6 text-center max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100/80 text-brand-navy text-xs font-bold tracking-wide uppercase mb-4">
           <svg class="w-4 h-4 text-brand-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-          Comprehensive Pediatric Psychology Resource Library
+          Direct Access Clinical Library
         </div>
 
         <h1 class="text-3xl md:text-5xl font-extrabold text-brand-navy tracking-tight mb-4">
@@ -43,7 +43,7 @@ const vaultSchema = {
         </h1>
 
         <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-          A curated ecosystem of evidence-based psychological tools: printable daily routine planners, seminal clinical literature, and open-source AI projects across GitHub and Hugging Face.
+          Evidence-based psychological tools curated by Clinical Psychologist Rabbia Ashraf. Open and print worksheets immediately, or request full clinical manuals, book summaries, and screening toolkits directly through WhatsApp.
         </p>
 
         <!-- Stats Bar -->
@@ -54,15 +54,15 @@ const vaultSchema = {
           </div>
           <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
             <div class="text-2xl font-extrabold text-amber-700">6+</div>
-            <div class="text-xs text-gray-600 font-medium">Gold-Standard Books</div>
+            <div class="text-xs text-gray-600 font-medium">Clinical Book Guides</div>
           </div>
           <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-            <div class="text-2xl font-extrabold text-purple-700">GitHub &amp; HF</div>
-            <div class="text-xs text-gray-600 font-medium">Open Source AI Repos</div>
+            <div class="text-2xl font-extrabold text-purple-700">5+</div>
+            <div class="text-xs text-gray-600 font-medium">Pediatric AI Toolkits</div>
           </div>
           <div class="bg-white p-3.5 rounded-xl border border-gray-100 shadow-xs">
-            <div class="text-2xl font-extrabold text-emerald-700">100% Free</div>
-            <div class="text-xs text-gray-600 font-medium">Open Clinical Access</div>
+            <div class="text-2xl font-extrabold text-emerald-700">Instant</div>
+            <div class="text-xs text-gray-600 font-medium">WhatsApp Delivery</div>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ const vaultSchema = {
           <input
             type="text"
             id="vault-search-input"
-            placeholder="Search worksheets, books, GitHub repos..."
+            placeholder="Search worksheets, book summaries, kits..."
             class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-brand-navy shadow-inner"
             aria-label="Search resources"
           />
@@ -133,11 +133,11 @@ const vaultSchema = {
       <!-- Counter & Active Filter Badge -->
       <div class="flex items-center justify-between mb-8 pb-3 border-b border-gray-200">
         <span class="text-sm font-semibold text-gray-600" id="results-count">
-          Showing all {vaultResources.length} resources
+          Showing all {vaultResources.length} clinical resources
         </span>
-        <a href="/free-downloads" class="text-xs font-bold text-brand-navy hover:underline flex items-center gap-1">
-          <span>View Printable Free Downloads Hub</span>
-          <span>&rarr;</span>
+        <a href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20full%20clinical%20resource%20vault%20toolkit." target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#25D366] hover:underline flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>Request Complete Bundle on WhatsApp</span>
         </a>
       </div>
 
@@ -173,7 +173,7 @@ const vaultSchema = {
 
               <!-- Creator/Author -->
               <p class="text-xs text-gray-500 mb-3 font-medium">
-                By: <span class="text-gray-700 font-semibold">{item.authorOrCreator}</span>
+                Framework: <span class="text-gray-700 font-semibold">{item.authorOrCreator}</span>
               </p>
 
               <!-- Description -->
@@ -183,40 +183,31 @@ const vaultSchema = {
             </div>
 
             <!-- Card Action Footer -->
-            <div class="pt-4 border-t border-gray-100 mt-auto">
-              <div class="text-[11px] text-gray-500 mb-2 font-medium">
+            <div class="pt-4 border-t border-gray-100 mt-auto space-y-2">
+              <div class="text-[11px] text-gray-500 font-medium">
                 Format: <span class="text-gray-700 font-semibold">{item.formatOrType}</span>
               </div>
 
               {item.actionType === 'print' ? (
-                <a
-                  href={item.actionUrl}
-                  class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-blue-900 transition-colors shadow-2xs text-center"
-                >
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
-                  <span>{item.actionText}</span>
-                </a>
-              ) : item.actionType === 'github' ? (
-                <a
-                  href={item.actionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full inline-flex items-center justify-center gap-2 bg-[#24292e] text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-black transition-colors shadow-2xs text-center"
-                >
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                  <span>{item.actionText}</span>
-                </a>
-              ) : item.actionType === 'huggingface' ? (
-                <a
-                  href={item.actionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full inline-flex items-center justify-center gap-2 bg-[#FFD21E] text-brand-navy text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-yellow-400 transition-colors shadow-2xs text-center"
-                >
-                  <span class="text-sm">🤗</span>
-                  <span>{item.actionText}</span>
-                </a>
-              ) : item.actionType === 'whatsapp' ? (
+                <div class="space-y-2 pt-1">
+                  <a
+                    href={item.actionUrl}
+                    class="w-full inline-flex items-center justify-center gap-2 bg-brand-navy text-white text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl hover:bg-blue-900 transition-colors shadow-2xs text-center"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                    <span>{item.actionText}</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/923364114002?text=${encodeURIComponent(`Hi Rabbia, I would like to request the PDF copy of the ${item.title} from the Resource Vault.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366]/10 text-emerald-800 hover:bg-[#25D366] hover:text-white border border-[#25D366]/30 text-xs font-bold py-2 px-3 rounded-xl transition-colors text-center"
+                  >
+                    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Also available via WhatsApp</span>
+                  </a>
+                </div>
+              ) : (
                 <a
                   href={item.actionUrl}
                   target="_blank"
@@ -225,16 +216,6 @@ const vaultSchema = {
                 >
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                   <span>{item.actionText}</span>
-                </a>
-              ) : (
-                <a
-                  href={item.actionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full inline-flex items-center justify-center gap-1.5 bg-gray-100 text-brand-navy hover:bg-brand-navy hover:text-white border border-gray-200 text-xs md:text-sm font-bold py-2.5 px-4 rounded-xl transition-colors text-center"
-                >
-                  <span>{item.actionText}</span>
-                  <span>&rarr;</span>
                 </a>
               )}
             </div>
@@ -290,7 +271,7 @@ const vaultSchema = {
         });
 
         if (resultsCount) {
-          resultsCount.textContent = `Showing ${visibleCount} of ${cards.length} resources`;
+          resultsCount.textContent = `Showing ${visibleCount} of ${cards.length} clinical resources`;
         }
 
         if (noResults) {

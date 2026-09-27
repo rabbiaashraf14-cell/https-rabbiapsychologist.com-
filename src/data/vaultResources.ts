@@ -1,6 +1,6 @@
 export interface VaultResource {
   id: string;
-  category: 'worksheet' | 'book' | 'open-source-ai' | 'clinical-guide';
+  category: 'worksheet' | 'book-summary' | 'ai-toolkit' | 'clinical-protocol';
   categoryLabel: string;
   tag: 'ADHD' | 'Autism' | 'Behaviour' | 'Sensory' | 'School' | 'Parenting' | 'AI & Tech';
   title: string;
@@ -8,7 +8,7 @@ export interface VaultResource {
   authorOrCreator: string;
   description: string;
   formatOrType: string;
-  actionType: 'print' | 'link' | 'whatsapp' | 'github' | 'huggingface';
+  actionType: 'print' | 'whatsapp';
   actionUrl: string;
   actionText: string;
   badge?: string;
@@ -17,14 +17,14 @@ export interface VaultResource {
 export const vaultCategories = [
   { id: 'all', label: 'All Resources' },
   { id: 'worksheet', label: 'Printable Worksheets & Planners' },
-  { id: 'book', label: 'Clinical Books & Manuals' },
-  { id: 'open-source-ai', label: 'GitHub & Hugging Face AI Tools' },
-  { id: 'clinical-guide', label: 'Evidence-Based Frameworks' }
+  { id: 'book-summary', label: 'Clinical Book Summaries & Guides' },
+  { id: 'ai-toolkit', label: 'AI & Pediatric Screening Kits' },
+  { id: 'clinical-protocol', label: 'Evidence-Based Protocols' }
 ] as const;
 
 export const vaultResources: VaultResource[] = [
   // ==========================================
-  // 1. PRINTABLE WORKSHEETS & PLANNERS
+  // 1. PRINTABLE CLINICAL WORKSHEETS & PLANNERS
   // ==========================================
   {
     id: 'vault-adhd-planner',
@@ -34,12 +34,12 @@ export const vaultResources: VaultResource[] = [
     title: 'ADHD Home Routine Planner & Visual Schedule',
     subtitle: "Barkley's Executive Scaffolding Model",
     authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
-    description: 'Visual checklists and launchpad stations designed to offload working memory, reduce morning friction, and establish bedtime dopamine transition bridges.',
+    description: 'Visual checklists and launchpad stations designed to offload working memory, eliminate morning battles, and establish bedtime transition bridges.',
     formatOrType: 'Print-Ready PDF Worksheet',
     actionType: 'print',
     actionUrl: '/free-downloads/adhd-routine-planner/',
     actionText: 'Open & Print Worksheet',
-    badge: 'Free Instant Access'
+    badge: 'Instant Access'
   },
   {
     id: 'vault-abc-tracker',
@@ -64,7 +64,7 @@ export const vaultResources: VaultResource[] = [
     title: 'School IEP & Parent-Teacher Advocacy Checklist',
     subtitle: 'Special Education Inclusion Framework',
     authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
-    description: 'Organize pre-meeting clinical documentation, request specific accommodations (chunked exams, sensory break passes, visual timers), and track agreed accountability.',
+    description: 'Organize pre-meeting clinical documentation, request specific classroom accommodations (chunked exams, sensory break passes, visual timers), and track agreed accountability.',
     formatOrType: 'Advocacy Checklist & Rubric',
     actionType: 'print',
     actionUrl: '/free-downloads/school-iep-checklist/',
@@ -94,7 +94,7 @@ export const vaultResources: VaultResource[] = [
     title: 'Psychological Report Review Questions for Parents',
     subtitle: 'Psychoeducational Report Literacy',
     authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
-    description: '15 targeted questions to ask your psychologist or pediatrician after receiving an assessment report to translate percentiles and standard scores into daily support.',
+    description: '15 targeted questions to ask your psychologist or pediatrician after receiving an assessment report to translate percentiles and standard scores into daily home support.',
     formatOrType: 'Clinical Debriefing Guide',
     actionType: 'print',
     actionUrl: '/free-downloads/report-review-questions/',
@@ -121,14 +121,14 @@ export const vaultResources: VaultResource[] = [
     category: 'worksheet',
     categoryLabel: 'Printable Worksheet',
     tag: 'Sensory',
-    title: 'Daily Visual Transition & Schedule Cards',
-    subtitle: 'Visual Scaffolding for Non-Verbal & Anxious Children',
-    authorOrCreator: 'Child Development Clinical Team',
-    description: 'Visual cards depicting morning routine, mealtime, therapy, schoolwork, quiet time, and bedtime transitions. Dramatically reduces transition resistance.',
-    formatOrType: 'Printable Card Templates',
+    title: 'Daily Visual Transition & Schedule Cards Set',
+    subtitle: 'Visual Scaffolding for Anxious & Neurodivergent Children',
+    authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
+    description: '50+ printable visual cards depicting morning routine, schoolwork, therapy, quiet corners, and bedtime transitions to prevent meltdown during daily shifts.',
+    formatOrType: 'Printable Card Kit (PDF)',
     actionType: 'whatsapp',
-    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Daily%20Visual%20Schedule%20Cards%20PDF.',
-    actionText: 'Request Cards on WhatsApp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Daily%20Visual%20Transition%20Cards%20PDF%20from%20the%20Resource%20Vault.',
+    actionText: 'Request via WhatsApp',
     badge: 'Visual Support'
   },
   {
@@ -136,14 +136,14 @@ export const vaultResources: VaultResource[] = [
     category: 'worksheet',
     categoryLabel: 'Printable Worksheet',
     tag: 'Behaviour',
-    title: 'Token Economy & Positive Reinforcement Sheet',
+    title: 'Token Economy & Positive Reinforcement System Sheet',
     subtitle: 'Contingency Management System',
-    authorOrCreator: 'Applied Behaviour Support Services',
+    authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
     description: 'Structured reinforcement chart utilizing immediate token rewards for target replacement behaviours, moving away from punishment towards positive behavioral momentum.',
-    formatOrType: 'Behaviour Modification Sheet',
+    formatOrType: 'Behavior Modification Kit (PDF)',
     actionType: 'whatsapp',
-    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Token%20Economy%20Worksheet.',
-    actionText: 'Request on WhatsApp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Token%20Economy%20Worksheet%20PDF%20from%20the%20Resource%20Vault.',
+    actionText: 'Request via WhatsApp',
     badge: 'Positive Reinforcement'
   },
   {
@@ -155,202 +155,232 @@ export const vaultResources: VaultResource[] = [
     subtitle: 'Circadian Rhythm & Melatonin Scaffolding',
     authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
     description: 'Step-by-step evening sensory wind-down protocol designed for ADHD and autistic children suffering from delayed sleep phase, bedtime anxiety, and sleep inertia.',
-    formatOrType: 'Clinical Sleep Schedule',
+    formatOrType: 'Clinical Sleep Schedule (PDF)',
     actionType: 'whatsapp',
-    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Sleep%20Hygiene%20Protocol%20PDF.',
-    actionText: 'Request on WhatsApp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Sleep%20Hygiene%20Protocol%20PDF%20from%20the%20Resource%20Vault.',
+    actionText: 'Request via WhatsApp',
     badge: 'Sleep Support'
   },
 
   // ==========================================
-  // 2. CLINICAL BOOKS & MANUALS
+  // 2. CLINICAL BOOK SUMMARIES & PARENT GUIDES
   // ==========================================
   {
     id: 'book-barkley-adhd',
-    category: 'book',
-    categoryLabel: 'Clinical Book',
+    category: 'book-summary',
+    categoryLabel: 'Clinical Book Summary',
     tag: 'ADHD',
-    title: 'Taking Charge of ADHD: The Complete, Authoritative Guide for Parents',
-    subtitle: '4th Edition (Guilford Press)',
-    authorOrCreator: 'Dr. Russell A. Barkley, Ph.D.',
-    description: 'The gold-standard clinical manual on childhood ADHD. Explains ADHD as an executive function deficit and time-blindness disorder, detailing point-of-performance home interventions.',
-    formatOrType: 'Authoritative Clinical Text',
-    actionType: 'link',
-    actionUrl: 'https://www.guilford.com/books/Taking-Charge-of-ADHD/Russell-Barkley/9781462542673',
-    actionText: 'Explore Publisher Details',
-    badge: 'Essential Reading'
+    title: "Taking Charge of ADHD: Psychologist's Implementation Summary",
+    subtitle: 'Based on Dr. Russell Barkley’s Executive Function Model',
+    authorOrCreator: 'Clinical Summary by Rabbia Ashraf',
+    description: 'A structured 12-page executive summary translating Dr. Barkley’s 8 golden rules of ADHD parenting into daily home strategies, point-of-performance scaffolds, and school collaboration.',
+    formatOrType: 'Clinical Summary Guide (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Taking%20Charge%20of%20ADHD%20Summary%20Guide%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Executive Function'
   },
   {
     id: 'book-explosive-child',
-    category: 'book',
-    categoryLabel: 'Clinical Book',
+    category: 'book-summary',
+    categoryLabel: 'Clinical Book Summary',
     tag: 'Behaviour',
-    title: 'The Explosive Child: Collaborative & Proactive Solutions',
-    subtitle: 'Collaborative Problem Solving (CPS) Model',
-    authorOrCreator: 'Dr. Ross W. Greene, Ph.D.',
-    description: 'Groundbreaking framework proving "children do well if they can". Shifts focus from behavioral modification to solving lagging cognitive and emotional flexibility skills.',
-    formatOrType: 'Clinical Parenting Manual',
-    actionType: 'link',
-    actionUrl: 'https://drrossgreene.com/the-explosive-child.htm',
-    actionText: 'Explore CPS Model',
-    badge: 'Evidence-Based'
+    title: 'The Explosive Child: Collaborative Problem Solving (CPS) Script',
+    subtitle: 'Based on Dr. Ross Greene’s Lagging Skills Framework',
+    authorOrCreator: 'Clinical Summary by Rabbia Ashraf',
+    description: 'Step-by-step conversation scripts using Plan B collaborative problem solving to resolve recurring conflicts, emotional inflexibility, and meltdown triggers before they escalate.',
+    formatOrType: 'Parent Conversation Script (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Explosive%20Child%20CPS%20Script%20Guide%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'De-escalation'
   },
   {
     id: 'book-attwood-aspergers',
-    category: 'book',
-    categoryLabel: 'Clinical Book',
+    category: 'book-summary',
+    categoryLabel: 'Clinical Book Summary',
     tag: 'Autism',
-    title: "The Complete Guide to Asperger's Syndrome",
-    subtitle: 'Autism Spectrum Level 1 Clinical Reference',
-    authorOrCreator: 'Dr. Tony Attwood, Ph.D.',
-    description: 'Comprehensive international clinical guide examining social relationships, special interests, sensory perception, motor coordination, and emotional regulation in autistic youth.',
-    formatOrType: 'Clinical Reference Manual',
-    actionType: 'link',
-    actionUrl: 'https://tonyattwood.com.au/books/',
-    actionText: 'View Clinical Manual',
-    badge: 'ASD Gold Standard'
+    title: 'Asperger’s & Level 1 Autism: Clinical Home Strategy Guide',
+    subtitle: 'Based on Dr. Tony Attwood’s Clinical Manual',
+    authorOrCreator: 'Clinical Summary by Rabbia Ashraf',
+    description: 'Key insights on social communication differences, managing cognitive exhaustion (masking), and sensory accommodations for academically capable autistic children.',
+    formatOrType: 'Parent Guide & Checklist (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Tony%20Attwood%20ASD%20Summary%20Guide%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'ASD Support'
   },
   {
     id: 'book-out-of-sync',
-    category: 'book',
-    categoryLabel: 'Clinical Book',
+    category: 'book-summary',
+    categoryLabel: 'Clinical Book Summary',
     tag: 'Sensory',
-    title: 'The Out-of-Sync Child: Recognizing and Coping with Sensory Processing Differences',
-    subtitle: '3rd Edition',
-    authorOrCreator: 'Carol Stock Kranowitz, M.A.',
-    description: 'The definitive guide for identifying sensory seeking, sensory avoiding, and sensory modulation challenges, complete with heavy-work and vestibular activities for daily life.',
-    formatOrType: 'Sensory Integration Guide',
-    actionType: 'link',
-    actionUrl: 'https://out-of-sync-child.com/',
-    actionText: 'View Resource Site',
-    badge: 'Sensory Classic'
+    title: 'Sensory Diet Directory: Home & Classroom Heavy Work Activities',
+    subtitle: 'Based on Carol Kranowitz’s Out-of-Sync Child Framework',
+    authorOrCreator: 'Clinical Summary by Rabbia Ashraf',
+    description: 'A practical collection of 35 proprioceptive and vestibular activities (wall pushes, animal walks, weighted blankets) to calm dysregulated sensory seekers and avoiders.',
+    formatOrType: 'Sensory Activity Directory (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Sensory%20Diet%20Activity%20Directory%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Sensory Diet'
   },
   {
     id: 'book-smart-scattered',
-    category: 'book',
-    categoryLabel: 'Clinical Book',
+    category: 'book-summary',
+    categoryLabel: 'Clinical Book Summary',
     tag: 'ADHD',
-    title: 'Smart but Scattered: The Revolutionary Executive Skills Approach',
-    subtitle: 'Guilford Press',
-    authorOrCreator: 'Dr. Peg Dawson, Ed.D. & Dr. Richard Guare, Ph.D.',
-    description: 'Scientific profiling tests to assess your child’s and your own executive strengths and weaknesses in working memory, sustained attention, task initiation, and emotional control.',
-    formatOrType: 'Executive Skills Workbook',
-    actionType: 'link',
-    actionUrl: 'https://www.smartbutscatteredkids.com/',
-    actionText: 'View Assessment Tools',
-    badge: 'Executive Skills'
+    title: 'Executive Skills Profiler: Home & Study Skills Assessment Kit',
+    subtitle: 'Based on Dawson & Guare’s Smart but Scattered',
+    authorOrCreator: 'Clinical Summary by Rabbia Ashraf',
+    description: 'Parent questionnaire to pinpoint specific deficits in working memory, task initiation, emotional control, and organization, paired with individualized scaffolding interventions.',
+    formatOrType: 'Assessment & Strategy Kit (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Executive%20Skills%20Profiler%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Executive Profiler'
   },
   {
     id: 'book-uniquely-human',
-    category: 'book',
-    categoryLabel: 'Clinical Book',
+    category: 'book-summary',
+    categoryLabel: 'Clinical Book Summary',
     tag: 'Autism',
-    title: 'Uniquely Human: A Different Way of Seeing Autism',
-    subtitle: 'Simon & Schuster',
-    authorOrCreator: 'Dr. Barry M. Prizant, Ph.D., CCC-SLP',
-    description: 'Re-frames autistic behaviors not as pathologies to be extinguished, but as regulatory strategies for coping with a world that is overwhelming and chaotic.',
-    formatOrType: 'Neurodiversity Guide',
-    actionType: 'link',
-    actionUrl: 'https://barryprizant.com/uniquely-human/',
-    actionText: 'Explore Book Details',
-    badge: 'Highly Recommended'
+    title: 'Neurodiversity & Regulation Blueprint: Respectful ASD Guidance',
+    subtitle: 'Based on Dr. Barry Prizant’s SCERTS Framework',
+    authorOrCreator: 'Clinical Summary by Rabbia Ashraf',
+    description: 'Understanding autistic stimming and communication as natural self-regulation mechanisms rather than behaviors to eliminate. Focuses on emotional safety and environmental adjustment.',
+    formatOrType: 'Clinical Blueprint (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Uniquely%20Human%20Regulation%20Blueprint%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Neurodiversity'
   },
 
   // ==========================================
-  // 3. GITHUB REPOSITORIES & OPEN-SOURCE AI
+  // 3. AI & PEDIATRIC SCREENING TOOLKITS
   // ==========================================
-  {
-    id: 'ai-simons-sleep',
-    category: 'open-source-ai',
-    categoryLabel: 'GitHub Open Science',
-    tag: 'AI & Tech',
-    title: 'Simons Sleep Project (SSP): Multi-Sensor Biometrics for ASD',
-    subtitle: 'GitHub Repository: Dinstein-Lab/SSP_manuscript',
-    authorOrCreator: 'Dinstein Lab (Ben-Gurion Univ) & Simons Foundation',
-    description: 'Open-science pipeline processing sleep actigraphy, pressure sensor mats, nocturnal heart-rate variability (HRV), and standardized Sensory Profile questionnaires in autistic children.',
-    formatOrType: 'Open Source Python/R Analysis Code',
-    actionType: 'github',
-    actionUrl: 'https://github.com/Dinstein-Lab/SSP_manuscript',
-    actionText: 'View on GitHub',
-    badge: 'Open Science'
-  },
   {
     id: 'ai-calmsignal',
-    category: 'open-source-ai',
-    categoryLabel: 'GitHub Open Science',
+    category: 'ai-toolkit',
+    categoryLabel: 'AI & Sensor Toolkit',
     tag: 'AI & Tech',
-    title: 'CalmSignal: Facial-Cue Early-Warning System for Sensory Overload',
-    subtitle: 'GitHub Repository: muhmdfarhan0/calmsignal',
-    authorOrCreator: 'Muhammad Farhan et al.',
-    description: 'Computer-vision AI model utilizing MobileNetV3 and facial action unit detection to alert caregivers to subtle signs of autonomic arousal and impending sensory meltdown.',
-    formatOrType: 'PyTorch / Computer Vision Model',
-    actionType: 'github',
-    actionUrl: 'https://github.com/muhmdfarhan0/calmsignal',
-    actionText: 'View on GitHub',
-    badge: 'Computer Vision'
+    title: 'CalmSignal: Early Meltdown Warning & Facial Action Observation Kit',
+    subtitle: 'Computer-Vision Autonomic Arousal Protocol',
+    authorOrCreator: 'Pediatric Psychology & AI Research Synthesis',
+    description: 'A clinical observation checklist modeled on AI facial-action and autonomic arousal markers to identify micro-expressions of sensory overload 10-15 minutes before a meltdown.',
+    formatOrType: 'Clinical Observation Toolkit (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20CalmSignal%20Early%20Meltdown%20Warning%20Toolkit%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'AI-Derived Protocol'
   },
   {
-    id: 'ai-hypercoco',
-    category: 'open-source-ai',
-    categoryLabel: 'GitHub Open Science',
+    id: 'ai-simons-sleep',
+    category: 'ai-toolkit',
+    categoryLabel: 'AI & Sensor Toolkit',
     tag: 'AI & Tech',
-    title: 'HyperCOCO & ABIDE: Graph Neural Networks for ASD & ADHD fMRI',
-    subtitle: 'GitHub Repository: basiralab/HyperCOCO',
-    authorOrCreator: 'BASIRA Lab (Brain And SIgnal Research & Analysis)',
-    description: 'Deep learning repository leveraging graph neural networks (GNNs) on resting-state fMRI from the ABIDE and ADHD-200 open repositories to analyze functional brain connectomics.',
-    formatOrType: 'Graph Deep Learning Framework',
-    actionType: 'github',
-    actionUrl: 'https://github.com/basiralab/HyperCOCO',
-    actionText: 'View on GitHub',
-    badge: 'Neuroimaging AI'
+    title: 'Simons Sensory-Sleep Biometric Profile: Parent Audit Sheet',
+    subtitle: 'Derived from Simons Foundation Pediatric Sleep Research',
+    authorOrCreator: 'Pediatric Sleep & Sensory Research Synthesis',
+    description: 'A clinical actigraphy and sleep-pressure tracking protocol to map how daytime sensory overload, noise exposure, and screen blue-light directly disrupt circadian sleep cycles.',
+    formatOrType: 'Sensory-Sleep Tracking Audit (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Simons%20Sensory-Sleep%20Audit%20Toolkit%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Sensory Biometrics'
+  },
+  {
+    id: 'ai-qchat-screening',
+    category: 'ai-toolkit',
+    categoryLabel: 'AI & Sensor Toolkit',
+    tag: 'AI & Tech',
+    title: 'Q-CHAT Pediatric Autism Screening Protocol & Scoring Matrix',
+    subtitle: 'Quantitative Checklist for Autism in Toddlers',
+    authorOrCreator: 'Cambridge Autism Research Centre / Clinical Implementation',
+    description: 'Validated 25-item toddler developmental screening rubric evaluating joint attention, social referencing, non-verbal pointing, and repetitive behaviors with clinical scoring guidance.',
+    formatOrType: 'Developmental Screening Rubric (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Q-CHAT%20Autism%20Screening%20Protocol%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Validated Screening'
+  },
+  {
+    id: 'ai-child-speech',
+    category: 'ai-toolkit',
+    categoryLabel: 'AI & Sensor Toolkit',
+    tag: 'AI & Tech',
+    title: 'Pediatric Speech Acoustic Delay & Phonological Articulation Kit',
+    subtitle: 'Acoustic AI Speech Screening Framework',
+    authorOrCreator: 'Child Speech & Language Research Synthesis',
+    description: 'Parent-friendly clinical audit assessing speech intelligibility, phonological substitutions, expressive delays, and developmental milestones for children aged 2 to 7.',
+    formatOrType: 'Speech Observation Guide (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Pediatric%20Speech%20Delay%20Screening%20Kit%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Speech & Language'
+  },
+  {
+    id: 'ai-adhd-connectomics',
+    category: 'ai-toolkit',
+    categoryLabel: 'AI & Sensor Toolkit',
+    tag: 'AI & Tech',
+    title: 'ADHD Brain Connectomics: Plain-English Neuroimaging Guide',
+    subtitle: 'Derived from ADHD-200 Global Consortium Research',
+    authorOrCreator: 'Clinical Neurodevelopmental Synthesis by Rabbia Ashraf',
+    description: 'Translates functional MRI brain-mapping discoveries into plain English for parents: explaining why the default mode network (mind-wandering) fails to suppress during school tasks.',
+    formatOrType: 'Neuroscience Parent Guide (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20ADHD%20Brain%20Connectomics%20Guide%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Brain Science'
   },
 
   // ==========================================
-  // 4. HUGGING FACE PEDIATRIC MODELS & DATASETS
+  // 4. EVIDENCE-BASED CLINICAL PROTOCOLS
   // ==========================================
   {
-    id: 'hf-autism-dataset',
-    category: 'open-source-ai',
-    categoryLabel: 'Hugging Face Open Dataset',
-    tag: 'AI & Tech',
-    title: 'Autism Pediatric Screening Dataset (Q-CHAT & AQ-10 Cohorts)',
-    subtitle: 'Hugging Face Datasets: mohit7685/autism-screening-data',
-    authorOrCreator: 'Mohit et al. / Hugging Face Open Community',
-    description: 'Standardized clinical dataset containing Quantitative Checklist for Autism in Toddlers (Q-CHAT) items, social responsiveness scales, and developmental milestone variables.',
-    formatOrType: 'Machine Learning Tabular Dataset',
-    actionType: 'huggingface',
-    actionUrl: 'https://huggingface.co/datasets/mohit7685/autism-screening-data',
-    actionText: 'Explore on Hugging Face',
-    badge: 'Clinical Dataset'
+    id: 'protocol-screen-time',
+    category: 'clinical-protocol',
+    categoryLabel: 'Clinical Protocol',
+    tag: 'Behaviour',
+    title: 'Healthy Screen Time Transition Contract & Boundary System',
+    subtitle: 'Dopamine Regulation & Digital Wellness Protocol',
+    authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
+    description: 'Clear written family agreements, visual countdown timers, and dopamine replacement activities that stop daily screen-time meltdowns without screaming.',
+    formatOrType: 'Printable Family Agreement (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Screen%20Time%20Contract%20PDF%20from%20the%20Resource%20Vault.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Digital Balance'
   },
   {
-    id: 'hf-child-speech',
-    category: 'open-source-ai',
-    categoryLabel: 'Hugging Face AI Model',
-    tag: 'AI & Tech',
-    title: 'Wav2Vec2 & Whisper Child Speech Acoustic Recognition Models',
-    subtitle: 'Hugging Face Models: bookbot/distil-wav2vec2 & dysata/Wav2Vec2-Ru-Child',
-    authorOrCreator: 'Bookbot & Open-Source Speech Research Teams',
-    description: 'Transformer-based acoustic AI fine-tuned specifically on pediatric speech corpora to assist speech therapists and researchers in assessing phonological errors and speech delays.',
-    formatOrType: 'Pre-Trained Transformer Model',
-    actionType: 'huggingface',
-    actionUrl: 'https://huggingface.co/models?search=child+speech',
-    actionText: 'View on Hugging Face',
-    badge: 'Speech AI Model'
+    id: 'protocol-parent-reflection',
+    category: 'clinical-protocol',
+    categoryLabel: 'Clinical Protocol',
+    tag: 'Parenting',
+    title: 'Parent Co-Regulation & Emotional Burnout Reflection Journal',
+    subtitle: 'Trauma-Informed Parent Support Guide',
+    authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
+    description: 'Self-assessment prompts and nervous system regulation exercises to help parents identify their own triggers, prevent compassion fatigue, and remain regulated during crises.',
+    formatOrType: 'Guided Reflection Workbook (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Parent%20Co-Regulation%20Workbook%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Parent Care'
   },
   {
-    id: 'openneuro-adhd200',
-    category: 'open-source-ai',
-    categoryLabel: 'Open Neuroscience Repository',
-    tag: 'AI & Tech',
-    title: 'The ADHD-200 Global Consortium Neuroimaging Repository',
-    subtitle: 'OpenNeuro / NITRC Consortium Data',
-    authorOrCreator: 'ADHD-200 International Consortium',
-    description: 'A benchmark neuroimaging repository featuring structural and functional MRI scans of over 1,000 children and adolescents with ADHD and neurotypical controls.',
-    formatOrType: 'Open Clinical Neuroimaging Archive',
-    actionType: 'link',
-    actionUrl: 'https://www.nitrc.org/projects/adhd-200/',
-    actionText: 'Access Research Portal',
-    badge: 'Open Neuroimaging'
+    id: 'protocol-social-skills',
+    category: 'clinical-protocol',
+    categoryLabel: 'Clinical Protocol',
+    tag: 'School',
+    title: 'Peer Social Skills & Conversation Role-Play Practice Prompts',
+    subtitle: 'Social Communication Intervention Framework',
+    authorOrCreator: 'Rabbia Ashraf, Clinical Psychologist',
+    description: '20 practical scenario scripts to practice joining peer groups, interpreting body language, handling losing a game, and resolving playground misunderstandings at home.',
+    formatOrType: 'Role-Play Practice Cards (PDF)',
+    actionType: 'whatsapp',
+    actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Social%20Skills%20Practice%20Prompts%20PDF.',
+    actionText: 'Request via WhatsApp',
+    badge: 'Social Skills'
   }
 ];
