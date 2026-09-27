@@ -11,6 +11,7 @@ export interface VaultResource {
   actionType: 'print' | 'whatsapp';
   actionUrl: string;
   actionText: string;
+  pdfUrl: string;
   badge?: string;
 }
 
@@ -39,6 +40,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'print',
     actionUrl: '/free-downloads/adhd-routine-planner/',
     actionText: 'Open & Print Worksheet',
+    pdfUrl: '/downloads/adhd-home-routine-planner.pdf',
     badge: 'Instant Access'
   },
   {
@@ -54,6 +56,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'print',
     actionUrl: '/free-downloads/behaviour-abc-tracker/',
     actionText: 'Open & Print Tracker',
+    pdfUrl: '/downloads/behaviour-abc-incident-tracker.pdf',
     badge: 'Clinical Tool'
   },
   {
@@ -69,6 +72,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'print',
     actionUrl: '/free-downloads/school-iep-checklist/',
     actionText: 'Open & Print Checklist',
+    pdfUrl: '/downloads/school-iep-advocacy-checklist.pdf',
     badge: 'Advocacy Guide'
   },
   {
@@ -84,6 +88,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'print',
     actionUrl: '/free-downloads/autism-observation-guide/',
     actionText: 'Open & Print Guide',
+    pdfUrl: '/downloads/autism-observation-guide.pdf',
     badge: 'Screening Log'
   },
   {
@@ -99,6 +104,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'print',
     actionUrl: '/free-downloads/report-review-questions/',
     actionText: 'Open & Print Questions',
+    pdfUrl: '/downloads/psychological-report-review-questions.pdf',
     badge: 'Parent Guide'
   },
   {
@@ -114,6 +120,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'print',
     actionUrl: '/free-downloads/sensory-regulation-matrix/',
     actionText: 'Open & Print Matrix',
+    pdfUrl: '/downloads/sensory-regulation-matrix.pdf',
     badge: 'Sensory Diet'
   },
   {
@@ -129,6 +136,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Daily%20Visual%20Transition%20Cards%20PDF%20from%20the%20Resource%20Vault.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/daily-visual-schedule-cards.pdf',
     badge: 'Visual Support'
   },
   {
@@ -144,6 +152,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Token%20Economy%20Worksheet%20PDF%20from%20the%20Resource%20Vault.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/token-economy-positive-reinforcement.pdf',
     badge: 'Positive Reinforcement'
   },
   {
@@ -159,6 +168,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20request%20the%20Sleep%20Hygiene%20Protocol%20PDF%20from%20the%20Resource%20Vault.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/pediatric-sleep-hygiene-protocol.pdf',
     badge: 'Sleep Support'
   },
 
@@ -178,6 +188,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Taking%20Charge%20of%20ADHD%20Summary%20Guide%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/barkley-adhd-parenting-summary.pdf',
     badge: 'Executive Function'
   },
   {
@@ -193,6 +204,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Explosive%20Child%20CPS%20Script%20Guide%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/explosive-child-cps-conversation-script.pdf',
     badge: 'De-escalation'
   },
   {
@@ -208,6 +220,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Tony%20Attwood%20ASD%20Summary%20Guide%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/attwood-aspergers-asd-guide.pdf',
     badge: 'ASD Support'
   },
   {
@@ -223,6 +236,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Sensory%20Diet%20Activity%20Directory%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/sensory-diet-heavy-work-directory.pdf',
     badge: 'Sensory Diet'
   },
   {
@@ -238,6 +252,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Executive%20Skills%20Profiler%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/executive-skills-profiler-assessment.pdf',
     badge: 'Executive Profiler'
   },
   {
@@ -253,6 +268,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Uniquely%20Human%20Regulation%20Blueprint%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/prizant-uniquely-human-blueprint.pdf',
     badge: 'Neurodiversity'
   },
 
@@ -272,6 +288,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20CalmSignal%20Early%20Meltdown%20Warning%20Toolkit%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/calmsignal-meltdown-warning-toolkit.pdf',
     badge: 'AI-Derived Protocol'
   },
   {
@@ -287,6 +304,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Simons%20Sensory-Sleep%20Audit%20Toolkit%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/simons-sensory-sleep-audit.pdf',
     badge: 'Sensory Biometrics'
   },
   {
@@ -302,6 +320,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Q-CHAT%20Autism%20Screening%20Protocol%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/qchat-pediatric-autism-screening-protocol.pdf',
     badge: 'Validated Screening'
   },
   {
@@ -317,6 +336,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Pediatric%20Speech%20Delay%20Screening%20Kit%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/pediatric-speech-delay-screening-kit.pdf',
     badge: 'Speech & Language'
   },
   {
@@ -332,6 +352,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20ADHD%20Brain%20Connectomics%20Guide%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/adhd-brain-connectomics-guide.pdf',
     badge: 'Brain Science'
   },
 
@@ -351,6 +372,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Screen%20Time%20Contract%20PDF%20from%20the%20Resource%20Vault.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/screen-time-transition-contract.pdf',
     badge: 'Digital Balance'
   },
   {
@@ -366,6 +388,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Parent%20Co-Regulation%20Workbook%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/parent-coregulation-burnout-journal.pdf',
     badge: 'Parent Care'
   },
   {
@@ -381,6 +404,7 @@ export const vaultResources: VaultResource[] = [
     actionType: 'whatsapp',
     actionUrl: 'https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20receive%20the%20Social%20Skills%20Practice%20Prompts%20PDF.',
     actionText: 'Request via WhatsApp',
+    pdfUrl: '/downloads/social-skills-roleplay-practice-prompts.pdf',
     badge: 'Social Skills'
   }
 ];
