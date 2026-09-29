@@ -1,5 +1,13 @@
 export const articles = [
   {
+    title: "One-to-One vs. Group Discrete Trial Teaching (DTT) in Autism: What Clinical Research Shows",
+    excerpt: "Discover what clinical research reveals about 1:1 vs. small group Discrete Trial Teaching (DTT) in autism therapy, observational learning, and school readiness.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Apr 5, 2024",
+    categories: ["Autism", "Behaviour", "School Support"],
+    href: "/blog/discrete-trial-teaching-one-to-one-vs-group"
+  },
+  {
     title: "Understanding the Confusion Between ADHD and Hyperactivity in Children",
     excerpt: "Not every child with ADHD is visibly hyperactive. Some children struggle more with attention, organization, forgetfulness, or impulsivity.",
     author: "Rabbia Ashraf, Clinical Psychologist",
