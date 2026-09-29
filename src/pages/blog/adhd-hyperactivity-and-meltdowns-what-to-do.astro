@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/adhd-hyperactivity-and-meltdowns-what-to-do.webp';
+
+const title = "ADHD Hyperactivity vs. Meltdowns: What to Do When Your Child Can’t Calm Down";
+const description = "A quick 2-minute guide by Clinical Psychologist Rabbia Ashraf on understanding the link between ADHD hyperactivity, emotional overwhelm, and what to do during a meltdown.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/adhd-hyperactivity-and-meltdowns-what-to-do/";
+const publishedDate = "2024-04-06";
+const lastUpdated = "2024-04-06";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'ADHD Hyperactivity & Meltdowns', href: '/blog/adhd-hyperactivity-and-meltdowns-what-to-do' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Article Header -->
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD & Focus</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Meltdowns</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Reviewed & Written by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Parent supporting a dysregulated child" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        If you are reading this while sitting on the floor feeling completely exhausted, take a deep breath first. 
+      </p>
+
+      <p>
+        In my clinical practice, one of the most heartbreaking things I hear from parents is: <em>"Rabbia, he just won’t stop moving, and then out of nowhere he screams, throws things, or breaks down crying. Am I failing as a parent?"</em>
+      </p>
+
+      <p>
+        The answer is an emphatic <strong>no</strong>. You are not failing, and your child is not giving you a hard time. <strong>They are having a hard time.</strong>
+      </p>
+
+      <hr class="my-6 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Hyperactivity vs. An ADHD Meltdown: What Is Really Happening?</h2>
+
+      <p>
+        Most people think hyperactivity just means having "too much energy." But in an ADHD brain, hyperactivity is actually the nervous system's way of desperately seeking stimulation or trying to regulate itself. 
+      </p>
+
+      <p>
+        When an ADHD child is running in circles, fidgeting, interrupting, or unable to sit still, their brain's braking system (executive function) is working on low fuel. 
+      </p>
+
+      <div class="bg-amber-50/70 border-l-4 border-amber-500 p-4 rounded-r-xl my-5 text-gray-800 text-sm">
+        <strong>The Turning Point:</strong> When sensory overload, hunger, fatigue, or frustration (like being told "stop moving" or "hurry up") exceeds what that low-fuel brain can process, hyperactivity doesn't just stop. It spikes into a <strong>neurological meltdown</strong>.
+      </div>
+
+      <p>
+        A meltdown is <strong>not a tantrum</strong>. A tantrum is purposeful and stops once a goal is met. A meltdown is a fight-or-flight flood. In that moment, the thinking part of your child's brain is offline.
+      </p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">What to Do During the Meltdown: The 3 "S" Rule</h2>
+
+      <p>
+        When your child is exploding or sobbing uncontrollably, logic will not work. Don't explain why they shouldn't hit, don't demand an apology, and don't threaten consequences. Save the teaching for later. Right now, use the <strong>3 S's</strong>:
+      </p>
+
+      <div class="space-y-4 my-6">
+        <div class="p-4 bg-gray-50 border border-gray-200 rounded-xl">
+          <h3 class="text-lg font-bold text-brand-navy mb-1">1. Safety First</h3>
+          <p class="text-sm text-gray-700 m-0">
+            Quietly move dangerous objects away. If they are flailing or banging their head, place a soft pillow or blanket nearby. Keep your body calm and non-threatening.
+          </p>
+        </div>
+
+        <div class="p-4 bg-gray-50 border border-gray-200 rounded-xl">
+          <h3 class="text-lg font-bold text-brand-navy mb-1">2. Silence (Stop Talking)</h3>
+          <p class="text-sm text-gray-700 m-0">
+            Every sentence you speak is more sensory noise for an overloaded brain. Lower your voice or say nothing at all. Use simple, reassuring anchors: <em>"I'm right here. You're safe."</em> That's it.
+          </p>
+        </div>
+
+        <div class="p-4 bg-gray-50 border border-gray-200 rounded-xl">
+          <h3 class="text-lg font-bold text-brand-navy mb-1">3. Soothing Presence (Co-Regulation)</h3>
+          <p class="text-sm text-gray-700 m-0">
+            Children borrow their parents' nervous systems. If your adrenaline spikes, theirs will too. Sit on the floor nearby. Don't force a hug if they push you away; just stay anchored like a lighthouse in the storm.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">What to Do Afterwards (The Repair)</h2>
+
+      <p>
+        Once their breathing slows down and the storm passes, children with ADHD often feel intense shame or exhaustion. 
+      </p>
+
+      <p>
+        Offer a glass of water. A gentle hug. And say: <em>"That felt really big and scary, didn't it? I'm so proud of how your body calmed down. We'll figure this out together."</em>
+      </p>
+
+      <CalloutBox type="info" title="A Personal Clinical Reminder from Rabbia">
+        Hyperactivity and meltdowns are not character flaws—they are signs that your child's nervous system needs practical support, predictable routines, and sensory outlets. With the right tools, both you and your child can find peace at home.
+      </CalloutBox>
+
+      <div class="mt-10 pt-6 border-t border-gray-200">
+        <ArticleAuthor
+          author="Rabbia Ashraf"
+          title="Clinical Psychologist | Child Development & ADHD Specialist"
+          bio="Rabbia works directly with families navigating ADHD, sensory challenges, behavioral dysregulation, and school difficulties, providing warm, evidence-based guidance that parents can actually use at home."
+        />
+      </div>
+
+      <div class="mt-8">
+        <BlogCTA
+          title="Struggling with daily ADHD meltdowns or hyperactivity at home?"
+          description="You don't have to navigate this alone. Book a 1-on-1 parent consultation with Rabbia to build a personalized calming routine tailored specifically to your child."
+          buttonText="Book a Parent Consultation"
+          buttonLink="/book"
+        />
+      </div>
+
+    </article>
+  </div>
+</BaseLayout>

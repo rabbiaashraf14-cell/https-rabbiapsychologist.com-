@@ -1,5 +1,13 @@
 export const articles = [
   {
+    title: "ADHD Hyperactivity vs. Meltdowns: What to Do When Your Child Can’t Calm Down",
+    excerpt: "A quick 2-minute guide by Clinical Psychologist Rabbia Ashraf on understanding the link between ADHD hyperactivity, emotional overwhelm, and the 3 'S' rule during a meltdown.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Apr 6, 2024",
+    categories: ["ADHD", "Behaviour", "Emotional Regulation"],
+    href: "/blog/adhd-hyperactivity-and-meltdowns-what-to-do"
+  },
+  {
     title: "One-to-One vs. Group Discrete Trial Teaching (DTT) in Autism: What Clinical Research Shows",
     excerpt: "Discover what clinical research reveals about 1:1 vs. small group Discrete Trial Teaching (DTT) in autism therapy, observational learning, and school readiness.",
     author: "Rabbia Ashraf, Clinical Psychologist",
