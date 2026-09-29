@@ -6,20 +6,13 @@ body {
   @apply bg-brand-cream text-brand-charcoal font-sans antialiased;
 }
 
+/* Pricing Visibility Rules based on data-pricing-region */
 html[data-pricing-region="pakistan"] .price-international {
   display: none !important;
 }
 
-html[data-pricing-region="pakistan"] .price-pakistan {
-  display: block !important;
-}
-
 html[data-pricing-region="international"] .price-pakistan {
   display: none !important;
-}
-
-html[data-pricing-region="international"] .price-international {
-  display: block !important;
 }
 
 /* Base styles to prevent flashing before JS runs */
@@ -30,9 +23,18 @@ html[data-pricing-region="international"] .price-international {
   display: none;
 }
 
-/* When script hasn't run or is still determining, show international as fallback */
+/* When region is active, display the element in its natural layout */
+html[data-pricing-region="pakistan"] .price-pakistan {
+  display: revert !important;
+}
+
+html[data-pricing-region="international"] .price-international {
+  display: revert !important;
+}
+
+/* Fallback if region attribute is not set */
 html:not([data-pricing-region]) .price-international {
-  display: block !important;
+  display: revert !important;
 }
 html:not([data-pricing-region]) .price-pakistan {
   display: none !important;

@@ -312,20 +312,30 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
           </a>
         </div>
 
-        <!-- Transparent Pricing Box -->
-        <div class="bg-gray-50 rounded-3xl p-6 border border-gray-200 text-left">
-          <h4 class="text-sm font-bold text-brand-navy uppercase tracking-wider mb-3">Transparent Regional Consultation Fees</h4>
+        <!-- Pakistan Consultation Fee Box (Hidden for International Visitors) -->
+        <div class="price-pakistan bg-gray-50 rounded-3xl p-6 border border-gray-200 text-left">
+          <h4 class="text-sm font-bold text-brand-navy uppercase tracking-wider mb-3">Consultation Fee &amp; Details</h4>
+          <div class="space-y-2.5 text-xs text-gray-700">
+            <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+              <span class="font-medium">Online Clinical Consultation (50 min)</span>
+              <span class="font-extrabold text-brand-navy text-sm">PKR {pkPrice.toLocaleString()}</span>
+            </div>
+            <div class="text-[11px] text-gray-500 pt-1">
+              💳 <strong>Payment Options:</strong> Raast Instant ID, JazzCash, EasyPaisa, or Online Bank Transfer.
+            </div>
+          </div>
+        </div>
+
+        <!-- International Consultation Fee Box (Hidden for Pakistan Visitors) -->
+        <div class="price-international bg-gray-50 rounded-3xl p-6 border border-gray-200 text-left">
+          <h4 class="text-sm font-bold text-brand-navy uppercase tracking-wider mb-3">Telehealth Consultation Fee</h4>
           <div class="space-y-2.5 text-xs text-gray-700">
             <div class="flex justify-between items-center pb-2 border-b border-gray-200">
               <span class="font-medium">International Telehealth (50 min)</span>
-              <span class="font-extrabold text-brand-navy">${intlPrice} USD / £50 GBP / 240 AED</span>
-            </div>
-            <div class="flex justify-between items-center pb-2 border-b border-gray-200">
-              <span class="font-medium">Pakistan Local Session (50 min)</span>
-              <span class="font-extrabold text-brand-navy">PKR {pkPrice.toLocaleString()}</span>
+              <span class="font-extrabold text-brand-navy text-sm">${intlPrice} USD / £50 GBP / 240 AED</span>
             </div>
             <div class="text-[11px] text-gray-500 pt-1">
-              💳 <strong>Payment Options:</strong> Wise, Stripe, International Card, Bank Wire, Raast / JazzCash.
+              💳 <strong>Payment Options:</strong> Visa, Mastercard, Stripe, Wise, or International Bank Wire.
             </div>
           </div>
         </div>
