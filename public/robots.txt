@@ -53,4 +53,11 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
 Sitemap: https://www.rabbiapsychologist.com/sitemap-index.xml
+
+# Generative AI & Large Language Model Discoverability (llms.txt standard)
+# https://www.rabbiapsychologist.com/llms.txt
+# https://www.rabbiapsychologist.com/llms-full.txt

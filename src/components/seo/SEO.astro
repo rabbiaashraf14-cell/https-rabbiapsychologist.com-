@@ -43,6 +43,48 @@ if (!canonicalNormalized) {
 } else if (!canonicalNormalized.endsWith('/') && !canonicalNormalized.split('/').pop()?.includes('.')) {
   canonicalNormalized = `${canonicalNormalized}/`;
 }
+
+const defaultEntitySchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://www.rabbiapsychologist.com/#organization",
+  "name": "Rabbia Psychologist Child Development Services",
+  "url": "https://www.rabbiapsychologist.com",
+  "logo": "https://www.rabbiapsychologist.com/favicon.png",
+  "image": "https://www.rabbiapsychologist.com/og-brand-card.png",
+  "description": "Global parent guidance and evidence-based child development consultation platform led by Clinical Psychologist Rabbia Ashraf, specializing in Autism, ADHD, emotional regulation, and psychological report reviews.",
+  "medicalSpecialty": "ClinicalPsychology",
+  "telephone": "+923364114002",
+  "email": "psychologistrabbia@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://www.rabbiapsychologist.com/#rabbia-ashraf",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/rabbiapsychologist"
+    ],
+    "knowsAbout": [
+      "Autism Spectrum Disorder",
+      "Attention Deficit Hyperactivity Disorder (ADHD)",
+      "Discrete Trial Teaching (DTT)",
+      "Child Development",
+      "Behavior Support Planning",
+      "Executive Function Skills",
+      "Individualized Education Programs (IEP)",
+      "Psychological Report Reviews"
+    ]
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "United Arab Emirates" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "Australia" },
+    { "@type": "Country", "name": "Pakistan" }
+  ]
+};
 ---
 
 <title>{fullTitle}</title>
@@ -52,21 +94,24 @@ if (!canonicalNormalized) {
 {!noindex && <meta name="robots" content="index, follow" />}
 <link rel="canonical" href={canonicalNormalized} />
 
-<!-- Open Graph -->
+<!-- Open Graph for Third-Party Apps (WhatsApp, iMessage, Facebook, LinkedIn, Slack) -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalNormalized} />
 <meta property="og:title" content={ogTitle} />
 <meta property="og:description" content={ogDescription} />
 <meta property="og:image" content={new URL(ogImage || image, Astro.site || 'https://www.rabbiapsychologist.com').href} />
 <meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_US" />
 
-<!-- Twitter -->
+<!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={canonicalNormalized} />
 <meta name="twitter:title" content={ogTitle} />
 <meta name="twitter:description" content={ogDescription} />
 <meta name="twitter:image" content={new URL(ogImage || image, Astro.site || 'https://www.rabbiapsychologist.com').href} />
 
+<!-- Structured Data for LLMs, Google, Bing & AI Overviews -->
+<script type="application/ld+json" set:html={JSON.stringify(defaultEntitySchema)} />
 {schema && (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 )}

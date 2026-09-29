@@ -41,7 +41,8 @@ const { title, description, canonicalURL, type, image, noindex, schema, keywords
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0F2742" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context" />
+    <link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full LLM Context" />
     <RegionDetector />
     <slot name="head" />
 
