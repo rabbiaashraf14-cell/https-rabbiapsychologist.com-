@@ -1,0 +1,349 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+
+const title = "Corporate Parent Wellness & Neurodiversity Programs | Rabbia Ashraf";
+const description = "Enterprise neurodiversity, pediatric ADHD/Autism guidance, and working-parent wellness programs for multinational corporations, banks, and HR leaders.";
+const canonicalURL = "https://www.rabbiapsychologist.com/corporate/";
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'For Organizations', href: '/corporate' },
+  { name: 'Corporate Wellness', href: '/corporate' }
+];
+
+const corporateSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Corporate Working Parent Wellness & Neurodiversity Programs",
+  "serviceType": "Corporate Wellness, Employee Resource Group (ERG) Training, Pediatric Behavioral Advisory",
+  "provider": {
+    "@type": "MedicalBusiness",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "areaServed": ["United Kingdom", "United States", "United Arab Emirates", "Saudi Arabia", "Canada", "Australia", "Pakistan"],
+  "description": description
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(corporateSchema)} />
+  </Fragment>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-6xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Hero Section -->
+    <section class="mt-6 mb-16 text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-brand-cream border border-brand-gold/40 text-brand-navy text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-6">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+        Enterprise Caregiver Benefits &amp; ERG Partner
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-brand-navy mb-6 leading-tight tracking-tight">
+        Support Your Working Parents. <br class="hidden sm:inline" />
+        <span class="text-brand-trust">Retain Your Top Leadership Talent.</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto">
+        Specialized clinical neurodiversity guidance, ADHD/Autism family frameworks, and working-parent wellness masterclasses for multinational employers. We bridge the critical gap where traditional EAPs fail.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a 
+          href="#corporate-inquiry" 
+          class="w-full sm:w-auto bg-brand-navy text-white text-base font-bold py-3.5 px-8 rounded-xl hover:bg-blue-900 transition-all shadow-md text-center"
+        >
+          Request an Enterprise Proposal &rarr;
+        </a>
+        <a 
+          href="https://wa.me/923364114002?text=Hello%20Rabbia,%20I%20am%20reaching%20out%20on%20behalf%20of%20an%20organization/employer%20regarding%20corporate%20workshops%20and%20parent%20wellness." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 text-white text-base font-bold py-3.5 px-6 rounded-xl hover:bg-emerald-700 transition-all shadow-sm text-center"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Direct Priority HR Desk
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="mt-12 pt-8 border-t border-gray-200/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl font-extrabold text-brand-navy">73%</div>
+          <div class="text-xs text-gray-600 mt-1">Parents of neurodivergent kids report chronic workplace burnout</div>
+        </div>
+        <div>
+          <div class="text-2xl font-extrabold text-brand-navy">1.5x–2x</div>
+          <div class="text-xs text-gray-600 mt-1">Cost to replace an executive employee lost to caregiver strain</div>
+        </div>
+        <div>
+          <div class="text-2xl font-extrabold text-brand-navy">12+ Countries</div>
+          <div class="text-xs text-gray-600 mt-1">Global corporate footprint across UK, UAE, USA, and Pakistan</div>
+        </div>
+        <div>
+          <div class="text-2xl font-extrabold text-brand-navy">MS Clinical</div>
+          <div class="text-xs text-gray-600 mt-1">Evidence-based clinical science (DTT, CBT, PBS)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem: Why Traditional EAPs Fall Short -->
+    <section class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-200 mb-16">
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full">The Hidden Enterprise Cost</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-brand-navy mt-3 mb-4">
+          Why Standard Corporate EAPs Are Failing Your Working Parents
+        </h2>
+        <p class="text-gray-700 text-base leading-relaxed">
+          Most corporate Employee Assistance Programs (EAPs) offer generic adult counseling hotlines. When an employee is dealing with an emergency school suspension, an autistic child's sensory crisis, or 2-hour morning ADHD battles, being told to <em>"try deep breathing"</em> is ineffective.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg mb-4">✕</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Unplanned Absenteeism</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Emergency teacher meetings, delayed school runs, and dysregulated mornings cost companies dozens of productive hours per employee each month.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg mb-4">✕</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Loss of Senior Female Leaders</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Mothers disproportionately absorb pediatric appointment navigation, leading high-performing female executives to step down or scale back careers prematurely.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg mb-4">✕</div>
+          <h3 class="text-lg font-bold text-brand-navy mb-2">Mental Exhaustion &amp; Presenteeism</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
+            Employees are physically at their desks, but cognitively overwhelmed by unanswered diagnostic reports, IEP meetings, and home behavioral crises.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Solution: 3 Enterprise Offerings -->
+    <section class="mb-16">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-3 py-1 rounded-full">Tailored Corporate Solutions</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-3 mb-4">
+          Three Strategic Ways to Partner With Us
+        </h2>
+        <p class="text-gray-700 text-base">
+          From high-energy company-wide masterclasses to dedicated executive office hours, we provide scalable clinical support tailored to your corporate culture.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Track 1 -->
+        <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-trust mb-2">Tier 1 &middot; Masterclass &amp; Keynote</div>
+            <h3 class="text-2xl font-bold text-brand-navy mb-3">Corporate Parent Webinars &amp; ERG Sessions</h3>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              60-to-90 minute interactive virtual or hybrid masterclasses for company-wide parent groups, DEI committees, and employee resource networks.
+            </p>
+
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-3">Popular Masterclass Topics:</h4>
+            <ul class="text-xs text-gray-700 space-y-2 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span><strong>De-escalating the 8 AM Rush:</strong> Executive function routines to start work stress-free.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span><strong>ADHD &amp; Neurodiversity at Home:</strong> Practical de-escalation for working parents.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span><strong>Advocating at School:</strong> Navigating IEPs and accommodations without losing full workdays.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span><strong>Tantrums vs Meltdowns:</strong> The neurobiological framework for co-regulation.</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#corporate-inquiry" class="w-full text-center bg-gray-100 hover:bg-brand-navy hover:text-white text-brand-navy text-xs font-bold py-3 rounded-xl transition-colors">
+            Inquire for Keynote Series &rarr;
+          </a>
+        </div>
+
+        <!-- Track 2 (Featured) -->
+        <div class="bg-white rounded-3xl p-8 border-2 border-brand-navy shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between relative">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-navy text-white text-[10px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full">
+            Most High-Impact Retention ROI
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-trust mb-2">Tier 2 &middot; Monthly Retainer</div>
+            <h3 class="text-2xl font-bold text-brand-navy mb-3">Executive Caregiver Office Hours</h3>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              Your company reserves a dedicated monthly block of private, 1-on-1 confidential consultation slots for employees to consult directly with Clinical Psychologist Rabbia Ashraf.
+            </p>
+
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-3">What Employees Receive:</h4>
+            <ul class="text-xs text-gray-700 space-y-2 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Private 1-on-1 video clinical consultations (50 min).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Personalized home routine frameworks and behavior trackers.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Psychological report explanation &amp; IEP meeting preparation.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Fully confidential under professional healthcare compliance.</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#corporate-inquiry" class="w-full text-center bg-brand-navy hover:bg-blue-900 text-white text-xs font-bold py-3 rounded-xl transition-colors">
+            Setup Caregiver Retainer &rarr;
+          </a>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-trust mb-2">Tier 3 &middot; High-Touch Executive</div>
+            <h3 class="text-2xl font-bold text-brand-navy mb-3">C-Suite &amp; Partner Family Concierge</h3>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+              Designed specifically for senior managing directors, C-suite executives, and partners who require flexible, cross-timezone, white-glove developmental navigation.
+            </p>
+
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-wider mb-3">Executive Features:</h4>
+            <ul class="text-xs text-gray-700 space-y-2 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Priority fast-track calendar scheduling (GMT, EST, GST, PKT).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Comprehensive review of multi-page neuropsychological evaluations.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Between-session async clinical check-ins via private channel.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">&#10003;</span>
+                <span>Tailored for high-travel executive schedules.</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#corporate-inquiry" class="w-full text-center bg-gray-100 hover:bg-brand-navy hover:text-white text-brand-navy text-xs font-bold py-3 rounded-xl transition-colors">
+            Request Executive Briefing &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Rabbia Ashraf Section -->
+    <section class="bg-gradient-to-br from-brand-navy via-[#123358] to-brand-navy text-white rounded-3xl p-8 md:p-12 mb-16 shadow-lg">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div class="w-28 h-28 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+          <span class="text-3xl font-extrabold text-brand-gold">RA</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Clinical Leadership</span>
+          <h3 class="text-2xl sm:text-3xl font-bold mt-1 mb-3">About Clinical Psychologist Rabbia Ashraf</h3>
+          <p class="text-sm text-gray-200 leading-relaxed mb-4">
+            Rabbia holds an MS in Clinical Psychology with specialized clinical expertise in child neurodevelopment, Autism Spectrum Disorder, ADHD, and positive behavioral support. Having supported families across 12+ countries, she delivers engaging, empathetic, and evidence-informed masterclasses that transform complex diagnostic science into practical home routines for high-performing working parents.
+          </p>
+          <div class="flex flex-wrap gap-3 text-xs text-gray-300 font-medium">
+            <span class="bg-white/10 px-3 py-1 rounded-full border border-white/10">Bilingual (English &amp; Urdu)</span>
+            <span class="bg-white/10 px-3 py-1 rounded-full border border-white/10">Evidence-Based (DTT, PBS, CBT)</span>
+            <span class="bg-white/10 px-3 py-1 rounded-full border border-white/10">Cross-Border Telehealth (UK, UAE, US, PK)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corporate Inquiry Form -->
+    <section id="corporate-inquiry" class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-200 max-w-3xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-3 py-1 rounded-full">Get Started</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-navy mt-2 mb-2">Request an Enterprise Proposal</h2>
+        <p class="text-xs sm:text-sm text-gray-600">
+          Fill in your details below and our team will get back to you within 24 hours with a customized capabilities overview and rate structure.
+        </p>
+      </div>
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+        <input type="hidden" name="access_key" value="7e171350-dfad-424a-bb9f-54bf91ae883c" />
+        <input type="hidden" name="subject" value="New Corporate Enterprise Proposal Request" />
+        <input type="hidden" name="from_name" value="Rabbia Corporate Portal" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Your Name *</label>
+            <input type="text" name="name" required placeholder="e.g. Sarah Jenkins" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Work Email *</label>
+            <input type="email" name="email" required placeholder="sarah.jenkins@company.com" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Company / Organization *</label>
+            <input type="text" name="company" required placeholder="e.g. Standard Chartered / Tech Corp" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Your Title / Role</label>
+            <input type="text" name="role" placeholder="e.g. Head of HR / ERG Lead" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Program of Interest</label>
+            <select name="program_interest" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy bg-white">
+              <option value="Corporate Masterclass Series">Corporate Masterclass &amp; Keynote Series</option>
+              <option value="Executive Caregiver Office Hours">Caregiver Office Hours (Retainer)</option>
+              <option value="C-Suite Executive Concierge">C-Suite Family Concierge</option>
+              <option value="School In-Service Partnership">School In-Service &amp; Staff Training</option>
+              <option value="Custom Enterprise Partnership">Custom Enterprise Inquiry</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Estimated Employee Headcount</label>
+            <select name="company_size" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy bg-white">
+              <option value="50-250">50 – 250 Employees</option>
+              <option value="250-1000">250 – 1,000 Employees</option>
+              <option value="1000-5000">1,000 – 5,000 Employees</option>
+              <option value="5000+">5,000+ Employees (Global Enterprise)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Objectives &amp; Key Notes</label>
+          <textarea name="message" rows="3" placeholder="Tell us about your team's objectives, preferred dates, or specific neurodiversity topics you want covered..." class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-navy"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-navy text-white font-bold py-3.5 px-6 rounded-xl hover:bg-blue-900 transition-colors shadow-sm text-sm">
+          Submit Enterprise Proposal Request &rarr;
+        </button>
+      </form>
+    </section>
+
+  </div>
+</BaseLayout>

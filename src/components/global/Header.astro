@@ -21,6 +21,10 @@ const resourcesNav = [
   { label: 'FAQs', href: '/faqs' }
 ];
 
+const orgsNav = [
+  { label: 'Corporate Parent Wellness', href: '/corporate' },
+  { label: 'School Partnerships & Training', href: '/school-partnerships' }
+];
 ---
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="container mx-auto px-4 h-[80px] flex items-center justify-between">
@@ -81,6 +85,23 @@ const resourcesNav = [
             </div>
           );
         }
+        if (item.label === 'For Organizations') {
+          return (
+            <div class="relative group">
+              <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
+                {item.label}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </a>
+              <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-100 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
+                <ul class="py-2">
+                  {orgsNav.map(subItem => (
+                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">{subItem.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        }
         return <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors">{item.label}</a>;
       })}
       <a href="/book" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm inline-block">Book Consultation</a>
@@ -125,7 +146,15 @@ const resourcesNav = [
           </ul>
         </li>
 
-        <li><a href="/school-partnerships" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">For Schools</a></li>
+        <li class="py-3 border-b border-gray-50">
+          <a href="/corporate" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">For Organizations</a>
+          <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
+            {orgsNav.map(item => (
+              <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
+            ))}
+          </ul>
+        </li>
+
         <li><a href="/pricing" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Pricing</a></li>
         <li><a href="/about" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">About Rabbia</a></li>
       </ul>
