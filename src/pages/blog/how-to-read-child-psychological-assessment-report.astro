@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/understanding-psychological-reports-a-guide-for-parents.webp';
+import secondaryImage from '../../assets/blog/how-to-prepare-your-child-for-a-psychological-assessment.webp';
 
 const title = "How to Read Your Child’s Psychological Report (Without Panicking at Percentiles)";
 const description = "Clinical Psychologist Rabbia Ashraf explains why a 16th percentile is not an 'F', and how to translate technical clinical scores into classroom accommodations.";
@@ -106,6 +112,13 @@ const faqSchema = {
         The first thought running through almost every parent’s mind is: <em>"Did my child get an F? Does this mean he only scored 16 out of 100?"</em>
       </p>
 
+      <WhatYouWillLearn items={[
+        "The critical statistical difference between a percentile rank and an exam percentage.",
+        "Why psychological reports are intentionally written in technical clinical jargon.",
+        "How to request a report review or second opinion to translate metrics into plain English.",
+        "How specific subtest scores (working memory, processing speed) dictate school accommodations."
+      ]} />
+
       <CalloutBox type="important" title="Rule Number One: Percentile Is Not Percentage">
         <p>
           A percentile score is <strong>not</strong> a school grade out of 100. It is a statistical comparison against a carefully standardized normative sample of children of the exact same age and developmental stage. 
@@ -114,6 +127,11 @@ const faqSchema = {
           Scoring in the 16th percentile does not mean your child failed. It means that within that isolated sub-skill, your child performed equal to or higher than 16% of their age cohort. It marks an area that requires specific scaffolding, not an indictment of your child’s intelligence or future potential.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Translating psychological evaluation subtests into actionable classroom accommodations" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Standardized assessment batteries highlight distinct cognitive strengths alongside accommodation targets.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Why Psychological Reports Feel So Intimidating</h2>
 
@@ -141,6 +159,20 @@ const faqSchema = {
           <strong>High Verbal Comprehension vs. Lower Fluid Reasoning:</strong> Your child has rich spoken concepts but benefits from graphic organizers and visual flowcharts for math and abstract problem-solving.
         </li>
       </ul>
+
+      <MythVsFact 
+        myth="If my child has a low processing speed score, it means they have low intelligence."
+        fact="Processing speed has no correlation with intelligence or creative brilliance. It simply measures how rapidly the motor and visual system outputs information onto paper under time constraints."
+      />
+
+      <ExpertTip text="Take the recommendations page of the psychological report directly to your school meeting. School inclusion teams and SENCOs rely directly on those clinical bullet points to approve official IEP or 504 classroom accommodations." />
+
+      <KeyTakeaways items={[
+        "Percentile rank is never an exam score out of 100—do not panic.",
+        "Clinical reports are written for practitioners; seek a plain-English report review.",
+        "Cognitive subtest dips are the exact legal basis for school accommodations.",
+        "Use your child's cognitive strengths to scaffold their areas of vulnerability."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

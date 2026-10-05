@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/school-meeting-checklist.webp';
+import secondaryImage from '../../assets/blog/iep-and-school-support-planning-a-parents-guide.webp';
 
 const title = "What to Say in Your Child’s School Support Meeting: Beyond Academic Marks";
 const description = "Clinical Psychologist Rabbia Ashraf explains how to overcome defensive anxiety in teacher and SENCO meetings, and the crucial questions to ask about emotional coping and peer stress.";
@@ -106,11 +112,23 @@ const faqSchema = {
         You feel protective and on edge. You don't want anyone to label your child as "difficult," "bad," or "lazy." And because that protective instinct is so strong, parents often walk in with armor on, wanting to defend their child or instinctively conceal areas where they struggle at home.
       </p>
 
+      <WhatYouWillLearn items={[
+        "How to overcome defensive anxiety and fear of your child being labeled.",
+        "Why surface grades often hide profound internal emotional distress at school.",
+        "Four critical clinical questions regarding emotional coping and peer stress.",
+        "How to treat behavioral shortcomings as collaborative coaching targets."
+      ]} />
+
       <CalloutBox type="important" title="Shift from Defense to Collaborative Inquiry">
         <p>
           The most effective mindset shift you can make is to realize that <strong>a shortcoming is not a character flaw.</strong> When educators highlight an area where your child struggles, it is simply a deficit in executive functioning, communication, or emotional regulation that requires targeted scaffolding. Leaving room for honest, critical feedback is how your child gets the help they actually need.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Inclusive education planning and IEP collaboration" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Effective school support bridges home observations with classroom accommodations.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Four Clinical Questions to Ask Beyond "How Are His Grades?"</h2>
 
@@ -140,6 +158,20 @@ const faqSchema = {
       <p>
         Is he sitting next to an open hallway window? Is he hungry right before lunch? Pinpointing the antecedent helps you and the teacher agree on simple classroom adjustments.
       </p>
+
+      <MythVsFact 
+        myth="If I tell the teacher my child has meltdowns at home, they will treat him unfairly."
+        fact="Honest, vulnerable transparency helps educators see that outbursts are neurological stress responses, building a unified team between classroom and living room."
+      />
+
+      <ExpertTip text="Before concluding your meeting, always schedule an agreed-upon 3-week check-in. Accommodations documented on paper only succeed when there is an active review date on the calendar." />
+
+      <KeyTakeaways items={[
+        "Enter school conferences with collaborative inquiry rather than defensive armor.",
+        "Ask how your child copes when distressed or stuck on classroom assignments.",
+        "Inquire about peer communication during unstructured lunch and playground periods.",
+        "Treat behavioral weaknesses as functional skills that need coaching and accommodations."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

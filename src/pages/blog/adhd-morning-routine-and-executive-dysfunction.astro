@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/morning-routine-problems-in-adhd.webp';
+import secondaryImage from '../../assets/blog/how-to-support-executive-function-at-home.webp';
 
 const title = "The ADHD Morning Wall: Why Your Child Cannot 'Just Wake Up and Get Ready'";
 const description = "Understand the neurobiology of ADHD sleep inertia and executive dysfunction, plus two concrete dopamine bridges to end the morning shouting match.";
@@ -110,11 +116,23 @@ const faqSchema = {
         The most common complaint I hear from parents in my clinic is: <em>"Rabbia, why does every single morning have to be a battle? Why can't he just wake up and get ready like his siblings?"</em>
       </p>
 
+      <WhatYouWillLearn items={[
+        "The neurobiological basis of deep sleep inertia in the ADHD brain.",
+        "Why shouting commands causes executive functioning paralysis.",
+        "How to build a 10-minute dopamine bridge before leaving for school.",
+        "Using warm sensory breakfast cues to break morning inertia."
+      ]} />
+
       <CalloutBox type="tip" title="The Biological Reality of the ADHD Brain">
         <p>
           Your child is not waking up slowly out of spite. Research in pediatric neurodevelopment shows that the ADHD brain often cycles into unusually deep sleep patterns with pronounced <strong>sleep inertia</strong>. Because their executive functioning network operates differently than a neurotypical brain, transitioning from unconsciousness to task-execution is a biological steep hill.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Visual structure and executive function supports at home" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Executive function routines must be externalized into visual and sensory cues.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Two Concrete Dopamine Bridges to End the Morning War</h2>
 
@@ -141,11 +159,19 @@ const faqSchema = {
         This shifts the waking cue from a sterile chore to an enticing sensory invitation, helping their body break out of inertia.
       </p>
 
-      <CalloutBox type="important" title="Schedule Consistency and Medical Compliance">
-        <p>
-          Keep the sleep schedule rigid seven days a week. If your child has been evaluated by a developmental paediatrician and prescribed medication, ensure you adhere strictly to their physician's timing guidance, as consistency is paramount for neurochemical stabilization.
-        </p>
-      </CalloutBox>
+      <MythVsFact 
+        myth="If I let him play a 10-minute game in the morning, I am spoiling him."
+        fact="For an ADHD brain, a clear immediate dopamine target is a neurochemical bridge that activates task initiation. It replaces tears and shouting with focused velocity."
+      />
+
+      <ExpertTip text="Keep sleep and wake schedules identical 7 days a week. Weekend sleeping-in past 90 minutes resets the ADHD circadian rhythm and causes Monday morning chaos." />
+
+      <KeyTakeaways items={[
+        "ADHD sleep inertia is biological—not an act of willful defiance.",
+        "Yelling creates cognitive paralysis; build positive dopamine bridges instead.",
+        "Use a 10-minute game reward conditional on getting fully dressed first.",
+        "Anchor wakefulness to inviting sensory warm breakfast cues."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

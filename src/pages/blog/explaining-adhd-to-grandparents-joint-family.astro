@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/parent-guidance-for-behaviour-concerns.webp';
+import secondaryImage from '../../assets/blog/emotional-regulation-in-children-teaching-kids-to-handle-big-feelings.webp';
 
 const title = "Explaining Neurodiversity to Grandparents & In-Laws (The Diabetes Analogy)";
 const description = "Tired of hearing that your child is 'just spoiled' or 'needs strict discipline'? Clinical Psychologist Rabbia Ashraf explains how to use the medical diabetes analogy to shift family mindsets.";
@@ -116,6 +122,13 @@ const faqSchema = {
         Hearing this from parents or in-laws leaves you feeling isolated, guilty, and constantly second-guessing yourself. 
       </p>
 
+      <WhatYouWillLearn items={[
+        "Why generational discipline methods like spanking fail for ADHD brains.",
+        "How to navigate cultural blame, in-laws' criticism, and joint family friction.",
+        "How to use the medical 'Diabetes Analogy' to shift family mindsets.",
+        "How to establish protective behavioral boundaries inside a multigenerational household."
+      ]} />
+
       <CalloutBox type="important" title="Why Harsh Discipline and Punishment Always Fail">
         <p>
           Generational discipline methods (spanking, scolding, shaming) were designed around the assumption that misbehavior is an intentional act of defiance. But with ADHD, autism, or executive dysfunction, <strong>the child lacks executive control over their brain’s braking system.</strong>
@@ -124,6 +137,11 @@ const faqSchema = {
           You cannot spank away a neurological dopamine deficiency. Harsh punishment does not teach self-regulation—it floods an already overwhelmed nervous system with adrenaline, escalating meltdowns and shattering emotional security.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Supporting emotional regulation and de-escalating family tensions" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Educating extended family transforms criticism into unified, compassionate home support.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">How to Use the "Diabetes Analogy" with Elders</h2>
 
@@ -142,6 +160,20 @@ const faqSchema = {
       <p>
         Reframing neurodiversity through a physical health model helps grandparents understand that this is not about disrespect or poor parenting. It is about biological brain architecture.
       </p>
+
+      <MythVsFact 
+        myth="If we are strict enough with physical punishment, he will learn to sit still."
+        fact="Harsh punishment increases fight-or-flight hormones, making an ADHD brain more impulsive, hyperactive, and anxious over time."
+      />
+
+      <ExpertTip text="Share the Diabetes Analogy during a quiet, relaxed tea time when emotions are calm—never in the heat of an active behavioral crisis when relatives are upset." />
+
+      <KeyTakeaways items={[
+        "Extended family members often view neurodiversity through traditional moral lenses.",
+        "Harsh punishment and spanking exacerbate neurological executive functioning delays.",
+        "Use the Diabetes Analogy to explain that ADHD is a biological medical condition.",
+        "Establish firm, loving boundaries to protect your child's home routines."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

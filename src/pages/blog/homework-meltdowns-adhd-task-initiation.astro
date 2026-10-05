@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/homework-battles-and-attention-difficulties.webp';
+import secondaryImage from '../../assets/blog/understanding-the-confusion-between-adhd-and-hyperactivity-in-children.webp';
 
 const title = "The Homework Battle: Why the ADHD Brain Freezes (And How Doodling Helps)";
 const description = "Why a 10-minute worksheet turns into 2 hours of tears, why the ADHD brain starves for stimulation in silent rooms, and how fidgets and doodling unlock focus.";
@@ -106,9 +112,12 @@ const faqSchema = {
         Parents sit next to their child pleading: <em>"Just write these five words and you are done! Why are you fighting me over something that takes five minutes?"</em>
       </p>
 
-      <p>
-        From the outside, it looks like pure defiance or stubborn laziness. But in clinical practice, the neurological truth is very different: <strong>the ADHD brain is starving for stimulation.</strong>
-      </p>
+      <WhatYouWillLearn items={[
+        "Why 10-minute worksheets trigger 2-to-3 hours of nightly tears and screaming.",
+        "The paradox of why silent, barren rooms paralyze the ADHD brain.",
+        "How tactile fidget tools channel motor restlessness into focused study.",
+        "The clinical neuroscience behind why doodling in margins improves working memory."
+      ]} />
 
       <CalloutBox type="tip" title="The Paradox of the Silent Room">
         <p>
@@ -118,6 +127,11 @@ const faqSchema = {
           Because repetitive worksheets provide virtually zero dopamine, the brain's executive networks literally freeze. The tantrums, shouting, and resistance you see are an unconscious attempt by the child's nervous system to manufacture adrenaline and stimulation to jump-start an under-aroused brain.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Channeling motor restlessness into focus with sensory integration" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Tactile fidgets and margin doodling provide the sensory arousal an ADHD brain needs to maintain focus.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Two Evidence-Based Fixes to Break Homework Paralysis</h2>
 
@@ -138,11 +152,19 @@ const faqSchema = {
         Allowing your child to doodle geometric patterns, scribble in margins, or color a sketchpad between math problems keeps their brain at the optimal level of neurochemical arousal. It stops the brain from wandering off into full dissociation or explosive frustration.
       </p>
 
-      <CalloutBox type="important" title="Chunk into 5-Minute Sprints">
-        <p>
-          Never say: <em>"We are doing homework for an hour."</em> Say: <em>"We are doing a 5-minute sprint on question one, then a 2-minute movement stretch."</em> Breaking mountains into tiny hills turns impossible task initiation into manageable steps.
-        </p>
-      </CalloutBox>
+      <MythVsFact 
+        myth="If my child is doodling while doing homework, they are wasting time and not listening."
+        fact="Kinesthetic micro-movements like doodling keep the frontal cortex alert during low-stimulation tasks, preventing dopamine drops and attention burnout."
+      />
+
+      <ExpertTip text="Try 'body doubling'. Simply sit nearby at the kitchen table reading your own book or paying bills quietly. Your calm, non-interfering physical presence acts as a grounding anchor for their executive focus without micromanaging." />
+
+      <KeyTakeaways items={[
+        "Monotonous homework starves the ADHD brain of baseline neurochemical dopamine.",
+        "Silent rooms heighten task paralysis; provide controlled, low-friction sensory input.",
+        "Allow tactile fidget toys to quietly satisfy the motor cortex.",
+        "Embrace margin doodling and 5-minute sprints to conquer evening task initiation."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/tantrum-vs-meltdown-what-is-the-difference.webp';
+import secondaryImage from '../../assets/blog/behaviour-is-communication-finding-the-why.webp';
 
 const title = "Public Meltdowns vs. Defiance: How to De-escalate Without Embarrassment";
 const description = "A practical 2-minute clinical guide by Clinical Psychologist Rabbia Ashraf on handling public meltdowns, avoiding accidental reinforcement, and using the 60-second 'If-Then' rule.";
@@ -106,15 +112,23 @@ const faqSchema = {
         Whether your child is neurotypical or navigating neurodevelopmental differences like ADHD or autism, having your child scream, drop to the floor, or lash out in a crowded shopping centre—or worse, right in front of visiting relatives—feels profoundly overwhelming. You feel all eyes on you. You worry people are thinking: <em>"Can't she control her own child?"</em>
       </p>
 
-      <p>
-        Regardless of your ethnic or cultural background, the urge in that moment is almost always the same: <strong>make it stop immediately, at any cost.</strong>
-      </p>
+      <WhatYouWillLearn items={[
+        "Why public meltdowns escalate faster when parents feel social embarrassment.",
+        "How children unconsciously use an audience to weaken parental boundaries.",
+        "The 4-step sequence to de-escalate emotional storms in under 60 seconds.",
+        "How to apply Grandma's Rule ('If-Then') without giving into demands."
+      ]} />
 
       <CalloutBox type="important" title="The Trap of the Public Audience">
         <p>
           Children—even very young ones—are remarkably perceptive. They know that in front of strangers or extended family, you are vulnerable. They recognize that social embarrassment weakens your boundaries. When parents scramble to negotiate, bribe, or scold loudly, they inadvertently escalate the crisis and unconsciously reinforce the very behavior they want to end.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Understanding the root causes of dysregulated child behavior" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Every intense meltdown is an outward signal of internal neurological overwhelm.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">The 60-Second De-escalation Protocol</h2>
 
@@ -149,6 +163,20 @@ const faqSchema = {
       <p>
         You are asking for just two seconds of physical stillness before engaging. When they pause—even for a breath—acknowledge it instantly: <em>"Thank you for pausing. Now tell me what's happening."</em>
       </p>
+
+      <MythVsFact 
+        myth="If my child has a meltdown in public, I must scold them immediately so people know I am a strict parent."
+        fact="In full meltdown, the rational brain is offline. Harsh reprimands add adrenaline to the fire. Calm co-regulation and holding boundaries resolves the crisis twice as fast."
+      />
+
+      <ExpertTip text="When in public, position yourself physically between the crowd and your child. Turning your back gently toward onlookers creates an instant private visual cocoon that reduces sensory stimulation." />
+
+      <KeyTakeaways items={[
+        "Regulate your own nervous system first before attempting to manage your child.",
+        "Never reward an explosive meltdown with treats or phones just to buy quiet.",
+        "Ensure physical safety immediately by blocking hazards and crowd access.",
+        "Use the 2-second pause If-Then boundary to teach emotional co-regulation."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

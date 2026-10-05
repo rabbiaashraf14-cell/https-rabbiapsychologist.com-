@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/speech-delay-vs-autism-understanding-the-difference.webp';
+import secondaryImage from '../../assets/blog/social-communication-concerns.webp';
 
 const title = "Multilingual Households & Speech Delay: Myths vs. Clinical Red Flags";
 const description = "Does speaking two languages delay your child's speech? Clinical Psychologist Rabbia Ashraf debunks the bilingualism myth and outlines non-negotiable milestones at ages 2 and 3.";
@@ -110,6 +116,13 @@ const faqSchema = {
         As a Clinical Psychologist, I need to be completely clear: <strong>this advice is clinically incorrect and dangerously delays early intervention.</strong>
       </p>
 
+      <WhatYouWillLearn items={[
+        "The clinical neuroscience showing why multilingualism boosts cognitive flexibility.",
+        "The difference between normal linguistic code-switching and genuine speech delay.",
+        "The non-negotiable 2-word combination milestone at age 2.",
+        "The non-negotiable 3-word sentence milestone at age 3."
+      ]} />
+
       <CalloutBox type="tip" title="What the Clinical Neuroscience Actually Shows">
         <p>
           Multilingualism does not cause language delay. In fact, research demonstrates that learning and navigating two or more languages is strongly correlated with <strong>higher intellectual functioning, superior executive control, and greater cognitive flexibility</strong>. 
@@ -118,6 +131,11 @@ const faqSchema = {
           While children may code-switch (mix words from both languages in one sentence) or show brief vocabulary adjustments when shifting between a home language and an English-speaking school, a child with typical neurological development will meet developmental speech milestones in their combined total vocabulary.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Evaluating social communication development in multilingual children" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">True developmental language challenges affect communication across every language a child speaks.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">The Non-Negotiable Red Flags: When to Seek Professional Evaluation</h2>
 
@@ -143,6 +161,20 @@ const faqSchema = {
       <p>
         If your child is 2 years old and not combining two words, or 3 years old and not speaking in three-word phrases, <strong>do not wait and do not blame your home languages.</strong> This is an objective clinical signal to consult a developmental paediatrician, clinical psychologist, or speech-language pathologist (SLP).
       </p>
+
+      <MythVsFact 
+        myth="Bilingual children always talk a year later than monolingual children."
+        fact="Milestone timing is universal across human brains. A bilingual child should combine words at age 2 and speak in phrases at age 3, counting words across all spoken languages combined."
+      />
+
+      <ExpertTip text="Never abandon your home language. Rich emotional and vocabulary input in your mother tongue builds a far stronger cognitive architecture than speaking stiff or uncomfortable English at home." />
+
+      <KeyTakeaways items={[
+        "Multilingual environments do not cause or trigger speech delays.",
+        "Code-switching between home languages is normal and cognitively healthy.",
+        "Missing 2-word combinations at age 2 is an objective developmental red flag.",
+        "Missing 3-word sentences at age 3 warrants prompt multidisciplinary evaluation."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 

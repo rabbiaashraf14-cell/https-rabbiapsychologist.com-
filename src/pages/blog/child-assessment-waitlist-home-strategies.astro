@@ -6,7 +6,13 @@ import ProgressBar from '../../components/blog/ProgressBar.astro';
 import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
 import heroImage from '../../assets/blog/when-to-seek-a-developmental-assessment-for-your-child.webp';
+import secondaryImage from '../../assets/blog/screen-time-and-emotional-regulation-in-children.webp';
 
 const title = "Stuck on an Assessment Waitlist: What to Stop and Start Doing at Home";
 const description = "Waiting 6 to 18 months for a child autism or ADHD assessment? Clinical Psychologist Rabbia Ashraf explains why eliminating screens and capturing video logs changes everything.";
@@ -106,6 +112,13 @@ const faqSchema = {
         Waiting 6, 12, or even 18 months for a formal diagnostic appointment feels paralyzing. But sitting passively in limbo is a missed opportunity. What you do right now at home determines how clear and actionable your assessment will be when your appointment finally arrives.
       </p>
 
+      <WhatYouWillLearn items={[
+        "Why waiting passively for an assessment wastes precious early intervention time.",
+        "How active and passive screen overexposure clouds the clinical diagnostic picture.",
+        "How to create a 30-to-60 second video log of natural home struggles.",
+        "How to organize a concise behavioral trigger dossier for clinicians."
+      ]} />
+
       <CalloutBox type="warning" title="What You Must STOP Doing Today: Cut Screen Saturation">
         <p>
           The single most impactful change parents must make while on a waitlist is to <strong>eliminate both active and passive screen time</strong>. 
@@ -114,6 +127,11 @@ const faqSchema = {
           In my clinical practice, many behaviors that look identical to ADHD, autism spectrum challenges, or severe emotional outbursts are exacerbated by constant digital overstimulation. High-pace cartoons, tablet gaming, and background televisions over-saturate dopamine and heighten nervous system irritability. Removing screens clears the fog so clinicians can evaluate your child’s true neurological baseline rather than screen-induced dysregulation.
         </p>
       </CalloutBox>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Eliminating screens restores nervous system regulation" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">Removing passive and active screen saturation allows your child's natural baseline to emerge.</p>
+      </div>
 
       <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Two High-Value Things to START Doing at Home</h2>
 
@@ -141,6 +159,20 @@ const faqSchema = {
       <p>
         When you hand a concise, evidence-backed dossier to the assessing psychologist, you cut through months of ambiguity and accelerate their clinical diagnostic insights.
       </p>
+
+      <MythVsFact 
+        myth="We cannot start any accommodations or strategies at home until we have the formal diagnostic paper in hand."
+        fact="Evidence-based sensory accommodations, visual routines, and emotional co-regulation work right now. You never have to wait for diagnostic paperwork to support your child's nervous system."
+      />
+
+      <ExpertTip text="Always record when the child is engaged in typical daily challenges (transitions, shoe-tying, mealtime). A 45-second video clip is worth 20 pages of verbal descriptions during a diagnostic appointment." />
+
+      <KeyTakeaways items={[
+        "Eliminate both active tablet gaming and passive background television immediately.",
+        "Capture short video clips showing how your child behaves in their natural home environment.",
+        "Keep an objective trigger and routine log with dates and times for the assessing clinician.",
+        "Start implementing home sensory adaptations without waiting for formal paperwork."
+      ]} />
 
       <hr class="my-8 border-gray-200" />
 
