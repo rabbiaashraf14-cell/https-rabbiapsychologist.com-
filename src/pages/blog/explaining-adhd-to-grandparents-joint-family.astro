@@ -1,0 +1,173 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/parent-guidance-for-behaviour-concerns.webp';
+
+const title = "Explaining Neurodiversity to Grandparents & In-Laws (The Diabetes Analogy)";
+const description = "Tired of hearing that your child is 'just spoiled' or 'needs strict discipline'? Clinical Psychologist Rabbia Ashraf explains how to use the medical diabetes analogy to shift family mindsets.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/explaining-adhd-to-grandparents-joint-family/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Explaining ADHD to Extended Family', href: '/blog/explaining-adhd-to-grandparents-joint-family' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do extended family members often dismiss ADHD as bad discipline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In many South Asian and Middle Eastern cultures, developmental differences were historically not spoken about or recognized. Elders often default to moral explanations ('he is spoiled', 'he is stubborn') because they view behavior strictly through the lens of respect and obedience rather than neurological executive functioning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Diabetes Analogy for ADHD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Just as a person with diabetes cannot regulate insulin through willpower or scolding, a child with ADHD cannot regulate attention, dopamine, and impulses simply because an adult tells them to. Both are biological conditions that require structured management, not punishment."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Family Dynamics</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD Awareness</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Mother having a thoughtful conversation with extended family members" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        If you are parenting a neurodivergent child within a multigenerational or joint family household, you are fighting two battles every single day: managing your child's developmental needs, and managing the constant judgment of extended family and in-laws.
+      </p>
+
+      <p>
+        In South Asian, Middle Eastern, and broader Asian cultural settings, the comments are exhausting and predictable:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-1 italic text-gray-700">
+        <li><em>"You have spoiled him with too much modern pampering."</em></li>
+        <li><em>"In our day, one good slap or strict punishment fixed this stubbornness immediately."</em></li>
+        <li><em>"There is nothing wrong with his brain—it is just too much screen time and too much sugar."</em></li>
+      </ul>
+
+      <p>
+        Hearing this from parents or in-laws leaves you feeling isolated, guilty, and constantly second-guessing yourself. 
+      </p>
+
+      <CalloutBox type="important" title="Why Harsh Discipline and Punishment Always Fail">
+        <p>
+          Generational discipline methods (spanking, scolding, shaming) were designed around the assumption that misbehavior is an intentional act of defiance. But with ADHD, autism, or executive dysfunction, <strong>the child lacks executive control over their brain’s braking system.</strong>
+        </p>
+        <p>
+          You cannot spank away a neurological dopamine deficiency. Harsh punishment does not teach self-regulation—it floods an already overwhelmed nervous system with adrenaline, escalating meltdowns and shattering emotional security.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">How to Use the "Diabetes Analogy" with Elders</h2>
+
+      <p>
+        When relatives dismiss ADHD as "acting out" or "pampering," arguments about modern psychology often fall on deaf ears. Instead, shift the conversation from a moral debate to a medical reality using an analogy every elder understands: <strong>Diabetes</strong>.
+      </p>
+
+      <div class="bg-brand-warm-white p-6 rounded-2xl border border-brand-mist/50 my-6">
+        <blockquote class="italic text-brand-navy font-medium leading-relaxed">
+          "When a person has diabetes, their body cannot regulate sugar on its own. We would never beat a child for having high blood sugar or tell them they are just being stubborn. We give them medical care, structure their meals, and help them regulate their body.
+          <br /><br />
+          ADHD works the exact same way. His brain cannot regulate dopamine and executive attention the way other children do. His hyperactivity and restlessness are biological symptoms of his condition, not bad manners. He doesn't need harsh punishment—he needs structured routines and medical guidance."
+        </blockquote>
+      </div>
+
+      <p>
+        Reframing neurodiversity through a physical health model helps grandparents understand that this is not about disrespect or poor parenting. It is about biological brain architecture.
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What if in-laws continue to criticize my parenting behind my back?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Set a protective boundary: 'We are working closely with a clinical psychologist and following medical guidance for his brain development.' Keep routines consistent inside your child's immediate bedroom bubble.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Can grandparents be included in parent guidance sessions?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Yes. In our clinical practice, we frequently conduct joint family consultations in Urdu or English to gently educate elders, answer their cultural concerns, and build a unified, loving home environment for the child.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        Protecting your child while maintaining family harmony is a delicate art. Book an online parent consultation to develop culturally attuned communication scripts for your household.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>

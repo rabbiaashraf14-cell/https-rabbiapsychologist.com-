@@ -1,0 +1,172 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/understanding-psychological-reports-a-guide-for-parents.webp';
+
+const title = "How to Read Your Child’s Psychological Report (Without Panicking at Percentiles)";
+const description = "Clinical Psychologist Rabbia Ashraf explains why a 16th percentile is not an 'F', and how to translate technical clinical scores into classroom accommodations.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/how-to-read-child-psychological-assessment-report/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Reading Psychological Reports', href: '/blog/how-to-read-child-psychological-assessment-report' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a percentile rank and a percentage in a psychological report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A percentage measures how many questions were answered correctly out of 100. A percentile rank indicates how your child performed relative to a representative, age-matched normative group. For example, the 16th percentile means your child scored equal to or higher than 16% of same-age peers, identifying a specific area for targeted support rather than an exam failure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do subtest scores help in school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtest scores break cognition into specific domains (like working memory, verbal comprehension, or processing speed). A dip in processing speed tells teachers that the child needs extra time for exams, while a dip in working memory indicates instructions must be written down step-by-step."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Psychological Reports</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Inclusive Education</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Parent reviewing psychological assessment scores and percentiles" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        You waited months for the evaluation, attended the testing sessions, and finally received a 15-page psychoeducational report. You open it, see terms like <em>"Working Memory Index,"</em> <em>"Processing Speed,"</em> and a table showing <strong>16th percentile</strong>, and your heart sinks.
+      </p>
+
+      <p>
+        The first thought running through almost every parent’s mind is: <em>"Did my child get an F? Does this mean he only scored 16 out of 100?"</em>
+      </p>
+
+      <CalloutBox type="important" title="Rule Number One: Percentile Is Not Percentage">
+        <p>
+          A percentile score is <strong>not</strong> a school grade out of 100. It is a statistical comparison against a carefully standardized normative sample of children of the exact same age and developmental stage. 
+        </p>
+        <p>
+          Scoring in the 16th percentile does not mean your child failed. It means that within that isolated sub-skill, your child performed equal to or higher than 16% of their age cohort. It marks an area that requires specific scaffolding, not an indictment of your child’s intelligence or future potential.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Why Psychological Reports Feel So Intimidating</h2>
+
+      <p>
+        Psychological and developmental assessments are written in formal clinical language designed for inter-professional communication (between clinical psychologists, paediatricians, speech therapists, and school authorities). Because the language is clinical, parents often feel alienated and intimidated by their own child's report.
+      </p>
+      <p>
+        If you feel lost, never hesitate to seek a <strong>report review or second opinion</strong> with a child psychologist. A 45-minute clinical debrief translates clinical metrics into plain English and answers: <em>"What does this actually mean for my child at 4:00 PM during homework?"</em>
+      </p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">From Diagnostic Scores to Inclusive Classroom Accommodations</h2>
+
+      <p>
+        The true value of a psychological assessment is not the diagnosis on the final page—it is the detailed breakdown of cognitive domains that forms the blueprint for classroom support:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <strong>Low Working Memory Index:</strong> Your child’s brain struggles to hold multi-step verbal instructions in mind. The accommodation: teachers must provide written checklists or break commands down into single steps.
+        </li>
+        <li>
+          <strong>Low Processing Speed Index:</strong> Your child understands the material, but taking information in and writing it down takes longer. The accommodation: 25% extra time on classroom exams and reduced worksheet volume.
+        </li>
+        <li>
+          <strong>High Verbal Comprehension vs. Lower Fluid Reasoning:</strong> Your child has rich spoken concepts but benefits from graphic organizers and visual flowcharts for math and abstract problem-solving.
+        </li>
+      </ul>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What if different subtests show huge score differences?</summary>
+          <p class="mt-2 text-gray-700 text-sm">A large discrepancy (a 'spiky profile') is one of the classic hallmarks of neurodivergent learners (such as twice-exceptional, ADHD, or autism). It simply highlights that your child has brilliant cognitive peaks alongside distinct areas that require specific accommodations.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Can an existing report be used to update an IEP or 504 plan?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Absolutely. School inclusion teams and SENCOs rely directly on the clinical recommendations section of these reports to legally justify classroom adjustments.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        If you have an evaluation report sitting on your desk that feels confusing or overwhelming, book an online psychological report review. Together, we will turn clinical numbers into an actionable roadmap for home and school.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>

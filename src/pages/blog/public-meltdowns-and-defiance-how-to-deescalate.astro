@@ -1,0 +1,180 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/tantrum-vs-meltdown-what-is-the-difference.webp';
+
+const title = "Public Meltdowns vs. Defiance: How to De-escalate Without Embarrassment";
+const description = "A practical 2-minute clinical guide by Clinical Psychologist Rabbia Ashraf on handling public meltdowns, avoiding accidental reinforcement, and using the 60-second 'If-Then' rule.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/public-meltdowns-and-defiance-how-to-deescalate/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Public Meltdowns & De-escalation', href: '/blog/public-meltdowns-and-defiance-how-to-deescalate' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do children have bigger meltdowns in public places or in front of relatives?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children quickly pick up on parental social vulnerability. In crowded markets or family gatherings, parents feel scrutinized and embarrassed, making them far more likely to give in, negotiate, or react impulsively, which unconsciously reinforces the dysregulated behavior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 60-second 'If-Then' de-escalation rule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First, regulate your own breathing and ensure physical safety. Then, offer a brief, calm boundary: 'If you pause your body for 2 seconds, then I will listen to what you need.' This breaks the spiral without rewarding explosive reactions."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Behaviour</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Emotional Regulation</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Parent managing a child meltdown calmly in public" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        Few parenting experiences trigger visceral panic quite like a full-blown public meltdown. 
+      </p>
+
+      <p>
+        Whether your child is neurotypical or navigating neurodevelopmental differences like ADHD or autism, having your child scream, drop to the floor, or lash out in a crowded shopping centre—or worse, right in front of visiting relatives—feels profoundly overwhelming. You feel all eyes on you. You worry people are thinking: <em>"Can't she control her own child?"</em>
+      </p>
+
+      <p>
+        Regardless of your ethnic or cultural background, the urge in that moment is almost always the same: <strong>make it stop immediately, at any cost.</strong>
+      </p>
+
+      <CalloutBox type="important" title="The Trap of the Public Audience">
+        <p>
+          Children—even very young ones—are remarkably perceptive. They know that in front of strangers or extended family, you are vulnerable. They recognize that social embarrassment weakens your boundaries. When parents scramble to negotiate, bribe, or scold loudly, they inadvertently escalate the crisis and unconsciously reinforce the very behavior they want to end.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">The 60-Second De-escalation Protocol</h2>
+
+      <p>
+        When a public storm erupts, here is the exact clinical sequence I teach parents:
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">1. Check Your Own Nervous System First</h3>
+      <p>
+        You cannot co-regulate a dysregulated child with an agitated nervous system. Drop your shoulders, unclamp your jaw, and lower your vocal register. Silence the imaginary audience in the room. Your only job right now is your child's safety, not strangers' approval.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">2. Secure Physical Safety</h3>
+      <p>
+        Quickly scan the physical environment. Position your body between the child and sharp corners, store shelves, or doorways. Ensure they cannot hurt themselves or bystanders.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">3. Never Reinforce in the Heat of the Moment</h3>
+      <p>
+        Do not hand over the chocolate bar, the toy, or your phone just to buy public quiet. Doing so teaches your child’s nervous system that intense escalation is the fastest route to compliance.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">4. Use the 60-Second "If-Then" Rule</h3>
+      <p>
+        Wait out the initial scream. Once there is a microscopic pause, crouch down to eye level and state a calm, low-friction If-Then boundary (Grandma's Rule):
+      </p>
+
+      <blockquote class="border-l-4 border-brand-gold bg-amber-50/50 p-4 rounded-r-lg italic text-brand-navy font-medium my-4">
+        "I want to hear you. If you pause your body for two seconds, then I will listen and we will solve this together."
+      </blockquote>
+
+      <p>
+        You are asking for just two seconds of physical stillness before engaging. When they pause—even for a breath—acknowledge it instantly: <em>"Thank you for pausing. Now tell me what's happening."</em>
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What if people are staring or making comments?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Remember: you are managing your child's brain state, not managing adults' opinions. Turn your back gently toward the onlookers to create a private visual bubble for your child until their breathing settles.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Does this work for both sensory meltdowns and tantrums?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Yes. In a sensory meltdown, safety and lowering stimulation are the priority. In a behavioral tantrum, holding the boundary while offering emotional co-regulation prevents the behavior from becoming a manipulation habit.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        If public meltdowns are making you dread family gatherings, school pick-ups, or grocery trips, you don't have to navigate this through trial and error. In our 1-on-1 parent guidance sessions, we unpack your child's exact triggers and design customized co-regulation strategies that work in real life.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>

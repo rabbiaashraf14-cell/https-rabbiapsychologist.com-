@@ -1,0 +1,171 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/school-meeting-checklist.webp';
+
+const title = "What to Say in Your Child’s School Support Meeting: Beyond Academic Marks";
+const description = "Clinical Psychologist Rabbia Ashraf explains how to overcome defensive anxiety in teacher and SENCO meetings, and the crucial questions to ask about emotional coping and peer stress.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/parent-teacher-meeting-neurodivergent-child-script/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'School Support Meetings', href: '/blog/parent-teacher-meeting-neurodivergent-child-script' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is it important not to focus only on academic grades during school meetings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Academic grades only show surface output, not internal emotional regulation. A neurodivergent child might pass their spelling tests while silently experiencing intense panic, peer isolation, or sensory exhaustion that leads to evening meltdowns at home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should parents respond when a teacher mentions behavioral weaknesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "View weaknesses as functional skills that need coaching, not as character flaws. Acknowledge the challenge without defensiveness and ask: 'What environmental trigger usually precedes this, and what accommodation can we test together?'"
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">School Collaboration</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">SENCO Meetings</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Parent meeting with teacher and school support team" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        Walking into a school meeting—whether with your child's primary teacher, the school SENCO, or the learning support coordinator—often brings an immediate knot to a parent's stomach.
+      </p>
+
+      <p>
+        You feel protective and on edge. You don't want anyone to label your child as "difficult," "bad," or "lazy." And because that protective instinct is so strong, parents often walk in with armor on, wanting to defend their child or instinctively conceal areas where they struggle at home.
+      </p>
+
+      <CalloutBox type="important" title="Shift from Defense to Collaborative Inquiry">
+        <p>
+          The most effective mindset shift you can make is to realize that <strong>a shortcoming is not a character flaw.</strong> When educators highlight an area where your child struggles, it is simply a deficit in executive functioning, communication, or emotional regulation that requires targeted scaffolding. Leaving room for honest, critical feedback is how your child gets the help they actually need.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Four Clinical Questions to Ask Beyond "How Are His Grades?"</h2>
+
+      <p>
+        Too many parent-teacher conferences are spent talking about math scores and reading percentiles. If your child is neurodivergent or having developmental challenges, those metrics tell you almost nothing about their wellbeing. 
+      </p>
+      <p>
+        Here are the four questions I tell parents to bring to the meeting:
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">1. "When he gets distressed or stuck on work, how does he cope?"</h3>
+      <p>
+        Does he shut down silently? Does he ask for help? Does he rip the paper or act as the classroom clown to mask his embarrassment? This reveals his nervous system's stress threshold in the classroom.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">2. "How is he holding up during unstructured peer time?"</h3>
+      <p>
+        How does he behave during recess, lunch, or group activities? Is he able to join games, or does he get overwhelmed by playground noise and retreat to the sidelines?
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">3. "How does he communicate his feelings when he's having a hard day?"</h3>
+      <p>
+        Does he have a safe way to signal to the teacher that he needs a sensory break, or does he bottle it up until 3:30 PM when he explodes the moment he gets into your car?
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">4. "What environmental triggers usually happen right before he loses focus?"</h3>
+      <p>
+        Is he sitting next to an open hallway window? Is he hungry right before lunch? Pinpointing the antecedent helps you and the teacher agree on simple classroom adjustments.
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What if the teacher seems dismissive of our concerns?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Keep your communication objective. Share specific home observations in writing, reference any psychological evaluations, and request an informal 3-week check-in date to review progress.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Should we bring our child to the meeting?</summary>
+          <p class="mt-2 text-gray-700 text-sm">For primary school children, it is usually better for adults to have candid discussions about accommodations first. For older children and teenagers, involving them for a portion of the meeting builds powerful self-advocacy skills.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        If you have an upcoming school meeting and aren't sure how to advocate without burning bridges, book an online school strategy consultation. We will draft a tailored, evidence-backed accommodation request list together.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>

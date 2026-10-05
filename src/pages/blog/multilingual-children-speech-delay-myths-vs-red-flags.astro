@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/speech-delay-vs-autism-understanding-the-difference.webp';
+
+const title = "Multilingual Households & Speech Delay: Myths vs. Clinical Red Flags";
+const description = "Does speaking two languages delay your child's speech? Clinical Psychologist Rabbia Ashraf debunks the bilingualism myth and outlines non-negotiable milestones at ages 2 and 3.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/multilingual-children-speech-delay-myths-vs-red-flags/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Multilingual Speech Delay Myths', href: '/blog/multilingual-children-speech-delay-myths-vs-red-flags' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does speaking two languages at home cause speech delays in children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Extensive clinical research shows that multilingualism does not cause language delay. In fact, exposure to multiple languages is correlated with enhanced cognitive flexibility and higher intellectual functioning. When a bilingual child experiences true delay, it is due to an underlying neurodevelopmental factor, not the presence of two languages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the non-negotiable speech milestones at ages 2 and 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By age 2, a child must be combining at least 2 words meaningfully (e.g., 'want water', 'daddy go'). By age 3, a child should be speaking in at least 3-word sentences (e.g., 'I want ball'). Missing these milestones is a clinical red flag warranting prompt developmental assessment."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Language Development</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Expat Families</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Mother interacting verbally with a young bilingual child" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        One of the most persistent misconceptions I encounter across expatriate and diaspora families—whether in Dubai, London, Toronto, or Lahore—is the belief that speaking multiple languages confuses a child's brain and causes speech delay.
+      </p>
+
+      <p>
+        Well-meaning relatives often tell parents: <em>"Stop speaking Urdu at home! He isn't talking because you are confusing him with English."</em> Or: <em>"Boys in bilingual homes always talk late—just wait until he is four."</em>
+      </p>
+
+      <p>
+        As a Clinical Psychologist, I need to be completely clear: <strong>this advice is clinically incorrect and dangerously delays early intervention.</strong>
+      </p>
+
+      <CalloutBox type="tip" title="What the Clinical Neuroscience Actually Shows">
+        <p>
+          Multilingualism does not cause language delay. In fact, research demonstrates that learning and navigating two or more languages is strongly correlated with <strong>higher intellectual functioning, superior executive control, and greater cognitive flexibility</strong>. 
+        </p>
+        <p>
+          While children may code-switch (mix words from both languages in one sentence) or show brief vocabulary adjustments when shifting between a home language and an English-speaking school, a child with typical neurological development will meet developmental speech milestones in their combined total vocabulary.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">The Non-Negotiable Red Flags: When to Seek Professional Evaluation</h2>
+
+      <p>
+        Blaming bilingualism frequently causes families to ignore genuine neurodevelopmental signs of autism spectrum profiles, developmental language disorder (DLD), or speech apraxia. 
+      </p>
+      <p>
+        Here are the two non-negotiable developmental benchmarks every parent must know:
+      </p>
+
+      <div class="bg-brand-warm-white p-6 rounded-2xl border border-brand-mist/50 my-6">
+        <h3 class="text-lg font-bold text-brand-navy mb-3">1. The Age 2 Benchmark: 2-Word Combinations</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          By <strong>24 months (Age 2)</strong>, a child must be spontaneously combining at least <strong>two words</strong> together meaningfully (e.g., <em>"want milk"</em>, <em>"mama come"</em>, <em>"car go"</em>). These can be in either language, or a blend of both. Single words only at age two is a red flag.
+        </p>
+
+        <h3 class="text-lg font-bold text-brand-navy mb-3">2. The Age 3 Benchmark: 3-Word Sentences</h3>
+        <p class="text-gray-700 text-sm">
+          By <strong>36 months (Age 3)</strong>, a child should be speaking in at least <strong>three-word sentences</strong> (e.g., <em>"I want ball"</em>, <em>"Daddy go work"</em>) and using language socially to request, point out objects, and share enjoyment.
+        </p>
+      </div>
+
+      <p>
+        If your child is 2 years old and not combining two words, or 3 years old and not speaking in three-word phrases, <strong>do not wait and do not blame your home languages.</strong> This is an objective clinical signal to consult a developmental paediatrician, clinical psychologist, or speech-language pathologist (SLP).
+      </p>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Should we switch to speaking only English at home?</summary>
+          <p class="mt-2 text-gray-700 text-sm">No. Speak to your child in the language in which you are most emotionally fluent and grammatically rich. Rich maternal/paternal input in Urdu, Arabic, or Punjabi builds a stronger language foundation than broken or forced English.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What if my child understands everything but just doesn't speak?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Receptive language (understanding) being higher than expressive language (speaking) is very common, but an expressive delay at age 2 or 3 still warrants clinical screening to rule out oral-motor or social communication barriers.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        If you are unsure whether your child’s speech patterns are normal bilingual adaptation or an early developmental delay, book an online developmental screening consultation with me. We will evaluate their milestones across all languages.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,5 +1,69 @@
 export const articles = [
   {
+    title: "Public Meltdowns vs. Defiance: How to De-escalate Without Embarrassment",
+    excerpt: "A practical 2-minute clinical guide by Clinical Psychologist Rabbia Ashraf on handling public meltdowns, avoiding accidental reinforcement, and using the 60-second 'If-Then' rule.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["Behaviour", "Emotional Regulation"],
+    href: "/blog/public-meltdowns-and-defiance-how-to-deescalate"
+  },
+  {
+    title: "The ADHD Morning Wall: Why Your Child Cannot 'Just Wake Up and Get Ready'",
+    excerpt: "Understand the neurobiology of ADHD sleep inertia and executive dysfunction, plus two concrete dopamine bridges to end the morning shouting match.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["ADHD", "Executive Function"],
+    href: "/blog/adhd-morning-routine-and-executive-dysfunction"
+  },
+  {
+    title: "Stuck on an Assessment Waitlist: What to Stop and Start Doing at Home",
+    excerpt: "Waiting 6 to 18 months for a child autism or ADHD assessment? Clinical Psychologist Rabbia Ashraf explains why eliminating screens and capturing video logs changes everything.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["Assessments", "Early Intervention"],
+    href: "/blog/child-assessment-waitlist-home-strategies"
+  },
+  {
+    title: "How to Read Your Child’s Psychological Report (Without Panicking at Percentiles)",
+    excerpt: "Clinical Psychologist Rabbia Ashraf explains why a 16th percentile is not an 'F', and how to translate technical clinical scores into classroom accommodations.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["Psychological Reports", "Inclusive Education"],
+    href: "/blog/how-to-read-child-psychological-assessment-report"
+  },
+  {
+    title: "What to Say in Your Child’s School Support Meeting: Beyond Academic Marks",
+    excerpt: "Clinical Psychologist Rabbia Ashraf explains how to overcome defensive anxiety in teacher and SENCO meetings, and the crucial questions to ask about emotional coping and peer stress.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["School Support", "SENCO Meetings"],
+    href: "/blog/parent-teacher-meeting-neurodivergent-child-script"
+  },
+  {
+    title: "Multilingual Households & Speech Delay: Myths vs. Clinical Red Flags",
+    excerpt: "Does speaking two languages delay your child's speech? Clinical Psychologist Rabbia Ashraf debunks the bilingualism myth and outlines non-negotiable milestones at ages 2 and 3.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["Language Development", "Expat Families"],
+    href: "/blog/multilingual-children-speech-delay-myths-vs-red-flags"
+  },
+  {
+    title: "Explaining Neurodiversity to Grandparents & In-Laws (The Diabetes Analogy)",
+    excerpt: "Tired of hearing that your child is 'just spoiled' or 'needs strict discipline'? Clinical Psychologist Rabbia Ashraf explains how to use the medical diabetes analogy to shift family mindsets.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["Family Dynamics", "ADHD Awareness"],
+    href: "/blog/explaining-adhd-to-grandparents-joint-family"
+  },
+  {
+    title: "The Homework Battle: Why the ADHD Brain Freezes (And How Doodling Helps)",
+    excerpt: "Why a 10-minute worksheet turns into 2 hours of tears, why the ADHD brain starves for stimulation in silent rooms, and how fidgets and doodling unlock focus.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 5, 2026",
+    categories: ["ADHD", "Executive Function"],
+    href: "/blog/homework-meltdowns-adhd-task-initiation"
+  },
+  {
     title: "ADHD Hyperactivity vs. Meltdowns: What to Do When Your Child Can’t Calm Down",
     excerpt: "A quick 2-minute guide by Clinical Psychologist Rabbia Ashraf on understanding the link between ADHD hyperactivity, emotional overwhelm, and the 3 'S' rule during a meltdown.",
     author: "Rabbia Ashraf, Clinical Psychologist",

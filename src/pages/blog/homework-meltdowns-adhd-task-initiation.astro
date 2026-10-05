@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/homework-battles-and-attention-difficulties.webp';
+
+const title = "The Homework Battle: Why the ADHD Brain Freezes (And How Doodling Helps)";
+const description = "Why a 10-minute worksheet turns into 2 hours of tears, why the ADHD brain starves for stimulation in silent rooms, and how fidgets and doodling unlock focus.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/homework-meltdowns-adhd-task-initiation/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'Homework Meltdowns & Task Initiation', href: '/blog/homework-meltdowns-adhd-task-initiation' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does a 15-minute homework worksheet take 2 to 3 hours with an ADHD child?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monotonous, repetitive tasks fail to produce the baseline dopamine required for an ADHD brain to initiate work. Putting a child in a silent, barren room starves the brain of stimulation, causing mental paralysis and emotional meltdowns as the nervous system seeks regulation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does doodling during homework actually help with focus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Clinical neuroscience demonstrates that kinesthetic micro-movements—such as doodling in the margins or squeezing a tactile fidget toy—provide just enough supplementary sensory arousal to keep the ADHD frontal lobe engaged without drifting into distraction."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Executive Function</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Child experiencing homework frustration and task initiation difficulty" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        It is a scene repeated in millions of living rooms every evening: a single 10-to-15 minute math worksheet or spelling list turns into <strong>two to three hours of nightly tears, screaming, pencil-snapping, and exhaustion.</strong>
+      </p>
+
+      <p>
+        Parents sit next to their child pleading: <em>"Just write these five words and you are done! Why are you fighting me over something that takes five minutes?"</em>
+      </p>
+
+      <p>
+        From the outside, it looks like pure defiance or stubborn laziness. But in clinical practice, the neurological truth is very different: <strong>the ADHD brain is starving for stimulation.</strong>
+      </p>
+
+      <CalloutBox type="tip" title="The Paradox of the Silent Room">
+        <p>
+          Traditional advice says: <em>"Put the child in a quiet room with no distractions."</em> But for an ADHD brain, an under-stimulating, monotonous task in a silent room is agonizing. 
+        </p>
+        <p>
+          Because repetitive worksheets provide virtually zero dopamine, the brain's executive networks literally freeze. The tantrums, shouting, and resistance you see are an unconscious attempt by the child's nervous system to manufacture adrenaline and stimulation to jump-start an under-aroused brain.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Two Evidence-Based Fixes to Break Homework Paralysis</h2>
+
+      <p>
+        Instead of removing all stimulation, the clinical secret is to provide <strong>controlled, low-friction sensory stimulation</strong> that feeds the brain while the pencil moves:
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">1. Give Them Sensory Fidgets</h3>
+      <p>
+        Provide tactile tools: a kneading putty, a textured squeeze ball in their non-dominant hand, or a sensory resistance band tied around the chair legs so their feet can bounce. This channels physical restlessness and satisfies the nervous system’s need for movement, freeing up the frontal lobe to read and write.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">2. Let Them Doodle!</h3>
+      <p>
+        For decades, parents and teachers said: <em>"Stop doodling in the margins! Eyes on the paper!"</em> But developmental neuroscience reveals that <strong>doodling is an executive functioning stabilizer.</strong>
+      </p>
+      <p>
+        Allowing your child to doodle geometric patterns, scribble in margins, or color a sketchpad between math problems keeps their brain at the optimal level of neurochemical arousal. It stops the brain from wandering off into full dissociation or explosive frustration.
+      </p>
+
+      <CalloutBox type="important" title="Chunk into 5-Minute Sprints">
+        <p>
+          Never say: <em>"We are doing homework for an hour."</em> Say: <em>"We are doing a 5-minute sprint on question one, then a 2-minute movement stretch."</em> Breaking mountains into tiny hills turns impossible task initiation into manageable steps.
+        </p>
+      </CalloutBox>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Won't fidgets distract them from doing the work?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Not if you use tactile tools that don't make noise or have screens. Sensory putty or chair bands keep the motor cortex satisfied in the background without stealing visual attention.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What is 'body doubling' during homework?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Body doubling means simply sitting quietly at the same table working on your own task (like reading or paying bills). Your calm physical presence acts as an anchor for their executive focus without hovering or micromanaging.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        If evening homework has become a toxic battleground that drains your family's peace, you don't have to face it alone. Book an online parent consultation to design an executive functioning homework blueprint that restores calm to your evenings.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>

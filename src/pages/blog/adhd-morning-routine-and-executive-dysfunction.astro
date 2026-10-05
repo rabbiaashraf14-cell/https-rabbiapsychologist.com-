@@ -1,0 +1,177 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import heroImage from '../../assets/blog/morning-routine-problems-in-adhd.webp';
+
+const title = "The ADHD Morning Wall: Why Your Child Cannot 'Just Wake Up and Get Ready'";
+const description = "Understand the neurobiology of ADHD sleep inertia and executive dysfunction, plus two concrete dopamine bridges to end the morning shouting match.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/adhd-morning-routine-and-executive-dysfunction/";
+const publishedDate = "2026-10-05";
+const lastUpdated = "2026-10-05";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog' },
+  { name: 'ADHD Morning Routine & Executive Function', href: '/blog/adhd-morning-routine-and-executive-dysfunction' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is waking up so difficult for children with ADHD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children with ADHD often experience prolonged sleep inertia and circadian rhythm differences. Their neurochemistry causes them to cycle into heavy, deep sleep stages, making the transition to wakefulness a biological obstacle rather than simple defiance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a dopamine bridge in the morning routine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dopamine bridge is an immediate, desirable sensory or activity hook—such as 10 minutes of morning game time or a favourite warm breakfast—that provides the stimulant pull needed for an ADHD brain to initiate movement."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Executive Function</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 2-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Child struggling with morning wake-up and ADHD executive dysfunction" class="w-full h-auto object-cover max-h-[400px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        It is 7:15 AM. You have called their name five times, pulled the duvet off, and watched them stare blankly into space with one sock on while the school bus approaches.
+      </p>
+
+      <p>
+        By 7:30 AM, everyone is yelling, your child is in tears, and your own workday hasn't even begun. 
+      </p>
+
+      <p>
+        The most common complaint I hear from parents in my clinic is: <em>"Rabbia, why does every single morning have to be a battle? Why can't he just wake up and get ready like his siblings?"</em>
+      </p>
+
+      <CalloutBox type="tip" title="The Biological Reality of the ADHD Brain">
+        <p>
+          Your child is not waking up slowly out of spite. Research in pediatric neurodevelopment shows that the ADHD brain often cycles into unusually deep sleep patterns with pronounced <strong>sleep inertia</strong>. Because their executive functioning network operates differently than a neurotypical brain, transitioning from unconsciousness to task-execution is a biological steep hill.
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Two Concrete Dopamine Bridges to End the Morning War</h2>
+
+      <p>
+        Because the ADHD brain is chronically dopamine-starved in the morning, yelling commands (<em>"Brush your teeth! Get your shoes!"</em>) creates friction and paralysis. You must replace friction with positive neurochemical momentum:
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">1. The 10-Minute Pre-School Game Incentive</h3>
+      <p>
+        Tell your child the night before: <em>"If you wake up, get your clothes on, and eat your breakfast by 7:30, you earn 10 minutes of free game time before we step out the door."</em>
+      </p>
+      <p>
+        An ADHD brain cannot motivate itself for abstract distant concepts like "being on time for school." But an immediate, tangible 10-minute game reward gives their frontal lobe the stimulant spark needed to jump out of bed.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-2">2. The Sensory Warm Breakfast Cue</h3>
+      <p>
+        Instead of shouting from the hallway, use sensory activation. Cook something with a rich morning aroma that they genuinely love (warm pancakes, eggs, toasted bread). Walk into their room with warmth:
+      </p>
+      <blockquote class="border-l-4 border-brand-gold bg-amber-50/50 p-4 rounded-r-lg italic text-brand-navy font-medium my-4">
+        "I just cooked your favourite breakfast. Hurry up, wake up, it's getting cold—let's eat while it's fresh!"
+      </blockquote>
+      <p>
+        This shifts the waking cue from a sterile chore to an enticing sensory invitation, helping their body break out of inertia.
+      </p>
+
+      <CalloutBox type="important" title="Schedule Consistency and Medical Compliance">
+        <p>
+          Keep the sleep schedule rigid seven days a week. If your child has been evaluated by a developmental paediatrician and prescribed medication, ensure you adhere strictly to their physician's timing guidance, as consistency is paramount for neurochemical stabilization.
+        </p>
+      </CalloutBox>
+
+      <hr class="my-8 border-gray-200" />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-6 mb-3">Frequently Asked Questions</h2>
+      <div class="space-y-4 my-6">
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">Won't allowing a morning game make them late for school?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Not if you use a strict visual timer. Set the rule clearly: the game ONLY unlocks once teeth are brushed and shoes are on. If they take too long, the game time shrinks. This creates natural consequence without shouting.</p>
+        </details>
+        <details class="bg-white rounded-xl border border-gray-200 p-4">
+          <summary class="font-bold text-brand-navy cursor-pointer">What if my child says they are too exhausted to eat?</summary>
+          <p class="mt-2 text-gray-700 text-sm">Offer a warm protein drink or smoothie first to gently activate their metabolism before expecting solid breakfast.</p>
+        </details>
+      </div>
+
+      <p class="mt-6">
+        Every child's executive function profile is unique. In our online parent consultations, we map out morning and evening habit architectures tailored to your family's routine and school timetable.
+      </p>
+    </article>
+
+    <div class="mt-12">
+      <BlogCTA />
+    </div>
+
+    <div class="mt-8">
+      <ArticleAuthor />
+    </div>
+  </div>
+</BaseLayout>
