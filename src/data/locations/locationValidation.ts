@@ -65,8 +65,8 @@ export function validateCityPlanningRecord(location: CityLocation): ValidationRe
 
   if (!location.publicationBatch) errors.push('Missing publication batch');
 
-  if (location.published) errors.push('New city cannot be published');
-  if (location.indexable) errors.push('New city cannot be indexable');
+  if (location.status === 'planned' && location.published) errors.push('New city cannot be published');
+  if (location.status === 'planned' && location.indexable) errors.push('New city cannot be indexable');
   if (location.legalScopeResearchRequired === undefined) errors.push('Missing legal-research status');
 
 

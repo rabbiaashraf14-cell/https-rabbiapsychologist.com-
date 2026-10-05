@@ -4,10 +4,6 @@ import { featuredLocations } from './featuredLocations';
 import { countries } from './countries';
 
 export function getCityPath(location: CityLocation): string {
-  if (location.primaryLocale && location.primaryLocale !== 'en-US' && location.primaryLocale !== 'en-GB' && location.primaryLocale !== 'en-AU' && location.primaryLocale !== 'en-PK') {
-      const lang = location.primaryLocale.split('-')[0];
-      return `/${lang}/locations/${location.countrySlug}/${location.citySlug}`;
-  }
   return `/locations/${location.countrySlug}/${location.citySlug}`;
 }
 
@@ -114,10 +110,9 @@ function getRegionName(city: CityLocation): string {
 }
 
 export function getPublicCityProjection(city: CityLocation): PublicCityProjection {
-  // Since city pages are not published, the destination URL should be the country page or region page
   const country = countries.find(c => c.countrySlug === city.countrySlug);
   const regionSlug = getRegionSlug(city.countrySlug, country?.publicationRegion);
-  const destinationUrl = `/locations/${city.countrySlug}`; // Direct to country page.
+  const destinationUrl = city.published ? getCityPath(city) : `/locations/${city.countrySlug}`;
 
   return {
     cityName: city.cityName,
