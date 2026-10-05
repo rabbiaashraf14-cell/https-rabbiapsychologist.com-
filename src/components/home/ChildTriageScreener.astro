@@ -217,7 +217,7 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initChildTriage() {
     let selectedAge = '';
     let selectedConcern = '';
     let selectedLocation = '';
@@ -348,5 +348,8 @@
       if (stepPercentage) stepPercentage.textContent = "33%";
       if (progressBarFill) progressBarFill.style.width = "33%";
     });
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', initChildTriage);
+  document.addEventListener('astro:page-load', initChildTriage);
 </script>

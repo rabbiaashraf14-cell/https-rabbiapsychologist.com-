@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import profileImage from '../../assets/rabbia-ashraf-professional-profile.webp';
 ---
 <div class="relative overflow-hidden bg-brand-cream py-10 lg:py-16 flex items-center">
-  <div class="absolute inset-0 bg-gradient-to-br from-brand-cream to-blue-50 z-0 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-white to-blue-50/50 z-0 pointer-events-none"></div>
   <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-sky/30 rounded-full blur-3xl opacity-50"></div>
   <div class="absolute top-40 -left-40 w-96 h-96 bg-brand-lavender/30 rounded-full blur-3xl opacity-50"></div>
 
@@ -14,101 +16,135 @@
   </svg>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-      <!-- Text Content: Mobile order-1, Desktop: order-1 -->
-      <div class="order-1 text-center lg:text-left animate-fade-in-up">
-        <span class="inline-block py-1 px-3 rounded-full bg-white text-brand-navy text-xs lg:text-sm font-bold tracking-wide uppercase mb-6 shadow-sm border border-brand-gold/30">
+      <!-- Text Content: Mobile order-1, Desktop: order-1 (7 cols) -->
+      <div class="lg:col-span-7 text-center lg:text-left animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 py-1.5 px-3.5 rounded-full bg-white text-brand-navy text-xs lg:text-sm font-bold tracking-wide uppercase mb-6 shadow-sm border border-brand-gold/40">
+          <span class="w-2 h-2 rounded-full bg-brand-trust"></span>
           Guiding Child Development with Care, Clarity, and Expertise
-        </span>
+        </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6 tracking-tight leading-tight">
-          Child Development & Parent Guidance
+          Child Development &amp; Parent Guidance
         </h1>
         <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-          Support for ADHD, autism, behaviour, school difficulties, emotional regulation, report understanding, and developmental concerns.
+          Compassionate, evidence-based psychological support for ADHD, autism, school struggles, emotional regulation, report reviews, and everyday behavioral challenges.
         </p>
+
+        <!-- CTA Buttons Row -->
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 mb-8">
-          <a href="/book" class="w-full sm:w-auto px-8 py-3 md:py-4 bg-brand-navy text-white rounded-[12px] font-bold text-lg hover:bg-blue-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-1">
-            Book Parent Consultation
+          <a href="/book" class="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-brand-navy text-white rounded-[14px] font-bold text-base md:text-lg hover:bg-blue-900 transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+            <span>Book Parent Consultation</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
-          <a href="/services" class="w-full sm:w-auto px-8 py-3 md:py-4 bg-transparent text-brand-navy border-2 border-brand-navy rounded-[12px] font-bold text-lg hover:bg-white/50 transition-all shadow-sm hover:-translate-y-1">
-            View Services
+          <a href="#video-tour" class="w-full sm:w-auto px-7 py-3.5 md:py-4 bg-white text-brand-navy border-2 border-brand-navy/80 rounded-[14px] font-bold text-base md:text-lg hover:bg-brand-cream/60 transition-all shadow-sm hover:-translate-y-0.5 text-center flex items-center justify-center gap-2.5">
+            <span class="w-6 h-6 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center text-xs">▶</span>
+            <span>Watch Welcome Video</span>
           </a>
         </div>
 
-        <!-- Credibility Row -->
-        <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-sm font-semibold text-gray-600">
+        <!-- Credibility Strip -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-semibold text-gray-600 pt-2 border-t border-brand-navy/10">
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Online Worldwide
+            Online Worldwide (UK, USA, Gulf)
           </span>
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Local Assessments
+            Local Clinical Assessments
           </span>
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            ADHD & Autism Support
+            ADHD &amp; Autism Guidance
           </span>
           <span class="flex items-center gap-1.5">
             <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Parent-Friendly Guidance
-          </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Clinical Psychologist
+            Certified Clinical Psychologist
           </span>
         </div>
       </div>
 
-      <!-- Visual Trust Panel: Mobile order-2, Desktop: order-2 -->
-      <div class="order-2 flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.2s;">
-        <div class="relative w-full max-w-[500px]">
-          <!-- Subtle Background Visual -->
-          <div class="absolute inset-0 bg-brand-sky/20 blur-2xl rounded-full transform -translate-x-4 translate-y-4"></div>
+      <!-- Right: Clinician Showcase Visual Card (5 cols) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.15s;">
+        <div class="relative w-full max-w-[420px]">
+          
+          <!-- Ambient Glow Backdrop -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-brand-sky/40 via-brand-trust/30 to-brand-gold/30 blur-2xl rounded-3xl transform -rotate-2 scale-105 pointer-events-none"></div>
 
-          <div class="relative z-10 w-full flex flex-col gap-4">
+          <!-- Main Interactive Card Frame -->
+          <div class="relative z-10 bg-white/95 backdrop-blur-md rounded-3xl border border-white/80 p-5 sm:p-6 shadow-[0_15px_40px_-10px_rgba(15,23,42,0.12)]">
+            
+            <!-- Clinician Profile Banner -->
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] mb-5 bg-brand-cream border border-gray-100 group">
+              <Image
+                src={profileImage}
+                alt="Clinical Psychologist Rabbia Ashraf holding child consultation"
+                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                width={450}
+                height={338}
+              />
+              
+              <!-- Gradient badge overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
 
-            <!-- Trust Card 1 -->
-            <div class="bg-white/95 backdrop-blur-sm border border-gray-100 rounded-[16px] p-5 lg:p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-brand-trust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+              <!-- Top Status Pill -->
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-navy shadow-sm border border-white/60 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Active Booking Open</span>
               </div>
-              <div>
-                <h3 class="text-base font-bold text-brand-navy mb-1">Evidence-Informed Support</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Practical psychological guidance grounded in child development and family needs.</p>
+
+              <!-- Bottom Name Plate -->
+              <div class="absolute bottom-3 left-3 right-3 text-white">
+                <div class="font-bold text-base md:text-lg drop-shadow-md">Rabbia Ashraf</div>
+                <div class="text-xs text-brand-sky font-medium">Consultant Clinical Psychologist</div>
               </div>
             </div>
 
-            <!-- Trust Card 2 -->
-            <div class="bg-white/95 backdrop-blur-sm border border-gray-100 rounded-[16px] p-5 lg:p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-brand-trust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+            <!-- Highlights Grid -->
+            <div class="grid grid-cols-3 gap-2.5 text-center mb-5">
+              <div class="bg-gray-50/80 rounded-xl p-2.5 border border-gray-100">
+                <div class="text-base font-extrabold text-brand-navy">7+</div>
+                <div class="text-[11px] text-gray-500 font-medium">Years Exp.</div>
               </div>
-              <div>
-                <h3 class="text-base font-bold text-brand-navy mb-1">For Parents & Families</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Clear recommendations you can understand and use in everyday life.</p>
+              <div class="bg-gray-50/80 rounded-xl p-2.5 border border-gray-100">
+                <div class="text-base font-extrabold text-brand-navy">500+</div>
+                <div class="text-[11px] text-gray-500 font-medium">Families</div>
+              </div>
+              <div class="bg-gray-50/80 rounded-xl p-2.5 border border-gray-100">
+                <div class="text-base font-extrabold text-brand-navy">Global</div>
+                <div class="text-[11px] text-gray-500 font-medium">Telehealth</div>
               </div>
             </div>
 
-            <!-- Trust Card 3 -->
-            <div class="bg-white/95 backdrop-blur-sm border border-gray-100 rounded-[16px] p-5 lg:p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-start gap-4">
-              <div class="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-brand-trust" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-brand-navy mb-1">Online & In-person</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Worldwide online consultations with local assessment services available.</p>
-              </div>
+            <!-- Quick Action Row inside Card -->
+            <div class="flex items-center gap-2.5">
+              <a
+                href="/parent-support"
+                class="flex-1 py-2.5 px-3 bg-brand-cream/80 hover:bg-brand-cream text-brand-navy text-xs font-bold rounded-xl text-center transition-colors border border-brand-gold/30"
+              >
+                Explore Approach
+              </a>
+              <a
+                href="#child-triage"
+                class="flex-1 py-2.5 px-3 bg-blue-50/80 hover:bg-blue-100 text-brand-navy text-xs font-bold rounded-xl text-center transition-colors border border-blue-200/50"
+              >
+                Start Triage (60s)
+              </a>
             </div>
 
           </div>
+
+          <!-- Floating Floating Testimonial Pill -->
+          <div class="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-lg border border-gray-100 flex items-center gap-3 z-20 max-w-[260px] hidden sm:flex">
+            <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-xs font-bold text-brand-navy">Parent-Centred</div>
+              <div class="text-[11px] text-gray-500">Practical &amp; jargon-free</div>
+            </div>
+          </div>
+
         </div>
       </div>
 

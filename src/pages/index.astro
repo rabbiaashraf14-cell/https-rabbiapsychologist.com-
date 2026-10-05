@@ -3,8 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedHero from '../components/home/AnimatedHero.astro';
 import TrustBadgeStrip from '../components/home/TrustBadgeStrip.astro';
 import WhatBringsYouHere from '../components/home/WhatBringsYouHere.astro';
+import VideoConsultationShowcase from '../components/home/VideoConsultationShowcase.astro';
 import ChildTriageScreener from '../components/home/ChildTriageScreener.astro';
 import InteractiveServiceCards from '../components/home/InteractiveServiceCards.astro';
+import BehaviorCommunicationVisualizer from '../components/home/BehaviorCommunicationVisualizer.astro';
 import AboutPreview from '../components/home/AboutPreview.astro';
 import AssessmentExpertise from '../components/home/AssessmentExpertise.astro';
 import ParentJourneyTimeline from '../components/home/ParentJourneyTimeline.astro';
@@ -24,8 +26,23 @@ const description = "Parent guidance and child development support for families 
   <AnimatedHero />
   <TrustBadgeStrip />
   <WhatBringsYouHere />
+  
+  <!-- Modern Interactive Video Showcase: Meet Rabbia & See How Consultations Work -->
+  <VideoConsultationShowcase />
+
+  <!-- Interactive 60-Second Child Triage Screener -->
   <ChildTriageScreener />
+
+  <!-- Core Support Services -->
   <InteractiveServiceCards />
+
+  <!-- Behavior is Communication: Clinical Visualizer -->
+  <div class="py-12 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4">
+      <BehaviorCommunicationVisualizer />
+    </div>
+  </div>
+
   <AboutPreview />
   <AssessmentExpertise />
   <ParentJourneyTimeline />
