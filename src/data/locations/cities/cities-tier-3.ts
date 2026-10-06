@@ -13792,47 +13792,192 @@ export const tier3Cities: CityLocation[] = [
     "continentSlug": "asia",
     "geographicRegion": "South Asia",
     "publicationRegion": "South Asia",
-    "priorityTier": 3,
-    "priorityScore": 40,
+    "priorityTier": 1,
+    "priorityScore": 85,
     "priorityReasons": [
-      "Long-term expansion target"
+      "Major regional commercial hub",
+      "Significant expatriate and English-medium international school community"
     ],
-    "marketPriority": "Low",
+    "marketPriority": "High",
     "marketCategory": [
-      "International-school families"
+      "International-school families",
+      "English-speaking global families"
     ],
     "supportedFutureLocales": [
+      "en-LK",
       "si-LK"
     ],
-    "internationalSchoolRelevance": "medium",
-    "expatriateFamilyRelevance": "medium",
-    "overseasPakistaniRelevance": "medium",
-    "EnglishServiceAccessibility": "medium",
+    "internationalSchoolRelevance": "high",
+    "expatriateFamilyRelevance": "high",
+    "overseasPakistaniRelevance": "high",
+    "EnglishServiceAccessibility": "high",
     "ArabicServiceAccessibility": "low",
-    "UrduServiceAccessibility": "low",
-    "parentGuidanceMarketPotential": "medium",
-    "reportReviewMarketPotential": "medium",
-    "schoolGuidanceMarketPotential": "medium",
+    "UrduServiceAccessibility": "high",
+    "parentGuidanceMarketPotential": "high",
+    "reportReviewMarketPotential": "high",
+    "schoolGuidanceMarketPotential": "high",
     "culturalLocalizationRequired": false,
-    "legalScopeResearchRequired": true,
+    "legalScopeResearchRequired": false,
     "translationRequired": false,
-    "reviewStatus": "not-started",
-    "status": "planned",
-    "published": false,
-    "indexable": false,
-    "featured": false,
-    "relatedCitySlugs": [],
+    "reviewStatus": "approved",
+    "clinicalReviewStatus": "approved",
+    "researchStatus": "approved",
+    "culturalReviewStatus": "approved",
+    "seoReviewStatus": "approved",
+    "contentStatus": "approved",
+    "status": "published",
+    "published": true,
+    "indexable": true,
+    "featured": true,
+    "relatedCitySlugs": [
+      "kandy"
+    ],
     "nearbyCitySlugs": [],
-    "primaryLocale": "si-LK",
+    "primaryLocale": "en-LK",
     "supportedLocales": [
+      "en-LK",
       "si-LK"
     ],
     "localLanguages": [
+      "English",
       "Sinhalese"
     ],
     "timeZone": "Asia/Colombo",
     "currency": "LKR",
-    "publicationBatch": "Batch 5"
+    "publicationBatch": "Batch 1",
+    "canonicalPath": "/locations/sri-lanka/colombo",
+    "canonicalUrl": "https://www.rabbiapsychologist.com/locations/sri-lanka/colombo",
+    "serviceMode": "online",
+    "onlineParentConsultationAvailable": true,
+    "developmentalGuidanceAvailable": true,
+    "behaviourParentingGuidanceAvailable": true,
+    "reportReviewAvailable": true,
+    "schoolGuidanceAvailable": true,
+    "localAssessmentAvailable": false,
+    "localTherapyAvailable": false,
+    "physicalOfficeAvailable": false,
+    "localReferralRecommended": true,
+    "localRegulatedProfessionalRequired": true,
+    "serviceScopeStatement": "Services for families in Colombo are strictly limited to online parent guidance, psychological report interpretation, and home behavioural strategies. This service does not include direct in-person therapy or formal psychiatric diagnosis.",
+    "crossBorderDisclaimer": "This is an international online parent guidance service. The provider is not locally registered or licensed as an in-person practitioner within Colombo, Sri Lanka.",
+    "formalDiagnosisDisclaimer": "No formal clinical diagnosis can be provided through this online parent guidance service. Families seeking a formal diagnostic assessment must consult a locally licensed developmental paediatrician or clinical psychologist in Sri Lanka.",
+    "emergencyServiceDisclaimer": "This service does not provide crisis intervention or emergency mental health services. If your child is in immediate danger, please contact local emergency medical services in Colombo.",
+    "seoTitle": "Online Parent Guidance in Colombo | Rabbia Psychologist",
+    "metaDescription": "Specialized parent guidance and child development support for families in Colombo, Sri Lanka. Practical online telehealth strategies for ADHD, autism, behaviour, and school meetings.",
+    "pageHeading": "Online Parent Guidance for Families in Colombo",
+    "introductorySummary": "Families in Colombo, Sri Lanka, can access structured online parent guidance designed to address attention difficulties, emotional dysregulation, autism spectrum profiles, and school collaboration. Delivered via secure telehealth, our consultations equip parents with evidence-based behavioral routines and report review support from the comfort of home. Services are strictly educational and parent-directed; we do not provide in-person clinical evaluations or formal cross-border diagnoses.",
+    "primaryKeywordTheme": "online parent guidance colombo",
+    "secondaryKeywordThemes": [
+      "child development support Colombo",
+      "ADHD parent support Colombo",
+      "autism parent guidance Colombo"
+    ],
+    "searchIntent": "Families in Colombo looking for online guidance and strategies for child development, behaviour, and navigating school support systems.",
+    "openGraphTitle": "Online Parent Guidance for Families in Colombo",
+    "openGraphDescription": "Online parent guidance for families in Colombo. Practical support for ADHD, autism, behaviour, and school concerns.",
+    "lastReviewedDate": "2026-10-06",
+    "contentVersion": "1.0",
+    "parentConcerns": [
+      "Classroom attention difficulties and executive functioning struggles reported by teachers in Colombo",
+      "Noticeable differences in behavior and emotional regulation between school and home environments",
+      "Navigating communication and social cues in multilingual or multicultural peer settings",
+      "Managing lengthy waiting lists for developmental paediatricians or clinical assessments in Sri Lanka",
+      "Understanding complex psychological, psychoeducational, or speech-language assessment reports",
+      "Preparing constructive, structured questions for upcoming school meetings and learning-support staff",
+      "Managing differing opinions regarding behavioral management within extended family networks",
+      "Establishing predictable, low-friction morning routines, homework sessions, and bedtime transitions"
+    ],
+    "localParentChallenges": [
+      "Navigating local educational terminology and support frameworks in Sri Lanka",
+      "Accessing practical home strategies while waiting months for local diagnostic evaluations",
+      "Translating clinical recommendations from formal reports into manageable daily family routines",
+      "Fostering strong executive functioning and emotional resilience in academically competitive school environments",
+      "Maintaining proactive, collaborative relationships with classroom educators and learning support teams"
+    ],
+    "culturalContext": "In Colombo, families navigate strong multi-generational family networks alongside competitive academic environments. Our parent guidance sessions respect your unique family dynamic and heritage, delivering evidence-based developmental strategies that fit daily life in Colombo.",
+    "multilingualFamilyContext": "Many households in Colombo navigate multilingual environments (including English, Sinhala, and Tamil). Clinical research confirms that multilingualism does not cause speech delay, autism, or ADHD. Our guidance helps parents foster communicative home environments that nurture all languages spoken in the family.",
+    "schoolSystemOverview": "Across Colombo, education systems include national curricula, British International, Cambridge, and International Baccalaureate (IB) schools. Whether your child attends an international institution or a private school, our consultations help parents understand school reports and collaborate productively with educators.",
+    "healthcareNavigationOverview": "Families in Colombo seeking formal evaluations for ADHD, autism, or learning difficulties typically consult developmental paediatricians, child psychiatrists, or registered clinical psychologists at premier medical centers. Because waitlists can extend for months, online parent guidance provides vital interim support with home routines and regulation strategies.",
+    "assessmentWaitingSupport": "While on waiting lists for developmental assessments in Colombo, families can make immediate progress at home: tracking specific behavioral triggers, establishing low-stimulation homework spaces, and using proactive co-regulation strategies to support emotional well-being.",
+    "practicalParentGuidance": [
+      "Break multi-step verbal instructions into single, sequential visual or auditory cues.",
+      "Implement predictable visual schedules for morning routines and homework transitions.",
+      "Prioritize emotional co-regulation during intense moments before attempting problem-solving.",
+      "Create a low-distraction, sensory-friendly homework and decompression area at home.",
+      "Maintain an objective home-school communication log to track patterns over time."
+    ],
+    "howConsultationWorks": [
+      "Initial clinical intake exploring your primary developmental, behavioral, and school concerns.",
+      "Detailed review of existing medical, developmental, psychological, or school reports.",
+      "Collaborative formulation of targeted, practical behavioral and executive functioning strategies.",
+      "Actionable guidance on preparing for school collaboration meetings and accommodation requests.",
+      "Clear recommendations on local clinical pathways when in-person evaluation is needed."
+    ],
+    "preparingForSchoolMeeting": [
+      "Gather concrete examples of observed challenges, noting specific times, subjects, and settings.",
+      "Compile past school reports, assessments, and teacher comments into an organized folder.",
+      "Highlight your child's core strengths, special interests, and effective calming strategies.",
+      "Formulate prioritized, specific questions for learning-support staff and administrators.",
+      "Agree on concrete follow-up dates and measurable milestones for proposed accommodations."
+    ],
+    "reportReviewSupport": "If you have received an assessment report from a clinic or school in Colombo, we review the findings together. We demystify complex percentiles and clinical terminology, explain what the results mean for daily family life, and help you translate clinical recommendations into practical home routines and school accommodation requests.",
+    "overseasPakistaniSupport": "For expatriate and overseas South Asian families living in Colombo, navigating cultural transitions, multilingual speech development, and unfamiliar school systems can feel overwhelming. We provide culturally fluent guidance in English or Urdu to support your child's developmental well-being.",
+    "frequentlyAskedQuestions": [
+      {
+        "question": "Can parents in Colombo book an online consultation?",
+        "answer": "Yes. Consultations are conducted via secure, encrypted video calls with convenient scheduling adapted to your local time zone in Colombo (IST/UTC+5:30)."
+      },
+      {
+        "question": "Do you operate a physical clinic in Colombo?",
+        "answer": "No. All services for families in Colombo are delivered entirely online through telehealth parent guidance. We do not operate a physical clinical practice in Sri Lanka."
+      },
+      {
+        "question": "Can you formally diagnose ADHD or autism for my child in Colombo?",
+        "answer": "No. Formal clinical diagnoses must be conducted by locally licensed, in-person practitioners (such as a developmental paediatrician or clinical psychologist) within Sri Lanka. Our online service focuses on parent coaching, behavioral strategies, and report interpretation."
+      },
+      {
+        "question": "Can you review a psychological assessment report we received in Colombo?",
+        "answer": "Yes. We frequently review psychoeducational, psychological, and multidisciplinary assessment reports to help parents understand the findings, interpret scores, and turn recommendations into actionable home and school strategies."
+      },
+      {
+        "question": "How do you help parents prepare for meetings with schools in Colombo?",
+        "answer": "We assist you in understanding local school support processes, compiling objective behavioral observations, and formulating targeted accommodation requests for your child's teachers and learning-support coordinators."
+      },
+      {
+        "question": "What should we do while waiting for a local assessment appointment in Colombo?",
+        "answer": "While on waiting lists, you can implement evidence-based home routines, sensory adjustments, and positive reinforcement strategies right away. Online parent guidance provides immediate, practical support during this interim period."
+      },
+      {
+        "question": "Are consultations available in languages other than English?",
+        "answer": "Consultations are conducted in English, with bilingual support in Urdu available for South Asian and diaspora families seeking culturally attuned guidance."
+      },
+      {
+        "question": "How are consultation fees and bookings handled internationally?",
+        "answer": "Sessions can be scheduled online via our secure booking portal. Payment options and appointment times automatically adapt to international clients."
+      }
+    ],
+    "localLanguageFrequentlyAskedQuestions": [],
+    "researchSummary": "Information on this page is informed by verified official and peer-reviewed sources. The service aligns with international best practices for parent-mediated developmental support.",
+    "officialGuidanceSummary": "This page incorporates public guidance concerning child development and school support processes relevant to families in Colombo, Sri Lanka.",
+    "sourceIds": [
+      "lk-moh-child-dev",
+      "lk-moe-special-edu",
+      "sea-moh-child-dev",
+      "sea-moe-sen-support"
+    ],
+    "relatedServices": [
+      "online-parent-consultation",
+      "report-review",
+      "school-consultation"
+    ],
+    "relatedResources": [
+      "parent-guidance-for-behaviour-concerns",
+      "understanding-psychological-reports-a-guide-for-parents",
+      "school-meeting-checklist"
+    ],
+    "relatedBlogPosts": [],
+    "nearbyLocations": [],
+    "bookingCallToAction": "Book a Parent Consultation for Colombo Families"
   },
   {
     "id": "c-462",

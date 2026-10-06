@@ -674,5 +674,25 @@ export const locationSources: Source[] = [
     "accessedDate": "2026-10-01",
     "evidenceLevel": "High",
     "verificationStatus": "verified"
+  },
+  {
+    "sourceId": "lk-moh-child-dev",
+    "sourceType": "National health services",
+    "sourceTitle": "National Guidelines on Child Development and Neurodevelopmental Disorders",
+    "author": "Family Health Bureau, Ministry of Health Sri Lanka",
+    "institution": "Ministry of Health Sri Lanka",
+    "accessedDate": "2026-10-06",
+    "evidenceLevel": "High",
+    "verificationStatus": "verified"
+  },
+  {
+    "sourceId": "lk-moe-special-edu",
+    "sourceType": "Education departments",
+    "sourceTitle": "Special Education and Inclusive Classrooms Guidelines",
+    "author": "Ministry of Education Sri Lanka",
+    "institution": "Ministry of Education Sri Lanka",
+    "accessedDate": "2026-10-06",
+    "evidenceLevel": "High",
+    "verificationStatus": "verified"
   }
 ];
