@@ -12,7 +12,7 @@ export default defineConfig({
   site: 'https://www.rabbiapsychologist.com',
   trailingSlash: 'always',
   redirects: {
-    '/services/local-assessment': '/services/#local-assessment',
+    '/booking': '/book/',
     '/child-psychologist-lahore': '/about/',
     '/parent-training-lahore': '/parent-support/',
     '/adhd-child-psychologist-lahore': '/services/adhd-support/',
@@ -48,7 +48,7 @@ export default defineConfig({
     '/services/global-parent-consultation': '/parent-support/',
     '/services/autism-parent-guidance': '/services/asd-support/',
     '/services/adhd-executive-function-support': '/services/adhd-support/',
-    '/services/psychological-assessment-local': '/services/#local-assessment',
+    '/services/psychological-assessment-local': '/services/local-assessment/',
     '/services/parent-consultation': '/parent-support/',
 
     // Legacy redirects
@@ -58,8 +58,8 @@ export default defineConfig({
     '/school-consultation': '/services/school-consultation/',
     '/behaviour-planning': '/services/behaviour-planning/',
     '/behavior-planning': '/services/behaviour-planning/',
-    '/local-assessment': '/services/#local-assessment',
-    '/psychological-assessment': '/services/#local-assessment',
+    '/local-assessment': '/services/local-assessment/',
+    '/psychological-assessment': '/services/local-assessment/',
     '/parent-guidance-consultations': '/services/',
     '/between-session-support-programs': '/between-session-programs/',
     '/resources/free-downloads': '/free-downloads/',

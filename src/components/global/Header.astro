@@ -2,28 +2,28 @@
 import { mainNav } from '../../data/navigation';
 
 const servicesNav = [
-  { label: 'ADHD Support', href: '/services/adhd-support' },
-  { label: 'ASD Support', href: '/services/asd-support' },
-  { label: 'Behaviour Planning', href: '/services/behaviour-planning' },
-  { label: 'School Consultation', href: '/services/school-consultation' },
-  { label: 'Local Assessment', href: '/services/local-assessment' },
-  { label: 'Report Review', href: '/report-review' },
-  { label: 'Parent Support', href: '/parent-support' },
-  { label: 'School Partnerships', href: '/school-partnerships' }
+  { label: 'ADHD Support', href: '/services/adhd-support/' },
+  { label: 'ASD Support', href: '/services/asd-support/' },
+  { label: 'Behaviour Planning', href: '/services/behaviour-planning/' },
+  { label: 'School Consultation', href: '/services/school-consultation/' },
+  { label: 'Local Assessment', href: '/services/local-assessment/' },
+  { label: 'Report Review', href: '/report-review/' },
+  { label: 'Parent Support', href: '/parent-support/' },
+  { label: 'School Partnerships', href: '/school-partnerships/' }
 ];
 
 const resourcesNav = [
-  { label: 'Consultation Screener (60s)', href: '/screener' },
-  { label: 'Knowledge Hub (Research)', href: '/knowledge-hub' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Resource Vault', href: '/resource-vault' },
-  { label: 'Free Downloads', href: '/free-downloads' },
-  { label: 'FAQs', href: '/faqs' }
+  { label: 'Consultation Screener (60s)', href: '/screener/' },
+  { label: 'Knowledge Hub (Research)', href: '/knowledge-hub/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Resource Vault', href: '/resource-vault/' },
+  { label: 'Free Downloads', href: '/free-downloads/' },
+  { label: 'FAQs', href: '/faqs/' }
 ];
 
 const orgsNav = [
-  { label: 'Corporate Parent Wellness', href: '/corporate' },
-  { label: 'School Partnerships & Training', href: '/school-partnerships' }
+  { label: 'Corporate Parent Wellness', href: '/corporate/' },
+  { label: 'School Partnerships & Training', href: '/school-partnerships/' }
 ];
 ---
 <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -77,9 +77,9 @@ const orgsNav = [
               </a>
               <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
                 <ul class="py-2">
-                  <li><a href="/blog" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">All Articles</a></li>
-                  <li><a href="/blog#start-here" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">Start Here</a></li>
-                  <li><a href="/blog#latest" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">Latest Articles</a></li>
+                  <li><a href="/blog/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">All Articles</a></li>
+                  <li><a href="/blog/#start-here" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">Start Here</a></li>
+                  <li><a href="/blog/#latest" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">Latest Articles</a></li>
                 </ul>
               </div>
             </div>
@@ -104,11 +104,11 @@ const orgsNav = [
         }
         return <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors">{item.label}</a>;
       })}
-      <a href="/book" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm inline-block">Book Consultation</a>
+      <a href="/book/" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm inline-block">Book Consultation</a>
     </nav>
 
     <div class="flex items-center gap-3 lg:hidden z-50">
-      <a href="/book" class="bg-brand-navy text-white px-4 py-2 text-sm rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm whitespace-nowrap">
+      <a href="/book/" class="bg-brand-navy text-white px-4 py-2 text-sm rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm whitespace-nowrap">
         Book Consultation
       </a>
       <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle mobile menu" class="text-brand-navy p-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded">
@@ -126,10 +126,10 @@ const orgsNav = [
     <nav class="px-4 py-6 flex flex-col">
       <ul class="space-y-1">
         <li><a href="/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Home</a></li>
-        <li><a href="/start-here" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Start Here</a></li>
+        <li><a href="/start-here/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Start Here</a></li>
 
         <li class="py-3 border-b border-gray-50">
-          <a href="/services" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Services</a>
+          <a href="/services/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Services</a>
           <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
             {servicesNav.map(item => (
               <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
@@ -138,7 +138,7 @@ const orgsNav = [
         </li>
 
         <li class="py-3 border-b border-gray-50">
-          <a href="/resources" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Resources</a>
+          <a href="/resources/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Resources</a>
           <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
             {resourcesNav.map(item => (
               <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
@@ -147,7 +147,7 @@ const orgsNav = [
         </li>
 
         <li class="py-3 border-b border-gray-50">
-          <a href="/corporate" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">For Organizations</a>
+          <a href="/corporate/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">For Organizations</a>
           <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
             {orgsNav.map(item => (
               <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
@@ -155,12 +155,12 @@ const orgsNav = [
           </ul>
         </li>
 
-        <li><a href="/pricing" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Pricing</a></li>
-        <li><a href="/about" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">About Rabbia</a></li>
+        <li><a href="/pricing/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Pricing</a></li>
+        <li><a href="/about/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">About Rabbia</a></li>
       </ul>
 
       <div class="mt-8 pt-4 pb-12">
-        <a href="/book" class="bg-brand-navy text-white px-4 py-4 text-center rounded-lg font-bold hover:bg-blue-900 block w-full text-lg shadow-md">Book Consultation</a>
+        <a href="/book/" class="bg-brand-navy text-white px-4 py-4 text-center rounded-lg font-bold hover:bg-blue-900 block w-full text-lg shadow-md">Book Consultation</a>
       </div>
     </nav>
   </div>

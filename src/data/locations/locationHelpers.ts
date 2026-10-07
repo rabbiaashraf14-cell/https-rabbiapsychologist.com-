@@ -4,7 +4,7 @@ import { featuredLocations } from './featuredLocations';
 import { countries } from './countries';
 
 export function getCityPath(location: CityLocation): string {
-  return `/locations/${location.countrySlug}/${location.citySlug}`;
+  return `/locations/${location.countrySlug}/${location.citySlug}/`;
 }
 
 export function generateHreflangTags(location: CityLocation, domain: string = 'https://www.rabbiapsychologist.com'): Array<{ href: string, hreflang: string }> {
@@ -46,19 +46,19 @@ export function generateCityBreadcrumbSchema(location: CityLocation, domain: str
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": domain
+        "item": `${domain}/`
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Locations",
-        "item": `${domain}/locations`
+        "item": `${domain}/locations/`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": location.countryName,
-        "item": `${domain}/locations/${location.countrySlug}`
+        "item": `${domain}/locations/${location.countrySlug}/`
       },
       {
         "@type": "ListItem",
@@ -112,7 +112,7 @@ function getRegionName(city: CityLocation): string {
 export function getPublicCityProjection(city: CityLocation): PublicCityProjection {
   const country = countries.find(c => c.countrySlug === city.countrySlug);
   const regionSlug = getRegionSlug(city.countrySlug, country?.publicationRegion);
-  const destinationUrl = city.published ? getCityPath(city) : `/locations/${city.countrySlug}`;
+  const destinationUrl = city.published ? getCityPath(city) : `/locations/${city.countrySlug}/`;
 
   return {
     cityName: city.cityName,

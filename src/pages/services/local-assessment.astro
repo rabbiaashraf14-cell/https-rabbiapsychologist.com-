@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+
+const title = "Local Psychological & Developmental Assessment in Pakistan | Rabbia Psychologist";
+const description = "Comprehensive in-person child developmental assessments, formal diagnostic evaluations, and clinical psychoeducational testing in Pakistan.";
+const canonicalURL = "https://www.rabbiapsychologist.com/services/local-assessment/";
+
+const breadcrumbs = [
+  { name: 'Services', href: '/services/' },
+  { name: 'Local Assessment', href: '/services/local-assessment/' }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Local Child Psychological & Developmental Assessment",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services"
+  },
+  "description": "Comprehensive in-person psychological testing, developmental assessment, and clinical diagnostic reporting for children in Pakistan.",
+  "areaServed": "Pakistan",
+  "serviceType": "Clinical Psychological Assessment"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is included in a local psychological assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The evaluation includes clinical developmental interviews with parents, standardized psychometric and behavioral rating scales, direct observational tasks with the child, and a detailed formal psychological evaluation report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who needs a formal in-person developmental evaluation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children who require diagnostic clarity for school admissions, IEP/SEN accommodations, medical documentation, or confirmation of suspected neurodevelopmental conditions such as ADHD, Autism Spectrum Disorder, or Specific Learning Disorders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can assessment reports be shared with schools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our comprehensive reports include actionable classroom accommodations, exam provisions, and individualized learning recommendations specifically drafted for school teachers and SEN coordinators."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonicalURL}>
+  <div class="bg-gray-50 border-b border-gray-200">
+    <div class="container mx-auto px-4 py-4">
+      <Breadcrumbs items={breadcrumbs} />
+    </div>
+  </div>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <span class="inline-block px-3 py-1 bg-brand-cream text-brand-navy rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-brand-gold/30">
+          In-Person Clinical Testing • Pakistan
+        </span>
+        <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 leading-tight">
+          Comprehensive Child Psychological &amp; Developmental Assessment
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          Standardized psychometric evaluations and clinical developmental assessments conducted with compassion and rigor to provide clear diagnostic insights and practical next steps for your child.
+        </p>
+      </div>
+
+      <div class="bg-brand-cream/40 border border-brand-gold/40 rounded-2xl p-6 md:p-8 mb-12">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">When Is a Formal Assessment Required?</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-trust shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <span><strong>School Requirements:</strong> Formal evaluation requested by international schools, private institutions, or examination boards for learning accommodations and SEN support.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-trust shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <span><strong>Diagnostic Clarity:</strong> Clear differentiation between attention deficits (ADHD), social-communication differences (ASD), sensory processing challenges, and emotional regulation struggles.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-trust shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            <span><strong>Evidence-Based Roadmap:</strong> Moving past confusing labels to concrete strengths, lagging executive functions, and home/classroom intervention plans.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="border border-gray-200 rounded-2xl p-6 shadow-xs">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">What the Assessment Covers</h3>
+          <ul class="space-y-2.5 text-sm text-gray-700">
+            <li>✓ Detailed clinical developmental history interview with parents</li>
+            <li>✓ Standardized psychometric testing and cognitive screening</li>
+            <li>✓ Multi-informant behavioral checklists (home and school settings)</li>
+            <li>✓ Direct clinical behavioral observation</li>
+            <li>✓ Executive functioning, attention, and working memory analysis</li>
+            <li>✓ Formal signed diagnostic summary and parent feedback conference</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-6 shadow-xs bg-gray-50">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">Important Scope &amp; Safety Note</h3>
+          <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+            Formal psychoeducational testing and diagnostic assessments are conducted locally in Pakistan following standardized clinical protocols.
+          </p>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            For international families abroad, we provide comprehensive <strong>telehealth clinical guidance</strong>, report interpretations, and second opinions to direct you toward regulated diagnostic providers in your local jurisdiction.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 text-center">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          {faqSchema.mainEntity.map(faq => (
+            <div class="border border-gray-200 rounded-xl p-5 bg-white">
+              <h3 class="font-bold text-brand-navy text-lg mb-2">{faq.name}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{faq.acceptedAnswer.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-navy text-white rounded-3xl p-8 md:p-12 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Inquire About an In-Person Assessment</h2>
+        <p class="text-gray-200 max-w-xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
+          Assessment battery and session scheduling are discussed individually based on the child's age, specific concerns, and school requirements.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/book/" class="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-brand-navy rounded-xl font-bold hover:bg-yellow-400 transition-all shadow-md">
+            Book Initial Clinical Intake
+          </a>
+          <a href="https://wa.me/923364114002?text=Hello%20Rabbia,%20I%20would%20like%20to%20enquire%20about%20a%20local%20child%20psychological%20assessment." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 bg-white/10 text-white border border-white/20 rounded-xl font-bold hover:bg-white/20 transition-all">
+            WhatsApp Clinical Assistant
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</BaseLayout>

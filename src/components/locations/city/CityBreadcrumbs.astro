@@ -18,19 +18,19 @@ const country = countries.find(c => c.countrySlug === city.countrySlug);
       </li>
       <li><span class="mx-2 text-gray-400">/</span></li>
       <li>
-        <a href="/locations" class="hover:text-blue-600 transition-colors">Locations</a>
+        <a href="/locations/" class="hover:text-blue-600 transition-colors">Locations</a>
       </li>
       {country?.existingRegionalPage && (
         <>
           <li><span class="mx-2 text-gray-400">/</span></li>
           <li>
-            <a href={`/locations/${country.existingRegionalPage}`} class="hover:text-blue-600 transition-colors capitalize">{country.existingRegionalPage.replace(/-/g, ' ')}</a>
+            <a href={`/locations/${country.existingRegionalPage}/`} class="hover:text-blue-600 transition-colors capitalize">{country.existingRegionalPage.replace(/-/g, ' ')}</a>
           </li>
         </>
       )}
       <li><span class="mx-2 text-gray-400">/</span></li>
       <li>
-        <a href={`/locations/${city.countrySlug}`} class="hover:text-blue-600 transition-colors">{city.countryName}</a>
+        <a href={`/locations/${city.countrySlug}/`} class="hover:text-blue-600 transition-colors">{city.countryName}</a>
       </li>
       <li><span class="mx-2 text-gray-400">/</span></li>
       <li class="text-gray-900 font-medium" aria-current="page">
