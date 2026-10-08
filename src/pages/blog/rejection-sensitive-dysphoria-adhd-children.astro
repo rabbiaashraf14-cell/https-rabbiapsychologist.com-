@@ -1,0 +1,239 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
+import heroImage from '../../assets/blog/rejection-sensitive-dysphoria-adhd-children.jpg';
+import secondaryImage from '../../assets/blog/emotional-regulation-in-children-teaching-kids-to-handle-big-feelings.webp';
+
+const title = "Rejection Sensitive Dysphoria (RSD) in ADHD Children: Why Minor Corrections Trigger Tears and Rage";
+const description = "Why gentle constructive feedback feels like physical agony to an ADHD child, the neuroscience of Rejection Sensitive Dysphoria, and co-regulation scripts that de-escalate shame spirals.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/rejection-sensitive-dysphoria-adhd-children/";
+const publishedDate = "2026-10-08";
+const lastUpdated = "2026-10-08";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Rejection Sensitive Dysphoria in ADHD', href: '/blog/rejection-sensitive-dysphoria-adhd-children/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com/"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Rejection Sensitive Dysphoria (RSD)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rejection Sensitive Dysphoria (RSD) is an intense, overwhelming emotional pain response triggered by the perceived or actual loss of approval, criticism, or failure. It is very common in individuals with ADHD due to emotional dysregulation in the central nervous system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do ADHD children overreact when corrected gently?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ADHD brain processes perceived emotional rejection through the same neural pain centers as physical injury. A casual comment like 'remember your shoes' can be neurologically experienced as 'you are a failure and unloved', provoking explosive anger or weeping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can parents give feedback without triggering an RSD meltdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the 'Connection Before Correction' protocol. Reassure the relationship first, use neutral observational language, avoid publicly calling out errors, and allow the child time to regulate before analyzing what went wrong."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Emotional Regulation</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 3-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600 border-b border-gray-100 pb-4 mb-6">
+        <div class="w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-xs">RA</div>
+        <div>
+          <span class="font-semibold text-gray-900">Written & Clinically Reviewed by Rabbia Ashraf</span>
+          <span class="text-gray-500 block text-xs">Clinical Psychologist & Child Development Specialist</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-sm mb-8">
+        <Image src={heroImage} alt="Rejection Sensitive Dysphoria in ADHD children infographic showing emotional dysregulation and co-regulation tools" class="w-full h-auto object-cover max-h-[420px]" />
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <p class="text-xl font-medium text-brand-navy leading-relaxed">
+        You offer the mildest, gentlest comment: <em>"Sweetheart, you missed buttoning the top button of your shirt,"</em> or <em>"Let's erase this one number so it's a bit neater."</em>
+      </p>
+
+      <p>
+        In an instant, your eight-year-old child bursts into uncontrollable sobbing, screams <strong>"I'm stupid! Everyone hates me! I ruin everything!"</strong>, slams their bedroom door, or lashes out with white-hot rage.
+      </p>
+
+      <p>
+        As a parent, you stand in disbelief thinking: <em>"Why are you making such a gigantic deal out of a button? Why do you take everything as a personal attack?"</em>
+      </p>
+
+      <p>
+        What you are witnessing is not theatrical melodrama or manipulative fragility. It is one of the most debilitating, rarely discussed aspects of the neurodivergent brain: <strong>Rejection Sensitive Dysphoria (RSD).</strong>
+      </p>
+
+      <WhatYouWillLearn items={[
+        "Why the word 'dysphoria' literally translates to 'unbearable, agonizing pain'.",
+        "The neural imaging evidence showing perceived criticism stimulates physical pain receptors.",
+        "How cumulative childhood criticism primes ADHD kids for defensive explosions.",
+        "The 4-step 'Connection Before Correction' blueprint for everyday parenting."
+      ]} />
+
+      <CalloutBox type="tip" title="The Science Behind RSD">
+        <p>
+          By age 12, children with ADHD receive an estimated <strong>20,000 more negative or corrective messages</strong> than their neurotypical peers (<em>"Sit still", "Pay attention", "Don't touch that", "Hurry up", "Where are your shoes?"</em>).
+        </p>
+        <p>
+          Combined with lagging emotional regulation networks in the prefrontal cortex, the ADHD brain interprets even constructive guidance as catastrophic relational rejection. To your child's nervous system, minor criticism doesn't mean <em>"try again"</em>—it registers as <em>"I am unlovable and defective."</em>
+        </p>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">How RSD Manifests in Everyday Behaviors</h2>
+
+      <p>
+        Children do not say: <em>"Mom, my autonomic nervous system is experiencing acute social pain."</em> Instead, RSD manifests in two common behavioral patterns:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="border border-red-200 bg-red-50/50 rounded-2xl p-5">
+          <h3 class="font-bold text-red-900 text-lg mb-2">1. Externalized Rage & Blame</h3>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>• Instant shouting, cursing, or slamming doors.</li>
+            <li>• Blaming others: <em>"The teacher is unfair! You tricked me!"</em></li>
+            <li>• Vehement denial: <em>"I didn't even do that!"</em> even when caught red-handed.</li>
+            <li>• Aggression used as an armor to defend against crushing shame.</li>
+          </ul>
+        </div>
+
+        <div class="border border-blue-200 bg-blue-50/50 rounded-2xl p-5">
+          <h3 class="font-bold text-brand-navy text-lg mb-2">2. Internalized Shame & Withdrawal</h3>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>• Devastating tears and emotional collapse.</li>
+            <li>• Severe self-criticism: <em>"I wish I wasn't born. I'm a loser."</em></li>
+            <li>• Hiding under blankets or refusing to leave their bedroom.</li>
+            <li>• Quitting new games or hobbies the second they aren't flawless.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="my-8 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+        <Image src={secondaryImage} alt="Clinical co-regulation and emotional de-escalation for neurodivergent children" class="w-full h-auto object-cover max-h-[350px]" />
+        <p class="text-xs text-gray-500 italic p-3 bg-gray-50 m-0 text-center">When a child is drowning in shame, logic is useless. Connection and physical presence are the life rafts.</p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">Parenting Pitfalls: What Accidentally Amplifies RSD</h2>
+
+      <MythVsFact items={[
+        {
+          myth: "Saying: 'Stop being so sensitive, you are overreacting!' will help them toughen up.",
+          fact: "Invalidation confirms the child's greatest fear—that their feelings are fundamentally wrong. It escalates panic into severe defiance."
+        },
+        {
+          myth: "Trying to debate and prove the fact while they are screaming will bring reason.",
+          fact: "During an RSD episode, the prefrontal cortex is completely offline. Explaining logic to a child in emotional dysphoria is like lecturing a drowning person on swimming technique."
+        },
+        {
+          myth: "RSD is a personality flaw that will fix itself with age.",
+          fact: "RSD is an established neurobiological feature of ADHD. It requires explicit co-regulation coaching, shame-resilience strategies, and compassionate scaffolding."
+        }
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">The 4-Step 'Connection Before Correction' Protocol</h2>
+
+      <ol class="space-y-4 my-4">
+        <li>
+          <strong>Step 1: Anchor the Safety (Validate First):</strong>
+          Lower your voice and drop your physical height. Say: <em>"I see how upset you are right now. I am right here with you. You are safe, and we are going to get through this together."</em>
+        </li>
+        <li>
+          <strong>Step 2: Externalize the Problem:</strong>
+          Never say <em>"Why are you acting out?"</em> Say: <em>"That homework problem is being so stubborn right now,"</em> or <em>"This math question is being really confusing today."</em> This separates the child's identity from the error.
+        </li>
+        <li>
+          <strong>Step 3: Allow the Neurochemical Storm to Pass:</strong>
+          Offer water, a weighted blanket, or silence. Do not ask for apologies or force task completion while adrenaline is surging.
+        </li>
+        <li>
+          <strong>Step 4: Collaborative Post-Regulation Debrief:</strong>
+          Hours later, during a peaceful moment: <em>"Earlier when I pointed out the button, it felt like I was saying you did something bad. I love you no matter what, and I will always help you fix mistakes without judgment."</em>
+        </li>
+      </ol>
+
+      <ExpertTip author="Rabbia Ashraf, Clinical Psychologist">
+        "Children with ADHD do not need tougher discipline when they face rejection—they need an emotionally safe harbor. When parents learn to interpret sudden defensiveness as a cry for relational safety, the meltdowns shorten, and the child learns that mistakes do not diminish their worth."
+      </ExpertTip>
+
+      <KeyTakeaways items={[
+        "Rejection Sensitive Dysphoria (RSD) produces neurological pain in response to perceived failure or disapproval.",
+        "Shame spirals manifest either as explosive aggression and blame, or tearful self-loathing and withdrawal.",
+        "Telling an ADHD child they are 'overreacting' confirms their deepest fear of being defective.",
+        "The 'Connection Before Correction' rule prevents minor adjustments from triggering full-scale household battles.",
+        "Targeted parent consultations provide customized de-escalation phrasing suited to your child's exact temperament."
+      ]} />
+
+      <div class="mt-12">
+        <ArticleAuthor />
+      </div>
+
+      <div class="mt-12">
+        <BlogCTA />
+      </div>
+    </article>
+  </div>
+</BaseLayout>

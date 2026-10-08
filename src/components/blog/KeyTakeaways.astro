@@ -1,10 +1,12 @@
 ---
 interface Props {
-  items: string[];
+  items?: string[];
+  points?: string[];
 }
 
-const { items } = Astro.props;
-const displayItems = items.slice(0, 5); // Ensure maximum 5 items as per spec
+const { items, points } = Astro.props;
+const rawItems = items || points || [];
+const displayItems = rawItems.slice(0, 5); // Ensure maximum 5 items as per spec
 ---
 <div class="my-12 bg-gradient-to-br from-brand-navy to-[#1a3a5f] rounded-2xl p-1 shadow-xl">
   <div class="bg-white rounded-xl p-8 md:p-10 h-full w-full">

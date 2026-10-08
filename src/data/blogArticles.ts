@@ -1,11 +1,35 @@
 export const articles = [
   {
+    title: "Pathological Demand Avoidance (PDA) vs. Defiance: Why Demands Trigger Fight-or-Flight in Autistic Children",
+    excerpt: "Why everyday demands trigger an autonomic nervous system panic attack in PDA autism, why traditional discipline and star charts fail, and the collaborative low-arousal approach that restores peace.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 8, 2026",
+    categories: ["Autism", "Behaviour"],
+    href: "/blog/pda-autism-demand-avoidance-vs-defiance/"
+  },
+  {
+    title: "Rejection Sensitive Dysphoria (RSD) in ADHD Children: Why Minor Corrections Trigger Tears and Rage",
+    excerpt: "Why gentle constructive feedback feels like physical agony to an ADHD child, the neuroscience of Rejection Sensitive Dysphoria, and co-regulation scripts that de-escalate shame spirals.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 8, 2026",
+    categories: ["ADHD", "Emotional Regulation"],
+    href: "/blog/rejection-sensitive-dysphoria-adhd-children/"
+  },
+  {
+    title: "Selective Mutism vs. Shyness: When a Child Freezes and Cannot Speak Outside the Home",
+    excerpt: "Understand the neurological vocal freeze response of Selective Mutism, why a chatterbox at home goes silent at school, and evidence-based low-pressure strategies.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 8, 2026",
+    categories: ["Anxiety", "Speech & Communication"],
+    href: "/blog/selective-mutism-vs-shyness-when-child-freezes/"
+  },
+  {
     title: "Public Meltdowns vs. Defiance: How to De-escalate Without Embarrassment",
     excerpt: "A practical 2-minute clinical guide by Clinical Psychologist Rabbia Ashraf on handling public meltdowns, avoiding accidental reinforcement, and using the 60-second 'If-Then' rule.",
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["Behaviour", "Emotional Regulation"],
-    href: "/blog/public-meltdowns-and-defiance-how-to-deescalate"
+    href: "/blog/public-meltdowns-and-defiance-how-to-deescalate/"
   },
   {
     title: "The ADHD Morning Wall: Why Your Child Cannot 'Just Wake Up and Get Ready'",
@@ -13,7 +37,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["ADHD", "Executive Function"],
-    href: "/blog/adhd-morning-routine-and-executive-dysfunction"
+    href: "/blog/adhd-morning-routine-and-executive-dysfunction/"
   },
   {
     title: "Stuck on an Assessment Waitlist: What to Stop and Start Doing at Home",
@@ -21,7 +45,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["Assessments", "Early Intervention"],
-    href: "/blog/child-assessment-waitlist-home-strategies"
+    href: "/blog/child-assessment-waitlist-home-strategies/"
   },
   {
     title: "How to Read Your Child’s Psychological Report (Without Panicking at Percentiles)",
@@ -29,7 +53,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["Psychological Reports", "Inclusive Education"],
-    href: "/blog/how-to-read-child-psychological-assessment-report"
+    href: "/blog/how-to-read-child-psychological-assessment-report/"
   },
   {
     title: "What to Say in Your Child’s School Support Meeting: Beyond Academic Marks",
@@ -37,7 +61,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["School Support", "SENCO Meetings"],
-    href: "/blog/parent-teacher-meeting-neurodivergent-child-script"
+    href: "/blog/parent-teacher-meeting-neurodivergent-child-script/"
   },
   {
     title: "Multilingual Households & Speech Delay: Myths vs. Clinical Red Flags",
@@ -45,7 +69,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["Language Development", "Expat Families"],
-    href: "/blog/multilingual-children-speech-delay-myths-vs-red-flags"
+    href: "/blog/multilingual-children-speech-delay-myths-vs-red-flags/"
   },
   {
     title: "Explaining Neurodiversity to Grandparents & In-Laws (The Diabetes Analogy)",
@@ -53,7 +77,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["Family Dynamics", "ADHD Awareness"],
-    href: "/blog/explaining-adhd-to-grandparents-joint-family"
+    href: "/blog/explaining-adhd-to-grandparents-joint-family/"
   },
   {
     title: "The Homework Battle: Why the ADHD Brain Freezes (And How Doodling Helps)",
@@ -61,7 +85,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Oct 5, 2026",
     categories: ["ADHD", "Executive Function"],
-    href: "/blog/homework-meltdowns-adhd-task-initiation"
+    href: "/blog/homework-meltdowns-adhd-task-initiation/"
   },
   {
     title: "ADHD Hyperactivity vs. Meltdowns: What to Do When Your Child Can’t Calm Down",
@@ -69,7 +93,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 6, 2024",
     categories: ["ADHD", "Behaviour", "Emotional Regulation"],
-    href: "/blog/adhd-hyperactivity-and-meltdowns-what-to-do"
+    href: "/blog/adhd-hyperactivity-and-meltdowns-what-to-do/"
   },
   {
     title: "One-to-One vs. Group Discrete Trial Teaching (DTT) in Autism: What Clinical Research Shows",
@@ -77,7 +101,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 5, 2024",
     categories: ["Autism", "Behaviour", "School Support"],
-    href: "/blog/discrete-trial-teaching-one-to-one-vs-group"
+    href: "/blog/discrete-trial-teaching-one-to-one-vs-group/"
   },
   {
     title: "Understanding the Confusion Between ADHD and Hyperactivity in Children",
@@ -85,7 +109,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Jan 10, 2024",
     categories: ["ADHD", "Parenting"],
-    href: "/blog/understanding-adhd-and-hyperactivity-in-children"
+    href: "/blog/understanding-adhd-and-hyperactivity-in-children/"
   },
   {
     title: "The Science of Screen Time: Why It Is So Hard for Children to Unplug",
@@ -93,7 +117,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Jan 12, 2024",
     categories: ["Behaviour", "Screen Time"],
-    href: "/blog/why-screen-time-is-hard-for-children-to-stop"
+    href: "/blog/why-screen-time-is-hard-for-children-to-stop/"
   },
   {
     title: "How to Support Executive Function at Home",
@@ -101,7 +125,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Jan 15, 2024",
     categories: ["ADHD", "Learning"],
-    href: "/blog/how-to-support-executive-function-at-home"
+    href: "/blog/how-to-support-executive-function-at-home/"
   },
   {
     title: "Tantrum vs Meltdown: What is the Difference?",
@@ -109,7 +133,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 2, 2024",
     categories: ["Behaviour", "Emotional Regulation"],
-    href: "/blog/tantrum-vs-meltdown"
+    href: "/blog/tantrum-vs-meltdown/"
   },
   {
     title: "Autism Early Signs Parents Should Notice",
@@ -117,7 +141,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 5, 2024",
     categories: ["Autism", "Development"],
-    href: "/blog/autism-early-signs"
+    href: "/blog/autism-early-signs/"
   },
   {
     title: "When to Seek a Developmental Assessment for Your Child",
@@ -125,7 +149,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 10, 2024",
     categories: ["Assessments", "Parenting"],
-    href: "/blog/when-to-seek-developmental-assessment"
+    href: "/blog/when-to-seek-developmental-assessment/"
   },
   {
     title: "Parent Guidance After an Autism Diagnosis: What Next?",
@@ -133,7 +157,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 15, 2024",
     categories: ["Autism", "Parenting"],
-    href: "/blog/parent-guidance-after-an-autism-diagnosis"
+    href: "/blog/parent-guidance-after-an-autism-diagnosis/"
   },
   {
     title: "Understanding Psychological Reports: A Guide for Parents",
@@ -141,7 +165,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 20, 2024",
     categories: ["Assessments", "School Support"],
-    href: "/blog/understanding-psychological-reports"
+    href: "/blog/understanding-psychological-reports/"
   },
   {
     title: "How to Prepare Your Child for a Psychological Assessment",
@@ -149,7 +173,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Feb 25, 2024",
     categories: ["Assessments", "Parenting"],
-    href: "/blog/how-to-prepare-for-child-assessment"
+    href: "/blog/how-to-prepare-for-child-assessment/"
   },
   {
     title: "Behaviour is Communication: Finding the 'Why'",
@@ -157,7 +181,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 1, 2024",
     categories: ["Behaviour", "Parenting"],
-    href: "/blog/behaviour-is-communication"
+    href: "/blog/behaviour-is-communication/"
   },
   {
     title: "Speech Delay vs Autism: Understanding the Difference",
@@ -165,7 +189,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 5, 2024",
     categories: ["Autism", "Development"],
-    href: "/blog/speech-delay-vs-autism"
+    href: "/blog/speech-delay-vs-autism/"
   },
   {
     title: "Emotional Regulation in Children: Why They Struggle to Calm Down",
@@ -173,7 +197,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 10, 2024",
     categories: ["Emotional Regulation", "Parenting"],
-    href: "/blog/emotional-regulation-in-children"
+    href: "/blog/emotional-regulation-in-children/"
   },
   {
     title: "Learning Difficulties Early Signs",
@@ -181,7 +205,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 12, 2024",
     categories: ["Learning Difficulties", "School Support"],
-    href: "/blog/learning-difficulties-early-signs"
+    href: "/blog/learning-difficulties-early-signs/"
   },
   {
     title: "School Refusal and School Anxiety",
@@ -189,7 +213,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 15, 2024",
     categories: ["Anxiety", "School Support"],
-    href: "/blog/school-refusal-and-school-anxiety"
+    href: "/blog/school-refusal-and-school-anxiety/"
   },
   {
     title: "Sensory Processing Difficulties",
@@ -197,7 +221,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 18, 2024",
     categories: ["Sensory", "Autism"],
-    href: "/blog/sensory-processing-difficulties"
+    href: "/blog/sensory-processing-difficulties/"
   },
   {
     title: "School Meeting Checklist",
@@ -205,7 +229,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 20, 2024",
     categories: ["School Support", "Advocacy"],
-    href: "/blog/school-meeting-checklist"
+    href: "/blog/school-meeting-checklist/"
   },
   {
     title: "IEP and School Support Planning",
@@ -213,7 +237,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 22, 2024",
     categories: ["School Support", "Advocacy"],
-    href: "/blog/iep-and-school-support-planning"
+    href: "/blog/iep-and-school-support-planning/"
   },
   {
     title: "Parent Burnout in Child Development Support",
@@ -221,7 +245,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 25, 2024",
     categories: ["Parenting", "Mental Health"],
-    href: "/blog/parent-burnout-child-development-support"
+    href: "/blog/parent-burnout-child-development-support/"
   },
   {
     title: "Sleep Routine and Child Behaviour",
@@ -229,7 +253,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Mar 28, 2024",
     categories: ["Behaviour", "Routines"],
-    href: "/blog/sleep-routine-and-child-behaviour"
+    href: "/blog/sleep-routine-and-child-behaviour/"
   },
   {
     title: "Social Communication Concerns",
@@ -237,7 +261,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 2, 2024",
     categories: ["Communication", "Autism"],
-    href: "/blog/social-communication-concerns"
+    href: "/blog/social-communication-concerns/"
   },
   {
     title: "Homework Battles and Attention Difficulties",
@@ -245,7 +269,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 5, 2024",
     categories: ["ADHD", "School Support"],
-    href: "/blog/homework-battles-and-attention-difficulties"
+    href: "/blog/homework-battles-and-attention-difficulties/"
   },
   {
     title: "Morning Routine Problems in ADHD",
@@ -253,7 +277,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 8, 2024",
     categories: ["ADHD", "Routines"],
-    href: "/blog/morning-routine-problems-in-adhd"
+    href: "/blog/morning-routine-problems-in-adhd/"
   },
   {
     title: "Parent Guidance for Behaviour Concerns",
@@ -261,7 +285,7 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 10, 2024",
     categories: ["Behaviour", "Parenting"],
-    href: "/blog/parent-guidance-for-behaviour-concerns"
+    href: "/blog/parent-guidance-for-behaviour-concerns/"
   },
   {
     title: "Screen Time and Emotional Regulation",
@@ -269,6 +293,6 @@ export const articles = [
     author: "Rabbia Ashraf, Clinical Psychologist",
     date: "Apr 12, 2024",
     categories: ["Behaviour", "Screen Time"],
-    href: "/blog/screen-time-and-emotional-regulation"
+    href: "/blog/screen-time-and-emotional-regulation/"
   }
 ];
