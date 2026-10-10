@@ -4,13 +4,13 @@ import { articles } from '../../data/blogArticles';
 import { getArticleImage, getCategoryFallbackSvg } from '../../utils/imageMatching';
 import BlogImageSlideshow from '../blog/BlogImageSlideshow.astro';
 
-// Priority topics per user request for sidebar
+// Priority topics per user request for sidebar - featuring Rabbia's flagship clinical guides
 const priorityTopics = [
-  "Understanding the Confusion Between ADHD and Hyperactivity in Children",
-  "Sensory Processing Difficulties",
-  "Emotional Regulation in Children: Why They Struggle to Calm Down",
-  "IEP and School Support Planning",
-  "Behaviour is Communication: Finding the 'Why'"
+  "Pathological Demand Avoidance (PDA) vs. Defiance: Why Demands Trigger Fight-or-Flight in Autistic Children",
+  "Rejection Sensitive Dysphoria (RSD) in ADHD Children: Why Minor Corrections Trigger Tears and Rage",
+  "Selective Mutism vs. Shyness: When a Child Freezes and Cannot Speak Outside the Home",
+  "Public Meltdowns vs. Defiance: How to De-escalate Without Embarrassment",
+  "How to Read Your Child’s Psychological Report (Without Panicking at Percentiles)"
 ];
 
 const selectedArticles = priorityTopics.map(title => {
@@ -59,7 +59,7 @@ const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/bl
                   )}
                 </>
               ) : (
-                <BlogImageSlideshow articleTitle={article.title} fallbackSvg={imageData.src as string} />
+                <BlogImageSlideshow articleTitle={article.title} fallbackSvg={imageData.src as string} categories={article.categories} />
               )}
             </div>
 

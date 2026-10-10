@@ -52,7 +52,7 @@ const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/bl
                   </>
                 ) : (
                   <div class="absolute inset-0 w-full h-full">
-                    <BlogImageSlideshow articleTitle={article.title} fallbackSvg={image.src as string} />
+                    <BlogImageSlideshow articleTitle={article.title} fallbackSvg={image.src as string} categories={article.categories} />
                   </div>
                 )}
               </a>

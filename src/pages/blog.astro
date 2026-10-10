@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/global/Breadcrumbs.astro';
-import { articles } from '../data/blogArticles';
+import { articles, getFeaturedArticles } from '../data/blogArticles';
 import { getArticleImage, getCategoryFallbackSvg } from '../utils/imageMatching';
 import BlogImageSlideshow from '../components/blog/BlogImageSlideshow.astro';
 
@@ -10,7 +10,7 @@ import BlogImageSlideshow from '../components/blog/BlogImageSlideshow.astro';
 const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/*.{jpeg,jpg,png,webp,gif}', { eager: true });
 
 const title = "Child Psychology, ADHD, Autism & Parent Guidance Blog | Rabbia Psychologist";
-const description = "Practical, parent-friendly articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.";
+const description = "Practical, evidence-based articles by Clinical Psychologist Rabbia Ashraf on child development, ADHD, autism, PDA, selective mutism, behaviour, emotional regulation, and psychological reports.";
 const canonicalURL = "https://www.rabbiapsychologist.com/blog/";
 
 const breadcrumbs = [
@@ -21,11 +21,49 @@ const collectionSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Child Psychology and Parent Guidance Blog",
-  "description": "Articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.",
-  "url": canonicalURL
+  "description": description,
+  "url": canonicalURL,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about/"
+  }
 };
 
-// Reverting deletions to ensure no blogs are lost while adding improvements
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Clinical Psychology & Parent Guidance Articles by Rabbia Ashraf",
+  "numberOfItems": articles.length,
+  "itemListElement": articles.map((article, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": article.title,
+    "url": `https://www.rabbiapsychologist.com${article.href}`,
+    "description": article.excerpt
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.rabbiapsychologist.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.rabbiapsychologist.com/blog/"
+    }
+  ]
+};
+
 const categories = [
   "ADHD",
   "Autism",
@@ -39,26 +77,29 @@ const categories = [
   "Speech & Communication"
 ];
 
+// Curated high-relevance clinical starting guides for parents
 const startingArticles = [
-  { title: "Autism Early Signs", href: "/blog/autism-early-signs/" },
-  { title: "Speech Delay vs Autism", href: "/blog/speech-delay-vs-autism/" },
+  { title: "PDA Autism vs. Defiance", href: "/blog/pda-autism-demand-avoidance-vs-defiance/" },
+  { title: "RSD in ADHD Children", href: "/blog/rejection-sensitive-dysphoria-adhd-children/" },
+  { title: "Selective Mutism vs. Shyness", href: "/blog/selective-mutism-vs-shyness-when-child-freezes/" },
+  { title: "Public Meltdowns vs. Defiance", href: "/blog/public-meltdowns-and-defiance-how-to-deescalate/" },
+  { title: "The ADHD Morning Wall", href: "/blog/adhd-morning-routine-and-executive-dysfunction/" },
+  { title: "Stuck on an Assessment Waitlist", href: "/blog/child-assessment-waitlist-home-strategies/" },
+  { title: "How to Read Psychological Reports", href: "/blog/how-to-read-child-psychological-assessment-report/" },
   { title: "Tantrum vs Meltdown", href: "/blog/tantrum-vs-meltdown/" },
-  { title: "Behaviour Is Communication", href: "/blog/behaviour-is-communication/" },
-  { title: "School Meeting Checklist", href: "/blog/school-meeting-checklist/" },
-  { title: "Understanding Psychological Reports", href: "/blog/understanding-psychological-reports/" },
-  { title: "Morning Routine Problems in ADHD", href: "/blog/morning-routine-problems-in-adhd/" }
+  { title: "Autism Early Signs", href: "/blog/autism-early-signs/" },
+  { title: "Speech Delay vs Autism", href: "/blog/speech-delay-vs-autism/" }
 ];
-
 
 // Sort articles by date descending
 const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-
 ---
 
 <BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
@@ -66,11 +107,14 @@ const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() -
 
     <!-- 1. Blog hero -->
     <div class="mt-8 mb-12 text-center">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-gold bg-brand-cream border border-brand-gold/30 px-3 py-1 rounded-full mb-3">
+        Clinical Child Psychology & Parent Guidance
+      </span>
       <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Child Psychology, ADHD, Autism & Parent Guidance Blog</h1>
 
       <!-- 2. Intro -->
-      <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-        Practical, parent-friendly articles on child development, ADHD, autism, behaviour, emotional regulation, learning difficulties, school support, assessments, and home routines.
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Evidence-based, compassionate clinical insights by Clinical Psychologist Rabbia Ashraf. Navigating autism, ADHD, PDA, emotional dysregulation, school advocacy, and psychological assessment reports.
       </p>
     </div>
 
@@ -96,6 +140,17 @@ const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() -
               <li><a href={article.href} class="text-brand-trust hover:underline font-medium block">{article.title}</a></li>
             ))}
           </ul>
+        </div>
+
+        <!-- Clinical Consultation Callout -->
+        <div class="bg-brand-navy text-white p-6 rounded-xl shadow-sm">
+          <h3 class="font-bold text-lg mb-2 text-white">Need Clinical Guidance?</h3>
+          <p class="text-xs text-brand-cream leading-relaxed mb-4">
+            Direct online parent coaching & child developmental consultations with Clinical Psychologist Rabbia Ashraf.
+          </p>
+          <a href="/book/" class="block text-center bg-brand-gold text-brand-navy font-bold text-xs py-2.5 px-4 rounded-lg hover:bg-white transition-colors">
+            Book Consultation
+          </a>
         </div>
       </div>
 
@@ -131,21 +186,35 @@ const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() -
                 </a>
               ) : (
                 <div class="block relative aspect-video w-full bg-brand-cream border-b border-gray-100 overflow-hidden shrink-0">
-                  <BlogImageSlideshow articleUrl={article.href} articleTitle={article.title} fallbackSvg={imageData.src as string} />
+                  <BlogImageSlideshow
+                    articleUrl={article.href}
+                    articleTitle={article.title}
+                    fallbackSvg={imageData.src as string}
+                    categories={article.categories}
+                    readTime={article.readTime}
+                  />
                 </div>
               )}
               <div class="p-6 flex flex-col flex-grow">
-                <div class="flex gap-2 mb-3 flex-wrap">
+                <div class="flex gap-2 mb-3 flex-wrap items-center">
+                  {article.featured && (
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-amber-900 bg-amber-100 border border-amber-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <span>★</span> Clinical Pillar
+                    </span>
+                  )}
                   {article.categories.map((cat) => (
                     <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2 py-1 rounded">{cat}</span>
                   ))}
+                  {article.readTime && (
+                    <span class="text-xs text-gray-500 font-medium ml-auto">⏱️ {article.readTime}</span>
+                  )}
                 </div>
                 <h3 class="text-xl font-bold text-brand-navy mb-2 leading-tight">
                   <a href={article.href} class="hover:text-brand-trust transition-colors">{article.title}</a>
                 </h3>
-                <p class="text-gray-600 mb-4 flex-grow">{article.excerpt}</p>
+                <p class="text-gray-600 mb-4 flex-grow text-sm leading-relaxed">{article.excerpt}</p>
                 <div class="text-sm text-gray-500 mt-auto border-t pt-4 flex justify-between items-center">
-                  <span>{article.author}</span>
+                  <span class="text-xs">{article.author}</span>
                   <span class="text-brand-gold font-bold text-sm group-hover:translate-x-1 transition-transform">Read article &rarr;</span>
                 </div>
               </div>
@@ -172,6 +241,10 @@ const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() -
            <a href="/pricing/" class="text-brand-trust hover:underline">Pricing</a>
            <span class="text-gray-300">|</span>
            <a href="/faqs/" class="text-brand-trust hover:underline">FAQs</a>
+           <span class="text-gray-300">|</span>
+           <a href="/report-review/" class="text-brand-trust hover:underline">Report Review</a>
+           <span class="text-gray-300">|</span>
+           <a href="/screener/" class="text-brand-trust hover:underline">Child Screener</a>
         </div>
       </div>
 

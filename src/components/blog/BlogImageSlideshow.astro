@@ -1,88 +1,156 @@
 ---
 import { Image } from 'astro:assets';
+import { getCategoryThemedImages } from '../../utils/imageMatching';
 
 interface Props {
-  articleUrl?: string; // Make it optional
+  articleUrl?: string;
   articleTitle: string;
   fallbackSvg?: string;
+  categories?: string[];
+  readTime?: string;
+  priority?: boolean;
 }
 
-const { articleUrl, articleTitle, fallbackSvg } = Astro.props;
+const {
+  articleUrl,
+  articleTitle,
+  fallbackSvg,
+  categories = [],
+  readTime,
+  priority = false
+} = Astro.props;
 
-// Dynamically import some specific reliable images to use in the slideshow as a visual fallback
+// Dynamically import all blog images from assets
 const allLocalImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/*.{jpeg,jpg,png,webp,gif}', { eager: true });
-const imageKeys = Object.keys(allLocalImages).slice(0, 5); // Take up to 5 images for the slideshow
-const fallbackImages = imageKeys.map(key => allLocalImages[key].default);
 
-// Determine wrapping element (either anchor tag or simple div)
+// Intelligently select themed images matching the article's clinical categories
+const categoryThemedImages = getCategoryThemedImages(categories, allLocalImages, 4);
+
+// Determine wrapping element (either anchor tag or semantic figure/div)
 const Wrapper = articleUrl ? 'a' : 'div';
-const wrapperProps = articleUrl ? { href: articleUrl } : {};
+const wrapperProps = articleUrl
+  ? { href: articleUrl, 'aria-label': `Read article: ${articleTitle}` }
+  : {};
 ---
 
-<blog-slideshow class="block relative w-full h-full min-h-full">
-  <Wrapper {...wrapperProps} class="block relative w-full h-full overflow-hidden group min-h-full">
-    {fallbackImages.length > 0 ? (
-      fallbackImages.map((img, index) => (
-        <div class={`slide absolute inset-0 w-full h-full transition-opacity duration-1000 ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} data-index={index}>
-          <Image
-            src={img}
-            alt={`Rotating image for ${articleTitle}`}
+<blog-slideshow class="block relative w-full h-full min-h-full" data-title={articleTitle}>
+  <Wrapper
+    {...wrapperProps}
+    class="block relative w-full h-full overflow-hidden group min-h-full bg-brand-cream/40 focus:outline-none focus:ring-2 focus:ring-brand-trust"
+  >
+    <figure class="relative w-full h-full m-0 p-0 overflow-hidden">
+      {categoryThemedImages.length > 0 ? (
+        categoryThemedImages.map((img, index) => (
+          <div
+            class={`slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            data-index={index}
+          >
+            <Image
+              src={img}
+              alt={`${articleTitle} — Child psychology visual guide by Clinical Psychologist Rabbia Ashraf`}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              width={600}
+              height={338}
+              loading={priority && index === 0 ? "eager" : "lazy"}
+            />
+          </div>
+        ))
+      ) : fallbackSvg ? (
+        <div class="absolute inset-0 w-full h-full opacity-100 z-10 flex items-center justify-center bg-brand-cream/30">
+          <img
+            src={fallbackSvg}
+            alt={`${articleTitle} — Evidence-based psychology overview`}
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            width={600}
-            height={338}
+            loading="lazy"
           />
         </div>
-      ))
-    ) : fallbackSvg ? (
-      <div class="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-100 z-10">
-        <img
-          src={fallbackSvg}
-          alt={`Fallback illustration for ${articleTitle}`}
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-      </div>
-    ) : (
-      <div class="absolute inset-0 w-full h-full bg-brand-cream flex items-center justify-center">
-        <span class="text-brand-navy opacity-50">Image unavailable</span>
-      </div>
-    )}
+      ) : (
+        <div class="absolute inset-0 w-full h-full bg-brand-cream flex items-center justify-center">
+          <span class="text-brand-navy/60 text-xs font-semibold uppercase tracking-wider">Clinical Guide</span>
+        </div>
+      )}
 
-    <div class="absolute inset-0 bg-brand-navy/5 pointer-events-none group-hover:bg-transparent transition-colors duration-300 z-20"></div>
+      <!-- Visual overlay for contrast & hover effects -->
+      <div class="absolute inset-0 bg-brand-navy/5 pointer-events-none group-hover:bg-transparent transition-colors duration-300 z-20"></div>
+
+      <!-- Slide indicator dots for interactive feedback if multiple slides exist -->
+      {categoryThemedImages.length > 1 && (
+        <div class="absolute bottom-2 right-2 flex gap-1 z-30 opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" aria-hidden="true">
+          {categoryThemedImages.map((_, dotIdx) => (
+            <span
+              class={`dot w-1.5 h-1.5 rounded-full transition-all duration-300 ${dotIdx === 0 ? 'bg-white shadow w-3' : 'bg-white/60'}`}
+              data-dot={dotIdx}
+            />
+          ))}
+        </div>
+      )}
+
+      <figcaption class="sr-only">
+        Illustration for {articleTitle} by Clinical Psychologist Rabbia Ashraf
+      </figcaption>
+    </figure>
   </Wrapper>
 </blog-slideshow>
 
 <script>
   class BlogSlideshow extends HTMLElement {
-    constructor() {
-      super();
-      const slides = this.querySelectorAll('.slide');
+    private interval: number | null = null;
+    private currentIndex = 0;
+
+    connectedCallback() {
+      const slides = this.querySelectorAll<HTMLElement>('.slide');
+      const dots = this.querySelectorAll<HTMLElement>('.dot');
       if (slides.length <= 1) return;
 
-      let currentIndex = 0;
-      let interval: number;
-
       const nextSlide = () => {
-        slides[currentIndex].classList.remove('opacity-100', 'z-10');
-        slides[currentIndex].classList.add('opacity-0', 'z-0');
+        slides[this.currentIndex].classList.remove('opacity-100', 'z-10');
+        slides[this.currentIndex].classList.add('opacity-0', 'z-0');
 
-        currentIndex = (currentIndex + 1) % slides.length;
+        if (dots[this.currentIndex]) {
+          dots[this.currentIndex].classList.remove('bg-white', 'shadow', 'w-3');
+          dots[this.currentIndex].classList.add('bg-white/60', 'w-1.5');
+        }
 
-        slides[currentIndex].classList.remove('opacity-0', 'z-0');
-        slides[currentIndex].classList.add('opacity-100', 'z-10');
+        this.currentIndex = (this.currentIndex + 1) % slides.length;
+
+        slides[this.currentIndex].classList.remove('opacity-0', 'z-0');
+        slides[this.currentIndex].classList.add('opacity-100', 'z-10');
+
+        if (dots[this.currentIndex]) {
+          dots[this.currentIndex].classList.remove('bg-white/60', 'w-1.5');
+          dots[this.currentIndex].classList.add('bg-white', 'shadow', 'w-3');
+        }
       };
 
-      const startSlideshow = () => {
-        interval = window.setInterval(nextSlide, 4500);
+      const start = () => {
+        if (!this.interval) {
+          this.interval = window.setInterval(nextSlide, 5000);
+        }
       };
 
-      const stopSlideshow = () => {
-        if (interval) clearInterval(interval);
+      const stop = () => {
+        if (this.interval) {
+          clearInterval(this.interval);
+          this.interval = null;
+        }
       };
 
-      startSlideshow();
+      // Check if user prefers reduced motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        start();
+        this.addEventListener('mouseenter', stop);
+        this.addEventListener('mouseleave', start);
+        this.addEventListener('focusin', stop);
+        this.addEventListener('focusout', start);
+      }
+    }
 
-      this.addEventListener('mouseenter', stopSlideshow);
-      this.addEventListener('mouseleave', startSlideshow);
+    disconnectedCallback() {
+      if (this.interval) {
+        clearInterval(this.interval);
+        this.interval = null;
+      }
     }
   }
 

@@ -37,6 +37,50 @@ export function getCategoryFallbackSvg(categories: string[]) {
   return `data:image/svg+xml;base64,${encodedSvg}`;
 }
 
+// Canonical alias map connecting article slugs to their dedicated illustrations in src/assets/blog/
+export const SLUG_IMAGE_MAP: Record<string, string> = {
+  // Flagship clinical pillars
+  'pda-autism-demand-avoidance-vs-defiance': 'pda-autism-demand-avoidance-vs-defiance',
+  'rejection-sensitive-dysphoria-adhd-children': 'rejection-sensitive-dysphoria-adhd-children',
+  'selective-mutism-vs-shyness-when-child-freezes': 'selective-mutism-vs-shyness-when-child-freezes',
+  'public-meltdowns-and-defiance-how-to-deescalate': 'parent-guidance-for-behaviour-concerns',
+  'adhd-morning-routine-and-executive-dysfunction': 'morning-routine-problems-in-adhd',
+  'child-assessment-waitlist-home-strategies': 'when-to-seek-a-developmental-assessment-for-your-child',
+  'how-to-read-child-psychological-assessment-report': 'understanding-psychological-reports-a-guide-for-parents',
+  'parent-teacher-meeting-neurodivergent-child-script': 'school-meeting-checklist',
+  'multilingual-children-speech-delay-myths-vs-red-flags': 'social-communication-concerns',
+  'explaining-adhd-to-grandparents-joint-family': 'understanding-the-confusion-between-adhd-and-hyperactivity-in-children',
+  'homework-meltdowns-adhd-task-initiation': 'homework-battles-and-attention-difficulties',
+  'adhd-hyperactivity-and-meltdowns-what-to-do': 'adhd-hyperactivity-and-meltdowns-what-to-do',
+  'discrete-trial-teaching-one-to-one-vs-group': 'discrete-trial-teaching-one-to-one-vs-group',
+
+  // Foundational clinical articles with file naming variations
+  'understanding-adhd-and-hyperactivity-in-children': 'understanding-the-confusion-between-adhd-and-hyperactivity-in-children',
+  'why-screen-time-is-hard-for-children-to-stop': 'the-science-of-screen-time-why-it-is-so-hard-for-children-to-unplug',
+  'how-to-support-executive-function-at-home': 'how-to-support-executive-function-at-home',
+  'tantrum-vs-meltdown': 'tantrum-vs-meltdown-what-is-the-difference',
+  'autism-early-signs': 'autism-early-signs-parents-should-notice',
+  'when-to-seek-developmental-assessment': 'when-to-seek-a-developmental-assessment-for-your-child',
+  'parent-guidance-after-an-autism-diagnosis': 'parent-guidance-after-an-autism-diagnosis-what-next',
+  'understanding-psychological-reports': 'understanding-psychological-reports-a-guide-for-parents',
+  'how-to-prepare-for-child-assessment': 'how-to-prepare-your-child-for-a-psychological-assessment',
+  'behaviour-is-communication': 'behaviour-is-communication-decoding-what-your-child-needs',
+  'speech-delay-vs-autism': 'speech-delay-vs-autism-understanding-the-difference',
+  'emotional-regulation-in-children': 'emotional-regulation-in-children-teaching-kids-to-handle-big-feelings',
+  'learning-difficulties-early-signs': 'learning-difficulties-early-signs',
+  'school-refusal-and-school-anxiety': 'school-refusal-and-school-anxiety',
+  'sensory-processing-difficulties': 'sensory-processing-difficulties-when-the-world-is-too-loud',
+  'school-meeting-checklist': 'school-meeting-checklist',
+  'iep-and-school-support-planning': 'iep-and-school-support-planning-a-parents-guide',
+  'parent-burnout-child-development-support': 'parent-burnout-in-child-development-support',
+  'sleep-routine-and-child-behaviour': 'sleep-routine-and-child-behaviour',
+  'social-communication-concerns': 'social-communication-concerns',
+  'homework-battles-and-attention-difficulties': 'homework-battles-and-attention-difficulties',
+  'morning-routine-problems-in-adhd': 'morning-routine-problems-in-adhd',
+  'parent-guidance-for-behaviour-concerns': 'parent-guidance-for-behaviour-concerns',
+  'screen-time-and-emotional-regulation': 'screen-time-and-emotional-regulation-in-children',
+};
+
 export function getArticleImage(article: any, localImages: Record<string, { default: ImageMetadata }>) {
   if (article.sanityImage) {
     return { type: 'remote', src: article.sanityImage };
@@ -45,11 +89,31 @@ export function getArticleImage(article: any, localImages: Record<string, { defa
   const slug = article.href.replace('/blog/', '').replace(/\/$/, '');
   const kebabTitle = article.title ? article.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '';
 
+  // 1. Check explicit canonical alias map first
+  const mappedFilename = SLUG_IMAGE_MAP[slug];
+  if (mappedFilename) {
+    const matchedPath = Object.keys(localImages).find(path => {
+      const parts = path.split('/');
+      const filename = parts[parts.length - 1].split('.')[0];
+      return filename === mappedFilename;
+    });
+    if (matchedPath && localImages[matchedPath]) {
+      return { type: 'local', src: localImages[matchedPath].default };
+    }
+  }
+
+  // 2. Dynamic discovery: exact match or bidirectional substring
   const imagePath = Object.keys(localImages).find(path => {
     const parts = path.split('/');
     const filename = parts[parts.length - 1].split('.')[0];
 
-    return filename === slug || filename === kebabTitle || filename.includes(slug) || filename.includes(kebabTitle);
+    return (
+      filename === slug ||
+      filename === kebabTitle ||
+      filename.includes(slug) ||
+      slug.includes(filename) ||
+      filename.includes(kebabTitle)
+    );
   });
 
   if (imagePath && localImages[imagePath]) {
@@ -61,4 +125,56 @@ export function getArticleImage(article: any, localImages: Record<string, { defa
   }
 
   return { type: 'fallback', src: getCategoryFallbackSvg(article.categories) };
+}
+
+/**
+ * Retrieves a list of category-relevant images for interactive slideshows and visual previews.
+ */
+export function getCategoryThemedImages(
+  categories: string[] = [],
+  localImages: Record<string, { default: ImageMetadata }>,
+  maxCount: number = 4
+): ImageMetadata[] {
+  const cats = categories.map(c => c.toLowerCase());
+  const allPaths = Object.keys(localImages);
+
+  const matchedPaths = allPaths.filter(path => {
+    const lowerPath = path.toLowerCase();
+    return cats.some(cat => {
+      if (cat.includes('adhd') || cat.includes('attention')) return lowerPath.includes('adhd') || lowerPath.includes('attention');
+      if (cat.includes('autism') || cat.includes('asd')) return lowerPath.includes('autism') || lowerPath.includes('asd') || lowerPath.includes('pda');
+      if (cat.includes('behaviour') || cat.includes('behavior')) return lowerPath.includes('behaviour') || lowerPath.includes('behavior') || lowerPath.includes('meltdown');
+      if (cat.includes('emotional') || cat.includes('regulation') || cat.includes('anxiety')) return lowerPath.includes('emotional') || lowerPath.includes('regulation') || lowerPath.includes('anxiety') || lowerPath.includes('rsd') || lowerPath.includes('mutism');
+      if (cat.includes('school') || cat.includes('learning')) return lowerPath.includes('school') || lowerPath.includes('iep') || lowerPath.includes('learning');
+      if (cat.includes('assessment') || cat.includes('report')) return lowerPath.includes('assessment') || lowerPath.includes('report');
+      if (cat.includes('sensory')) return lowerPath.includes('sensory');
+      return false;
+    });
+  });
+
+  // If we matched enough category images, return them
+  if (matchedPaths.length >= 2) {
+    return matchedPaths.slice(0, maxCount).map(p => localImages[p].default);
+  }
+
+  // Otherwise pick the newest high-resolution clinical pillar images
+  const fallbackPriorityFilenames = [
+    'pda-autism-demand-avoidance-vs-defiance',
+    'rejection-sensitive-dysphoria-adhd-children',
+    'selective-mutism-vs-shyness-when-child-freezes',
+    'adhd-hyperactivity-and-meltdowns-what-to-do',
+    'emotional-regulation-in-children-teaching-kids-to-handle-big-feelings',
+    'autism-early-signs-parents-should-notice'
+  ];
+
+  const fallbackImages: ImageMetadata[] = [];
+  for (const name of fallbackPriorityFilenames) {
+    const found = allPaths.find(p => p.includes(name));
+    if (found && localImages[found]) {
+      fallbackImages.push(localImages[found].default);
+      if (fallbackImages.length >= maxCount) break;
+    }
+  }
+
+  return fallbackImages.length > 0 ? fallbackImages : allPaths.slice(0, maxCount).map(p => localImages[p].default);
 }

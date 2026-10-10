@@ -68,7 +68,7 @@ const displayArticles = relatedArticles.slice(0, 4);
             </div>
           ) : (
             <div class="aspect-w-16 aspect-h-9 w-full overflow-hidden bg-gray-100 border-b border-gray-100">
-              <BlogImageSlideshow articleTitle={article.title} fallbackSvg={imageData.src as string} />
+              <BlogImageSlideshow articleTitle={article.title} fallbackSvg={imageData.src as string} categories={article.categories} />
             </div>
           )}
           <div class="p-4">

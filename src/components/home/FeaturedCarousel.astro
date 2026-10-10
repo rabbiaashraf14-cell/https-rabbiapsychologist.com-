@@ -1,18 +1,23 @@
 ---
+import { Image } from 'astro:assets';
 import { articles } from '../../data/blogArticles';
+import { getArticleImage } from '../../utils/imageMatching';
 
-// 1. Priority topics per user request
-// Find closest matches from the exported articles array
+// Dynamically import all blog images for proper image priority system
+const localImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/blog/*.{jpeg,jpg,png,webp,gif}', { eager: true });
+
+// Priority clinical guides for carousel
 const priorityTopics = [
-  "Understanding the Confusion Between ADHD and Hyperactivity in Children", // Closest to ADHD in Children
-  "Sensory Processing Difficulties", // Closest to Autism & Sensory Processing
-  "Emotional Regulation in Children: Why They Struggle to Calm Down", // Closest to Helping Your Child Manage Big Emotions
-  "IEP and School Support Planning", // Closest to School Difficulties
-  "Behaviour is Communication: Finding the 'Why'" // Closest to Behaviour is Communication
+  "Pathological Demand Avoidance (PDA) vs. Defiance: Why Demands Trigger Fight-or-Flight in Autistic Children",
+  "Rejection Sensitive Dysphoria (RSD) in ADHD Children: Why Minor Corrections Trigger Tears and Rage",
+  "Selective Mutism vs. Shyness: When a Child Freezes and Cannot Speak Outside the Home",
+  "Public Meltdowns vs. Defiance: How to De-escalate Without Embarrassment",
+  "The ADHD Morning Wall: Why Your Child Cannot 'Just Wake Up and Get Ready'",
+  "How to Read Your Child’s Psychological Report (Without Panicking at Percentiles)"
 ];
 
 const selectedArticles = priorityTopics.map(title => {
-  return articles.find(a => a.title === title) || articles[0]; // fallback to first if not found (shouldn't happen)
+  return articles.find(a => a.title === title) || articles[0];
 });
 
 // Final array to pass to client
@@ -21,7 +26,7 @@ const slidesData = selectedArticles.map(article => ({
   excerpt: article.excerpt,
   category: article.categories[0].toUpperCase(),
   href: article.href,
-  imageSrc: `/images/blog/${article.href.replace('/blog/', '')}.jpg`
+  imageData: getArticleImage(article, localImages)
 }));
 ---
 
@@ -41,23 +46,29 @@ const slidesData = selectedArticles.map(article => ({
 
               <!-- Image Area with graceful fallback handled via CSS/HTML -->
               <div class="relative h-48 bg-gradient-to-br from-brand-cream to-gray-50 flex items-center justify-center border-b border-gray-100 overflow-hidden">
-                <!-- Image Tag -->
-                <img
-                  src={slide.imageSrc}
-                  alt=""
-                  loading="lazy"
-                  class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300"
-                  onload="this.classList.remove('opacity-0')"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  aria-hidden="true"
-                />
-
-                <!-- Fallback Icon (Hidden by default, shown if image errors) -->
-                <div class="fallback-icon flex hidden items-center justify-center w-full h-full absolute inset-0 z-10 bg-gradient-to-br from-brand-cream to-gray-100">
-                  <svg class="w-12 h-12 text-brand-gold/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
+                {slide.imageData.type === 'local' ? (
+                  <Image
+                    src={slide.imageData.src as ImageMetadata}
+                    alt={slide.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                    width={400}
+                    height={225}
+                    loading="lazy"
+                  />
+                ) : slide.imageData.type === 'remote' ? (
+                  <img
+                    src={slide.imageData.src as string}
+                    alt={slide.title}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="fallback-icon flex items-center justify-center w-full h-full absolute inset-0 z-10 bg-gradient-to-br from-brand-cream to-gray-100">
+                    <svg class="w-12 h-12 text-brand-gold/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                )}
 
                 <!-- Category Badge -->
                 <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-navy shadow-sm z-20">
