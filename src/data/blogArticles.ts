@@ -15,6 +15,42 @@ export interface BlogArticle {
 
 export const articles: BlogArticle[] = [
   {
+    title: "After-School Restraint Collapse: Why Your Child Is an Angel at School and Explodes the Second They Get Home",
+    excerpt: "Why neurodivergent, ADHD, and autistic children hold it together all day in class only to have violent 3:30 PM meltdowns at home—and the exact 45-minute decompression routine that stops the daily explosion.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 11, 2026",
+    categories: ["ADHD", "Autism", "Emotional Regulation"],
+    href: "/blog/after-school-restraint-collapse-masking-meltdowns/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["after school restraint collapse", "child angel at school melts down at home", "autism masking exhaustion", "3:30 pm after school meltdowns"],
+    keyTakeaway: "After-School Restraint Collapse happens when a child spends 6 hours masking sensory and social stress at school, releasing the pressurized cortisol at home where they feel unconditionally safe."
+  },
+  {
+    title: "Autistic & ADHD Burnout vs. Laziness in Children: Recognizing Nervous System Depletion Before School Refusal Starts",
+    excerpt: "Why previously bright, capable neurodivergent children suddenly lose skills, stop doing homework, and withdraw—how to distinguish clinical burnout from laziness, and the Low-Demand Recovery Plan.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 11, 2026",
+    categories: ["Autism", "ADHD", "School Support"],
+    href: "/blog/autistic-adhd-burnout-in-children-vs-laziness/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["autistic burnout in children", "ADHD burnout vs laziness", "skill regression school refusal", "neurodivergent burnout recovery"],
+    keyTakeaway: "Neurodivergent burnout is physiological battery depletion marked by temporary skill regression and sensory pain. Pushing harder causes school refusal; immediate 50% demand reduction restores regulation."
+  },
+  {
+    title: "Why Bright Girls & Quiet Children Get Missed: Recognizing High-Masking Autism and Inattentive ADHD",
+    excerpt: "Why verbally gifted, empathetic, and polite children pass standard autism and ADHD screenings—and the subtle internalized red flags (perfectionism, daydreaming, social mimicry) parents notice first.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 11, 2026",
+    categories: ["Autism", "ADHD", "Assessments"],
+    href: "/blog/missed-autism-adhd-in-bright-girls-and-quiet-children/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["high masking autism in girls", "inattentive ADHD quiet children", "missed autism bright child", "internalized ADHD perfectionism"],
+    keyTakeaway: "Bright girls and quiet boys are routinely overlooked because their struggles are internalized (perfectionism, racing thoughts, social scripting) rather than classroom disruption."
+  },
+  {
     title: "Pathological Demand Avoidance (PDA) vs. Defiance: Why Demands Trigger Fight-or-Flight in Autistic Children",
     excerpt: "Why everyday demands trigger an autonomic nervous system panic attack in PDA autism, why traditional discipline and star charts fail, and the collaborative low-arousal approach that restores peace.",
     author: "Rabbia Ashraf, Clinical Psychologist",

@@ -40,6 +40,9 @@ export function getCategoryFallbackSvg(categories: string[]) {
 // Canonical alias map connecting article slugs to their dedicated illustrations in src/assets/blog/
 export const SLUG_IMAGE_MAP: Record<string, string> = {
   // Flagship clinical pillars
+  'after-school-restraint-collapse-masking-meltdowns': 'after-school-restraint-collapse-masking-meltdowns',
+  'autistic-adhd-burnout-in-children-vs-laziness': 'autistic-adhd-burnout-in-children-vs-laziness',
+  'missed-autism-adhd-in-bright-girls-and-quiet-children': 'missed-autism-adhd-in-bright-girls-and-quiet-children',
   'pda-autism-demand-avoidance-vs-defiance': 'pda-autism-demand-avoidance-vs-defiance',
   'rejection-sensitive-dysphoria-adhd-children': 'rejection-sensitive-dysphoria-adhd-children',
   'selective-mutism-vs-shyness-when-child-freezes': 'selective-mutism-vs-shyness-when-child-freezes',

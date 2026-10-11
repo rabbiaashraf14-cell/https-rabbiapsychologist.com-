@@ -1,0 +1,275 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
+import heroImage from '../../assets/blog/autistic-adhd-burnout-in-children-vs-laziness.jpg';
+import secondaryImage from '../../assets/blog/school-refusal-and-school-anxiety.webp';
+
+const title = "Autistic & ADHD Burnout vs. Laziness in Children: Recognizing Nervous System Depletion Before School Refusal Starts";
+const description = "Why previously bright, capable neurodivergent children suddenly lose skills, stop doing homework, and withdraw—how to distinguish clinical burnout from laziness, and the Low-Demand Recovery Plan.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/autistic-adhd-burnout-in-children-vs-laziness/";
+const publishedDate = "2026-10-11";
+const lastUpdated = "2026-10-11";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Autistic & ADHD Burnout vs. Laziness', href: '/blog/autistic-adhd-burnout-in-children-vs-laziness/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com/"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is autistic or ADHD burnout in children?",
+      "acceptedAnswer": {
+        "type": "Answer",
+        "text": "Neurodivergent burnout is a state of chronic physical, cognitive, and sensory exhaustion caused by prolonged exposure to demands that exceed a child's coping capacity. It is marked by extreme fatigue, loss of previously mastered skills (regression), heightened sensory intolerance, and emotional shutdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I tell the difference between childhood laziness and neurodivergent burnout?",
+      "acceptedAnswer": {
+        "type": "Answer",
+        "text": "A child avoiding a single chore has plenty of energy for preferred social activities and retains all their daily living skills. A child in burnout experiences deep shame, loses executive skills they once had (like brushing teeth or writing sentences), withdraws from friends, and uses screens only to numb an overwhelmed nervous system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do strict consequences make autistic and ADHD burnout worse?",
+      "acceptedAnswer": {
+        "type": "Answer",
+        "text": "You cannot punish a depleted battery into charging faster. Taking away a burned-out child's safe comfort items or forcing heavier academic tutoring increases cortisol, pushing the child from partial burnout into complete school refusal or clinical depression."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-full">★ Clinical Pillar</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Autism & ADHD</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">School Refusal</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 4-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+        Last year, your nine-year-old was getting good marks, dressing themselves, and going to school without a fight. This term, it feels like they have hit an invisible brick wall: they cry over putting on socks, stare blankly at homework they used to find easy, complain of daily stomachaches, and retreat under a blanket for hours.
+      </p>
+
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-brand-warm/20 mb-8 bg-brand-cream/30">
+        <Image
+          src={heroImage}
+          alt="Neurodivergent Burnout vs Laziness in Children clinical comparison infographic"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <div class="p-3 text-xs text-gray-500 text-center bg-white border-t border-gray-100">
+          What looks like sudden "laziness" or "attitude" on the surface is often acute neurological battery depletion underneath.
+        </div>
+      </div>
+    </header>
+
+    <article class="prose prose-brand max-w-none text-gray-700 leading-relaxed">
+      <WhatYouWillLearn items={[
+        "Why bright autistic and ADHD children suddenly 'hit a wall' around ages 8–13.",
+        "The 5 clinical red flags that distinguish Neurodivergent Burnout from teenage laziness.",
+        "Why temporary skill regression (losing the ability to speak, write, or self-care) happens.",
+        "Why tightening discipline and hiring extra tutors accelerates full-blown school refusal.",
+        "The 3-Phase Nervous System Recharge & School Pacing Plan."
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">When a Capable Child Suddenly "Stops Trying"</h2>
+      <p>
+        In my clinical practice, parents often book an urgent consultation in tears, saying: <em>"Rabbia, I don't recognize my child anymore. He used to be so bright and cooperative. Now he won't shower, won't pick up a pencil, and screams if I mention school. His father thinks he's just become lazy and addicted to his tablet—but punishing him is making him worse."</em>
+      </p>
+      <p>
+        There is a critical developmental cliff that occurs around <strong>ages 8 to 10 (Upper Primary)</strong> and again at <strong>ages 11 to 13 (Secondary Transition)</strong>.
+      </p>
+      <p>
+        In early childhood, a smart child with Autism or ADHD can use their high intelligence to compensate for executive dysfunction and sensory overload. They work at 150% effort just to look "normal." But as classroom noise increases, social friendships become nuanced, and homework requires multi-step planning, the child's compensatory reserves run dry.
+      </p>
+      <p>
+        They do not become lazy. They enter <strong>Clinical Neurodivergent Burnout</strong>.
+      </p>
+
+      <CalloutBox type="important" title="The Clinical Reality of Skill Regression">
+        The defining hallmark of Autistic and ADHD Burnout is <strong>temporary skill regression</strong>. Because the prefrontal cortex is starved of metabolic energy, the brain shuts down "non-essential" executive functions to survive. A child who could previously write three paragraphs, tie their shoes, or tolerate a noisy restaurant suddenly loses access to those neural pathways.
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">5 Ways to Tell Burnout Apart from "Laziness"</h2>
+      <p>
+        Before you confiscate privileges or increase academic pressure, evaluate these five diagnostic distinctions:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="p-5 bg-red-50 border border-red-200 rounded-xl">
+          <h3 class="text-base font-bold text-red-900 mb-2">📉 1. Loss of Former Skills</h3>
+          <p class="text-sm text-red-800">
+            In burnout, hygiene, speech fluency, handwriting, and emotional tolerance visibly regress compared to six months ago. Laziness never erases basic developmental skills.
+          </p>
+        </div>
+        <div class="p-5 bg-amber-50 border border-amber-200 rounded-xl">
+          <h3 class="text-base font-bold text-amber-900 mb-2">🔊 2. Extreme Sensory Intolerance</h3>
+          <p class="text-sm text-amber-800">
+            Clothing tags, chewing sounds, bright lights, or hair-brushing that your child used to tolerate now trigger instant tears or physical pain.
+          </p>
+        </div>
+        <div class="p-5 bg-blue-50 border border-blue-200 rounded-xl">
+          <h3 class="text-base font-bold text-blue-900 mb-2">🎮 3. "Numbed" Screen Usage</h3>
+          <p class="text-sm text-blue-800">
+            A burned-out child isn't gaming with high social excitement; they are staring at familiar, repetitive videos like an intravenous drip to block out sensory pain and internal anxiety.
+          </p>
+        </div>
+        <div class="p-5 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <h3 class="text-base font-bold text-emerald-900 mb-2">🤕 4. Somatic Sunday-Night Illness</h3>
+          <p class="text-sm text-emerald-800">
+            Genuine nausea, migraines, gut cramps, and low-grade fevers that peak on Sunday evenings and Monday mornings—driven by chronic vagus nerve inflammation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mid-Article Lead Generation Conversion Box -->
+      <div class="my-10 p-6 md:p-8 bg-gradient-to-br from-brand-navy to-[#163a5f] text-white rounded-2xl shadow-lg border border-brand-gold/30 not-prose">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-gold bg-white/10 px-3 py-1 rounded-full mb-2">
+              Already Have an Assessment Report That Schools Ignore?
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2">
+              Get a Clinical Report Review & Burnout Accommodation Plan
+            </h3>
+            <p class="text-sm text-brand-cream/90 leading-relaxed max-w-xl">
+              If your child is sliding toward school refusal or academic burnout, Clinical Psychologist Rabbia Ashraf can review their history or psychological report and build a tailored Home & School Pacing Plan.
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0 w-full md:w-auto">
+            <a href="/book/" class="inline-block text-center bg-brand-gold text-brand-navy font-bold px-6 py-3 rounded-xl hover:bg-white transition-colors text-sm shadow-md">
+              Book Burnout Consultation &rarr;
+            </a>
+            <a href="/report-review/" class="inline-block text-center bg-white/10 text-white border border-white/25 font-semibold px-6 py-2.5 rounded-xl hover:bg-white/20 transition-colors text-xs">
+              Explore Report Review Service
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-8 rounded-xl overflow-hidden shadow-md border border-gray-200">
+        <Image
+          src={secondaryImage}
+          alt="Preventing school refusal and burnout in neurodivergent children"
+          class="w-full h-auto object-cover"
+        />
+        <div class="p-3 text-xs text-gray-500 text-center bg-gray-50 border-t border-gray-100">
+          Catching neurodivergent burnout early prevents acute school refusal and long-term academic trauma.
+        </div>
+      </div>
+
+      <MythVsFact items={[
+        {
+          myth: "If we let our child rest or reduce homework, they will learn that quitting gets them out of hard work.",
+          fact: "Burnout is a physiological injury, like a stress fracture. Forcing a child to run on a fractured nervous system turns a 3-week recovery into a 2-year school refusal crisis."
+        },
+        {
+          myth: "They can play video games for two hours, so they clearly have enough focus for 20 minutes of math.",
+          fact: "Video games provide continuous external dopamine and predictable rules with zero social judgment. Math homework demands unassisted working memory, frustration tolerance, and fear of failure."
+        },
+        {
+          myth: "Only children with severe support needs experience autistic burnout.",
+          fact: "High-masking, verbally gifted children are actually at the HIGHEST risk for sudden burnout because adults place neurotypical expectations on them without accommodations."
+        }
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">The 3-Phase Low-Demand Burnout Recovery Plan</h2>
+      <p>
+        When a child is in burnout, traditional behavioral goals must be paused immediately in favor of <strong>Energy Accounting</strong>:
+      </p>
+
+      <ol class="space-y-4 my-4">
+        <li>
+          <strong>Phase 1: Stop the Energy Bleed (Immediate 50% Demand Reduction):</strong>
+          Audit your child's week and cut non-essential drains in half. Pause after-school tutoring, competitive clubs, and non-urgent household chores. Request a temporary 4-week homework exemption or reduced workload from the school SENCO so home becomes a 100% recovery zone.
+        </li>
+        <li>
+          <strong>Phase 2: Sensory & Special-Interest Refueling:</strong>
+          Allow guilt-free immersion in your child's "deep interests" (whether drawing, coding, dinosaurs, or building). In neurodivergent brains, engaging with special interests actively lowers cortisol and restores dopamine pathways.
+        </li>
+        <li>
+          <strong>Phase 3: Collaborative Pacing & School Scaffolding:</strong>
+          Before reintroducing demands, modify the environment so the child doesn't burn out again: negotiate quiet testing rooms, chunked assignments, reduced timetable days if necessary, and visual scaffolds at home.
+        </li>
+      </ol>
+
+      <ExpertTip author="Rabbia Ashraf, Clinical Psychologist">
+        "Never measure your child's capacity on their best day and expect it on their worst day. When a neurodivergent child says 'I can't,' believe them the first time. Protecting your relationship and your child's nervous system at age 9 is what ensures they are still thriving and attending school at age 15."
+      </ExpertTip>
+
+      <KeyTakeaways items={[
+        "Neurodivergent burnout is chronic neurological depletion caused by months of masking and unaccommodated demands.",
+        "Skill regression, heightened sensory pain, and Sunday-night physical illness are clinical hallmarks—not laziness.",
+        "Punishing a burned-out child or adding extra tutoring pushes them directly into full school refusal.",
+        "Recovery requires an immediate 50% reduction in home/after-school demands and guilt-free sensory rest.",
+        "A clinical consultation helps parents align partners/relatives and secure formal workload accommodations from schools."
+      ]} />
+
+      <div class="mt-12">
+        <ArticleAuthor datePublished="Oct 11, 2026" readTime="4 min" />
+      </div>
+
+      <div class="mt-12">
+        <BlogCTA
+          title="Worried Your Child Is Hitting Burnout or School Refusal?"
+          description="Don't wait until your child refuses to walk through the school gates. Book a 1-on-1 clinical consultation with Rabbia Ashraf to create an immediate Burnout Recovery & School Accommodation Roadmap."
+          buttonText="Book Your Priority Consultation"
+          buttonLink="/book/"
+        />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
