@@ -15,6 +15,66 @@ export interface BlogArticle {
 
 export const articles: BlogArticle[] = [
   {
+    title: "Is My Child Manipulating Me — Or Actually Struggling? A Clinical Psychologist Explains",
+    excerpt: "Your mother-in-law says 'He's manipulating you.' Your spouse says 'She's playing you.' But something doesn't feel right. The neuroscience of why true manipulation requires executive function most struggling children don't have.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 15, 2026",
+    categories: ["Behaviour", "Emotional Regulation"],
+    href: "/blog/is-my-child-manipulating-me-or-actually-struggling/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["is my child manipulating me", "child manipulation vs struggling", "lagging skills vs defiance", "kids do well if they can"],
+    keyTakeaway: "True manipulation requires advanced executive function (theory of mind, impulse control, strategic planning) that most struggling children neurologically lack. Assume lagging skills first."
+  },
+  {
+    title: "Why Does My Child Only Listen When I Shout? The Neuroscience Behind the Yelling Trap",
+    excerpt: "You've asked calmly. Then firmly. Then through clenched teeth. Nothing. Then you SHOUT — and suddenly they move. Why shouting 'works' is the exact reason it's destroying your child's nervous system.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 15, 2026",
+    categories: ["Behaviour", "Parent Guidance"],
+    href: "/blog/why-does-my-child-only-listen-when-i-shout/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["child only listens when I shout", "yelling at kids damage", "calm authority parenting", "why shouting works neuroscience"],
+    keyTakeaway: "Shouting triggers amygdala threat compliance, not comprehension. The Calm Authority Protocol (proximity + low voice + single instruction + wait time) replaces fear-based obedience with genuine processing."
+  },
+  {
+    title: "My Child Was Fine Until Year 3 — Why Are They Suddenly Falling Apart?",
+    excerpt: "Your child sailed through Reception and Year 1. Then Year 3 hits and homework takes 3 hours, reading comprehension nosedives, and their confidence evaporates. The Year 3 Wall is real.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 15, 2026",
+    categories: ["Learning Difficulties", "ADHD", "School Support"],
+    href: "/blog/child-suddenly-struggling-year-3-grade-2-why/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["child struggling Year 3", "Year 3 wall learning difficulties", "sudden school problems grade 2", "bright child suddenly failing"],
+    keyTakeaway: "The Year 3 curriculum shifts from 'learning to read' to 'reading to learn,' exposing hidden working memory, processing speed, and attention difficulties that high-verbal-IQ children previously masked."
+  },
+  {
+    title: "Is It Normal That My 4-Year-Old Still Has Major Meltdowns? When Tantrums Cross the Clinical Line",
+    excerpt: "Everyone said the terrible twos would end. But your child is nearly 5 and the meltdowns are BIGGER, louder, longer, and more physical. Here's the clinical threshold between normal and not.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 15, 2026",
+    categories: ["Emotional Regulation", "Behaviour", "Development"],
+    href: "/blog/is-it-normal-4-year-old-still-has-major-meltdowns/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["4 year old still having meltdowns", "when are tantrums not normal", "toddler meltdowns age 4 5", "clinical emotional dysregulation preschool"],
+    keyTakeaway: "Occasional frustration tears at 4 are developmental. Daily 30+ minute meltdowns with aggression, sensory triggers, and inability to be soothed signal clinical dysregulation requiring assessment."
+  },
+  {
+    title: "Why Does My Child Behave Perfectly at School but Fall Apart at Home?",
+    excerpt: "The teacher says 'He's absolutely fine here.' You stare in disbelief because this is the same child who screamed for 45 minutes over the wrong cup last night. Is it you? No — it's masking.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 15, 2026",
+    categories: ["Autism", "ADHD", "Emotional Regulation"],
+    href: "/blog/child-behaves-at-school-but-not-at-home/",
+    featured: true,
+    readTime: "4 min read",
+    targetKeywords: ["child good at school bad at home", "school vs home behaviour difference", "after school meltdowns masking", "child angel at school nightmare at home"],
+    keyTakeaway: "Home collapse after school compliance is biological evidence of secure attachment and masking exhaustion — not bad parenting. The behaviour discrepancy itself is diagnostic evidence."
+  },
+  {
     title: "After-School Restraint Collapse: Why Your Child Is an Angel at School and Explodes the Second They Get Home",
     excerpt: "Why neurodivergent, ADHD, and autistic children hold it together all day in class only to have violent 3:30 PM meltdowns at home—and the exact 45-minute decompression routine that stops the daily explosion.",
     author: "Rabbia Ashraf, Clinical Psychologist",

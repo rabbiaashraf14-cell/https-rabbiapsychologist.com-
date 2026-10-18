@@ -1,11 +1,20 @@
 ---
 // src/components/blog/CalloutBox.astro
 interface Props {
-  type: 'Clinical Insight' | 'Parent Tip' | 'Common Mistake' | 'Research Highlight' | 'Quick Summary' | 'Key Takeaways' | 'Warning Signs';
+  type: 'Clinical Insight' | 'Parent Tip' | 'Common Mistake' | 'Research Highlight' | 'Quick Summary' | 'Key Takeaways' | 'Warning Signs' | 'tip' | 'warning' | 'important' | 'info';
   title?: string;
 }
 
 const { type, title = type } = Astro.props;
+
+const typeAliases: Record<string, string> = {
+  tip: 'Parent Tip',
+  warning: 'Warning Signs',
+  important: 'Clinical Insight',
+  info: 'Research Highlight'
+};
+
+const resolvedType = (typeAliases[type] || type) as keyof typeof styles;
 
 const styles = {
   'Clinical Insight': 'bg-blue-50 border-blue-200 text-blue-900',
@@ -27,10 +36,10 @@ const iconPaths = {
   'Warning Signs': '<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />'
 };
 ---
-<div class={`my-8 p-6 rounded-xl border ${styles[type]} shadow-sm flex flex-col sm:flex-row gap-4 items-start`}>
+<div class={`my-8 p-6 rounded-xl border ${styles[resolvedType]} shadow-sm flex flex-col sm:flex-row gap-4 items-start`}>
   <div class="flex-shrink-0 mt-1">
     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-      <Fragment set:html={iconPaths[type]} />
+      <Fragment set:html={iconPaths[resolvedType]} />
     </svg>
   </div>
   <div>

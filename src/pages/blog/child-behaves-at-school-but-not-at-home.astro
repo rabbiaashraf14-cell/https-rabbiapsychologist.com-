@@ -1,0 +1,396 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
+import heroImage from '../../assets/blog/after-school-restraint-collapse-masking-meltdowns.jpg';
+import secondaryImage from '../../assets/blog/sensory-processing-difficulties-when-the-world-is-too-loud.webp';
+
+const title = "Why Does My Child Behave Perfectly at School but Fall Apart at Home?";
+const description = "Does your child act like an angel in class but explode into rage or tears at home? Discover why masking, sensory overload, and secure attachment cause home meltdowns—and how to get schools to take notice.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/child-behaves-at-school-but-not-at-home/";
+const publishedDate = "2026-10-15";
+const lastUpdated = "2026-10-15";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Behaves at School but Melts Down at Home', href: '/blog/child-behaves-at-school-but-not-at-home/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist",
+    "url": "https://www.rabbiapsychologist.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com/"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is my child well-behaved at school but terrible at home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children often expend 100% of their cognitive, sensory, and executive energy 'masking' and compensating at school to meet social and academic demands. Home is their only emotionally safe harbor where their exhausted nervous system finally drops its guard, releasing hours of bottled-up tension, sensory overload, and emotional fatigue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this mean I'm a bad parent if my child only melts down with me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, the exact opposite is true. In developmental psychology, a child only allows themselves to completely unravel and be vulnerable around individuals with whom they share a secure, unconditional attachment. If your child holds their distress together in public and collapses with you, it proves they trust you implicitly to hold space for their big emotions without abandoning them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get the school to take my concerns seriously when they say my child is fine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Build an objective clinical dossier over 2 to 3 weeks. Document Antecedent-Behaviour-Consequence (ABC) patterns, record brief video clips of after-school meltdowns, and contrast weekday collapses with calmer weekends. Present this data to the teacher or SENCO alongside a formal developmental assessment request to demonstrate that classroom compliance is masking severe functional impairment."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-full">★ Clinical Guide</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Autism</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Emotional Regulation</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 4-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+        When your child's teacher insists they are a picture of angelic obedience, but your living room turns into a battlefield the moment the front door clicks shut, you are not imagining things. Here is the clinical neuroscience behind the school-home behaviour split.
+      </p>
+
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-brand-warm/20 mb-8 bg-brand-cream/30">
+        <Image
+          src={heroImage}
+          alt="Why children behave perfectly at school but melt down at home infographic"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <div class="p-3 text-xs text-gray-500 text-center bg-white border-t border-gray-100">
+          The Masking Discrepancy: How 6 hours of high-effort classroom compliance drains executive function and triggers home restraint collapse.
+        </div>
+      </div>
+    </header>
+
+    <article class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+      <!-- Viral opening hook -->
+      <p class="text-xl font-medium text-brand-navy leading-relaxed italic">
+        The teacher smiles warmly, adjusts her clipboard, and says: <em>"He's absolutely fine here — very well-behaved, follows instructions, plays nicely with friends."</em>
+      </p>
+
+      <p>
+        You stare back in stunned disbelief. You look at her face, searching for a hint of sarcasm, because <strong>THIS</strong> is the very same child who screamed for 45 minutes over the wrong-coloured cup last night, threw a shoe at their sibling before dinner, and sobbed inconsolably into the bathmat because their pyjama seams felt "spiky."
+      </p>
+
+      <p>
+        You walk back to your car, sit behind the steering wheel, and feel the creeping wave of self-doubt wash over you: <em>"Is it me? Am I too lenient? Am I failing as a mother? Am I the problem?"</em>
+      </p>
+
+      <p>
+        In my clinical practice, I hear this exact heartbreaking confession every single week from parents across the globe. It is one of the most isolating, crazy-making experiences in parenting: the profound <strong>school-home gaslighting gap</strong>. Everyone from educators to well-meaning grandparents implies that if your child can control themselves for six hours at school, their explosive home behaviour must be the result of poor discipline, permissive parenting, or a lack of boundaries.
+      </p>
+
+      <p>
+        Let me give you the clinical truth right now: <strong>Your child is not failing at home because you are a weak parent. Your child is falling apart at home because you are their only safe harbor.</strong>
+      </p>
+
+      <WhatYouWillLearn items={[
+        "The Masking Energy Budget: Why 6 hours of classroom compliance drains your child's neurochemical reservoir.",
+        "The Science of Secure Attachment: Why home meltdowns are biological proof of safety, not bad parenting.",
+        "The Diagnostic Blind Spot: Why teachers' observations alone cannot rule out ADHD or Autism.",
+        "How the School vs. Home discrepancy serves as vital clinical evidence rather than a reason for dismissal.",
+        "How masking presents differently in Inattentive ADHD, High-Masking Autism, and Performance Anxiety.",
+        "Practical tools to document the pattern (ABC charts, video logs) and word-for-word scripts for teachers and relatives."
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">1. The Masking Energy Budget: The Depleted Reservoir</h2>
+      <p>
+        To understand why your child explodes at 3:30 PM, you must first understand the concept of <strong>masking</strong> (also known as social camouflaging or compensatory effort).
+      </p>
+
+      <p>
+        Every child starts their morning with a finite reservoir of regulatory energy. In a neurotypical child, an ordinary school day might consume 40% to 50% of that budget, leaving plenty of emotional bandwidth to navigate the evening transition, homework, sibling interactions, and bedtime.
+      </p>
+
+      <p>
+        For a neurodivergent child—whether they have diagnosed or undiagnosed ADHD, Autism, Sensory Processing Differences, or executive dysfunction—the school environment is an exhausting sensory and cognitive gauntlet:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li><strong>Sensory Assault:</strong> Buzzing fluorescent lights, scraping chairs, the echo of 30 voices, and the tactile irritation of uniforms and stiff shoes.</li>
+        <li><strong>Executive Overdrive:</strong> Forcing an under-stimulated brain to sit motionless, track multi-step verbal instructions, and organize disorganized materials.</li>
+        <li><strong>Social Hyper-Vigilance:</strong> Constantly decoding unwritten peer rules, suppressing natural self-soothing behaviors (fidgeting, humming, rocking), and forcing artificial eye contact to avoid standing out.</li>
+      </ul>
+
+      <p>
+        By 1:30 PM, your child's regulatory reservoir is not merely low—it is <strong>bone-dry</strong>. They spend the final two hours of the school day running on pure adrenaline and cortisol. When the final bell rings, their nervous system has reached complete neurological depletion. For a detailed breakdown of the biological crash that follows, explore our comprehensive guide on <a href="/blog/after-school-restraint-collapse-masking-meltdowns/" class="text-brand-navy font-bold underline hover:text-brand-gold">after-school restraint collapse and masking meltdowns</a>.
+      </p>
+
+      <div class="my-8 rounded-xl overflow-hidden shadow-md border border-gray-200">
+        <Image
+          src={secondaryImage}
+          alt="Sensory overload and classroom masking in neurodivergent children"
+          class="w-full h-auto object-cover"
+        />
+        <div class="p-3 text-xs text-gray-500 text-center bg-gray-50 border-t border-gray-100">
+          Sensory overwhelm and compensatory masking force children into high-alert survival states throughout the school day.
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">2. Why Home Is Where the Collapse Happens: The Counterintuitive Science of Attachment</h2>
+      <p>
+        Parents often ask me in tears: <em>"Rabbia, if he can hold it together for his teacher, why can't he do it for me? Doesn't he respect me?"</em>
+      </p>
+
+      <p>
+        This perspective assumes that self-regulation is an on-off switch governed entirely by willpower. In reality, self-regulation is governed by <strong>relational neurobiology and threat assessment</strong>.
+      </p>
+
+      <p>
+        School is an environment where emotional safety is inherently conditional. If a child screams, throws items, or sobs on the classroom rug, they face peer rejection, public reprimands, loss of privileges, or humiliation. Their central nervous system perceives that falling apart at school is <em>socially dangerous</em>. As a result, the brain activates an involuntary threat response: it clamps down, internalizes distress, and forces compliance through a high-vigilance "freeze" or "fawn" state.
+      </p>
+
+      <p>
+        Then, the front door of your home closes behind them.
+      </p>
+
+      <p>
+        In an instant, the child's amygdala registers the presence of their primary attachment figure—<strong>YOU</strong>. Your home is the only environment where their acceptance is unconditional. They know you will not kick them out of the family, revoke your love, or abandon them when they are overwhelmed.
+      </p>
+
+      <CalloutBox type="Clinical Insight" title="Attachment as an Emotional Lightning Rod">
+        When a child only melts down in front of you, it is not evidence of permissive parenting. It is clinical evidence of <strong>secure attachment</strong>. Your child holds their breath for seven hours at school; your presence is the first moment they feel safe enough to exhale. You are their emotional lightning rod because you are their safest harbor.
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">3. The Diagnostic Blind Spot: Why Teachers' Observations ALONE Cannot Rule Out ADHD or Autism</h2>
+      <p>
+        One of the biggest hurdles parents face when seeking developmental evaluations is the diagnostic criterion of <strong>"impairment across multiple settings."</strong>
+      </p>
+
+      <p>
+        Both the DSM-5-TR and ICD-11 diagnostic manuals specify that traits of ADHD or Autism must be present in two or more environments (such as home, school, or community). Unfortunately, many educators, general practitioners, and pediatricians interpret this superficially:
+      </p>
+
+      <blockquote class="border-l-4 border-amber-400 pl-4 py-2 my-4 text-gray-700 italic bg-amber-50/50 rounded-r">
+        "If the teacher reports no disruptive behaviour, no out-of-seat restlessness, and on-target academic progress, the child cannot possibly have ADHD or Autism."
+      </blockquote>
+
+      <p>
+        This clinical reasoning is fundamentally outdated. It treats <strong>externalized disruption</strong> as the sole marker of neurodivergence, completely ignoring children with high-masking, internalized presentations. If you are parenting a child who internalizes their struggles, read our analysis on <a href="/blog/missed-autism-adhd-in-bright-girls-and-quiet-children/" class="text-brand-navy font-bold underline hover:text-brand-gold">why bright girls and quiet children get missed during traditional assessments</a>.
+      </p>
+
+      <p>
+        The impairment <em>is</em> occurring at school—it is simply hidden beneath an exhausting veneer of compensatory masking:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li><strong>Internalized Hyperactivity:</strong> The ADHD child who doesn't bounce off walls, but instead bites their nails down to the cuticle, picks at skin, or mentally dissociates while staring at the whiteboard.</li>
+        <li><strong>Social Camouflaging:</strong> The autistic child who copies the gestures and slang of popular peers like an actress studying a script, surviving recess through rigid imitation rather than intuitive connection.</li>
+        <li><strong>Hyper-Compliance Driven by Anxiety:</strong> The perfectionistic child terrified of making a mistake, whose compliance is fueled by chronic fight-or-flight panic rather than relaxed regulation.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">4. The School vs. Home Behaviour Discrepancy as DIAGNOSTIC EVIDENCE</h2>
+      <p>
+        Here is the paradigm shift that every parent and clinician needs to embrace: <strong>A stark discrepancy between school compliance and home collapse is not a reason to dismiss neurodivergence—it is primary clinical evidence of it.</strong>
+      </p>
+
+      <p>
+        Neurotypical children do not experience 60 to 90 minutes of catastrophic rage, sensory meltdowns, or non-verbal shutdowns every single weekday afternoon. When a child functions at school only at the severe expense of their home functioning, that gap reveals the unsustainable cognitive and sensory effort required to maintain baseline performance.
+      </p>
+
+      <p>
+        If this pattern continues without intervention, the cumulative toll frequently leads to severe <a href="/blog/autistic-adhd-burnout-in-children-vs-laziness/" class="text-brand-navy font-bold underline hover:text-brand-gold">autistic and ADHD burnout in children</a>, chronic somatic complaints (daily morning stomachaches, migraines), school refusal, and secondary childhood anxiety disorders.
+      </p>
+
+      <MythVsFact items={[
+        {
+          myth: "If my child can sit nicely and follow rules for 6 hours at school, they can do it at home if I just enforce stricter consequences.",
+          fact: "Classroom compliance is often fueled by high-stress threat responses. Expecting an already depleted child to maintain that unnatural suppression at home pushes their nervous system into total autonomic crisis."
+        },
+        {
+          myth: "Teachers know child behavior best; if they don't see symptoms, there is nothing clinically wrong.",
+          fact: "Teachers observe group conformity, not internal neurological distress. Highly intelligent or masking children routinely hide deficits until they are safely home with trusted caregivers."
+        },
+        {
+          myth: "After-school meltdowns are deliberate temper tantrums designed to manipulate parents.",
+          fact: "Tantrums are goal-directed attempts to gain something; meltdowns are involuntary neurological overload where the thinking brain goes offline. You cannot discipline away a nervous system collapse."
+        }
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">5. ADHD vs. Autism vs. Anxiety: How Masking Differs in Each Profile</h2>
+      <p>
+        While the end result—an afternoon or evening explosion—looks remarkably similar on the surface, the neurological engine driving the collapse depends on your child's specific neurodivergent profile:
+      </p>
+
+      <div class="space-y-6 my-6">
+        <div class="p-6 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">A. Inattentive ADHD: Executive Masking & Dopamine Crash</h3>
+          <p class="text-gray-700 mb-2">
+            <strong>What happens at school:</strong> The child white-knuckles their focus through unstimulating tasks, expending enormous cognitive energy to suppress wandering thoughts and keep their body still.
+          </p>
+          <p class="text-gray-700">
+            <strong>Why they collapse at home:</strong> Severe <em>dopamine depletion</em>. By 3:30 PM, the brain's prefrontal cortex has burned through its neurotransmitter supply. Frustration tolerance drops to zero. Any micro-demand—such as <em>"hang up your coat"</em>—feels like being asked to lift a boulder, sparking instantaneous irritability, tearfulness, or oppositional outbursts.
+          </p>
+        </div>
+
+        <div class="p-6 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">B. High-Masking Autism: Social Camouflaging & Sensory Saturation</h3>
+          <p class="text-gray-700 mb-2">
+            <strong>What happens at school:</strong> The child consciously monitors facial expressions, forces eye contact, suppresses stimming, and tolerates a relentless barrage of auditory, visual, and tactile noise without complaining.
+          </p>
+          <p class="text-gray-700">
+            <strong>Why they collapse at home:</strong> Sensory saturation and demand exhaustion. The child's nervous system is in full sensory debt. The smallest unexpected change—dinner served 10 minutes late, a sibling singing, or an itchy sock—triggers a violent fight-or-flight meltdown or a non-verbal shutdown where they retreat under blankets.
+          </p>
+        </div>
+
+        <div class="p-6 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <h3 class="text-xl font-bold text-brand-navy mb-2">C. Childhood Anxiety: Performance Masking & Fear of Negative Evaluation</h3>
+          <p class="text-gray-700 mb-2">
+            <strong>What happens at school:</strong> Driven by a crippling terror of making mistakes, being called out, or being seen as "naughty," the child acts as the ultimate model student, people-pleasing and vigilantly watching teacher cues.
+          </p>
+          <p class="text-gray-700">
+            <strong>Why they collapse at home:</strong> The release of anticipatory terror. Once safe from external evaluation, the accumulated panic floods their body, manifesting as catastrophic bedtime meltdowns, compulsive reassurance-seeking, or intense physical aches every Sunday night.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">6. How to Document the Pattern: Building Your Clinical Dossier</h2>
+      <p>
+        When you tell a school or doctor, <em>"My child is struggling,"</em> it is easy for them to brush off verbal anecdotes as parental anxiety. But when you hand them a structured, objective dossier of behavioural data, they are forced to take notice.
+      </p>
+
+      <p>
+        Here are three practical tools I recommend families use for two to three weeks before requesting a meeting or assessment:
+      </p>
+
+      <div class="space-y-4 my-6">
+        <div class="p-5 bg-white rounded-xl border border-brand-border shadow-sm">
+          <strong class="text-brand-navy text-lg block mb-1">1. The Antecedent-Behaviour-Consequence (ABC) Log:</strong>
+          <p class="text-sm text-gray-700 mb-3">
+            Track afternoon meltdowns systematically to pinpoint exact triggers and recovery durations:
+          </p>
+          <div class="text-xs bg-gray-50 p-3 rounded font-mono text-gray-800 space-y-1">
+            <p><strong>• Date/Time:</strong> Tuesday, 3:45 PM</p>
+            <p><strong>• Antecedent (Trigger):</strong> Asked child to take off shoes and sit down for a snack.</p>
+            <p><strong>• Behaviour:</strong> Screamed, threw shoes at wall, kicked cabinet, cried inconsolably.</p>
+            <p><strong>• Duration & Recovery:</strong> 55 minutes; required dark room, weighted blanket, and zero talking.</p>
+          </div>
+        </div>
+
+        <div class="p-5 bg-white rounded-xl border border-brand-border shadow-sm">
+          <strong class="text-brand-navy text-lg block mb-1">2. The "Two Worlds" Comparison Chart:</strong>
+          <p class="text-sm text-gray-700">
+            Keep a split log contrasting Monday-through-Friday behaviour with Saturday and Sunday behaviour. If your child is joyful, regulated, and cooperative during unhurried weekend routines, but explosive every single afternoon after six hours of school, you have concrete proof that the school environment is exceeding their sensory-cognitive capacity.
+          </p>
+        </div>
+
+        <div class="p-5 bg-white rounded-xl border border-brand-border shadow-sm">
+          <strong class="text-brand-navy text-lg block mb-1">3. The 60-Second Video Log:</strong>
+          <p class="text-sm text-gray-700">
+            With gentle sensitivity and without shaming your child, capture a brief 45-to-60-second video of the after-school transition or dysregulation. Clinicians and school SENCOs who only see a smiling, quiet student need to witness the raw autonomic intensity of the collapse to grasp the true cost of their daytime masking.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        For a step-by-step roadmap on preparing documentation for psychologists, review our guide on <a href="/blog/when-to-seek-developmental-assessment/" class="text-brand-navy font-bold underline hover:text-brand-gold">when and how to seek a child developmental assessment</a>.
+      </p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">7. Verbatim Scripts for Parents: Responding to "He's Fine at School"</h2>
+      <p>
+        Having the right clinical vocabulary allows you to advocate calmly without sounding defensive. Use these exact scripts when communicating with educators, clinicians, and extended family:
+      </p>
+
+      <div class="space-y-6 my-6">
+        <div class="p-5 bg-brand-cream/30 rounded-xl border-l-4 border-brand-trust">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-trust block mb-1">Script 1: For the Classroom Teacher or SENCO</span>
+          <p class="text-gray-800 text-sm leading-relaxed italic">
+            "I'm glad to hear [Child's Name] is cooperative in class. However, we are witnessing severe, daily restraint collapse at home immediately following the school day. He is expending all of his regulatory reserves just to maintain that classroom compliance, leaving him in a state of severe neurological depletion by 3:30 PM. I would like to schedule a meeting so we can explore daytime accommodations—such as discreet sensory breaks and transition supports—to help him preserve his energy. How can we collaborate on this?"
+          </p>
+          <p class="text-xs text-gray-500 mt-2">
+            💡 For complete meeting preparation, read our <a href="/blog/parent-teacher-meeting-neurodivergent-child-script/" class="text-brand-navy font-bold underline">parent-teacher meeting neurodivergent child scripts</a>.
+          </p>
+        </div>
+
+        <div class="p-5 bg-brand-cream/30 rounded-xl border-l-4 border-amber-600">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-1">Script 2: For the Skeptical Doctor or Pediatrician</span>
+          <p class="text-gray-800 text-sm leading-relaxed italic">
+            "I recognize that standard classroom questionnaires often focus primarily on overt externalized disruption. However, our child presents with a high-masking, internalized profile. We have documented a persistent, severe discrepancy between their school masking and home dysregulation over several weeks [hand over your ABC logs and video notes]. Because this chronic masking is impacting their mental health, we are requesting a formal referral for a comprehensive developmental assessment."
+          </p>
+        </div>
+
+        <div class="p-5 bg-brand-cream/30 rounded-xl border-l-4 border-purple-600">
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-800 block mb-1">Script 3: For Relatives or In-Laws Blaming "Permissive Parenting"</span>
+          <p class="text-gray-800 text-sm leading-relaxed italic">
+            "In child psychology, a child only allows themselves to completely fall apart around the people they feel most unconditionally secure with. His afternoon meltdowns aren't a sign of poor discipline; they are the result of complete sensory and cognitive exhaustion from holding it together all day. We are supporting his nervous system with calm decompression, not punishment."
+          </p>
+        </div>
+      </div>
+
+      <ExpertTip author="Rabbia Ashraf, Clinical Psychologist">
+        "Never allow a glowing school report to convince you that your child's home suffering is imaginary. Masking is an expensive survival strategy with a heavy physiological price tag. When we acknowledge the cost of that masking early and provide proper daytime adaptations, we protect our children from years of internalized shame and burnout."
+      </ExpertTip>
+
+      <KeyTakeaways items={[
+        "The school-home behaviour split is driven by 'masking'—using 100% of cognitive energy to conform in class.",
+        "Melting down exclusively at home is biological confirmation of secure attachment, not evidence of poor discipline.",
+        "DSM-5 multi-setting impairment is often masked by quiet compliance, anxiety, or learned social mimicry.",
+        "The discrepancy itself is critical diagnostic evidence that should prompt professional developmental screening.",
+        "Systematic ABC logs and short video clips bridge the credibility gap between home distress and school disbelief."
+      ]} />
+
+      <div class="mt-12">
+        <ArticleAuthor datePublished="Oct 15, 2026" readTime="4 min" />
+      </div>
+
+      <div class="mt-12">
+        <BlogCTA />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
