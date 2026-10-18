@@ -39,6 +39,13 @@ export function getCategoryFallbackSvg(categories: string[]) {
 
 // Canonical alias map connecting article slugs to their dedicated illustrations in src/assets/blog/
 export const SLUG_IMAGE_MAP: Record<string, string> = {
+  // High-converting parent question pillars
+  'is-my-child-manipulating-me-or-actually-struggling': 'behaviour-is-communication-finding-the-why',
+  'why-does-my-child-only-listen-when-i-shout': 'emotional-regulation-in-children-teaching-kids-to-handle-big-feelings',
+  'child-suddenly-struggling-year-3-grade-2-why': 'learning-difficulties-early-signs',
+  'is-it-normal-4-year-old-still-has-major-meltdowns': 'tantrum-vs-meltdown-what-is-the-difference',
+  'child-behaves-at-school-but-not-at-home': 'after-school-restraint-collapse-masking-meltdowns',
+
   // Flagship clinical pillars
   'after-school-restraint-collapse-masking-meltdowns': 'after-school-restraint-collapse-masking-meltdowns',
   'autistic-adhd-burnout-in-children-vs-laziness': 'autistic-adhd-burnout-in-children-vs-laziness',
