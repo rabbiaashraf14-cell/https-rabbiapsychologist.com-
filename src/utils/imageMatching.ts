@@ -39,6 +39,13 @@ export function getCategoryFallbackSvg(categories: string[]) {
 
 // Canonical alias map connecting article slugs to their dedicated illustrations in src/assets/blog/
 export const SLUG_IMAGE_MAP: Record<string, string> = {
+  // New gold-standard clinical pillars
+  'adhd-neurodivergence-bedtime-struggles-evening-routine': 'sleep-routine-and-child-behaviour',
+  'why-children-lie-about-obvious-things-adhd-executive-function': 'behaviour-is-communication-decoding-what-your-child-needs',
+  'sensory-seeking-vs-adhd-hyperactivity-cant-sit-still': 'sensory-processing-difficulties-when-the-world-is-too-loud',
+  'ados-autism-assessment-gold-standard-hospital': 'how-to-prepare-your-child-for-a-psychological-assessment',
+  'speech-delay-vs-autism-two-way-communication': 'speech-delay-vs-autism-understanding-the-difference',
+
   // High-converting parent question pillars
   'is-my-child-manipulating-me-or-actually-struggling': 'behaviour-is-communication-finding-the-why',
   'why-does-my-child-only-listen-when-i-shout': 'emotional-regulation-in-children-teaching-kids-to-handle-big-feelings',

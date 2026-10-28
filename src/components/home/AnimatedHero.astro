@@ -2,120 +2,121 @@
 import { Image } from 'astro:assets';
 import profileImage from '../../assets/rabbia-ashraf-professional-profile.webp';
 ---
-<div class="relative overflow-hidden bg-brand-cream py-10 lg:py-16 flex items-center">
-  <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-white to-blue-50/50 z-0 pointer-events-none"></div>
-  <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-sky/30 rounded-full blur-3xl opacity-50"></div>
-  <div class="absolute top-40 -left-40 w-96 h-96 bg-brand-lavender/30 rounded-full blur-3xl opacity-50"></div>
+<div class="relative overflow-hidden bg-gradient-to-b from-[#FAF7F2] via-white to-[#FAF7F2] py-12 lg:py-20 flex items-center">
+  <!-- Subtle luxury ambient gradients -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(10,35,63,0.06),rgba(255,255,255,0))] pointer-events-none"></div>
+  <div class="absolute -top-32 -right-32 w-[450px] h-[450px] bg-blue-100/30 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+  <div class="absolute bottom-0 -left-32 w-[450px] h-[450px] bg-emerald-100/25 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 
-  <!-- Subtle decorative abstract shapes -->
-  <svg class="absolute top-1/4 right-1/4 w-32 h-32 text-brand-gold/10 animate-spin-slow pointer-events-none hidden lg:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4" />
-  </svg>
-  <svg class="absolute bottom-1/4 left-1/3 w-24 h-24 text-brand-navy/5 pointer-events-none hidden lg:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <circle cx="12" cy="12" r="10" stroke-width="1" />
-  </svg>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-      <!-- Text Content: Mobile order-1, Desktop: order-1 (7 cols) -->
-      <div class="lg:col-span-7 text-center lg:text-left animate-fade-in-up">
-        <div class="inline-flex items-center gap-2 py-1.5 px-3.5 rounded-full bg-white text-brand-navy text-xs lg:text-sm font-bold tracking-wide uppercase mb-6 shadow-sm border border-brand-gold/40">
-          <span class="w-2 h-2 rounded-full bg-brand-trust"></span>
-          Guiding Child Development with Care, Clarity, and Expertise
+      <!-- Left Column: Editorial Headline & High-Converting Value Prop (7 cols) -->
+      <div class="lg:col-span-7 text-center lg:text-left">
+        
+        <!-- Live Availability Radar Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-emerald-500/25 shadow-xs text-xs font-bold text-brand-navy mb-6">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span>Live Triage Radar: Free Discovery Slots Open (UK, Gulf &amp; North America)</span>
         </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6 tracking-tight leading-tight">
-          Child Development &amp; Parent Guidance
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-navy mb-6 tracking-tight leading-[1.12]">
+          You Don’t Have to Wait 18 Months to Help Your Child
         </h1>
-        <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-          Compassionate, evidence-based psychological support for ADHD, autism, school struggles, emotional regulation, report reviews, and everyday behavioral challenges.
+
+        <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed font-normal">
+          Evidence-informed parent guidance and clinical clarity for ADHD, autism, school anxiety, meltdowns, and psychological report debriefs. Bridge lengthy public waitlists with direct, parent-centred telehealth sessions within 48 hours.
         </p>
 
         <!-- CTA Buttons Row -->
-        <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 mb-8">
-          <a href="/book/" class="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-brand-navy text-white rounded-[14px] font-bold text-base md:text-lg hover:bg-blue-900 transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
-            <span>Book Parent Consultation</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3.5 mb-8">
+          <a href="/book/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0A233F] hover:bg-[#13385E] text-white text-base font-bold py-4 px-8 rounded-full shadow-[0_8px_20px_-4px_rgba(10,35,63,0.3)] hover:shadow-[0_12px_28px_-4px_rgba(10,35,63,0.4)] hover:-translate-y-0.5 transition-all duration-300">
+            <span>Book Free 15-Min Discovery Call</span>
+            <svg class="w-4 h-4 ml-0.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
-          <a href="#video-tour" class="w-full sm:w-auto px-7 py-3.5 md:py-4 bg-white text-brand-navy border-2 border-brand-navy/80 rounded-[14px] font-bold text-base md:text-lg hover:bg-brand-cream/60 transition-all shadow-sm hover:-translate-y-0.5 text-center flex items-center justify-center gap-2.5">
-            <span class="w-6 h-6 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center text-xs">▶</span>
-            <span>Watch Welcome Video</span>
+          <a href="#interactive-scheduler" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md text-brand-navy border border-brand-navy/15 hover:bg-white text-base font-bold py-4 px-7 rounded-full shadow-xs hover:-translate-y-0.5 transition-all duration-300">
+            <span>View Live Slots &amp; Fees ($85 / £65)</span>
           </a>
         </div>
 
-        <!-- Credibility Strip -->
-        <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-semibold text-gray-600 pt-2 border-t border-brand-navy/10">
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Online Worldwide (UK, USA, Gulf)
+        <!-- Trust Badges & Clinical Reassurance Row -->
+        <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 pt-4 border-t border-brand-navy/10">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-gray-700 bg-white/80 border border-gray-200/80 shadow-2xs">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Zero Waitlist (48-Hr Booking)
           </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Local Clinical Assessments
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-gray-700 bg-white/80 border border-gray-200/80 shadow-2xs">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Parent-Only Intake (Child Off Screen)
           </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            ADHD &amp; Autism Guidance
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-gray-700 bg-white/80 border border-gray-200/80 shadow-2xs">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            ADOS-2 Certified &amp; Neurodiversity-Affirming
           </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-            Parent-Centred &amp; Jargon-Free
-          </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-brand-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Certified Clinical Psychologist
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-gray-700 bg-white/80 border border-gray-200/80 shadow-2xs">
+            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Apple Pay • Google Pay • Visa &amp; SadaBiz
           </span>
         </div>
+
       </div>
 
-      <!-- Right: Clinician Showcase Visual Card (5 cols) -->
-      <div class="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.15s;">
-        <div class="relative w-full max-w-[420px]">
+      <!-- Right Column: Luxury Clinician Card (5 cols) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-[430px]">
           
           <!-- Ambient Glow Backdrop -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-brand-sky/40 via-brand-trust/30 to-brand-gold/30 blur-2xl rounded-3xl transform -rotate-2 scale-105 pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-emerald-100/40 via-blue-100/30 to-amber-100/40 blur-3xl rounded-3xl transform -rotate-1 scale-105 pointer-events-none"></div>
 
-          <!-- Main Interactive Card Frame -->
-          <div class="relative z-10 bg-white/95 backdrop-blur-md rounded-3xl border border-white/80 p-5 sm:p-6 shadow-[0_15px_40px_-10px_rgba(15,23,42,0.12)]">
+          <!-- Main Luxury Card Frame -->
+          <div class="apple-glass-card apple-specular-top p-5 sm:p-6 shadow-[0_25px_60px_-15px_rgba(10,35,63,0.14)] bg-white/95">
             
             <!-- Clinician Profile Banner -->
-            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] mb-5 bg-brand-cream border border-gray-100 group">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] mb-5 bg-[#FAF7F2] border border-white/60 group">
               <Image
                 src={profileImage}
                 alt="Clinical Psychologist Rabbia Ashraf holding child consultation"
-                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 width={450}
                 height={338}
               />
               
-              <!-- Gradient badge overlay -->
+              <!-- Subtle gradient vignette -->
               <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent"></div>
 
               <!-- Top Status Pill -->
-              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-navy shadow-sm border border-white/60 flex items-center gap-1.5">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-navy shadow-sm border border-white flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Active Booking Open</span>
+                <span>Active Consultations Open</span>
+              </div>
+
+              <!-- Top-Right Social Proof Pill -->
+              <div class="absolute top-3 right-3 bg-brand-navy/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-amber-300 shadow-sm border border-white/20 flex items-center gap-1">
+                <span>★ 4.95 Rating</span>
               </div>
 
               <!-- Bottom Name Plate -->
               <div class="absolute bottom-3 left-3 right-3 text-white">
-                <div class="font-bold text-base md:text-lg drop-shadow-md">Rabbia Ashraf</div>
-                <div class="text-xs text-brand-sky font-medium">Consultant Clinical Psychologist</div>
+                <div class="font-bold text-base md:text-lg drop-shadow-sm tracking-tight">Rabbia Ashraf</div>
+                <div class="text-xs text-white/90 font-medium">MS Clinical Psychology (QAU) • ADOS-2 Certified</div>
               </div>
             </div>
 
-            <!-- Highlights Grid -->
+            <!-- Highlights Grid (Apple Clean Metrics) -->
             <div class="grid grid-cols-3 gap-2.5 text-center mb-5">
-              <div class="bg-gray-50/80 rounded-xl p-2.5 border border-gray-100">
-                <div class="text-base font-extrabold text-brand-navy">7+</div>
-                <div class="text-[11px] text-gray-500 font-medium">Years Exp.</div>
+              <div class="bg-gray-50/90 rounded-2xl p-2.5 border border-gray-100 shadow-2xs">
+                <div class="text-base font-extrabold text-brand-navy tracking-tight">7+ Years</div>
+                <div class="text-[11px] text-gray-500 font-medium">Practice</div>
               </div>
-              <div class="bg-gray-50/80 rounded-xl p-2.5 border border-gray-100">
-                <div class="text-base font-extrabold text-brand-navy">500+</div>
+              <div class="bg-gray-50/90 rounded-2xl p-2.5 border border-gray-100 shadow-2xs">
+                <div class="text-base font-extrabold text-brand-navy tracking-tight">500+</div>
                 <div class="text-[11px] text-gray-500 font-medium">Families</div>
               </div>
-              <div class="bg-gray-50/80 rounded-xl p-2.5 border border-gray-100">
-                <div class="text-base font-extrabold text-brand-navy">Global</div>
+              <div class="bg-gray-50/90 rounded-2xl p-2.5 border border-gray-100 shadow-2xs">
+                <div class="text-base font-extrabold text-brand-navy tracking-tight">Global</div>
                 <div class="text-[11px] text-gray-500 font-medium">Telehealth</div>
               </div>
             </div>
@@ -123,16 +124,16 @@ import profileImage from '../../assets/rabbia-ashraf-professional-profile.webp';
             <!-- Quick Action Row inside Card -->
             <div class="flex items-center gap-2.5">
               <a
-                href="/parent-support/"
-                class="flex-1 py-2.5 px-3 bg-brand-cream/80 hover:bg-brand-cream text-brand-navy text-xs font-bold rounded-xl text-center transition-colors border border-brand-gold/30"
+                href="/book/"
+                class="flex-1 py-3 px-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl text-center transition-all duration-300 shadow-xs"
               >
-                Explore Approach
+                Free 15-Min Call
               </a>
               <a
-                href="#child-triage"
-                class="flex-1 py-2.5 px-3 bg-blue-50/80 hover:bg-blue-100 text-brand-navy text-xs font-bold rounded-xl text-center transition-colors border border-blue-200/50"
+                href="/screener/"
+                class="flex-1 py-3 px-3 bg-[#0A233F] hover:bg-[#13385E] text-white text-xs font-bold rounded-xl text-center transition-all duration-300 shadow-xs"
               >
-                Start Triage (60s)
+                60s Screener
               </a>
             </div>
 
@@ -143,19 +144,3 @@ import profileImage from '../../assets/rabbia-ashraf-professional-profile.webp';
     </div>
   </div>
 </div>
-
-<style>
-  @media (prefers-reduced-motion: no-preference) {
-    .animate-fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-  }
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>

@@ -4,7 +4,7 @@ import SEO from '../components/seo/SEO.astro';
 import Header from '../components/global/Header.astro';
 import Footer from '../components/global/Footer.astro';
 import StickyMobileBookingCTA from '../components/global/StickyMobileBookingCTA.astro';
-import CountdownBanner from '../components/global/CountdownBanner.astro';
+import SanctuaryRibbon from '../components/global/SanctuaryRibbon.astro';
 import FloatingWhatsApp from '../components/global/FloatingWhatsApp.astro';
 import RegionDetector from '../components/global/RegionDetector.astro';
 
@@ -60,12 +60,12 @@ const { title, description, canonicalURL, type, image, noindex, schema, keywords
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-navy focus:text-white focus:rounded-md">
       Skip to main content
     </a>
+    <SanctuaryRibbon />
     <Header />
     <main id="main-content" class="flex-grow pb-24 md:pb-0">
       <slot />
     </main>
     <Footer />
-    <CountdownBanner />
     <StickyMobileBookingCTA />
     <FloatingWhatsApp />
 
@@ -86,25 +86,15 @@ const { title, description, canonicalURL, type, image, noindex, schema, keywords
     <!-- Analytics Tracking Script -->
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-        // Track Sale Banner Impressions and Clicks
-        const promoBanner = document.getElementById('promo-banner');
-        if (promoBanner) {
+        // Track Sanctuary Ribbon Impressions and Clicks
+        const sanctuaryRibbon = document.getElementById('sanctuary-top-ribbon');
+        if (sanctuaryRibbon) {
           if (typeof gtag === 'function') {
             gtag('event', 'promotion_impression', {
-              promotion_id: 'promo_banner',
-              promotion_name: 'Parent Consultation Promo'
+              promotion_id: 'sanctuary_top_ribbon',
+              promotion_name: 'Sanctuary Live Intake Ribbon'
             });
           }
-
-          promoBanner.addEventListener('click', (e) => {
-            const target = e.target;
-            if (!target.closest('#close-promo') && typeof gtag === 'function') {
-              gtag('event', 'select_promotion', {
-                promotion_id: 'promo_banner',
-                promotion_name: 'Parent Consultation Promo'
-              });
-            }
-          });
         }
 
         // Track Booking Button Clicks
@@ -133,6 +123,134 @@ const { title, description, canonicalURL, type, image, noindex, schema, keywords
           });
         });
       });
+    </script>
+
+    <!-- Global Blog Enhancer: Automatic Apple-style TOC & Visible Dates for AEO/GEO/E-E-A-T -->
+    <script is:inline>
+      function enhanceBlogPage() {
+        if (!window.location.pathname.startsWith('/blog/') || window.location.pathname === '/blog/' || window.location.pathname === '/blog') return;
+        const article = document.querySelector('article');
+        if (!article) return;
+
+        // 1. Ensure visible Published & Updated dates in header if missing
+        const header = document.querySelector('header.mb-8') || article.parentElement?.querySelector('header');
+        if (header && !header.querySelector('.blog-date-badge')) {
+          let pubDate = '';
+          let modDate = '';
+          document.querySelectorAll('script[type="application/ld+json"]').forEach(s => {
+            try {
+              const data = JSON.parse(s.textContent || '{}');
+              if (data['@type'] === 'Article') {
+                pubDate = data.datePublished || '';
+                modDate = data.dateModified || '';
+              }
+            } catch (e) {}
+          });
+
+          if (pubDate || modDate) {
+            const dateBar = document.createElement('div');
+            dateBar.className = 'blog-date-badge flex flex-wrap items-center gap-2 text-xs text-gray-500 mt-2 mb-4';
+            if (pubDate) {
+              dateBar.innerHTML += `<span class="apple-pill !py-1 !px-2.5 bg-gray-50 text-gray-600">Published: ${pubDate}</span>`;
+            }
+            if (modDate && modDate !== pubDate) {
+              dateBar.innerHTML += `<span class="apple-pill !py-1 !px-2.5 bg-emerald-50 text-emerald-800 border border-emerald-200/60">Updated: ${modDate}</span>`;
+            } else if (pubDate) {
+              dateBar.innerHTML += `<span class="apple-pill !py-1 !px-2.5 bg-emerald-50 text-emerald-800 border border-emerald-200/60">Clinically Reviewed</span>`;
+            }
+            const authorBox = header.querySelector('.border-b') || header;
+            authorBox.appendChild(dateBar);
+          }
+        }
+
+        // 2. Ensure AEO / AI Direct Summary exists for AI search engines & parents
+        let articleDesc = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+        if (articleDesc && !document.getElementById('aeo-quick-facts')) {
+          const aeoBox = document.createElement('div');
+          aeoBox.id = 'aeo-quick-facts';
+          aeoBox.className = 'ai-summary p-5 lg:p-6 rounded-2xl bg-[#FAF7F2] border border-[#2F6352]/30 mb-8 shadow-2xs';
+          aeoBox.innerHTML = `
+            <div class="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-[#2F6352]/15">
+              <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#2F6352]">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Direct Clinical Summary (AEO)
+              </span>
+              <span class="text-[11px] font-medium text-[#18222C]/60">Verified by Rabbia Ashraf (ADOS-2 Certified)</span>
+            </div>
+            <p class="text-sm sm:text-[15px] text-[#18222C]/85 leading-relaxed m-0 font-medium">${articleDesc}</p>
+            <div class="mt-3 pt-2.5 flex items-center justify-between text-xs">
+              <span class="text-[#2F6352] font-semibold">Zero Waitlist Bridge Model</span>
+              <a href="/book/" class="font-bold text-[#0A233F] hover:text-[#2F6352] inline-flex items-center gap-1 transition-colors">
+                <span>Book 50-Min Guidance Call</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          `;
+          article.parentNode.insertBefore(aeoBox, article);
+        }
+
+        // 3. Ensure Table of Contents exists
+        if (!document.getElementById('smart-toc-container')) {
+          const headings = article.querySelectorAll('h2, h3');
+          if (headings.length >= 2) {
+            const tocWrapper = document.createElement('div');
+            tocWrapper.id = 'smart-toc-container';
+            tocWrapper.className = 'p-5 lg:p-6 mb-8 max-w-full rounded-2xl bg-[#FAF7F2] border border-[#E6DFD3] shadow-2xs';
+            tocWrapper.innerHTML = `
+              <details class="group" open>
+                <summary class="flex justify-between items-center font-bold text-[#0A233F] cursor-pointer list-none text-base md:text-lg select-none">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#2F6352]"></span>
+                    <span class="font-serif">Table of Contents</span>
+                    <span class="text-xs font-normal text-gray-500 hidden sm:inline">(Quick Jump)</span>
+                  </div>
+                  <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
+                    <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <div class="mt-4 border-t border-[#E6DFD3] pt-4">
+                  <ul id="smart-toc-list" class="space-y-2 text-xs md:text-sm list-none p-0 m-0"></ul>
+                </div>
+              </details>
+            `;
+            const list = tocWrapper.querySelector('#smart-toc-list');
+            headings.forEach((h, index) => {
+              if (h.closest('.no-toc') || h.closest('footer')) return;
+              let id = h.getAttribute('id');
+              if (!id) {
+                id = h.textContent?.toLowerCase().trim().replace(/[^\\w\\s-]/g, '').replace(/\\s+/g, '-') || `section-${index}`;
+                h.setAttribute('id', id);
+              }
+              const isH2 = h.tagName.toLowerCase() === 'h2';
+              const li = document.createElement('li');
+              li.className = `transition-colors duration-200 m-0 p-0 ${isH2 ? 'font-medium text-brand-navy' : 'pl-4 text-gray-500'}`;
+              li.innerHTML = `<a href="#${id}" class="toc-link hover:text-brand-trust py-1 flex items-center gap-1.5" data-target="${id}"><span class="w-1 h-1 rounded-full ${isH2 ? 'bg-brand-gold' : 'bg-gray-300'}"></span><span>${h.textContent}</span></a>`;
+              list.appendChild(li);
+            });
+
+            // Prepend before article
+            article.parentNode.insertBefore(tocWrapper, article);
+
+            // Smooth scroll handler
+            tocWrapper.querySelectorAll('.toc-link').forEach(anchor => {
+              anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = anchor.getAttribute('href')?.substring(1);
+                if (targetId) {
+                  const el = document.getElementById(targetId);
+                  if (el) {
+                    const y = el.getBoundingClientRect().top + window.pageYOffset - 100;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }
+              });
+            });
+          }
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', enhanceBlogPage);
+      document.addEventListener('astro:page-load', enhanceBlogPage);
     </script>
   </body>
 </html>

@@ -17,6 +17,7 @@ export default defineConfig({
     '/parent-training-lahore': '/parent-support/',
     '/adhd-child-psychologist-lahore': '/services/adhd-support/',
     '/autism-assessment-lahore': '/services/asd-support/',
+    '/press/rabbia-ashraf-certified-ados-2-trainer-autism-assessment': '/press/rabbia-ashraf-certified-ados-2-practitioner-autism-assessment/',
 
     '/school-iep-help': '/services/school-consultation/',
     '/services/behavior-support-planning': '/services/behaviour-planning/',
@@ -69,7 +70,22 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date('2026-10-18T20:00:00.000Z');
+        item.changefreq = 'weekly';
+        if (item.url === 'https://www.rabbiapsychologist.com/') {
+          item.priority = 1.0;
+        } else if (item.url.includes('/blog/') || item.url.includes('/services/')) {
+          item.priority = 0.9;
+        } else if (item.url.includes('/international-families/') || item.url.includes('/locations/')) {
+          item.priority = 0.8;
+        } else {
+          item.priority = 0.7;
+        }
+        return item;
+      }
+    }),
     {
       name: 'sitemap-compatibility-alias',
       hooks: {

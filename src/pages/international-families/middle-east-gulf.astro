@@ -2,42 +2,314 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Special Needs & Child Psychology Consulting for UAE & Gulf Families | Rabbia Psychologist";
+const description = "Culturally responsive online child development consultation, ADHD & autism guidance, and school inclusion advocacy for families across Dubai, Abu Dhabi, Saudi Arabia, Qatar, Kuwait, and the GCC.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-families/middle-east-gulf/";
+
 const breadcrumbs = [
-  { name: 'International Families', href: '/international-families' },
-  { name: 'Middle East & Gulf', href: '/international-families/middle-east-gulf' }
+  { name: 'Home', href: '/' },
+  { name: 'International Families', href: '/international-families/' },
+  { name: 'Middle East & Gulf', href: '/international-families/middle-east-gulf/' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Child Development & Special Needs Consulting for Middle East & Gulf Families",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "description": description,
+  "areaServed": [
+    { "@type": "Country", "name": "United Arab Emirates" },
+    { "@type": "Country", "name": "Saudi Arabia" },
+    { "@type": "Country", "name": "Qatar" },
+    { "@type": "Country", "name": "Kuwait" },
+    { "@type": "Country", "name": "Bahrain" },
+    { "@type": "Country", "name": "Oman" }
+  ],
+  "serviceType": "Online Parent Guidance & Special Needs Educational Consulting"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What consulting services are available for parents of children with special needs in the UAE and Gulf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide specialized online clinical parent guidance, neurodevelopmental screening reviews, ADHD and Autism home behaviour management, and international school inclusion advocacy. This includes preparing parents for IEP meetings, reviewing psychological assessment reports, and creating scaffolded routines tailored to expatriate and local families."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you help families navigate KHDA and ADEK school inclusion in Dubai and Abu Dhabi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the KHDA Inclusive Education Policy Framework (Dubai) and ADEK policies (Abu Dhabi), international schools must provide reasonable accommodations and individualized support. We help parents interpret school reports, formulate specific classroom accommodation requests, evaluate whether a Learning Support Assistant (LSA / shadow teacher) is necessary, and draft structured communication scripts for parent-teacher conferences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should we do while on long waiting lists for a child developmental assessment in Dubai or Qatar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waiting times for multidisciplinary child evaluations in Gulf private clinics can stretch between 4 to 9 months. During this wait, early intervention cannot be delayed. We guide parents through home observation tracking, sensory regulation setups, and antecedent-based behaviour routines so your child receives evidence-based support immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Rabbia Psychologist review reports conducted by local hospitals or clinics in the Middle East?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our Report Review service provides an independent second opinion on psychological, psychoeducational, and developmental assessment reports (e.g., ADOS-2, WISC-V, Vineland-3, Conners-4). We translate complex psychometric percentiles and clinical terminology into practical, daily home and classroom strategies."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Parent Guidance Support for Families in the Middle East | Rabbia Psychologist" description="Culturally sensitive online parent guidance and child development support for families in the UAE, Saudi Arabia, and the Gulf.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonicalURL}
+  schema={[serviceSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in the Middle East & Gulf</h1>
-      <p class="text-xl text-gray-700">Culturally sensitive online parent guidance and child development support for families in the UAE, Saudi Arabia, Qatar, and the wider Gulf region.</p>
-    </div>
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-amber-300">
+        UAE • Saudi Arabia • Qatar • Kuwait • Bahrain • Oman
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 tracking-tight">
+        Child Psychology & Special Needs Consulting for Families in the Middle East & Gulf
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+        Expert, culturally responsive online parent guidance, ADHD & autism support, and international school inclusion advocacy for local and expatriate families across the GCC.
+      </p>
+    </header>
 
     <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Expat & Local Family Support</h2>
-      <p>We understand the unique challenges faced by both local and expatriate families navigating the education and healthcare systems in the Middle East.</p>
+      
+      <!-- Regional Challenges Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Navigating Child Development & School Systems in the GCC
+        </h2>
+        <p>
+          Raising a neurodivergent or developmentally delayed child in the Gulf comes with distinct advantages—such as world-class private healthcare facilities and international curricula—but also steep logistical and cultural challenges:
+        </p>
 
-      <ul>
-        <li><strong>Culturally Competent Guidance:</strong> Support that respects family dynamics and cultural expectations.</li>
-        <li><strong>School Inclusion Advocacy:</strong> Help communicating with international schools regarding inclusion policies and accommodations.</li>
-        <li><strong>Parent Coaching:</strong> Strategies for ADHD, Autism, and emotional regulation at home.</li>
-      </ul>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:border-brand-navy transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-navy flex items-center justify-center font-bold mb-4">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Diagnostic Delays & High Private Costs</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Waiting lists for comprehensive multidisciplinary evaluations (ADOS-2, ADI-R, psychoeducational batteries) in Dubai, Abu Dhabi, Doha, and Riyadh frequently exceed 6 months, while private clinical testing packages cost thousands of dollars without immediate home support.
+            </p>
+          </div>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Service Boundaries</h2>
-      <p>Our online services are parent education and consultation. We do not provide cross-border medical diagnosis, emergency care, or formal psychological testing online.</p>
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:border-brand-navy transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-navy flex items-center justify-center font-bold mb-4">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">School Inclusion & Shadow Teacher Mandates</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Navigating school admission assessments, KHDA/ADEK inclusion frameworks, Individualized Education Plans (IEPs), and school requirements for Learning Support Assistants (LSAs) can feel isolating and adversarial.
+            </p>
+          </div>
 
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Book a Consultation</h3>
-        <p class="mb-4">Services are billed in USD.</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/book/" class="bg-brand-navy text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Now</a>
-          <a href="/pricing/" class="bg-white text-brand-navy border-2 border-brand-navy px-6 py-3 rounded-lg font-bold hover:bg-gray-50 transition-colors">View Pricing</a>
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:border-brand-navy transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-navy flex items-center justify-center font-bold mb-4">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Multilingual & Third-Culture Stress</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Children navigating English-medium international schools while speaking Arabic, Urdu, or other native languages at home often face misunderstood speech delays, academic burnout, and social masking.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:border-brand-navy transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-navy flex items-center justify-center font-bold mb-4">
+              4
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Culturally Attuned Guidance</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Families often encounter clinicians unfamiliar with Middle Eastern family values, joint-family dynamics, or the social pressures surrounding developmental differences and school prestige.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specialized Consulting Services -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Consulting Services for Parents of Children with Special Needs in the UAE & GCC
+        </h2>
+        <p>
+          We provide structured, evidence-based online consultations designed to give you clarity and an actionable roadmap right away:
+        </p>
+
+        <ul class="space-y-4 my-6">
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-brand-navy">
+            <strong>School Inclusion & IEP Strategy (KHDA / ADEK / International Curricula):</strong>
+            We partner with you before school meetings to formulate practical, measurable classroom accommodations for British (EYFS/GCSE), American (Common Core), and IB curricula. We help you evaluate whether a full-time shadow teacher is clinically necessary or if tiered classroom adjustments can meet your child’s needs.
+          </li>
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-brand-navy">
+            <strong>Pre-Assessment Strategy & Early Intervention Scaffolding:</strong>
+            If you are stuck on a 6-month waitlist for developmental assessment in Dubai, Sharjah, or Kuwait, we help you begin neurodiversity-affirming interventions at home today—tracking sensory triggers, establishing executive function routines, and using ABC behaviour logs.
+          </li>
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-brand-navy">
+            <strong>Independent Psychological Report Translation:</strong>
+            Received a 30-page neuropsychological or educational psychology report filled with psychometric indices (WISC-V, Vineland, Conners-4) that you don’t know how to implement? We unpack the clinical data and translate test scores into real-world home and classroom routines. Learn more about our <a href="/report-review/" class="text-brand-trust font-semibold underline">Independent Report Review Service</a>.
+          </li>
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-brand-navy">
+            <strong>ADHD, Autism & Emotional Regulation at Home:</strong>
+            Evidence-based behavioural planning, de-escalation for public and homework meltdowns, visual schedule construction, and habit scaffolding designed specifically for busy expatriate schedules.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Free Clinical Toolkits for Gulf Parents -->
+      <section class="my-12 not-prose bg-brand-cream/60 p-8 rounded-2xl border border-brand-gold/40">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Practical Parent Tools</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mt-1">Free Evidence-Based Downloads for Parents</h2>
+          <p class="text-sm text-gray-700 mt-2">
+            Download our free clinical tools to start tracking observations and organizing school meetings immediately.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-brand-navy rounded text-xs font-bold mb-2">School Support</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">School Meeting & IEP Checklist</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Step-by-step preparation checklist and conversation scripts for SENCO, teacher, and KHDA/ADEK inclusion meetings.
+              </p>
+            </div>
+            <a href="/free-downloads/school-iep-checklist/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-purple-100 text-purple-900 rounded text-xs font-bold mb-2">Autism & Speech</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Autism & Developmental Tracker</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Structured clinical observation grid to capture developmental milestones and communication nuances before assessments.
+              </p>
+            </div>
+            <a href="/free-downloads/autism-observation-guide/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded text-xs font-bold mb-2">Behaviour Support</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Meltdown Tracker & ABC Diary</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Identify antecedents, sensory overload, and behavioural communication patterns across daily transitions.
+              </p>
+            </div>
+            <a href="/free-downloads/behaviour-abc-tracker/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cities & Countries Served -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-brand-navy">Where We Support Families</h2>
+        <p>
+          Consultations are conducted securely via video call, accommodating Gulf Standard Time (GST / UTC+4) and Arabia Standard Time (AST / UTC+3). We regularly consult with families living in:
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 not-prose my-6 text-sm">
+          <div class="bg-white p-3 rounded border border-gray-200 font-medium text-gray-800">🇦🇪 Dubai & Abu Dhabi (UAE)</div>
+          <div class="bg-white p-3 rounded border border-gray-200 font-medium text-gray-800">🇦🇪 Sharjah, Ajman & Al Ain</div>
+          <div class="bg-white p-3 rounded border border-gray-200 font-medium text-gray-800">🇸🇦 Riyadh, Jeddah & Khobar</div>
+          <div class="bg-white p-3 rounded border border-gray-200 font-medium text-gray-800">🇶🇦 Doha & Lusail (Qatar)</div>
+          <div class="bg-white p-3 rounded border border-gray-200 font-medium text-gray-800">🇰🇼 Kuwait City (Kuwait)</div>
+          <div class="bg-white p-3 rounded border border-gray-200 font-medium text-gray-800">🇧🇭 Manama (Bahrain) & Muscat (Oman)</div>
+        </div>
+      </section>
+
+      <!-- Important Service Boundaries -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-12">
+        <h2 class="text-xl font-bold text-brand-navy mt-0 mb-3">Service Scope & Clinical Boundaries</h2>
+        <p class="text-sm leading-relaxed text-gray-700 mb-3">
+          Our online international services are classified as <strong>parent coaching, psychoeducation, and educational consultation</strong>. To ensure high clinical and legal standards:
+        </p>
+        <ul class="text-sm text-gray-700 space-y-2 mb-0">
+          <li>We do <strong>not</strong> provide cross-border psychiatric crisis care or emergency interventions (please contact local emergency services or hospitals such as Al Jalila Children's in Dubai or Sidra Medicine in Doha).</li>
+          <li>Online parent consultations do not constitute an official in-person medical diagnosis for legal or medication prescription purposes. Local licensed medical practitioners must be engaged if prescription medication or local state certification is required.</li>
+          <li>Sessions are billed internationally in USD. Invoices are provided for your personal records (coverage depends on individual international expat insurance policies).</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="my-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4 not-prose">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">What consulting services are available for parents of children with special needs in the UAE?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              We provide specialized online clinical parent guidance, neurodevelopmental screening reviews, ADHD and Autism home behaviour management, and international school inclusion advocacy. This includes preparing parents for IEP meetings, reviewing psychological assessment reports, and creating scaffolded routines tailored to expatriate and local families.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">How do you help families navigate KHDA and ADEK school inclusion in Dubai and Abu Dhabi?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Under the KHDA Inclusive Education Policy Framework (Dubai) and ADEK policies (Abu Dhabi), international schools must provide reasonable accommodations and individualized support. We help parents interpret school reports, formulate specific classroom accommodation requests, evaluate whether a Learning Support Assistant (LSA / shadow teacher) is necessary, and draft structured communication scripts for parent-teacher conferences.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">What should we do while on long waiting lists for a child developmental assessment in Dubai or Qatar?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Waiting times for multidisciplinary child evaluations in Gulf private clinics can stretch between 4 to 9 months. During this wait, early intervention cannot be delayed. We guide parents through home observation tracking, sensory regulation setups, and antecedent-based behaviour routines so your child receives evidence-based support immediately.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Can you review assessment reports done in Gulf private clinics?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. Our Report Review service provides an independent second opinion on psychological, psychoeducational, and developmental assessment reports (e.g., ADOS-2, WISC-V, Vineland-3, Conners-4). We translate complex psychometric percentiles and clinical terminology into practical, daily home and classroom strategies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-cream p-8 md:p-10 rounded-2xl border border-brand-gold text-center my-12 not-prose">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Book an International Consultation</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base">
+          Get expert clinical clarity, practical home routines, and empowered school advocacy for your child. Consultations are available to families across the UAE, Saudi Arabia, and the Gulf.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/book/" class="w-full sm:w-auto bg-brand-navy text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-900 transition-colors shadow-sm">
+            Schedule a Consultation
+          </a>
+          <a href="/pricing/" class="w-full sm:w-auto bg-white text-brand-navy border-2 border-brand-navy px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+            View International Pricing
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 </BaseLayout>

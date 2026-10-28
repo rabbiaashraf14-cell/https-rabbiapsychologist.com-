@@ -19,12 +19,13 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import SchoolAccommodationsVisual from '../../components/blog/visuals/SchoolAccommodationsVisual.astro';
 import heroImage from '../../assets/blog/school-refusal-and-school-anxiety.webp';
 
 const title = "School Refusal and School Anxiety: When Mornings Become a Battle";
 const description = "Understand the root causes of school refusal and anxiety in children, and learn practical steps parents can take to support their child and collaborate with the school.";
-const currentUrl = "/blog/school-refusal-and-school-anxiety";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/school-refusal-and-school-anxiety/";
+const canonicalURL = "https://www.rabbiapsychologist.com" + currentUrl;
 
 const keywords = ["school refusal", "school anxiety", "child won't go to school", "morning meltdowns", "school avoidance children"];
 
@@ -203,6 +204,8 @@ const schema = [
             ]}
           />
 
+          <SchoolAccommodationsVisual />
+
           <h2 id="when-to-seek-support">When to Seek Professional Support</h2>
           <p>If school refusal has lasted for more than a couple of weeks, or if it is accompanied by severe depression or self-harm, professional intervention is necessary.</p>
           <p>A clinical psychologist can provide a psychological assessment to uncover hidden learning or neurodevelopmental issues, and work with the family to create a structured return-to-school plan.</p>
@@ -219,11 +222,6 @@ const schema = [
               "Allowing avoidance temporarily relieves anxiety but makes the long-term problem worse.",
               "Collaborate closely with the school to create a safe, gradual return plan."
             ]}
-          />
-
-            datePublished="April 1, 2024"
-            dateModified="April 1, 2024"
-            readTime="7 min"
           />
 
           <FAQAccordion faqs={[

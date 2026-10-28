@@ -19,12 +19,13 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import ExecutiveFunctionVisual from '../../components/blog/visuals/ExecutiveFunctionVisual.astro';
 import heroImage from '../../assets/blog/homework-battles-and-attention-difficulties.webp';
 
 const title = "Homework Battles and Attention Difficulties: How to Help Your Child Focus";
 const description = "End the nightly homework struggle. Learn why attention fatigue happens, how to structure homework for ADHD brains, and when a formal assessment is needed.";
-const currentUrl = "/blog/homework-battles-and-attention-difficulties";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/homework-battles-and-attention-difficulties/";
+const canonicalURL = "https://www.rabbiapsychologist.com" + currentUrl;
 
 const keywords = ["homework battles", "child won't do homework", "ADHD homework help", "attention span children", "learning difficulties homework"];
 
@@ -198,6 +199,8 @@ const schema = [
           <p>Homework requires massive executive functioning skills: estimating time, organizing materials, initiating a boring task, and remembering instructions. Children with ADHD are often 3 to 5 years delayed in these skills compared to their peers.</p>
           <p>You cannot discipline a child into having better executive function. You must provide external scaffolding (like checklists and timers) until their brain matures enough to handle it internally.</p>
 
+          <ExecutiveFunctionVisual />
+
           <h2 id="when-to-seek-assessment">When to Seek an Assessment</h2>
           <p>If you have optimized the environment, provided breaks, and offered support, but your child is still consistently unable to learn the material, it is time for a formal assessment.</p>
           <p>A psychoeducational assessment can determine if there is an underlying Specific Learning Disorder (like Dyslexia or Dyscalculia) or if the core issue is ADHD. Once you have data, you can ask the school for appropriate accommodations, such as reduced homework loads or assistive technology.</p>
@@ -214,11 +217,6 @@ const schema = [
               "Use visual timers and frequent, structured movement breaks.",
               "If the struggle persists despite support, a psychoeducational assessment is necessary."
             ]}
-          />
-
-            datePublished="April 25, 2024"
-            dateModified="April 25, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[

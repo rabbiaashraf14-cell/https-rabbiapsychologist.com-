@@ -2,38 +2,275 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Child Psychological Assessment & Parent Guidance in Pakistan | Rabbia Psychologist";
+const description = "Certified in-person child psychological assessment in Lahore and online parent consultation across Pakistan. ADOS-2 testing, ADHD evaluations, and Pakistan Resident Pricing.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-families/pakistan/";
+
 const breadcrumbs = [
-  { name: 'International Families', href: '/international-families' },
-  { name: 'Pakistan', href: '/international-families/pakistan' }
+  { name: 'Home', href: '/' },
+  { name: 'International Families', href: '/international-families/' },
+  { name: 'Pakistan', href: '/international-families/pakistan/' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Child Psychological Assessment & Consultation in Pakistan",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "description": description,
+  "serviceType": "Clinical Child Psychological Assessment & Consultation",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Pakistan"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where are in-person child psychological assessments conducted in Pakistan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Formal in-person evaluations (including certified ADOS-2 autism testing, cognitive testing, and psychoeducational batteries) are conducted at our clinical practice in Lahore, Pakistan. Sessions are scheduled by advance appointment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is online consultation available for families outside Lahore (Karachi, Islamabad, etc.)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide secure online video consultations for parent coaching, ADHD behavioural strategies, and report reviews to families residing in Karachi, Islamabad, Rawalpindi, Peshawar, Faisalabad, and throughout Pakistan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Pakistan Resident Pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recognizing local economic realities, we offer heavily subsidized Pakistan Resident Pricing (billed in PKR via local bank transfer) for families living and earning within Pakistan. Please contact us directly for current local session fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can your psychological evaluation reports be used for Cambridge and IB school accommodations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our formal diagnostic and psychoeducational evaluation reports include clear evidence-based accommodation sections designed to meet Cambridge Assessment International Education (CAIE), International Baccalaureate (IB), and local school board requirements for extra time, reader assistance, or sensory accommodations."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Child Psychology Services in Pakistan | Rabbia Psychologist" description="Local in-person psychological assessment and Pakistan Resident Pricing for residents of Pakistan.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonicalURL}
+  schema={[serviceSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in Pakistan</h1>
-      <p class="text-xl text-gray-700">Local in-person assessment and Pakistan Resident Pricing for online consultation for residents of Pakistan.</p>
-    </div>
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-green-300">
+        In-Person Lahore • Online Across Pakistan
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 tracking-tight">
+        Child Psychological Assessment & Parent Guidance in Pakistan
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+        Gold-standard in-person developmental evaluations (ADOS-2 certified) in Lahore, paired with accessible online parent consultation and Pakistan Resident Pricing nationwide.
+      </p>
+    </header>
 
     <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Local Services in Pakistan</h2>
-      <p>For families residing in Pakistan, we offer in-person clinical services, including:</p>
-      <ul>
-        <li><a href="/services/local-assessment/" class="text-brand-trust font-bold">Local Psychological Assessment</a> (Fees discussed at booking)</li>
-        <li><strong>ADHD / Structured Screening</strong> (Fees discussed at booking)</li>
-      </ul>
-      <p class="text-sm italic">Screening is not the same as a medical diagnosis. If medical evaluation or medication is needed, referral to a developmental pediatrician, psychiatrist, neurologist, or relevant physician may be recommended.</p>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Pakistan Resident Pricing</h2>
-      <p>We understand the economic realities in Pakistan. Residents of Pakistan are eligible for Pakistan Resident Pricing for online parent guidance, ADHD/ASD support, and report review sessions.</p>
+      <!-- Two Service Modalities -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Clinical Child Development Services in Pakistan
+        </h2>
+        <p>
+          Whether you need a formal diagnostic report for school admissions and exam concessions, or immediate evidence-based guidance for attention, hyperactivity, or behavioural challenges at home, we offer two clear pathways:
+        </p>
 
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Contact Us for Local Booking</h3>
-        <p class="mb-4">Please contact us to discuss your child's needs and inquire about local assessment or Pakistan Resident Pricing.</p>
-        <a href="/book/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Ask About Local Pricing</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+          <div class="bg-white p-6 rounded-xl border-2 border-brand-navy shadow-sm relative">
+            <span class="absolute top-4 right-4 bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded">In-Person</span>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Formal Clinical Assessment (Lahore)</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+              Comprehensive face-to-face evaluations for Autism, ADHD, Specific Learning Disorders, and global developmental delays using standardized international psychometrics.
+            </p>
+            <ul class="text-xs text-gray-700 space-y-1.5 mb-6">
+              <li>✓ <strong>Certified ADOS-2</strong> Autism Assessments</li>
+              <li>✓ Cognitive & Intellectual Profiling (BAS-3 / WISC-V)</li>
+              <li>✓ Conners-4 & ADHD Behavioral Rating Scales</li>
+              <li>✓ Formal written diagnostic report for schools & specialists</li>
+            </ul>
+            <a href="/services/local-assessment/" class="text-sm font-bold text-brand-navy hover:text-brand-trust underline">
+              Learn more about In-Person Assessment →
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm relative">
+            <span class="absolute top-4 right-4 bg-emerald-700 text-white text-xs font-bold px-2.5 py-1 rounded">Online</span>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Online Parent Consultation (Nationwide)</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+              Confidential, structured video sessions for parents across Karachi, Islamabad, Rawalpindi, Faisalabad, Peshawar, and all other cities in Pakistan.
+            </p>
+            <ul class="text-xs text-gray-700 space-y-1.5 mb-6">
+              <li>✓ Practical home behavioral intervention plans</li>
+              <li>✓ Managing ADHD morning and homework routines</li>
+              <li>✓ Speech delay guidance & toddler developmental scaffolding</li>
+              <li>✓ Subsidized <strong>Pakistan Resident Pricing</strong> (PKR)</li>
+            </ul>
+            <a href="/book/" class="text-sm font-bold text-brand-navy hover:text-brand-trust underline">
+              Inquire about Online Consultation →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Navigating Pakistani Schools -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Supporting Children in Pakistan's School Systems
+        </h2>
+        <p>
+          Neurodivergent children in Pakistan often face high academic pressure, rigid classroom standards, and limited school counseling resources. We regularly collaborate with parents whose children attend private international and national schools (such as Beaconhouse, Lahore Grammar School, Roots Millennium, The City School, and Froebel's) to secure meaningful accommodations:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose my-6 text-sm">
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-brand-navy mb-1">Exam Concessions</h4>
+            <p class="text-xs text-gray-600">Documentation and formal reports for CAIE Cambridge O/A Levels, IB, and local board accommodations (extra time, separate room, reader/scribe).</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg border-2 border-brand-gold/50 bg-brand-cream/30">
+            <h4 class="font-bold text-brand-navy mb-1">Teacher Collaboration</h4>
+            <p class="text-xs text-gray-600">Actionable classroom scripts and tiered interventions teachers can realistically manage in large classroom sizes.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <h4 class="font-bold text-brand-navy mb-1">Homework & Joint Family</h4>
+            <p class="text-xs text-gray-600">Resolving evening homework struggles and navigating joint-family dynamics where discipline expectations may clash.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pakistan Resident Pricing -->
+      <section class="my-12 not-prose bg-emerald-50 p-6 md:p-8 rounded-2xl border border-emerald-200">
+        <h2 class="text-2xl font-bold text-emerald-950 mb-3">Pakistan Resident Pricing (Local Rates)</h2>
+        <p class="text-sm text-emerald-900 leading-relaxed mb-4">
+          We are committed to making evidence-based child developmental guidance accessible to families residing in Pakistan. Online consultations, report reviews, and parent coaching sessions for Pakistani residents are billed at subsidized local rates in Pakistani Rupees (PKR) with payment accepted via direct local bank transfer or digital wallets.
+        </p>
+        <p class="text-xs text-emerald-800 italic">
+          *Note: To qualify for Pakistan Resident Pricing, families must reside in Pakistan and earn in local currency. Overseas Pakistani families earning in foreign currencies are billed under standard international USD rates.
+        </p>
+      </section>
+
+      <!-- Free Parent Resources -->
+      <section class="my-12 not-prose bg-brand-cream/60 p-8 rounded-2xl border border-brand-gold/40">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Free Clinical Guides</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mt-1">Free Downloadable Printables</h2>
+          <p class="text-sm text-gray-700 mt-2">
+            Clinical tools designed by Rabbia Ashraf to help you track behaviours and prepare for appointments.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-brand-navy rounded text-xs font-bold mb-2">Behaviour Log</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Meltdown & ABC Tracker</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Log behavioral triggers and tantrums at home to identify clear communication functions.
+              </p>
+            </div>
+            <a href="/free-downloads/behaviour-abc-tracker/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-purple-100 text-purple-900 rounded text-xs font-bold mb-2">Toddler Milestones</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Autism & Speech Tracker</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Check developmental speech and social interaction markers before scheduling testing.
+              </p>
+            </div>
+            <a href="/free-downloads/autism-observation-guide/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded text-xs font-bold mb-2">School Meetings</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">School Meeting Checklist</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Prepare for teacher conferences and parent-school meetings with structured questions.
+              </p>
+            </div>
+            <a href="/free-downloads/school-iep-checklist/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download PDF →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="my-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4 not-prose">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Where are in-person child psychological assessments conducted in Pakistan?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Formal in-person evaluations (including certified ADOS-2 autism testing, cognitive testing, and psychoeducational batteries) are conducted at our clinical practice in Lahore, Pakistan. Sessions are scheduled by advance appointment.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Is online consultation available for families outside Lahore?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. We provide secure online video consultations for parent coaching, ADHD behavioural strategies, and report reviews to families residing in Karachi, Islamabad, Rawalpindi, Peshawar, Faisalabad, and throughout Pakistan.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Can your evaluation reports be used for Cambridge and IB school accommodations?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. Our formal diagnostic and psychoeducational evaluation reports include clear evidence-based accommodation sections designed to meet Cambridge Assessment International Education (CAIE), International Baccalaureate (IB), and local school board requirements for extra time, reader assistance, or sensory accommodations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-cream p-8 md:p-10 rounded-2xl border border-brand-gold text-center my-12 not-prose">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Book a Session in Pakistan</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base">
+          Contact us today to inquire about in-person assessment appointments in Lahore or to schedule an online parent consultation with Pakistan Resident Pricing.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/contact/" class="w-full sm:w-auto bg-brand-navy text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-900 transition-colors shadow-sm">
+            Contact Us & Book
+          </a>
+          <a href="/services/local-assessment/" class="w-full sm:w-auto bg-white text-brand-navy border-2 border-brand-navy px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+            View Assessment Details
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </BaseLayout>

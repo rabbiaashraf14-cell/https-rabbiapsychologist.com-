@@ -2,49 +2,235 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Parent Guidance & Child Psychology Support for Australian Families | Rabbia Psychologist";
+const description = "Online parent guidance, ADHD & autism support, report translation, and school advocacy consultation for families in Australia.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-families/australia/";
+
 const breadcrumbs = [
-  { name: 'International Families', href: '/international-families' },
-  { name: 'Australia', href: '/international-families/australia' }
+  { name: 'Home', href: '/' },
+  { name: 'International Families', href: '/international-families/' },
+  { name: 'Australia', href: '/international-families/australia/' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Parent Guidance & Child Development Support for Australian Families",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "description": description,
+  "areaServed": {
+    "@type": "Country",
+    "name": "Australia"
+  },
+  "serviceType": "Online Parent Coaching & Child Development Consultation"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are your services eligible for Medicare rebates or NDIS funding in Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We are an international private consultation practice and not an NDIS-registered provider. Services cannot be claimed through Medicare or Australian private health insurance. Families pay out-of-pocket in USD for direct parent guidance and report review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can Rabbia Psychologist help Australian families while on long waitlists?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waitlists for developmental paediatricians and clinical psychologists in Australia often exceed 12 months. We help parents immediately implement home-based behavioural strategies, sensory regulation routines, and antecedent modifications so your child is supported right away."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you help with Individual Learning Plans (ILPs) in Australian schools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We help parents prepare for school conferences and propose concrete classroom accommodations for Individual Learning Plans (ILPs) and NCCD (Nationally Consistent Collection of Data on School Students with Disability) documentation."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Parent Guidance & Child Psychology Support for Australian Families | Rabbia Psychologist" description="Online parent guidance, ADHD support, and school consultation for families in Australia.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonicalURL}
+  schema={[serviceSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in Australia</h1>
-      <p class="text-xl text-gray-700">Expert, accessible online parent guidance and school support for families navigating ADHD, Autism, and learning differences in Australia.</p>
-    </div>
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-amber-300">
+        Australia • Sydney • Melbourne • Brisbane • Perth
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 tracking-tight">
+        Parent Guidance & Child Psychology Support for Australian Families
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+        Expert, accessible online parent guidance, report translation, and school advocacy for families navigating ADHD, Autism, and learning differences in Australia.
+      </p>
+    </header>
 
     <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">How We Support Australian Families</h2>
-      <p>Waitlists for pediatricians and child psychologists in Australia can be extensively long. We offer specialized online consultation to support you while you wait or after you receive a diagnosis.</p>
 
-      <ul>
-        <li><strong>School Advocacy:</strong> We help you understand your child's reports and prepare you to advocate for appropriate ILPs (Individual Learning Plans) or classroom adjustments.</li>
-        <li><strong>Report Translation:</strong> Have a lengthy assessment report? We review it with you and translate the clinical findings into a practical home routine.</li>
-        <li><strong>Parent Coaching:</strong> We work on behavioral strategies, executive function support, and emotional regulation at home.</li>
-      </ul>
+      <!-- How We Support Australian Families -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Bridging Long Diagnostic Waitlists in Australia
+        </h2>
+        <p>
+          Waitlists for developmental paediatricians and child psychologists across New South Wales, Victoria, Queensland, and Western Australia regularly exceed 12 to 18 months. When your child is struggling today with sensory overload, school transitions, or emotional outbursts, waiting a year for an intake appointment is stressful.
+        </p>
+        <p>
+          We offer specialized online consultation to bridge this gap:
+        </p>
 
-      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8">
-        <h3 class="font-bold text-brand-navy text-lg mb-2 mt-0">Pricing</h3>
-        <p class="mb-4">Standard international pricing applies (billed in USD).</p>
-        <a href="/pricing/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">View Pricing</a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose my-8">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">School & ILP Advocacy</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              We help you understand your child’s learning profile and prepare you to advocate for appropriate accommodations under Individual Learning Plans (ILPs) or NCCD frameworks.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Report Translation</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Have an occupational therapy, speech, or psychoeducational assessment? We review it with you and translate clinical scores into actionable home routines.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Evidence-Based Coaching</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Practical strategies for ADHD, Autism, executive dysfunction, and emotional regulation designed to restore calm and consistency to your home.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Free Clinical Toolkits for Australian Parents -->
+      <section class="my-12 not-prose bg-brand-cream/60 p-8 rounded-2xl border border-brand-gold/40">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Practical Parent Tools</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mt-1">Free Evidence-Based Downloads</h2>
+          <p class="text-sm text-gray-700 mt-2">
+            Clinical tools to help you track developmental observations and organize school meetings.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-brand-navy rounded text-xs font-bold mb-2">School & ILP</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">School Meeting Checklist</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Checklist and question templates to prepare for parent-teacher conferences and learning support reviews.
+              </p>
+            </div>
+            <a href="/free-downloads/school-iep-checklist/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-purple-100 text-purple-900 rounded text-xs font-bold mb-2">Observation</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Autism Milestones Guide</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Log social communication markers and sensory patterns to prepare clinical history for paediatrician visits.
+              </p>
+            </div>
+            <a href="/free-downloads/autism-observation-guide/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded text-xs font-bold mb-2">Behaviour Support</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Meltdown Tracker & ABC Diary</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Record behavioural antecedents, sensory overload, and emotional triggers to find predictable patterns.
+              </p>
+            </div>
+            <a href="/free-downloads/behaviour-abc-tracker/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Boundaries (Australia) -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-12">
+        <h2 class="text-xl font-bold text-brand-navy mt-0 mb-3">Service Scope & Boundaries (Australia)</h2>
+        <p class="text-sm leading-relaxed text-gray-700 mb-3">
+          Our online international services are classified as <strong>parent coaching, psychoeducation, and educational consultation</strong>:
+        </p>
+        <ul class="text-sm text-gray-700 space-y-2 mb-0">
+          <li>We are <strong>not</strong> an NDIS-registered provider, and services are not eligible for Medicare rebates or Mental Health Care Plan subsidies.</li>
+          <li>We do <strong>not</strong> provide formal cross-border medical diagnosis or clinical psychometric testing for statutory NDIS funding. Formal diagnoses in Australia must be provided by local AHPRA-registered clinical psychologists or paediatricians.</li>
+          <li>We do <strong>not</strong> provide crisis intervention. In Australia, for emergency mental health or medical assistance, please call 000 or Lifeline on 13 11 14.</li>
+          <li>All international sessions are billed in USD.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="my-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4 not-prose">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Are your services eligible for Medicare rebates or NDIS funding?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              No. We are an international private consultation practice and not an NDIS-registered provider. Services cannot be claimed through Medicare or Australian private health insurance. Families pay out-of-pocket in USD for direct parent guidance and report review.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">How can you help Australian families while on long waitlists?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Waitlists for developmental paediatricians and clinical psychologists in Australia often exceed 12 months. We help parents immediately implement home-based behavioural strategies, sensory regulation routines, and antecedent modifications so your child is supported right away.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Do you help with Individual Learning Plans (ILPs) in Australian schools?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. We help parents prepare for school conferences and propose concrete classroom accommodations for Individual Learning Plans (ILPs) and NCCD (Nationally Consistent Collection of Data on School Students with Disability) documentation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-cream p-8 md:p-10 rounded-2xl border border-brand-gold text-center my-12 not-prose">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Book an Australian Consultation</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base">
+          Get practical clinical guidance, report reviews, and empowered school advocacy. Sessions are scheduled to suit Australian Eastern Standard Time (AEST) and Australian Western Standard Time (AWST).
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/book/" class="w-full sm:w-auto bg-brand-navy text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-900 transition-colors shadow-sm">
+            Schedule a Consultation
+          </a>
+          <a href="/pricing/" class="w-full sm:w-auto bg-white text-brand-navy border-2 border-brand-navy px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+            View International Pricing
+          </a>
+        </div>
       </div>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Important Service Boundaries (Australia)</h2>
-      <p>Please note that our online services are categorized as parent coaching, psychoeducation, and consultation. We are <strong>not</strong> an NDIS registered provider, and our services are not eligible for Medicare rebates.</p>
-      <ul>
-        <li>We do not provide formal cross-border medical or psychological diagnosis.</li>
-        <li>If you require a formal diagnosis for NDIS funding or school support in Australia, you must consult a regulated professional locally (e.g., a Developmental Paediatrician or Clinical Psychologist registered with AHPRA).</li>
-        <li>We do not provide emergency care (Please call 000 or visit your nearest hospital in an emergency).</li>
-      </ul>
-
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h3>
-        <a href="/book/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Consultation</a>
-      </div>
     </div>
   </div>
 </BaseLayout>

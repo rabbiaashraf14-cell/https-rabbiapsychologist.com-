@@ -8,6 +8,9 @@ import CityOverview from '../../../components/locations/city/CityOverview.astro'
 import LocalParentConcerns from '../../../components/locations/city/LocalParentConcerns.astro';
 import SchoolSupportOverview from '../../../components/locations/city/SchoolSupportOverview.astro';
 import WaitingForAssessmentSupport from '../../../components/locations/city/WaitingForAssessmentSupport.astro';
+import LocalCommunityInsights from '../../../components/locations/city/LocalCommunityInsights.astro';
+import LocalHealthcareAndReferrals from '../../../components/locations/city/LocalHealthcareAndReferrals.astro';
+import CorporateFamilyGifting from '../../../components/locations/city/CorporateFamilyGifting.astro';
 import ResearchEvidence from '../../../components/locations/city/ResearchEvidence.astro';
 import CityFAQ from '../../../components/locations/city/CityFAQ.astro';
 import ReviewInformation from '../../../components/locations/city/ReviewInformation.astro';
@@ -72,6 +75,9 @@ if (breadcrumbSchema) schemas.push(breadcrumbSchema);
     <LocalParentConcerns city={city} />
     <SchoolSupportOverview city={city} />
     <WaitingForAssessmentSupport city={city} />
+    <LocalCommunityInsights city={city} />
+    <LocalHealthcareAndReferrals city={city} />
+    <CorporateFamilyGifting city={city} />
     <ResearchEvidence city={city} />
     <CityFAQ city={city} />
     <InternationalServiceDisclaimer city={city} />

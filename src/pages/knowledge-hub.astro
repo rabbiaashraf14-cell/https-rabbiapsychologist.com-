@@ -21,9 +21,16 @@ const knowledgeHubSchema = {
   "name": "Knowledge Hub: Scientific Research & Evidence in Pediatric Psychology",
   "description": description,
   "url": canonicalURL,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist & Certified ADOS-2 Practitioner",
+    "url": "https://www.rabbiapsychologist.com/credentials/"
+  },
   "publisher": {
     "@type": "Organization",
-    "name": "Rabbia Psychologist Child Development Services"
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com/"
   }
 };
 ---
@@ -51,16 +58,16 @@ const knowledgeHubSchema = {
         <!-- Stats Bar -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-gray-200/60 text-left">
           <div class="bg-white p-3.5 rounded-lg border border-gray-100 shadow-sm">
-            <div class="text-2xl font-extrabold text-brand-navy">10+</div>
+            <div class="text-2xl font-extrabold text-brand-navy">12+</div>
             <div class="text-xs text-gray-600">Core Clinical Fields</div>
           </div>
           <div class="bg-white p-3.5 rounded-lg border border-gray-100 shadow-sm">
-            <div class="text-2xl font-extrabold text-emerald-700">RCT & Reviews</div>
-            <div class="text-xs text-gray-600">Gold-Standard Trials</div>
+            <div class="text-2xl font-extrabold text-emerald-700">RCT & Standards</div>
+            <div class="text-xs text-gray-600">Gold-Standard Evidence</div>
           </div>
           <div class="bg-white p-3.5 rounded-lg border border-gray-100 shadow-sm">
-            <div class="text-2xl font-extrabold text-purple-700">Open Science</div>
-            <div class="text-xs text-gray-600">GitHub & Hugging Face</div>
+            <div class="text-2xl font-extrabold text-purple-700">Open Source</div>
+            <div class="text-xs text-gray-600">GitHub Tools & AI Models</div>
           </div>
           <div class="bg-white p-3.5 rounded-lg border border-gray-100 shadow-sm">
             <div class="text-2xl font-extrabold text-amber-700">Parent Guides</div>
@@ -81,9 +88,9 @@ const knowledgeHubSchema = {
           <input
             type="text"
             id="search-input"
-            placeholder="Search papers, authors, medications..."
+            placeholder="Search papers, GitHub tools, authors..."
             class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-brand-navy shadow-inner"
-            aria-label="Search research papers"
+            aria-label="Search research papers and open source tools"
           />
           <svg class="w-4 h-4 text-gray-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -110,7 +117,7 @@ const knowledgeHubSchema = {
 
       <!-- Active Counter -->
       <div class="mt-3 flex items-center justify-between text-xs text-gray-500 font-medium">
-        <span>Showing <strong id="item-count" class="text-brand-navy">{researchPapers.length}</strong> scientific resources</span>
+        <span>Showing <strong id="item-count" class="text-brand-navy">{researchPapers.length}</strong> scientific resources & open-source tools</span>
         <button id="reset-filters" class="hidden text-brand-navy hover:underline font-semibold cursor-pointer">Reset Filters</button>
       </div>
     </div>
@@ -121,7 +128,7 @@ const knowledgeHubSchema = {
     <div class="container mx-auto px-4 max-w-6xl">
       <div id="papers-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {researchPapers.map(paper => (
-          <div class="paper-card-wrapper" data-category={paper.category} data-tags={paper.tags.join(' ').toLowerCase()} data-text={`${paper.title} ${paper.authors} ${paper.journalOrPlatform} ${paper.parentTakeaway} ${paper.clinicalTakeaway}`.toLowerCase()}>
+          <div class="paper-card-wrapper" data-category={paper.category} data-tags={paper.tags.join(' ').toLowerCase()} data-text={`${paper.title} ${paper.authors} ${paper.journalOrPlatform} ${paper.parentTakeaway} ${paper.clinicalTakeaway} ${paper.strengths || ''} ${paper.stars || ''} ${paper.type}`.toLowerCase()}>
             <ResearchCard item={paper} />
           </div>
         ))}

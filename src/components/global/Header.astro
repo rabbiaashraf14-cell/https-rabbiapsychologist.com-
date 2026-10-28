@@ -6,19 +6,19 @@ const servicesNav = [
   { label: 'ASD Support', href: '/services/asd-support/' },
   { label: 'Behaviour Planning', href: '/services/behaviour-planning/' },
   { label: 'School Consultation', href: '/services/school-consultation/' },
-  { label: 'Local Assessment', href: '/services/local-assessment/' },
+  { label: 'Learning Support', href: '/services/learning-difficulties/' },
+  { label: 'Local Assessment (PK)', href: '/services/local-assessment/' },
   { label: 'Report Review', href: '/report-review/' },
-  { label: 'Parent Support', href: '/parent-support/' },
-  { label: 'School Partnerships', href: '/school-partnerships/' }
+  { label: 'Parent Support', href: '/parent-support/' }
 ];
 
 const resourcesNav = [
   { label: 'Consultation Screener (60s)', href: '/screener/' },
+  { label: 'Clinical Credentials & Governance', href: '/credentials/' },
+  { label: 'Free Downloads & Checklists', href: '/free-downloads/' },
   { label: 'Knowledge Hub (Research)', href: '/knowledge-hub/' },
-  { label: 'Blog', href: '/blog/' },
   { label: 'Resource Vault', href: '/resource-vault/' },
-  { label: 'Free Downloads', href: '/free-downloads/' },
-  { label: 'FAQs', href: '/faqs/' }
+  { label: 'Parent FAQs', href: '/faqs/' }
 ];
 
 const orgsNav = [
@@ -26,9 +26,9 @@ const orgsNav = [
   { label: 'School Partnerships & Training', href: '/school-partnerships/' }
 ];
 ---
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-xl border-b border-[#E6DFD3] transition-all duration-300">
   <div class="container mx-auto px-4 h-[80px] flex items-center justify-between">
-    <a href="/" class="z-50 shrink-0">
+    <a href="/" class="z-50 shrink-0" aria-label="Rabbia Psychologist Home">
       <img src="/logo.png" alt="Rabbia Psychologist Child Development Services logo" width="300" height="300" class="h-[48px] md:h-[64px] w-auto object-contain" />
     </a>
 
@@ -39,12 +39,12 @@ const orgsNav = [
             <div class="relative group">
               <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
                 {item.label}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </a>
-              <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2">
+              <div class="absolute left-0 mt-2 w-60 bg-[#FAF7F2]/95 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
+                <ul class="py-2.5">
                   {servicesNav.map(subItem => (
-                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">{subItem.label}</a></li>
+                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-brand-navy transition-colors">{subItem.label}</a></li>
                   ))}
                 </ul>
               </div>
@@ -56,30 +56,13 @@ const orgsNav = [
             <div class="relative group">
               <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
                 {item.label}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </a>
-              <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2">
+              <div class="absolute left-0 mt-2 w-64 bg-[#FAF7F2]/95 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
+                <ul class="py-2.5">
                   {resourcesNav.map(subItem => (
-                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">{subItem.label}</a></li>
+                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-brand-navy transition-colors">{subItem.label}</a></li>
                   ))}
-                </ul>
-              </div>
-            </div>
-          );
-        }
-        if (item.label === 'Blog') {
-          return (
-            <div class="relative group">
-              <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
-                {item.label}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </a>
-              <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2">
-                  <li><a href="/blog/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">All Articles</a></li>
-                  <li><a href="/blog/#start-here" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">Start Here</a></li>
-                  <li><a href="/blog/#latest" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">Latest Articles</a></li>
                 </ul>
               </div>
             </div>
@@ -90,28 +73,37 @@ const orgsNav = [
             <div class="relative group">
               <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
                 {item.label}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </a>
-              <div class="absolute left-0 mt-2 w-64 bg-white border border-gray-100 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2">
+              <div class="absolute left-0 mt-2 w-64 bg-[#FAF7F2]/95 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
+                <ul class="py-2.5">
                   {orgsNav.map(subItem => (
-                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-navy">{subItem.label}</a></li>
+                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-brand-navy transition-colors">{subItem.label}</a></li>
                   ))}
                 </ul>
               </div>
             </div>
           );
         }
-        return <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors">{item.label}</a>;
+        return <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors px-1">{item.label}</a>;
       })}
-      <a href="/book/" class="bg-brand-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm inline-block">Book Consultation</a>
+      <div class="flex items-center gap-2.5">
+        <div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50/80 border border-emerald-200/60 text-[11px] font-bold text-emerald-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>48-Hr Telehealth</span>
+        </div>
+        <a href="/book/" class="apple-btn apple-btn-primary !py-2.5 !px-5 !text-sm font-semibold shadow-sm inline-flex items-center gap-1.5">
+          <span>Free 15-Min Call</span>
+          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
     </nav>
 
     <div class="flex items-center gap-3 lg:hidden z-50">
-      <a href="/book/" class="bg-brand-navy text-white px-4 py-2 text-sm rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-sm whitespace-nowrap">
-        Book Consultation
+      <a href="/book/" class="apple-btn apple-btn-primary !py-2 !px-4 text-xs font-semibold shadow-sm whitespace-nowrap">
+        Free 15-Min Call
       </a>
-      <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle mobile menu" class="text-brand-navy p-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded">
+      <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle mobile menu" class="text-brand-navy min-w-[44px] min-h-[44px] p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-navy rounded-lg hover:bg-gray-50 transition-colors">
         <svg id="icon-menu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
@@ -122,7 +114,7 @@ const orgsNav = [
   <div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-brand-navy/50 z-40 lg:hidden" aria-hidden="true"></div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden absolute top-[80px] left-0 w-full bg-white shadow-xl z-50 border-t border-gray-100 max-h-[calc(100vh-80px)] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div id="mobile-menu" class="hidden absolute top-[80px] left-0 w-full bg-[#FAF7F2] shadow-xl z-50 border-t border-[#E6DFD3] max-h-[calc(100vh-80px)] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <nav class="px-4 py-6 flex flex-col">
       <ul class="space-y-1">
         <li><a href="/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Home</a></li>
@@ -137,6 +129,8 @@ const orgsNav = [
           </ul>
         </li>
 
+        <li><a href="/blog/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Clinical Blog</a></li>
+
         <li class="py-3 border-b border-gray-50">
           <a href="/resources/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Resources</a>
           <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
@@ -145,6 +139,8 @@ const orgsNav = [
             ))}
           </ul>
         </li>
+
+        <li><a href="/locations/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Locations & Timezones</a></li>
 
         <li class="py-3 border-b border-gray-50">
           <a href="/corporate/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">For Organizations</a>
@@ -157,6 +153,7 @@ const orgsNav = [
 
         <li><a href="/pricing/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Pricing</a></li>
         <li><a href="/about/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">About Rabbia</a></li>
+        <li><a href="/credentials/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Clinical Credentials &amp; Governance</a></li>
       </ul>
 
       <div class="mt-8 pt-4 pb-12">

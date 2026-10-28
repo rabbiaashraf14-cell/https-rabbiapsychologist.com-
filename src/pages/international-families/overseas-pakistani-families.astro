@@ -2,39 +2,304 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Online Psychologist & Parent Guidance for Overseas Pakistani Families | Rabbia Psychologist";
+const description = "Culturally attuned online child development guidance, ADHD & autism support, and bilingual (Urdu/English) parent consultation for the Pakistani diaspora worldwide.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-families/overseas-pakistani-families/";
+
 const breadcrumbs = [
-  { name: 'International Families', href: '/international-families' },
-  { name: 'Overseas Pakistani Families', href: '/international-families/overseas-pakistani-families' }
+  { name: 'Home', href: '/' },
+  { name: 'International Families', href: '/international-families/' },
+  { name: 'Overseas Pakistani Families', href: '/international-families/overseas-pakistani-families/' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Online Child Psychology & Parent Guidance for Overseas Pakistani Families",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "description": description,
+  "serviceType": "Online Bilingual Parent Consultation & Child Guidance",
+  "availableLanguage": ["English", "Urdu"],
+  "areaServed": [
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Canada" },
+    { "@type": "Country", "name": "United Arab Emirates" },
+    { "@type": "Country", "name": "Saudi Arabia" },
+    { "@type": "Country", "name": "Australia" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are consultations available in Urdu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sessions can be conducted completely in Urdu, English, or a comfortable mix of both. This allows parents to express complex emotions, cultural nuances, and family situations without language barriers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you help with extended family stigma around ADHD and Autism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide specific communication frameworks and scripts for talking to grandparents and extended relatives about developmental differences. We help reframe neurodivergence without blame, distinguishing clinical support from disciplinary issues in joint or close-knit family structures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I tell if my child has a speech delay or is just bilingual (Urdu and English)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bilingualism does not cause clinical speech or language disorders. While bilingual children may take slightly longer to reach vocabulary benchmarks in one specific language, their total conceptual vocabulary across both languages should track age expectations. If a child shows non-verbal communication delays (limited eye contact, lack of pointing, difficulty following gestures), a developmental evaluation is warranted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help overseas parents understand reports from NHS, US school districts, or Australian clinics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our Independent Report Review service breaks down lengthy psychoeducational or diagnostic evaluations (e.g. EHCP assessments, IEP evaluations, ADOS-2) into clear, culturally relevant action steps you can implement at home."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Support for Overseas Pakistani Families | Rabbia Psychologist" description="Culturally attuned parent guidance and child development support for the Pakistani diaspora worldwide.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonicalURL}
+  schema={[serviceSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Overseas Pakistani Families</h1>
-      <p class="text-xl text-gray-700">Culturally attuned parent guidance for the Pakistani diaspora.</p>
-    </div>
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-emerald-300">
+        UK • USA • Canada • UAE • Saudi Arabia • Australia • Europe
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 tracking-tight">
+        Online Psychologist & Parent Guidance for Overseas Pakistani Families
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+        Evidence-based child development support and bilingual consultations (Urdu & English) tailored to the unique cultural and family dynamics of the Pakistani diaspora worldwide.
+      </p>
+    </header>
 
     <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Culturally Relevant Support</h2>
-      <p>Navigating a child's developmental, behavioral, or learning differences in a foreign country can be isolating. We provide parent guidance that understands both Western clinical models and Pakistani cultural contexts, family dynamics, and expectations.</p>
 
-      <ul>
-        <li><strong>Language:</strong> Consultations are available in English and Urdu.</li>
-        <li><strong>Stigma & Family Dynamics:</strong> Guidance on how to talk to extended family members about a child's diagnosis (like Autism or ADHD).</li>
-        <li><strong>System Navigation:</strong> Helping you bridge the cultural gap when advocating for your child in your host country's school system.</li>
-      </ul>
+      <!-- Cultural Context Section -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Bridging Clinical Excellence with Cultural Understanding
+        </h2>
+        <p>
+          Raising a child abroad with attention difficulties, emotional outbursts, speech delays, or a suspected autism diagnosis can feel deeply isolating for Pakistani diaspora parents. 
+        </p>
+        <p>
+          Often, parents find themselves stuck between two worlds: navigating rigid, bureaucratic healthcare and school systems abroad (NHS SEN in the UK, IEP/504 in the US, NDIS in Australia, or international school inclusion in the Gulf), while fielding skepticism, well-meaning advice, or denial from extended family back home:
+        </p>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Service Boundaries</h2>
-      <p>Our online services are strictly parent consultation and psychoeducation. We do not provide cross-border medical diagnosis. You must utilize local professionals for formal diagnosis and emergency care.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">No Cultural Translation Barrier</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Consultations can take place in fluent <strong>Urdu or English</strong>. You don't have to explain cultural family norms, respect hierarchies, joint family expectations, or community dynamics. We understand them inherently.
+            </p>
+          </div>
 
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Book a Consultation</h3>
-        <p class="mb-4">Standard international pricing applies (billed in USD).</p>
-        <a href="/pricing/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">View Pricing & Book</a>
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Handling Extended Family & Grandparent Stigma</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              When grandparents or in-laws say <em>"He’s just stubborn"</em> or <em>"Boys speak late in our family"</em>, we provide practical, respectful scripts and psychoeducation to help you protect your child’s intervention timeline without burning bridges.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Multilingual Child Development</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Many overseas parents are told by well-meaning neighbors to stop speaking Urdu at home so the child learns English faster. We provide evidence-based guidance explaining how bilingual brain development really works and when speech delays are clinical red flags.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Navigating Host Country Schools & Waitlists</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Whether you are facing 18-month NHS waiting lists in the UK, school district pushback in the US, or expensive private clinic assessments in the Gulf, we help you implement evidence-informed strategies immediately.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Focus Areas -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          How We Support Overseas Pakistani Parents
+        </h2>
+
+        <ul class="space-y-4 my-6">
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-emerald-700">
+            <strong>ADHD, Executive Function & Morning Routines:</strong>
+            Concrete, visual tools for morning chaos, homework avoidance, emotional dysregulation, and task initiation without yelling or punitive cycles.
+          </li>
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-emerald-700">
+            <strong>Autism & Speech Delay Early Identification:</strong>
+            Systematic behavioral observation for toddlers and young children showing delayed communication, sensory sensitivities, or repetitive play routines.
+          </li>
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-emerald-700">
+            <strong>Psychological Report Interpretation:</strong>
+            Have you received an assessment report from a psychologist abroad that left you confused? We provide a comprehensive <a href="/report-review/" class="text-brand-trust font-semibold underline">Independent Report Review</a> to translate standard scores into daily home routines.
+          </li>
+          <li class="bg-gray-50 p-4 rounded-lg border-l-4 border-emerald-700">
+            <strong>School Meetings & Advocacy Coaching:</strong>
+            Preparation, scripts, and accommodation requests for school IEP meetings, SEN reviews, and parent-teacher conferences.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Relevant In-Depth Reading -->
+      <section class="mb-12 not-prose bg-gray-50 p-6 rounded-xl border border-gray-200">
+        <h3 class="text-xl font-bold text-brand-navy mb-4">Recommended Clinical Articles for Diaspora Families</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="/blog/explaining-adhd-to-grandparents-joint-family/" class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-brand-navy hover:shadow-sm transition-all">
+            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Family & Culture</span>
+            <h4 class="font-bold text-brand-navy text-base mt-1 mb-1">Explaining ADHD to Grandparents in Joint & Extended Families</h4>
+            <p class="text-xs text-gray-600">How to navigate generational denial, respectful communication boundaries, and collaborative support.</p>
+          </a>
+          <a href="/blog/multilingual-children-speech-delay-myths-vs-red-flags/" class="block p-4 bg-white rounded-lg border border-gray-200 hover:border-brand-navy hover:shadow-sm transition-all">
+            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Bilingualism</span>
+            <h4 class="font-bold text-brand-navy text-base mt-1 mb-1">Multilingual Children & Speech Delay: Myths vs. Red Flags</h4>
+            <p class="text-xs text-gray-600">Does speaking Urdu at home delay English at school? What the clinical speech research proves.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Free Clinical Toolkits -->
+      <section class="my-12 not-prose bg-brand-cream/60 p-8 rounded-2xl border border-brand-gold/40">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Practical Parent Tools</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mt-1">Free Evidence-Based Downloads</h2>
+          <p class="text-sm text-gray-700 mt-2">
+            Structured tools you can print and start using at home immediately.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-brand-navy rounded text-xs font-bold mb-2">ADHD Planner</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">ADHD Morning & Daily Planner</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Visual structure checklist designed to overcome task paralysis and morning friction without shouting.
+              </p>
+            </div>
+            <a href="/free-downloads/adhd-routine-planner/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-purple-100 text-purple-900 rounded text-xs font-bold mb-2">Autism Observation</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Autism Milestones Guide</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Track communication milestones and sensory preferences before school or clinical appointments.
+              </p>
+            </div>
+            <a href="/free-downloads/autism-observation-guide/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded text-xs font-bold mb-2">School Meetings</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">IEP & Teacher Meeting Prep</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Step-by-step checklist to organize concerns and secure proper classroom accommodations.
+              </p>
+            </div>
+            <a href="/free-downloads/school-iep-checklist/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Boundaries -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-12">
+        <h2 class="text-xl font-bold text-brand-navy mt-0 mb-3">Service Scope & Clinical Boundaries</h2>
+        <p class="text-sm leading-relaxed text-gray-700 mb-3">
+          Our online international consultations are classified as <strong>parent psychoeducation, developmental coaching, and school advocacy consultation</strong>:
+        </p>
+        <ul class="text-sm text-gray-700 space-y-2 mb-0">
+          <li>These online sessions do not constitute emergency psychiatric crisis intervention or formal cross-border medical diagnosis. If your child requires medication or a legally certified diagnosis for insurance or state disability benefits, local licensed medical specialists must be consulted.</li>
+          <li>We provide evidence-based home interventions, report translations, and parental empowerment tools.</li>
+          <li>Fees are billed internationally in USD. Families residing permanently within Pakistan should view our <a href="/international-families/pakistan/" class="text-brand-trust font-medium underline">Pakistan Resident Services</a>.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="my-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4 not-prose">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Can our consultation be conducted in Urdu?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes, absolutely. Sessions can be conducted entirely in Urdu, in English, or in a natural bilingual flow. Many overseas parents find it far easier to describe emotional behaviors and family conversations in Urdu.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">How do we handle advice from relatives back in Pakistan?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              We help you establish supportive boundaries. We guide you through explaining that your child’s brain processes attention or sensory information differently, moving conversations away from moral blame or parenting criticism toward constructive support.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Does speaking Urdu at home cause speech delays?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              No. Clinical research consistently shows that bilingualism does not cause language delay. Children can acquire multiple languages simultaneously. If a child is not speaking, pointing, or responding to their name by 18–24 months in any language, that is a developmental indicator requiring evaluation, not a consequence of speaking Urdu.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Can you review assessments from NHS, US school districts, or Australian clinics?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. Many parents receive diagnostic or school reports that feel sterile or overly academic. We review your document in detail and explain exactly what each percentile and recommendation means for your child’s daily life.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-cream p-8 md:p-10 rounded-2xl border border-brand-gold text-center my-12 not-prose">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Book a Bilingual Consultation</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base">
+          Get culturally attuned clinical guidance in Urdu or English from a qualified child psychologist. Appointments are flexible across European, North American, Australian, and Middle Eastern timezones.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/book/" class="w-full sm:w-auto bg-brand-navy text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-900 transition-colors shadow-sm">
+            Book an Online Session
+          </a>
+          <a href="/pricing/" class="w-full sm:w-auto bg-white text-brand-navy border-2 border-brand-navy px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+            View International Pricing
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </BaseLayout>

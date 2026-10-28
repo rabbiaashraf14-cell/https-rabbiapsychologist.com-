@@ -19,6 +19,7 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import TantrumVsMeltdownVisual from '../../components/blog/visuals/TantrumVsMeltdownVisual.astro';
 import heroImage from '../../assets/blog/tantrum-vs-meltdown-what-is-the-difference.webp';
 
 const title = "Tantrum vs Meltdown: Key Differences & Practical Response Guide";
@@ -26,13 +27,15 @@ const description = "Understand the crucial differences between a behavioural ta
 const currentUrl = "/blog/tantrum-vs-meltdown/";
 const canonicalURL = "https://www.rabbiapsychologist.com/blog/tantrum-vs-meltdown/";
 
-const keywords = ["tantrum vs meltdown", "sensory meltdown autism", "toddler tantrums", "emotional regulation", "parenting challenging behaviour"];
+const keywords = ["tantrum vs meltdown", "meltdown tracker", "child behaviour diary", "adhd meltdowns", "sensory meltdown autism", "difference between meltdown and tantrum", "emotional regulation", "parenting challenging behaviour"];
 
 const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
   { text: "What is a Tantrum?", slug: "what-is-a-tantrum", level: 2 },
   { text: "What is a Meltdown?", slug: "what-is-a-meltdown", level: 2 },
   { text: "How to Tell the Difference (Comparison Table)", slug: "how-to-tell", level: 2 },
+  { text: "ADHD Meltdowns vs Autistic Meltdowns", slug: "adhd-vs-autistic-meltdown", level: 2 },
+  { text: "Tracking Meltdowns: The Child Behaviour Diary", slug: "meltdown-tracker-guide", level: 2 },
   { text: "How to Respond to a Tantrum", slug: "respond-tantrum", level: 2 },
   { text: "How to Respond to a Meltdown", slug: "respond-meltdown", level: 2 },
   { text: "When to Seek Professional Guidance", slug: "when-to-seek-guidance", level: 2 }
@@ -101,6 +104,22 @@ const schema = [
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No. While meltdowns are common in children with autism and ADHD due to sensory and emotional regulation challenges, any child (or adult) can experience a meltdown if pushed past their neurological limits of stress and exhaustion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an ADHD meltdown, and how does it differ from an autistic sensory meltdown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An ADHD meltdown is primarily triggered by acute emotional dysregulation, frustration overload, or rejection sensitive dysphoria (RSD)—often sparked when transitions are forced or executive working memory is swamped. An autistic meltdown is more commonly triggered by sensory overstimulation (noise, lights, crowds) or unexpected disruption to routines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does a meltdown tracker or child behaviour diary help parents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A meltdown tracker records the antecedent (what happened before), physical cues of autonomic arousal, sensory environment, and recovery duration. Tracking 5 to 7 episodes reveals predictable tipping points, allowing parents to co-regulate and intervene before the threshold is breached."
         }
       }
     ]
@@ -182,6 +201,8 @@ const schema = [
           <h2 id="how-to-tell">How to Tell the Difference (Comparison Table)</h2>
           <p>In the heat of the moment, distinguishing a tantrum from a sensory meltdown is essential because giving discipline or ignoring during a meltdown can escalate trauma, while giving in during a tantrum reinforces the behavior.</p>
 
+          <TantrumVsMeltdownVisual />
+
           <div class="overflow-x-auto my-6 not-prose">
             <table class="w-full text-left border-collapse border border-gray-200 bg-white rounded-lg shadow-sm text-sm md:text-base">
               <thead>
@@ -239,6 +260,56 @@ const schema = [
             fact="While tantrums usually decrease with age as children learn to communicate, meltdowns can happen at any age (even adulthood) if the person's neurological threshold for stress or sensory input is crossed."
           />
 
+          <h2 id="adhd-vs-autistic-meltdown">ADHD Meltdowns vs Autistic Meltdowns</h2>
+          <p>Parents frequently ask whether an ADHD meltdown is different from an autistic sensory meltdown. While both represent complete neurological dysregulation, their primary underlying engines differ:</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-blue-100 text-brand-navy text-xs font-bold px-2 py-0.5 rounded mb-2">Executive & Emotional Overload</span>
+              <h3 class="text-lg font-bold text-brand-navy mb-2">ADHD Meltdowns</h3>
+              <ul class="text-sm text-gray-700 space-y-2">
+                <li>• <strong>Trigger:</strong> Sudden cognitive friction, abrupt transitions, task initiation paralysis, or intense feelings of perceived rejection (Rejection Sensitive Dysphoria).</li>
+                <li>• <strong>Mechanism:</strong> Working memory collapse paired with prefrontal cortex fatigue. The child experiences an emotional flashflood they lack the neurological brakes to pause.</li>
+                <li>• <strong>Warning signs:</strong> Rapid escalation, defensive argumentative bursts, physical fidgeting turning into verbal explosive rage.</li>
+              </ul>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5 rounded mb-2">Sensory & Predictability Overload</span>
+              <h3 class="text-lg font-bold text-brand-navy mb-2">Autistic Meltdowns</h3>
+              <ul class="text-sm text-gray-700 space-y-2">
+                <li>• <strong>Trigger:</strong> Cumulative sensory saturation (fluorescent lighting, background hum, itchy seams) or unexpected violations of daily predictability.</li>
+                <li>• <strong>Mechanism:</strong> The nervous system’s fight-or-flight circuits hijack cognitive processing due to sensory gating saturation.</li>
+                <li>• <strong>Warning signs:</strong> Pacing, covering ears/eyes, non-verbal vocalizations, sudden motor agitation, or the precursor "rumble" stage.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 id="meltdown-tracker-guide">Tracking Meltdowns: How to Use a Child Behaviour Diary</h2>
+          <p>When meltdowns happen frequently, parents often feel blindsided, describing the outburst as having occurred "completely out of nowhere." In clinical practice, meltdowns almost never happen without warning; rather, the precursor cues were silent or environmental.</p>
+          <p>Keeping a <strong>Child Behaviour Diary or Meltdown Tracker</strong> for 7 to 10 days externalizes the patterns so you can spot the physiological tipping point before the explosion:</p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6 not-prose">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span class="bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Free Clinical Download</span>
+                <h3 class="text-xl font-bold text-brand-navy mt-2">Behaviour ABC Incident & Meltdown Tracker</h3>
+                <p class="text-sm text-gray-700 mt-1">Download our printable clinical tracking template to log Antecedents, Physical Warning Cues, Sensory Inputs, and Recovery Times.</p>
+              </div>
+              <a href="/free-downloads/behaviour-abc-tracker/" class="inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shrink-0 shadow-sm">
+                <span>View & Print Tracker</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <p>When recording in your behaviour tracker, document these 4 clinical dimensions:</p>
+          <ul>
+            <li><strong>The Baseline State (Setting Events):</strong> Was your child hungry, sleep-deprived, coming off ADHD medication, or overstimulated from a noisy school day?</li>
+            <li><strong>The Immediate Antecedent:</strong> What demand, transition, or sensory barrier occurred 60 seconds prior?</li>
+            <li><strong>The "Rumble Stage" Cues:</strong> What were the subtle physical markers (clenched fists, red ears, withdrawal, refusal to make eye contact)?</li>
+            <li><strong>Recovery Baseline Duration:</strong> How long did it take for their autonomic nervous system to return to normal? (Meltdowns typically require 20–60 minutes of low stimulation; tantrums resolve within minutes of boundary clarity).</li>
+          </ul>
+
           <h2 id="respond-tantrum">How to Respond to a Tantrum</h2>
           <p>Because a tantrum is a learned behaviour to achieve a goal, the best response is clear boundaries and lack of reward.</p>
 
@@ -276,14 +347,10 @@ const schema = [
               "A tantrum is a goal-driven behaviour used to get a desired outcome.",
               "A meltdown is an involuntary neurological response to being overwhelmed.",
               "Giving in stops a tantrum, but it does not stop a meltdown.",
-              "For tantrums, hold the boundary and do not reward the behaviour with excessive attention.",
-              "For meltdowns, reduce sensory input, stay quiet, and provide a calm, safe presence."
+              "ADHD meltdowns often stem from emotional frustration and transition friction, while autistic meltdowns stem from sensory saturation.",
+              "Using a Meltdown Tracker helps families identify environmental tipping points and prevent outbursts.",
+              "For tantrums, hold the boundary; for meltdowns, reduce sensory input and co-regulate in silence."
             ]}
-          />
-
-            datePublished="February 2, 2024"
-            dateModified="March 1, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[
@@ -298,6 +365,14 @@ const schema = [
             {
               question: "Do only autistic children have meltdowns?",
               answer: "No. While meltdowns are common in children with autism and ADHD due to sensory and emotional regulation challenges, any child (or adult) can experience a meltdown if pushed past their neurological limits of stress and exhaustion."
+            },
+            {
+              question: "What is an ADHD meltdown, and how does it differ from an autistic sensory meltdown?",
+              answer: "An ADHD meltdown is primarily triggered by acute emotional dysregulation, frustration overload, or rejection sensitive dysphoria (RSD)—often sparked when transitions are forced or executive working memory is swamped. An autistic meltdown is more commonly triggered by sensory overstimulation (noise, lights, crowds) or unexpected disruption to routines."
+            },
+            {
+              question: "How does a meltdown tracker or child behaviour diary help parents?",
+              answer: "A meltdown tracker records the antecedent (what happened before), physical cues of autonomic arousal, sensory environment, and recovery duration. Tracking 5 to 7 episodes reveals predictable tipping points, allowing parents to co-regulate and intervene before the threshold is breached."
             }
           ]} />
 

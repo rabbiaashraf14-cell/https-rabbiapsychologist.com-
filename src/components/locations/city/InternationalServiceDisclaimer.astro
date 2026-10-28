@@ -6,15 +6,29 @@ interface Props {
 }
 
 const { city } = Astro.props;
+
+const crossBorderText = city.crossBorderDisclaimer || 
+  `Services provided for families in ${city.cityName} are delivered via encrypted online telehealth from an international child psychology perspective. Telehealth consultations focus on evidence-based parent training, home behavioral modification, and developmental screening.`;
+
+const formalDiagnosisText = city.formalDiagnosisDisclaimer || 
+  `Online parent consultations and developmental reviews do not constitute a statutory medical diagnosis or legal qualification for state-mandated disability services in ${city.cityName}. Formal statutory diagnostic classifications (such as local education authority EHCPs, NHS determinations, or local school district 504 plans) must be conducted by in-person multidisciplinary medical teams licensed in your jurisdiction.`;
+
+const emergencyText = city.emergencyServiceDisclaimer || 
+  `Rabbia Psychologist is a planned outpatient and parent guidance service. We do not provide acute crisis, psychiatric emergency, or immediate self-harm intervention. If your child or family is in immediate danger in ${city.cityName}, please contact your local emergency services (e.g., 999 in the UK, 911 in North America, 000 in Australia, 998/999 in UAE, or 1122 in Pakistan) or visit the nearest hospital emergency department immediately.`;
 ---
 
-<section class="py-8 px-6 lg:px-8 max-w-4xl mx-auto">
-  <div class="bg-gray-50 rounded-[24px] p-6 text-sm text-gray-600 border border-gray-200">
-    <h3 class="font-bold text-gray-800 mb-2">Important Information About International Services</h3>
-    <ul class="space-y-2 list-disc pl-5">
-      {city.crossBorderDisclaimer && <li>{city.crossBorderDisclaimer}</li>}
-      {city.formalDiagnosisDisclaimer && <li>{city.formalDiagnosisDisclaimer}</li>}
-      {city.emergencyServiceDisclaimer && <li>{city.emergencyServiceDisclaimer}</li>}
+<section class="py-10 px-6 lg:px-8 max-w-4xl mx-auto">
+  <div class="bg-gray-50/90 rounded-2xl p-6 sm:p-7 text-xs sm:text-sm text-gray-600 border border-gray-200/90 shadow-2xs">
+    <div class="flex items-center gap-2 mb-3 text-gray-800 font-bold">
+      <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+      <span>Clinical Governance &amp; Regulatory Disclaimers ({city.cityName}, {city.countryName})</span>
+    </div>
+    <ul class="space-y-2.5 list-disc pl-5 leading-relaxed">
+      <li>{crossBorderText}</li>
+      <li>{formalDiagnosisText}</li>
+      <li><strong class="text-gray-700">Crisis &amp; Emergency Notice:</strong> {emergencyText}</li>
     </ul>
   </div>
 </section>

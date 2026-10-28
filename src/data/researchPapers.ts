@@ -4,27 +4,32 @@ export interface ResearchItem {
     | 'autism-medicine'
     | 'autism-stem-cell'
     | 'autism-aba'
+    | 'autism-screening'
     | 'adhd-medication'
     | 'adhd-behavioral'
     | 'sensory-issues'
     | 'sensory-normal-child'
     | 'hyperactivity-inattention'
     | 'speech-delay-disorders'
+    | 'screen-time-development'
     | 'open-source-ai';
   categoryLabel: string;
   title: string;
   authors: string;
   journalOrPlatform: string;
   year: string;
-  type: 'RCT' | 'Meta-Analysis' | 'Systematic Review' | 'Clinical Guideline' | 'Open Source Tool' | 'Dataset' | 'AI Model';
+  type: 'RCT' | 'Meta-Analysis' | 'Systematic Review' | 'Clinical Guideline' | 'Open Source Tool' | 'Dataset' | 'AI Model' | 'Diagnostic Standard';
   doiOrUrl: string;
   parentTakeaway: string;
   clinicalTakeaway: string;
+  strengths?: string;
+  stars?: string;
   tags: string[];
 }
 
 export const researchCategories = [
   { id: 'all', label: 'All Resources' },
+  { id: 'autism-screening', label: 'Autism & Screening Tools' },
   { id: 'autism-medicine', label: 'Autism & Medicine' },
   { id: 'autism-stem-cell', label: 'Stem Cell Research' },
   { id: 'autism-aba', label: 'Autism & ABA / NDBIs' },
@@ -34,7 +39,8 @@ export const researchCategories = [
   { id: 'sensory-normal-child', label: 'Sensory in Typical Children' },
   { id: 'hyperactivity-inattention', label: 'Hyperactivity & Inattention' },
   { id: 'speech-delay-disorders', label: 'Speech Delay & Language' },
-  { id: 'open-source-ai', label: 'GitHub & Hugging Face AI' },
+  { id: 'screen-time-development', label: 'Screen Time & Development' },
+  { id: 'open-source-ai', label: 'GitHub & Open Source Tools' },
 ] as const;
 
 export const researchPapers: ResearchItem[] = [
@@ -322,53 +328,236 @@ export const researchPapers: ResearchItem[] = [
     tags: ['Speech Therapy', 'Cochrane Review', 'Early Intervention', 'Phonology']
   },
 
-  // 10. Open Source AI, GitHub & Hugging Face Resources
+  // 10. Screen Time & Child Neurodevelopment
+  {
+    id: 'screen-dev-1',
+    category: 'screen-time-development',
+    categoryLabel: 'Screen Time & Development',
+    title: 'Association Between Screen Time and Children\'s Performance on a Developmental Screening Test',
+    authors: 'Madigan, S., Browne, D., Racine, N., Mori, C., & Tough, S.',
+    journalOrPlatform: 'JAMA Pediatrics',
+    year: '2019',
+    type: 'Systematic Review',
+    doiOrUrl: 'https://doi.org/10.1001/jamapediatrics.2018.5056',
+    parentTakeaway: 'In a large longitudinal study of over 2,400 toddlers, excessive early screen time at ages 2 and 3 was directly linked to lower communication and problem-solving milestone scores a year later. Moderation and interactive co-viewing are key.',
+    clinicalTakeaway: 'Prospective longitudinal cohort (n=2,441). Cross-lagged panel models demonstrated directional associations: higher screen time at 24 and 36 months prospectively predicted poorer Ages and Stages Questionnaires (ASQ-3) developmental performance at 36 and 60 months (β = -0.08, P = .003).',
+    strengths: 'Large longitudinal sample (n=2,441) with cross-lagged modeling ruling out reverse causality (i.e. difficult temperament driving screen use).',
+    tags: ['Screen Time', 'JAMA Pediatrics', 'Child Development', 'Milestones', 'ASQ-3']
+  },
+
+  // 11. Autism Diagnostic & Screening Standards
+  {
+    id: 'asd-diag-1',
+    category: 'autism-screening',
+    categoryLabel: 'Autism & Screening Tools',
+    title: 'Autism Diagnostic Observation Schedule, Second Edition (ADOS-2)',
+    authors: 'Lord, C., Rutter, M., DiLavore, P. C., Risi, S., Gotham, K., Bishop, S. L., et al.',
+    journalOrPlatform: 'Western Psychological Services (WPS)',
+    year: '2012',
+    type: 'Diagnostic Standard',
+    doiOrUrl: 'https://www.wpspublish.com/ados-2-autism-diagnostic-observation-schedule-second-edition',
+    parentTakeaway: 'ADOS-2 is the international gold standard clinical observation tool. Through interactive play and structured activities, a certified practitioner evaluates social communication and repetitive behaviors without relying solely on parent questionnaires.',
+    clinicalTakeaway: 'Standardized semi-structured observation protocol across 5 developmental modules (Toddler to Module 4). Demonstrates high sensitivity (0.91) and specificity (0.84) for ASD classification with comparative severity scores (CSS).',
+    strengths: 'Recognized globally across the UK NHS, US insurance networks, and Australian NDIS as the primary evidence-based diagnostic instrument.',
+    tags: ['ADOS-2', 'Autism Assessment', 'Gold Standard', 'Diagnostic Tool', 'Clinical Observation']
+  },
+  {
+    id: 'asd-mchat-1',
+    category: 'autism-screening',
+    categoryLabel: 'Autism & Screening Tools',
+    title: 'Validation of the Modified Checklist for Autism in Toddlers, Revised with Follow-Up (M-CHAT-R/F)',
+    authors: 'Robins, D. L., Casagrande, K., Barton, M., Chen, C. M. A., Dumont-Mathieu, T., & Fein, D.',
+    journalOrPlatform: 'Pediatrics (American Academy of Pediatrics)',
+    year: '2014',
+    type: 'Diagnostic Standard',
+    doiOrUrl: 'https://doi.org/10.1542/peds.2013-1813',
+    parentTakeaway: 'The M-CHAT-R/F is a simple 20-question early screening tool for toddlers aged 16–30 months. The two-stage follow-up interview reduces false alarms and helps families access early intervention months earlier.',
+    clinicalTakeaway: 'Validation study across 16,071 toddlers screened during well-child visits. The 2-stage scoring algorithm reduced positive screen rate from 9.2% to 1.4%, achieving positive predictive value (PPV) of 0.47 for ASD and 0.95 for developmental delay/ASD combined.',
+    strengths: 'Validated across tens of thousands of toddlers; low respondent burden and readily implementable as a digital web screener.',
+    tags: ['M-CHAT-R/F', 'Autism Screener', 'Pediatrics', 'Early Detection', 'Toddler Milestones']
+  },
+
+  // 12. Open Source Tools, GitHub Repositories & AI
+  {
+    id: 'gh-calcom',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'Cal.com: Open-Source Multi-Timezone Clinical Scheduling & Telehealth Infrastructure',
+    authors: 'Cal.com Core Team & Community',
+    journalOrPlatform: 'GitHub: calcom/cal.com',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/calcom/cal.com',
+    stars: '49.0k stars',
+    parentTakeaway: 'A seamless, privacy-first booking system that automatically converts clinical consultation slots across UK, Australian, US, Gulf, and Pakistani time zones without appointment mix-ups.',
+    clinicalTakeaway: 'Enterprise-grade scheduling infrastructure with native React/Astro embeddability, automated calendar sync (Google, Outlook), webhook notifications, and PCI-compliant payment gateway integration.',
+    strengths: 'Automatic multi-timezone management, white-label client portal, zero vendor lock-in, and full GDPR compliance for telehealth clients.',
+    tags: ['GitHub', 'Cal.com', 'Telehealth', 'Scheduling', 'International Booking']
+  },
+  {
+    id: 'gh-surveyjs',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'SurveyJS: Open-Source Clinical Questionnaire & Psychological Scoring Engine',
+    authors: 'Devsoft Baltic OÜ',
+    journalOrPlatform: 'GitHub: surveyjs/survey-library',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/surveyjs/survey-library',
+    stars: '4.9k stars',
+    parentTakeaway: 'A smooth, privacy-focused assessment engine that powers interactive quizzes and screeners on our website, calculating developmental risk scores securely in your browser.',
+    clinicalTakeaway: 'JSON-driven form and clinical survey engine supporting conditional skip-logic, multi-page triage flows, dynamic clinical score summation (e.g., M-CHAT, Vanderbilt, Conners), and client-side data isolation.',
+    strengths: 'Runs 100% client-side with zero third-party ad tracking, perfectly suited for HIPAA/privacy-sensitive pediatric intake questionnaires.',
+    tags: ['GitHub', 'SurveyJS', 'Clinical Assessment', 'Triage Screener', 'Client-Side']
+  },
+  {
+    id: 'gh-jspdf',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'jsPDF: Client-Side PDF Generation Engine for Clinical Trackers & IEP Checklists',
+    authors: 'Parallax & Community Contributors',
+    journalOrPlatform: 'GitHub: parallax/jsPDF',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/parallax/jsPDF',
+    stars: '31.3k stars',
+    parentTakeaway: 'Enables parents to download printable, custom-filled Behaviour ABC Trackers, Routine Planners, and School IEP Meeting Guides instantly without waiting or registering accounts.',
+    clinicalTakeaway: 'Browser-based PDF generation library supporting vector graphics, styled HTML-to-PDF rendering, and dynamic clinical worksheet assembly without consuming server compute.',
+    strengths: 'Ultra-fast client-side execution (0ms server latency), offline capable, zero server maintenance overhead.',
+    tags: ['GitHub', 'jsPDF', 'Free Downloads', 'Worksheets', 'IEP Checklists']
+  },
+  {
+    id: 'gh-pdfme',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'pdfme: Visual Layout & Structured Report Generator for Psychological Reviews',
+    authors: 'pdfme open source team',
+    journalOrPlatform: 'GitHub: pdfme/pdfme',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/pdfme/pdfme',
+    stars: '4.8k stars',
+    parentTakeaway: 'Creates clean, beautifully organized PDF review summaries and developmental recommendation documents for parents and schools.',
+    clinicalTakeaway: 'TypeScript-first PDF engine featuring a visual designer and programmatic schema-driven template compilation. Ideal for generating structured psychological report summaries.',
+    strengths: 'Modern TypeScript API, pixel-perfect layout control, separation of clinical data models from visual presentation templates.',
+    tags: ['GitHub', 'pdfme', 'Report Reviews', 'TypeScript', 'Document Design']
+  },
+  {
+    id: 'gh-jspsych',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'jsPsych: JavaScript Framework for In-Browser Behavioral & Cognitive Paradigms',
+    authors: 'de Leeuw, J. R., Gilbert, E. P., & jsPsych Community',
+    journalOrPlatform: 'GitHub: jspsych/jsPsych',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/jspsych/jsPsych',
+    stars: '1.2k stars',
+    parentTakeaway: 'A specialized psychological framework allowing parents and educators to experience demonstrations of executive function, reaction time, and impulse control challenges.',
+    clinicalTakeaway: 'Precision web-based cognitive testing framework with millisecond response timing. Includes plugins for Go/No-Go tasks, Stroop effect, continuous performance tests (CPT), and spatial working memory.',
+    strengths: 'Gold standard in cognitive psychology and neuroscience research; provides calibrated stimulus presentation in standard web browsers.',
+    tags: ['GitHub', 'jsPsych', 'Executive Function', 'Cognitive Testing', 'ADHD Paradigms']
+  },
+  {
+    id: 'gh-whisper',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'OpenAI Whisper: Robust Speech Recognition for Clinical Dictation & Session Notes',
+    authors: 'Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I.',
+    journalOrPlatform: 'GitHub: openai/whisper',
+    year: '2023',
+    type: 'AI Model',
+    doiOrUrl: 'https://github.com/openai/whisper',
+    stars: '72.0k stars',
+    parentTakeaway: 'Advanced voice AI that accurately transcribes parental case histories and consultation notes across diverse regional accents and languages.',
+    clinicalTakeaway: 'Sequence-to-sequence transformer trained on 680,000 hours of multilingual audio. Delivers high accuracy on clinical terminology and accents without requiring cloud audio streaming when hosted locally.',
+    strengths: 'Zero API costs when self-hosted, outstanding handling of background noise, accents (British, Pakistani, Australian, American), and pediatric terminology.',
+    tags: ['GitHub', 'Whisper', 'Speech Recognition', 'Clinical Notes', 'Voice Dictation']
+  },
+  {
+    id: 'gh-formbricks',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'Formbricks: Privacy-First Clinical Feedback & Parent Intake Experience Suite',
+    authors: 'Formbricks Open Source Team',
+    journalOrPlatform: 'GitHub: formbricks/formbricks',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/formbricks/formbricks',
+    stars: '13.0k stars',
+    parentTakeaway: 'A confidential, easy-to-complete digital intake form that allows parents to share their child\'s developmental history securely prior to consultations.',
+    clinicalTakeaway: 'Open-source experience management suite with granular privacy controls, end-to-end data encryption, customizable conditional questions, and automated webhook dispatch.',
+    strengths: 'Complete GDPR/HIPAA compliance posture, self-hostable, zero third-party telemetry, responsive on all mobile devices.',
+    tags: ['GitHub', 'Formbricks', 'Client Intake', 'Confidentiality', 'Parent Feedback']
+  },
+  {
+    id: 'gh-cbt-toolkit',
+    category: 'open-source-ai',
+    categoryLabel: 'GitHub & Open Source Tools',
+    title: 'CBT Toolkit: Interactive Client-Side Behavioral & Emotional Regulation Tools',
+    authors: 'Cole, A. & Open Source Mental Health Contributors',
+    journalOrPlatform: 'GitHub: alexcoledev/cbt-toolkit',
+    year: '2024',
+    type: 'Open Source Tool',
+    doiOrUrl: 'https://github.com/alexcoledev/cbt-toolkit',
+    stars: '80 stars',
+    parentTakeaway: 'Interactive digital worksheets for children and parents to identify emotional triggers, cognitive reframing, and calming coping strategies.',
+    clinicalTakeaway: 'Vanilla JavaScript client-side suite of 36 mental health and cognitive behavioral tools. Requires zero backend database, keeping all therapeutic reflections strictly on the client\'s device.',
+    strengths: '100% privacy-preserving (no data stored on servers), lightweight, directly embeddable into Astro content pages.',
+    tags: ['GitHub', 'CBT', 'Emotional Regulation', 'Interactive Worksheets', 'Mental Health']
+  },
   {
     id: 'ai-gh-1',
     category: 'open-source-ai',
-    categoryLabel: 'GitHub & Hugging Face AI',
+    categoryLabel: 'GitHub & Open Source Tools',
     title: 'Simons Sleep Project (SSP): Multi-Sensor Pediatric Biometrics & Sensory Profiles',
     authors: 'Dinstein Lab, Ben-Gurion University & Simons Foundation',
     journalOrPlatform: 'GitHub: Dinstein-Lab/SSP_manuscript',
     year: '2023',
     type: 'Open Source Tool',
     doiOrUrl: 'https://github.com/Dinstein-Lab/SSP_manuscript',
+    stars: '25 stars',
     parentTakeaway: 'An open-science initiative connecting sleep, sensory sensitivity, and smartwatch biometrics to understand how sensory distress affects children with autism during daily life.',
     clinicalTakeaway: 'Open codebase and research pipeline integrating actigraphy, sleep mat pressure arrays, EEG, and standardized Sensory Profile questionnaires for autistic vs neurotypical sibling cohorts.',
+    strengths: 'Integrates real-world physiological sensor metrics with standardized clinical Sensory Profile questionnaires.',
     tags: ['GitHub', 'Open Science', 'Sleep', 'Sensory Profile', 'EEG']
   },
   {
     id: 'ai-gh-2',
     category: 'open-source-ai',
-    categoryLabel: 'GitHub & Hugging Face AI',
+    categoryLabel: 'GitHub & Open Source Tools',
     title: 'CalmSignal: Facial-Cue Early-Warning System for Autistic Sensory Overload',
     authors: 'Farhan, M., et al.',
     journalOrPlatform: 'GitHub: muhmdfarhan0/calmsignal',
     year: '2024',
     type: 'Open Source Tool',
     doiOrUrl: 'https://github.com/muhmdfarhan0/calmsignal',
+    stars: '40 stars',
     parentTakeaway: 'A computer-vision project utilizing mobile AI to recognize micro-expressions of sensory distress and anxiety in autistic children before a full meltdown occurs.',
     clinicalTakeaway: 'PyTorch and MobileNetV3 architecture trained on facial action units to detect prodromal autonomic arousal and sensory overload, allowing parents/educators to initiate co-regulation early.',
+    strengths: 'Lightweight MobileNetV3 model designed to run in real-time on edge devices with minimal latency.',
     tags: ['GitHub', 'Computer Vision', 'PyTorch', 'Sensory Distress', 'Autism']
   },
   {
     id: 'ai-gh-3',
     category: 'open-source-ai',
-    categoryLabel: 'GitHub & Hugging Face AI',
+    categoryLabel: 'GitHub & Open Source Tools',
     title: 'HyperCOCO & ABIDE: Graph Neural Networks for ASD & ADHD fMRI Connectomics',
     authors: 'BASIRA Lab (Brain And SIgnal Research & Analysis)',
     journalOrPlatform: 'GitHub: basiralab/HyperCOCO',
     year: '2023',
     type: 'Open Source Tool',
     doiOrUrl: 'https://github.com/basiralab/HyperCOCO',
+    stars: '60 stars',
     parentTakeaway: 'Cutting-edge neuroimaging research repository using deep learning to map differences in brain connectivity between autism and ADHD.',
     clinicalTakeaway: 'Graph neural network (GNN) implementation trained on resting-state fMRI from the ABIDE and ADHD-200 open repositories, modeling whole-brain functional connectivity fingerprints.',
+    strengths: 'Rigorous GNN modeling utilizing the open-access ABIDE and ADHD-200 neuroimaging consortium datasets.',
     tags: ['GitHub', 'fMRI', 'Graph Neural Networks', 'ABIDE', 'ADHD-200']
   },
   {
     id: 'ai-hf-1',
     category: 'open-source-ai',
-    categoryLabel: 'GitHub & Hugging Face AI',
+    categoryLabel: 'GitHub & Open Source Tools',
     title: 'Autism Pediatric Screening Dataset (Q-CHAT & AQ-10 Clinical Cohorts)',
     authors: 'Mohit et al. / Hugging Face Open Datasets',
     journalOrPlatform: 'Hugging Face Datasets: mohit7685/autism-screening-data',
@@ -377,12 +566,13 @@ export const researchPapers: ResearchItem[] = [
     doiOrUrl: 'https://huggingface.co/datasets/mohit7685/autism-screening-data',
     parentTakeaway: 'A standardized dataset used by health informatics researchers to benchmark machine learning algorithms for pediatric autism screening tools.',
     clinicalTakeaway: 'Tabular dataset featuring standardized Q-CHAT (Quantitative Checklist for Autism in Toddlers) items, social responsiveness indicators, and developmental milestone variables.',
+    strengths: 'Standardized benchmarking dataset for evaluating screening sensitivity and specificity.',
     tags: ['Hugging Face', 'Dataset', 'Autism Screening', 'Q-CHAT', 'Machine Learning']
   },
   {
     id: 'ai-hf-2',
     category: 'open-source-ai',
-    categoryLabel: 'GitHub & Hugging Face AI',
+    categoryLabel: 'GitHub & Open Source Tools',
     title: 'Wav2Vec2 & Whisper Child Speech Acoustic Models for Pediatric Delay Analysis',
     authors: 'Dysata & Open-Source Speech Researchers',
     journalOrPlatform: 'Hugging Face Models: dysata/Wav2Vec2-Ru-Child & bookbot/distil-wav2vec2',
@@ -391,6 +581,7 @@ export const researchPapers: ResearchItem[] = [
     doiOrUrl: 'https://huggingface.co/models?search=child+speech',
     parentTakeaway: 'Specialized speech-recognition artificial intelligence fine-tuned specifically on children\'s voices to assist clinicians in transcribing and evaluating speech delays and articulation differences.',
     clinicalTakeaway: 'Acoustic models trained on pediatric speech corpora addressing high fundamental frequency (F0), formant dispersion shifts, and developmental phonological reductions compared to adult speech models.',
+    strengths: 'Addresses acoustic domain mismatch in standard adult ASR models when processing young children\'s vocal patterns.',
     tags: ['Hugging Face', 'Speech Recognition', 'Child Speech', 'Acoustic AI', 'Wav2Vec2']
   }
 ];

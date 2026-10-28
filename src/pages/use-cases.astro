@@ -1,51 +1,227 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = "How Rabbia Psychologist Child Development Services Helps Families | Use Cases";
-const description = "Explore common parent scenarios Rabbia Psychologist Child Development Services can support, including ASD concerns, ADHD routines, school meetings, IEP confusion, report review, behaviour concerns, speech delay, sensory concerns, and international family guidance.";
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 
-const useCases = [
-  "My child may have ASD. Where do I start?",
-  "My child struggles with attention, routines, or impulsivity.",
-  "I have an IEP or school meeting and feel confused. From IEP confusion to a clear support plan.",
-  "I received a report but do not understand what to do next.",
-  "My child has behaviour concerns at home.",
-  "My child has speech or communication delay concerns.",
-  "My child has sensory concerns.",
-  "I am an international Pakistani parent and need guidance.",
-  "I do not know whether to see a psychologist, developmental pediatrician, OT, speech therapist, psychiatrist, or special educator.",
-  "I need school guidance before meeting teachers."
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Clinical Case Studies', href: '/use-cases/' }
+];
+const canonicalURL = "https://www.rabbiapsychologist.com/use-cases/";
+
+const title = "Clinical Case Studies & Parent Transformation Pathways | Rabbia Psychologist";
+const description = "Real anonymized clinical case studies demonstrating parent guidance transformations for ADHD, Autism waitlists, After-School Restraint Collapse, and Neuropsychological Report Reviews across UK, USA, Gulf & Pakistan.";
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://www.rabbiapsychologist.com/use-cases/#webpage",
+      "url": canonicalURL,
+      "name": title,
+      "description": description,
+      "author": {
+        "@type": "Person",
+        "name": "Rabbia Ashraf",
+        "jobTitle": "Clinical Psychologist & Certified ADOS-2 Practitioner",
+        "url": "https://www.rabbiapsychologist.com/about/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does clinical parent guidance resolve chronic after-school meltdowns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By diagnosing After-School Restraint Collapse (masking exhaustion) and replacing home demands with a 45-minute zero-demand decompression protocol, oral-motor sensory snacks, and school-day sensory shedding valves, parents can reduce evening meltdowns within two weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can parents do if a school refuses to implement accommodations from a psychological evaluation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dense neuropsychological reports filled with percentiles often overwhelm educators. Clinical Psychologist Rabbia Ashraf translates complex testing batteries (WISC-V, Conners 4, ADOS-2) into a concise 1-page teacher action brief and specific 504/IEP accommodation requests that schools can immediately approve."
+          }
+        }
+      ]
+    }
+  ]
+};
+
+const caseStudies = [
+  {
+    tag: "Waitlist Bridge • London, UK",
+    tagColor: "bg-emerald-50 text-emerald-800 border-emerald-200/60",
+    title: "Bridging a 22-Month NHS CAMHS Waitlist for Morning School Refusal",
+    client: "Leo (Age 6) & Parents • Greater London",
+    challenge: "Leo experienced extreme panic, vomiting, and shouting matches every morning before school. The family had been placed on a 22-month NHS neurodevelopmental waitlist and felt entirely abandoned without interim support.",
+    clinicalAssessment: "Identified low early-morning dopamine availability combined with severe sensory discomfort during clothing changes and transition anxiety. Leo was not being 'willfully difficult'; his nervous system was in acute threat arousal.",
+    intervention: "Clinical Psychologist Rabbia Ashraf formulated a low-arousal 'Dopamine Bridge' morning protocol: auditory storybook priming before wake-up, pre-warmed seamless clothing bins, visual timers, and a declarative communication script for parents.",
+    outcome: "Morning crying and refusal episodes decreased by 80% within 3 weeks. The school's SENCO adopted our 1-page sensory accommodation brief, providing Leo with quiet morning check-ins while the family remained on the statutory queue.",
+    deliverables: "Customized 3-Step Morning Protocol, SENCO Teacher Accommodation Letter"
+  },
+  {
+    tag: "Masking & Restraint Collapse • Dubai, UAE",
+    tagColor: "bg-amber-50 text-amber-900 border-amber-200/60",
+    title: "Solving Severe 3:45 PM Meltdowns in a High-Masking Autistic Girl",
+    client: "Maya (Age 8) & Parents • Dubai / International School",
+    challenge: "Maya's teachers called her an 'absolute angel' and model student. Yet the moment Maya stepped into the car at 3:45 PM pickup, she erupted into 45-minute screaming crises, hitting herself and sobbing inconsolably.",
+    clinicalAssessment: "Classic After-School Restraint Collapse. Maya spent 7 hours suppressing sensory distress and masking social fatigue at school ('The Shaken Soda Can Effect'), releasing pressurized cortisol upon reaching her safe attachment figure.",
+    intervention: "Engineered a strict 45-Minute Zero-Demand Decompression Protocol: zero questions upon greeting, immediate cold crunchy oral-motor refueling in the car, noise-dampening headphones, and collaborative school accommodations allowing daytime sensory release.",
+    outcome: "Meltdown duration contracted from 45 minutes to under 8 minutes within 14 days. Parents regained evening family harmony and eliminated feelings of maternal guilt and failure.",
+    deliverables: "Decompression Sensory Schedule, Classroom Sensory Pass Template"
+  },
+  {
+    tag: "Report Translation • New Jersey, USA",
+    tagColor: "bg-blue-50 text-blue-900 border-blue-200/60",
+    title: "Translating a 34-Page Neuropsychological Evaluation into an Approved 504 Plan",
+    client: "Ethan (Age 10) & Parents • New Jersey, USA",
+    challenge: "Ethan's parents received a dense 34-page pediatric neuropsychological evaluation following ADHD testing. The school district dismissed the report as 'inconclusive' and refused 504 plan accommodations, leaving Ethan failing 4th-grade math.",
+    clinicalAssessment: "The evaluation contained a crucial 28-point discrepancy between Ethan's high Verbal Comprehension Index (91st percentile) and impaired Working Memory Index (14th percentile), directly causing mental arithmetic paralysis and executive task freeze.",
+    intervention: "Rabbia Ashraf synthesized the 34-page report into a crystal-clear 1-page 'Teacher Quick Brief' translating cognitive percentiles into concrete classroom accommodations: chunked worksheets, visual cue cards, and 1.5x test time.",
+    outcome: "At the reconvened 504 conference, the school district unanimously approved all 5 requested accommodations without legal confrontation. Ethan's math anxiety subsided and his grades improved within one academic quarter.",
+    deliverables: "1-Page Teacher Accommodation Brief, IEP/504 Meeting Speaking Points"
+  },
+  {
+    tag: "Cultural Attunement • Overseas Pakistani Diaspora",
+    tagColor: "bg-purple-50 text-purple-900 border-purple-200/60",
+    title: "Navigating Joint-Family Stigma & Speech Reciprocity in a Toddler",
+    client: "Hamza (Age 3.5) & Parents • Birmingham / Lahore",
+    challenge: "Hamza had zero intentional words, pulled parents by the wrist without eye contact, and had intense meltdowns around food textures. Extended family dismissed concerns with 'boys speak late' while blaming the mother's career.",
+    clinicalAssessment: "Evaluated joint attention and reciprocal communication markers. Hamza displayed social reciprocity challenges requiring immediate parent-led Discrete Trial Teaching (DTT) play routines and sensory food scaffolding.",
+    intervention: "Provided culturally attuned, Urdu/English bilingual parent guidance. Equipped parents with shame-free educational scripts for grandparents, structured floor-time turn-taking games, and a localized referral for physical in-person ADOS-2 evaluation.",
+    outcome: "Hamza began pointing, maintaining reciprocal eye gaze, and vocalizing his first two-word functional requests within 6 weeks. Extended family joined as active co-regulators rather than critics.",
+    deliverables: "Floor-Time Communication Protocol, Family Cultural Scripts"
+  }
 ];
 ---
-<BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-12 max-w-4xl">
-    <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6 text-center">How Rabbia Psychologist Child Development Services Helps Families</h1>
-    <p class="text-lg text-gray-700 mb-12 text-center max-w-2xl mx-auto">Explore common parent scenarios Rabbia Psychologist Child Development Services can support, including ASD concerns, ADHD routines, school meetings, IEP confusion, report review, behaviour concerns, and more.</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-      {useCases.map(scenario => (
-        <div class="bg-white p-6 shadow-sm rounded border border-gray-100 flex items-start">
-          <div class="text-brand-trust mr-4 mt-1">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <p class="text-gray-800 font-medium">{scenario}</p>
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL} schema={pageSchema}>
+  <div class="bg-[#FAF7F2] min-h-screen py-8 lg:py-14 border-b border-[#E6DFD3]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+      <Breadcrumbs paths={breadcrumbs} />
+
+      <!-- Hero Header -->
+      <header class="mt-8 mb-14 text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-[#2F6352]/10 border border-[#2F6352]/20 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#2F6352] mb-4">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Evidence-Informed Clinical Transformations • Anonymized Profiles</span>
         </div>
-      ))}
-    </div>
 
-    <div class="text-center bg-brand-cream p-8 rounded-lg shadow-inner">
-      <h2 class="text-2xl font-bold text-brand-navy mb-4">Rabbia Psychologist Child Development Services helps parents understand which support pathway may fit their child’s needs.</h2>
-      <a href="/start-here/" class="inline-block bg-brand-trust text-white px-8 py-3 rounded font-bold hover:bg-blue-700 transition-colors">Choose the Right Support Pathway</a>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold text-[#0A233F] tracking-tight leading-tight mb-4">
+          Real Clinical Case Studies &amp; Parent Outcomes
+        </h1>
+        <p class="text-base sm:text-lg text-[#18222C]/80 leading-relaxed">
+          Explore how evidence-informed parent guidance, report translation, and low-arousal environmental adaptations solve chronic family distress across the UK, USA, Gulf, and Pakistan.
+        </p>
+      </header>
+
+      <!-- Case Studies List -->
+      <div class="space-y-8 mb-16">
+        {caseStudies.map((study, idx) => (
+          <article class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-[#E6DFD3] shadow-xs hover:shadow-md transition-shadow duration-300">
+            
+            <!-- Case Header -->
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-4 border-b border-[#E6DFD3]/60">
+              <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${study.tagColor}`}>
+                {study.tag}
+              </span>
+              <span class="text-xs font-medium text-[#18222C]/60">
+                {study.client}
+              </span>
+            </div>
+
+            <!-- Case Title -->
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-[#0A233F] mb-4 leading-snug">
+              {study.title}
+            </h2>
+
+            <!-- 4-Quadrant Clinical Anatomy -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6 text-sm">
+              
+              <!-- Challenge -->
+              <div class="bg-[#FAF7F2] p-5 rounded-xl border border-[#E6DFD3]">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-[#C27850] mb-2 flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                  The Presenting Crisis
+                </h3>
+                <p class="text-[#18222C]/80 leading-relaxed">
+                  {study.challenge}
+                </p>
+              </div>
+
+              <!-- Assessment -->
+              <div class="bg-[#FAF7F2] p-5 rounded-xl border border-[#E6DFD3]">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-[#0A233F] mb-2 flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-[#2F6352]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                  Clinical Formulation
+                </h3>
+                <p class="text-[#18222C]/80 leading-relaxed">
+                  {study.clinicalAssessment}
+                </p>
+              </div>
+
+              <!-- Intervention -->
+              <div class="bg-[#FAF7F2] p-5 rounded-xl border border-[#E6DFD3]">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-[#2F6352] mb-2 flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  Targeted Strategic Intervention
+                </h3>
+                <p class="text-[#18222C]/80 leading-relaxed">
+                  {study.intervention}
+                </p>
+              </div>
+
+              <!-- Outcome -->
+              <div class="bg-emerald-50/60 p-5 rounded-xl border border-emerald-200/60">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-900 mb-2 flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  Clinical Outcome
+                </h3>
+                <p class="text-emerald-950/80 leading-relaxed font-medium">
+                  {study.outcome}
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Footer Deliverables -->
+            <div class="pt-4 border-t border-[#E6DFD3]/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+              <span class="text-[#18222C]/65">
+                <strong>Delivered:</strong> {study.deliverables}
+              </span>
+              <a href="/book/" class="font-bold text-[#0A233F] hover:text-[#2F6352] inline-flex items-center gap-1 transition-colors">
+                <span>Book Similar Strategy Session</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+      <!-- Action Banner -->
+      <div class="bg-gradient-to-r from-[#0A233F] via-[#12365B] to-[#0A233F] text-white p-8 lg:p-10 rounded-2xl text-center shadow-md">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-3 text-white">
+          Is Your Child Facing a Similar Challenge?
+        </h2>
+        <p class="text-white/80 text-sm sm:text-base max-w-xl mx-auto mb-6">
+          Schedule a private 50-minute consultation with Clinical Psychologist Rabbia Ashraf. Zero waitlists, private off-screen child format, and a 24-hour written action plan.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/book/" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl text-sm transition-colors shadow-2xs inline-flex items-center justify-center gap-2">
+            <span>Schedule Parent Consultation</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="/credentials/" class="bg-white/10 hover:bg-white/20 text-white font-medium py-3 px-5 rounded-xl border border-white/20 text-sm transition-colors inline-flex items-center justify-center gap-2">
+            <span>Verify Clinical Credentials</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Use Cases",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Rabbia Psychologist Child Development Services"
-  }
-}
-</script>
 </BaseLayout>

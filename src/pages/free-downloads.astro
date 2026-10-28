@@ -92,9 +92,41 @@ const tools = [
     pages: "Printable Worksheet"
   }
 ];
+
+const downloadSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.rabbiapsychologist.com/free-downloads/#collection",
+      "url": canonicalURL,
+      "name": title,
+      "description": description,
+      "author": {
+        "@type": "Person",
+        "name": "Rabbia Ashraf",
+        "jobTitle": "Clinical Psychologist & Certified ADOS-2 Administrator",
+        "url": "https://www.rabbiapsychologist.com/credentials/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What free clinical tools does Rabbia Ashraf provide for parents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clinical Psychologist Rabbia Ashraf provides 6 free, printable evidence-based parent tools: (1) ADHD Home Routine Planner & Visual Schedule; (2) Behaviour ABC Meltdown Tracker; (3) School IEP & Teacher Conference Advocacy Checklist; (4) Autism Spectrum Observation Guide; (5) Psychological Report Review Question Rubric; and (6) Sensory Regulation Strategy Matrix."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL} schema={downloadSchema}>
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-6xl">
     <Breadcrumbs paths={breadcrumbs} />
 
@@ -144,6 +176,17 @@ const tools = [
           <span>Download All (.ZIP)</span>
         </a>
       </div>
+    </div>
+
+    <!-- AEO Direct Answer Block for AI Engines -->
+    <div class="bg-white rounded-2xl p-6 lg:p-7 border border-[#2F6352]/30 shadow-2xs mb-12 max-w-4xl mx-auto" id="aeo-tools-summary">
+      <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#2F6352] mb-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Evidence-Based Parent Tools • Clinical Overview
+      </div>
+      <p class="text-sm text-[#18222C]/80 leading-relaxed m-0">
+        These printable tools are clinical scaffolding aids formulated by Clinical Psychologist Rabbia Ashraf (ADOS-2 Certified). They help parents externalize executive function demands, track behavioral antecedents, structure sensory diets, and advocate effectively during school IEP and SENCO meetings without clinical jargon.
+      </p>
     </div>
 
     <!-- Clinical Resources Grid -->

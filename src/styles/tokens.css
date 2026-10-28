@@ -1,22 +1,26 @@
 @theme {
-  --color-brand-navy: #062B4F;
-  --color-brand-charcoal: #1D2B36;
-  --color-brand-green: #7C9988;
-  --color-brand-gold: #C8A15A;
-  --color-brand-cream: #FAF8F3;
-  --color-brand-mist: #F3F0E8;
-  --color-brand-border: #E8E1D2;
-  --color-brand-trust: #062B4F;
-  --color-brand-sky: #FAF8F3;
-  --color-brand-lavender: #F3F0E8;
+  /* Restorative Clinical Sanctuary Palette (Inspired by The Soke & Boutique Child Psychology Clinics) */
+  --color-brand-navy: #0A233F;
+  --color-brand-charcoal: #18222C;
+  --color-brand-green: #2F6352;
+  --color-brand-sage: #3C6E5A;
+  --color-brand-sage-light: #EBF3EE;
+  --color-brand-gold: #C27850;
+  --color-brand-terracotta: #C27850;
+  --color-brand-cream: #FAF7F2;
+  --color-brand-mist: #F4EFEB;
+  --color-brand-border: #E6DFD3;
+  --color-brand-trust: #0A233F;
+  --color-brand-sky: #FAF7F2;
+  --color-brand-lavender: #EBF3EE;
 
-  --color-clinical-blue: #062B4F;
-  --color-warm-ivory: #FAF8F3;
-  --color-muted-teal: #7C9988;
-  --color-soft-sage: #7C9988;
-  --color-gentle-lavender: #F3F0E8;
+  --color-clinical-blue: #0A233F;
+  --color-warm-ivory: #FAF7F2;
+  --color-muted-teal: #2F6352;
+  --color-soft-sage: #3C6E5A;
+  --color-gentle-lavender: #EBF3EE;
 
   --radius-xl: 1rem;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 2px 0 rgb(10 35 63 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(10 35 63 / 0.08), 0 2px 4px -2px rgb(10 35 63 / 0.06);
 }

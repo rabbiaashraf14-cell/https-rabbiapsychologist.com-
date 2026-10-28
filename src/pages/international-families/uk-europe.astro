@@ -2,39 +2,236 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Parent Guidance & Child Psychology Support for UK & Europe | Rabbia Psychologist";
+const description = "Online parent guidance, ADHD & autism support, NHS waitlist bridging, and SENCO/EHCP consultation for families in the UK and Europe.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-families/uk-europe/";
+
 const breadcrumbs = [
-  { name: 'International Families', href: '/international-families' },
-  { name: 'UK & Europe', href: '/international-families/uk-europe' }
+  { name: 'Home', href: '/' },
+  { name: 'International Families', href: '/international-families/' },
+  { name: 'UK & Europe', href: '/international-families/uk-europe/' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Parent Guidance & SEN Consultation for UK & Europe Families",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "description": description,
+  "areaServed": [
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Country", "name": "Ireland" },
+    { "@type": "Country", "name": "Germany" },
+    { "@type": "Country", "name": "Netherlands" }
+  ],
+  "serviceType": "Online Parent Coaching & Special Educational Needs Consultation"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does Rabbia Psychologist help UK families on NHS CAMHS waitlists?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waiting times for NHS neurodevelopmental assessments (CAMHS / Community Paediatrics) often exceed 18 to 36 months. Rather than losing critical developmental windows, we provide immediate parent coaching, ABC behaviour tracking, sensory routines, and communication frameworks at home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you help with UK SENCO meetings and EHCP applications?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We help parents prepare structured documentation, question checklists, and classroom adjustment proposals for SENCO reviews and EHCP (Education, Health and Care Plan) needs assessments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide a formal NHS diagnosis or prescribe medication?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Our online services are strictly parent guidance, psychoeducation, and special educational consultation. We do not provide statutory EHCP diagnoses or prescribe medication. Families must consult UK-licensed medical professionals or NHS clinicians for official medical diagnosis."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Parent Guidance & Child Psychology Support for UK & Europe | Rabbia Psychologist" description="Online parent guidance, ADHD support, and school consultation for families in the UK and Europe.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonicalURL}
+  schema={[serviceSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in the UK & Europe</h1>
-      <p class="text-xl text-gray-700">Expert online parent guidance for families navigating long public system waitlists or seeking supplemental support.</p>
-    </div>
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-100 text-indigo-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-indigo-300">
+        United Kingdom • Ireland • Europe
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 tracking-tight">
+        Parent Guidance & Child Psychology Support for UK & Europe Families
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+        Expert online parent consultation, SENCO advocacy, and neurodevelopmental support to bridge long NHS CAMHS waitlists for families in the UK and Europe.
+      </p>
+    </header>
 
     <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">Bridging the Gap</h2>
-      <p>Whether you are on a long waitlist for the NHS (UK) or navigating private systems in Europe, we provide immediate, actionable parent guidance online.</p>
 
-      <ul>
-        <li><strong>Home Routine Support:</strong> Implement effective strategies for ADHD or Autism while awaiting formal assessment.</li>
-        <li><strong>Report Translation:</strong> Review existing clinical reports and create a home action plan.</li>
-        <li><strong>School Preparation:</strong> Plan how to communicate effectively with SENCOs (Special Educational Needs Coordinators) or equivalent school staff.</li>
-      </ul>
+      <!-- Bridging NHS Waitlists -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Bridging Long NHS & European Public System Waitlists
+        </h2>
+        <p>
+          Families in the UK and Ireland face historic delays for statutory neurodevelopmental evaluations. With NHS CAMHS and community paediatric waiting lists stretching past two years, parents are frequently left with no actionable guidance while their child struggles with school refusal, sensory overload, or daily meltdowns.
+        </p>
+        <p>
+          We provide immediate, evidence-based online consultations so you can start supporting your child right away:
+        </p>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Service Boundaries</h2>
-      <p>Our services are strictly parent education and consultation. We do not provide formal diagnosis, EHCP assessments, or medical treatment across borders.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose my-8">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">SENCO & School Advocacy</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Prepare for school meetings with your child’s SENCO (Special Educational Needs Coordinator). We help you define reasonable adjustments, graduated response plans, and evidence for EHCP requests.
+            </p>
+          </div>
 
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Book a Consultation</h3>
-        <p class="mb-4">Services are billed in USD.</p>
-        <a href="/pricing/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">View Pricing</a>
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Private & NHS Report Translation</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Have you received a speech and language assessment or clinical psychology report? We translate clinical jargon into practical daily home and classroom routines.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Early Intervention at Home</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Don’t lose valuable developmental years waiting for an appointment. Learn antecedent-based behavioural strategies, visual routines, and co-regulation techniques today.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Free Clinical Toolkits for UK Parents -->
+      <section class="my-12 not-prose bg-brand-cream/60 p-8 rounded-2xl border border-brand-gold/40">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Practical Parent Tools</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mt-1">Free Evidence-Based Downloads</h2>
+          <p class="text-sm text-gray-700 mt-2">
+            Printable tools to help UK and European parents prepare for SEN reviews and support home routines.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-brand-navy rounded text-xs font-bold mb-2">SEN & School</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">School Meeting & SEN Checklist</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Step-by-step preparation guide for SENCO meetings, graduated response reviews, and EHCP evidence gathering.
+              </p>
+            </div>
+            <a href="/free-downloads/school-iep-checklist/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-purple-100 text-purple-900 rounded text-xs font-bold mb-2">Developmental Tracker</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Autism & Milestone Guide</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Track communication milestones, sensory preferences, and social interactions to build documentation for CAMHS.
+              </p>
+            </div>
+            <a href="/free-downloads/autism-observation-guide/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded text-xs font-bold mb-2">Behaviour Support</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Meltdown Tracker & ABC Diary</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Identify after-school restraint collapse triggers and environmental stressors across the school week.
+              </p>
+            </div>
+            <a href="/free-downloads/behaviour-abc-tracker/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Boundaries -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-12">
+        <h2 class="text-xl font-bold text-brand-navy mt-0 mb-3">Service Scope & Clinical Boundaries (UK & Europe)</h2>
+        <p class="text-sm leading-relaxed text-gray-700 mb-3">
+          Our online international services are strictly classified as <strong>parent psychoeducation, developmental coaching, and SEN consultation</strong>:
+        </p>
+        <ul class="text-sm text-gray-700 space-y-2 mb-0">
+          <li>We do <strong>not</strong> provide statutory EHCP diagnoses or NHS diagnostic certificates. Official medical evaluations and prescriptions must be completed through NHS trusts or UK-regulated in-person clinicians.</li>
+          <li>We do <strong>not</strong> provide crisis intervention. In the UK, if your child is in immediate danger, contact your GP, call NHS 111, or attend your nearest A&E.</li>
+          <li>Sessions are billed internationally in USD.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="my-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4 not-prose">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">How do you help UK families on NHS CAMHS waitlists?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Waiting times for NHS neurodevelopmental assessments (CAMHS / Community Paediatrics) often exceed 18 to 36 months. Rather than losing critical developmental windows, we provide immediate parent coaching, ABC behaviour tracking, sensory routines, and communication frameworks at home.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Do you help with UK SENCO meetings and EHCP applications?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. We help parents prepare structured documentation, question checklists, and classroom adjustment proposals for SENCO reviews and EHCP (Education, Health and Care Plan) needs assessments.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Can you review private psychological assessment reports?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Yes. Many families pay for private assessments in the UK or Europe and receive complex reports with standard scores and percentiles. We provide an independent report review to translate those findings into practical home and classroom strategies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-cream p-8 md:p-10 rounded-2xl border border-brand-gold text-center my-12 not-prose">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Book a Consultation from the UK & Europe</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base">
+          Get expert clinical clarity and actionable home strategies while bridging public waitlists. Appointments are scheduled to suit GMT and Central European Time (CET).
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/book/" class="w-full sm:w-auto bg-brand-navy text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-900 transition-colors shadow-sm">
+            Schedule a Consultation
+          </a>
+          <a href="/pricing/" class="w-full sm:w-auto bg-white text-brand-navy border-2 border-brand-navy px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+            View International Pricing
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </BaseLayout>

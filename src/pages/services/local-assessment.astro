@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
-const title = "Local Psychological & Developmental Assessment in Pakistan | Rabbia Psychologist";
-const description = "Comprehensive in-person child developmental assessments, formal diagnostic evaluations, and clinical psychoeducational testing in Pakistan.";
+const title = "Child Psychological & Developmental Assessment in Lahore, Pakistan | Rabbia Psychologist";
+const description = "Comprehensive in-person child psychological assessments, certified ADOS-2 autism evaluations, and clinical psychoeducational testing in Lahore, Pakistan.";
 const canonicalURL = "https://www.rabbiapsychologist.com/services/local-assessment/";
 
 const breadcrumbs = [
@@ -14,14 +14,17 @@ const breadcrumbs = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Local Child Psychological & Developmental Assessment",
+  "name": "Local Child Psychological & Developmental Assessment in Lahore, Pakistan",
   "provider": {
     "@type": "Organization",
     "name": "Rabbia Psychologist Child Development Services"
   },
-  "description": "Comprehensive in-person psychological testing, developmental assessment, and clinical diagnostic reporting for children in Pakistan.",
-  "areaServed": "Pakistan",
-  "serviceType": "Clinical Psychological Assessment"
+  "description": "Comprehensive in-person psychological testing, ADOS-2 autism assessment, developmental evaluations, and clinical diagnostic reporting for children in Lahore, Pakistan.",
+  "areaServed": [
+    { "@type": "City", "name": "Lahore" },
+    { "@type": "Country", "name": "Pakistan" }
+  ],
+  "serviceType": "Clinical Child Psychological Assessment"
 };
 
 const faqSchema = {
@@ -67,7 +70,7 @@ const faqSchema = {
     <div class="container mx-auto px-4 max-w-4xl">
       <div class="text-center mb-12">
         <span class="inline-block px-3 py-1 bg-brand-cream text-brand-navy rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-brand-gold/30">
-          In-Person Clinical Testing • Pakistan
+          In-Person Clinical Testing • Lahore, Pakistan
         </span>
         <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 leading-tight">
           Comprehensive Child Psychological &amp; Developmental Assessment

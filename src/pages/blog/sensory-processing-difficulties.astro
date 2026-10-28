@@ -19,21 +19,23 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import SensoryProcessingVisual from '../../components/blog/visuals/SensoryProcessingVisual.astro';
 import heroImage from '../../assets/blog/sensory-processing-difficulties.webp';
 
 const title = "Sensory Processing Difficulties: When the World is Too Loud";
 const description = "Understand sensory processing differences in children, the difference between sensory seeking and avoiding, and how to create a sensory-friendly home.";
-const currentUrl = "/blog/sensory-processing-difficulties";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/sensory-processing-difficulties/";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/sensory-processing-difficulties/";
 
-const keywords = ["sensory processing difficulties", "sensory overload children", "autism sensory issues", "sensory seeking vs avoiding", "child development sensory"];
+const keywords = ["sensory processing difficulties", "sensory barriers", "what is a sensory barrier", "sensory aversion meaning", "sensory processing challenges", "sensory obstacles", "sensory overload children", "autism sensory issues", "sensory seeking vs avoiding", "child development sensory"];
 
 const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
   { text: "What is Sensory Processing?", slug: "what-is-sensory-processing", level: 2 },
   { text: "Sensory Seeking vs. Sensory Avoiding", slug: "seeking-vs-avoiding", level: 2 },
+  { text: "What is a Sensory Barrier? Sensory Aversion Meaning", slug: "sensory-barriers-and-aversions", level: 2 },
   { text: "The Link with Autism and ADHD", slug: "autism-adhd-link", level: 2 },
-  { text: "Practical Home Strategies", slug: "practical-home-strategies", level: 2 },
+  { text: "Practical Home Strategies (Sensory Matrix)", slug: "practical-home-strategies", level: 2 },
   { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
 ];
 
@@ -88,6 +90,22 @@ const schema = [
       },
       {
         "@type": "Question",
+        "name": "What is a sensory barrier in child development?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A sensory barrier is any environmental feature or neurological sensitivity—such as buzzing fluorescent bulbs, cafeteria acoustics, scratchy uniforms, or crowded hallways—that obstructs a child from participating in learning, eating, or socializing, frequently triggering defensive meltdowns or cognitive shutdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does sensory aversion mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sensory aversion refers to an intense, neurological fight-or-flight defense mechanism triggered by specific tactile, auditory, vestibular, or olfactory sensations. It is not voluntary pickiness; the brain misinterprets harmless stimuli (like wet textures or tooth-brushing) as physical danger."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Is being a 'picky eater' always a sensory issue?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -99,7 +117,7 @@ const schema = [
         "name": "Can sensory overload cause meltdowns?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Absolutely. When a child takes in more sensory information than their nervous system can process, their brain triggers a 'fight or flight' response, resulting in a meltdown."
+          "text": "Absolutely. When a child takes in more sensory information than their nervous system can process, their brain triggers a 'fight or flight' response, resulting in an involuntary meltdown."
         }
       }
     ]
@@ -175,6 +193,8 @@ const schema = [
           <h2 id="seeking-vs-avoiding">Sensory Seeking vs. Sensory Avoiding</h2>
           <p>Sensory difficulties usually present in one of two ways, and many children show a mix of both.</p>
 
+          <SensoryProcessingVisual />
+
           <h3>The Sensory Avoider (Over-Responsive)</h3>
           <p>This child's nervous system feels sensory input too intensely. A light touch feels like a hit. A normal classroom feels like a rock concert.</p>
           <ul>
@@ -191,6 +211,22 @@ const schema = [
             <li>Playing very roughly, not realizing their own strength.</li>
           </ul>
 
+          <h2 id="sensory-barriers-and-aversions">What is a Sensory Barrier? Sensory Aversion Meaning</h2>
+          <p>In pediatric psychology and occupational therapy, two terms describe how sensory sensitivities disrupt daily life:</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Environmental Obstacle</span>
+              <h4 class="font-bold text-brand-navy mb-1">What is a Sensory Barrier?</h4>
+              <p class="text-sm text-gray-700">A <strong>sensory barrier</strong> is any sensory demand in the environment that prevents a child from attending, learning, or functioning. Common examples include echoing cafeteria acoustics, flickering fluorescent lighting, crowded morning school gates, or strong perfume smells.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Neurological Defense</span>
+              <h4 class="font-bold text-brand-navy mb-1">What is Sensory Aversion?</h4>
+              <p class="text-sm text-gray-700"><strong>Sensory aversion</strong> is a visceral, autonomic fight-or-flight recoil against a specific input. The nervous system registers a harmless texture (such as mashed potatoes or wet grass), sound, or touch as dangerous pain, triggering retching, panic, or explosive defensive aggression.</p>
+            </div>
+          </div>
+
           <MythVsFact
             myth="They just need to get used to the noise; they are being dramatic."
             fact="You cannot 'discipline' a sensory difference away. Forcing a sensory avoider into a loud, overwhelming environment will only trigger a 'fight or flight' meltdown."
@@ -201,8 +237,22 @@ const schema = [
           <p>In autism, sensory differences are actually part of the core diagnostic criteria. Autistic children may find certain sensory inputs painful, while using repetitive movements (like hand-flapping) to actively regulate their nervous system.</p>
           <p>In ADHD, children are often sensory seekers, moving their bodies constantly to generate the stimulation their brain craves to focus.</p>
 
-          <h2 id="practical-home-strategies">Practical Home Strategies</h2>
+          <h2 id="practical-home-strategies">Practical Home Strategies (Sensory Matrix)</h2>
           <p>The goal is to create a "sensory diet"—a plan that provides the right sensory input to keep the child regulated throughout the day.</p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6 not-prose">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span class="bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Free Clinical Tool</span>
+                <h3 class="text-xl font-bold text-brand-navy mt-2">Sensory Diet & Regulation Strategy Matrix</h3>
+                <p class="text-sm text-gray-700 mt-1">Audit your child's sensory profile across 5 domains (tactile, vestibular, proprioceptive, auditory, visual) and match with calming heavy-work exercises.</p>
+              </div>
+              <a href="/free-downloads/sensory-regulation-matrix/" class="inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shrink-0 shadow-sm">
+                <span>View & Print Matrix</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
 
           <ActionChecklist
             items={[
@@ -224,16 +274,11 @@ const schema = [
           <KeyTakeaways
             items={[
               "Sensory processing differences cause a 'traffic jam' in the nervous system.",
-              "Sensory avoiders find everyday input painful or overwhelming.",
-              "Sensory seekers need intense movement or pressure to feel regulated.",
-              "Sensory overload is a leading cause of involuntary meltdowns.",
-              "Accommodate, don't force. Use tools like headphones and safe chewables."
+              "Sensory avoiders find everyday input painful or overwhelming, while sensory seekers crave deep input.",
+              "Sensory barriers in school or public environments trigger defensive fight-or-flight responses.",
+              "Sensory aversion is a visceral neurological reaction, not stubbornness or picky behavior.",
+              "Use a structured Sensory Diet to provide proactive regulation throughout the day."
             ]}
-          />
-
-            datePublished="April 5, 2024"
-            dateModified="April 5, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[
@@ -242,12 +287,20 @@ const schema = [
               answer: "For a child with sensory processing differences, a vacuum cleaner or a hand dryer doesn't just sound 'loud'—it can sound physically painful. Their brain does not filter out background noise the way a neurotypical brain does."
             },
             {
+              question: "What is a sensory barrier in child development?",
+              answer: "A sensory barrier is any environmental feature or neurological sensitivity—such as buzzing fluorescent bulbs, cafeteria acoustics, scratchy uniforms, or crowded hallways—that obstructs a child from participating in learning, eating, or socializing, frequently triggering defensive meltdowns or cognitive shutdown."
+            },
+            {
+              question: "What does sensory aversion mean?",
+              answer: "Sensory aversion refers to an intense, neurological fight-or-flight defense mechanism triggered by specific tactile, auditory, vestibular, or olfactory sensations. It is not voluntary pickiness; the brain misinterprets harmless stimuli (like wet textures or tooth-brushing) as physical danger."
+            },
+            {
               question: "Is being a 'picky eater' always a sensory issue?",
               answer: "Often, yes. Many children restrict their diet not because of the taste, but because of the texture. For example, a blueberry is unpredictable (some are mushy, some are tart), whereas a cracker is the exact same texture every time."
             },
             {
               question: "Can sensory overload cause meltdowns?",
-              answer: "Absolutely. When a child takes in more sensory information than their nervous system can process, their brain triggers a 'fight or flight' response, resulting in a meltdown."
+              answer: "Absolutely. When a child takes in more sensory information than their nervous system can process, their brain triggers a 'fight or flight' response, resulting in an involuntary meltdown."
             }
           ]} />
 

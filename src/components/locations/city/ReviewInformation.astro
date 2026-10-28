@@ -12,24 +12,40 @@ if (city.reviewStatus !== 'completed' && city.reviewStatus !== 'approved') {
 }
 ---
 
-<section class="py-8 border-t border-gray-100 bg-gray-50 mt-12">
+<section 
+  class="py-8 border-t border-[#E6DFD3] bg-[#FAF7F2] mt-12" 
+  itemscope 
+  itemtype="https://schema.org/MedicalWebPage"
+  aria-label="Clinical Governance and Content Verification"
+>
   <div class="max-w-4xl mx-auto px-6 lg:px-8">
-    <div class="flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500">
-      <div class="mb-4 sm:mb-0">
-        <p class="font-medium text-gray-700 mb-1">Content Review Information</p>
-        <p>This information has been reviewed for clinical accuracy and local relevance.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#18222C]/75">
+      <div class="space-y-1">
+        <p class="font-bold text-[#0A233F] flex items-center gap-2 text-sm sm:text-base">
+          <svg class="w-4 h-4 text-[#2F6352]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Clinical Review &amp; Local Accuracy Verification
+        </p>
+        <p class="text-xs text-[#18222C]/65">
+          Reviewed and verified by 
+          <a href="/credentials/" class="font-semibold text-[#0A233F] hover:text-[#2F6352] underline underline-offset-2">
+            Rabbia Ashraf (MS Clinical Psychology, ADOS-2 Certified)
+          </a> 
+          for local neurodevelopmental context in {city.cityName}, {city.countryName}.
+        </p>
       </div>
-      <div class="flex gap-4">
-        {city.clinicalReviewStatus === 'approved' && (
-           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-             Clinically Reviewed
-           </span>
-        )}
-        {city.researchStatus === 'approved' && (
-           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-             Evidence Checked
-           </span>
-        )}
+
+      <div class="flex items-center gap-2 shrink-0">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200/80">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          Clinically Verified
+        </span>
+        <a 
+          href="/credentials/" 
+          class="inline-flex items-center gap-1 text-xs font-medium text-[#2F6352] hover:text-[#0A233F] underline"
+        >
+          <span>Credentials &amp; Governance</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>

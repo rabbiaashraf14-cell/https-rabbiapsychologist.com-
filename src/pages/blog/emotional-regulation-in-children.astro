@@ -19,12 +19,13 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import TantrumVsMeltdownVisual from '../../components/blog/visuals/TantrumVsMeltdownVisual.astro';
 import heroImage from '../../assets/blog/emotional-regulation-in-children-teaching-kids-to-handle-big-feelings.webp';
 
 const title = "Emotional Regulation in Children: Teaching Kids to Handle Big Feelings";
 const description = "Learn what emotional regulation is, why children with ADHD and autism struggle with it, and practical home strategies to build this vital life skill.";
-const currentUrl = "/blog/emotional-regulation-in-children";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/emotional-regulation-in-children/";
+const canonicalURL = "https://www.rabbiapsychologist.com" + currentUrl;
 
 const keywords = ["emotional regulation children", "child mood swings", "ADHD emotional regulation", "autism emotional support", "co-regulation parenting"];
 
@@ -187,6 +188,8 @@ const schema = [
             fact="While some behaviour is goal-driven, true emotional dysregulation is a loss of control. The child is overwhelmed and lacks the skills to manage the intensity of their feelings."
           />
 
+          <TantrumVsMeltdownVisual />
+
           <h2 id="co-regulation">The Power of Co-Regulation</h2>
           <p>A child cannot learn to self-regulate until they have experienced a significant amount of time of <strong>co-regulation</strong>. Co-regulation means lending the child your calm nervous system when theirs is out of control.</p>
           <p>When a child is screaming, our natural instinct is often to yell back to get them to stop. This adds fuel to the fire. Instead, co-regulation looks like:</p>
@@ -225,11 +228,6 @@ const schema = [
               "Teach calming strategies like deep breathing only when the child is already calm.",
               "Model your own healthy emotional regulation out loud for your child to see."
             ]}
-          />
-
-            datePublished="March 20, 2024"
-            dateModified="March 20, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[

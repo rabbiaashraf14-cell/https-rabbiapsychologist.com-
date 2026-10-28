@@ -2,51 +2,243 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 
+const title = "Parent Guidance & Child Psychology Support for USA Families | Rabbia Psychologist";
+const description = "Online parent guidance, ADHD support, neuropsychological report review, and IEP/504 plan consultation for families across the United States.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-families/usa/";
+
 const breadcrumbs = [
-  { name: 'International Families', href: '/international-families' },
-  { name: 'USA', href: '/international-families/usa' }
+  { name: 'Home', href: '/' },
+  { name: 'International Families', href: '/international-families/' },
+  { name: 'USA', href: '/international-families/usa/' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Parent Guidance & IEP Consultation for US Families",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com"
+  },
+  "description": description,
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": "Online Parent Coaching & Special Education Consultation"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does Rabbia Psychologist help US parents with IEP and 504 plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We review existing school psychological evaluations, psychoeducational batteries, and neuropsych reports. We help parents formulate concrete, measurable accommodation requests, understand Present Levels of Performance (PLOP), and prepare structured scripts for IEP or 504 eligibility meetings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide a formal medical diagnosis or prescribe medication in the US?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Our services in the United States are strictly educational parent consultation, psychoeducation, and behavioral guidance. We do not provide cross-border medical diagnosis, prescribe medication, or provide direct psychotherapy to children. Families must consult licensed in-state medical specialists or child psychiatrists for medical diagnosis and prescriptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you accept US health insurance or provide superbills?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All international consultations are private-pay out-of-pocket (billed in USD). We do not accept US insurance, Medicaid, and cannot provide superbills for in-network or out-of-network reimbursement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can parents do while on months-long waitlists for private neuropsychological evaluations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waitlists for pediatric neuropsychologists in the US often range from 6 to 14 months. Rather than waiting passively, we work with parents immediately to implement antecedent-based behavior strategies, sensory accommodations, and visual routines at home."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Parent Guidance & Child Psychology Support for USA Families | Rabbia Psychologist" description="Online parent guidance, ADHD support, and IEP consultation for families in the United States.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+<BaseLayout 
+  title={title} 
+  description={description} 
+  canonical={canonicalURL}
+  schema={[serviceSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="mt-8 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Support for Families in the USA</h1>
-      <p class="text-xl text-gray-700">Expert, accessible online parent guidance and school support for families navigating ADHD, Autism, and learning differences in the United States.</p>
-    </div>
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-300">
+        United States • Remote Consultation
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6 tracking-tight">
+        Parent Guidance & Child Psychology Support for Families in the USA
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+        Specialized online parent coaching, neuropsychological report review, and IEP/504 plan advocacy for families navigating ADHD, Autism, and learning differences in the United States.
+      </p>
+    </header>
 
     <div class="prose prose-lg max-w-none text-gray-700">
-      <h2 class="text-2xl font-bold text-brand-navy">How We Support US Families</h2>
-      <p>Navigating the private psychology and school support systems in the US can be overwhelming and costly. We offer specialized online consultation to bridge the gap.</p>
 
-      <ul>
-        <li><strong>IEP & 504 Plan Prep:</strong> We help you understand your child's reports and prepare you to advocate for appropriate accommodations in your school district.</li>
-        <li><strong>Report Translation:</strong> Have a lengthy neuropsychological evaluation? We review it with you and translate the findings into a practical home routine.</li>
-        <li><strong>Parent Coaching:</strong> While you wait for local diagnostic services, we can immediately begin working on behavioral strategies, executive function support, and emotional regulation.</li>
-      </ul>
+      <!-- How We Support US Families -->
+      <section class="mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy">
+          Bridging the Gap in American Pediatric Care
+        </h2>
+        <p>
+          In the United States, parents of neurodivergent children frequently encounter extreme systemic bottlenecks: 9-to-14 month waiting lists for pediatric developmental evaluations, out-of-pocket private neuropsychological evaluations costing upwards of $4,000 to $7,000, and combative school district IEP/504 meetings.
+        </p>
+        <p>
+          We offer targeted, immediate online parent consultation to give you clinical clarity, practical home frameworks, and structured school advocacy tools:
+        </p>
 
-      <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8">
-        <h3 class="font-bold text-brand-navy text-lg mb-2 mt-0">Pricing</h3>
-        <p class="mb-4">Standard international pricing applies (billed in USD).</p>
-        <a href="/pricing/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">View Pricing</a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose my-8">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">IEP & 504 Plan Preparation</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              We help you review school district evaluation reports, identify missing accommodations (such as visual cues, sensory breaks, or testing modifications), and prepare scripts for your ARD / IEP meetings.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Neuropsych Report Translation</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Have a dense 25-page neuropsychological report? We decode standard scores, percentiles (WISC-V, Woodcock-Johnson, Vineland-3), and clinical recommendations into a streamlined family roadmap.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Waitlist Parent Coaching</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              You do not have to wait 12 months for an evaluation before starting support. We help you implement evidence-based antecedent behavioral routines and executive function tools right now.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Free Clinical Toolkits for US Parents -->
+      <section class="my-12 not-prose bg-brand-cream/60 p-8 rounded-2xl border border-brand-gold/40">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Practical Parent Tools</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mt-1">Free Evidence-Based Downloads</h2>
+          <p class="text-sm text-gray-700 mt-2">
+            Printable toolkits to help you prepare for school district meetings and daily home structure.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-brand-navy rounded text-xs font-bold mb-2">IEP Prep</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">IEP & 504 Meeting Checklist</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Step-by-step checklist to prepare documentation, request appropriate accommodations, and keep meetings focused.
+              </p>
+            </div>
+            <a href="/free-downloads/school-iep-checklist/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-purple-100 text-purple-900 rounded text-xs font-bold mb-2">Report Review</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">Report Review Questions</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Key questions to ask evaluators, school psychologists, and therapists to ensure reports lead to actionable help.
+              </p>
+            </div>
+            <a href="/free-downloads/report-review-questions/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded text-xs font-bold mb-2">ADHD Routines</span>
+              <h3 class="font-bold text-brand-navy text-lg mb-1">ADHD Routine Planner</h3>
+              <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                Visual structure checklist designed to overcome morning and homework task initiation struggles.
+              </p>
+            </div>
+            <a href="/free-downloads/adhd-routine-planner/" class="text-sm font-bold text-brand-navy hover:text-brand-trust inline-flex items-center gap-1">
+              Download Free PDF →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Boundaries (USA) -->
+      <section class="bg-gray-50 p-6 rounded-xl border border-gray-200 my-12">
+        <h2 class="text-xl font-bold text-brand-navy mt-0 mb-3">Service Boundaries for US Families</h2>
+        <p class="text-sm leading-relaxed text-gray-700 mb-3">
+          Our online international services are strictly classified as <strong>parent coaching, psychoeducation, and educational consultation</strong>. In compliance with cross-border professional and state regulatory frameworks:
+        </p>
+        <ul class="text-sm text-gray-700 space-y-2 mb-0">
+          <li>We do <strong>not</strong> provide formal medical or psychological diagnoses across US state lines.</li>
+          <li>We do <strong>not</strong> provide direct child psychotherapy (e.g. CBT, play therapy) or prescribe psychiatric medications.</li>
+          <li>We do <strong>not</strong> provide emergency psychiatric crisis care. If your child is in acute distress, call 911 or dial 988 (Suicide & Crisis Lifeline).</li>
+          <li>Services are out-of-pocket (billed in USD). We do not accept US health insurance, Medicaid, or provide superbills.</li>
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="my-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-6">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4 not-prose">
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">How do you help US parents with IEP and 504 plans?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              We review existing school psychological evaluations, psychoeducational batteries, and neuropsych reports. We help parents formulate concrete, measurable accommodation requests, understand Present Levels of Performance (PLOP), and prepare structured scripts for IEP or 504 eligibility meetings.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Can you diagnose my child for US special education eligibility?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              No. Special education eligibility under IDEA (Individuals with Disabilities Education Act) requires testing conducted or reviewed by your local school district or an in-state licensed psychologist. We provide independent parent advocacy consultation and report reviews to prepare you for those district evaluations.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">What can parents do while on months-long waitlists?</h3>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Waitlists for pediatric neuropsychologists in the US often range from 6 to 14 months. Rather than waiting passively, we work with parents immediately to implement antecedent-based behavior strategies, sensory accommodations, and visual routines at home.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking CTA -->
+      <div class="bg-brand-cream p-8 md:p-10 rounded-2xl border border-brand-gold text-center my-12 not-prose">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Book a Consultation from the US</h2>
+        <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base">
+          Get expert clinical clarity and structured school advocacy strategies. Sessions are scheduled conveniently to accommodate Eastern, Central, Mountain, and Pacific time zones.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/book/" class="w-full sm:w-auto bg-brand-navy text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-900 transition-colors shadow-sm">
+            Schedule a Consultation
+          </a>
+          <a href="/pricing/" class="w-full sm:w-auto bg-white text-brand-navy border-2 border-brand-navy px-8 py-3.5 rounded-xl font-bold hover:bg-gray-50 transition-colors">
+            View International Pricing
+          </a>
+        </div>
       </div>
 
-      <h2 class="text-2xl font-bold text-brand-navy">Important Service Boundaries (USA)</h2>
-      <p>Please note that our online services are categorized as parent coaching, psychoeducation, and consultation. We <strong>do not</strong> provide services that are legally regulated on a state-by-state basis in the US, such as:</p>
-      <ul>
-        <li>Formal medical or psychological diagnosis across state lines.</li>
-        <li>Direct psychotherapy (CBT, play therapy, etc.) to the child.</li>
-        <li>Prescribing medication.</li>
-        <li>Emergency crisis response (Please call 911 or visit your nearest ER).</li>
-        <li>Services that can be billed to US health insurance or Medicaid (we are strictly out-of-pocket and do not provide superbills).</li>
-      </ul>
-
-      <div class="bg-brand-cream p-8 rounded-xl border border-brand-gold mt-12 text-center">
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">Ready to start?</h3>
-        <a href="/book/" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-900 transition-colors">Book Consultation</a>
-      </div>
     </div>
   </div>
 </BaseLayout>

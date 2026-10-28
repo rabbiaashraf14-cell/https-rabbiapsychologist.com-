@@ -19,6 +19,7 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import ExecutiveFunctionVisual from '../../components/blog/visuals/ExecutiveFunctionVisual.astro';
 import heroImage from '../../assets/blog/how-to-support-executive-function-at-home.webp';
 
 const title = "Executive Function Deficits in Children: Home & Daily Living Support Guide";
@@ -26,7 +27,7 @@ const description = "Practical residential and home support strategies for child
 const currentUrl = "/blog/how-to-support-executive-function-at-home/";
 const canonicalURL = "https://www.rabbiapsychologist.com/blog/how-to-support-executive-function-at-home/";
 
-const keywords = ["executive function children", "ADHD executive dysfunction", "child working memory", "time management children", "planning skills for kids"];
+const keywords = ["executive function children", "parenting skills homework planner", "residential support for executive functioning deficits", "ADHD homework routine tools", "supporting executive functioning at home", "ADHD executive dysfunction", "child working memory", "time management children", "planning skills for kids"];
 
 const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
@@ -34,6 +35,7 @@ const headings = [
   { text: "Core Areas of Executive Function", slug: "core-areas", level: 2 },
   { text: "The Connection with ADHD", slug: "connection-with-adhd", level: 2 },
   { text: "Practical Home Strategies", slug: "home-strategies", level: 2 },
+  { text: "Parenting Skills Homework Planner & Structure Tools", slug: "homework-planner-and-tools", level: 2 },
   { text: "Home & Residential Support for Deficits", slug: "home-environmental-support", level: 2 },
   { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
 ];
@@ -85,6 +87,22 @@ const schema = [
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Executive function refers to the brain's 'management system.' It involves the mental skills needed to plan, focus attention, remember instructions, and juggle multiple tasks successfully."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which ADHD tools help parents support homework routines and daily structure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most effective tools include visual countdown timers (e.g. Time Timer) to conquer time blindness, externalized homework checklists, body doubling (co-working alongside a parent), task initiation chunking (the 10-minute sprint), and low-distraction launchpad zones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is residential support for executive functioning deficits considered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Residential support or therapeutic boarding is typically considered only when an adolescent faces co-occurring severe safety concerns, persistent school refusal, or extreme failure to launch that has not responded to intensive outpatient care. For most children and teens, intensive home environmental scaffolding—such as launchpad stations, visual schedules, body doubling, and parent coaching—provides the external structure needed to build independence without out-of-home placement."
         }
       },
       {
@@ -194,6 +212,8 @@ const schema = [
           <p>Almost all children diagnosed with ADHD experience significant difficulties with executive function. In fact, many experts consider ADHD primarily a disorder of executive functioning.</p>
           <p>However, you do not need to have ADHD to have executive function challenges. Stress, lack of sleep, anxiety, and specific learning differences can also impact these skills.</p>
 
+          <ExecutiveFunctionVisual />
+
           <h2 id="home-strategies">Practical Home Strategies</h2>
           <p>The goal is to provide external "scaffolding" until the child’s internal air traffic control system is stronger.</p>
 
@@ -206,9 +226,64 @@ const schema = [
             ]}
           />
 
-          
-          <h2 id="home-environmental-support">Home & Residential Support for Executive Function Deficits</h2>
-          <p>When a child struggles with executive functioning deficits at home, telling them to 'try harder' or 'just remember' is ineffective because the neural pathways for self-monitoring are still developing. Instead, parents can externalize executive control into the physical environment:</p>
+          <h2 id="homework-planner-and-tools">Parenting Skills Homework Planner & Structure Tools</h2>
+          <p>Homework battles are rarely about academic ability; they are battles of <strong>task initiation, working memory, and sustained mental effort</strong>. Parents can dismantle homework resistance using clinical scaffolding tools:</p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6 not-prose">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span class="bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Free Clinical Tool</span>
+                <h3 class="text-xl font-bold text-brand-navy mt-2">ADHD Home Routine Planner & Visual Schedule</h3>
+                <p class="text-sm text-gray-700 mt-1">Download our printable visual planner designed to externalize working memory demands, structure homework blocks, and eliminate evening friction.</p>
+              </div>
+              <a href="/free-downloads/adhd-routine-planner/" class="inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shrink-0 shadow-sm">
+                <span>View & Print Planner</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Technique 1</span>
+              <h4 class="font-bold text-brand-navy mb-1">The 10-Minute Sprint & Pomodoro</h4>
+              <p class="text-sm text-gray-700">Set a visual timer for just 10 minutes. Tell the child: <em>"We are only working until the red disc disappears. When it beeps, you get a 3-minute movement break."</em> Overcomes initial task freeze.</p>
+            </div>
+            <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Technique 2</span>
+              <h4 class="font-bold text-brand-navy mb-1">Silent Body Doubling</h4>
+              <p class="text-sm text-gray-700">Sit at the same table working quietly on your laptop or folding laundry. Do not police their work; your calm, regulated proximity provides an external dopamine anchor.</p>
+            </div>
+          </div>
+
+          <h2 id="home-environmental-support">Residential Support for Executive Functioning Deficits vs. Home Scaffolding</h2>
+          <p>When adolescents or young adults experience severe executive dysfunction, families often reach a breaking point characterized by chronic school refusal, explosive emotional dysregulation, and an inability to manage daily self-care. At this stage, many parents begin searching for <strong>residential support for executive functioning deficits</strong>.</p>
+
+          <p>Before considering out-of-home placement, it is essential to understand the clinical continuum of care and why modifying the home environment is the first and most sustainable intervention.</p>
+
+          <div class="my-8 not-prose bg-amber-50 p-6 rounded-xl border border-amber-200">
+            <h3 class="text-lg font-bold text-brand-navy mb-3">The 4-Tier Continuum of Executive Function Support</h3>
+            <div class="space-y-3 text-sm text-gray-700">
+              <div class="bg-white p-3.5 rounded-lg border border-gray-200">
+                <span class="font-bold text-brand-navy">Level 1: Outpatient EF Coaching & Parent Training</span>
+                <p class="text-xs text-gray-600 mt-1">Weekly clinical parent guidance, visual routines, time-management apps, and homework sprint strategies while the child lives at home.</p>
+              </div>
+              <div class="bg-white p-3.5 rounded-lg border border-gray-200">
+                <span class="font-bold text-brand-navy">Level 2: Intensive Home Environmental Scaffolding</span>
+                <p class="text-xs text-gray-600 mt-1">Direct parental restructuring of physical spaces (launchpad zones, visual checklists, device locks, silent body doubling) to remove the cognitive load of initiation and working memory.</p>
+              </div>
+              <div class="bg-white p-3.5 rounded-lg border border-gray-200">
+                <span class="font-bold text-brand-navy">Level 3: Specialized Day Programs & Educational Placements</span>
+                <p class="text-xs text-gray-600 mt-1">Structured school day programs that incorporate executive functioning instruction directly into academic curricula without residential boarding.</p>
+              </div>
+              <div class="bg-white p-3.5 rounded-lg border border-gray-200">
+                <span class="font-bold text-brand-navy">Level 4: Residential Support & Transitional Living</span>
+                <p class="text-xs text-gray-600 mt-1">24/7 therapeutic boarding schools or young adult transitional living communities reserved for co-occurring severe psychiatric safety concerns, severe substance use, or persistent inability to function despite intensive outpatient interventions.</p>
+              </div>
+            </div>
+          </div>
+
+          <p>For the majority of children and teens, telling them to 'try harder' or 'just be responsible' fails because the neural pathways for self-monitoring are still developing. Instead, parents can externalize executive control into the physical home environment with these 4 environmental anchors:</p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 not-prose">
             <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm">
@@ -244,19 +319,23 @@ const schema = [
               "Children may know what they need to do, but lack the executive skills to execute the plan.",
               "ADHD is closely linked to executive dysfunction.",
               "Externalize the skills: use visual timers, written checklists, and break tasks down into micro-steps.",
+              "Use body doubling and structured homework planners to overcome task initiation paralysis.",
               "Professional support can help clarify the specific challenges and provide a roadmap."
             ]}
-          />
-
-            datePublished="January 15, 2024"
-            dateModified="March 1, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[
             {
               question: "What is executive function?",
               answer: "Executive function refers to the brain's 'management system.' It involves the mental skills needed to plan, focus attention, remember instructions, and juggle multiple tasks successfully."
+            },
+            {
+              question: "Which ADHD tools help parents support homework routines and daily structure?",
+              answer: "The most effective tools include visual countdown timers (e.g. Time Timer) to conquer time blindness, externalized homework checklists, body doubling (co-working alongside a parent), task initiation chunking (the 10-minute sprint), and low-distraction launchpad zones."
+            },
+            {
+              question: "When is residential support for executive functioning deficits considered?",
+              answer: "Residential support or therapeutic boarding is typically considered only when an adolescent faces co-occurring severe safety concerns, persistent school refusal, or extreme failure to launch that has not responded to intensive outpatient care. For most children and teens, intensive home environmental scaffolding—such as launchpad stations, visual schedules, body doubling, and parent coaching—provides the external structure needed to build independence without out-of-home placement."
             },
             {
               question: "Is executive dysfunction the same as ADHD?",

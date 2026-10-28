@@ -1,74 +1,188 @@
 ---
+const situations = [
+  {
+    category: 'waitlist',
+    badge: 'Waitlist Bridge • UK, USA & Aus',
+    quote: '"We’re on a 12–18 month public waitlist, but we need help and strategies right now."',
+    translation: 'Don’t wait in limbo. We provide immediate parent guidance, home routines, and sensory strategies while you await formal evaluations.',
+    cta: 'Bridge The Waitlist',
+    href: '/parent-support/'
+  },
+  {
+    category: 'adhd',
+    badge: 'Executive Function & ADHD',
+    quote: '"School says they cannot sit still or follow instructions, but they hyperfocus on screens."',
+    translation: 'We build dopamine-friendly routines, visual transitions, and school accommodation plans that reduce morning battles and homework friction.',
+    cta: 'Explore ADHD Guidance',
+    href: '/services/adhd-support/'
+  },
+  {
+    category: 'autism',
+    badge: 'Autism & Sensory Profiles',
+    quote: '"My child freezes, covers their ears, or struggles to communicate with peers at school."',
+    translation: 'Neurodiversity-affirming guidance focused on communication scaffolds, sensory triggers, and protecting your child’s emotional safety.',
+    cta: 'Explore Autism Support',
+    href: '/services/asd-support/'
+  },
+  {
+    category: 'meltdown',
+    badge: 'Emotional Regulation',
+    quote: '"Daily meltdowns, explosive crying, or shut-downs are exhausting our entire family."',
+    translation: 'Behavior is communication. We identify underlying nervous system overloads and give you co-regulation toolkits that actually work at home.',
+    cta: 'Explore Behaviour Planning',
+    href: '/services/behaviour-planning/'
+  },
+  {
+    category: 'reports',
+    badge: 'Report Review & IEP Advocacy',
+    quote: '"We received a 25-page psychological evaluation, but we don’t know what to do next."',
+    translation: 'We translate complex clinical jargon into an actionable 1-page parent roadmap and prepare you for confident school IEP/504 meetings.',
+    cta: 'Review Your Report',
+    href: '/report-review/'
+  },
+  {
+    category: 'international',
+    badge: 'Expat & International Families',
+    quote: '"We live abroad (US, UK, Gulf, Aus) and need culturally attuned, English & Urdu guidance."',
+    translation: 'Specialized telehealth support for international and diaspora families navigating foreign school systems and cultural family expectations.',
+    cta: 'International Guidance',
+    href: '/international-families/'
+  }
+];
 ---
-<section class="py-16 bg-white">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">What are you noticing?</h2>
-      <p class="text-lg text-gray-700 max-w-2xl mx-auto">Providing practical clarity and guidance when you feel overwhelmed by your child’s developmental or behavioural needs.</p>
+
+<section class="py-20 lg:py-24 bg-gradient-to-b from-brand-cream/40 via-white to-brand-cream/30 relative overflow-hidden" id="what-brings-you-here">
+  <!-- Soft Apple-style ambient background gradient spheres -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-blue-100/40 via-amber-100/30 to-emerald-100/30 rounded-full blur-3xl pointer-events-none opacity-60"></div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-brand-navy/10 shadow-sm text-xs font-semibold text-brand-navy uppercase tracking-wider mb-4">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+        Personalized Starting Point
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-brand-navy tracking-tight mb-4">
+        What Are You Experiencing Right Now?
+      </h2>
+      <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+        Select what best describes your family’s situation to see how specialist parent guidance creates clarity within 50 minutes.
+      </p>
+
+      <!-- Apple-style segmented filter pill control -->
+      <div class="flex flex-wrap justify-center items-center gap-2 mt-8 p-1.5 bg-gray-100/80 backdrop-blur-md rounded-2xl max-w-3xl mx-auto border border-gray-200/60" id="filter-pills">
+        <button type="button" data-filter="all" class="filter-tab active px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 bg-white text-brand-navy shadow-sm">
+          All Situations
+        </button>
+        <button type="button" data-filter="waitlist" class="filter-tab px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-brand-navy">
+          Public Waitlists
+        </button>
+        <button type="button" data-filter="adhd" class="filter-tab px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-brand-navy">
+          ADHD &amp; Focus
+        </button>
+        <button type="button" data-filter="autism" class="filter-tab px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-brand-navy">
+          Autism &amp; Sensory
+        </button>
+        <button type="button" data-filter="meltdown" class="filter-tab px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-brand-navy">
+          Meltdowns
+        </button>
+        <button type="button" data-filter="reports" class="filter-tab px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-brand-navy">
+          Reports &amp; School
+        </button>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Apple-style Frosted Glass Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" id="situations-grid">
+      {situations.map((item) => (
+        <a 
+          href={item.href}
+          data-category={item.category}
+          class="situation-card apple-glass-card apple-specular-top p-7 flex flex-col justify-between group cursor-pointer text-left"
+        >
+          <div>
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cream/80 border border-brand-navy/5 text-[11px] font-bold text-brand-navy tracking-tight mb-4">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-trust"></span>
+              {item.badge}
+            </div>
 
-      <!-- Card 1 -->
-      <a href="/services/asd-support/" class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift group">
-        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors">
-          "My child isn't communicating like other children."
-        </h3>
-        <p class="text-brand-trust font-bold text-sm inline-flex items-center group-hover:underline">
-          Explore Autism Support <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </p>
-      </a>
+            <!-- Quote -->
+            <h3 class="text-lg md:text-xl font-bold text-brand-navy mb-3.5 leading-snug tracking-tight group-hover:text-blue-900 transition-colors">
+              {item.quote}
+            </h3>
 
-      <!-- Card 2 -->
-      <a href="/services/adhd-support/" class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift group">
-        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors">
-          "School says my child struggles to focus."
-        </h3>
-        <p class="text-brand-trust font-bold text-sm inline-flex items-center group-hover:underline">
-          Explore ADHD Support <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </p>
-      </a>
+            <!-- Clinical Translation -->
+            <p class="text-sm text-gray-600 leading-relaxed mb-6">
+              {item.translation}
+            </p>
+          </div>
 
-      <!-- Card 3 -->
-      <a href="/services/learning-difficulties/" class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift group">
-        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors">
-          "My child is bright but struggling academically."
-        </h3>
-        <p class="text-brand-trust font-bold text-sm inline-flex items-center group-hover:underline">
-          Explore Learning Support <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </p>
-      </a>
+          <!-- Bottom Action Link -->
+          <div class="pt-4 border-t border-gray-100/80 flex items-center justify-between mt-auto">
+            <span class="text-xs font-bold text-brand-navy group-hover:text-blue-800 transition-colors flex items-center gap-1.5">
+              <span>{item.cta}</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </span>
+            <span class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-navy group-hover:text-white transition-all duration-300">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
 
-      <!-- Card 4 -->
-      <a href="/services/behaviour-planning/" class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift group">
-        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors">
-          "Meltdowns or behaviour are becoming difficult to manage."
-        </h3>
-        <p class="text-brand-trust font-bold text-sm inline-flex items-center group-hover:underline">
-          Explore Behaviour Planning <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </p>
-      </a>
-
-      <!-- Card 5 -->
-      <a href="/services/asd-support/" class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift group">
-        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors">
-          "My child struggles socially or with other children."
-        </h3>
-        <p class="text-brand-trust font-bold text-sm inline-flex items-center group-hover:underline">
-          Explore Support Options <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </p>
-      </a>
-
-      <!-- Card 6 -->
-      <a href="/parent-support/" class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover-lift group">
-        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-trust transition-colors">
-          "I'm unsure whether this is autism, ADHD, a learning difficulty, or something else."
-        </h3>
-        <p class="text-brand-trust font-bold text-sm inline-flex items-center group-hover:underline">
-          Book Parent Consultation <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </p>
-      </a>
-
+    <!-- Assurance banner below grid -->
+    <div class="mt-12 text-center">
+      <div class="inline-flex flex-wrap items-center justify-center gap-3 py-3 px-6 rounded-2xl bg-white/70 backdrop-blur-md border border-gray-200/60 shadow-sm text-xs md:text-sm text-gray-600">
+        <span class="flex items-center gap-1.5 font-medium text-brand-navy">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          No referral needed from a GP
+        </span>
+        <span class="hidden sm:inline text-gray-300">•</span>
+        <span class="flex items-center gap-1.5 font-medium text-brand-navy">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Parent-only initial intake (child does not need to be present)
+        </span>
+        <span class="hidden sm:inline text-gray-300">•</span>
+        <span class="flex items-center gap-1.5 font-medium text-brand-navy">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Direct clinical summary within 24 hours
+        </span>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  function setupFilters() {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
+    const cards = document.querySelectorAll<HTMLElement>('.situation-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active', 'bg-white', 'text-brand-navy', 'shadow-sm');
+          t.classList.add('text-gray-600');
+        });
+        tab.classList.add('active', 'bg-white', 'text-brand-navy', 'shadow-sm');
+        tab.classList.remove('text-gray-600');
+
+        const filter = tab.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            card.classList.add('fade-in');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Run on page load and client transitions
+  setupFilters();
+  document.addEventListener('astro:page-load', setupFilters);
+</script>

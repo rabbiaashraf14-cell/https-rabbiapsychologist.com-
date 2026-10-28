@@ -19,16 +19,18 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import ExecutiveFunctionVisual from '../../components/blog/visuals/ExecutiveFunctionVisual.astro';
 import heroImage from '../../assets/blog/understanding-the-confusion-between-adhd-and-hyperactivity-in-children.webp';
 
 const title = "Understanding the Confusion Between ADHD and Hyperactivity in Children";
 const description = "Many parents confuse ADHD with hyperactivity. Learn how ADHD can present as inattention, hyperactivity, impulsivity, or a combined pattern, and why proper assessment matters.";
 const keywords = "ADHD in children, hyperactivity in children, ADHD assessment, child psychologist, ADHD support, inattentive ADHD, behaviour planning, developmental assessment";
 
-const currentUrl = "/blog/understanding-adhd-and-hyperactivity-in-children";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/understanding-adhd-and-hyperactivity-in-children/";
+const canonicalURL = "https://www.rabbiapsychologist.com" + currentUrl;
 
 const headings = [
+  { text: "Difference Between ADHD & Hyperactivity", slug: "difference-between-adhd-and-hyperactivity", level: 2 },
   { text: "Hyperactivity Is a Symptom", slug: "hyperactivity-is-a-symptom", level: 2 },
   { text: "ADHD Presentations", slug: "adhd-presentations", level: 2 },
   { text: "Predominantly Hyperactive", slug: "hyperactive-impulsive", level: 3 },
@@ -80,6 +82,14 @@ const schema = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between ADHD and hyperactivity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The primary difference is that hyperactivity is a single physical symptom, whereas ADHD is a formal neurodevelopmental condition. Hyperactivity describes physical restlessness, excessive movement, or fidgeting. ADHD (Attention Deficit Hyperactivity Disorder) is a broader disorder of executive functioning, dopamine regulation, attention control, working memory, and impulse regulation. A child can have ADHD without ever being hyperactive (Inattentive presentation), and a child can be hyperactive due to sensory overload, anxiety, or fatigue without having ADHD."
+        }
+      },
       {
         "@type": "Question",
         "name": "Is hyperactivity the same as ADHD?",
@@ -166,6 +176,64 @@ const schema = [
           <ExpertTip>
             Understanding the difference helps parents avoid labeling a child too quickly. It also ensures they seek a proper developmental assessment when difficulties affect school, home routines, learning, and social life.
           </ExpertTip>
+
+          <h2 id="difference-between-adhd-and-hyperactivity">What is the Difference Between ADHD and Hyperactivity?</h2>
+          <p>The core <strong>difference between ADHD and hyperactivity</strong> is that hyperactivity is an outward physical behaviour (a symptom), whereas ADHD is a complex, lifelong neurodevelopmental condition that affects how the brain regulates attention, impulses, motivation, and working memory.</p>
+
+          <div class="overflow-x-auto my-6 not-prose">
+            <table class="w-full border-collapse border border-gray-200 text-sm">
+              <thead class="bg-brand-navy text-white">
+                <tr>
+                  <th class="p-3 text-left">Clinical Dimension</th>
+                  <th class="p-3 text-left">Hyperactivity</th>
+                  <th class="p-3 text-left">ADHD (Attention Deficit Hyperactivity Disorder)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="bg-white">
+                  <td class="p-3 font-semibold text-gray-900">What It Is</td>
+                  <td class="p-3 text-gray-700">A physical symptom characterized by motor restlessness, fidgeting, or inability to stay seated.</td>
+                  <td class="p-3 text-gray-700 font-bold text-brand-trust">A neurodevelopmental disorder of executive functioning and dopamine regulation.</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="p-3 font-semibold text-gray-900">Scope</td>
+                  <td class="p-3 text-gray-700">Limited to motor movement, excessive talking, or physical pacing.</td>
+                  <td class="p-3 text-gray-700">Broader: includes inattention, time blindness, emotional dysregulation, working memory deficits, and task paralysis.</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="p-3 font-semibold text-gray-900">Can It Exist Alone?</td>
+                  <td class="p-3 text-gray-700">Yes. Can be triggered by sensory seeking, anxiety, lack of sleep, or normal childhood energy.</td>
+                  <td class="p-3 text-gray-700">Yes. Children with Inattentive ADHD have zero physical hyperactivity.</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="p-3 font-semibold text-gray-900">Underlying Mechanism</td>
+                  <td class="p-3 text-gray-700">Physiological arousal or energy discharge.</td>
+                  <td class="p-3 text-gray-700">Underactive prefrontal cortex dopamine and norepinephrine circuits.</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="p-3 font-semibold text-gray-900">Diagnostic Requirement</td>
+                  <td class="p-3 text-gray-700">Does not require a diagnosis; it is an observational behaviour.</td>
+                  <td class="p-3 text-gray-700">Requires comprehensive clinical evaluation across multiple settings (home and school).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Free Clinical Download Card -->
+          <div class="my-8 not-prose bg-brand-cream/80 p-6 rounded-xl border border-brand-gold/60 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 bg-brand-navy text-white text-xs font-bold rounded mb-2">Free Download</span>
+              <h3 class="text-xl font-bold text-brand-navy m-0">ADHD Morning & Daily Routine Planner</h3>
+              <p class="text-sm text-gray-700 mt-1 mb-0 max-w-xl">
+                Tackle task initiation paralysis and reduce daily friction with our evidence-based visual routine planner designed for neurodivergent children.
+              </p>
+            </div>
+            <a href="/free-downloads/adhd-routine-planner/" class="whitespace-nowrap px-5 py-3 bg-brand-navy text-white rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shadow-sm">
+              Get Free Planner →
+            </a>
+          </div>
+
+          <ExecutiveFunctionVisual />
 
           <h2 id="hyperactivity-is-a-symptom">Hyperactivity Is a Symptom, Not the Whole Disorder</h2>
 
@@ -258,11 +326,6 @@ const schema = [
             ]}
           />
 
-            datePublished="January 10, 2024"
-            dateModified="March 1, 2024"
-            readTime="6 min"
-          />
-
           <div class="mt-8 border-t border-gray-200 pt-8">
             <h3 class="text-xl font-bold text-brand-navy mb-4">References</h3>
             <ul class="text-sm text-gray-600 space-y-2 list-none p-0">
@@ -273,6 +336,10 @@ const schema = [
           </div>
 
           <FAQAccordion faqs={[
+            {
+              question: "What is the difference between ADHD and hyperactivity?",
+              answer: "The primary difference is that hyperactivity is a single physical symptom, whereas ADHD is a formal neurodevelopmental condition. Hyperactivity describes physical restlessness, excessive movement, or fidgeting. ADHD (Attention Deficit Hyperactivity Disorder) is a broader disorder of executive functioning, dopamine regulation, attention control, working memory, and impulse regulation. A child can have ADHD without ever being hyperactive (Inattentive presentation), and a child can be hyperactive due to sensory overload, anxiety, or fatigue without having ADHD."
+            },
             {
               question: "Is hyperactivity the same as ADHD?",
               answer: "No. Hyperactivity can be one part of ADHD, but ADHD also includes problems with attention and impulsivity. Some children with ADHD are not visibly hyperactive."

@@ -23,17 +23,19 @@ import heroImage from '../../assets/blog/speech-delay-vs-autism-understanding-th
 
 const title = "Speech Delay vs. Autism: How to Tell the Difference";
 const description = "Does late talking mean autism? Learn the critical differences between a speech delay and autism spectrum disorder, and what non-verbal signs parents should look for.";
-const currentUrl = "/blog/speech-delay-vs-autism";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/speech-delay-vs-autism/";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/speech-delay-vs-autism/";
 
-const keywords = ["speech delay vs autism", "late talker or autism", "toddler speech delay", "autism early signs", "social communication"];
+const keywords = ["speech delay vs autism", "signs of speech delay not autism", "late talker vs autism", "is speech delay a sign of autism", "toddler speech delay", "autism early signs", "social communication", "non verbal vs speech delay"];
 
 const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
   { text: "What is a Speech Delay?", slug: "what-is-a-speech-delay", level: 2 },
+  { text: "Signs of Speech Delay that Are NOT Autism", slug: "signs-of-speech-delay-not-autism", level: 2 },
+  { text: "Late Talker vs. Autistic Spectrum: Comparison Table", slug: "late-talker-vs-autism-comparison", level: 2 },
   { text: "When is it Autism?", slug: "when-is-it-autism", level: 2 },
   { text: "The Importance of Non-Verbal Communication", slug: "non-verbal-communication", level: 2 },
-  { text: "What Parents Can Track at Home", slug: "what-to-track", level: 2 },
+  { text: "What Parents Can Track at Home (Observation Guide)", slug: "what-to-track", level: 2 },
   { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
 ];
 
@@ -88,10 +90,26 @@ const schema = [
       },
       {
         "@type": "Question",
+        "name": "What are clear signs of speech delay that are NOT autism?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Children with isolated speech delays maintain strong social motivation: they point enthusiastically to show you interesting objects (protodeclarative pointing), imitate gestures (clapping, waving bye-bye), make warm eye contact when smiling, understand verbal directions matching their age, and engage in imaginative pretend play."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is the biggest difference between a late talker and an autistic child?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A late talker usually still wants to communicate socially. They will point, gesture, make eye contact, and try to share their interests with you. An autistic child may show differences in this 'joint attention' or prefer to play alone."
+          "text": "A late talker uses non-verbal body language and facial expressions to pull you into their world. An autistic child displays differences in 'joint attention'—sharing interest without words—and may not respond consistently to their name or show objects to caregivers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is delayed speech always a sign of autism?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Speech delays can stem from chronic ear infections (conductive hearing loss), expressive language delays, oral motor coordination differences, developmental language disorders, or bilingual exposure. Autism requires persistent deficits in reciprocal social communication across multiple contexts."
         }
       },
       {
@@ -169,6 +187,58 @@ const schema = [
           <p>An isolated speech or language delay means that a child is developing at a typical pace in motor skills, play, and social interaction, but they are behind in acquiring spoken words.</p>
           <p>Often referred to as "late talkers," these children still have a strong desire to communicate. If they cannot find the word for "juice," they will grab your hand, walk you to the fridge, point at the juice, look you in the eye, and make a demanding noise.</p>
 
+          <h2 id="signs-of-speech-delay-not-autism">Signs of Speech Delay that Are NOT Autism</h2>
+          <p>When evaluating late-talking toddlers, clinicians look for key preservation markers that indicate social communication circuits are intact despite delayed verbal production:</p>
+
+          <ul>
+            <li><strong>Protodeclarative Pointing:</strong> The child points to objects simply to share excitement or show you something interesting ("Look at the bird!"), not just to demand food or toys (protoimperative pointing).</li>
+            <li><strong>Robust Compensatory Gestures:</strong> If words are missing, they use rich physical pantomime—clapping, nodding yes, shaking head no, waving bye-bye, and blowing kisses.</li>
+            <li><strong>Intact Receptive Language:</strong> The child understands language far better than they speak. They can follow age-appropriate directions like "Bring me your teddy bear" or "Put your cup in the sink."</li>
+            <li><strong>Shared Emotional Reciprocity:</strong> The child looks at you to share a laugh, checks in with your eyes during play, and responds to your facial expressions.</li>
+            <li><strong>Functional & Imaginative Play:</strong> They use toys for their intended purpose—feeding a doll with a spoon or driving a toy truck on a rug—rather than exclusively spinning wheels, lining objects up, or smelling toys.</li>
+            <li><strong>Communication Frustration:</strong> When you fail to understand what they want, they express visible communicative frustration because they are actively attempting to connect with your mind.</li>
+          </ul>
+
+          <h2 id="late-talker-vs-autism-comparison">Late Talker vs. Autistic Spectrum: Comparison Table</h2>
+          <div class="overflow-x-auto my-6 not-prose">
+            <table class="w-full text-left border-collapse border border-gray-200 bg-white rounded-lg shadow-sm text-sm md:text-base">
+              <thead>
+                <tr class="bg-brand-navy text-white">
+                  <th class="p-3 font-semibold border-b">Developmental Marker</th>
+                  <th class="p-3 font-semibold border-b">Isolated Speech Delay (Late Talker)</th>
+                  <th class="p-3 font-semibold border-b">Autism Spectrum Disorder (ASD)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 text-gray-700">
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Desire to Connect</td>
+                  <td class="p-3">High social motivation; uses eye contact and gestures to initiate connection.</td>
+                  <td class="p-3">May seem self-contained; rarely initiates interactions to share delight.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Response to Name</td>
+                  <td class="p-3">Consistently turns head and orientates to voice across the room.</td>
+                  <td class="p-3">Inconsistent orientation; may act as if hard of hearing despite sharp hearing for preferred noises.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Joint Attention</td>
+                  <td class="p-3">Follows your pointing finger to see an airplane; points to show you interesting things.</td>
+                  <td class="p-3">May look at your finger rather than the target; rarely points to declare shared interest.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Language Patterns</td>
+                  <td class="p-3">Spoken words emerge slowly, but grammatical progression follows typical developmental order.</td>
+                  <td class="p-3">May display echolalia (repeating scripts/phrases verbatim), pronoun reversals, or sudden loss of previously acquired words.</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3 font-semibold text-brand-navy">Play Style</td>
+                  <td class="p-3">Imaginative, flexible pretend play (pretend tea parties, feeding stuffed animals).</td>
+                  <td class="p-3">Repetitive, sensorimotor play (lining cars by color, opening/closing doors, spinning wheels).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <h2 id="when-is-it-autism">When is it Autism?</h2>
           <p>Autism Spectrum Disorder (ASD) is a neurodevelopmental difference that affects the entire process of social communication, not just the mechanical act of speaking.</p>
           <p>A child with autism may have a speech delay, but they will also show differences in the <em>intent</em> to communicate socially. Rather than dragging you to the fridge to point at the juice, they might simply stand by the fridge crying, or try to climb it themselves without looking to you for help.</p>
@@ -192,15 +262,30 @@ const schema = [
             fact="Some autistic children have advanced speech (like reciting the alphabet or scripts from movies) but still struggle with functional social communication, like saying 'I need help' or having a back-and-forth conversation."
           />
 
-          <h2 id="what-to-track">What Parents Can Track at Home</h2>
-          <p>If you are worried, spend a few days observing your child without prompting them. Write down your observations.</p>
+          <h2 id="what-to-track">What Parents Can Track at Home (Observation Guide)</h2>
+          <p>If you are worried, spend a few days observing your child without prompting them. Write down your observations across daily home routines.</p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6 not-prose">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span class="bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Free Clinical Tool</span>
+                <h3 class="text-xl font-bold text-brand-navy mt-2">Autism Spectrum & Social Communication Guide</h3>
+                <p class="text-sm text-gray-700 mt-1">Download our free observation checklist to systematically track joint attention, play patterns, and gestures before your diagnostic consultation.</p>
+              </div>
+              <a href="/free-downloads/autism-observation-guide/" class="inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shrink-0 shadow-sm">
+                <span>View & Print Guide</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
 
           <ActionChecklist
             items={[
               "Does my child use pointing to show me things (not just to ask for things)?",
               "Does my child try to compensate for their lack of words by using gestures (waving, nodding, holding up arms to be picked up)?",
               "Does my child make eye contact with me to share a feeling, like looking at me to smile when something funny happens?",
-              "Does my child respond to their name when they are occupied with a toy?"
+              "Does my child respond to their name when they are occupied with a toy?",
+              "Does my child engage in back-and-forth babbling or sound imitation?"
             ]}
           />
 
@@ -215,16 +300,11 @@ const schema = [
           <KeyTakeaways
             items={[
               "A speech delay affects spoken words; autism affects broader social communication.",
-              "A child with a speech delay will usually compensate with pointing, gesturing, and strong eye contact.",
-              "'Joint attention' (sharing an experience without words) is a key differentiator.",
-              "Some autistic children can speak well but struggle to use speech for social connection.",
-              "Do not 'wait and see.' Early assessment leads to earlier support, regardless of the diagnosis."
+              "A child with an isolated speech delay will compensate with pointing, gestures, and warm eye contact.",
+              "'Joint attention' (sharing an experience without words) is the most critical clinical differentiator.",
+              "Signs that are NOT autism include protodeclarative pointing, intact receptive understanding, and imaginative pretend play.",
+              "Do not 'wait and see.' Early assessment leads to earlier support, regardless of whether it is speech therapy or neurodevelopmental guidance."
             ]}
-          />
-
-            datePublished="March 15, 2024"
-            dateModified="March 15, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[
@@ -233,8 +313,16 @@ const schema = [
               answer: "Not always. Many children are 'late talkers' but have typical social and non-verbal skills. Autism is a broader developmental difference that affects how a child communicates socially, not just whether they use spoken words."
             },
             {
+              question: "What are clear signs of speech delay that are NOT autism?",
+              answer: "Children with isolated speech delays maintain strong social motivation: they point enthusiastically to show you interesting objects (protodeclarative pointing), imitate gestures (clapping, waving bye-bye), make warm eye contact when smiling, understand verbal directions matching their age, and engage in imaginative pretend play."
+            },
+            {
               question: "What is the biggest difference between a late talker and an autistic child?",
-              answer: "A late talker usually still wants to communicate socially. They will point, gesture, make eye contact, and try to share their interests with you. An autistic child may show differences in this 'joint attention' or prefer to play alone."
+              answer: "A late talker uses non-verbal body language and facial expressions to pull you into their world. An autistic child displays differences in 'joint attention'—sharing interest without words—and may not respond consistently to their name or show objects to caregivers."
+            },
+            {
+              question: "Is delayed speech always a sign of autism?",
+              answer: "No. Speech delays can stem from chronic ear infections (conductive hearing loss), expressive language delays, oral motor coordination differences, developmental language disorders, or bilingual exposure. Autism requires persistent deficits in reciprocal social communication across multiple contexts."
             },
             {
               question: "Should I wait to see if they start talking?",

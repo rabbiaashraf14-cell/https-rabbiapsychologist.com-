@@ -1,0 +1,299 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import ArticleAuthor from '../../components/blog/ArticleAuthor.astro';
+import BlogCTA from '../../components/blog/BlogCTA.astro';
+import CalloutBox from '../../components/blog/CalloutBox.astro';
+import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
+import MythVsFact from '../../components/blog/MythVsFact.astro';
+import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
+import ExpertTip from '../../components/blog/ExpertTip.astro';
+
+import heroImage from '../../assets/blog/sleep-routine-and-child-behaviour.webp';
+import secondaryImage from '../../assets/blog/parent-burnout-in-child-development-support.webp';
+
+const title = "ADHD, Neurodivergence & Bedtime Struggles: Why Evenings Fall Apart and How to Rebuild Calm";
+const description = "Discover why bedtime triggers intense resistance in ADHD and neurodivergent children, the truth about regulation demands and sleep onset, and a step-by-step evening protocol.";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/adhd-neurodivergence-bedtime-struggles-evening-routine/";
+const publishedDate = "2026-10-18";
+const lastUpdated = "2026-10-18";
+
+const breadcrumbs = [
+  { name: 'Blog', href: '/blog/' },
+  { name: 'ADHD, Neurodivergence & Bedtime Struggles', href: '/blog/adhd-neurodivergence-bedtime-struggles-evening-routine/' }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Child Psychologist & Certified ADOS-2 Practitioner",
+    "url": "https://www.rabbiapsychologist.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com/"
+  },
+  "datePublished": publishedDate,
+  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does my ADHD child get a sudden burst of energy right at bedtime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "What parents interpret as defiance is often accumulated fatigue combined with executive function overload. Bedtime requires stopping preferred activities, following instructions, sequencing tasks, and settling attention all at once. As children tire, their ability to regulate attention and manage transitions weakens, driving them to seek high stimulation to cope with quiet, low-stimulation demands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do traditional sleep training methods fail for neurodivergent children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional methods like leaving a child to cry it out or offering reward stickers assume the child is choosing not to comply. Rewards cannot resolve genuine sensory discomfort, separation anxiety, racing thoughts, or circadian rhythm differences. A child cannot perform a behavior they do not yet have the regulation skills to manage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does removing screens trigger explosive evening meltdowns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Screens provide rapid, highly engaging novelty and stimulation. Abruptly taking away a tablet forces an immediate shift from a hyper-stimulating activity to a quiet, demanding one. For children with cognitive inflexibility and emotional regulation gaps, this sudden drop in stimulation feels overwhelming without advance warnings and an appealing, calming replacement activity."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <ProgressBar />
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <header class="mt-8 mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">Sleep & Routines</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-trust bg-brand-cream px-2.5 py-1 rounded-full">ADHD & Neurodivergence</span>
+        <span class="text-xs font-semibold text-gray-500 ml-auto">⏱️ 6-Min Read</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 leading-snug">{title}</h1>
+
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+        They were sleepy at dinner, but at 8:00 PM they are jumping on the bed, demanding water, and picking fights. Here is what clinical psychology teaches us about evening dysregulation and how to create a predictable, peaceful wind-down.
+      </p>
+
+      <div class="rounded-2xl overflow-hidden shadow-lg border border-brand-warm/20 mb-8 bg-brand-cream/30">
+        <Image
+          src={heroImage}
+          alt="Mother and neurodivergent child establishing a calm bedtime wind-down routine"
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+        <div class="p-3 text-xs text-gray-500 text-center bg-white border-t border-gray-100">
+          Shifting from Battle to Connection: Why predictable sensory routines replace bedtime power struggles.
+        </div>
+      </div>
+    </header>
+
+    <article class="prose prose-brand max-w-none text-gray-700 leading-relaxed">
+      <p class="text-xl font-medium text-gray-900 leading-relaxed">
+        In many families raising a child with ADHD, autism, or sensory processing differences, bedtime becomes the single most emotionally exhausting part of the day.
+      </p>
+
+      <p>
+        A parent might describe a child who looked genuinely exhausted at dinner, but suddenly becomes hyper-energized at 8:00 PM. They start jumping on furniture, running down hallways, asking for water six times, negotiating for five more minutes, or dissolving into intense tears over the wrong pajamas.
+      </p>
+
+      <p>
+        What parents often interpret as deliberate defiance usually reflects a complex intersection of accumulated fatigue, emotional dysregulation, sensory sensitivity, and difficulty with transitions.
+      </p>
+
+      <p>
+        For children with ADHD, bedtime stacks several heavy executive-function demands all at once: stopping a preferred activity, following multi-step instructions, sequencing motor tasks, and calming internal attention. The child may be thoroughly exhausted, yet neurologically unable to settle.
+      </p>
+
+      <WhatYouWillLearn items={[
+        "The neurology of evening regulation: why tired children seek high stimulation instead of sleeping.",
+        "The Racing Brain: why silence and darkness make internal thoughts and bodily sensations feel intense.",
+        "Why traditional sleep training, cry-it-out, and reward sticker charts often backfire.",
+        "How late-night screen transitions trigger meltdowns and how to build smooth off-ramps.",
+        "A practical, 7-step evening decompression schedule (from 6:30 PM to 8:30 PM) you can implement tomorrow."
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">The Dopamine Question: What Is Happening Neurologically?</h2>
+      <p>
+        ADHD involves neurological differences in how brain networks regulate attention, motivation, impulse inhibition, and emotional responses. Dopamine and norepinephrine are key neurotransmitters in these systems.
+      </p>
+      <p>
+        However, it is important to be clinically precise: we do not have evidence that dopamine simply plummets off a cliff at a specific hour every evening. 
+      </p>
+      <p>
+        What actually happens is that as the child tires, their capacity to regulate attention, tolerate frustration, and manage multi-step transitions weakens significantly. At the same time, because quiet tasks require immense mental effort, their nervous system continues hunting for stimulating activities just to stay regulated. Some children also experience rebound irritability as stimulant medications wear off in the late afternoon or early evening.
+      </p>
+
+      <CalloutBox type="Clinical Insight" title="The Shift in Perspective">
+        Rather than asking, <em>'Why is my child being so stubborn tonight?'</em> encourage yourself to ask: <em>'What regulation demands are becoming too difficult for my child's brain right now?'</em>
+      </CalloutBox>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">The Racing Brain: Why Silence Anxieties Surface in the Dark</h2>
+      <p>
+        Imagine spending your entire day surrounded by noise, school expectations, movement, peer interaction, and rapid tasks. Then suddenly, the door shuts and the room goes pitch-black and silent.
+      </p>
+      <p>
+        For many neurodivergent children, that sudden absence of external stimulation causes their internal thoughts and bodily sensations to amplify:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li>They begin intensely replaying an embarrassing moment or conflict from school that morning.</li>
+        <li>They anticipate tomorrow's tests, social anxieties, or separation from parents.</li>
+        <li>They become hyper-aware of their own heartbeat, breathing, shadows on the wall, or the hum of electrical appliances.</li>
+      </ul>
+
+      <p>
+        Some autistic children find bedtime especially stressful because of changes in sensory input, uncertainty, or breaking away from familiar day routines. However, each child is unique: while some find silence terrifying, others require complete quiet to down-regulate. The key is creating an individualized sensory profile rather than assuming every bedtime issue stems from the same cause.
+      </p>
+
+      <div class="my-8 rounded-xl overflow-hidden shadow-md border border-gray-200">
+        <Image
+          src={secondaryImage}
+          alt="Parent addressing evening bedtime exhaustion through co-regulation and predictable structure"
+          class="w-full h-auto object-cover"
+        />
+        <div class="p-3 text-xs text-gray-500 text-center bg-gray-50 border-t border-gray-100">
+          Co-Regulation at Night: A child's nervous system borrows the calm of a grounded adult to feel safe enough to sleep.
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">Why Traditional Sleep Advice Often Backfires</h2>
+      <p>
+        Standard behavioral sleep advice is not inherently wrong, but applying a one-size-fits-all approach to neurodivergent children frequently compounds distress.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-3">Rewards Cannot Teach a Missing Skill</h3>
+      <p>
+        Offering a sticker chart for staying in bed all night assumes the child has the internal tools to do so and simply lacks motivation. Rewards strengthen behaviors a child is already capable of executing; they cannot resolve sensory discomfort, biological sleep-wake delays, or severe separation anxiety.
+      </p>
+
+      <h3 class="text-xl font-bold text-brand-navy mt-6 mb-3">Extinction ('Cry It Out') Increases Autonomic Alarm</h3>
+      <p>
+        Leaving an anxious neurodivergent child alone in a room to cry increases cortisol and triggers primal abandonment panic. The goal of clinical sleep support is not simply to silence a child's cries; it is to teach them that nighttime is safe, predictable, and manageable.
+      </p>
+
+      <MythVsFact items={[
+        {
+          myth: "If a child refuses to sleep, they are asserting dominance and need strict discipline.",
+          fact: "Bedtime resistance in ADHD is almost always a combination of cognitive exhaustion, delayed melatonin signaling, and transition anxiety."
+        },
+        {
+          myth: "Every neurodivergent child needs a weighted blanket.",
+          fact: "Major neurological guidelines note weighted blankets do not routinely improve objective sleep outcomes. They should only be used if the child personally enjoys them and can lift them off safely."
+        },
+        {
+          myth: "A successful bedtime means the child falls asleep within 5 minutes of lights out.",
+          fact: "Neurodivergent children often take 30 to 45 minutes to transition into sleep. Rushing this window increases performance anxiety."
+        }
+      ]} />
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">Screens and Evening Off-Ramps: Stopping the Meltdown</h2>
+      <p>
+        Tablets and phones interfere with sleep through two distinct channels:
+      </p>
+
+      <ul class="space-y-2 my-4">
+        <li><strong>Circadian Disruption:</strong> Bright light exposure delays the natural release of melatonin. Many children with ADHD or autism already have natural circadian delays.</li>
+        <li><strong>Dopamine Transition Cliffs:</strong> Fast-paced games and videos deliver rapid novelty. When a parent suddenly snatches the device away, the child experiences a jarring transition from intense stimulation to low stimulation, triggering acute emotional dysregulation.</li>
+      </ul>
+
+      <p>
+        To prevent evening explosions, establish three non-negotiables: stop stimulating screen use 60 minutes before bed, provide multiple advance countdown warnings, and have a high-connection replacement activity ready (e.g., audiobooks, drawing, or shared reading).
+      </p>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">The 7-Step Evening Protocol (8:30 PM Target Bedtime)</h2>
+      <p>
+        Consistency matters far more than perfection. Here is an evidence-based evening schedule you can adapt to your child's age and natural circadian rhythm:
+      </p>
+
+      <div class="space-y-4 my-6">
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">1. 6:30 PM — Dinner & Decompression</strong>
+          <p class="text-sm text-gray-700 m-0">Finish dinner, lower domestic demands, and allow relaxed family connection. Avoid turning the evening into a continuous interrogation about schoolwork.</p>
+        </div>
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">2. 7:00 PM — Screen Cutoff with Predictable Transition</strong>
+          <p class="text-sm text-gray-700 m-0">Give a 5-minute warning, turn off fast-paced screens, and switch to quiet tactile activities like Lego, puzzles, or coloring.</p>
+        </div>
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">3. 7:15 PM — Sensory Regulation Reset</strong>
+          <p class="text-sm text-gray-700 m-0">A warm bath or shower, soft seam-free nightwear, gentle stretching, or deep pressure massage for children who find touch organizing.</p>
+        </div>
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">4. 7:40 PM — Visual Bedtime Checklist</strong>
+          <p class="text-sm text-gray-700 m-0">Use a visual picture schedule for teeth, toilet, and pyjamas. Offer two acceptable choices (<em>'Blue pyjamas or green pyjamas?'</em>) to give healthy autonomy.</p>
+        </div>
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">5. 8:00 PM — Relational Connection Window</strong>
+          <p class="text-sm text-gray-700 m-0">Spend 10 focused minutes reading together, listening to worries without trying to solve them immediately, or sharing one favorite moment from the day.</p>
+        </div>
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">6. 8:15 PM — Settling & Fading Support</strong>
+          <p class="text-sm text-gray-700 m-0">Dim the lights, turn on white noise or soft audiobooks, repeat a consistent reassuring phrase, and sit beside the bed while gradually moving closer to the door over successive weeks.</p>
+        </div>
+        <div class="p-4 bg-brand-cream/40 rounded-xl border border-brand-warm/30">
+          <strong class="text-brand-navy text-base block mb-1">7. 8:30 PM — Bedtime Boundaries</strong>
+          <p class="text-sm text-gray-700 m-0">Maintain quiet, calm boundaries without opening new debates. If your child is consistently wide awake at 8:30 PM, adjust the target time later to match their biological sleepiness rather than forcing a 90-minute wrestling match.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-brand-navy mt-10 mb-4">Parent Burnout & The Power of Co-Regulation</h2>
+      <p>
+        By 9:00 PM, many parents have expended every drop of emotional energy. When a child begins resisting, a parent's own stress response activates: voices get louder, threats are made, and both parent and child inadvertently escalate each other into crisis.
+      </p>
+      <p>
+        Co-regulation does not mean you must stay zen every second of every day. It means recognizing when your own internal thermometer is rising, taking a three-second breath, lowering your vocal pitch, and focusing on one single step at a time.
+      </p>
+      <p>
+        If you lose your temper and shout tonight, know that repair is always available tomorrow. Apologize sincerely, reconnect with warmth, and show your child that difficult moments can be healed.
+      </p>
+
+      <ExpertTip author="Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner">
+        "Before we label a child's bedtime behavior as defiance, we must ask: Is this child refusing to sleep, or are they struggling to feel regulated enough to sleep? That single question changes how we parent, how we respond, and how we support that child."
+      </ExpertTip>
+
+      <KeyTakeaways items={[
+        "Bedtime resistance is driven by accumulated fatigue, sensory needs, and transition challenges, not willful stubbornness.",
+        "Quiet rooms can amplify internal racing thoughts, requiring gentle background sound or connection.",
+        "Standard sleep training fails when children lack the underlying regulation skills needed to settle independently.",
+        "Gradual screen cutoffs with appealing calming alternatives prevent evening meltdown cliffs.",
+        "Predictable visual schedules and parental co-regulation transform nighttime from a battlefield into a sanctuary."
+      ]} />
+
+      <div class="mt-12">
+        <ArticleAuthor datePublished={publishedDate} dateModified={lastUpdated} readTime="6 min" />
+      </div>
+
+      <div class="mt-12">
+        <BlogCTA />
+      </div>
+    </article>
+  </div>
+</BaseLayout>

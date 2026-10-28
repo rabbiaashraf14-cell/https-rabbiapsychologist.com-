@@ -1,0 +1,87 @@
+---
+import type { CityLocation } from '../../../data/locations/locationTypes';
+
+interface Props {
+  city: CityLocation;
+}
+
+const { city } = Astro.props;
+---
+
+<section class="py-14 bg-gradient-to-r from-[#0A233F] via-[#123358] to-[#0A233F] text-white relative overflow-hidden">
+  <!-- Subtle decorative backdrop -->
+  <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <!-- Left Content -->
+      <div class="space-y-4 max-w-xl text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold tracking-wide uppercase">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+          </svg>
+          <span>Employer &amp; Corporate Family Benefit</span>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight font-serif">
+          Gift or Sponsor a Session for Working Parents in {city.cityName}
+        </h2>
+
+        <p class="text-sm sm:text-base text-white/85 leading-relaxed">
+          Balancing demanding careers with a child experiencing ADHD morning battles, speech delays, or school anxiety is a leading cause of workplace burnout. <strong>Companies, HR benefits programs, EAPs, embassies, and community organizations</strong> can sponsor or gift private consultation sessions directly to their employees' families.
+        </p>
+
+        <!-- Feature Points -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-white/90">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span>Direct corporate invoicing &amp; vouchers</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span>100% confidential employee care</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span>Flexible scheduling across time zones</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <span>Actionable 3-step home roadmap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Action Card -->
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-7 text-center max-w-sm w-full shrink-0 shadow-xl">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Corporate &amp; Group Gifting</h3>
+        <p class="text-xs text-white/75 mb-6 leading-relaxed">
+          Equip your teams with premier child psychology guidance. Available for organizations operating in {city.cityName} and globally.
+        </p>
+
+        <div class="space-y-3">
+          <a 
+            href="/corporate/" 
+            class="block w-full bg-emerald-500 hover:bg-emerald-400 text-[#0A233F] font-bold py-3 px-5 rounded-xl transition-all duration-200 text-sm shadow-md"
+          >
+            Explore Corporate Wellbeing Options
+          </a>
+          <a 
+            href="/book/" 
+            class="block w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-2.5 px-5 rounded-xl border border-white/20 transition-all duration-200 text-xs"
+          >
+            Book Individual Gift Session
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

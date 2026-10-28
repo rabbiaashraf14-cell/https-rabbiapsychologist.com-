@@ -49,29 +49,88 @@ const defaultEntitySchema = {
   "@type": "MedicalBusiness",
   "@id": "https://www.rabbiapsychologist.com/#organization",
   "name": "Rabbia Psychologist Child Development Services",
+  "alternateName": "Rabbia Ashraf Clinical Psychology Practice",
   "url": "https://www.rabbiapsychologist.com",
   "logo": "https://www.rabbiapsychologist.com/favicon.png",
   "image": "https://www.rabbiapsychologist.com/og-brand-card.png",
-  "description": "Global parent guidance and evidence-based child development consultation platform led by Clinical Psychologist Rabbia Ashraf, specializing in Autism, ADHD, emotional regulation, and psychological report reviews.",
-  "medicalSpecialty": "ClinicalPsychology",
+  "description": "Global parent guidance and evidence-based child development consultation platform led by Clinical Psychologist Rabbia Ashraf (ADOS-2 Certified). Specializing in Autism, ADHD, executive function, sensory accommodations, and neuropsychological report reviews for families worldwide.",
+  "medicalSpecialty": [
+    "ClinicalPsychology",
+    "PediatricPsychology",
+    "NeurodevelopmentalAssessment"
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": ["USD", "GBP", "AED", "AUD", "CAD", "PKR"],
   "telephone": "+923364114002",
   "email": "psychologistrabbia@gmail.com",
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "MS in Clinical Psychology",
+      "credentialCategory": "degree"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ADOS-2 Certified Administrator",
+      "credentialCategory": "clinical certification",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Autism Diagnostic Observation Schedule Clinical Training"
+      }
+    }
+  ],
+  "availableService": [
+    {
+      "@type": "MedicalTherapy",
+      "name": "Parent-Led Neurodevelopmental Guidance Consultation",
+      "description": "50-minute private clinical telehealth consultation providing parents with actionable home protocols, sensory regulation strategies, and proactive behavior support."
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "18-Month Waitlist Bridge Support",
+      "description": "Immediate clinical support and home intervention roadmaps for families on 12-24 month NHS or public healthcare assessment waitlists."
+    },
+    {
+      "@type": "MedicalTherapy",
+      "name": "Pediatric Neurodevelopmental Report Translation & IEP Review",
+      "description": "Expert second-opinion decoding of ADOS-2, ADI-R, Conners 4, and WISC-V diagnostic reports into parent-friendly school and home strategies."
+    }
+  ],
   "founder": {
     "@type": "Person",
     "@id": "https://www.rabbiapsychologist.com/#rabbia-ashraf",
     "name": "Rabbia Ashraf",
-    "jobTitle": "Clinical Psychologist",
+    "jobTitle": "Clinical Psychologist & Child Development Specialist",
     "url": "https://www.rabbiapsychologist.com/about",
     "sameAs": [
-      "https://www.linkedin.com/in/rabbiapsychologist"
+      "https://www.linkedin.com/in/rabbiapsychologist",
+      "https://www.rabbiapsychologist.com/credentials/"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "MS in Clinical Psychology"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "ADOS-2 Certified Administrator"
+      }
     ],
     "knowsAbout": [
-      "Autism Spectrum Disorder",
+      "Autism Spectrum Disorder (ASD)",
       "Attention Deficit Hyperactivity Disorder (ADHD)",
-      "Discrete Trial Teaching (DTT)",
-      "Child Development",
-      "Behavior Support Planning",
+      "ADOS-2 Administration & Translation",
+      "ADI-R Clinical Evaluation",
+      "Conners 4 ADHD Assessments",
+      "Pathological Demand Avoidance (PDA)",
+      "Rejection Sensitive Dysphoria (RSD)",
       "Executive Function Skills",
+      "After-School Restraint Collapse",
+      "Selective Mutism",
+      "Sensory Processing Accommodations",
+      "Childhood Anxiety",
+      "Discrete Trial Teaching (DTT)",
+      "Behavior Support Planning",
       "Individualized Education Programs (IEP)",
       "Psychological Report Reviews"
     ]
@@ -82,7 +141,10 @@ const defaultEntitySchema = {
     { "@type": "Country", "name": "United Arab Emirates" },
     { "@type": "Country", "name": "Canada" },
     { "@type": "Country", "name": "Australia" },
-    { "@type": "Country", "name": "Pakistan" }
+    { "@type": "Country", "name": "Pakistan" },
+    { "@type": "Country", "name": "Saudi Arabia" },
+    { "@type": "Country", "name": "Qatar" },
+    { "@type": "Country", "name": "Singapore" }
   ]
 };
 ---

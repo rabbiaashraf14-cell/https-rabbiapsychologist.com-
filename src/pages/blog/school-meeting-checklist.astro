@@ -19,6 +19,7 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import SchoolAccommodationsVisual from '../../components/blog/visuals/SchoolAccommodationsVisual.astro';
 import heroImage from '../../assets/blog/school-meeting-checklist.webp';
 
 const title = "IEP & School Meeting Checklist: Step-by-Step Guide for Parents and Teachers";
@@ -26,15 +27,15 @@ const description = "A complete IEP and school meeting checklist for parents and
 const currentUrl = "/blog/school-meeting-checklist/";
 const canonicalURL = "https://www.rabbiapsychologist.com/blog/school-meeting-checklist/";
 
-const keywords = ["school meeting checklist", "IEP meeting prep", "parent teacher conference", "advocating for child in school", "school accommodations"];
+const keywords = ["school meeting checklist", "iep meeting checklist for teachers", "what to bring to an iep meeting as a teacher", "parent teacher meeting neurodivergent child script", "IEP meeting prep", "parent teacher conference", "advocating for child in school", "school accommodations"];
 
 const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
   { text: "Before the Meeting", slug: "before-the-meeting", level: 2 },
-  { text: "During the Meeting", slug: "during-the-meeting", level: 2 },
-  { text: "Questions to Ask", slug: "questions-to-ask", level: 2 },
+  { text: "During the Meeting (With Word-for-Word Scripts)", slug: "during-the-meeting", level: 2 },
+  { text: "Questions to Ask the School Team", slug: "questions-to-ask", level: 2 },
   { text: "After the Meeting", slug: "after-the-meeting", level: 2 },
-  { text: "IEP Checklist for Teachers & Support Teams", slug: "iep-checklist-for-teachers", level: 2 },
+  { text: "IEP Checklist for Teachers: What to Bring", slug: "iep-checklist-for-teachers", level: 2 },
   { text: "When to Seek Professional Support", slug: "when-to-seek-support", level: 2 }
 ];
 
@@ -85,6 +86,22 @@ const schema = [
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Bring any recent psychological or medical reports, a list of your child's strengths, a summary of your main concerns, and a notepad to take notes during the meeting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should a teacher bring to an IEP or student support meeting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Teachers should bring concrete curriculum work samples (both modified and unmodified), time-stamped behavior observation notes, documentation of interventions already trialed (seating, visual charts), current academic benchmark data, and specific suggested accommodations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What script can parents use during a parent-teacher meeting for a neurodivergent child?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parents can use collaborative bridging scripts: 'We see that Sarah uses immense energy to hold things together during class, which results in after-school restraint collapse at home. What subtle cues of sensory or cognitive fatigue are you noticing before transitions, and what low-friction accommodation can we test for the next 4 weeks?'"
         }
       },
       {
@@ -181,18 +198,32 @@ const schema = [
             Talk to your child before the meeting. Ask them what they like about school, what is hard for them, and if there is anything they want you to tell the teacher. This includes them in the process.
           </ExpertTip>
 
-          <h2 id="during-the-meeting">During the Meeting</h2>
+          <h2 id="during-the-meeting">During the Meeting (With Word-for-Word Scripts)</h2>
           <p>It is easy to get emotional when discussing your child's challenges. Keep the focus on collaboration and data.</p>
 
           <p><strong>Start with the positive:</strong> Acknowledge the teacher's hard work and highlight a positive experience your child had in their class.</p>
           <p><strong>Address the 'Masking' phenomenon:</strong> If the teacher says, "They are fine at school," but your child is having meltdowns at home, explain this. Say, "It takes all their energy to hold it together during the day, which means they are exhausted and overwhelmed by the time they get home. How can we reduce their cognitive or sensory load at school?"</p>
+
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 my-6 not-prose">
+            <h4 class="font-bold text-brand-navy mb-3">Parent-Teacher Meeting Scripts for Neurodivergent Children:</h4>
+            <div class="space-y-3 text-sm text-gray-700">
+              <div class="p-3 bg-white rounded-lg border border-gray-100">
+                <span class="font-bold text-brand-navy block text-xs uppercase tracking-wider mb-1">When Addressing Masking & After-School Collapse:</span>
+                <p><em>"We notice our child spends 100% of their cognitive bandwidth holding their emotions together in class, which leads to severe meltdowns the moment they step through our front door. What early sensory or restlessness cues are you noticing around 1:00 PM, and could we schedule a proactive 3-minute movement break before that fatigue sets in?"</em></p>
+              </div>
+              <div class="p-3 bg-white rounded-lg border border-gray-100">
+                <span class="font-bold text-brand-navy block text-xs uppercase tracking-wider mb-1">When Requesting Written Instructions for ADHD:</span>
+                <p><em>"Because of his working memory profile on his assessment, multi-step verbal instructions get lost. Could we test having instructions printed or bulleted on the board, and check back in three weeks to see if his task completion improves?"</em></p>
+              </div>
+            </div>
+          </div>
 
           <MythVsFact
             myth="I shouldn't ask for too much or the teacher will be annoyed."
             fact="Teachers want their students to succeed. Providing clear, practical strategies (like 'He needs a 2-minute break before writing tasks') is much more helpful than leaving the teacher to guess what works."
           />
 
-          <h2 id="questions-to-ask">Questions to Ask</h2>
+          <h2 id="questions-to-ask">Questions to Ask the School Team</h2>
           <p>Do not just listen; actively guide the conversation to get actionable answers.</p>
           <ul>
             <li>"What does this behaviour look like in the classroom?"</li>
@@ -206,16 +237,32 @@ const schema = [
           <p>The meeting is only the first step. The follow-up is where change happens.</p>
           <p>Send a brief, polite email to the teacher summarizing what was agreed upon. For example: "Thank you for meeting today. To confirm our plan, we agreed that Sarah will be allowed to use noise-canceling headphones during independent reading, and I will check her planner every night."</p>
 
-          
-          <h2 id="iep-checklist-for-teachers">IEP Meeting Checklist for Teachers & Support Teams</h2>
+          <SchoolAccommodationsVisual />
+
+          <h2 id="iep-checklist-for-teachers">IEP Checklist for Teachers: What to Bring</h2>
           <p>Productive school meetings require collaborative preparation from classroom educators and special education coordinators. Teachers can use this preparation checklist prior to entering the conference:</p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6 not-prose">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span class="bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Free Printable Tool</span>
+                <h3 class="text-xl font-bold text-brand-navy mt-2">School IEP & Teacher Conference Advocacy Checklist</h3>
+                <p class="text-sm text-gray-700 mt-1">Download our free printable preparation framework to organize clinical documentation, propose sensory accommodations, and establish meeting accountability.</p>
+              </div>
+              <a href="/free-downloads/school-iep-checklist/" class="inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shrink-0 shadow-sm">
+                <span>View & Print Checklist</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
 
           <ActionChecklist
             items={[
-              "Objective Classroom Observations: Bring concrete work samples, time-stamped incident logs, and data on when difficulties occur (e.g. unstructured times, reading circles).",
-              "Successful Scaffolding Strategies: Document what strategies have already proven helpful (e.g., visual cue cards, seating near the teacher, sensory breaks).",
-              "Specific Environmental Accommodations: Formulate actionable proposals such as chunked assignments, noise-dampening headphones, or alternative exam spaces.",
-              "Clear Progress Metrics: Outline how accommodation success will be measured over 6-week or 12-week review cycles."
+              "Objective Classroom Work Samples: Bring contrasting work samples (e.g., performance with vs. without visual cues) demonstrating when stamina drops.",
+              "Documented Pre-Interventions: List specific environmental scaffolding already trialed (seating location, wobble cushion, visual timer, chunked worksheets) and outcomes.",
+              "Time-Stamped Incident Observations: Concrete data on when friction occurs (e.g., transition from playground to math, unstructured group work).",
+              "Academic Baseline Metrics: Current reading levels, math fluency benchmarks, and processing speed observations.",
+              "Proposed Measurable Accommodations: Clear 6-to-8 week review goals with assigned staff responsibilities."
             ]}
           />
 
@@ -232,21 +279,25 @@ const schema = [
             items={[
               "Prepare your top 2-3 concerns before the meeting starts.",
               "Bring recent psychological reports and data to support your requests.",
-              "Focus on collaborative problem-solving, not confrontation.",
+              "Focus on collaborative problem-solving using structured scripts.",
               "Address 'masking' if the child is fine at school but exhausted at home.",
+              "Teachers should bring work samples and documented pre-interventions to align expectations.",
               "Always send a follow-up email summarizing the agreed-upon plan."
             ]}
-          />
-
-            datePublished="February 10, 2024"
-            dateModified="March 1, 2024"
-            readTime="5 min"
           />
 
           <FAQAccordion faqs={[
             {
               question: "What should I bring to a school meeting or IEP?",
               answer: "Bring any recent psychological or medical reports, a list of your child's strengths, a summary of your main concerns, and a notepad to take notes during the meeting."
+            },
+            {
+              question: "What should a teacher bring to an IEP or student support meeting?",
+              answer: "Teachers should bring concrete curriculum work samples (both modified and unmodified), time-stamped behavior observation notes, documentation of interventions already trialed (seating, visual charts), current academic benchmark data, and specific suggested accommodations."
+            },
+            {
+              question: "What script can parents use during a parent-teacher meeting for a neurodivergent child?",
+              answer: "Parents can use collaborative bridging scripts: 'We see that Sarah uses immense energy to hold things together during class, which results in after-school restraint collapse at home. What subtle cues of sensory or cognitive fatigue are you noticing before transitions, and what low-friction accommodation can we test for the next 4 weeks?'"
             },
             {
               question: "How can I make sure my child's needs are heard by the teacher?",

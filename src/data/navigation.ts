@@ -1,8 +1,6 @@
 export const mainNav = [
-  { label: 'Home', href: '/' },
   { label: 'Start Here', href: '/start-here/' },
   { label: 'Services', href: '/services/' },
-  { label: 'Locations', href: '/locations/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Resources', href: '/resources/' },
   { label: 'For Organizations', href: '/corporate/' },

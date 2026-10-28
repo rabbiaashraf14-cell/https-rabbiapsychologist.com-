@@ -15,6 +15,66 @@ export interface BlogArticle {
 
 export const articles: BlogArticle[] = [
   {
+    title: "ADHD, Neurodivergence & Bedtime Struggles: Why Evenings Fall Apart and How to Rebuild Calm",
+    excerpt: "Why tired neurodivergent children bounce off walls, pick fights, and resist sleep. The clinical reality of regulation demands, screen transition cliffs, and a 7-step evening decompression protocol.",
+    author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
+    date: "Oct 18, 2026",
+    categories: ["Sleep & Routines", "ADHD", "Parent Guidance"],
+    href: "/blog/adhd-neurodivergence-bedtime-struggles-evening-routine/",
+    featured: true,
+    readTime: "6 min read",
+    targetKeywords: ["ADHD bedtime struggles", "neurodivergent child won't sleep", "bedtime battles ADHD", "evening meltdowns kids"],
+    keyTakeaway: "Bedtime resistance is driven by accumulated executive function fatigue and difficulty settling attention, not defiance. Predictable visual routines, advance screen warnings, and parental co-regulation rebuild evening peace."
+  },
+  {
+    title: "Why Does My Child Lie About Obvious Things? (Even When Caught Red-Handed)",
+    excerpt: "Chocolate on their face, yet they swear they didn't eat it. The neuroscience of why neurodivergent children blurt out obvious lies under executive function panic, and how to stop setting interrogation traps.",
+    author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
+    date: "Oct 18, 2026",
+    categories: ["Behaviour", "ADHD", "Parent Guidance"],
+    href: "/blog/why-children-lie-about-obvious-things-adhd-executive-function/",
+    featured: true,
+    readTime: "5 min read",
+    targetKeywords: ["child lies about obvious things", "ADHD impulsive lying", "why do kids lie when caught", "lying and executive dysfunction"],
+    keyTakeaway: "Obvious lies are an involuntary panic reflex driven by impaired response inhibition and fear of relational shame, not premeditated deceit. Shift from interrogation to factual co-regulation."
+  },
+  {
+    title: "Sensory Seeking vs. ADHD Hyperactivity: How to Tell the Difference",
+    excerpt: "They can't sit still, bounce off furniture, and fidget endlessly. Learn the critical neurological difference between proprioceptive sensory hunger and ADHD dopamine deficits using the After-Movement Test.",
+    author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
+    date: "Oct 18, 2026",
+    categories: ["Sensory Processing", "ADHD", "Behaviour"],
+    href: "/blog/sensory-seeking-vs-adhd-hyperactivity-cant-sit-still/",
+    featured: true,
+    readTime: "5 min read",
+    targetKeywords: ["sensory seeking vs ADHD", "child can't sit still", "proprioceptive seeking in children", "hyperactive or sensory seeking"],
+    keyTakeaway: "Sensory seekers calm down and focus after heavy physical work; ADHD hyperactive children often remain dysregulated without structured dopamine. Tailor accommodations accordingly."
+  },
+  {
+    title: "The Importance of Getting Your Child Assessed Through ADOS: Why It Is the Gold Standard in Hospitals & Clinics",
+    excerpt: "Why quick 15-minute hospital checkups often fail neurodivergent children, how the ADOS-2 evaluates reciprocal social communication through calibrated play, and what parents need to know.",
+    author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
+    date: "Oct 18, 2026",
+    categories: ["Autism", "Reports & Assessments"],
+    href: "/blog/ados-autism-assessment-gold-standard-hospital/",
+    featured: true,
+    readTime: "5 min read",
+    targetKeywords: ["ADOS assessment gold standard", "ADOS 2 autism assessment hospital", "autism evaluation child hospital", "ADOS test for autism"],
+    keyTakeaway: "The ADOS-2 is the international gold standard because it uses standardized social presses across 5 calibrated modules to measure authentic communication, eliminating rushed subjective clinic impressions."
+  },
+  {
+    title: "Speech Delay vs. Autism: Why Basic Two-Way Communication Matters Most",
+    excerpt: "Counting words misses the fundamental question: Is language functioning as a reciprocal bridge? Why parents must teach the basics before complex speech, and how to spot social-communication red flags.",
+    author: "Rabbia Ashraf, Clinical Psychologist",
+    date: "Oct 18, 2026",
+    categories: ["Speech & Communication", "Autism", "Parent Guidance"],
+    href: "/blog/speech-delay-vs-autism-two-way-communication/",
+    featured: true,
+    readTime: "5 min read",
+    targetKeywords: ["speech delay vs autism", "basic two way communication autism", "toddler hand leading no eye contact", "teach basics before complex speech"],
+    keyTakeaway: "Reciprocal two-way communication (joint attention, gestures, shared smiles) is the decisive difference between a simple speech delay and autism. Always scaffold the basics before demanding complex speech."
+  },
+  {
     title: "Is My Child Manipulating Me — Or Actually Struggling? A Clinical Psychologist Explains",
     excerpt: "Your mother-in-law says 'He's manipulating you.' Your spouse says 'She's playing you.' But something doesn't feel right. The neuroscience of why true manipulation requires executive function most struggling children don't have.",
     author: "Rabbia Ashraf, Clinical Psychologist",

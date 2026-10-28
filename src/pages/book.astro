@@ -34,13 +34,32 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
       </p>
 
       <!-- Global Country Flags & Trust Badges -->
-      <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs text-gray-600 font-medium">
+      <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs text-gray-600 font-medium mb-6">
         <span class="bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">🇬🇧 United Kingdom</span>
         <span class="bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">🇺🇸 United States</span>
         <span class="bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">🇦🇪 UAE &amp; Gulf</span>
         <span class="bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">🇨🇦 Canada</span>
         <span class="bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">🇦🇺 Australia</span>
         <span class="bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">🇵🇰 Pakistan</span>
+      </div>
+
+      <!-- Quick Interactive Region & Currency Toggle -->
+      <div class="inline-flex items-center gap-2 p-1.5 bg-gray-100/90 rounded-2xl border border-gray-200/80 shadow-2xs">
+        <span class="text-xs font-bold text-gray-500 pl-2">Display Fee:</span>
+        <button
+          type="button"
+          id="btn-region-international"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer text-brand-navy hover:bg-white"
+        >
+          🌎 International ($85 USD)
+        </button>
+        <button
+          type="button"
+          id="btn-region-pakistan"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer text-gray-600 hover:bg-white"
+        >
+          🇵🇰 Pakistan (PKR 5,000)
+        </button>
       </div>
     </div>
 
@@ -77,6 +96,111 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Dual Pathway Banner: Free 15-Min Discovery Call vs. Full 50-Min Session -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      
+      <!-- Card 1: Free 15-Minute Discovery Call -->
+      <div class="bg-gradient-to-br from-emerald-500/10 via-[#FAF7F2] to-white rounded-3xl p-6 sm:p-7 border-2 border-emerald-500/30 shadow-xs relative flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-emerald-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              Recommended for New Parents
+            </span>
+            <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-md">100% Free</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-serif font-bold text-[#0A233F] mb-2">
+            Free 15-Minute Discovery Call
+          </h3>
+          <p class="text-xs sm:text-sm text-[#18222C]/75 leading-relaxed mb-4">
+            Not sure whether your child needs an ADHD screen, autism sensory audit, or report review? Speak with Clinical Psychologist Rabbia Ashraf for 15 minutes at zero cost to discuss fit and immediate next steps.
+          </p>
+
+          <ul class="space-y-1.5 text-xs text-[#18222C]/80 mb-6">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>1-on-1 private video or WhatsApp audio call</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Zero payment or credit card required</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Immediate triage &amp; recommendation</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <a
+            href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20book%20a%20Free%2015-Minute%20Discovery%20Call%20for%20my%20child.%20Please%20let%20me%20know%20your%20available%20slots."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold py-3 px-4 rounded-xl transition-colors shadow-2xs text-center"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Book via WhatsApp</span>
+          </a>
+          <a
+            href="https://calendar.app.google/zMKejpnpCjh91WRG7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 inline-flex items-center justify-center gap-2 bg-[#0A233F] hover:bg-[#12365B] text-white text-xs sm:text-sm font-bold py-3 px-4 rounded-xl transition-colors shadow-2xs text-center"
+          >
+            <span>Google Calendar</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Full 50-Minute Comprehensive Consultation -->
+      <div class="bg-white rounded-3xl p-6 sm:p-7 border border-[#E6DFD3] shadow-xs relative flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-[#FAF7F2] text-[#0A233F] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-[#E6DFD3]">
+              Full Clinical Strategy Call
+            </span>
+            <span class="text-xs font-bold text-[#0A233F] bg-[#FAF7F2] px-2.5 py-0.5 rounded-md border border-[#E6DFD3]">
+              <span class="price-international">$85 USD / £65</span>
+              <span class="price-pakistan">PKR 5,000</span>
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-serif font-bold text-[#0A233F] mb-2">
+            50-Minute In-Depth Consultation
+          </h3>
+          <p class="text-xs sm:text-sm text-[#18222C]/75 leading-relaxed mb-4">
+            A comprehensive, 1-on-1 private strategy session with Clinical Psychologist Rabbia Ashraf. Detailed clinical intake review with a tailored written action roadmap within 24 hours.
+          </p>
+
+          <ul class="space-y-1.5 text-xs text-[#18222C]/80 mb-6">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#2F6352] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Pre-session diagnostic intake questionnaire review</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#2F6352] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Written 3-step action roadmap delivered in 24 hours</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#2F6352] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Off-screen child protocol (child does not sit on camera)</span>
+            </li>
+          </ul>
+        </div>
+
+        <a
+          href="#booking-request-form"
+          class="inline-flex items-center justify-center gap-2 bg-[#0A233F] hover:bg-[#12365B] text-white text-xs sm:text-sm font-bold py-3 px-4 rounded-xl transition-colors shadow-2xs text-center"
+        >
+          <span>Request 50-Min Session Below</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+
     </div>
 
     <!-- 3 Simple Booking Options Grid -->
@@ -189,13 +313,13 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
                 required
                 class="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-navy focus:outline-none bg-white"
               >
-                <option value="ADHD & Executive Function Support">ADHD &amp; Executive Function Guidance</option>
-                <option value="Autism Spectrum & Social Communication">Autism Spectrum &amp; Social Communication</option>
-                <option value="Behaviour ABC & Meltdown Intervention">Behaviour ABC &amp; Meltdown Support</option>
-                <option value="School Meeting & IEP Accommodation">School IEP &amp; Classroom Advocacy</option>
-                <option value="Psychological Report Review">Psychological Report Review &amp; Debrief</option>
-                <option value="Pediatric Sleep & Routine Scaffolding">Pediatric Sleep &amp; Routine Scaffolding</option>
-                <option value="General Child Development Guidance">General Child Development Guidance</option>
+                <option value="Free 15-Minute Discovery Call (Initial Fit & Triage)">🌟 Free 15-Minute Discovery Call (Zero Risk)</option>
+                <option value="ADHD & Executive Function Support (50 Min)">ADHD &amp; Executive Function Guidance (50 Min)</option>
+                <option value="Autism Spectrum & Social Communication (50 Min)">Autism Spectrum &amp; Social Communication (50 Min)</option>
+                <option value="Behaviour ABC & Meltdown Intervention (50 Min)">Behaviour ABC &amp; Meltdown Support (50 Min)</option>
+                <option value="School Meeting & IEP Accommodation Prep">School IEP &amp; Classroom Advocacy</option>
+                <option value="Psychological Report Review & Debrief">Psychological Report Review &amp; Debrief</option>
+                <option value="General Child Development Guidance (50 Min)">General Child Development Guidance (50 Min)</option>
               </select>
             </div>
           </div>
@@ -289,27 +413,35 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
           </div>
         </div>
 
-        <!-- Option 3: Direct WhatsApp Fast-Track -->
-        <div class="bg-gradient-to-br from-[#25D366]/10 to-emerald-50 rounded-3xl p-6 sm:p-7 border border-[#25D366]/30 text-left">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse"></span>
-            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider">Fast-Track Clinical Chat</span>
+        <!-- Direct Option: Priority WhatsApp Intake -->
+        <div class="bg-gradient-to-br from-[#25D366]/15 via-emerald-50/70 to-white rounded-3xl p-6 sm:p-7 border-2 border-[#25D366]/40 text-left shadow-xs">
+          <div class="flex items-center justify-between mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-[#25D366]/20 text-emerald-900 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
+              Fastest (Under 24h)
+            </span>
+            <span class="text-xs font-bold text-emerald-800">Direct Intake</span>
           </div>
 
-          <h3 class="text-lg font-bold text-brand-navy mb-2">Ask a Question Before Booking</h3>
+          <h3 class="text-xl font-bold text-brand-navy mb-2">Priority WhatsApp Booking</h3>
           <p class="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed">
-            Not sure whether your child needs an ADHD assessment debrief, autism consultation, or school IEP checklist? Speak directly with our clinical intake team on WhatsApp.
+            Need an appointment this week or want to ask a question before booking? Connect with our clinical desk for instant time zone triage and slot confirmation.
           </p>
 
           <a
-            href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20enquire%20about%20booking%20an%20online%20consultation%20for%20my%20child."
+            href="https://wa.me/923364114002?text=Hi%20Rabbia,%20I%20would%20like%20to%20enquire%20about%20booking%20an%20online%20consultation%20for%20my%20child.%20Please%20let%20me%20know%20your%20next%20available%20slots."
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-sm font-bold py-3 px-4 rounded-xl hover:bg-[#1EBE5D] transition-colors shadow-2xs text-center"
+            class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-sm font-bold py-3.5 px-4 rounded-xl hover:bg-[#1EBE5D] transition-colors shadow-2xs text-center mb-3"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>Chat on WhatsApp (+92 336 4114002)</span>
+            <span>Message on WhatsApp (+92 336 4114002)</span>
           </a>
+
+          <div class="text-[11px] text-emerald-800/80 font-medium flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Recommended for UK, USA, Gulf &amp; Pakistan Families</span>
+          </div>
         </div>
 
         <!-- Pakistan Consultation Fee Box (Hidden for International Visitors) -->
@@ -327,15 +459,34 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
         </div>
 
         <!-- International Consultation Fee Box (Hidden for Pakistan Visitors) -->
-        <div class="price-international bg-gray-50 rounded-3xl p-6 border border-gray-200 text-left">
-          <h4 class="text-sm font-bold text-brand-navy uppercase tracking-wider mb-3">Telehealth Consultation Fee</h4>
-          <div class="space-y-2.5 text-xs text-gray-700">
-            <div class="flex justify-between items-center pb-2 border-b border-gray-200">
-              <span class="font-medium">International Telehealth (50 min)</span>
-              <span class="font-extrabold text-brand-navy text-sm">${intlPrice} USD / £50 GBP / 240 AED</span>
+        <div class="price-international bg-gradient-to-br from-white to-[#FAF7F2] rounded-3xl p-6 sm:p-7 border border-brand-navy/15 shadow-sm text-left">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-xs font-bold text-brand-navy uppercase tracking-wider">Telehealth Rates &amp; Frictionless Checkout</h4>
+            <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">1-Click Checkout</span>
+          </div>
+
+          <div class="space-y-3 text-xs text-gray-700">
+            <div class="flex justify-between items-center pb-2.5 border-b border-gray-200">
+              <span class="font-bold text-emerald-800">Initial Discovery &amp; Triage Call (15 min)</span>
+              <span class="font-extrabold text-emerald-700 text-sm">100% FREE (Zero Risk)</span>
             </div>
-            <div class="text-[11px] text-gray-500 pt-1">
-              💳 <strong>Payment Options:</strong> Visa, Mastercard, Stripe, Wise, or International Bank Wire.
+            <div class="flex justify-between items-center pb-2.5 border-b border-gray-200">
+              <span class="font-medium text-gray-800">Full Clinical Strategy Session (50 min)</span>
+              <span class="font-extrabold text-brand-navy text-sm">${intlPrice} USD / £65 GBP / 315 AED</span>
+            </div>
+            
+            <div class="pt-2">
+              <div class="text-[11px] font-bold text-gray-700 mb-2">Supported Payment Gateways (SadaBiz &amp; Payoneer):</div>
+              <div class="flex flex-wrap items-center gap-1.5 mb-2">
+                <span class="px-2.5 py-1 rounded-md bg-white border border-gray-200 text-[10px] font-bold text-gray-800 shadow-2xs"> Apple Pay</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-gray-200 text-[10px] font-bold text-gray-800 shadow-2xs">Google Pay</span>
+                <span class="px-2.5 py-1 rounded-md bg-white border border-gray-200 text-[10px] font-bold text-gray-800 shadow-2xs">Visa / Mastercard</span>
+                <span class="px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-[10px] font-bold text-emerald-900 shadow-2xs">SadaBiz</span>
+                <span class="px-2.5 py-1 rounded-md bg-blue-50 border border-blue-200 text-[10px] font-bold text-blue-900 shadow-2xs">Payoneer</span>
+              </div>
+              <p class="text-[11px] text-gray-500 leading-relaxed">
+                🔒 Discovery calls require zero payment. For paid sessions, your clinician sends a direct 1-click checkout link before or during your confirmation.
+              </p>
             </div>
           </div>
         </div>
@@ -385,6 +536,35 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // 0. Region selector switcher
+    const btnIntl = document.getElementById('btn-region-international');
+    const btnPk = document.getElementById('btn-region-pakistan');
+
+    function updateRegionUI(region: string) {
+      document.documentElement.setAttribute('data-pricing-region', region);
+      try {
+        localStorage.setItem('rabbia_pricing_region', region);
+      } catch (e) {}
+
+      if (region === 'pakistan') {
+        btnPk?.classList.add('bg-white', 'text-brand-navy', 'shadow-2xs');
+        btnPk?.classList.remove('text-gray-600');
+        btnIntl?.classList.remove('bg-white', 'text-brand-navy', 'shadow-2xs');
+        btnIntl?.classList.add('text-gray-600');
+      } else {
+        btnIntl?.classList.add('bg-white', 'text-brand-navy', 'shadow-2xs');
+        btnIntl?.classList.remove('text-gray-600');
+        btnPk?.classList.remove('bg-white', 'text-brand-navy', 'shadow-2xs');
+        btnPk?.classList.add('text-gray-600');
+      }
+    }
+
+    const initialRegion = document.documentElement.getAttribute('data-pricing-region') || 'international';
+    updateRegionUI(initialRegion);
+
+    btnIntl?.addEventListener('click', () => updateRegionUI('international'));
+    btnPk?.addEventListener('click', () => updateRegionUI('pakistan'));
+
     // 1. Auto-fill form from URL query parameters (e.g. from Screener or Services)
     const urlParams = new URLSearchParams(window.location.search);
     const serviceParam = urlParams.get('service');

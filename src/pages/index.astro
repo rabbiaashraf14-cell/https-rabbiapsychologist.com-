@@ -3,18 +3,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedHero from '../components/home/AnimatedHero.astro';
 import TrustBadgeStrip from '../components/home/TrustBadgeStrip.astro';
 import WhatBringsYouHere from '../components/home/WhatBringsYouHere.astro';
+import ConsultationProcessTimeline from '../components/home/ConsultationProcessTimeline.astro';
+import InteractiveTelehealthScheduler from '../components/home/InteractiveTelehealthScheduler.astro';
 import VideoConsultationShowcase from '../components/home/VideoConsultationShowcase.astro';
 import ChildTriageScreener from '../components/home/ChildTriageScreener.astro';
 import InteractiveServiceCards from '../components/home/InteractiveServiceCards.astro';
 import BehaviorCommunicationVisualizer from '../components/home/BehaviorCommunicationVisualizer.astro';
 import AboutPreview from '../components/home/AboutPreview.astro';
 import AssessmentExpertise from '../components/home/AssessmentExpertise.astro';
-import ParentJourneyTimeline from '../components/home/ParentJourneyTimeline.astro';
+import CaseVignettesSection from '../components/home/CaseVignettesSection.astro';
 import WhyChooseRabbia from '../components/home/WhyChooseRabbia.astro';
+import GlobalSupportShowcase from '../components/home/GlobalSupportShowcase.astro';
 import ParentResourcesInsights from '../components/home/ParentResourcesInsights.astro';
 import ResourceVaultPreview from '../components/home/ResourceVaultPreview.astro';
 import ResearchCredibilitySection from '../components/home/ResearchCredibilitySection.astro';
-import FAQPreview from '../components/home/FAQPreview.astro';
+import AIDirectAnswerSection from '../components/home/AIDirectAnswerSection.astro';
 import FinalBookingCTA from '../components/home/FinalBookingCTA.astro';
 import HomepageSchema from '../components/home/HomepageSchema.astro';
 
@@ -26,7 +29,11 @@ const description = "Parent guidance and child development support for families 
   <AnimatedHero />
   <TrustBadgeStrip />
   <WhatBringsYouHere />
+  <ConsultationProcessTimeline />
   
+  <!-- Cal.com-Inspired Interactive Telehealth Scheduler -->
+  <InteractiveTelehealthScheduler />
+
   <!-- Modern Interactive Video Showcase: Meet Rabbia & See How Consultations Work -->
   <VideoConsultationShowcase />
 
@@ -45,65 +52,19 @@ const description = "Parent guidance and child development support for families 
 
   <AboutPreview />
   <AssessmentExpertise />
-  <ParentJourneyTimeline />
+  <CaseVignettesSection />
+  
+  <!-- The Clinical Sanctuary Standard: Why Choose Rabbia -->
   <WhyChooseRabbia />
 
-  <!-- How We Support Families Internationally -->
-  <section class="py-16 bg-white border-t border-gray-100">
-    <div class="container mx-auto px-4 max-w-5xl text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">How We Support Families Internationally</h2>
-      <p class="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">Providing practical next steps and clear pathways for overseas Pakistani families, South Asian families abroad, and international clients navigating developmental, behavioural, and school-related concerns.</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-left mb-10">
-        <ul class="space-y-4">
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/parent-support/" class="hover:underline">Online parent guidance</a></strong> and developmental concern discussion</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/services/adhd-support/" class="hover:underline">ADHD</a></strong> and <strong class="text-brand-navy"><a href="/services/asd-support/" class="hover:underline">autism support planning</a></strong></span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/services/behaviour-planning/" class="hover:underline">Behaviour strategy planning</a></strong> and emotional regulation support</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/services/school-consultation/" class="hover:underline">School meeting preparation</a></strong> and IEP guidance</span>
-          </li>
-        </ul>
-        <ul class="space-y-4">
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy"><a href="/report-review/" class="hover:underline">Report review</a></strong> and next-step planning</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Referral direction</strong> where local assessment or regulated care is needed</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700">Access to comprehensive <strong class="text-brand-navy"><a href="/resources/" class="hover:underline">resources</a></strong>, <strong class="text-brand-navy"><a href="/blog/" class="hover:underline">articles</a></strong>, and <strong class="text-brand-navy"><a href="/faqs/" class="hover:underline">FAQs</a></strong></span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-6 h-6 text-brand-trust mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-gray-700">Transparent <strong class="text-brand-navy"><a href="/pricing/" class="hover:underline">pricing</a></strong> and straightforward <strong class="text-brand-navy"><a href="/book/" class="hover:underline">booking</a></strong></span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bg-gray-50 border border-gray-200 rounded p-6 text-sm text-gray-600 max-w-4xl mx-auto">
-        <strong>Safety Note:</strong> International sessions focus on parent guidance and support planning. Assessment suitability and format are determined during the initial consultation. They do not replace local medical care, emergency support, or regulated therapy where a specific local license is required.
-      </div>
-    </div>
-  </section>
+  <!-- Global Telehealth Support Hub (UK, Gulf, US & Diaspora) -->
+  <GlobalSupportShowcase />
 
   <ParentResourcesInsights />
 
   <ResourceVaultPreview />
   <ResearchCredibilitySection />
-  <FAQPreview />
+  <AIDirectAnswerSection />
   <FinalBookingCTA />
 
   <HomepageSchema slot="head" />

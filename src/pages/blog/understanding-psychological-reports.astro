@@ -19,23 +19,24 @@ import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import BlogCTA from '../../components/blog/BlogCTA.astro';
 import PrevNextNav from '../../components/blog/PrevNextNav.astro';
 import FAQAccordion from '../../components/blog/FAQAccordion.astro';
+import SchoolAccommodationsVisual from '../../components/blog/visuals/SchoolAccommodationsVisual.astro';
 import heroImage from '../../assets/blog/understanding-psychological-reports-a-guide-for-parents.webp';
 
 const title = "Understanding Psychological Reports: A Guide for Parents";
 const description = "Learn how to read a child's psychological report, translate clinical jargon into practical next steps, and advocate for school accommodations.";
-const currentUrl = "/blog/understanding-psychological-reports";
-const canonicalURL = `https://www.rabbiapsychologist.com${currentUrl}`;
+const currentUrl = "/blog/understanding-psychological-reports/";
+const canonicalURL = "https://www.rabbiapsychologist.com/blog/understanding-psychological-reports/";
 
-const keywords = ["psychological reports", "child assessment report", "understanding IEP documentation", "cognitive testing", "educational accommodations"];
+const keywords = ["understanding psychological reports", "child psychology report", "how to read child psychological assessment report", "bas 3 psychologist report", "psychological reports", "report review", "cognitive testing", "educational accommodations"];
 
 const headings = [
   { text: "Introduction", slug: "introduction", level: 2 },
   { text: "The Purpose of the Report", slug: "purpose-of-the-report", level: 2 },
   { text: "Key Sections of a Psychological Report", slug: "key-sections", level: 2 },
-  { text: "Understanding the Numbers", slug: "understanding-the-numbers", level: 2 },
-  { text: "Red Flags to Look For", slug: "red-flags", level: 2 },
-  { text: "How to Use the Recommendations", slug: "using-recommendations", level: 2 },
-  { text: "When to Seek a Report Review", slug: "when-to-seek-review", level: 2 }
+  { text: "Understanding the Numbers: Standard Scores, T-Scores & Percentiles", slug: "understanding-the-numbers", level: 2 },
+  { text: "Common Tests Explained (WISC-V, BAS-3, ADOS-2, Conners)", slug: "common-tests-explained", level: 2 },
+  { text: "How to Use the Recommendations (Free Questions Guide)", slug: "using-recommendations", level: 2 },
+  { text: "When to Seek an Independent Report Review", slug: "when-to-seek-review", level: 2 }
 ];
 
 const schema = [
@@ -81,10 +82,18 @@ const schema = [
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What does a psychological report include?",
+        "name": "What does a child psychological report include?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A standard report includes the child's background history, observations during testing, the actual test results (cognitive, academic, behavioural), clinical conclusions, and a list of specific recommendations for home and school."
+          "text": "A standard report includes the child's developmental and medical history, testing observations, standardized cognitive, learning, and behavioural scores (e.g. WISC-V, BAS-3, Vineland-3), clinical formulations, and individualized school and home recommendations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do Standard Scores, T-Scores, and Percentiles mean in a psychological report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Scores have an average of 100 (normal range 85–115). T-Scores have an average of 50 (clinical concern typically starts above 65 or 70 depending on the scale). Percentile ranks indicate what percentage of same-age peers scored below your child; the 50th percentile is exactly average, not a failing mark."
         }
       },
       {
@@ -97,10 +106,10 @@ const schema = [
       },
       {
         "@type": "Question",
-        "name": "Can I ask the school to follow the recommendations?",
+        "name": "Can I ask the school to follow private psychological report recommendations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. While schools are not always legally bound to follow every single recommendation from a private report, the data provides strong evidence to support your requests during an IEP or support planning meeting."
+          "text": "Yes. While schools review recommendations within their local educational framework, clinical data provides authoritative evidence to support accommodations such as extra exam time, sensory breaks, or assistive technology."
         }
       }
     ]
@@ -184,24 +193,71 @@ const schema = [
             <li><strong>Recommendations:</strong> The most important section. A bulleted list of what should happen next at home, at school, and clinically.</li>
           </ul>
 
-          <h2 id="understanding-the-numbers">Understanding the Numbers</h2>
-          <p>Psychologists use statistics to compare your child to other children exactly their age. The most common term you will see is "Percentile."</p>
+          <h2 id="understanding-the-numbers">Understanding the Numbers: Standard Scores, T-Scores & Percentiles</h2>
+          <p>Psychologists use statistics to compare your child's performance against standardized age norms. In reports, you will typically see three types of metrics:</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6 not-prose">
+            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Standard Scores (SS)</span>
+              <p class="text-xs text-gray-600 mb-2">Mean = 100, SD = 15</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• <strong>130+:</strong> Very Superior</li>
+                <li>• <strong>90–109:</strong> Average (broad norm)</li>
+                <li>• <strong>80–89:</strong> Low Average</li>
+                <li>• <strong>Below 70:</strong> Significant Difficulty</li>
+              </ul>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">T-Scores (Rating Scales)</span>
+              <p class="text-xs text-gray-600 mb-2">Mean = 50, SD = 10</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• <strong>Below 60:</strong> Typical Range</li>
+                <li>• <strong>60–69:</strong> At-Risk / Borderline</li>
+                <li>• <strong>70+:</strong> Clinically Significant (e.g. Conners ADHD scales)</li>
+              </ul>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+              <span class="inline-block bg-brand-navy text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Percentile Ranks (%ile)</span>
+              <p class="text-xs text-gray-600 mb-2">Cohort Comparison (0–100)</p>
+              <ul class="text-xs text-gray-700 space-y-1">
+                <li>• <strong>50th %ile:</strong> Exactly Average</li>
+                <li>• <strong>16th %ile:</strong> One standard deviation below (scaffolding trigger)</li>
+                <li>• <strong>2nd %ile:</strong> Two standard deviations below</li>
+              </ul>
+            </div>
+          </div>
 
           <MythVsFact
             myth="My child scored in the 50th percentile on reading. That's an F (50%)!"
-            fact="Percentiles are not test grades. The 50th percentile means your child scored better than 50 out of 100 children their age. It is exactly average."
+            fact="Percentiles are not test grades. The 50th percentile means your child scored equal to or higher than 50 out of 100 children of their exact age. It is the exact median of the healthy population."
           />
 
-          <p>Generally speaking:</p>
+          <h2 id="common-tests-explained">Common Tests Explained (WISC-V, BAS-3, ADOS-2, Conners)</h2>
+          <p>Depending on whether the assessment was conducted in the US, UK, Canada, Australia, or an international British/American school, different standardized test batteries are utilized:</p>
+
           <ul>
-            <li><strong>90th percentile and above:</strong> High / Superior</li>
-            <li><strong>25th to 75th percentile:</strong> Average range (where most children score)</li>
-            <li><strong>9th to 24th percentile:</strong> Low Average (might struggle, but not severely delayed)</li>
-            <li><strong>Below the 9th percentile:</strong> Very Low / Impaired (indicates a need for significant support)</li>
+            <li><strong>WISC-V (Wechsler Intelligence Scale for Children - 5th Ed.):</strong> The global gold-standard cognitive battery measuring Verbal Comprehension, Visual Spatial, Fluid Reasoning, Working Memory, and Processing Speed.</li>
+            <li><strong>BAS-3 (British Ability Scales - 3rd Ed.):</strong> Frequently used by Educational Psychologists in the UK and British international schools across the Gulf and Commonwealth to evaluate verbal ability, non-verbal reasoning, and spatial cognition.</li>
+            <li><strong>ADOS-2 (Autism Diagnostic Observation Schedule - 2nd Ed.):</strong> A semi-structured clinical interaction protocol evaluating social reciprocity, communication, and restricted repetitive interests.</li>
+            <li><strong>Conners 4 / BASC-3:</strong> Standardized multi-informant rating scales completed by parents and teachers to assess inattention, hyperactivity, executive dysfunction, and emotional regulation.</li>
           </ul>
 
-          <h2 id="using-recommendations">How to Use the Recommendations</h2>
+          <h2 id="using-recommendations">How to Use the Recommendations (Free Questions Guide)</h2>
           <p>The recommendations section is your roadmap. However, some recommendations are vague (e.g., "Provide a quiet space"). You need to translate these into actionable school accommodations.</p>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 my-6 not-prose">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <span class="bg-brand-navy text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Free Clinical Tool</span>
+                <h3 class="text-xl font-bold text-brand-navy mt-2">Psychological Report Review Questions for Parents</h3>
+                <p class="text-sm text-gray-700 mt-1">15 essential questions to ask during evaluation debriefs to translate clinical percentiles into concrete classroom accommodations and home plans.</p>
+              </div>
+              <a href="/free-downloads/report-review-questions/" class="inline-flex items-center gap-2 bg-brand-navy text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-blue-900 transition-colors shrink-0 shadow-sm">
+                <span>View & Print Questions</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
 
           <ActionChecklist
             items={[
@@ -212,9 +268,11 @@ const schema = [
             ]}
           />
 
-          <h2 id="when-to-seek-review">When to Seek a Report Review</h2>
+          <SchoolAccommodationsVisual />
+
+          <h2 id="when-to-seek-review">When to Seek an Independent Report Review</h2>
           <p>Sometimes parents receive a report from a clinic or a school, but they do not fully understand what it means for daily life, or the school refuses to implement the findings.</p>
-          <p>A Report Review consultation with a clinical psychologist can help. They can translate the jargon, explain the cognitive profile, and help you draft specific, evidence-based requests for your next school meeting.</p>
+          <p>Our dedicated <a href="/report-review/" class="text-brand-trust font-bold hover:underline">Psychological Report Review consultation</a> provides a comprehensive second look with a qualified clinical psychologist. We translate statistical test jargon into plain English, explain how subtest dips impact home routines, and provide concrete accommodation wording for your next IEP meeting.</p>
 
           <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mt-8 mb-8 text-sm text-gray-600">
             <p class="m-0"><strong>Disclaimer:</strong> This article is for educational guidance only and does not replace a professional developmental, psychological, or medical assessment. If you are concerned about your child’s development, behaviour, attention, learning, or communication, it is helpful to consult a qualified professional.</p>
@@ -223,30 +281,29 @@ const schema = [
           <KeyTakeaways
             items={[
               "Psychological reports focus heavily on deficits to secure necessary funding and support.",
-              "Percentiles are not school grades; the 50th percentile is exactly average.",
-              "Check the background history section for any factual errors.",
+              "Standard scores (mean 100) and percentiles (50th %ile is average) compare your child to exact age peers.",
+              "Common standardized batteries include WISC-V, BAS-3, ADOS-2, and Conners-4.",
               "The recommendations section is the most important part—use it to request specific IEP accommodations.",
-              "If you are confused by a past report, a clinical consultation can help translate it into practical steps."
+              "If you are confused by a past report, an independent clinical report review provides clear translation and advocacy next steps."
             ]}
-          />
-
-            datePublished="February 15, 2024"
-            dateModified="March 1, 2024"
-            readTime="6 min"
           />
 
           <FAQAccordion faqs={[
             {
-              question: "What does a psychological report include?",
-              answer: "A standard report includes the child's background history, observations during testing, the actual test results (cognitive, academic, behavioural), clinical conclusions, and a list of specific recommendations for home and school."
+              question: "What does a child psychological report include?",
+              answer: "A standard report includes the child's developmental and medical history, testing observations, standardized cognitive, learning, and behavioural scores (e.g. WISC-V, BAS-3, Vineland-3), clinical formulations, and individualized school and home recommendations."
+            },
+            {
+              question: "What do Standard Scores, T-Scores, and Percentiles mean in a psychological report?",
+              answer: "Standard Scores have an average of 100 (normal range 85–115). T-Scores have an average of 50 (clinical concern typically starts above 65 or 70 depending on the scale). Percentile ranks indicate what percentage of same-age peers scored below your child; the 50th percentile is exactly average, not a failing mark."
             },
             {
               question: "Why does the report focus so much on my child's weaknesses?",
               answer: "In order to secure funding, an IEP, or specific school accommodations, a report must clinically prove 'impairment' or a 'deficit.' It is a legal and medical document, not a complete reflection of your child's personality or potential."
             },
             {
-              question: "Can I ask the school to follow the recommendations?",
-              answer: "Yes. While schools are not always legally bound to follow every single recommendation from a private report, the data provides strong evidence to support your requests during an IEP or support planning meeting."
+              question: "Can I ask the school to follow private psychological report recommendations?",
+              answer: "Yes. While schools review recommendations within their local educational framework, clinical data provides authoritative evidence to support accommodations such as extra exam time, sensory breaks, or assistive technology."
             }
           ]} />
 

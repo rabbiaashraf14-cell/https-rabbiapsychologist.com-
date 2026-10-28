@@ -6,63 +6,124 @@ const schema = {
       "@type": "WebSite",
       "@id": "https://www.rabbiapsychologist.com/#website",
       "url": "https://www.rabbiapsychologist.com",
-      "name": "Rabbia Psychologist Child Development Services", "alternateName": "Rabbia Psychologist",
-      "description": "Rabbia Psychologist Child Development Services provides ADHD guidance, IEP help, parent guidance, report review, between-session support, and child development resources for families in Pakistan and abroad.",
+      "name": "Rabbia Psychologist Child Development Services",
+      "alternateName": "Rabbia Ashraf Clinical Child Psychology",
+      "description": "Global clinical parent guidance and neurodevelopmental consultation platform led by Clinical Psychologist Rabbia Ashraf (ADOS-2 Certified), providing support for Autism, ADHD, executive dysfunction, and report reviews.",
       "publisher": {
         "@id": "https://www.rabbiapsychologist.com/#organization"
       }
     },
     {
-      "@type": "Organization",
+      "@type": "MedicalBusiness",
       "@id": "https://www.rabbiapsychologist.com/#organization",
-      "name": "Rabbia Psychologist Child Development Services", "alternateName": "Rabbia Psychologist",
+      "name": "Rabbia Psychologist Child Development Services",
+      "alternateName": "Rabbia Ashraf Practice",
       "url": "https://www.rabbiapsychologist.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.rabbiapsychologist.com/brand/logo-primary.svg"
+        "url": "https://www.rabbiapsychologist.com/favicon.png"
       },
-      "description": "Rabbia Psychologist Child Development Services provides ADHD guidance, IEP help, parent guidance, report review, between-session support, and child development resources for families in Pakistan and abroad.",
+      "image": "https://www.rabbiapsychologist.com/og-brand-card.png",
+      "description": "Restorative, evidence-informed child development consultation and parent guidance service specializing in Autism, ADHD, pathological demand avoidance, sensory accommodations, and waitlist bridge support.",
+      "medicalSpecialty": [
+        "ClinicalPsychology",
+        "PediatricPsychology",
+        "NeurodevelopmentalAssessment"
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": ["USD", "GBP", "AED", "AUD", "CAD", "PKR"],
+      "telephone": "+923364114002",
+      "email": "psychologistrabbia@gmail.com",
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "MS in Clinical Psychology"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ADOS-2 Certified Administrator"
+        }
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "psychologistrabbia@gmail.com",
         "telephone": "+923364114002",
-        "contactType": "customer support"
-      }
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://www.rabbiapsychologist.com/#service",
-      "name": "Parent Consultation and Guidance",
-      "areaServed": ["PK", "US", "AU", "GB", "AE", "SA"]
+        "contactType": "clinical intake"
+      },
+      "areaServed": ["GB", "US", "AE", "CA", "AU", "PK", "SA", "QA", "SG"]
     },
     {
       "@type": "Person",
       "@id": "https://www.rabbiapsychologist.com/#person",
       "name": "Rabbia Ashraf",
-      "jobTitle": "clinical lead",
-      "description": "Clinical Psychologist | Child & Adolescent Development Support",
+      "jobTitle": "Clinical Psychologist & Child Development Specialist",
+      "description": "Clinical Psychologist specializing in neurodevelopmental parent guidance, Autism (ADOS-2 Certified), ADHD executive functioning, and pediatric psychological evaluation translation.",
       "url": "https://www.rabbiapsychologist.com/about",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Centre for Clinical Psychology (CCP), University of the Punjab"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "MS in Clinical Psychology",
+          "credentialCategory": "Postgraduate Degree"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ADOS-2 Certified Clinical Administrator",
+          "credentialCategory": "Specialist Clinical Certification"
+        }
+      ],
       "sameAs": [
-        "https://www.linkedin.com/in/rabbiapsychologist"
+        "https://www.linkedin.com/in/rabbiapsychologist",
+        "https://www.rabbiapsychologist.com/credentials/"
+      ],
+      "knowsAbout": [
+        "Autism Diagnostic Observation Schedule (ADOS-2)",
+        "Autism Diagnostic Interview-Revised (ADI-R)",
+        "Conners 4 ADHD Evaluation",
+        "Wechsler Intelligence Scale for Children (WISC-V)",
+        "Pathological Demand Avoidance (PDA)",
+        "Rejection Sensitive Dysphoria (RSD)",
+        "After-School Restraint Collapse",
+        "Parent-Led Telehealth Guidance"
       ]
     },
     {
       "@type": "FAQPage",
+      "@id": "https://www.rabbiapsychologist.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is parent consultation?",
+          "name": "What should parents do while waiting on an 18-month NHS or international child assessment waitlist?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Parent consultation is educational and strategic guidance focused on equipping parents with tools to support their child's development, manage behaviors, and navigate school systems."
+            "text": "Waiting 12 to 24 months for an official NHS or public healthcare diagnosis does not mean your child must struggle without support. Early neuro-affirming accommodations, sensory environment audits, and positive behavior strategies can be implemented immediately. Clinical Psychologist Rabbia Ashraf provides actionable bridge guidance to stabilize home and classroom challenges during the waiting period."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you provide medical diagnosis?",
+          "name": "Why does parent-led consultation work better than putting a dysregulated child in front of a webcam?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Rabbia Psychologist Child Development Services provides parent guidance, educational resources, developmental support planning, report review support, school guidance, and between-session parent support programs. Regulated services are provided only within the professional scope, credentials, and legal requirements of the professional and client location."
+            "text": "Children experiencing sensory overwhelm, ADHD, or autism often become either highly dysregulated or deeply masked when forced to interact with a stranger on a screen. By consulting directly with parents off-screen, Clinical Psychologist Rabbia Ashraf conducts candid, thorough clinical assessments without distressing the child, giving parents concrete scripts and regulation protocols to deploy at home."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in a 50-minute clinical guidance session and how much does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every 50-minute parent consultation includes a pre-session diagnostic intake questionnaire review, a 1-on-1 private video strategy session with Clinical Psychologist Rabbia Ashraf, and a tailored written 3-step action roadmap delivered within 24 hours. The international fee is transparent at $85 USD (approx. £65 GBP), with regional subsidized pricing of PKR 5,000 for families residing in Pakistan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What qualifications and clinical diagnostic assessment tools does Rabbia Ashraf specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rabbia Ashraf holds an MS in Clinical Psychology and is a certified administrator of the ADOS-2 (Autism Diagnostic Observation Schedule, Second Edition). She specializes in pediatric neurodevelopment, interpreting ADI-R, Conners 4, WISC-V, and Vineland-3 evaluations, and translating dense neuropsychological reports into actionable parent roadmaps and school accommodations."
           }
         }
       ]

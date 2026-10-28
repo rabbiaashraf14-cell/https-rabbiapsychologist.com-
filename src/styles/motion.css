@@ -1,28 +1,128 @@
 @layer utilities {
   .fade-up {
-    animation: fade-up 0.8s ease-out forwards;
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
     transform: translateY(20px);
   }
 
   .fade-in {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
   }
 
   .soft-scale {
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .soft-scale:hover {
     transform: scale(1.02);
   }
 
   .card-hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .card-hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 16px 32px -8px rgba(10, 35, 63, 0.08);
+  }
+
+  /* Restorative Clinical Sanctuary Glass Cards */
+  .apple-glass {
+    background: rgba(250, 247, 242, 0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(230, 223, 211, 0.8);
+    box-shadow: 0 10px 30px -10px rgba(10, 35, 63, 0.04), 0 20px 40px -15px rgba(10, 35, 63, 0.03);
+  }
+
+  .apple-glass-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(230, 223, 211, 0.85);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px -2px rgba(10, 35, 63, 0.04), 0 12px 32px -4px rgba(10, 35, 63, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .apple-glass-card:hover {
+    transform: translateY(-4px) scale(1.008);
+    background: #ffffff;
+    box-shadow: 0 16px 36px -6px rgba(10, 35, 63, 0.08), 0 24px 48px -12px rgba(10, 35, 63, 0.06);
+    border-color: rgba(60, 110, 90, 0.35);
+  }
+
+  .apple-specular-top {
+    position: relative;
+    overflow: hidden;
+  }
+  .apple-specular-top::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95), transparent);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .apple-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.875rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(230, 223, 211, 0.9);
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #0A233F;
+    box-shadow: 0 2px 8px rgba(10, 35, 63, 0.04);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .apple-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .apple-btn-primary {
+    background: #0A233F;
+    color: #ffffff;
+    box-shadow: 0 4px 14px 0 rgba(10, 35, 63, 0.2);
+  }
+  .apple-btn-primary:hover {
+    transform: translateY(-1.5px) scale(1.015);
+    box-shadow: 0 8px 24px 0 rgba(10, 35, 63, 0.28);
+    background: #13385E;
+  }
+
+  .apple-btn-sage {
+    background: #2F6352;
+    color: #ffffff;
+    box-shadow: 0 4px 14px 0 rgba(47, 99, 82, 0.25);
+  }
+  .apple-btn-sage:hover {
+    transform: translateY(-1.5px) scale(1.015);
+    box-shadow: 0 8px 24px 0 rgba(47, 99, 82, 0.35);
+    background: #255243;
+  }
+
+  .apple-float {
+    animation: apple-float 6s ease-in-out infinite;
+  }
+
+  .apple-pulse-subtle {
+    animation: apple-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
@@ -46,13 +146,22 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .fade-up, .fade-in {
-    animation: none;
-    opacity: 1;
-    transform: none;
+@keyframes apple-float {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  .soft-scale:hover, .card-hover-lift:hover {
-    transform: none;
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes apple-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
   }
 }

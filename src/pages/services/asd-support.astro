@@ -2,14 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import PriceDisplay from '../../components/global/PriceDisplay.astro';
+import WaitlistCrisisBanner from '../../components/global/WaitlistCrisisBanner.astro';
 
 const title = "Autism Parent Guidance & Developmental Support Planning | Rabbia Psychologist";
 const description = "Online parent guidance for autism, communication strategies, and behavioral support planning. Help your child's development at home and school.";
 const canonicalURL = "https://www.rabbiapsychologist.com/services/asd-support/";
 
 const breadcrumbs = [
-  { name: 'Services', href: '/services' },
-  { name: 'Autism Support', href: '/services/asd-support' }
+  { name: 'Services', href: '/services/' },
+  { name: 'Autism Support', href: '/services/asd-support/' }
 ];
 
 const serviceSchema = {
@@ -88,14 +89,21 @@ const faqSchema = {
     <Breadcrumbs paths={breadcrumbs} />
 
     <!-- 1. Hero section -->
-    <div class="mt-8 mb-12 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Autism Parent Guidance and Developmental Support Planning</h1>
-      <p class="text-xl text-gray-700 mb-4">Parent guidance, communication strategies, and behavioral support planning for families navigating ASD.</p>
-      <div class="flex justify-center mb-6">
-        <PriceDisplay serviceKey="asdParentGuidance" />
+    <div class="mt-8 mb-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4 tracking-tight">Autism Parent Guidance and Developmental Support Planning</h1>
+      <p class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto">Neurodiversity-affirming parent guidance, communication strategies, and behavioral support planning for families navigating ASD.</p>
+      
+      <div class="apple-glass-card apple-specular-top p-6 rounded-2xl max-w-md mx-auto mb-6 shadow-sm border border-gray-100">
+        <div class="flex justify-center mb-3">
+          <PriceDisplay serviceKey="asdParentGuidance" />
+        </div>
+        <p class="text-xs text-gray-500 mb-4">50-minute clinical video consultation with Rabbia Ashraf &bull; Sensory profile review &amp; actionable home plan</p>
+        <a href="/book/" class="apple-btn apple-btn-primary !py-3.5 !px-8 text-base font-semibold shadow-md w-full sm:w-auto inline-block">Book Consultation</a>
       </div>
-      <a href="/book/" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-900 transition-colors shadow-md">Book Consultation</a>
     </div>
+
+    <!-- Waitlist Interim Support Reassurance -->
+    <WaitlistCrisisBanner condition="Autism & sensory differences" />
 
     <div class="prose prose-lg max-w-none text-gray-700 space-y-12">
 
