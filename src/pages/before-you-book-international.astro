@@ -1,19 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import InternationalTrustFramework from '../components/global/InternationalTrustFramework.astro';
 
 ---
 <Layout 
-  title="Before You Book an International Consultation" 
-  description="Checklist and guidelines to ensure you select the right support type, understand service boundaries, and prepare for your online consultation."
+  title="Before You Book an International Consultation | Rabbia Psychologist" 
+  description="Checklist, service boundaries, clinical scope, and legal framework for international child psychology parent guidance consultations."
   canonicalURL="https://www.rabbiapsychologist.com/before-you-book-international/"
 >
 
-
-  <div class="bg-brand-navy py-16 text-center">
+  <div class="bg-brand-navy py-16 text-center text-white">
     <div class="container mx-auto px-4 max-w-3xl">
-      <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">Before You Book</h1>
-      <p class="text-xl text-gray-300">
-        Review this checklist to ensure you understand our service boundaries and how to prepare for a successful consultation.
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold tracking-wide uppercase mb-4">
+        <span>International Clinical Governance</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 font-serif">Before You Book an International Session</h1>
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+        Review our 4-step consultation discipline, service boundaries, and clinical protections to prepare for a successful consultation.
       </p>
     </div>
   </div>
@@ -21,31 +24,48 @@ import Layout from '../layouts/Layout.astro';
   <main class="py-12 bg-gray-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
 
-      <div class="my-12 space-y-8">
-        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">1. Understand Privacy and Consent</h2>
-          <p class="text-gray-700">We require explicit parental consent for consultations discussing minors. Please review our <a href="/privacy-for-international-families/" class="text-brand-trust hover:underline">Privacy Policy for International Families</a> to understand how your data is handled.</p>
+      <!-- Trust Framework Component -->
+      <InternationalTrustFramework />
+
+      <div class="my-8 space-y-6">
+        <section class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-2 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-100 text-brand-navy text-xs flex items-center justify-center font-bold">1</span>
+            <span>Privacy &amp; Parental Consent</span>
+          </h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            We require explicit parental consent for consultations discussing minors. In line with our <strong>Off-Screen Child Protocol</strong>, the parent or primary caregiver is the client in the consultation. Please review our <a href="/privacy-for-international-families/" class="text-brand-trust hover:underline font-semibold">Privacy Policy for International Families</a> to understand how your data is handled.
+          </p>
         </section>
 
-        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">2. Understand Emergency Limitations</h2>
-          <p class="text-gray-700">This platform <strong>does not provide emergency care or crisis intervention.</strong> If there is a risk of harm to self or others, or severe psychiatric distress, please seek immediate help from local emergency services or hospitals.</p>
+        <section class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-2 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-100 text-brand-navy text-xs flex items-center justify-center font-bold">2</span>
+            <span>Emergency &amp; Crisis Exclusions</span>
+          </h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            This platform <strong>does not provide emergency medical care or acute crisis intervention.</strong> If there is immediate risk of harm to self or others, severe psychiatric distress, or acute physical injury, please seek immediate help from your local hospital emergency services or emergency numbers (999 UK, 911 USA/Canada, 000 Australia, 112 Europe).
+          </p>
         </section>
 
-        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <h2 class="text-2xl font-bold text-brand-navy mb-4">3. Prepare Documents</h2>
-          <p class="text-gray-700 mb-4">To make the most of your session, consider gathering:</p>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
-            <li>Any previous developmental or psychological reports (for context only).</li>
-            <li>Recent school reports or IEPs.</li>
-            <li>A list of the top 2-3 behaviors or routines you want to focus on.</li>
+        <section class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-brand-navy mb-2 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-100 text-brand-navy text-xs flex items-center justify-center font-bold">3</span>
+            <span>How to Prepare Documents</span>
+          </h2>
+          <p class="text-sm text-gray-700 mb-3 leading-relaxed">To make the most of your 50-minute video session, consider gathering:</p>
+          <ul class="list-disc pl-6 space-y-1.5 text-xs sm:text-sm text-gray-700">
+            <li>Any previous developmental, speech, or psychological reports (for context only).</li>
+            <li>Recent school reports, IEPs, or teacher feedback notes.</li>
+            <li>A focused list of the top 2–3 daily routines or behaviors you want to transform first.</li>
           </ul>
         </section>
       </div>
 
-      <div class="mt-12 text-center">
-        <a href="/book/" class="inline-block px-8 py-4 bg-brand-navy text-white rounded-lg font-bold text-lg hover:bg-blue-900 transition-all shadow-lg">
-          Book a Consultation
+      <div class="mt-10 text-center">
+        <a href="/book/" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-navy text-white rounded-xl font-bold text-base sm:text-lg hover:bg-blue-900 transition-all shadow-lg">
+          <span>Proceed to Self-Schedule Consultation</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
 
