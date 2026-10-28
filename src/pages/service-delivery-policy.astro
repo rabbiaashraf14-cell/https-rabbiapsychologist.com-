@@ -1,33 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import InternationalTrustFramework from '../components/global/InternationalTrustFramework.astro';
 
 const breadcrumbs = [
+  { name: 'Home', href: '/' },
   { name: 'Service Delivery Policy', href: '/service-delivery-policy/' }
 ];
 ---
 
-<Layout title="Service Delivery Policy | Rabbia Psychologist" description="Read our policy regarding how our consultations, assessments, and related services are delivered.">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<Layout 
+  title="Service Delivery Policy & International Clinical Framework | Rabbia Psychologist" 
+  description="Read our comprehensive service delivery policy, clinical scope, international practitioner credentials, and legal protection framework."
+  canonicalURL="https://www.rabbiapsychologist.com/service-delivery-policy/"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
     <Breadcrumbs paths={breadcrumbs} />
-    <div class="max-w-4xl mx-auto mt-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">Service Delivery Policy</h1>
-      <div class="prose prose-lg text-gray-700 max-w-none mb-16">
-        <ul class="space-y-4 list-disc pl-6">
-          <li>The website provides psychology consultations, parent guidance, assessments, report reviews, school guidance and related professional services.</li>
-          <li>No physical products are shipped unless clearly stated on a specific product page.</li>
-          <li>Online consultations are delivered through Zoom, Google Meet, WhatsApp video or another agreed platform.</li>
-          <li>The meeting link and appointment details are shared after payment and booking confirmation.</li>
-          <li>In-person consultations are available locally, and online internationally.</li>
-          <li>Clients must provide a correct phone number, WhatsApp number and email address.</li>
-          <li>Appointment confirmation is usually sent within one business day after payment verification.</li>
-          <li>Reports, written recommendations and assessment documents will be delivered according to the timeline communicated during booking.</li>
-          <li>Delays may occur if the client does not provide the required information, forms, records or assessment documents.</li>
-          <li>Services are delivered only at the confirmed date and time.</li>
-          <li>Online clients are responsible for having a stable internet connection and a private environment.</li>
-          <li>International clients may receive consultation, parent guidance, report review and educational support according to applicable professional limitations.</li>
-          <li>Emergency and crisis services are not provided through the website.</li>
+    
+    <div class="mt-8 mb-10 text-center max-w-3xl mx-auto">
+      <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Clinical Governance &amp; Terms</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-brand-navy mt-1 mb-4">Service Delivery Policy</h1>
+      <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+        Transparent guidelines detailing our international practitioner credentials, parent-mediated delivery model, and clear legal boundaries.
+      </p>
+    </div>
+
+    <!-- Trust & Legal Framework Box -->
+    <InternationalTrustFramework />
+
+    <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-200 mt-10">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Detailed Operational &amp; Legal Policies</h2>
+      
+      <div class="prose prose-blue text-gray-700 max-w-none space-y-4 text-sm sm:text-base leading-relaxed">
+        <h3 class="text-lg font-bold text-brand-navy">1. Professional Scope &amp; Parent-Mediated Delivery</h3>
+        <p>
+          Rabbia Psychologist Child Development Services provides specialized developmental parent guidance, ADHD/ASD home routine planning, behavioral de-escalation strategies, and psychoeducational report reviews. All international telehealth services operate on a <strong>Parent-Mediated Coaching Model</strong> utilizing an <strong>Off-Screen Child Protocol</strong>. Consultations are delivered directly to the adult parent or legal guardian.
+        </p>
+
+        <h3 class="text-lg font-bold text-brand-navy">2. Statutory Medical &amp; Educational Diagnosis Disclaimer</h3>
+        <p>
+          Online parent guidance consultations, developmental screenings, and report reviews <strong>do not constitute a statutory medical diagnosis, psychiatric evaluation, or legal entitlement determination</strong> under local education or disability laws (including UK NHS EHCPs, Australian NDIS funding, or US Section 504/IEP designations). Formal statutory determinations remain the exclusive responsibility of licensed, in-person multidisciplinary medical teams within the client's home jurisdiction.
+        </p>
+
+        <h3 class="text-lg font-bold text-brand-navy">3. Emergency and Crisis Exclusions</h3>
+        <p>
+          Rabbia Psychologist is a scheduled outpatient guidance service and <strong>does not provide acute crisis, self-harm, suicide prevention, or emergency medical interventions</strong>. If your child or family is facing an acute emergency, please contact your local emergency response service immediately (e.g., 999 in the UK, 911 in North America, 000 in Australia, 112 in Europe, or 1122 in Pakistan) or proceed to the nearest hospital emergency room.
+        </p>
+
+        <h3 class="text-lg font-bold text-brand-navy">4. Session Platforms &amp; Delivery Requirements</h3>
+        <ul class="list-disc pl-5 space-y-2 text-xs sm:text-sm">
+          <li>Online consultations are conducted via encrypted video sessions (Google Meet or Zoom).</li>
+          <li>Meeting links and appointment confirmations are issued automatically upon verified booking.</li>
+          <li>Clients are responsible for ensuring a private environment and stable internet connection.</li>
+          <li>Written summaries and customized 3-step action roadmaps are delivered electronically within 24 to 48 hours of session completion.</li>
         </ul>
+
+        <h3 class="text-lg font-bold text-brand-navy">5. Employer &amp; Corporate Sponsored Gifting</h3>
+        <p>
+          Organizations, employers, Employee Assistance Programs (EAPs), and community groups may sponsor or gift consultation sessions for their employees' families. All corporate engagements maintain strict employee confidentiality; no clinical notes or personal case records are shared with employers without explicit, written parental consent.
+        </p>
       </div>
     </div>
   </div>
