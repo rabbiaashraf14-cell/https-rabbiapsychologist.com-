@@ -15,6 +15,30 @@ export interface BlogArticle {
 
 export const articles: BlogArticle[] = [
   {
+    title: "Why Does My Child Obsess Over 'Fairness'? Justice Sensitivity & Cognitive Inflexibility in ADHD and Autism",
+    excerpt: "Why slight inequalities trigger screaming meltdowns in neurodivergent children. The neuroscience of anterior insula threat signaling, the Band-Aid Metaphor, and how to teach fairness vs equality.",
+    author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
+    date: "Oct 28, 2026",
+    categories: ["Emotional Regulation", "ADHD", "Autism"],
+    href: "/blog/why-does-my-child-obsess-over-fairness-justice-sensitivity/",
+    featured: true,
+    readTime: "5 min read",
+    targetKeywords: ["child obsessed with fairness", "justice sensitivity ADHD autism", "why kids meltdown over fairness", "cognitive inflexibility kids"],
+    keyTakeaway: "Perceived unfairness triggers the brain's physical threat and pain circuits. Stop arguing 'life isn't fair'—validate the alarm first, then teach that fairness means getting what each person needs."
+  },
+  {
+    title: "Screen Time Transitions Without Tears: The 3-Step Off-Ramp Protocol for Neurodivergent Kids",
+    excerpt: "Why shutting off the tablet triggers violent meltdowns in ADHD and autistic children. The neuroscience of dopamine cliffs, time blindness, and the clinical 3-step off-ramp protocol.",
+    author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
+    date: "Oct 28, 2026",
+    categories: ["Behaviour", "ADHD", "Parent Guidance"],
+    href: "/blog/screen-time-transitions-without-tears-adhd-autism/",
+    featured: true,
+    readTime: "5 min read",
+    targetKeywords: ["screen time transitions ADHD", "meltdown when ipad turned off", "dopamine cliff screen time", "how to stop screen time tantrums"],
+    keyTakeaway: "Abrupt screen cutoffs cause an acute dopamine crash. Use visual countdowns, bridge with 60 seconds of shared connection, and provide a sensory landing pad before demands."
+  },
+  {
     title: "ADHD, Neurodivergence & Bedtime Struggles: Why Evenings Fall Apart and How to Rebuild Calm",
     excerpt: "Why tired neurodivergent children bounce off walls, pick fights, and resist sleep. The clinical reality of regulation demands, screen transition cliffs, and a 7-step evening decompression protocol.",
     author: "Rabbia Ashraf, Clinical Psychologist & Certified ADOS-2 Practitioner",
