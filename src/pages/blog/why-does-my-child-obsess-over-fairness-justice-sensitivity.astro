@@ -10,6 +10,7 @@ import WhatYouWillLearn from '../../components/blog/WhatYouWillLearn.astro';
 import MythVsFact from '../../components/blog/MythVsFact.astro';
 import KeyTakeaways from '../../components/blog/KeyTakeaways.astro';
 import ExpertTip from '../../components/blog/ExpertTip.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
 
 import heroImage from '../../assets/blog/tantrum-vs-meltdown-what-is-the-difference.webp';
 import secondaryImage from '../../assets/blog/emotional-regulation-in-children-teaching-kids-to-handle-big-feelings.webp';
@@ -86,7 +87,7 @@ const faqSchema = {
 
   <ProgressBar />
 
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-3xl">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
     <Breadcrumbs paths={breadcrumbs} />
 
     <header class="mt-8 mb-8">
@@ -114,6 +115,9 @@ const faqSchema = {
         </div>
       </div>
     </header>
+
+    <!-- Full-Width Responsive Table of Contents -->
+    <TableOfContents />
 
     <article class="prose prose-brand max-w-none text-gray-700 leading-relaxed">
       <p class="text-xl font-medium text-gray-900 leading-relaxed">

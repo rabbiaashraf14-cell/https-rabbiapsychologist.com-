@@ -44,6 +44,33 @@ h1, h2, h3, h4, h5, h6 {
   @apply text-brand-navy;
 }
 
+/* Guarantee high contrast inside dark sections (footer, dark banners, navy cards) - Never dark text on dark bg */
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+[class*="bg-brand-navy"] h1, [class*="bg-brand-navy"] h2, [class*="bg-brand-navy"] h3, [class*="bg-brand-navy"] h4,
+[class*="bg-[#0"] h1, [class*="bg-[#0"] h2, [class*="bg-[#0"] h3, [class*="bg-[#0"] h4 {
+  color: #FFFFFF !important;
+}
+
+footer h4,
+footer h4.text-brand-gold,
+footer [class*="text-brand-gold"] {
+  color: #E29D62 !important; /* High contrast warm gold */
+}
+
+footer a {
+  color: #E5E7EB !important; /* High contrast light gray/white */
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #FFFFFF !important;
+  text-decoration: underline;
+}
+
+footer p, footer span:not([class*="bg-"]) {
+  color: #D1D5DB;
+}
+
 a {
   @apply transition-colors duration-200;
 }
