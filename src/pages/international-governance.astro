@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { name: 'About', href: '/about/' },
+  { name: 'Credentials', href: '/credentials/' },
+  { name: 'International Governance', href: '/international-governance/' }
+];
+
+const title = "International Psychological Governance & Cross Border Telehealth Standards | Rabbia Psychologist";
+const description = "Examine the international clinical governance, cross border ethical standards, multi country licensing boundaries, and data privacy protocols for Rabbia Psychologist Child Development Services.";
+const canonicalURL = "https://www.rabbiapsychologist.com/international-governance/";
+
+const governanceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "author": {
+    "@type": "Person",
+    "name": "Rabbia Ashraf",
+    "jobTitle": "Clinical Psychologist & Certified ADOS 2 Practitioner",
+    "url": "https://www.rabbiapsychologist.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rabbia Psychologist Child Development Services",
+    "url": "https://www.rabbiapsychologist.com/"
+  }
+};
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <Fragment slot="head">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(governanceSchema)} />
+  </Fragment>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-5xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Hero Header -->
+    <header class="mt-8 mb-12 text-center">
+      <div class="inline-flex items-center gap-2 bg-[#EBF3EE] border border-[#3C6E5A]/30 text-[#2F6352] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
+        <span class="w-2 h-2 rounded-full bg-[#3C6E5A]"></span>
+        <span>Ethical Telehealth &amp; Cross Border Standards</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-black text-brand-navy mb-4 tracking-tight">
+        International Clinical Governance &amp; Multi Country Regulations
+      </h1>
+
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Rabbia Psychologist Child Development Services operates under transparent, rigorous ethical boundaries adhering to international psychological codes of conduct. Learn how our clinical credentials translate across different legal jurisdictions worldwide.
+      </p>
+
+      <!-- Trust Metrics Strip -->
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto text-left">
+        <div class="bg-white p-4 rounded-xl border border-[#E6DFD3] shadow-xs">
+          <div class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-1">Degree Benchmark</div>
+          <div class="text-sm font-extrabold text-brand-navy">MS Clinical Psychology</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Centre for Clinical Psychology</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-[#E6DFD3] shadow-xs">
+          <div class="text-xs font-bold uppercase tracking-wider text-[#2F6352] mb-1">Diagnostic Standard</div>
+          <div class="text-sm font-extrabold text-brand-navy">Certified ADOS 2</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Modules Toddler through Module 4</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-[#E6DFD3] shadow-xs">
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">Telehealth Privacy</div>
+          <div class="text-sm font-extrabold text-brand-navy">Encrypted WebRTC</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Zero Knowledge Storage</div>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl border border-[#E6DFD3] shadow-xs">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Intake SLA</div>
+          <div class="text-sm font-extrabold text-brand-navy">Under 48 Hours</div>
+          <div class="text-[11px] text-gray-500 mt-0.5">Zero Waitlist Bridge Model</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content: Jurisdiction Tabs / Grid -->
+    <main class="space-y-12">
+      
+      <!-- 1. The Parent Led Telehealth Architecture -->
+      <section class="bg-white rounded-3xl p-6 sm:p-10 border border-[#E6DFD3] shadow-xs">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-navy mb-4">
+          Why Our International Services Focus on Parent Coaching
+        </h2>
+        <p class="text-base text-gray-700 leading-relaxed mb-4">
+          Many families ask: <em>"Why is the child not required to sit in front of the screen during remote telehealth consultations?"</em>
+        </p>
+        <p class="text-base text-gray-700 leading-relaxed mb-6">
+          Developmental research confirms that requiring young, neurodivergent children (autism, ADHD, speech delay, sensory processing differences) to interact with an unfamiliar clinician through a laptop screen creates artificial performance anxiety, distress, or masking. It produces inaccurate diagnostic data and strains the child.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div class="p-5 bg-[#FAF7F2] rounded-2xl border border-[#E6DFD3]/80">
+            <div class="w-8 h-8 rounded-full bg-[#EBF3EE] text-[#2F6352] flex items-center justify-center font-bold text-sm mb-3">1</div>
+            <h3 class="font-bold text-brand-navy text-base mb-2">Parents Are the Daily Anchors</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Parents spend hundreds of hours each week with their child. Giving parents clinical tools transforms every morning routine, screen transition, and bedtime naturally.
+            </p>
+          </div>
+
+          <div class="p-5 bg-[#FAF7F2] rounded-2xl border border-[#E6DFD3]/80">
+            <div class="w-8 h-8 rounded-full bg-[#EBF3EE] text-[#2F6352] flex items-center justify-center font-bold text-sm mb-3">2</div>
+            <h3 class="font-bold text-brand-navy text-base mb-2">Honest, Unmasked Discussion</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Parents can discuss difficult marital disagreements, financial stress, school suspension threats, and toileting struggles openly without damaging their child's self esteem.
+            </p>
+          </div>
+
+          <div class="p-5 bg-[#FAF7F2] rounded-2xl border border-[#E6DFD3]/80">
+            <div class="w-8 h-8 rounded-full bg-[#EBF3EE] text-[#2F6352] flex items-center justify-center font-bold text-sm mb-3">3</div>
+            <h3 class="font-bold text-brand-navy text-base mb-2">Global Ethical Compliance</h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Coaching parents on home carryover and behavioral scaffolds operates safely and legally across international borders as psychoeducational consultation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Jurisdiction by Jurisdiction Regulation Matrix -->
+      <section class="bg-white rounded-3xl p-6 sm:p-10 border border-[#E6DFD3] shadow-xs">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-navy mb-2">
+          Country by Country Regulatory Standards
+        </h2>
+        <p class="text-sm text-gray-600 mb-8">
+          Review how our clinical scope and ethical boundaries apply to your specific geographic location:
+        </p>
+
+        <div class="space-y-6">
+          
+          <!-- Pakistan -->
+          <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6DFD3] transition-all hover:border-[#3C6E5A]/40">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🇵🇰</span>
+                <div>
+                  <h3 class="text-lg font-bold text-brand-navy m-0">Pakistan (Domestic Practice)</h3>
+                  <span class="text-xs font-semibold text-[#2F6352]">Full Statutory Clinical Scope</span>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">In Person &amp; Remote Clinical</span>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">
+              Within Pakistan, Rabbia Ashraf holds full qualifications under the Centre for Clinical Psychology (MS CCP) and Pakistan Psychological Association guidelines to administer standardized psychological assessments, formal ADOS 2 autism observational evaluations, diagnostic reporting, and direct psychotherapy.
+            </p>
+            <div class="text-xs text-gray-500 bg-white p-3 rounded-xl border border-gray-100">
+              <strong>Clinical Offerings:</strong> In person ADOS 2 evaluations in Lahore, formal psychological diagnostic reports, behavior support plans, and hospital team second opinions.
+            </div>
+          </div>
+
+          <!-- United Kingdom -->
+          <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6DFD3] transition-all hover:border-[#3C6E5A]/40">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🇬🇧</span>
+                <div>
+                  <h3 class="text-lg font-bold text-brand-navy m-0">United Kingdom &amp; Europe</h3>
+                  <span class="text-xs font-semibold text-[#2F6352]">HCPC Compliant Educational Guidance Model</span>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">International Parent Advisory</span>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">
+              In the United Kingdom, the title "Clinical Psychologist" is protected by the Health and Care Professions Council (HCPC) for domestic clinical treatment within UK territory. To maintain full transparency and ethical compliance, remote consultations for UK residents are provided under our <strong>International Parent Guidance and SEN Educational Advisory Framework</strong>.
+            </p>
+            <div class="text-xs text-gray-500 bg-white p-3 rounded-xl border border-gray-100">
+              <strong>Scope Boundaries:</strong> We provide line by line translation of NHS and private psychological reports, home sensory scaffolds, bedtime protocols, and EHCP school accommodation guidance. We do not issue unilateral statutory NHS Section 36 documents.
+            </div>
+          </div>
+
+          <!-- UAE and Gulf -->
+          <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6DFD3] transition-all hover:border-[#3C6E5A]/40">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🇦🇪</span>
+                <div>
+                  <h3 class="text-lg font-bold text-brand-navy m-0">United Arab Emirates &amp; Gulf (MENA)</h3>
+                  <span class="text-xs font-semibold text-[#2F6352]">KHDA &amp; ADEK Inclusive Education Aligned</span>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">Expat &amp; School Retainers</span>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">
+              For families and British / American schools across Dubai, Abu Dhabi, Doha, and Riyadh, our advisory aligns with the KHDA Dubai Inclusive Education Policy Framework and ADEK standards. Consultations operate as specialized cross border second opinions and teacher capacity building.
+            </p>
+            <div class="text-xs text-gray-500 bg-white p-3 rounded-xl border border-gray-100">
+              <strong>Institutional Scope:</strong> Teacher CPD workshops, complex case behavioral analysis, IEP goal formulation, and bilingual developmental screening for expatriate families.
+            </div>
+          </div>
+
+          <!-- United States & Canada -->
+          <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6DFD3] transition-all hover:border-[#3C6E5A]/40">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🇺🇸</span>
+                <div>
+                  <h3 class="text-lg font-bold text-brand-navy m-0">United States &amp; Canada</h3>
+                  <span class="text-xs font-semibold text-[#2F6352]">Psychoeducational Coaching &amp; Executive Function Scope</span>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-bold">Non Medical Advisory</span>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">
+              State level psychology licensing boards in the US govern medical psychotherapy within their respective state lines. Our consultations with North American parents are strictly educational: neurodevelopmental parent coaching, executive function structuring, homework paralysis elimination, and IEP 504 plan accommodation recommendations.
+            </p>
+            <div class="text-xs text-gray-500 bg-white p-3 rounded-xl border border-gray-100">
+              <strong>Scope Boundaries:</strong> Services do not constitute medical psychiatric care or emergency crisis response. Clients sign an informed consent agreement outlining this psychoeducational distinction.
+            </div>
+          </div>
+
+          <!-- Australia -->
+          <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E6DFD3] transition-all hover:border-[#3C6E5A]/40">
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">🇦🇺</span>
+                <div>
+                  <h3 class="text-lg font-bold text-brand-navy m-0">Australia</h3>
+                  <span class="text-xs font-semibold text-[#2F6352]">Allied Health Parent Education Framework</span>
+                </div>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-teal-100 text-teal-900 text-xs font-bold">NDIS Aligned Guidance</span>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed mb-3">
+              Under Australian health practitioner regulations (AHPRA), international remote consultations are provided as specialized allied health parent education. We help families formulate practical developmental goals aligned with NDIS categories without billing domestic Medicare.
+            </p>
+            <div class="text-xs text-gray-500 bg-white p-3 rounded-xl border border-gray-100">
+              <strong>Key Value:</strong> Bridging the long 12 to 24 month pediatric assessment waitlists in Sydney, Melbourne, and Perth with practical home behavioral scaffolds.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 3. The 4 Tier Informed Consent & Data Privacy Protocol -->
+      <section class="bg-white rounded-3xl p-6 sm:p-10 border border-[#E6DFD3] shadow-xs">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-navy mb-4">
+          Data Privacy &amp; Encrypted Security Standard
+        </h2>
+        <p class="text-base text-gray-700 leading-relaxed mb-6">
+          We treat sensitive developmental reports and family histories with bank grade confidentiality protocols complying with international data protection principles (GDPR and HIPAA aligned):
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="border border-gray-100 bg-[#FAF7F2] p-5 rounded-2xl">
+            <h3 class="font-bold text-brand-navy text-sm mb-2 flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#2F6352]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Encrypted Video Streams
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              All video consultations are conducted over enterprise encrypted platforms (Google Meet or Zoom Healthcare) featuring end to end encryption. Calls are never recorded without explicit, written parental authorization.
+            </p>
+          </div>
+
+          <div class="border border-gray-100 bg-[#FAF7F2] p-5 rounded-2xl">
+            <h3 class="font-bold text-brand-navy text-sm mb-2 flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#2F6352]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              Confidential Document Transmission
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed m-0">
+              Assessment reports and medical records uploaded for review are stored in encrypted, access restricted repositories. Parents retain complete ownership and can request immediate data deletion at any time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Next Step Navigation -->
+      <section class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#0A233F] via-[#102D4E] to-[#0A233F] text-white text-center">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-3 !text-white" style="color: #ffffff !important;">
+          Have Questions About Clinical Governance?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-100 max-w-xl mx-auto mb-6 leading-relaxed" style="color: #f1f5f9 !important;">
+          Whether you are an international parent seeking private guidance or a school inclusion coordinator exploring institutional retainers, we provide clear consultation pathways.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a href="/book/" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-6 py-3 rounded-xl transition-all shadow-md text-sm">
+            Book 50 Minute Consultation
+          </a>
+          <a href="/school-partnerships/" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-xl border border-white/30 transition-all text-sm">
+            Explore School Partnerships
+          </a>
+          <a href="/credentials/" class="bg-transparent hover:bg-white/5 text-white/90 font-medium px-5 py-3 rounded-xl transition-all text-sm">
+            View All Degrees &amp; Test Batteries
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</BaseLayout>
