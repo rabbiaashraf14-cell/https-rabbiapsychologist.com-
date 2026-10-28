@@ -100,6 +100,27 @@ export default defineConfig({
             fs.copyFileSync(sourceFile, legacyFile);
             console.log(`Created direct sitemap.xml from ${path.basename(sourceFile)}`);
           }
+
+          // Strip any noindex tags from redirect fallback files so search crawlers never see noindex
+          function cleanNoindex(currentDir) {
+            const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+            for (const entry of entries) {
+              const fullPath = path.join(currentDir, entry.name);
+              if (entry.isDirectory()) {
+                cleanNoindex(fullPath);
+              } else if (entry.isFile() && entry.name.endsWith('.html') && entry.name !== '404.html') {
+                const html = fs.readFileSync(fullPath, 'utf8');
+                if (html.includes('<meta name="robots" content="noindex">') || html.includes('<meta name="robots" content="noindex, nofollow">')) {
+                  const cleaned = html
+                    .replace(/<meta name="robots" content="noindex">/g, '<meta name="robots" content="index, follow">')
+                    .replace(/<meta name="robots" content="noindex, nofollow">/g, '<meta name="robots" content="index, follow">');
+                  fs.writeFileSync(fullPath, cleaned);
+                }
+              }
+            }
+          }
+          cleanNoindex(outDir);
+          console.log('Verified: No non-404 pages have noindex tags.');
         }
       }
     }

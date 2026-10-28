@@ -2,6 +2,482 @@
   "hosting": {
     "public": "dist",
     "cleanUrls": true,
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/booking",
+        "destination": "/book/",
+        "type": 301
+      },
+      {
+        "source": "/booking/",
+        "destination": "/book/",
+        "type": 301
+      },
+      {
+        "source": "/child-psychologist-lahore",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/child-psychologist-lahore/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/parent-training-lahore",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/parent-training-lahore/",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/adhd-child-psychologist-lahore",
+        "destination": "/services/adhd-support/",
+        "type": 301
+      },
+      {
+        "source": "/adhd-child-psychologist-lahore/",
+        "destination": "/services/adhd-support/",
+        "type": 301
+      },
+      {
+        "source": "/autism-assessment-lahore",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/autism-assessment-lahore/",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/press/rabbia-ashraf-certified-ados-2-trainer-autism-assessment",
+        "destination": "/press/rabbia-ashraf-certified-ados-2-practitioner-autism-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/press/rabbia-ashraf-certified-ados-2-trainer-autism-assessment/",
+        "destination": "/press/rabbia-ashraf-certified-ados-2-practitioner-autism-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/school-iep-help",
+        "destination": "/services/school-consultation/",
+        "type": 301
+      },
+      {
+        "source": "/school-iep-help/",
+        "destination": "/services/school-consultation/",
+        "type": 301
+      },
+      {
+        "source": "/services/behavior-support-planning",
+        "destination": "/services/behaviour-planning/",
+        "type": 301
+      },
+      {
+        "source": "/services/behavior-support-planning/",
+        "destination": "/services/behaviour-planning/",
+        "type": 301
+      },
+      {
+        "source": "/online-parent-consultation-mena-gulf",
+        "destination": "/international-families/middle-east-gulf/",
+        "type": 301
+      },
+      {
+        "source": "/online-parent-consultation-mena-gulf/",
+        "destination": "/international-families/middle-east-gulf/",
+        "type": 301
+      },
+      {
+        "source": "/parent-training",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/parent-training/",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/school-iep-consultation",
+        "destination": "/services/school-consultation/",
+        "type": 301
+      },
+      {
+        "source": "/services/school-iep-consultation/",
+        "destination": "/services/school-consultation/",
+        "type": 301
+      },
+      {
+        "source": "/services/school-partnership",
+        "destination": "/school-partnerships/",
+        "type": 301
+      },
+      {
+        "source": "/services/school-partnership/",
+        "destination": "/school-partnerships/",
+        "type": 301
+      },
+      {
+        "source": "/online-parent-consultation-pakistan",
+        "destination": "/international-families/pakistan/",
+        "type": 301
+      },
+      {
+        "source": "/online-parent-consultation-pakistan/",
+        "destination": "/international-families/pakistan/",
+        "type": 301
+      },
+      {
+        "source": "/online-parent-consultation-australia",
+        "destination": "/international-families/australia/",
+        "type": 301
+      },
+      {
+        "source": "/online-parent-consultation-australia/",
+        "destination": "/international-families/australia/",
+        "type": 301
+      },
+      {
+        "source": "/providers",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/providers/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/providers/rabbia-ashraf",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/providers/rabbia-ashraf/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/rabbia-ashraf",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/rabbia-ashraf/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/provider",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/provider/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/find-support",
+        "destination": "/start-here/",
+        "type": 301
+      },
+      {
+        "source": "/find-support/",
+        "destination": "/start-here/",
+        "type": 301
+      },
+      {
+        "source": "/join-as-provider",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/join-as-provider/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/provider-scope-boundaries",
+        "destination": "/terms-and-disclaimer/",
+        "type": 301
+      },
+      {
+        "source": "/provider-scope-boundaries/",
+        "destination": "/terms-and-disclaimer/",
+        "type": 301
+      },
+      {
+        "source": "/global-consultation",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/global-consultation/",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/resources-vault",
+        "destination": "/resource-vault/",
+        "type": 301
+      },
+      {
+        "source": "/resources-vault/",
+        "destination": "/resource-vault/",
+        "type": 301
+      },
+      {
+        "source": "/free-resource",
+        "destination": "/free-downloads/",
+        "type": 301
+      },
+      {
+        "source": "/free-resource/",
+        "destination": "/free-downloads/",
+        "type": 301
+      },
+      {
+        "source": "/nri-families",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/nri-families/",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/non-resident-pakistani-families",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/non-resident-pakistani-families/",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/expat-pakistani-families",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/expat-pakistani-families/",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/gulf-families",
+        "destination": "/international-families/middle-east-gulf/",
+        "type": 301
+      },
+      {
+        "source": "/gulf-families/",
+        "destination": "/international-families/middle-east-gulf/",
+        "type": 301
+      },
+      {
+        "source": "/middle-east-families",
+        "destination": "/international-families/middle-east-gulf/",
+        "type": 301
+      },
+      {
+        "source": "/middle-east-families/",
+        "destination": "/international-families/middle-east-gulf/",
+        "type": 301
+      },
+      {
+        "source": "/overseas-pakistani-families",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/overseas-pakistani-families/",
+        "destination": "/international-families/overseas-pakistani-families/",
+        "type": 301
+      },
+      {
+        "source": "/services/global-parent-consultation",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/global-parent-consultation/",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/autism-parent-guidance",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/autism-parent-guidance/",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/adhd-executive-function-support",
+        "destination": "/services/adhd-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/adhd-executive-function-support/",
+        "destination": "/services/adhd-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/psychological-assessment-local",
+        "destination": "/services/local-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/services/psychological-assessment-local/",
+        "destination": "/services/local-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/services/parent-consultation",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/services/parent-consultation/",
+        "destination": "/parent-support/",
+        "type": 301
+      },
+      {
+        "source": "/asd-support",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/asd-support/",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/autism-support",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/autism-support/",
+        "destination": "/services/asd-support/",
+        "type": 301
+      },
+      {
+        "source": "/adhd-support",
+        "destination": "/services/adhd-support/",
+        "type": 301
+      },
+      {
+        "source": "/adhd-support/",
+        "destination": "/services/adhd-support/",
+        "type": 301
+      },
+      {
+        "source": "/school-consultation",
+        "destination": "/services/school-consultation/",
+        "type": 301
+      },
+      {
+        "source": "/school-consultation/",
+        "destination": "/services/school-consultation/",
+        "type": 301
+      },
+      {
+        "source": "/behaviour-planning",
+        "destination": "/services/behaviour-planning/",
+        "type": 301
+      },
+      {
+        "source": "/behaviour-planning/",
+        "destination": "/services/behaviour-planning/",
+        "type": 301
+      },
+      {
+        "source": "/behavior-planning",
+        "destination": "/services/behaviour-planning/",
+        "type": 301
+      },
+      {
+        "source": "/behavior-planning/",
+        "destination": "/services/behaviour-planning/",
+        "type": 301
+      },
+      {
+        "source": "/local-assessment",
+        "destination": "/services/local-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/local-assessment/",
+        "destination": "/services/local-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/psychological-assessment",
+        "destination": "/services/local-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/psychological-assessment/",
+        "destination": "/services/local-assessment/",
+        "type": 301
+      },
+      {
+        "source": "/parent-guidance-consultations",
+        "destination": "/services/",
+        "type": 301
+      },
+      {
+        "source": "/parent-guidance-consultations/",
+        "destination": "/services/",
+        "type": 301
+      },
+      {
+        "source": "/between-session-support-programs",
+        "destination": "/between-session-programs/",
+        "type": 301
+      },
+      {
+        "source": "/between-session-support-programs/",
+        "destination": "/between-session-programs/",
+        "type": 301
+      },
+      {
+        "source": "/resources/free-downloads",
+        "destination": "/free-downloads/",
+        "type": 301
+      },
+      {
+        "source": "/resources/free-downloads/",
+        "destination": "/free-downloads/",
+        "type": 301
+      },
+      {
+        "source": "/resources/resource-vault",
+        "destination": "/resource-vault/",
+        "type": 301
+      },
+      {
+        "source": "/resources/resource-vault/",
+        "destination": "/resource-vault/",
+        "type": 301
+      }
+    ]
   }
 }

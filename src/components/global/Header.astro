@@ -5,166 +5,370 @@ const servicesNav = [
   { label: 'ADHD Support', href: '/services/adhd-support/' },
   { label: 'ASD Support', href: '/services/asd-support/' },
   { label: 'Behaviour Planning', href: '/services/behaviour-planning/' },
-  { label: 'School Consultation', href: '/services/school-consultation/' },
+  { label: 'Speech Delay vs Autism', href: '/blog/speech-delay-vs-autism-two-way-communication/' },
   { label: 'Learning Support', href: '/services/learning-difficulties/' },
   { label: 'Local Assessment (PK)', href: '/services/local-assessment/' },
   { label: 'Report Review', href: '/report-review/' },
-  { label: 'Parent Support', href: '/parent-support/' }
+  { label: 'Parent Guidance', href: '/parent-support/' }
 ];
 
 const resourcesNav = [
   { label: 'Consultation Screener (60s)', href: '/screener/' },
   { label: 'Clinical Credentials & Governance', href: '/credentials/' },
+  { label: 'International Regulations', href: '/credentials/#international-governance' },
   { label: 'Free Downloads & Checklists', href: '/free-downloads/' },
   { label: 'Knowledge Hub (Research)', href: '/knowledge-hub/' },
   { label: 'Resource Vault', href: '/resource-vault/' },
   { label: 'Parent FAQs', href: '/faqs/' }
 ];
 
-const orgsNav = [
-  { label: 'Corporate Parent Wellness', href: '/corporate/' },
-  { label: 'School Partnerships & Training', href: '/school-partnerships/' }
+const b2bNav = [
+  { label: 'School Partnerships Overview', href: '/school-partnerships/' },
+  { label: 'Teacher Training & Staff CPD', href: '/school-partnerships/#teacher-training' },
+  { label: 'SENCO Retainer & IEP Audits', href: '/school-partnerships/#senco-retainer' },
+  { label: 'Nursery Early Years Triage', href: '/services/school-consultation/' },
+  { label: 'ADOS 2 Hospital Battery', href: '/blog/ados-autism-assessment-gold-standard-hospital/' },
+  { label: 'Institutional Credentials & SLA', href: '/credentials/' }
 ];
 ---
 <header class="sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-xl border-b border-[#E6DFD3] transition-all duration-300">
-  <div class="container mx-auto px-4 h-[80px] flex items-center justify-between">
+  <div class="container mx-auto px-4 h-[80px] flex items-center justify-between gap-4">
+    
+    <!-- Brand Logo -->
     <a href="/" class="z-50 shrink-0" aria-label="Rabbia Psychologist Home">
-      <img src="/logo.png" alt="Rabbia Psychologist Child Development Services logo" width="300" height="300" class="h-[48px] md:h-[64px] w-auto object-contain" />
+      <img src="/logo.png" alt="Rabbia Psychologist Child Development Services logo" width="300" height="300" class="h-[44px] md:h-[58px] w-auto object-contain" />
     </a>
 
-    <nav class="hidden lg:flex space-x-6 items-center">
-      {mainNav.filter(item => item.label !== 'Book Consultation').map(item => {
-        if (item.label === 'Services') {
-          return (
-            <div class="relative group">
-              <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
-                {item.label}
-                <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </a>
-              <div class="absolute left-0 mt-2 w-60 bg-[#FAF7F2]/95 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2.5">
-                  {servicesNav.map(subItem => (
-                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-brand-navy transition-colors">{subItem.label}</a></li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          );
-        }
-        if (item.label === 'Resources') {
-          return (
-            <div class="relative group">
-              <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
-                {item.label}
-                <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </a>
-              <div class="absolute left-0 mt-2 w-64 bg-[#FAF7F2]/95 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2.5">
-                  {resourcesNav.map(subItem => (
-                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-brand-navy transition-colors">{subItem.label}</a></li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          );
-        }
-        if (item.label === 'For Organizations') {
-          return (
-            <div class="relative group">
-              <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1">
-                {item.label}
-                <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </a>
-              <div class="absolute left-0 mt-2 w-64 bg-[#FAF7F2]/95 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
-                <ul class="py-2.5">
-                  {orgsNav.map(subItem => (
-                    <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50/80 hover:text-brand-navy transition-colors">{subItem.label}</a></li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          );
-        }
-        return <a href={item.href} class="text-gray-600 hover:text-brand-navy font-medium transition-colors px-1">{item.label}</a>;
-      })}
-      <div class="flex items-center gap-2.5">
-        <div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50/80 border border-emerald-200/60 text-[11px] font-bold text-emerald-800">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>48-Hr Telehealth</span>
+    <!-- Dual Mode Audience Switcher Segment (Desktop & Tablet) -->
+    <div id="portal-switcher-container" class="hidden sm:inline-flex items-center p-1 bg-[#EFE8DC] rounded-full border border-[#DFD6C7] text-xs font-semibold select-none shadow-2xs">
+      <button
+        id="portal-btn-parents"
+        type="button"
+        class="portal-btn px-3.5 py-1 rounded-full transition-all duration-200 text-brand-navy bg-white shadow-xs font-bold flex items-center gap-1.5"
+        data-mode="parents"
+        title="View services for parents and families"
+      >
+        <span class="w-2 h-2 rounded-full bg-brand-sage"></span>
+        <span>For Parents</span>
+      </button>
+      
+      <button
+        id="portal-btn-schools"
+        type="button"
+        class="portal-btn px-3.5 py-1 rounded-full transition-all duration-200 text-gray-600 hover:text-brand-navy font-medium flex items-center gap-1.5"
+        data-mode="schools"
+        title="View services for schools, clinics and organizations"
+      >
+        <span class="w-2 h-2 rounded-full bg-brand-gold opacity-75"></span>
+        <span>For Schools &amp; Clinics</span>
+      </button>
+    </div>
+
+    <!-- Desktop Navigation: Parents View (B2C Default) -->
+    <nav id="nav-parents-view" class="hidden lg:flex space-x-5 items-center">
+      <!-- Services Dropdown -->
+      <div class="relative group">
+        <a href="/services/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 py-2 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1 text-sm">
+          <span>Services</span>
+          <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+        <div class="absolute left-0 mt-1 w-64 bg-[#FAF7F2]/98 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
+          <ul class="py-2.5">
+            {servicesNav.map(subItem => (
+              <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#EBF3EE] hover:text-brand-navy transition-colors">{subItem.label}</a></li>
+            ))}
+          </ul>
         </div>
-        <a href="/book/" class="apple-btn apple-btn-primary !py-2.5 !px-5 !text-sm font-semibold shadow-sm inline-flex items-center gap-1.5">
-          <span>Free 15-Min Call</span>
+      </div>
+
+      <!-- ADOS-2 Hospital Gold Standard Article -->
+      <a href="/blog/ados-autism-assessment-gold-standard-hospital/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        ADOS 2 Assessment
+      </a>
+
+      <!-- Clinical Insights / Blog -->
+      <a href="/blog/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        Clinical Blog
+      </a>
+
+      <!-- Pricing -->
+      <a href="/pricing/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        Pricing
+      </a>
+
+      <!-- Resources Dropdown -->
+      <div class="relative group">
+        <a href="/resources/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors flex items-center gap-1 py-2 focus:outline-none focus:ring-2 focus:ring-brand-navy rounded px-1 text-sm">
+          <span>Resources</span>
+          <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+        <div class="absolute left-0 mt-1 w-64 bg-[#FAF7F2]/98 backdrop-blur-xl border border-[#E6DFD3] shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible focus-within:opacity-100 focus-within:visible transition-all duration-200 z-50">
+          <ul class="py-2.5">
+            {resourcesNav.map(subItem => (
+              <li><a href={subItem.href} class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#EBF3EE] hover:text-brand-navy transition-colors">{subItem.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- About -->
+      <a href="/about/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        About
+      </a>
+
+      <!-- Action Elements -->
+      <div class="flex items-center gap-2 pl-2 border-l border-[#E6DFD3]">
+        <div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-bold text-emerald-800">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>48 Hour Telehealth</span>
+        </div>
+        <a href="/book/" class="apple-btn apple-btn-primary !py-2.5 !px-4.5 !text-xs font-bold shadow-sm inline-flex items-center gap-1.5">
+          <span>Free 15 Minute Call</span>
           <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
       </div>
     </nav>
 
-    <div class="flex items-center gap-3 lg:hidden z-50">
-      <a href="/book/" class="apple-btn apple-btn-primary !py-2 !px-4 text-xs font-semibold shadow-sm whitespace-nowrap">
-        Free 15-Min Call
+    <!-- Desktop Navigation: Schools & Clinics View (B2B Active) -->
+    <nav id="nav-schools-view" class="hidden space-x-5 items-center">
+      <a href="/school-partnerships/" class="text-gray-700 hover:text-brand-navy font-semibold transition-colors text-sm px-1">
+        School Partnerships
       </a>
-      <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle mobile menu" class="text-brand-navy min-w-[44px] min-h-[44px] p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-navy rounded-lg hover:bg-gray-50 transition-colors">
+
+      <a href="/school-partnerships/#teacher-training" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        Teacher CPD Training
+      </a>
+
+      <a href="/school-partnerships/#senco-retainer" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        SENCO Retainers
+      </a>
+
+      <a href="/services/school-consultation/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        Early Years Screening
+      </a>
+
+      <a href="/credentials/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        Clinical Governance
+      </a>
+
+      <!-- Action Elements for B2B -->
+      <div class="flex items-center gap-2 pl-2 border-l border-[#E6DFD3]">
+        <div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[11px] font-bold text-amber-900">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span>KHDA &amp; UK SEND Aligned</span>
+        </div>
+        <a href="/school-partnerships/#rfp" class="bg-brand-navy hover:bg-slate-900 text-white !py-2.5 !px-5 !text-xs font-bold rounded-xl shadow-sm inline-flex items-center gap-1.5 transition-colors">
+          <span>Institutional RFP</span>
+          <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Header Actions -->
+    <div class="flex items-center gap-2 lg:hidden z-50">
+      <a id="mobile-quick-cta" href="/book/" class="apple-btn apple-btn-primary !py-2 !px-3.5 text-xs font-bold shadow-sm whitespace-nowrap">
+        Free 15 Min Call
+      </a>
+      <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle mobile menu" class="text-brand-navy min-w-[44px] min-h-[44px] p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-navy rounded-lg hover:bg-gray-100/60 transition-colors">
         <svg id="icon-menu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
   </div>
 
-  <!-- Overlay -->
+  <!-- Mobile Overlay -->
   <div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-brand-navy/50 z-40 lg:hidden" aria-hidden="true"></div>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu Drawer -->
   <div id="mobile-menu" class="hidden absolute top-[80px] left-0 w-full bg-[#FAF7F2] shadow-xl z-50 border-t border-[#E6DFD3] max-h-[calc(100vh-80px)] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <nav class="px-4 py-6 flex flex-col">
+    <div class="px-5 py-4 border-b border-[#E6DFD3] bg-[#F4EFEB]">
+      <span class="text-xs font-bold uppercase tracking-wider text-gray-500 block mb-2">Select Your View</span>
+      <div class="grid grid-cols-2 gap-2 bg-[#E6DFD3] p-1 rounded-xl text-xs font-bold">
+        <button id="mobile-portal-parents" type="button" class="py-2 rounded-lg bg-white text-brand-navy shadow-xs transition-all text-center">
+          For Parents
+        </button>
+        <button id="mobile-portal-schools" type="button" class="py-2 rounded-lg text-gray-600 hover:text-brand-navy transition-all text-center">
+          For Schools &amp; Clinics
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Content: Parents Mode -->
+    <nav id="mobile-parents-nav" class="px-5 py-4 flex flex-col">
       <ul class="space-y-1">
-        <li><a href="/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Home</a></li>
-        <li><a href="/start-here/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Start Here</a></li>
-
-        <li class="py-3 border-b border-gray-50">
-          <a href="/services/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Services</a>
-          <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
+        <li><a href="/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Home</a></li>
+        <li><a href="/start-here/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Start Here</a></li>
+        
+        <li class="py-2.5 border-b border-gray-100">
+          <span class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">Parent Services</span>
+          <ul class="space-y-2 pl-2">
             {servicesNav.map(item => (
-              <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
+              <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1 text-sm font-medium">{item.label}</a></li>
             ))}
           </ul>
         </li>
 
-        <li><a href="/blog/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Clinical Blog</a></li>
-
-        <li class="py-3 border-b border-gray-50">
-          <a href="/resources/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">Resources</a>
-          <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
-            {resourcesNav.map(item => (
-              <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
-            ))}
-          </ul>
-        </li>
-
-        <li><a href="/locations/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Locations & Timezones</a></li>
-
-        <li class="py-3 border-b border-gray-50">
-          <a href="/corporate/" class="block text-brand-navy hover:text-blue-700 font-bold text-lg mb-2">For Organizations</a>
-          <ul class="pl-4 space-y-3 border-l-2 border-brand-gold/30 ml-2 mt-3">
-            {orgsNav.map(item => (
-              <li><a href={item.href} class="block text-gray-700 hover:text-brand-navy py-1.5 text-base">{item.label}</a></li>
-            ))}
-          </ul>
-        </li>
-
-        <li><a href="/pricing/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Pricing</a></li>
-        <li><a href="/about/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">About Rabbia</a></li>
-        <li><a href="/credentials/" class="block text-brand-navy hover:text-blue-700 font-bold py-3 border-b border-gray-50 text-lg">Clinical Credentials &amp; Governance</a></li>
+        <li><a href="/blog/ados-autism-assessment-gold-standard-hospital/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">ADOS 2 Hospital Assessment</a></li>
+        <li><a href="/blog/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Clinical Blog</a></li>
+        <li><a href="/pricing/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Pricing &amp; Telehealth Tiers</a></li>
+        <li><a href="/about/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">About Rabbia Ashraf</a></li>
+        <li><a href="/credentials/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Credentials &amp; Governance</a></li>
       </ul>
 
-      <div class="mt-8 pt-4 pb-12">
-        <a href="/book/" class="bg-brand-navy text-white px-4 py-4 text-center rounded-lg font-bold hover:bg-blue-900 block w-full text-lg shadow-md">Book Consultation</a>
+      <div class="mt-6 pt-2 pb-8">
+        <a href="/book/" class="bg-brand-navy text-white px-4 py-3.5 text-center rounded-xl font-bold block w-full text-base shadow-md">
+          Book 50 Minute Consultation
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Content: Schools Mode -->
+    <nav id="mobile-schools-nav" class="px-5 py-4 flex flex-col hidden">
+      <ul class="space-y-1">
+        <li><a href="/school-partnerships/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">School Partnerships Overview</a></li>
+        <li><a href="/school-partnerships/#teacher-training" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Teacher CPD &amp; Inclusion Training</a></li>
+        <li><a href="/school-partnerships/#senco-retainer" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">SENCO Retainers &amp; IEP Audits</a></li>
+        <li><a href="/services/school-consultation/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Nursery Early Years Screening</a></li>
+        <li><a href="/blog/ados-autism-assessment-gold-standard-hospital/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">ADOS 2 Hospital Battery</a></li>
+        <li><a href="/credentials/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Institutional Credentials &amp; Standards</a></li>
+      </ul>
+
+      <div class="mt-6 pt-2 pb-8">
+        <a href="/school-partnerships/#rfp" class="bg-brand-navy text-white px-4 py-3.5 text-center rounded-xl font-bold block w-full text-base shadow-md">
+          Request Institutional RFP
+        </a>
       </div>
     </nav>
   </div>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initPortalSwitcher() {
+    const btnParents = document.getElementById('portal-btn-parents');
+    const btnSchools = document.getElementById('portal-btn-schools');
+    const navParents = document.getElementById('nav-parents-view');
+    const navSchools = document.getElementById('nav-schools-view');
+
+    const mobBtnParents = document.getElementById('mobile-portal-parents');
+    const mobBtnSchools = document.getElementById('mobile-portal-schools');
+    const mobNavParents = document.getElementById('mobile-parents-nav');
+    const mobNavSchools = document.getElementById('mobile-schools-nav');
+    const mobQuickCta = document.getElementById('mobile-quick-cta');
+
+    // Ribbon Elements
+    const ribbonParentsMsg = document.getElementById('ribbon-message-parents');
+    const ribbonSchoolsMsg = document.getElementById('ribbon-message-schools');
+    const ribbonParentsCta = document.getElementById('ribbon-cta-parents');
+    const ribbonSchoolsCta = document.getElementById('ribbon-cta-schools');
+    const ribbonFeeBadge = document.getElementById('ribbon-fee-badge');
+    const ribbonStatusLabel = document.getElementById('ribbon-status-label');
+
+    // Auto-detect if user is on school or organizational pages
+    const pathname = window.location.pathname;
+    const isSchoolPage = pathname.includes('school-partnerships') || pathname.includes('school-consultation') || pathname.includes('corporate');
+    
+    // Read saved preference or derive from page
+    let currentMode = localStorage.getItem('rabbia_portal_mode') || (isSchoolPage ? 'schools' : 'parents');
+
+    function applyPortalMode(mode: string) {
+      currentMode = mode;
+      localStorage.setItem('rabbia_portal_mode', mode);
+
+      if (mode === 'schools') {
+        // Desktop Switcher Styling
+        btnParents?.classList.remove('bg-white', 'text-brand-navy', 'shadow-xs', 'font-bold');
+        btnParents?.classList.add('text-gray-600', 'font-medium');
+        btnSchools?.classList.remove('text-gray-600', 'font-medium');
+        btnSchools?.classList.add('bg-white', 'text-brand-navy', 'shadow-xs', 'font-bold');
+
+        // Desktop Nav Visibility
+        navParents?.classList.add('hidden');
+        navSchools?.classList.remove('hidden');
+        navSchools?.classList.add('lg:flex');
+
+        // Mobile Switcher Styling
+        mobBtnParents?.classList.remove('bg-white', 'text-brand-navy', 'shadow-xs');
+        mobBtnParents?.classList.add('text-gray-600');
+        mobBtnSchools?.classList.remove('text-gray-600');
+        mobBtnSchools?.classList.add('bg-white', 'text-brand-navy', 'shadow-xs');
+
+        // Mobile Nav Visibility
+        mobNavParents?.classList.add('hidden');
+        mobNavSchools?.classList.remove('hidden');
+
+        // Mobile Quick CTA
+        if (mobQuickCta) {
+          mobQuickCta.textContent = 'School RFP';
+          mobQuickCta.setAttribute('href', '/school-partnerships/#rfp');
+        }
+
+        // Top Ribbon Synchronization
+        if (ribbonParentsMsg && ribbonSchoolsMsg) {
+          ribbonParentsMsg.classList.add('hidden');
+          ribbonSchoolsMsg.classList.remove('hidden');
+        }
+        if (ribbonParentsCta && ribbonSchoolsCta) {
+          ribbonParentsCta.classList.add('hidden');
+          ribbonSchoolsCta.classList.remove('hidden');
+          ribbonSchoolsCta.classList.add('inline-flex');
+        }
+        if (ribbonFeeBadge) ribbonFeeBadge.classList.add('hidden');
+        if (ribbonStatusLabel) ribbonStatusLabel.textContent = 'Institutional SEN Retainers';
+
+      } else {
+        // Desktop Switcher Styling
+        btnSchools?.classList.remove('bg-white', 'text-brand-navy', 'shadow-xs', 'font-bold');
+        btnSchools?.classList.add('text-gray-600', 'font-medium');
+        btnParents?.classList.remove('text-gray-600', 'font-medium');
+        btnParents?.classList.add('bg-white', 'text-brand-navy', 'shadow-xs', 'font-bold');
+
+        // Desktop Nav Visibility
+        navSchools?.classList.add('hidden');
+        navSchools?.classList.remove('lg:flex');
+        navParents?.classList.remove('hidden');
+        navParents?.classList.add('lg:flex');
+
+        // Mobile Switcher Styling
+        mobBtnSchools?.classList.remove('bg-white', 'text-brand-navy', 'shadow-xs');
+        mobBtnSchools?.classList.add('text-gray-600');
+        mobBtnParents?.classList.remove('text-gray-600');
+        mobBtnParents?.classList.add('bg-white', 'text-brand-navy', 'shadow-xs');
+
+        // Mobile Nav Visibility
+        mobNavSchools?.classList.add('hidden');
+        mobNavParents?.classList.remove('hidden');
+
+        // Mobile Quick CTA
+        if (mobQuickCta) {
+          mobQuickCta.textContent = 'Free 15 Min Call';
+          mobQuickCta.setAttribute('href', '/book/');
+        }
+
+        // Top Ribbon Synchronization
+        if (ribbonParentsMsg && ribbonSchoolsMsg) {
+          ribbonSchoolsMsg.classList.add('hidden');
+          ribbonParentsMsg.classList.remove('hidden');
+        }
+        if (ribbonParentsCta && ribbonSchoolsCta) {
+          ribbonSchoolsCta.classList.add('hidden');
+          ribbonSchoolsCta.classList.remove('inline-flex');
+          ribbonParentsCta.classList.remove('hidden');
+        }
+        if (ribbonFeeBadge) ribbonFeeBadge.classList.remove('hidden');
+        if (ribbonStatusLabel) ribbonStatusLabel.textContent = 'Live Intake Open';
+      }
+    }
+
+    btnParents?.addEventListener('click', () => applyPortalMode('parents'));
+    btnSchools?.addEventListener('click', () => applyPortalMode('schools'));
+    mobBtnParents?.addEventListener('click', () => applyPortalMode('parents'));
+    mobBtnSchools?.addEventListener('click', () => applyPortalMode('schools'));
+
+    applyPortalMode(currentMode);
+  }
+
+  // Mobile menu open / close logic
+  function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     const overlay = document.getElementById('mobile-menu-overlay');
@@ -203,13 +407,14 @@ const orgsNav = [
       links?.forEach(link => {
         link.addEventListener('click', closeMenu);
       });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
-          closeMenu();
-          btn.focus();
-        }
-      });
     }
+  }
+
+  // Initialize on DOM load and Astro client transitions
+  initPortalSwitcher();
+  initMobileMenu();
+  document.addEventListener('astro:page-load', () => {
+    initPortalSwitcher();
+    initMobileMenu();
   });
 </script>

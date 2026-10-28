@@ -56,6 +56,7 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+Sitemap: https://www.rabbiapsychologist.com/sitemap.xml
 Sitemap: https://www.rabbiapsychologist.com/sitemap-index.xml
 
 # Generative AI & Large Language Model Discoverability (llms.txt standard)
