@@ -91,11 +91,14 @@ export default defineConfig({
       hooks: {
         'astro:build:done': ({ dir }) => {
           const outDir = fileURLToPath(dir);
+          const sitemap0File = path.join(outDir, 'sitemap-0.xml');
           const indexFile = path.join(outDir, 'sitemap-index.xml');
           const legacyFile = path.join(outDir, 'sitemap.xml');
-          if (fs.existsSync(indexFile)) {
-            fs.copyFileSync(indexFile, legacyFile);
-            console.log('Created sitemap.xml compatibility alias from sitemap-index.xml');
+          // Use direct URL list (sitemap-0.xml) without the index wrapper so sitemap.xml has all URLs directly
+          const sourceFile = fs.existsSync(sitemap0File) ? sitemap0File : indexFile;
+          if (fs.existsSync(sourceFile)) {
+            fs.copyFileSync(sourceFile, legacyFile);
+            console.log(`Created direct sitemap.xml from ${path.basename(sourceFile)}`);
           }
         }
       }
