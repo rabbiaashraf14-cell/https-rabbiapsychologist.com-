@@ -13,44 +13,44 @@ const cleanHeadingText = (str: string) => {
 };
 ---
 
-<div id="smart-toc-container" class={`apple-glass-card p-4 sm:p-5 mb-8 max-w-full text-left select-none ${className}`}>
+<div id="smart-toc-container" class={`apple-glass-card p-5 sm:p-6 mb-8 w-full max-w-full text-left select-none ${className}`}>
   <!-- Header with live progress pill -->
-  <div class="flex items-center justify-between pb-2.5 border-b border-brand-border/60">
-    <div class="flex items-center gap-2">
-      <span class="flex h-2 w-2 relative">
+  <div class="flex items-center justify-between pb-3 border-b border-brand-border/60">
+    <div class="flex items-center gap-2.5">
+      <span class="flex h-2.5 w-2.5 relative">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-sage opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-sage"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-sage"></span>
       </span>
       <span class="text-xs font-bold uppercase tracking-wider text-brand-navy">Table of Contents</span>
     </div>
-    <span id="toc-reading-progress" class="text-[11px] font-semibold text-brand-sage bg-brand-sage-light px-2 py-0.5 rounded-full transition-all duration-200">
+    <span id="toc-reading-progress" class="text-[11px] font-semibold text-brand-sage bg-brand-sage-light px-2.5 py-0.5 rounded-full transition-all duration-200">
       0% Read
     </span>
   </div>
 
   <!-- Micro reading progress track -->
-  <div class="w-full bg-brand-border/40 h-1 rounded-full overflow-hidden mt-2 mb-3">
+  <div class="w-full bg-brand-border/40 h-1.5 rounded-full overflow-hidden mt-2.5 mb-4">
     <div id="toc-progress-bar" class="h-full bg-brand-sage transition-all duration-150 rounded-full w-0"></div>
   </div>
 
-  <!-- TOC Navigation List -->
-  <nav class="relative my-1 max-h-[calc(100vh-16rem)] overflow-y-auto pr-1 text-left no-scrollbar" aria-label="Table of contents">
+  <!-- TOC Navigation List - Full width multi-column grid -->
+  <nav class="relative my-2 w-full overflow-y-auto pr-1 text-left no-scrollbar" aria-label="Table of contents">
     <!-- Sliding active indicator line -->
     <div id="toc-active-indicator" class="absolute left-0 w-0.5 bg-brand-sage rounded-full transition-all duration-300 ease-out opacity-0 pointer-events-none"></div>
 
-    <ul id="smart-toc-list" class="space-y-1 text-xs border-l border-brand-border/60 pl-3 m-0 list-none">
+    <ul id="smart-toc-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-1.5 text-xs border-l-2 border-brand-border/60 pl-3.5 m-0 list-none w-full">
       {headings.length > 0 ? (
         headings.map((heading, index) => {
           const isH2 = heading.level === 2 || (heading as any).depth === 2;
           return (
-            <li class={`m-0 p-0 transition-colors duration-150 ${isH2 ? 'mt-1.5' : 'pl-3'}`}>
+            <li class={`m-0 p-0 transition-colors duration-150 ${isH2 ? 'font-medium' : 'pl-2 text-gray-500'}`}>
               <a
                 href={`#${heading.slug}`}
-                class="toc-link group flex items-start gap-2 py-1.5 px-2 rounded-lg text-gray-600 hover:text-brand-navy hover:bg-brand-sage-light/50 transition-all duration-200"
+                class="toc-link group flex items-start gap-2 py-1.5 px-2 rounded-lg text-gray-600 hover:text-brand-navy hover:bg-brand-sage-light/50 transition-all duration-200 w-full"
                 data-target={heading.slug}
               >
                 <span class={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 transition-colors duration-200 ${isH2 ? 'bg-brand-sage/60 group-hover:bg-brand-sage' : 'bg-gray-300'}`}></span>
-                <span class={`leading-snug ${isH2 ? 'font-semibold text-brand-navy text-[13px]' : 'text-gray-500 text-[12px]'}`}>
+                <span class={`leading-snug break-words ${isH2 ? 'font-semibold text-brand-navy text-[13px]' : 'text-gray-500 text-[12px]'}`}>
                   {cleanHeadingText(heading.text)}
                 </span>
               </a>
@@ -58,13 +58,13 @@ const cleanHeadingText = (str: string) => {
           );
         })
       ) : (
-        <li class="toc-placeholder text-gray-400 italic text-xs py-2">Discovering article topics...</li>
+        <li class="toc-placeholder text-gray-400 italic text-xs py-2 col-span-full">Discovering article topics...</li>
       )}
     </ul>
   </nav>
 
   <!-- Footer Actions: Back to Top & Clinical Assistance -->
-  <div class="pt-3 mt-3 border-t border-brand-border/60 flex items-center justify-between text-[11px] text-gray-500">
+  <div class="pt-3 mt-3 border-t border-brand-border/60 flex items-center justify-between text-[11px] text-gray-500 w-full">
     <button
       id="toc-back-to-top"
       type="button"
@@ -136,11 +136,11 @@ const cleanHeadingText = (str: string) => {
 
         const a = document.createElement('a');
         a.href = `#${id}`;
-        a.className = 'toc-link group flex items-start gap-2 py-1.5 px-2 rounded-lg text-gray-600 hover:text-brand-navy hover:bg-brand-sage-light/50 transition-all duration-200';
+        a.className = 'toc-link group flex items-start gap-2 py-1.5 px-2 rounded-lg text-gray-600 hover:text-brand-navy hover:bg-brand-sage-light/50 transition-all duration-200 w-full';
         a.setAttribute('data-target', id);
         a.innerHTML = `
           <span class="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 transition-colors duration-200 ${isH2 ? 'bg-brand-sage/60 group-hover:bg-brand-sage' : 'bg-gray-300'}"></span>
-          <span class="leading-snug ${isH2 ? 'font-semibold text-brand-navy text-[13px]' : 'text-gray-500 text-[12px]'}">${cleanHeading}</span>
+          <span class="leading-snug break-words ${isH2 ? 'font-semibold text-brand-navy text-[13px]' : 'text-gray-500 text-[12px]'}">${cleanHeading}</span>
         `;
 
         li.appendChild(a);

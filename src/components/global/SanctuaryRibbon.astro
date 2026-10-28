@@ -13,35 +13,54 @@ const pkPrice = regionalPricing.parentGuidance.pakistan.price;
 >
   <div class="container mx-auto px-4 py-2 sm:py-2.5 flex items-center justify-between gap-3 text-xs">
     
-    <!-- Left: Live Status Pulse & Core Message -->
+    <!-- Left: Status Pulse & Mode Message -->
     <div class="flex items-center gap-2.5 overflow-hidden">
       <span class="inline-flex items-center gap-1.5 shrink-0 bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Live Intake Open
+        <span id="ribbon-status-label">Live Intake Open</span>
       </span>
       
-      <p class="truncate text-white/95 font-medium text-[11px] sm:text-xs">
+      <!-- B2C Message -->
+      <p id="ribbon-message-parents" class="truncate text-white/95 font-medium text-[11px] sm:text-xs m-0">
         <span class="hidden md:inline">UK, USA, Gulf &amp; Pakistan Telehealth • </span>
-        <span class="text-white font-bold">Free 15-Min Discovery Calls &amp; Sessions Available This Week</span>
+        <span class="text-white font-bold">15 Minute Discovery Calls &amp; Sessions Available This Week</span>
         <span class="hidden lg:inline text-white/70"> — No GP Referral Needed</span>
+      </p>
+
+      <!-- B2B Message -->
+      <p id="ribbon-message-schools" class="truncate text-white/95 font-medium text-[11px] sm:text-xs m-0 hidden">
+        <span class="hidden md:inline">Institutional Inclusion Support • </span>
+        <span class="text-white font-bold">KHDA, UK SEND Code &amp; PPA Aligned School Retainers</span>
+        <span class="hidden lg:inline text-white/70"> — Booking Term Workshops &amp; Audits</span>
       </p>
     </div>
 
     <!-- Right: Regional Fee & Quick Actions -->
     <div class="flex items-center gap-3 shrink-0">
       
-      <!-- Regional Fee Badge -->
-      <span class="hidden sm:inline-flex items-center gap-1 bg-white/10 px-2.5 py-0.5 rounded-lg border border-white/15 text-[11px] font-semibold text-white/90">
+      <!-- Regional Fee Badge (Shown in Parents Mode) -->
+      <span id="ribbon-fee-badge" class="hidden sm:inline-flex items-center gap-1 bg-white/10 px-2.5 py-0.5 rounded-lg border border-white/15 text-[11px] font-semibold text-white/90">
         <span class="price-international">${intlPrice} USD / £65</span>
         <span class="price-pakistan">PKR {pkPrice.toLocaleString()}</span>
       </span>
 
-      <!-- Action Button 1: Book Consultation -->
+      <!-- Action Button: Book Slot (Parents) -->
       <a 
+        id="ribbon-cta-parents"
         href="/book/" 
         class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-1 rounded-lg text-[11px] sm:text-xs transition-colors shadow-2xs whitespace-nowrap"
       >
         <span>Book Slot</span>
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+
+      <!-- Action Button: Institutional RFP (Schools) -->
+      <a 
+        id="ribbon-cta-schools"
+        href="/school-partnerships/" 
+        class="hidden items-center gap-1 bg-brand-gold hover:bg-amber-600 text-white font-bold px-3 py-1 rounded-lg text-[11px] sm:text-xs transition-colors shadow-2xs whitespace-nowrap"
+      >
+        <span>School RFP</span>
         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
 
