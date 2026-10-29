@@ -130,7 +130,7 @@ const b2bNav = [
     </nav>
 
     <!-- Desktop Navigation: Schools & Clinics View (B2B Active) -->
-    <nav id="nav-schools-view" class="hidden space-x-5 items-center">
+    <nav id="nav-schools-view" class="hidden lg:flex space-x-5 items-center !hidden">
       <a href="/school-partnerships/" class="text-gray-700 hover:text-brand-navy font-semibold transition-colors text-sm px-1">
         School Partnerships
       </a>
@@ -282,9 +282,8 @@ const b2bNav = [
         btnSchools?.classList.add('bg-white', 'text-brand-navy', 'shadow-xs', 'font-bold');
 
         // Desktop Nav Visibility
-        navParents?.classList.add('hidden');
-        navSchools?.classList.remove('hidden');
-        navSchools?.classList.add('lg:flex');
+        navParents?.classList.add('!hidden');
+        navSchools?.classList.remove('!hidden');
 
         // Mobile Switcher Styling
         mobBtnParents?.classList.remove('bg-white', 'text-brand-navy', 'shadow-xs');
@@ -323,10 +322,8 @@ const b2bNav = [
         btnParents?.classList.add('bg-white', 'text-brand-navy', 'shadow-xs', 'font-bold');
 
         // Desktop Nav Visibility
-        navSchools?.classList.add('hidden');
-        navSchools?.classList.remove('lg:flex');
-        navParents?.classList.remove('hidden');
-        navParents?.classList.add('lg:flex');
+        navSchools?.classList.add('!hidden');
+        navParents?.classList.remove('!hidden');
 
         // Mobile Switcher Styling
         mobBtnSchools?.classList.remove('bg-white', 'text-brand-navy', 'shadow-xs');
