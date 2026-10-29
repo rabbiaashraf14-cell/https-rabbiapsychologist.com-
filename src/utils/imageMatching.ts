@@ -167,7 +167,6 @@ export function getCategoryThemedImages(
       if (cat.includes('school') || cat.includes('learning')) return lowerPath.includes('school') || lowerPath.includes('iep') || lowerPath.includes('learning');
       if (cat.includes('assessment') || cat.includes('report')) return lowerPath.includes('assessment') || lowerPath.includes('report');
       if (cat.includes('sensory')) return lowerPath.includes('sensory');
-      if (cat.includes('parent') || cat.includes('guidance')) return lowerPath.includes('parent') || lowerPath.includes('guidance') || lowerPath.includes('consultation');
       return false;
     });
   });
@@ -179,10 +178,6 @@ export function getCategoryThemedImages(
 
   // Otherwise pick the newest high-resolution clinical pillar images
   const fallbackPriorityFilenames = [
-    'emotional-regulation-co-regulation',
-    'adhd-executive-function-focus',
-    'autism-social-communication-connection',
-    'parent-clinical-guidance-consultation',
     'pda-autism-demand-avoidance-vs-defiance',
     'rejection-sensitive-dysphoria-adhd-children',
     'selective-mutism-vs-shyness-when-child-freezes',
