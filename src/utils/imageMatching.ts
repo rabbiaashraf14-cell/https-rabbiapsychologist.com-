@@ -40,7 +40,7 @@ export function getCategoryFallbackSvg(categories: string[]) {
 // Canonical alias map connecting article slugs to their dedicated illustrations in src/assets/blog/
 export const SLUG_IMAGE_MAP: Record<string, string> = {
   // New gold-standard clinical pillars
-  'why-does-my-child-obsess-over-fairness-justice-sensitivity': 'tantrum-vs-meltdown-what-is-the-difference',
+  'why-does-my-child-obsess-over-fairness-justice-sensitivity': 'rejection-sensitive-dysphoria-adhd-children',
   'screen-time-transitions-without-tears-adhd-autism': 'the-science-of-screen-time-why-it-is-so-hard-for-children-to-unplug',
   'adhd-neurodivergence-bedtime-struggles-evening-routine': 'sleep-routine-and-child-behaviour',
   'why-children-lie-about-obvious-things-adhd-executive-function': 'behaviour-is-communication-decoding-what-your-child-needs',
