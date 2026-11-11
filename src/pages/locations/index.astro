@@ -5,8 +5,11 @@ import BookingCTA from '../../components/BookingCTA.astro';
 import Schema from '../../components/seo/Schema.astro';
 import InternationalDisclaimerBanner from '../../components/InternationalDisclaimerBanner.astro';
 
-import { getFeaturedLocationsByGroup, type PublicCityProjection } from '../../data/locations/locationHelpers';
+import { getFeaturedLocationsByGroup, type PublicCityProjection, getCityPath } from '../../data/locations/locationHelpers';
 import { continents } from '../../data/locations/continents';
+import { countries } from '../../data/locations/countries';
+import { cities } from '../../data/locations/cities';
+import { isLocationEligibleForPublicRoute } from '../../data/locations/locationValidation';
 
 // SEO & Schema
 const title = "Global Online Parent Guidance and Child Development Support | Rabbia Psychologist";
@@ -70,6 +73,14 @@ const regions = [
 ];
 
 const featuredCities = getFeaturedLocationsByGroup('globalCities', 16);
+
+const allEligibleCities = cities.filter(c => isLocationEligibleForPublicRoute(c));
+const groupedCountryLocations = countries
+  .map(country => ({
+    country,
+    cities: allEligibleCities.filter(c => c.countrySlug === country.countrySlug)
+  }))
+  .filter(g => g.cities.length > 0 || g.country.status === 'planned');
 ---
 
 <Layout title={title} description={description} canonicalURL={canonicalUrl}>
@@ -264,6 +275,40 @@ const featuredCities = getFeaturedLocationsByGroup('globalCities', 16);
         ))}
       </div>
       <div id="no-results" class="hidden text-center text-gray-500 py-12">No locations found matching your search.</div>
+
+      {/* CRAWLABLE STATIC DIRECTORY FOR SEARCH ENGINES & USERS */}
+      <div class="mt-16 pt-16 border-t border-gray-200">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-navy mb-2">Complete Global Directory</h2>
+          <p class="text-sm text-gray-600 max-w-2xl mx-auto">
+            Direct links to all supported countries and city hubs for specialized online child psychology and parent guidance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+          {groupedCountryLocations.map(group => (
+            <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-2xs hover:shadow-xs transition-shadow">
+              <h3 class="font-bold text-base text-brand-navy mb-2 pb-2 border-b border-gray-100 flex items-center justify-between">
+                <a href={`/locations/${group.country.countrySlug}/`} class="hover:text-blue-700 transition-colors">
+                  {group.country.countryName}
+                </a>
+                <span class="text-[11px] font-normal text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">
+                  {group.cities.length} {group.cities.length === 1 ? 'city' : 'cities'}
+                </span>
+              </h3>
+              <ul class="flex flex-wrap gap-1.5 text-xs">
+                {group.cities.map(city => (
+                  <li>
+                    <a href={getCityPath(city)} class="inline-block px-2.5 py-1 rounded-md bg-gray-50 hover:bg-blue-50 hover:text-blue-700 border border-gray-100 text-gray-700 transition-colors">
+                      {city.cityName}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 

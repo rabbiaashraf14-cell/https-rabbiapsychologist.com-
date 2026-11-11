@@ -1,101 +1,195 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import { articles } from '../data/blogArticles';
+import { comparisons } from '../data/comparisons';
+import { alternatives } from '../data/alternatives';
+import { countries } from '../data/locations/countries';
+import { cities } from '../data/locations/cities';
+import { isLocationEligibleForPublicRoute } from '../data/locations/locationValidation';
+import { getCityPath } from '../data/locations/locationHelpers';
+
+const canonicalURL = "https://www.rabbiapsychologist.com/sitemap/";
+const title = "HTML Sitemap & Complete Platform Directory | Rabbia Psychologist";
+const description = "Comprehensive navigation index of all child psychology guides, clinical comparisons, alternatives, services, and international location hubs.";
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Sitemap', href: '/sitemap/' }
+];
+
+const eligibleCities = cities.filter(c => isLocationEligibleForPublicRoute(c));
+const countryGroups = countries
+  .map(c => ({
+    country: c,
+    cities: eligibleCities.filter(city => city.countrySlug === c.countrySlug)
+  }))
+  .filter(g => g.cities.length > 0 || g.country.status === 'planned');
 ---
 
-<BaseLayout
-  title="Sitemap | Rabbia Psychologist Child Development Services"
-  description="Navigate the Rabbia Psychologist Child Development Services platform."
->
-  <div class="container mx-auto px-4 py-16 max-w-4xl">
-    <h1 class="text-4xl font-bold text-brand-navy mb-12">Site Map</h1>
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <Breadcrumbs paths={breadcrumbs} />
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Main Pages</h2>
-        <ul class="space-y-3">
-          <li><a href="/" class="text-gray-700 hover:text-brand-trust">Home</a></li>
-          <li><a href="/start-here/" class="text-gray-700 hover:text-brand-trust">Start Here</a></li>
-          <li><a href="/about/" class="text-gray-700 hover:text-brand-trust">About</a></li>
-          <li><a href="/contact/" class="text-gray-700 hover:text-brand-trust">Contact</a></li>
-          <li><a href="/pricing/" class="text-gray-700 hover:text-brand-trust">Pricing</a></li>
-          <li><a href="/book/" class="text-gray-700 hover:text-brand-trust">Book</a></li>
-        </ul>
+    <header class="text-center mt-6 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-brand-navy text-xs font-bold uppercase tracking-wider mb-3">
+        Full Platform Architecture &bull; Updated Daily
       </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-tight">
+        Complete Platform Sitemap &amp; Directory
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+        Direct crawlable access to all clinical consultation pathways, evidence-based diagnostic comparisons, alternative analyses, and international location hubs.
+      </p>
+    </header>
 
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Services</h2>
-        <ul class="space-y-3">
-          <li><a href="/services/" class="text-gray-700 hover:text-brand-trust">All Services</a></li>
-          <li><a href="/services/adhd-support/" class="text-gray-700 hover:text-brand-trust">ADHD Support</a></li>
-          <li><a href="/services/asd-support/" class="text-gray-700 hover:text-brand-trust">ASD Support</a></li>
-          <li><a href="/services/behaviour-planning/" class="text-gray-700 hover:text-brand-trust">Behaviour Planning</a></li>
-          <li><a href="/services/school-consultation/" class="text-gray-700 hover:text-brand-trust">School & IEP Help</a></li>
-          <li><a href="/report-review/" class="text-gray-700 hover:text-brand-trust">Report Review</a></li>
-          <li><a href="/services/local-assessment/" class="text-gray-700 hover:text-brand-trust">Local Assessment</a></li>
-        </ul>
-      </div>
+    <div class="space-y-12">
+      <!-- Section 1: Main Platform & Services -->
+      <section class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xs">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 pb-2 border-b border-gray-100 flex items-center justify-between">
+          <span>Core Pages &amp; Clinical Services</span>
+          <span class="text-xs font-normal text-gray-500">Essential navigation</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+          <div>
+            <h3 class="font-bold text-brand-navy text-xs uppercase tracking-wider mb-3 text-blue-700">Platform</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><a href="/" class="hover:text-blue-700 hover:underline">Home</a></li>
+              <li><a href="/start-here/" class="hover:text-blue-700 hover:underline">Start Here</a></li>
+              <li><a href="/about/" class="hover:text-blue-700 hover:underline">About Rabbia Ashraf</a></li>
+              <li><a href="/credentials/" class="hover:text-blue-700 hover:underline">Clinical Credentials</a></li>
+              <li><a href="/pricing/" class="hover:text-blue-700 hover:underline">Pricing &amp; Consultation Fees</a></li>
+              <li><a href="/book/" class="hover:text-blue-700 hover:underline font-bold text-brand-navy">Book Consultation</a></li>
+              <li><a href="/contact/" class="hover:text-blue-700 hover:underline">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-brand-navy text-xs uppercase tracking-wider mb-3 text-blue-700">Clinical Consultation</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><a href="/services/" class="hover:text-blue-700 hover:underline font-semibold">All Services Overview</a></li>
+              <li><a href="/parent-support/" class="hover:text-blue-700 hover:underline">Parent Guidance Consultation</a></li>
+              <li><a href="/services/adhd-support/" class="hover:text-blue-700 hover:underline">ADHD Executive Function</a></li>
+              <li><a href="/services/asd-support/" class="hover:text-blue-700 hover:underline">Autism Spectrum Support</a></li>
+              <li><a href="/services/behaviour-planning/" class="hover:text-blue-700 hover:underline">Behaviour Strategy Planning</a></li>
+              <li><a href="/services/emotional-regulation-support/" class="hover:text-blue-700 hover:underline">Emotional Regulation Support</a></li>
+              <li><a href="/services/school-consultation/" class="hover:text-blue-700 hover:underline">School &amp; IEP Prep Help</a></li>
+              <li><a href="/services/learning-difficulties/" class="hover:text-blue-700 hover:underline">Learning Difficulties</a></li>
+              <li><a href="/report-review/" class="hover:text-blue-700 hover:underline">Psychological Report Review</a></li>
+              <li><a href="/services/local-assessment/" class="hover:text-blue-700 hover:underline">Local Assessment (Pakistan)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-brand-navy text-xs uppercase tracking-wider mb-3 text-blue-700">Resources &amp; Tools</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><a href="/knowledge-hub/" class="hover:text-blue-700 hover:underline">Knowledge Hub (Research)</a></li>
+              <li><a href="/resource-vault/" class="hover:text-blue-700 hover:underline">Resource Vault (Free Guides)</a></li>
+              <li><a href="/free-downloads/" class="hover:text-blue-700 hover:underline">Printable Visual Routines</a></li>
+              <li><a href="/screener/" class="hover:text-blue-700 hover:underline">60-Second Parent Screener</a></li>
+              <li><a href="/between-session-programs/" class="hover:text-blue-700 hover:underline">Between-Session Programs</a></li>
+              <li><a href="/research-hub/" class="hover:text-blue-700 hover:underline">Research Hub Publications</a></li>
+              <li><a href="/faqs/" class="hover:text-blue-700 hover:underline">Parent FAQs</a></li>
+              <li><a href="/use-cases/" class="hover:text-blue-700 hover:underline">Clinical Use Cases</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-brand-navy text-xs uppercase tracking-wider mb-3 text-blue-700">International Families</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li><a href="/international-families/" class="hover:text-blue-700 hover:underline">International Families Hub</a></li>
+              <li><a href="/international-families/usa/" class="hover:text-blue-700 hover:underline">USA Families</a></li>
+              <li><a href="/international-families/uk-europe/" class="hover:text-blue-700 hover:underline">UK &amp; Europe Families</a></li>
+              <li><a href="/international-families/australia/" class="hover:text-blue-700 hover:underline">Australia Families</a></li>
+              <li><a href="/international-families/middle-east-gulf/" class="hover:text-blue-700 hover:underline">Middle East &amp; Gulf</a></li>
+              <li><a href="/international-families/overseas-pakistani-families/" class="hover:text-blue-700 hover:underline">Overseas Pakistani Families</a></li>
+              <li><a href="/privacy-policy/" class="hover:text-blue-700 hover:underline">Privacy Policy</a></li>
+              <li><a href="/terms-and-disclaimer/" class="hover:text-blue-700 hover:underline">Terms &amp; Disclaimers</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Parent Support</h2>
-        <ul class="space-y-3">
-          <li><a href="/parent-support/" class="text-gray-700 hover:text-brand-trust">Parent Consultation</a></li>
-          <li><a href="/between-session-programs/" class="text-gray-700 hover:text-brand-trust">Between-Session Programs</a></li>
-        </ul>
-      </div>
+      <!-- Section 2: Clinical Comparisons & Alternative Analysis Engines -->
+      <section class="bg-blue-50/50 rounded-3xl p-6 sm:p-8 border border-blue-200/70">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-blue-200 flex items-center justify-between">
+              <a href="/compare/" class="hover:text-blue-700 transition-colors">Evidence-Based Clinical Comparisons &rarr;</a>
+              <span class="text-xs font-normal text-blue-900 bg-blue-100 px-2 py-0.5 rounded-full">{comparisons.length} Guides</span>
+            </h2>
+            <ul class="space-y-2.5 text-xs sm:text-sm">
+              {comparisons.map(item => (
+                <li>
+                  <a href={`/compare/${item.slug}/`} class="text-gray-800 hover:text-blue-700 font-medium hover:underline block">
+                    &bull; {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-emerald-200 flex items-center justify-between">
+              <a href="/alternatives/" class="hover:text-emerald-800 transition-colors">Clinical Alternative Analysis &rarr;</a>
+              <span class="text-xs font-normal text-emerald-900 bg-emerald-100 px-2 py-0.5 rounded-full">{alternatives.length} Frameworks</span>
+            </h2>
+            <ul class="space-y-2.5 text-xs sm:text-sm">
+              {alternatives.map(item => (
+                <li>
+                  <a href={`/alternatives/${item.slug}/`} class="text-gray-800 hover:text-emerald-800 font-medium hover:underline block">
+                    &bull; {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Resources</h2>
-        <ul class="space-y-3">
-          <li><a href="/knowledge-hub/" class="text-brand-trust hover:text-brand-navy font-bold">Knowledge Hub (Scientific Research)</a></li>
-          <li><a href="/research-hub/" class="text-gray-700 hover:text-brand-trust">Research Publications</a></li>
-          <li><a href="/resources/" class="text-gray-700 hover:text-brand-trust">Resources Hub</a></li>
-          <li><a href="/resource-vault/" class="text-gray-700 hover:text-brand-trust">Resource Vault</a></li>
-          <li><a href="/free-downloads/" class="text-gray-700 hover:text-brand-trust">Free Downloads</a></li>
-          <li><a href="/faqs/" class="text-gray-700 hover:text-brand-trust">FAQs</a></li>
-          <li><a href="/use-cases/" class="text-gray-700 hover:text-brand-trust">Use Cases</a></li>
-        </ul>
-      </div>
+      <!-- Section 3: All 52 Blog Articles -->
+      <section class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xs">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 pb-2 border-b border-gray-100 flex items-center justify-between">
+          <a href="/blog/" class="hover:text-blue-700 transition-colors">Clinical Child Psychology Articles &rarr;</a>
+          <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">{articles.length} Published Articles</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          {articles.map(article => (
+            <div class="p-2.5 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-100 transition-colors">
+              <a href={article.href} class="font-medium text-gray-800 hover:text-blue-700 block leading-snug">
+                {article.title}
+              </a>
+              <span class="text-[11px] text-gray-600 block mt-1">{article.categories[0]} &bull; {article.readTime}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Blog Categories & Articles</h2>
-        <ul class="space-y-3">
-          <li><a href="/blog/" class="text-gray-700 hover:text-brand-trust font-bold">All Blog Articles</a></li>
-          <li><a href="/blog/understanding-adhd-and-hyperactivity-in-children/" class="text-gray-700 hover:text-brand-trust text-sm">Understanding ADHD</a></li>
-          <li><a href="/blog/autism-early-signs/" class="text-gray-700 hover:text-brand-trust text-sm">Autism Early Signs</a></li>
-          <li><a href="/blog/tantrum-vs-meltdown/" class="text-gray-700 hover:text-brand-trust text-sm">Tantrum vs Meltdown</a></li>
-          <li><a href="/blog/school-meeting-checklist/" class="text-gray-700 hover:text-brand-trust text-sm">School Meeting Checklist</a></li>
-        </ul>
-      </div>
+      <!-- Section 4: Complete Global Country & City Location Hubs -->
+      <section class="bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-200">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6 pb-2 border-b border-gray-200 flex items-center justify-between">
+          <a href="/locations/" class="hover:text-blue-700 transition-colors">Global Locations &amp; City Hubs &rarr;</a>
+          <span class="text-xs font-normal text-gray-600 bg-white px-2.5 py-1 rounded-full border border-gray-200">{countryGroups.length} Countries &bull; {eligibleCities.length} Cities</span>
+        </h2>
 
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">International Families</h2>
-        <ul class="space-y-3">
-          <li><a href="/international-families/" class="text-gray-700 hover:text-brand-trust">International Families Hub</a></li>
-          <li><a href="/international-families/usa/" class="text-gray-700 hover:text-brand-trust">USA Families</a></li>
-          <li><a href="/international-families/uk-europe/" class="text-gray-700 hover:text-brand-trust">UK & Europe Families</a></li>
-          <li><a href="/international-families/australia/" class="text-gray-700 hover:text-brand-trust">Australia Families</a></li>
-          <li><a href="/international-families/middle-east-gulf/" class="text-gray-700 hover:text-brand-trust">Middle East / Gulf Families</a></li>
-          <li><a href="/international-families/overseas-pakistani-families/" class="text-gray-700 hover:text-brand-trust">Overseas Pakistani Families</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">News & Media</h2>
-        <ul class="space-y-3">
-          <li><a href="/news/" class="text-gray-700 hover:text-brand-trust">Newsroom</a></li>
-          <li><a href="/press/rabbia-psychologist-child-development-services-launch/" class="text-gray-700 hover:text-brand-trust">Press Release</a></li>
-          <li><a href="/media-kit/" class="text-gray-700 hover:text-brand-trust">Media Kit</a></li>
-          <li><a href="/brand-assets/" class="text-gray-700 hover:text-brand-trust">Brand Assets</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-4 border-b pb-2">Legal & Safety</h2>
-        <ul class="space-y-3">
-          <li><a href="/privacy-policy/" class="text-gray-700 hover:text-brand-trust">Privacy Policy</a></li>
-          <li><a href="/terms-and-disclaimer/" class="text-gray-700 hover:text-brand-trust">Terms & Disclaimer</a></li>
-        </ul>
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {countryGroups.map(group => (
+            <div class="bg-white rounded-2xl p-5 border border-gray-200 shadow-2xs">
+              <h3 class="font-bold text-sm text-brand-navy mb-2 pb-1.5 border-b border-gray-100 flex items-center justify-between">
+                <a href={`/locations/${group.country.countrySlug}/`} class="hover:text-blue-700 transition-colors">
+                  {group.country.countryName}
+                </a>
+                <span class="text-[10px] text-gray-600">{group.cities.length} cities</span>
+              </h3>
+              <ul class="flex flex-wrap gap-1 text-[11px]">
+                {group.cities.map(city => (
+                  <li>
+                    <a href={getCityPath(city)} class="inline-block px-2 py-0.5 rounded-sm bg-gray-50 hover:bg-blue-50 hover:text-blue-700 border border-gray-100 text-gray-600 transition-colors">
+                      {city.cityName}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   </div>
 </BaseLayout>

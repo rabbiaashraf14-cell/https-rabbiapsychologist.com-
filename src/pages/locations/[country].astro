@@ -8,6 +8,7 @@ import FAQAccordion from '../../components/FAQAccordion.astro';
 import { countries } from '../../data/locations/countries';
 import { cities } from '../../data/locations/cities';
 import { getRegionSlug, getCityPath, type PublicCityProjection } from '../../data/locations/locationHelpers';
+import { isLocationEligibleForPublicRoute } from '../../data/locations/locationValidation';
 
 export function getStaticPaths() {
   // Only publish countries that are marked 'planned' for now (representing the first rollout/valid countries)
@@ -218,8 +219,9 @@ const faqSchema = {
         </div>
 
         <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-          {countryCities.map(city => (
-            city.published ? (
+          {countryCities.map(city => {
+            const isEligible = isLocationEligibleForPublicRoute(city) || city.published;
+            return isEligible ? (
               <a href={getCityPath(city)} class="bg-white px-4 py-2 rounded-full shadow-sm text-brand-navy border border-brand-mist/60 text-sm font-medium hover:border-brand-gold hover:text-brand-purple hover-lift transition-all">
                 {city.cityName}
               </a>
@@ -227,8 +229,8 @@ const faqSchema = {
               <span class="bg-white px-4 py-2 rounded-full shadow-sm text-brand-navy border border-gray-100 text-sm font-medium">
                 {city.cityName}
               </span>
-            )
-          ))}
+            );
+          })}
         </div>
 
         <div class="text-center mt-12 text-sm text-gray-500">

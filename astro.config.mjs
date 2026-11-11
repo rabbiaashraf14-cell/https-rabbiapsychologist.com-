@@ -53,6 +53,8 @@ export default defineConfig({
     '/services/parent-consultation': '/parent-support/',
 
     // Legacy redirects
+    '/behavior-support-planning': '/services/behaviour-planning/',
+    '/school-iep-consultation': '/services/school-consultation/',
     '/asd-support': '/services/asd-support/',
     '/autism-support': '/services/asd-support/',
     '/adhd-support': '/services/adhd-support/',
@@ -71,12 +73,21 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: (page) => {
+        const url = page.toLowerCase();
+        if (url.includes('/behavior-support-planning/') || url.includes('/school-iep-consultation/')) return false;
+        if (url.includes('/behavior-planning/') || url.includes('/local-assessment/') || url.includes('/psychological-assessment/')) return false;
+        if (url.includes('/adhd-support/') && !url.includes('/services/adhd-support/')) return false;
+        if (url.includes('/autism-support/') && !url.includes('/services/asd-support/')) return false;
+        if (url.includes('/asd-support/') && !url.includes('/services/asd-support/')) return false;
+        return true;
+      },
       serialize(item) {
-        item.lastmod = new Date('2026-10-18T20:00:00.000Z');
+        item.lastmod = new Date();
         item.changefreq = 'weekly';
         if (item.url === 'https://www.rabbiapsychologist.com/') {
           item.priority = 1.0;
-        } else if (item.url.includes('/blog/') || item.url.includes('/services/')) {
+        } else if (item.url.includes('/blog/') || item.url.includes('/services/') || item.url.includes('/compare/') || item.url.includes('/alternatives/')) {
           item.priority = 0.9;
         } else if (item.url.includes('/international-families/') || item.url.includes('/locations/')) {
           item.priority = 0.8;

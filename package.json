@@ -12,6 +12,7 @@
     "astro": "astro",
     "validate:locations": "tsx src/data/locations/validateLocations.ts",
     "audit:site": "tsx scripts/audit-site-health.ts",
+    "ping:indexing": "tsx scripts/ping-search-engines.ts",
     "login:all": "tsx scripts/open-all-login.ts all",
     "login:linkedin": "tsx scripts/open-all-login.ts linkedin",
     "login:twitter": "tsx scripts/open-all-login.ts twitter",
