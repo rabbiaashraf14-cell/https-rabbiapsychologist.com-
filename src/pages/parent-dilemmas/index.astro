@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import { redditDilemmas } from '../../data/redditDilemmas';
+
+const title = "Real Parent Dilemmas: Raw Questions Answered with Clinical Neuroscience | Rabbia Psychologist";
+const description = "Clinical solutions to the most upvoted parent questions on Reddit (r/Parenting, r/Autism_Parenting, r/ADHDparents). Scripted, evidence-based guidance by Clinical Psychologist Rabbia Ashraf.";
+const canonicalURL = "https://www.rabbiapsychologist.com/parent-dilemmas/";
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Parent Dilemmas Decoded', href: '/parent-dilemmas/' }
+];
+
+const icpBadges = [
+  'All Dilemmas',
+  'The Burned-Out Mother',
+  'The Masked Girl Parent',
+  'The Divided Couple',
+  'The Stressed Expat Parent',
+  'The Waitlist-Stalled Family'
+];
+---
+
+<BaseLayout canonicalURL={canonicalURL} title={title} description={description}>
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <Breadcrumbs paths={breadcrumbs} />
+
+    <!-- Hero Header -->
+    <header class="text-center mt-6 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-950 text-xs font-bold uppercase tracking-wider mb-4">
+        <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+        Community Voice &bull; Sourced from Real Parent Forums
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-navy tracking-tight mb-4 max-w-4xl mx-auto">
+        Real Parent Dilemmas, Clinically Decoded
+      </h1>
+      <p class="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        The raw, unfiltered questions parents ask late at night on Reddit, parenting boards, and support groups—answered with neuroscience, compassionate clinical truth, and word-for-word scripts you can use tonight.
+      </p>
+    </header>
+
+    <!-- ICP Reassurance Banner -->
+    <section class="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-xs mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0">
+        <div class="text-xl font-black text-brand-navy">Zero Judgment</div>
+        <p class="text-xs text-gray-600 mt-1">We address the exhausting thoughts parents are afraid to say out loud without shame.</p>
+      </div>
+      <div class="border-b md:border-b-0 md:border-r border-gray-100 pb-4 md:pb-0">
+        <div class="text-xl font-black text-brand-navy">Neuroscience, Not Nagging</div>
+        <p class="text-xs text-gray-600 mt-1">Understand the neurological firing (dopamine, cortisol, sensory gating) behind the battle.</p>
+      </div>
+      <div>
+        <div class="text-xl font-black text-brand-navy">Exact Scripts for Tonight</div>
+        <p class="text-xs text-gray-600 mt-1">Actionable words that regulate nervous systems without screaming or empty threats.</p>
+      </div>
+    </section>
+
+    <!-- Dilemma Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      {redditDilemmas.map(item => (
+        <article class="bg-white rounded-3xl border border-gray-200 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+          <div class="p-6 sm:p-8 flex-1 flex flex-col">
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs mb-3">
+              <span class="px-2.5 py-1 rounded-full bg-orange-100 text-orange-950 font-bold">
+                {item.icpProfile}
+              </span>
+              <span class="text-gray-500 font-medium">{item.readTime}</span>
+            </div>
+
+            <div class="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+              <span class="text-orange-600 font-black">&#9650;</span>
+              <span>{item.redditCommunity}</span>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl font-bold text-brand-navy mb-4 group-hover:text-blue-700 transition-colors leading-snug">
+              <a href={`/parent-dilemmas/${item.slug}/`} class="focus:outline-hidden">
+                {item.title}
+              </a>
+            </h2>
+
+            <!-- Verbatim Parent Quote Preview -->
+            <blockquote class="bg-gray-50 p-4 rounded-2xl border-l-4 border-orange-500 text-xs sm:text-sm text-gray-700 italic mb-5 leading-relaxed flex-1">
+              {item.rawParentQuote.slice(0, 180)}...
+            </blockquote>
+
+            <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+              <span class="text-gray-500 font-medium truncate max-w-[200px]">
+                {item.clinicalTheme}
+              </span>
+              <a 
+                href={`/parent-dilemmas/${item.slug}/`}
+                class="inline-flex items-center gap-1 font-bold text-blue-700 hover:text-brand-navy transition-colors"
+                aria-label={`Read clinical breakdown: ${item.title}`}
+              >
+                Get The Clinical Script &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Quick Consultation Callout -->
+    <div class="bg-linear-to-r from-slate-900 to-brand-navy rounded-3xl p-8 sm:p-10 text-white text-center shadow-lg my-12">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Do You Recognize Your Family in These Questions?</h2>
+      <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
+        You do not have to navigate this exhaustion alone in online forums. Schedule a private 1-on-1 parent guidance session with Clinical Psychologist Rabbia Ashraf.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a 
+          href="/book/"
+          class="px-6 py-3 rounded-xl bg-brand-gold text-brand-navy font-bold hover:bg-yellow-400 transition-all shadow-md text-sm"
+        >
+          Book 1-on-1 Guidance Session
+        </a>
+        <a 
+          href="https://wa.me/923364114002"
+          class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-all border border-white/20 text-sm flex items-center gap-2"
+        >
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

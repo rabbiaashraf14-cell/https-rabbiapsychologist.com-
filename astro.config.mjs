@@ -87,7 +87,7 @@ export default defineConfig({
         item.changefreq = 'weekly';
         if (item.url === 'https://www.rabbiapsychologist.com/') {
           item.priority = 1.0;
-        } else if (item.url.includes('/blog/') || item.url.includes('/services/') || item.url.includes('/compare/') || item.url.includes('/alternatives/')) {
+        } else if (item.url.includes('/blog/') || item.url.includes('/services/') || item.url.includes('/compare/') || item.url.includes('/alternatives/') || item.url.includes('/parent-dilemmas/')) {
           item.priority = 0.9;
         } else if (item.url.includes('/international-families/') || item.url.includes('/locations/')) {
           item.priority = 0.8;

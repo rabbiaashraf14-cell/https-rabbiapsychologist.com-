@@ -12,6 +12,7 @@ interface AuditResult {
   pagesWithEEATCitations: number;
   comparePagesFound: number;
   alternativePagesFound: number;
+  parentDilemmasFound: number;
   locationPagesFound: number;
 }
 
@@ -55,6 +56,7 @@ function runAudit() {
     pagesWithEEATCitations: 0,
     comparePagesFound: 0,
     alternativePagesFound: 0,
+    parentDilemmasFound: 0,
     locationPagesFound: 0
   };
 
@@ -119,6 +121,7 @@ function runAudit() {
     // Programmatic Route Counters
     if (relPath.startsWith('compare/')) results.comparePagesFound++;
     if (relPath.startsWith('alternatives/')) results.alternativePagesFound++;
+    if (relPath.startsWith('parent-dilemmas/')) results.parentDilemmasFound++;
     if (relPath.startsWith('locations/') || relPath.startsWith('international-families/')) results.locationPagesFound++;
   }
 
@@ -132,6 +135,7 @@ function runAudit() {
   console.log(`✅ Total HTML Pages Evaluated:        ${results.totalHtmlFiles}`);
   console.log(`⚡ Programmatic Comparison Pages:     ${results.comparePagesFound}`);
   console.log(`🌿 Programmatic Alternative Pages:      ${results.alternativePagesFound}`);
+  console.log(`💬 Real Parent Dilemma Hubs:          ${results.parentDilemmasFound}`);
   console.log(`🌍 International Location Hubs:        ${results.locationPagesFound}`);
   console.log(`🩺 E-E-A-T Authority Coverage:         ${results.pagesWithEEATCitations} / ${results.totalHtmlFiles} (${eeatScore}%)`);
   console.log(`🎯 Technical SEO Health Score:         ${seoScore} / 100`);

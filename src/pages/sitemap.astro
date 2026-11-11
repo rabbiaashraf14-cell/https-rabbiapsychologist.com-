@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/global/Breadcrumbs.astro';
 import { articles } from '../data/blogArticles';
 import { comparisons } from '../data/comparisons';
 import { alternatives } from '../data/alternatives';
+import { redditDilemmas } from '../data/redditDilemmas';
 import { countries } from '../data/locations/countries';
 import { cities } from '../data/locations/cities';
 import { isLocationEligibleForPublicRoute } from '../data/locations/locationValidation';
@@ -109,13 +110,13 @@ const countryGroups = countries
 
       <!-- Section 2: Clinical Comparisons & Alternative Analysis Engines -->
       <section class="bg-blue-50/50 rounded-3xl p-6 sm:p-8 border border-blue-200/70">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h2 class="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-blue-200 flex items-center justify-between">
-              <a href="/compare/" class="hover:text-blue-700 transition-colors">Evidence-Based Clinical Comparisons &rarr;</a>
+            <h2 class="text-lg font-bold text-brand-navy mb-4 pb-2 border-b border-blue-200 flex items-center justify-between">
+              <a href="/compare/" class="hover:text-blue-700 transition-colors">Clinical Comparisons &rarr;</a>
               <span class="text-xs font-normal text-blue-900 bg-blue-100 px-2 py-0.5 rounded-full">{comparisons.length} Guides</span>
             </h2>
-            <ul class="space-y-2.5 text-xs sm:text-sm">
+            <ul class="space-y-2 text-xs">
               {comparisons.map(item => (
                 <li>
                   <a href={`/compare/${item.slug}/`} class="text-gray-800 hover:text-blue-700 font-medium hover:underline block">
@@ -126,14 +127,29 @@ const countryGroups = countries
             </ul>
           </div>
           <div>
-            <h2 class="text-xl font-bold text-brand-navy mb-4 pb-2 border-b border-emerald-200 flex items-center justify-between">
-              <a href="/alternatives/" class="hover:text-emerald-800 transition-colors">Clinical Alternative Analysis &rarr;</a>
+            <h2 class="text-lg font-bold text-brand-navy mb-4 pb-2 border-b border-emerald-200 flex items-center justify-between">
+              <a href="/alternatives/" class="hover:text-emerald-800 transition-colors">Alternative Analysis &rarr;</a>
               <span class="text-xs font-normal text-emerald-900 bg-emerald-100 px-2 py-0.5 rounded-full">{alternatives.length} Frameworks</span>
             </h2>
-            <ul class="space-y-2.5 text-xs sm:text-sm">
+            <ul class="space-y-2 text-xs">
               {alternatives.map(item => (
                 <li>
                   <a href={`/alternatives/${item.slug}/`} class="text-gray-800 hover:text-emerald-800 font-medium hover:underline block">
+                    &bull; {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-brand-navy mb-4 pb-2 border-b border-orange-200 flex items-center justify-between">
+              <a href="/parent-dilemmas/" class="hover:text-orange-700 transition-colors">Parent Dilemmas Decoded &rarr;</a>
+              <span class="text-xs font-normal text-orange-950 bg-orange-100 px-2 py-0.5 rounded-full">{redditDilemmas.length} Questions</span>
+            </h2>
+            <ul class="space-y-2 text-xs">
+              {redditDilemmas.map(item => (
+                <li>
+                  <a href={`/parent-dilemmas/${item.slug}/`} class="text-gray-800 hover:text-orange-700 font-medium hover:underline block">
                     &bull; {item.title}
                   </a>
                 </li>
