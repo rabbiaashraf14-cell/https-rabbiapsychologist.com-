@@ -10,7 +10,20 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "validate:locations": "tsx src/data/locations/validateLocations.ts"
+    "validate:locations": "tsx src/data/locations/validateLocations.ts",
+    "audit:site": "tsx scripts/audit-site-health.ts",
+    "login:all": "tsx scripts/open-all-login.ts all",
+    "login:linkedin": "tsx scripts/open-all-login.ts linkedin",
+    "login:twitter": "tsx scripts/open-all-login.ts twitter",
+    "login:facebook": "tsx scripts/open-all-login.ts facebook",
+    "login:instagram": "tsx scripts/open-all-login.ts instagram",
+    "login:status": "tsx scripts/check-sessions.ts",
+    "post:preview": "tsx scripts/native-social-poster.ts preview",
+    "post:live": "tsx scripts/native-social-poster.ts publish",
+    "post:design": "tsx scripts/generate-graphic.ts",
+    "postiz:preview": "tsx scripts/social-publisher.ts preview",
+    "postiz:publish": "tsx scripts/social-publisher.ts post 0",
+    "postiz:status": "tsx scripts/social-publisher.ts status"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
