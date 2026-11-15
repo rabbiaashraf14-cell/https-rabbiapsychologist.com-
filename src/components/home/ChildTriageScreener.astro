@@ -187,7 +187,7 @@
           <a
             id="result-book-btn"
             href="/book/"
-            class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-base font-bold py-3.5 px-6 rounded-xl transition-colors shadow-md text-center"
+            class="w-full inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-base font-bold py-3.5 px-6 rounded-xl transition-colors shadow-md text-center"
           >
             <span>Book Free 15-Min Discovery Call</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -216,7 +216,7 @@
   </div>
 </section>
 
-<script>
+<script is:inline>
   function initChildTriage() {
     let selectedAge = '';
     let selectedConcern = '';
@@ -237,15 +237,15 @@
     const resultTitle = document.getElementById('result-title');
     const resultDescription = document.getElementById('result-description');
     const resultToolName = document.getElementById('result-tool-name');
-    const resultToolLink = document.getElementById('result-tool-link') as HTMLAnchorElement;
-    const resultBookBtn = document.getElementById('result-book-btn') as HTMLAnchorElement;
-    const resultWhatsappBtn = document.getElementById('result-whatsapp-btn') as HTMLAnchorElement;
+    const resultToolLink = document.getElementById('result-tool-link');
+    const resultBookBtn = document.getElementById('result-book-btn');
+    const resultWhatsappBtn = document.getElementById('result-whatsapp-btn');
     const restartBtn = document.getElementById('triage-restart-btn');
 
     // Step 1: Age button clicks
     step1?.querySelectorAll('.triage-btn-option').forEach((btn) => {
       btn.addEventListener('click', () => {
-        selectedAge = (btn as HTMLElement).getAttribute('data-val') || '';
+        selectedAge = btn.getAttribute('data-val') || '';
         step1.classList.add('hidden');
         step2?.classList.remove('hidden');
         if (stepIndicator) stepIndicator.textContent = "Step 2 of 3: Primary Concern";
@@ -257,7 +257,7 @@
     // Step 2: Concern button clicks
     step2?.querySelectorAll('.triage-btn-option').forEach((btn) => {
       btn.addEventListener('click', () => {
-        selectedConcern = (btn as HTMLElement).getAttribute('data-val') || '';
+        selectedConcern = btn.getAttribute('data-val') || '';
         step2.classList.add('hidden');
         step3?.classList.remove('hidden');
         if (stepIndicator) stepIndicator.textContent = "Step 3 of 3: Country / Location";
@@ -269,7 +269,7 @@
     // Step 3: Location button clicks
     step3?.querySelectorAll('.triage-location-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
-        selectedLocation = (btn as HTMLElement).getAttribute('data-val') || '';
+        selectedLocation = btn.getAttribute('data-val') || '';
         showResults();
       });
     });

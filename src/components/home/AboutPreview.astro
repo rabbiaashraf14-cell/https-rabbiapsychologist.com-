@@ -13,8 +13,11 @@ import profileImage from '../../assets/rabbia-ashraf-professional-profile.webp';
           <Image
             src={profileImage}
             alt="Rabbia Ashraf, clinical psychologist and child development specialist"
+            width={380}
+            height={475}
             class="relative z-10 w-full max-w-[400px] aspect-[4/5] rounded-[24px] shadow-md hover-lift transition-all duration-300 bg-brand-cream object-cover object-top"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
@@ -49,8 +52,8 @@ import profileImage from '../../assets/rabbia-ashraf-professional-profile.webp';
           <a href="/book/" class="w-full sm:w-auto px-6 py-3 bg-brand-navy text-white rounded-lg font-bold hover:bg-blue-900 transition-all shadow-md hover:-translate-y-1">
             Book a Consultation
           </a>
-          <a href="/about/" class="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1">
-            Learn More
+          <a href="/about/" class="w-full sm:w-auto px-6 py-3 bg-white text-brand-navy border border-gray-300 rounded-lg font-bold hover:bg-gray-50 transition-all shadow-sm hover:-translate-y-1" aria-label="Learn more about Rabbia Ashraf's clinical background and credentials">
+            Read Full Clinical Bio →
           </a>
         </div>
       </div>

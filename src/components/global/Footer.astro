@@ -7,8 +7,21 @@
     <!-- Top Reassurance Strip (Apple Pill Grid) -->
     <div class="flex flex-wrap items-center justify-between gap-4 pb-12 mb-12 border-b border-white/10">
       <div class="flex items-center gap-3">
-        <a href="/" class="shrink-0">
-          <span class="inline-flex items-center p-1.5 bg-white rounded-xl shadow-xs"><img src="/logo.png" alt="Rabbia Psychologist Child Development Services logo" class="h-[38px] md:h-[44px] w-auto object-contain" /></span>
+        <a href="/" class="shrink-0" aria-label="Rabbia Psychologist Home">
+          <span class="inline-flex items-center p-1.5 bg-white rounded-xl shadow-xs">
+            <picture>
+              <source type="image/webp" srcset="/logo-120.webp" />
+              <img
+                src="/logo-opt.png"
+                alt="Rabbia Psychologist Child Development Services logo"
+                width="120"
+                height="44"
+                class="h-[38px] md:h-[44px] w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </span>
         </a>
       </div>
       <div class="flex flex-wrap items-center gap-2 text-xs">
@@ -27,7 +40,7 @@
 
       <!-- Col 1: About & Contact -->
       <div class="lg:col-span-2">
-        <h4 class="font-bold text-white text-sm mb-3 tracking-tight">Rabbia Psychologist Child Development Services</h4>
+        <h3 class="font-bold text-white text-sm mb-3 tracking-tight">Rabbia Psychologist Child Development Services</h3>
         <p class="text-xs text-gray-300 mb-4 leading-relaxed max-w-sm">
           Evidence-informed pediatric psychology and neurodiversity-affirming parent guidance for ADHD, autism, school anxiety, and emotional regulation worldwide.
         </p>
@@ -48,7 +61,7 @@
 
       <!-- Col 2: Parent Guidance -->
       <div>
-        <h4 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Parent Guidance</h4>
+        <h3 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Parent Guidance</h3>
         <ul class="space-y-2 text-xs">
           <li><a href="/start-here/" class="text-gray-300 hover:text-white transition-colors">Start Here</a></li>
           <li><a href="/parent-support/" class="text-gray-300 hover:text-white transition-colors">Parent Consultation</a></li>
@@ -62,7 +75,7 @@
 
       <!-- Col 3: Clinical Services -->
       <div>
-        <h4 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Support Areas</h4>
+        <h3 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Support Areas</h3>
         <ul class="space-y-2 text-xs">
           <li><a href="/services/adhd-support/" class="text-gray-300 hover:text-white transition-colors">ADHD Guidance</a></li>
           <li><a href="/services/asd-support/" class="text-gray-300 hover:text-white transition-colors">Autism Support</a></li>
@@ -76,7 +89,7 @@
 
       <!-- Col 4: Resources & Research -->
       <div>
-        <h4 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Knowledge &amp; Tools</h4>
+        <h3 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Knowledge &amp; Tools</h3>
         <ul class="space-y-2 text-xs">
           <li><a href="/compare/" class="text-brand-gold font-semibold hover:underline">Clinical Comparisons</a></li>
           <li><a href="/alternatives/" class="text-emerald-400 font-semibold hover:underline">Alternative Analysis</a></li>
@@ -92,7 +105,7 @@
 
       <!-- Col 5: Global Families & Legal -->
       <div>
-        <h4 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Global &amp; Legal</h4>
+        <h3 class="font-bold text-brand-gold uppercase tracking-wider text-xs mb-4">Global &amp; Legal</h3>
         <ul class="space-y-2 text-xs">
           <li><a href="/international-families/usa/" class="text-gray-300 hover:text-white transition-colors">USA Families</a></li>
           <li><a href="/international-families/uk-europe/" class="text-gray-300 hover:text-white transition-colors">UK &amp; Europe</a></li>

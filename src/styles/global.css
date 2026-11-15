@@ -87,15 +87,7 @@ input:focus, select:focus, textarea:focus {
   @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-md;
 }
 
-/* Offset Tawk.to chat widget on mobile so it doesn't overlap sticky CTA */
-@media (max-width: 768px) {
-  #tawk-mobi-min {
-    bottom: 100px !important;
-  }
-  iframe[title="chat widget"] {
-    bottom: 100px !important;
-  }
-}
+
 
 /* Print Styles for Printable Tools and Clinical Resources */
 @media print {

@@ -24,27 +24,35 @@
       var isPakistanTz = (tz === 'Asia/Karachi');
       setRegion(isPakistanTz ? 'pakistan' : 'international');
 
-      // 3. Confirm / Refine via IP Geolocation in the background
-      fetch('https://1.1.1.1/cdn-cgi/trace')
-        .then(function(res) { return res.text(); })
-        .then(function(data) {
-          var match = data.match(/loc=([A-Z]{2})/);
-          if (match && match[1]) {
-            var detected = (match[1] === 'PK') ? 'pakistan' : 'international';
-            setRegion(detected);
-            sessionStorage.setItem('rabbia_pricing_region_session', detected);
-          }
-        })
-        .catch(function() {
-          fetch('https://get.geojs.io/v1/ip/country')
-            .then(function(res) { return res.text(); })
-            .then(function(country) {
-              var detected = (country.trim() === 'PK') ? 'pakistan' : 'international';
+      // 3. Confirm / Refine via IP Geolocation in idle background (non-blocking)
+      var refineGeo = function() {
+        fetch('https://1.1.1.1/cdn-cgi/trace')
+          .then(function(res) { return res.text(); })
+          .then(function(data) {
+            var match = data.match(/loc=([A-Z]{2})/);
+            if (match && match[1]) {
+              var detected = (match[1] === 'PK') ? 'pakistan' : 'international';
               setRegion(detected);
               sessionStorage.setItem('rabbia_pricing_region_session', detected);
-            })
-            .catch(function() {});
-        });
+            }
+          })
+          .catch(function() {
+            fetch('https://get.geojs.io/v1/ip/country')
+              .then(function(res) { return res.text(); })
+              .then(function(country) {
+                var detected = (country.trim() === 'PK') ? 'pakistan' : 'international';
+                setRegion(detected);
+                sessionStorage.setItem('rabbia_pricing_region_session', detected);
+              })
+              .catch(function() {});
+          });
+      };
+
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback(refineGeo, { timeout: 3000 });
+      } else {
+        setTimeout(refineGeo, 2500);
+      }
     } catch (e) {
       document.documentElement.setAttribute('data-pricing-region', 'international');
     }

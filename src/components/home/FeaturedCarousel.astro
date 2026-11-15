@@ -42,7 +42,7 @@ const slidesData = selectedArticles.map(article => ({
       >
         {slidesData.map((slide, index) => (
           <div class="flex-none w-[85vw] sm:w-[350px] snap-center">
-            <a href={slide.href} class="block bg-white rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100 flex flex-col group/card overflow-hidden outline-none focus:ring-2 focus:ring-brand-trust">
+            <a href={slide.href} class="block bg-white rounded-[20px] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full border border-gray-100 flex flex-col group/card overflow-hidden outline-none focus:ring-2 focus:ring-brand-trust" aria-label={`Read article: ${slide.title}`}>
 
               <!-- Image Area with graceful fallback handled via CSS/HTML -->
               <div class="relative h-48 bg-gradient-to-br from-brand-cream to-gray-50 flex items-center justify-center border-b border-gray-100 overflow-hidden">
