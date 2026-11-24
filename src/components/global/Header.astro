@@ -24,6 +24,7 @@ const resourcesNav = [
 
 const b2bNav = [
   { label: 'School Partnerships Overview', href: '/school-partnerships/' },
+  { label: 'Autism Centers & Enterprise RFQ', href: '/enterprise/' },
   { label: 'Teacher Training & Staff CPD', href: '/school-partnerships/#teacher-training' },
   { label: 'SENCO Retainer & IEP Audits', href: '/school-partnerships/#senco-retainer' },
   { label: 'Nursery Early Years Triage', href: '/services/school-consultation/' },
@@ -134,8 +135,8 @@ const b2bNav = [
           <span>48 Hour Telehealth</span>
         </div>
         <a href="/book/" class="apple-btn apple-btn-primary !py-2.5 !px-4.5 !text-xs font-bold shadow-sm inline-flex items-center gap-1.5">
-          <span>Free 15 Minute Call</span>
-          <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          <span>Book Consultation</span>
+          <svg class="w-3.5 h-3.5 text-brand-gold" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
       </div>
     </nav>
@@ -146,6 +147,10 @@ const b2bNav = [
         School Partnerships
       </a>
 
+      <a href="/enterprise/" class="text-emerald-700 hover:text-brand-navy font-bold transition-colors text-sm px-1">
+        Autism Centers &amp; RFQ
+      </a>
+
       <a href="/school-partnerships/#teacher-training" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
         Teacher CPD Training
       </a>
@@ -154,8 +159,8 @@ const b2bNav = [
         SENCO Retainers
       </a>
 
-      <a href="/services/school-consultation/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
-        Early Years Screening
+      <a href="/corporate/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
+        Corporate HR
       </a>
 
       <a href="/credentials/" class="text-gray-700 hover:text-brand-navy font-medium transition-colors text-sm px-1">
@@ -166,10 +171,10 @@ const b2bNav = [
       <div class="flex items-center gap-2 pl-2 border-l border-[#E6DFD3]">
         <div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[11px] font-bold text-amber-900">
           <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-          <span>KHDA &amp; UK SEND Aligned</span>
+          <span>KHDA &amp; US IDEA Aligned</span>
         </div>
-        <a href="/school-partnerships/#rfp" class="bg-brand-navy hover:bg-slate-900 text-white !py-2.5 !px-5 !text-xs font-bold rounded-xl shadow-sm inline-flex items-center gap-1.5 transition-colors">
-          <span>Institutional RFP</span>
+        <a href="/enterprise/#rfq-form" class="bg-brand-navy hover:bg-slate-900 text-white !py-2.5 !px-5 !text-xs font-bold rounded-xl shadow-sm inline-flex items-center gap-1.5 transition-colors">
+          <span>Submit RFQ</span>
           <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
@@ -178,7 +183,7 @@ const b2bNav = [
     <!-- Mobile Header Actions -->
     <div class="flex items-center gap-2 lg:hidden z-50">
       <a id="mobile-quick-cta" href="/book/" class="apple-btn apple-btn-primary !py-2 !px-3.5 text-xs font-bold shadow-sm whitespace-nowrap">
-        Free 15 Min Call
+        Book Consultation
       </a>
       <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle mobile menu" class="text-brand-navy min-w-[44px] min-h-[44px] p-2 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-brand-navy rounded-lg hover:bg-gray-100/60 transition-colors">
         <svg id="icon-menu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -237,16 +242,18 @@ const b2bNav = [
     <nav id="mobile-schools-nav" class="px-5 py-4 flex flex-col hidden">
       <ul class="space-y-1">
         <li><a href="/school-partnerships/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">School Partnerships Overview</a></li>
+        <li><a href="/enterprise/" class="block text-emerald-700 font-extrabold py-2.5 border-b border-gray-100 text-base">Enterprise &amp; Autism Centers (RFQ)</a></li>
         <li><a href="/school-partnerships/#teacher-training" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Teacher CPD &amp; Inclusion Training</a></li>
         <li><a href="/school-partnerships/#senco-retainer" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">SENCO Retainers &amp; IEP Audits</a></li>
+        <li><a href="/corporate/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Corporate HR &amp; ERG Programs</a></li>
         <li><a href="/services/school-consultation/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Nursery Early Years Screening</a></li>
         <li><a href="/blog/ados-autism-assessment-gold-standard-hospital/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">ADOS 2 Hospital Battery</a></li>
         <li><a href="/credentials/" class="block text-brand-navy font-bold py-2.5 border-b border-gray-100 text-base">Institutional Credentials &amp; Standards</a></li>
       </ul>
 
       <div class="mt-6 pt-2 pb-8">
-        <a href="/school-partnerships/#rfp" class="bg-brand-navy text-white px-4 py-3.5 text-center rounded-xl font-bold block w-full text-base shadow-md">
-          Request Institutional RFP
+        <a href="/enterprise/#rfq-form" class="bg-brand-navy text-white px-4 py-3.5 text-center rounded-xl font-bold block w-full text-base shadow-md">
+          Request Institutional RFQ / RFP
         </a>
       </div>
     </nav>
@@ -348,7 +355,7 @@ const b2bNav = [
 
         // Mobile Quick CTA
         if (mobQuickCta) {
-          mobQuickCta.textContent = 'Free 15 Min Call';
+          mobQuickCta.textContent = 'Book Consultation';
           mobQuickCta.setAttribute('href', '/book/');
         }
 

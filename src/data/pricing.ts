@@ -1,8 +1,4 @@
 export const regionalPricing = {
-  discoveryCall: {
-    pakistan: { currency: "PKR", price: 0 },
-    international: { currency: "USD", price: 0 }
-  },
   parentGuidance: {
     pakistan: { currency: "PKR", price: 5000 },
     international: { currency: "USD", price: 85 }
@@ -48,18 +44,15 @@ export const regionalPricing = {
 export type ServiceKey = keyof typeof regionalPricing;
 
 export const pricing = [
-  { name: 'Initial Discovery & Triage Call (15 Mins)', price: 'Free / Zero Risk' },
-  { name: 'Online Parent Guidance Consultation', price: 'USD 85 / £65 / AUD 130' },
-  { name: 'Pre-Assessment Waitlist Bridge & Action Plan', price: 'USD 85 / £65 / AUD 130' },
-  { name: 'ADHD Support Consultation', price: 'USD 85 / £65 / AUD 130' },
-  { name: 'ASD Parent Guidance Consultation', price: 'USD 85 / £65 / AUD 130' },
-  { name: 'Behaviour Planning Session', price: 'USD 85 / £65 / AUD 130' },
-  { name: 'Report Review & Parent Explanation', price: 'USD 125 / £95 / AUD 190' },
-  { name: 'School / IEP Consultation', price: 'From USD 140 / £110 / AUD 215' },
-  { name: 'Four-Session Parent Guidance Package', price: 'USD 320 / £245 / AUD 490' },
-  { name: 'Workshop / Parent Training', price: 'USD 150–200 / AUD 230–305' },
-  { name: 'Digital Resources', price: 'Free to USD 29 / AUD 45' }
+  { name: '50-Minute Clinical Consultation (Parent Guidance / ADHD / ASD)', price: 'USD 85 / £65 / PKR 5,000' },
+  { name: 'Pre-Assessment Waitlist Bridge & Action Plan', price: 'USD 85 / £65 / PKR 5,000' },
+  { name: 'Behaviour Planning Session', price: 'USD 85 / £65 / PKR 6,500' },
+  { name: 'Clinical Report Review & Parent Explanation', price: 'USD 125 / £95 / PKR 8,500' },
+  { name: 'School / IEP Consultation & Advocacy Letter', price: 'From USD 140 / £110 / PKR 10,000' },
+  { name: 'Four-Session Intensive Parent Guidance Package', price: 'USD 320 / £245 / PKR 20,000' },
+  { name: 'Workshop / Parent Training', price: 'USD 150–200 / PKR 15,000–25,000' },
+  { name: 'Digital Resources & Screening Guides', price: 'Free to USD 29' }
 ];
 
-export const pricingNote = "Assessment, screening, and payment details are confirmed at the time of booking.";
+export const pricingNote = "All consultations require upfront fee confirmation prior to calendar appointment locking. English is our primary medium of consultation.";
 export const pricingServiceScope = "Pricing applies to parent education, developmental guidance, ASD/ADHD support planning, school communication preparation, and consultation services.";
